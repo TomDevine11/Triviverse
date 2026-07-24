@@ -2,7 +2,6 @@ import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
 import { players as localPlayers } from '../../data/players'
 import positionById from '../../data/canonical/players.positions.generated.json'
 import { getFlagFromNationality, formatDOB } from '../../utils/flags'
-import { SITE_URL } from '../../utils/site'
 import { ShareCard } from '../../components/ShareCard'
 import GameChrome from '../../components/GameChrome'
 import UpNext from '../../components/UpNext'
@@ -150,17 +149,6 @@ function Scoreboard({ players, currentPlayerIndex }) {
   )
 }
 
-const scoreSquare = (deducted) => (deducted <= 25 ? '🟩' : deducted <= 75 ? '🟨' : '🟥')
-
-function buildSoloShareText(t, challenge, score, valid) {
-  const grid = valid.map(g => scoreSquare(g.scoreDeducted)).join('') + (score >= CHECKOUT_MIN && score <= 0 ? '🎯' : '')
-  return [t('five01.shareTitle', { title: challenge.title }), t('five01.shareCheckedOut', { score, n: valid.length }), '', grid, '', SITE_URL].join('\n')
-}
-function buildMultiplayerShareText(t, challenge, ranked, winners) {
-  const headline = winners.length > 1 ? t('five01.shareTie') : t('five01.shareWins', { name: winners[0].name })
-  return [t('five01.shareTitle', { title: challenge.title }), headline, '', ...ranked.map((p, i) => `${i + 1}. ${p.name} — ${p.finalScore ?? t('five01.noCheckout')}`), '', SITE_URL].join('\n')
-}
-
 // ── Win screen: the tabbed match report ───────────────────────────
 // One centred card that fits the viewport: verdict on top, the bulk behind
 // tabs (route/scores · all answers · share), actions + UP NEXT pills below.
@@ -169,7 +157,6 @@ function buildMultiplayerShareText(t, challenge, ranked, winners) {
 function WinScreen({ history, players, challenge, gaveUp, onPlayAgain, onExit, playAgainLabel }) {
   const { t } = useI18n()
   const [tab, setTab] = useState('route')
-  const [copied, setCopied] = useState(false)
   const isSolo = players.length === 1
   const valid = history.filter(g => g.valid)
   const usedNames = new Set(valid.map(g => g.resolvedName))
@@ -186,16 +173,6 @@ function WinScreen({ history, players, challenge, gaveUp, onPlayAgain, onExit, p
     ? (gaveUp ? soloScore : (lastValid ? lastValid.scoreAtTime : MAX_SCORE))
     : (lastValid ? lastValid.scoreAtTime : MAX_SCORE)
   const perfect = answers.filter(a => a.value === finishingScore)
-  const shareText = isSolo
-    ? buildSoloShareText(t, challenge, soloScore, valid)
-    : buildMultiplayerShareText(t, challenge, ranked, winners)
-
-  const copyResult = async () => {
-    try {
-      await navigator.clipboard.writeText(shareText)
-      setCopied(true); setTimeout(() => setCopied(false), 2000)
-    } catch { /* clipboard unavailable */ }
-  }
 
   const headline = isSolo
     ? (gaveUp ? t('five01.gaveUpTitle') : t('five01.checkoutTitle'))
@@ -226,7 +203,6 @@ function WinScreen({ history, players, challenge, gaveUp, onPlayAgain, onExit, p
         <div className="flex gap-1.5 justify-center my-3.5 flex-wrap">
           {tabBtn('route', isSolo ? t('five01.yourRoute').toUpperCase() : t('five01.finalScores').toUpperCase())}
           {tabBtn('answers', t('five01.allAnswers', { n: answers.length }).toUpperCase())}
-          {tabBtn('share', t('share.share').toUpperCase())}
         </div>
 
         <div className="flex-1 min-h-0 flex flex-col">
@@ -273,25 +249,22 @@ function WinScreen({ history, players, challenge, gaveUp, onPlayAgain, onExit, p
               ))}
             </div>
           )}
-          {tab === 'share' && (
-            <div className="flex-1 min-h-0 overflow-y-auto flex flex-col items-center gap-3 pt-1">
-              <pre className="w-full text-xs leading-relaxed text-secondary bg-board border border-border rounded-lg px-4 py-3 whitespace-pre-wrap">{shareText}</pre>
-              <ShareCard text={shareText} card={{
-                gameId: '501',
-                title: 'Football 501',
-                challenge: `${challenge.title} · ${challenge.statLabel}`,
-                result: isSolo
-                  ? (gaveUp ? t('five01.gaveUpOn', { score: soloScore, n: valid.length }) : t('five01.finishedOn', { score: soloScore, n: valid.length }))
-                  : headline,
-                rows: [history.map(g => g.valid ? TILE.hit : TILE.miss)],
-                matchday: matchdayNumber(),
-              }} />
-            </div>
-          )}
         </div>
 
         <div className="flex gap-2 justify-center mt-3.5">
-          <button onClick={copyResult} className="px-4 py-2.5 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-lg transition-colors">{copied ? t('hub.copied') : t('share.copy')}</button>
+          <ShareCard
+            className="px-4 py-2.5 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-lg"
+            card={{
+              gameId: '501',
+              title: 'Football 501',
+              challenge: `${challenge.title} · ${challenge.statLabel}`,
+              result: isSolo
+                ? (gaveUp ? t('five01.gaveUpOn', { score: soloScore, n: valid.length }) : t('five01.finishedOn', { score: soloScore, n: valid.length }))
+                : headline,
+              rows: [history.map(g => g.valid ? TILE.hit : TILE.miss)],
+              matchday: matchdayNumber(),
+            }}
+          />
           <button onClick={onPlayAgain} className="px-4 py-2.5 bg-surface hover:bg-border border border-border-strong text-primary text-sm font-bold rounded-lg transition-colors">{playAgainLabel || t('five01.playAgain')}</button>
           <button onClick={onExit} className="px-4 py-2.5 text-muted hover:text-secondary border border-border text-sm font-bold rounded-lg transition-colors">{t('five01.menuBtn')}</button>
         </div>

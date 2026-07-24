@@ -11,12 +11,10 @@ import { accentVars } from '../../design/accents'
 import { recordResult, matchdayNumber } from '../../data/dailyStats'
 import { loadDailyProgress, saveDailyProgress } from '../../data/dailyProgress'
 import { ShareCard } from '../../components/ShareCard'
-import { SITE_URL } from '../../utils/site'
 import { useI18n } from '../../i18n'
 import { RESULT_REVEAL_DELAY_MS } from '../../utils/motion'
 
 const MAX_LIVES = 4
-const SHARE_EMOJI = ['🟨', '🟩', '🟦', '🟪'] // per group index
 // Group tier colours (board pieces, like Wordle's tile.*): the difficulty ramp
 // volt → cyan → gold → purple. Applied inline (bg/border/text derive from one hex).
 const GROUP_TIERS = ['#a3e635', '#22d3ee', '#eab308', '#a78bfa']
@@ -133,15 +131,6 @@ export default function FootballConnections() {
   const allGroups = puzzle.groups.map((g, i) => ({ groupIndex: i, label: g.label, players: g.players }))
 
   const mistakes = MAX_LIVES - lives
-  const shareText = [
-    t('share.connTitle'),
-    won ? (mistakes ? (mistakes === 1 ? t('share.connWonOne', { n: mistakes }) : t('share.connWonMany', { n: mistakes })) : t('share.connWonNo')) : t('share.connLost'),
-    ...(won && dailyStats?.currentStreak ? [t('share.dayStreak', { n: dailyStats.currentStreak })] : []),
-    '',
-    ...guessRows.map(r => r.map(g => SHARE_EMOJI[g]).join('')),
-    '',
-    SITE_URL,
-  ].join('\n')
 
   return (
     <div className="tv-scene min-h-dvh text-primary" style={accentVars('connections')}>
@@ -239,14 +228,7 @@ export default function FootballConnections() {
         {dailyLocked && <p className="text-[0.62rem] font-black tracking-[0.14em] uppercase text-faint mb-1">{t('common.dailyDone')}</p>}
         {mode === 'daily' && <DailyStats game="connections" stats={dailyStats} />}
 
-        <div className="w-full flex gap-1.5 justify-center mb-3">
-          {[['groups', t('connections.theGroups')], ['share', t('share.share')]].map(([id, label]) => (
-            <button key={id} onClick={() => setResultTab(id)}
-              className={`text-[0.6rem] font-black tracking-[0.12em] uppercase rounded-full px-3 py-1.5 border transition-colors ${resultTab === id ? 'bg-brand border-brand text-white' : 'border-border text-muted hover:text-secondary'}`}>
-              {label}
-            </button>
-          ))}
-        </div>
+        {/* The groups, always shown (share is now a single button below). */}
         {resultTab === 'groups' && (
           <div className="w-full space-y-1.5 mb-1 max-h-56 overflow-y-auto">
             {allGroups.map(g => (
@@ -257,20 +239,14 @@ export default function FootballConnections() {
             ))}
           </div>
         )}
-        {resultTab === 'share' && (
-          <div className="w-full flex flex-col items-center gap-2 mb-1">
-            <pre className="w-full text-xs leading-relaxed text-secondary bg-board border border-border rounded-lg px-4 py-3 whitespace-pre-wrap">{shareText}</pre>
-            <ShareCard text={shareText} card={{
-              gameId: 'connections',
-              title: 'Football Connections',
-              challenge: t('games.connections.tagline'),
-              result: won ? t('connections.solved') : t('connections.outOf'),
-              rows: guessRows.map(row => row.map(g => GROUP_TIERS[g])),
-              matchday: matchdayNumber(),
-            }} />
-          </div>
-        )}
-
+        <ShareCard card={{
+          gameId: 'connections',
+          title: 'Football Connections',
+          challenge: t('games.connections.tagline'),
+          result: won ? t('connections.solved') : t('connections.outOf'),
+          rows: guessRows.map(row => row.map(g => GROUP_TIERS[g])),
+          matchday: matchdayNumber(),
+        }} />
         <button onClick={startUnlimited} className="mt-2 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-lg px-6 py-2.5 transition-colors">{t('common.playUnlimited')}</button>
         <UpNext exclude="connections" />
       </ResultModal>

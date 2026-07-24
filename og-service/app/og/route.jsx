@@ -13,8 +13,8 @@ function Card({ card, accent }) {
   const nRows = rows.length
   const cols = rows.reduce((m, r) => Math.max(m, r.length), 1)
   const tileW = (1088 - (cols - 1) * gap) / cols
-  const tileH = nRows ? (236 - (nRows - 1) * gap) / nRows : 0
-  const tile = nRows ? Math.floor(Math.max(20, Math.min(56, tileW, tileH))) : 0
+  const tileH = nRows ? (145 - (nRows - 1) * gap) / nRows : 0
+  const tile = nRows ? Math.floor(Math.max(16, Math.min(48, tileW, tileH))) : 0
 
   return (
     <div style={{
@@ -43,24 +43,22 @@ function Card({ card, accent }) {
       <div style={{ fontFamily: 'Bebas Neue', fontSize: 96, lineHeight: 1, marginTop: 26, letterSpacing: 1 }}>{(card.title || '').toUpperCase()}</div>
       {card.challenge ? <div style={{ fontSize: 26, fontWeight: 500, color: C.muted, marginTop: 10 }}>{card.challenge}</div> : null}
 
-      {/* result + tiles (fills the middle) */}
-      <div style={{ display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'center' }}>
-        <div style={{ fontSize: 42, fontWeight: 800, color: C.secondary }}>{card.result}</div>
-        {nRows ? (
-          <div style={{ display: 'flex', flexDirection: 'column', marginTop: 22 }}>
-            {rows.map((row, ri) => (
-              <div key={ri} style={{ display: 'flex', marginTop: ri ? gap : 0 }}>
-                {row.map((ch, ci) => (
-                  <div key={ci} style={{ width: tile, height: tile, marginLeft: ci ? gap : 0, borderRadius: Math.round(tile * 0.24), backgroundColor: TILE[ch] || TILE.m }} />
-                ))}
-              </div>
-            ))}
-          </div>
-        ) : null}
-      </div>
+      {/* result + tiles (top-flow; footer is pinned to the bottom) */}
+      <div style={{ fontSize: 40, fontWeight: 800, color: C.secondary, marginTop: 24 }}>{card.result}</div>
+      {nRows ? (
+        <div style={{ display: 'flex', flexDirection: 'column', marginTop: 18 }}>
+          {rows.map((row, ri) => (
+            <div key={ri} style={{ display: 'flex', marginTop: ri ? gap : 0 }}>
+              {row.map((ch, ci) => (
+                <div key={ci} style={{ width: tile, height: tile, marginLeft: ci ? gap : 0, borderRadius: Math.round(tile * 0.24), backgroundColor: TILE[ch] || TILE.m }} />
+              ))}
+            </div>
+          ))}
+        </div>
+      ) : null}
 
       {/* footer */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto' }}>
         <div style={{ display: 'flex', alignItems: 'center', height: 56, paddingLeft: 22, paddingRight: 28, borderRadius: 30, backgroundColor: C.surface, border: `1px solid ${C.borderStrong}` }}>
           <div style={{ width: 14, height: 14, borderRadius: 7, backgroundColor: accent, marginRight: 14 }} />
           <div style={{ fontSize: 28, fontWeight: 800 }}>triviverse.com</div>

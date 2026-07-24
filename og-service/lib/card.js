@@ -9,8 +9,11 @@ export const C = {
   brandBright: '#a78bfa', surface: '#16151f', borderStrong: '#2c2947',
 }
 
-// Tile-state char → colour (encoder maps hit/near/miss → h/n/m).
-export const TILE = { h: '#22c55e', n: '#fbbf24', m: '#26243a' }
+// Tile char → colour. hit/near/miss (h/n/m) plus the four Connections tiers.
+export const TILE = {
+  h: '#22c55e', n: '#fbbf24', m: '#26243a',
+  1: '#a3e635', 2: '#22d3ee', 3: '#eab308', 4: '#a78bfa',
+}
 
 // Per-game accent (the .bright value from the app).
 export const ACCENT = {

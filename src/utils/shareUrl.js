@@ -14,8 +14,12 @@ import { SITE_URL } from './site'
 const OG_HOST = (import.meta.env.VITE_OG_HOST || '').replace(/\/$/, '')
 export const OG_ENABLED = !!OG_HOST
 
-// Result tiles are always one of three states — send a single char each.
-const HEX_TO_CH = { [TILE.hit]: 'h', [TILE.near]: 'n', [TILE.miss]: 'm' }
+// Tile colour → single char. hit/near/miss for most games, plus the four
+// Connections group tiers so its colour grid survives in the share image.
+const HEX_TO_CH = {
+  [TILE.hit]: 'h', [TILE.near]: 'n', [TILE.miss]: 'm',
+  '#a3e635': '1', '#22d3ee': '2', '#eab308': '3', '#a78bfa': '4',
+}
 
 function b64url(str) {
   const b64 = btoa(unescape(encodeURIComponent(str))) // utf8-safe

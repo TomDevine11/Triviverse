@@ -4,7 +4,6 @@ import { players as localPlayers } from '../../data/players'
 import { clubs } from '../../data/clubs'
 import { refineSuggestions, searchRegistry, resolveNameToId } from '../../data/canonical/resolve.js'
 import { getFlagFromNationality } from '../../utils/flags'
-import { SITE_URL } from '../../utils/site'
 import { ShareCard } from '../../components/ShareCard'
 import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
@@ -357,21 +356,6 @@ export default function FootballTenable() {
   }
 
   const correctCount = Object.keys(revealed).length
-  const grid = (() => {
-    const cells = []
-    for (let r = 1; r <= 10; r++) cells.push(revealed[r] ? '🟩' : '⬛')
-    return cells.join('')
-  })()
-
-  const shareText = [
-    t('share.tenableTitle', { title: question.title }),
-    t('share.tenableScore', { n: correctCount, lost: MAX_LIVES - lives, max: MAX_LIVES }),
-    ...(phase === 'won' && dailyStats?.currentStreak ? [t('share.dayStreak', { n: dailyStats.currentStreak })] : []),
-    '',
-    grid,
-    '',
-    SITE_URL,
-  ].join('\n')
 
   return (
     <div className="tv-scene min-h-dvh text-primary" style={accentVars('tenable')}>
@@ -565,15 +549,7 @@ export default function FootballTenable() {
         {dailyLocked && <p className="text-[0.62rem] font-black tracking-[0.14em] uppercase text-faint mb-1">{t('common.dailyDone')}</p>}
         {mode === 'daily' && <DailyStats game="tenable" stats={dailyStats} />}
 
-        {/* the bulk behind tabs, 501-style */}
-        <div className="w-full flex gap-1.5 justify-center mb-3">
-          {[['answers', t('tenable.fullAnswerList')], ['share', t('share.share')]].map(([id, label]) => (
-            <button key={id} onClick={() => setResultTab(id)}
-              className={`text-[0.6rem] font-black tracking-[0.12em] uppercase rounded-full px-3 py-1.5 border transition-colors ${resultTab === id ? 'bg-brand border-brand text-white' : 'border-border text-muted hover:text-secondary'}`}>
-              {label}
-            </button>
-          ))}
-        </div>
+        {/* Full answer list, always shown (share is now a single button below). */}
         {resultTab === 'answers' && (
           <div className="w-full rounded-xl border border-border overflow-hidden mb-1">
             <div className="divide-y divide-border/50 max-h-56 overflow-y-auto">
@@ -590,20 +566,14 @@ export default function FootballTenable() {
             </div>
           </div>
         )}
-        {resultTab === 'share' && (
-          <div className="w-full flex flex-col items-center gap-2 mb-1">
-            <pre className="w-full text-xs leading-relaxed text-secondary bg-board border border-border rounded-lg px-4 py-3 whitespace-pre-wrap">{shareText}</pre>
-            <ShareCard text={shareText} card={{
-              gameId: 'tenable',
-              title: 'Football Tenable',
-              challenge: question.title,
-              result: phase === 'won' ? t('tenable.pyramidComplete') : gaveUp ? t('tenable.gaveUp') : t('tenable.gameOver'),
-              rows: [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]].map(r => r.map(rk => revealed[rk] ? TILE.hit : TILE.miss)),
-              matchday: matchdayNumber(),
-            }} />
-          </div>
-        )}
-
+        <ShareCard card={{
+          gameId: 'tenable',
+          title: 'Football Tenable',
+          challenge: question.title,
+          result: phase === 'won' ? t('tenable.pyramidComplete') : gaveUp ? t('tenable.gaveUp') : t('tenable.gameOver'),
+          rows: [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]].map(r => r.map(rk => revealed[rk] ? TILE.hit : TILE.miss)),
+          matchday: matchdayNumber(),
+        }} />
         <button onClick={startUnlimited} className="mt-2 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-lg px-6 py-2.5 transition-colors">{t('common.playUnlimited')}</button>
         <UpNext exclude="tenable" />
       </ResultModal>

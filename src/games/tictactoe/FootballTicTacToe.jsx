@@ -5,7 +5,6 @@ import { resolveNameToId } from '../../data/canonical/resolve'
 import { refineSuggestions, searchRegistry } from '../../data/canonical/resolve.js'
 import { players as localPlayers } from '../../data/players'
 import { getFlagFromNationality } from '../../utils/flags'
-import { SITE_URL } from '../../utils/site'
 import { ShareCard } from '../../components/ShareCard'
 import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
@@ -290,19 +289,8 @@ export default function FootballTicTacToe({ onBackToModes }) {
     setSelectedCell(null)
   }
 
-  const filledCount = Object.keys(filled).length
-  const shareGrid = Array.from({ length: 9 }, (_, i) => (filled[i] != null ? '🟩' : '⬜'))
-  const shareRows = [shareGrid.slice(0, 3), shareGrid.slice(3, 6), shareGrid.slice(6, 9)].map(r => r.join(''))
 
-  const shareText = [
-    t('share.tttTitle'),
-    t('share.tttScore', { n: filledCount, lost: MAX_LIVES - lives, max: MAX_LIVES }),
-    ...(phase === 'won' && dailyStats?.currentStreak ? [t('share.dayStreak', { n: dailyStats.currentStreak })] : []),
-    '',
-    ...shareRows,
-    '',
-    SITE_URL,
-  ].join('\n')
+  const filledCount = Object.keys(filled).length
 
   return (
     <div className="tv-scene min-h-dvh text-primary" style={accentVars('tictactoe')}>
@@ -576,14 +564,7 @@ export default function FootballTicTacToe({ onBackToModes }) {
         </div>
         {mode === 'daily' && <DailyStats game="tictactoe" stats={dailyStats} />}
 
-        <div className="w-full flex gap-1.5 justify-center mb-3">
-          {[['board', t('tictactoe.boardTab')], ['share', t('share.share')]].map(([id, label]) => (
-            <button key={id} onClick={() => setResultTab(id)}
-              className={`text-[0.6rem] font-black tracking-[0.12em] uppercase rounded-full px-3 py-1.5 border transition-colors ${resultTab === id ? 'bg-brand border-brand text-white' : 'border-border text-muted hover:text-secondary'}`}>
-              {label}
-            </button>
-          ))}
-        </div>
+        {/* Board recap, always shown (share is now a single button below). */}
         {resultTab === 'board' && (
           <div className="w-full mb-1">
             <div className="grid grid-cols-3 gap-1.5">
@@ -602,20 +583,14 @@ export default function FootballTicTacToe({ onBackToModes }) {
             <p className="text-faint text-[0.64rem] text-center mt-2">{t('tictactoe.tapSquare')}</p>
           </div>
         )}
-        {resultTab === 'share' && (
-          <div className="w-full flex flex-col items-center gap-2 mb-1">
-            <pre className="w-full text-xs leading-relaxed text-secondary bg-board border border-border rounded-lg px-4 py-3 whitespace-pre-wrap">{shareText}</pre>
-            <ShareCard text={shareText} card={{
-              gameId: 'tictactoe',
-              title: t('tictactoe.wordmark'),
-              challenge: t('games.tictactoe.tagline'),
-              result: phase === 'won' ? t('tictactoe.gridComplete') : gaveUp ? t('tictactoe.gaveUp') : t('tictactoe.gameOver'),
-              rows: [0, 1, 2].map(r => [0, 1, 2].map(c => filled[r * 3 + c] != null ? TILE.hit : TILE.miss)),
-              matchday: matchdayNumber(),
-            }} />
-          </div>
-        )}
-
+        <ShareCard card={{
+          gameId: 'tictactoe',
+          title: t('tictactoe.wordmark'),
+          challenge: t('games.tictactoe.tagline'),
+          result: phase === 'won' ? t('tictactoe.gridComplete') : gaveUp ? t('tictactoe.gaveUp') : t('tictactoe.gameOver'),
+          rows: [0, 1, 2].map(r => [0, 1, 2].map(c => filled[r * 3 + c] != null ? TILE.hit : TILE.miss)),
+          matchday: matchdayNumber(),
+        }} />
         <button onClick={startUnlimited} className="mt-2 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-lg px-6 py-2.5 transition-colors">{mode === 'daily' ? t('common.playUnlimited') : t('tictactoe.newGrid')}</button>
         <UpNext exclude="tictactoe" />
       </ResultModal>
