@@ -29,3 +29,8 @@ data/transfermarkt/
 
 # Raw historical squad scaffold (input only)
 data/pl-history/
+
+# SEO intelligence layer — secrets & generated reports (never commit)
+.env.seo.local
+scripts/seo/.secrets/
+scripts/seo/reports/
