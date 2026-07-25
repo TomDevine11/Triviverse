@@ -46,3 +46,16 @@ export function buildShareUrl(card) {
   if (!OG_HOST || !card) return SITE_URL + route
   return `${OG_HOST}/s/${card.gameId}?r=${encodeCard(card)}`
 }
+
+// ── "My matchday" day-recap card ─────────────────────────────────────────────
+// day = { matchday, dailyPoints, weeklyPoints, dayStreak, won }
+export function encodeDay(day) {
+  return b64url(JSON.stringify({ m: day.matchday, p: day.dailyPoints, w: day.weeklyPoints, s: day.dayStreak, n: day.won }))
+}
+
+// Link that unfurls into the day-recap image and opens the hub. Falls back to
+// the plain site link when no OG host is configured.
+export function buildDayShareUrl(day) {
+  if (!OG_HOST) return SITE_URL
+  return `${OG_HOST}/s/day?r=${encodeDay(day)}`
+}

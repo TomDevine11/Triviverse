@@ -12,13 +12,22 @@ const esc = (s) => String(s ?? '')
 export async function GET(request, { params }) {
   const url = new URL(request.url)
   const r = url.searchParams.get('r') || ''
-  const card = decodeCard(r)
-  const route = GAME_ROUTES[card?.gameId || params.game] || ''
-  const gameUrl = SITE_URL + route
-  const ogImage = `${url.origin}/og?r=${encodeURIComponent(r)}`
+  const isDay = params.game === 'day'
 
-  const title = card?.result ? `${card.title} — ${card.result}` : 'Triviverse Football'
-  const desc = card?.challenge || "Play today's free daily football trivia on Triviverse — 9 games, no sign-up."
+  let gameUrl, ogImage, title, desc
+  if (isDay) {
+    // "My matchday" recap card → image from /day, link to the hub.
+    gameUrl = SITE_URL + '/'
+    ogImage = `${url.origin}/day?r=${encodeURIComponent(r)}`
+    title = 'My Triviverse Matchday'
+    desc = "See how my day of football trivia went — then play today's on Triviverse."
+  } else {
+    const card = decodeCard(r)
+    gameUrl = SITE_URL + (GAME_ROUTES[card?.gameId || params.game] || '')
+    ogImage = `${url.origin}/og?r=${encodeURIComponent(r)}`
+    title = card?.result ? `${card.title} — ${card.result}` : 'Triviverse Football'
+    desc = card?.challenge || "Play today's free daily football trivia on Triviverse — 9 games, no sign-up."
+  }
 
   const html = `<!doctype html><html lang="en"><head>
 <meta charset="utf-8">

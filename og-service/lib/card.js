@@ -44,3 +44,12 @@ export function decodeCard(r) {
     }
   } catch { return null }
 }
+
+// Reverse of the app's encodeDay — the "my matchday" recap card payload.
+export function decodeDay(r) {
+  try {
+    const b64 = (r || '').replace(/-/g, '+').replace(/_/g, '/')
+    const p = JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(b64), (c) => c.charCodeAt(0))))
+    return { matchday: p.m, dailyPoints: p.p, weeklyPoints: p.w, dayStreak: p.s, won: p.n }
+  } catch { return null }
+}

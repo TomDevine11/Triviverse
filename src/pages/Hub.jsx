@@ -5,10 +5,11 @@ import BrandMark from '../components/BrandMark'
 import GameMotif from '../components/GameMotif'
 import LanguageSwitcher from '../components/LanguageSwitcher'
 import AdSlot from '../ads/AdSlot'
-import { routeByPath, SITE_URL } from '../seo/seoConfig'
+import { routeByPath } from '../seo/seoConfig'
 import { useI18n } from '../i18n'
-import { playedToday, getStats, recordVisit, formGuide, weeklyPoints, matchdayNumber } from '../data/dailyStats'
+import { playedToday, getStats, recordVisit, formGuide, weeklyPoints, dailyPoints, matchdayNumber, todayIndex } from '../data/dailyStats'
 import { inProgressToday } from '../data/dailyProgress'
+import { buildDayShareUrl } from '../utils/shareUrl'
 
 // The lineup. `stats` keys dailyStats (what each game passes to recordResult).
 const GAMES = [
@@ -65,22 +66,23 @@ export default function Hub() {
     id: g.to.slice(1),
     played: playedToday(g.stats),
     inPlay: inProgressToday(g.stats),
+    won: getStats(g.stats).lastWin === todayIndex(),
     streak: getStats(g.stats).currentStreak,
     form: formGuide(g.stats),
   }))
   const playedCount = lineup.filter(g => g.played).length
+  const wonCount = lineup.filter(g => g.won).length
   const points = weeklyPoints()
+  const daily = dailyPoints()
 
+  // Share my day as a link that unfurls into the "matchday" recap image and
+  // opens the hub — same pipeline as the game cards. Desktop copies the link.
+  const canNativeShare = typeof navigator !== 'undefined' && typeof navigator.share === 'function'
   const shareDay = async () => {
-    const squares = lineup.map(g => (g.played ? '🟪' : '⬜')).join('')
-    const text = [
-      `TRIVIVERSE · ${t('hub.matchday')} ${matchday}`,
-      `${squares}  ${playedCount}/9${playedCount === 9 ? ` ★ ${t('hub.perfectDay')}` : ''}`,
-      `🔥 ${visit.streak} · ${points} pts`,
-      SITE_URL.replace('https://', ''),
-    ].join('\n')
+    const url = buildDayShareUrl({ matchday, dailyPoints: daily, weeklyPoints: points, dayStreak: visit.streak, won: wonCount })
+    if (canNativeShare) { try { await navigator.share({ url }) } catch { /* cancelled */ } return }
     try {
-      await navigator.clipboard.writeText(text)
+      await navigator.clipboard.writeText(url)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch { /* clipboard unavailable */ }
@@ -105,6 +107,7 @@ export default function Hub() {
             <div className="hidden md:flex gap-2">
               <StatChip value={visit.streak} label={t('hub.dayStreak')} />
               <StatChip value={`${playedCount}/9`} label={t('hub.played')} />
+              <StatChip value={daily} label={t('hub.ptsToday')} accent />
               <StatChip value={points} label={t('hub.ptsWeek')} />
               <StatChip value={countdown} label={t('hub.nextDailies')} accent />
             </div>
@@ -126,7 +129,7 @@ export default function Hub() {
             </div>
             <div className="md:hidden flex gap-1.5 mt-2">
               <StatChip value={visit.streak} label={t('hub.streak')} />
-              <StatChip value={`${playedCount}/9`} label={t('hub.played')} />
+              <StatChip value={daily} label={t('hub.ptsToday')} accent />
               <StatChip value={points} label={t('hub.pts')} />
             </div>
           </div>

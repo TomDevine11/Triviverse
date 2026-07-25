@@ -105,6 +105,13 @@ export function weeklyPoints() {
   return loadLedger().total
 }
 
+// Points earned TODAY (the day's base, doubled on a perfect day — matching how
+// awardPoints folds the perfect bonus into the weekly total).
+export function dailyPoints() {
+  const p = loadLedger()
+  return p.perfect ? p.dayBase * PERFECT_MULT : p.dayBase
+}
+
 // Called once per game per day from recordResult (which is idempotent).
 function awardPoints(all, won, streak) {
   const p = loadLedger()
