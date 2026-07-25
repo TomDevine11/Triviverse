@@ -737,7 +737,21 @@ if (fs.existsSync(DIST_DIR)) {
   // index:false so static never auto-serves index.html — the SPA fallback below
   // controls HTML routing and serves the per-route prerendered file. redirect:false
   // avoids 301s that would add trailing slashes (and diverge from canonical URLs).
-  app.use(express.static(DIST_DIR, { index: false, redirect: false }))
+  app.use(express.static(DIST_DIR, {
+    index: false,
+    redirect: false,
+    setHeaders: (res, filePath) => {
+      // Hashed build assets are immutable — cache them hard so a chunk fetched
+      // once is never re-requested (and can't 404 against a later deploy).
+      if (filePath.includes(`${path.sep}assets${path.sep}`)) {
+        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
+      } else if (filePath.endsWith('.html')) {
+        // HTML must always revalidate so a page load references the CURRENT
+        // build's chunk hashes, never a stale set from a previous deploy.
+        res.setHeader('Cache-Control', 'no-cache')
+      }
+    },
+  }))
 }
 
 // Per-IP rate limit on the API — generous enough for normal gameplay
@@ -884,7 +898,14 @@ app.get('/api/data/:id', (req, res) => {
 if (fs.existsSync(DIST_DIR)) {
   const HOME = path.join(DIST_DIR, 'index.html')
   app.get(/^(?!\/api).*/, (req, res) => {
+    // A request that reached here with a file extension is a static asset that
+    // express.static did NOT find — e.g. a hashed chunk from a previous deploy.
+    // Return 404, never the HTML shell: serving text/html for a .js request is
+    // exactly what triggers the browser's "expected a JavaScript module" error.
+    if (path.extname(req.path)) return res.status(404).type('text/plain').send('Not found')
+
     const clean = req.path.replace(/\/+$/, '').replace(/^\/+/, '')
+    res.setHeader('Cache-Control', 'no-cache') // navigations must always get fresh chunk refs
     if (clean) {
       const candidate = path.join(DIST_DIR, clean, 'index.html')
       // guard against path traversal, then serve the prerendered route if present
