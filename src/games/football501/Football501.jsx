@@ -190,7 +190,15 @@ function WinScreen({ history, players, challenge, gaveUp, onPlayAgain, onExit, p
   )
 
   return (
-    <div className="w-full max-h-full min-h-0 bg-surface border border-border-strong rounded-2xl px-5 py-5 flex flex-col shadow-modal">
+    <div className="relative w-full max-h-full min-h-0 bg-surface border border-border-strong rounded-2xl px-5 py-5 flex flex-col shadow-modal">
+        <button
+          type="button"
+          onClick={onExit}
+          aria-label="Close"
+          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full text-muted hover:text-primary hover:bg-border transition-colors text-lg leading-none"
+        >
+          ✕
+        </button>
         <div className="text-center">
           <GameMotif id="501" className={`w-10 h-10 mx-auto mb-1.5 ${isSolo && gaveUp ? 'text-dim' : 'text-accent-bright'}`} />
           <h2 className={`score-number text-4xl sm:text-5xl ${headlineCls}`}>{headline}</h2>
