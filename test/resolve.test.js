@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { resolve, resolveAgainst, normalize, OK, AMBIGUOUS, UNKNOWN } from '../src/data/canonical/resolve.js'
+import { resolve, resolveAgainst, resolveNameToId, normalize, OK, AMBIGUOUS, UNKNOWN } from '../src/data/canonical/resolve.js'
 
 describe('normalize', () => {
   it('strips diacritics, punctuation, case, and extra whitespace', () => {
@@ -73,5 +73,15 @@ describe('resolveAgainst — cell-context disambiguation', () => {
   it('"Ronaldo" disambiguates to the candidate present in the cell', () => {
     // Only Cristiano is in the cell, so the ambiguous token resolves to him.
     expect(resolveAgainst('Ronaldo', cell, new Set())).toBe('Cristiano Ronaldo')
+  })
+})
+
+describe('resolveNameToId — curated same-person alias fixes', () => {
+  it('resolves "Andrew Robertson" to the "Andy Robertson" id', () => {
+    // Tenable answers use "Andrew Robertson"; the registry canonicalised him to
+    // "Andy Robertson". The curated fix bridges them so a picked suggestion matches.
+    const id = resolveNameToId('Andy Robertson')
+    expect(id).toBeTruthy()
+    expect(resolveNameToId('Andrew Robertson')).toBe(id)
   })
 })

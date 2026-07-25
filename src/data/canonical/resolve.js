@@ -25,11 +25,25 @@ export const OK = 'ok'
 export const AMBIGUOUS = 'ambiguous'
 export const UNKNOWN = 'unknown'
 
+// Curated same-person alias corrections — a real player whose registry canonical
+// name differs from a name used in other data (e.g. Tenable answers, which are
+// generated from raw source names and carry no player id), that the automatic
+// identity build missed. Normalized name → registry id.
+//
+// HAND-VERIFY EVERY ENTRY. Surnames collide viciously: "Halil"/"Hamit Altıntop"
+// are different twin brothers, "Keith"/"Gary Gillespie" are different players.
+// Only add a pair once you've confirmed it is the SAME human — never by surname
+// alone. This mirrors the curated MANUAL_FIXES in nameFixes.js.
+const ALIAS_FIXES = {
+  'andrew robertson': 'andy-robertson', // Liverpool/Scotland LB — official "Andrew", known as "Andy"
+}
+
 // Resolve a display name to its stable internal player id via the identity
 // crosswalk. Returns null for ambiguous (multiple candidates) or unknown names,
 // so callers can fall back to name matching. Additive — does not affect resolve().
 export function resolveNameToId(name) {
-  const hit = crosswalk.byAlias[normalize(name)]
+  const n = normalize(name)
+  const hit = crosswalk.byAlias[n] ?? ALIAS_FIXES[n]
   return typeof hit === 'string' ? hit : null
 }
 
