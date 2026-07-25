@@ -3,6 +3,7 @@ import { getDailyTenableQuestion, getRandomTenableQuestion } from '../../data/te
 import { players as localPlayers } from '../../data/players'
 import { clubs } from '../../data/clubs'
 import { refineSuggestions, searchRegistry, resolveNameToId } from '../../data/canonical/resolve.js'
+import { normalize, answerMatches } from './match.js'
 import { getFlagFromNationality } from '../../utils/flags'
 import { ShareCard } from '../../components/ShareCard'
 import DailyStats from '../../components/DailyStats'
@@ -57,23 +58,6 @@ const ROWS = [[1], [2], [3], [4], [5], [6], [7], [8], [9], [10]]
 // Rung width: narrow apex widening to the full base (the Tenable triangle).
 const rungWidth = (rank) => 38 + (rank - 1) * (62 / 9)
 
-function normalize(str) {
-  return str
-    .toLowerCase()
-    .normalize('NFD').replace(/[̀-ͯ]/g, '')
-    .replace(/[^a-z0-9\s]/g, '')
-    .replace(/\s+/g, ' ')
-    .trim()
-}
-
-function answerMatches(guessNorm, answer) {
-  if (!guessNorm) return false
-  const candidates = [answer.text, ...(answer.aliases || [])].map(normalize)
-  if (candidates.includes(guessNorm)) return true
-  // Allow surname-only guesses against the full name
-  const lastWord = normalize(answer.text).split(' ').pop()
-  return guessNorm === lastWord
-}
 
 export default function FootballTenable() {
   const { t } = useI18n()
@@ -144,7 +128,7 @@ export default function FootballTenable() {
   // Phase 3: id index for player questions — a picked suggestion matches an
   // answer/tie-pool entry by stable player id (fixes surname namesakes). Clubs
   // and unresolved names keep name matching.
-  const { idToAnswer, idToPooled, unresolvedValid } = useMemo(() => {
+  const { idToAnswer, idToPooled } = useMemo(() => {
     const a = new Map(), p = new Map()
     let unresolved = 0
     if (question.type === 'player') {
@@ -278,26 +262,22 @@ export default function FootballTenable() {
   const submitGuess = (text, selectedId = null) => {
     const norm = normalize(text)
     if (!norm) return
-    // Phase 3: a picked suggestion (selectedId) on a player question matches by
-    // id. Authoritative when the whole valid set resolved (a namesake pick is
-    // rejected); otherwise fall back to name matching below.
-    const idMode = selectedId != null && question.type === 'player'
-    let match, pooled
-    if (idMode) {
-      match = idToAnswer.get(selectedId) || null
-      pooled = !match && question.tieValue != null ? (idToPooled.get(selectedId) || null) : null
-      if (!match && !pooled && unresolvedValid > 0) {
-        // some valid entries unresolved → can't trust id; fall back to name match
-        match = question.answers.find(a => answerMatches(norm, a))
-        pooled = !match && question.tieValue != null ? (question.tiePool || []).find(p => answerMatches(norm, p)) : null
-      }
-    } else {
-      match = question.answers.find(a => answerMatches(norm, a))
+    // A picked suggestion carries a stable id; a typed name resolves to one when
+    // unambiguous. Precise id match wins (idToAnswer). Otherwise namesake-safe
+    // name/surname matching — so every answer is reachable by surname, while a
+    // genuine namesake (different known id, same surname) is still rejected.
+    const isPlayer = question.type === 'player'
+    const pid = isPlayer ? selectedId : null
+    const guessId = pid ?? (isPlayer ? resolveNameToId(norm) : null)
+    let match = pid != null ? (idToAnswer.get(pid) || null) : null
+    let pooled = !match && pid != null && question.tieValue != null ? (idToPooled.get(pid) || null) : null
+    if (!match && !pooled) {
+      match = question.answers.find(a => answerMatches(norm, guessId, a, isPlayer))
       // Tie-pool match: a player/club tied at the cutoff value who isn't one of
       // the listed 10 but is equally valid for a joint slot (e.g. any club with
       // 2 European Cups). They fill the lowest unfilled tied slot.
       pooled = !match && question.tieValue != null
-        ? (question.tiePool || []).find(p => answerMatches(norm, p))
+        ? (question.tiePool || []).find(p => answerMatches(norm, guessId, p, isPlayer))
         : null
     }
     const alreadyNamed = pooled && Object.values(revealed).some(a => normalize(a.text) === normalize(pooled.text))
