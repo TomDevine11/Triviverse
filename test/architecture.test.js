@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { RAW_MARKERS, CANONICAL_FACTS, GAME_IMPORT_EXCEPTIONS } from '../src/data/layers.js'
+import { RAW_MARKERS, CANONICAL_FACTS, DERIVED_INTERNAL, GAME_IMPORT_EXCEPTIONS } from '../src/data/layers.js'
 
 // RFC-001 §6 / inv. #4: game code (src/games/**) consumes DERIVED data only —
 // never the canonical model, never raw source. This guard enforces that boundary
@@ -32,7 +32,7 @@ function importSpecifiers(src) {
   return specs
 }
 
-const forbidden = [...RAW_MARKERS, ...CANONICAL_FACTS]
+const forbidden = [...RAW_MARKERS, ...CANONICAL_FACTS, ...DERIVED_INTERNAL]
 const allowed = new Set(GAME_IMPORT_EXCEPTIONS.map(e => `${e.file}::${e.imports}`))
 
 describe('RFC-001 layer boundary (games consume derived, never canonical/raw)', () => {

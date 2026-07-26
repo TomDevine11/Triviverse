@@ -41,7 +41,15 @@ export const CANONICAL_FACTS = [
   'canonical/teams.generated.json',
   'canonical/editions.generated.json',
   'football501/performance.', // canonical Performance, player×team×season (C5)
-  'football501/history.', // derived career-rollup of performance (kept for consumers)
+]
+
+// DERIVED but INTERNAL: not a game-facing dataset — a career-totals rollup of
+// canonical Performance that other build-time derivations consume (leaderboards,
+// catalog, tenable). Proven equal to rollup(performance.*) in build-facts (C5),
+// so it is not an independent source. Games must not import it directly either;
+// they read the game-facing derived datasets. (C6)
+export const DERIVED_INTERNAL = [
+  'football501/history.', // career-rollup of performance.* (stats + player identity)
 ]
 
 // DERIVED: reshaped projections of the canonical model — what games consume.

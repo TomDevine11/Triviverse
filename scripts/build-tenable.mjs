@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // ─────────────────────────────────────────────────────────────────────────
 // BUILD TENABLE — generate bounded "name the top 10" questions from the
-// Football 501 fact tables (the SAME trusted Transfermarkt data 501 uses).
+// the canonical Performance career-rollup (history.*, == rollup of performance.*,
+// RFC-001 C5/C6) — the SAME trusted Transfermarkt data 501 uses.
 //
 // Philosophy (see the architecture review): Tenable AMPLIFIES data errors — a
 // single missing or misranked name breaks the whole question — so we only

@@ -3,9 +3,10 @@
 // BUILD CATALOG — the space of valid procedurally-generated questions,
 // across ALL competitions.
 //
-// For each competition's fact table, enumerates {1-or-2 stats} × {1–3 filters
-// from club/nationality/position}, keeps only completable questions (checkout
-// engine), and writes a single combined catalog.generated.json. Every entry
+// For each competition's canonical Performance career-rollup (history.<comp>,
+// == rollup of performance.<comp>, RFC-001 C5/C6), enumerates {1-or-2 stats} ×
+// {1–3 filters from club/nationality/position}, keeps only completable questions
+// (checkout engine), and writes a single combined catalog.generated.json. Every entry
 // carries its `comp`, and its club/nationality options come only from that
 // competition — so a question can never mix (no Man Utd in a La Liga question).
 //

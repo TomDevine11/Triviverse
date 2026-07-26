@@ -7,9 +7,10 @@
 //
 // Sources (Phase 1):
 //   • The four CLUB-competition boards (Premier League, La Liga, Bundesliga,
-//     Champions League) are derived OFFLINE from the canonical Transfermarkt
-//     history fact tables (src/data/football501/history.<comp>.generated.json) —
-//     the SAME data Football 501 uses. So one football-data refresh now keeps
+//     Champions League) are derived OFFLINE from the canonical Performance
+//     career-rollup (history.<comp>.generated.json — proven == rollup of the
+//     canonical performance.<comp>.generated.json in build-facts, RFC-001 C5/C6)
+//     — the SAME data Football 501 uses. So one football-data refresh now keeps
 //     Higher or Lower in sync (no more Wikipedia drift).
 //   • intl-goals is a TEMPORARY EXCEPTION: international goals are not in the
 //     Transfermarkt club data, so this board is carried through unchanged from
