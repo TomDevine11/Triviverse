@@ -16,16 +16,24 @@
 // Run:  node scripts/build-canonical.mjs   (offline; reads committed history.*)
 // ─────────────────────────────────────────────────────────────────────────
 
-import { readFileSync, writeFileSync } from 'node:fs'
+import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { normalize } from '../src/data/canonical/normalize.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..')
 const HIST = (c) => path.join(ROOT, 'src', 'data', 'football501', `history.${c}.generated.json`)
+const CACHE = path.join(ROOT, 'data', 'pl-history', 'cache')
 const CANON = path.join(ROOT, 'src', 'data', 'canonical')
 const COMPS = ['GB1', 'ES1', 'IT1', 'FR1', 'L1', 'CL']
 const SCHEMA_VERSION = 1
+
+// slug → display name, for roster-only clubs absent from history.clubs (which
+// only lists clubs with recorded appearances). Mirrors build-facts.slugToName.
+const ABBR = new Set(['fc', 'cf', 'ac', 'sc', 'sd', 'rc', 'ud', 'cd', 'ss', 'as', 'us', 'ogc', 'rcd', 'afc', 'sl', 'sv', 'vfb', 'vfl', 'tsg', 'bsc', 'kv', 'rb'])
+const slugToName = (slug = '') => slug.split('-').filter(Boolean)
+  .map(w => /^\d+$/.test(w) ? `${w}.` : ABBR.has(w) ? w.toUpperCase() : w.charAt(0).toUpperCase() + w.slice(1)).join(' ').trim()
 
 // Competition classification not present in the fact tables (enumerate 'league'
 // = a domestic top flight; 'teilnehmer' = a continental cup). Country/confed is
@@ -65,16 +73,24 @@ function main() {
   for (let y = minY; y <= maxY; y++) seasons.push({ id: String(y), label: seasonLabel(y), startYear: y, endYear: y + 1 })
   const seasonIds = new Set(seasons.map(s => s.id))
 
-  // ── Team (club) — merged across competitions by club id ────────────────
+  // ── Team (club) — enumerated from the raw ROSTER cache so the set is
+  // complete (history.clubs lists only clubs with recorded appearances; rosters
+  // include clubs whose cached seasons had zero appearance data). Names prefer
+  // history.clubs (clean English), falling back to the roster slug.
   const teamMap = new Map()
+  const nameOf = {} // clubId → best name from history.clubs
+  for (const c of COMPS) for (const [id, club] of Object.entries(histories[c].clubs || {})) if (!nameOf[id]) nameOf[id] = { name: club.name, norm: club.norm }
   for (const c of COMPS) {
-    for (const [id, club] of Object.entries(histories[c].clubs || {})) {
+    const dir = path.join(CACHE, c)
+    if (!existsSync(dir)) continue
+    for (const f of readdirSync(dir).filter(f => f.endsWith('.json'))) {
+      const { season, clubId, slug } = JSON.parse(readFileSync(path.join(dir, f), 'utf8'))
+      const id = String(clubId)
       const t = teamMap.get(id)
-      if (!t) teamMap.set(id, { id, kind: 'club', name: club.name, norm: club.norm, country: null, competitions: [c], last: club.last || 0 })
-      else {
-        if (!t.competitions.includes(c)) t.competitions.push(c)
-        if ((club.last || 0) > t.last) { t.last = club.last; t.name = club.name; t.norm = club.norm } // freshest label wins
-      }
+      if (!t) {
+        const nm = nameOf[id] || { name: slugToName(slug || ''), norm: normalize(slugToName(slug || '')) }
+        teamMap.set(id, { id, kind: 'club', name: nm.name, norm: nm.norm, country: null, competitions: [c], last: Number(season) || 0 })
+      } else if (!t.competitions.includes(c)) t.competitions.push(c)
     }
   }
   const teams = [...teamMap.values()].sort((a, b) => Number(a.id) - Number(b.id))
