@@ -10,10 +10,13 @@
 //   • club-scoped     → "Premier League — Top Goalscorers for Arsenal"
 //   • nationality-scoped → "La Liga — Top Argentine Goalscorers"
 //
-// We deliberately do NOT generate competition-wide top-scorer lists here —
-// those stay hand-curated in tenable.js, so the generator never collides with
-// or contradicts a verified list. Runtime is unchanged: the game just loads a
-// static catalogue (this file's output merged with the curated questions).
+// Phase 2: the six marquee COMPETITION-WIDE lists (PL / La Liga / Bundesliga /
+// Serie A top scorers, PL appearances, Champions League top scorers) are ALSO
+// generated here now (see COMPETITION_WIDE) — replacing the frozen hand-curated
+// copies so they refresh with the data instead of drifting. Cutoff ties are
+// handled via tiePool (not rejected), so every tied record-holder counts.
+// Everything else in tenable.js stays hand-authored (awards, trophies,
+// international goals, etc. — no canonical source yet).
 //
 //   npm run build:tenable   (after the 501 fact tables are built)
 // ─────────────────────────────────────────────────────────────────────────
@@ -39,6 +42,18 @@ const STATS = [
   { key: 'goals', unit: 'goals', noun: 'goals' },
   { key: 'apps', unit: 'apps', noun: 'appearances' },
 ]
+
+// ── Competition-wide top-10s (Phase 2) ──────────────────────────────────────
+// The six marquee lists formerly hand-curated in tenable.js, now generated from
+// the same fact tables. Titles are pinned to the previous exact wording so the
+// daily allow-list (tenable-daily-questions.txt) still matches by title.
+const COMPETITION_WIDE = {
+  GB1: { goals: 'Premier League — All-Time Top Goalscorers', apps: 'Premier League — Most Appearances All-Time' },
+  ES1: { goals: 'La Liga — All-Time Top Goalscorers' },
+  IT1: { goals: 'Serie A — All-Time Top Goalscorers' },
+  L1: { goals: 'Bundesliga — All-Time Top Goalscorers' },
+  CL: { goals: 'UEFA Champions League — All-Time Top Goalscorers' },
+}
 
 const hash = (s) => { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619) } return h >>> 0 }
 const slug = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
@@ -84,6 +99,44 @@ function topTen(rows, floor) {
   if (top[9].value < floor) return null                 // tail too obscure
   if (rows.length > 10 && rows[10].value === top[9].value) return null // ambiguous cutoff
   return top
+}
+
+// Validate a competition-wide top-10: exactly 10, ranks 1..10, values
+// non-increasing. Throws so a bad fact table can never ship a broken marquee
+// question (these are the highest-stakes lists — one misrank breaks them).
+function assertRankedTop10(answers, title) {
+  if (answers.length !== 10) throw new Error(`"${title}": expected 10 answers, got ${answers.length}`)
+  for (let i = 0; i < 10; i++) {
+    if (answers[i].rank !== i + 1) throw new Error(`"${title}": bad rank ${answers[i].rank} at index ${i}`)
+    if (i > 0 && answers[i].value > answers[i - 1].value) throw new Error(`"${title}": misordered — ${answers[i].text} (${answers[i].value}) above ${answers[i - 1].text} (${answers[i - 1].value})`)
+  }
+}
+
+// Competition-wide top-10 (all players in the competition, by stat). Unlike the
+// bounded club/nat lists, a tie at the 10th value is NOT rejected — the extra
+// tied record-holders go into tiePool so any of them counts for the joint slot.
+function buildCompetitionWide(fact, cid, stat, unit, noun, compName, title) {
+  const rows = fact.players
+    .map(p => ({ id: p.id, name: p.name, value: p.comps?.[cid]?.[stat] || 0 }))
+    .filter(r => r.value >= 1)
+  if (rows.length < MIN_POOL) throw new Error(`"${title}": only ${rows.length} players (< ${MIN_POOL})`)
+  rows.sort((a, b) => b.value - a.value || a.name.localeCompare(b.name) || String(a.id).localeCompare(String(b.id)))
+  const top = rows.slice(0, 10)
+  if (top[9].value < FLOOR[stat]) throw new Error(`"${title}": 10th value ${top[9].value} < floor ${FLOOR[stat]}`)
+  const answers = top.map((p, i) => ({ rank: i + 1, text: p.name, detail: `${p.value} ${unit}`, value: p.value }))
+  assertRankedTop10(answers, title)
+  const q = {
+    id: `gen-${cid}-${stat}-all`,
+    type: 'player',
+    scope: 'competition',
+    title,
+    description: `Name the 10 players with the most ${compName} ${noun} of all time.`,
+    icon: { type: 'league', value: compName }, // league logo — matches the removed hand-authored UX
+    answers,
+  }
+  const tied = rows.slice(10).filter(r => r.value === top[9].value)
+  if (tied.length) { q.tieValue = top[9].value; q.tiePool = tied.map(r => ({ text: r.name })) }
+  return q
 }
 
 function build() {
@@ -162,6 +215,15 @@ function build() {
           daily: fameOf(answers) >= DAILY_FAME[stat],
           answers,
         })
+        added++
+      }
+
+      // ── Competition-wide: the six marquee lists (Phase 2), now data-driven.
+      const cwTitle = COMPETITION_WIDE[cid]?.[stat]
+      if (cwTitle) {
+        const q = buildCompetitionWide(fact, cid, stat, unit, noun, compName, cwTitle)
+        q.daily = fameOf(q.answers) >= DAILY_FAME[stat]
+        questions.push(q)
         added++
       }
     }

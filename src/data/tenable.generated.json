@@ -1,8 +1,8 @@
 {
  "meta": {
-  "builtAt": "2026-07-05",
-  "count": 374,
-  "dailyEligible": 130,
+  "builtAt": "2026-07-08",
+  "count": 380,
+  "dailyEligible": 136,
   "source": "football501 fact tables (transfermarkt)",
   "floor": {
    "goals": 20,
@@ -12175,6 +12175,80 @@
    ]
   },
   {
+   "id": "gen-CL-goals-all",
+   "type": "player",
+   "scope": "competition",
+   "title": "UEFA Champions League — All-Time Top Goalscorers",
+   "description": "Name the 10 players with the most Champions League goals of all time.",
+   "icon": {
+    "type": "league",
+    "value": "Champions League"
+   },
+   "answers": [
+    {
+     "rank": 1,
+     "text": "Cristiano Ronaldo",
+     "detail": "140 goals",
+     "value": 140
+    },
+    {
+     "rank": 2,
+     "text": "Lionel Messi",
+     "detail": "129 goals",
+     "value": 129
+    },
+    {
+     "rank": 3,
+     "text": "Robert Lewandowski",
+     "detail": "109 goals",
+     "value": 109
+    },
+    {
+     "rank": 4,
+     "text": "Karim Benzema",
+     "detail": "90 goals",
+     "value": 90
+    },
+    {
+     "rank": 5,
+     "text": "Raúl",
+     "detail": "71 goals",
+     "value": 71
+    },
+    {
+     "rank": 6,
+     "text": "Kylian Mbappé",
+     "detail": "70 goals",
+     "value": 70
+    },
+    {
+     "rank": 7,
+     "text": "Erling Haaland",
+     "detail": "57 goals",
+     "value": 57
+    },
+    {
+     "rank": 8,
+     "text": "Thomas Müller",
+     "detail": "57 goals",
+     "value": 57
+    },
+    {
+     "rank": 9,
+     "text": "Ruud van Nistelrooy",
+     "detail": "56 goals",
+     "value": 56
+    },
+    {
+     "rank": 10,
+     "text": "Harry Kane",
+     "detail": "54 goals",
+     "value": 54
+    }
+   ],
+   "daily": true
+  },
+  {
    "id": "gen-L1-apps-nat-sweden",
    "type": "player",
    "scope": "nationality",
@@ -13903,6 +13977,80 @@
    ]
   },
   {
+   "id": "gen-ES1-goals-all",
+   "type": "player",
+   "scope": "competition",
+   "title": "La Liga — All-Time Top Goalscorers",
+   "description": "Name the 10 players with the most La Liga goals of all time.",
+   "icon": {
+    "type": "league",
+    "value": "La Liga"
+   },
+   "answers": [
+    {
+     "rank": 1,
+     "text": "Lionel Messi",
+     "detail": "474 goals",
+     "value": 474
+    },
+    {
+     "rank": 2,
+     "text": "Cristiano Ronaldo",
+     "detail": "311 goals",
+     "value": 311
+    },
+    {
+     "rank": 3,
+     "text": "Telmo Zarra",
+     "detail": "254 goals",
+     "value": 254
+    },
+    {
+     "rank": 4,
+     "text": "Karim Benzema",
+     "detail": "238 goals",
+     "value": 238
+    },
+    {
+     "rank": 5,
+     "text": "Hugo Sánchez",
+     "detail": "234 goals",
+     "value": 234
+    },
+    {
+     "rank": 6,
+     "text": "Raúl",
+     "detail": "228 goals",
+     "value": 228
+    },
+    {
+     "rank": 7,
+     "text": "Alfredo di Stéfano",
+     "detail": "227 goals",
+     "value": 227
+    },
+    {
+     "rank": 8,
+     "text": "César Rodríguez",
+     "detail": "221 goals",
+     "value": 221
+    },
+    {
+     "rank": 9,
+     "text": "Quini",
+     "detail": "219 goals",
+     "value": 219
+    },
+    {
+     "rank": 10,
+     "text": "Pahiño",
+     "detail": "213 goals",
+     "value": 213
+    }
+   ],
+   "daily": true
+  },
+  {
    "id": "gen-IT1-goals-nat-uruguay",
    "type": "player",
    "scope": "nationality",
@@ -14287,6 +14435,80 @@
    ]
   },
   {
+   "id": "gen-GB1-goals-all",
+   "type": "player",
+   "scope": "competition",
+   "title": "Premier League — All-Time Top Goalscorers",
+   "description": "Name the 10 players with the most Premier League goals of all time.",
+   "icon": {
+    "type": "league",
+    "value": "Premier League"
+   },
+   "answers": [
+    {
+     "rank": 1,
+     "text": "Alan Shearer",
+     "detail": "260 goals",
+     "value": 260
+    },
+    {
+     "rank": 2,
+     "text": "Harry Kane",
+     "detail": "213 goals",
+     "value": 213
+    },
+    {
+     "rank": 3,
+     "text": "Wayne Rooney",
+     "detail": "208 goals",
+     "value": 208
+    },
+    {
+     "rank": 4,
+     "text": "Mohamed Salah",
+     "detail": "193 goals",
+     "value": 193
+    },
+    {
+     "rank": 5,
+     "text": "Andy Cole",
+     "detail": "187 goals",
+     "value": 187
+    },
+    {
+     "rank": 6,
+     "text": "Sergio Agüero",
+     "detail": "184 goals",
+     "value": 184
+    },
+    {
+     "rank": 7,
+     "text": "Frank Lampard",
+     "detail": "177 goals",
+     "value": 177
+    },
+    {
+     "rank": 8,
+     "text": "Thierry Henry",
+     "detail": "175 goals",
+     "value": 175
+    },
+    {
+     "rank": 9,
+     "text": "Jermain Defoe",
+     "detail": "163 goals",
+     "value": 163
+    },
+    {
+     "rank": 10,
+     "text": "Robbie Fowler",
+     "detail": "163 goals",
+     "value": 163
+    }
+   ],
+   "daily": true
+  },
+  {
    "id": "gen-L1-apps-nat-poland",
    "type": "player",
    "scope": "nationality",
@@ -14605,6 +14827,89 @@
      "detail": "111 apps"
     }
    ]
+  },
+  {
+   "id": "gen-GB1-apps-all",
+   "type": "player",
+   "scope": "competition",
+   "title": "Premier League — Most Appearances All-Time",
+   "description": "Name the 10 players with the most Premier League appearances of all time.",
+   "icon": {
+    "type": "league",
+    "value": "Premier League"
+   },
+   "answers": [
+    {
+     "rank": 1,
+     "text": "James Milner",
+     "detail": "658 apps",
+     "value": 658
+    },
+    {
+     "rank": 2,
+     "text": "Gareth Barry",
+     "detail": "653 apps",
+     "value": 653
+    },
+    {
+     "rank": 3,
+     "text": "Ryan Giggs",
+     "detail": "632 apps",
+     "value": 632
+    },
+    {
+     "rank": 4,
+     "text": "Frank Lampard",
+     "detail": "611 apps",
+     "value": 611
+    },
+    {
+     "rank": 5,
+     "text": "David James",
+     "detail": "572 apps",
+     "value": 572
+    },
+    {
+     "rank": 6,
+     "text": "Gary Speed",
+     "detail": "535 apps",
+     "value": 535
+    },
+    {
+     "rank": 7,
+     "text": "Emile Heskey",
+     "detail": "516 apps",
+     "value": 516
+    },
+    {
+     "rank": 8,
+     "text": "Mark Schwarzer",
+     "detail": "514 apps",
+     "value": 514
+    },
+    {
+     "rank": 9,
+     "text": "Jamie Carragher",
+     "detail": "508 apps",
+     "value": 508
+    },
+    {
+     "rank": 10,
+     "text": "Phil Neville",
+     "detail": "504 apps",
+     "value": 504
+    }
+   ],
+   "tieValue": 504,
+   "tiePool": [
+    {
+     "text": "Rio Ferdinand"
+    },
+    {
+     "text": "Steven Gerrard"
+    }
+   ],
+   "daily": true
   },
   {
    "id": "gen-ES1-apps-club-1531",
@@ -17229,6 +17534,89 @@
      "detail": "23 goals"
     }
    ]
+  },
+  {
+   "id": "gen-IT1-goals-all",
+   "type": "player",
+   "scope": "competition",
+   "title": "Serie A — All-Time Top Goalscorers",
+   "description": "Name the 10 players with the most Serie A goals of all time.",
+   "icon": {
+    "type": "league",
+    "value": "Serie A"
+   },
+   "answers": [
+    {
+     "rank": 1,
+     "text": "Silvio Piola",
+     "detail": "274 goals",
+     "value": 274
+    },
+    {
+     "rank": 2,
+     "text": "Francesco Totti",
+     "detail": "250 goals",
+     "value": 250
+    },
+    {
+     "rank": 3,
+     "text": "Gunnar Nordahl",
+     "detail": "225 goals",
+     "value": 225
+    },
+    {
+     "rank": 4,
+     "text": "Giuseppe Meazza",
+     "detail": "216 goals",
+     "value": 216
+    },
+    {
+     "rank": 5,
+     "text": "José Altafini",
+     "detail": "216 goals",
+     "value": 216
+    },
+    {
+     "rank": 6,
+     "text": "Antonio Di Natale",
+     "detail": "209 goals",
+     "value": 209
+    },
+    {
+     "rank": 7,
+     "text": "Roberto Baggio",
+     "detail": "205 goals",
+     "value": 205
+    },
+    {
+     "rank": 8,
+     "text": "Ciro Immobile",
+     "detail": "201 goals",
+     "value": 201
+    },
+    {
+     "rank": 9,
+     "text": "Kurt Hamrin",
+     "detail": "190 goals",
+     "value": 190
+    },
+    {
+     "rank": 10,
+     "text": "Alberto Gilardino",
+     "detail": "188 goals",
+     "value": 188
+    }
+   ],
+   "tieValue": 188,
+   "tiePool": [
+    {
+     "text": "Alessandro Del Piero"
+    },
+    {
+     "text": "Giuseppe Signori"
+    }
+   ],
+   "daily": true
   },
   {
    "id": "gen-FR1-apps-nat-belgium",
@@ -21389,6 +21777,80 @@
      "detail": "56 goals"
     }
    ]
+  },
+  {
+   "id": "gen-L1-goals-all",
+   "type": "player",
+   "scope": "competition",
+   "title": "Bundesliga — All-Time Top Goalscorers",
+   "description": "Name the 10 players with the most Bundesliga goals of all time.",
+   "icon": {
+    "type": "league",
+    "value": "Bundesliga"
+   },
+   "answers": [
+    {
+     "rank": 1,
+     "text": "Gerd Müller",
+     "detail": "365 goals",
+     "value": 365
+    },
+    {
+     "rank": 2,
+     "text": "Robert Lewandowski",
+     "detail": "312 goals",
+     "value": 312
+    },
+    {
+     "rank": 3,
+     "text": "Klaus Fischer",
+     "detail": "268 goals",
+     "value": 268
+    },
+    {
+     "rank": 4,
+     "text": "Jupp Heynckes",
+     "detail": "220 goals",
+     "value": 220
+    },
+    {
+     "rank": 5,
+     "text": "Manfred Burgsmüller",
+     "detail": "213 goals",
+     "value": 213
+    },
+    {
+     "rank": 6,
+     "text": "Claudio Pizarro",
+     "detail": "197 goals",
+     "value": 197
+    },
+    {
+     "rank": 7,
+     "text": "Ulf Kirsten",
+     "detail": "182 goals",
+     "value": 182
+    },
+    {
+     "rank": 8,
+     "text": "Stefan Kuntz",
+     "detail": "179 goals",
+     "value": 179
+    },
+    {
+     "rank": 9,
+     "text": "Dieter Müller",
+     "detail": "177 goals",
+     "value": 177
+    },
+    {
+     "rank": 10,
+     "text": "Klaus Allofs",
+     "detail": "177 goals",
+     "value": 177
+    }
+   ],
+   "daily": true
   },
   {
    "id": "gen-ES1-goals-club-131",
