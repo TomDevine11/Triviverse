@@ -1,7 +1,7 @@
 // "Guess the Player from teammates" — data loader + matching.
 //
-// Each target carries real teammates (players who shared a team during
-// OVERLAPPING years — see scripts/wikidata/import-teammates.mjs). The game
+// Each target carries real teammates (players who shared a club-season roster —
+// derived from canonical SquadMembership by scripts/build-teammates.mjs). The game
 // reveals one teammate at a time; the player guesses who the mystery player is.
 
 import data from './teammates.generated.json'
