@@ -16,6 +16,15 @@ import path from 'node:path'
 import { DIR, OUT_FACTS, COMPETITION } from './config.mjs'
 import { normalize, normalizeCountry } from './normalize.mjs'
 
+// Canonical Performance artefact (RFC-001 inv. #7, backlog C5): the same cache,
+// emitted at the fundamental grain Player × Team × CompetitionEdition (a season
+// within this competition), instead of collapsed to career totals. history.* is
+// retained as the derived career-rollup and is asserted equal to a rollup of
+// these rows at build time. Co-located with history.* (RFC §0: folders are
+// non-normative; the layer manifest classifies by identity).
+const OUT_PERF = OUT_FACTS.replace('history.', 'performance.')
+const PERF_SCHEMA_VERSION = 1
+
 // Prettify a Transfermarkt club slug → display name ("fc-barcelona" → "FC
 // Barcelona"). Used for non-PL clubs, which aren't in the PL scaffold.
 const ABBR = new Set(['fc', 'cf', 'ac', 'sc', 'sd', 'rc', 'ud', 'cd', 'ss', 'as', 'us', 'ogc', 'rcd', 'afc', 'sl', 'sv', 'vfb', 'vfl', 'tsg', 'bsc', 'kv', 'rb'])
@@ -61,6 +70,7 @@ function build() {
   if (!files.length) { console.error('No cache found — run `npm run scrape:pl-history` first.'); process.exit(1) }
 
   const players = new Map() // id → { id, name, nat, natKey, comps }
+  const perf = [] // canonical Performance rows: [playerId, teamId, seasonId, apps, goals]
   const clubIds = new Set()
   const clubSlug = new Map() // clubId → slug (for name fallback)
   const clubLast = new Map() // clubId → most recent season in this competition
@@ -85,6 +95,8 @@ function build() {
       const club = (comp.clubs[clubId] ||= { apps: 0, goals: 0 })
       club.apps += r.apps; club.goals += r.goals
       clubIds.add(clubId)
+      perf.push([r.id, clubId, String(season), r.apps, r.goals]) // one row per player-team-season
+
     }
   }
 
@@ -121,6 +133,32 @@ function build() {
   const topA = [...out].sort((a, b) => b.comps[cid].apps - a.comps[cid].apps).slice(0, 5)
   console.error('  top goals:', topG.map(p => `${p.name} ${p.comps[cid].goals}`).join(', '))
   console.error('  top apps: ', topA.map(p => `${p.name} ${p.comps[cid].apps}`).join(', '))
+
+  // ── Canonical Performance (C5): emit per-season rows, and PROVE that a rollup
+  // of them reproduces history.* exactly (single owner — the two never diverge).
+  const totals = new Map(), clubTotals = new Map()
+  for (const [pid, tid, , a, g] of perf) {
+    const t = totals.get(pid) || { apps: 0, goals: 0 }; t.apps += a; t.goals += g; totals.set(pid, t)
+    const ck = `${pid}|${tid}`, c = clubTotals.get(ck) || { apps: 0, goals: 0 }; c.apps += a; c.goals += g; clubTotals.set(ck, c)
+  }
+  if (totals.size !== out.length) throw new Error(`C5 rollup: ${totals.size} perf players vs ${out.length} history players`)
+  for (const p of out) {
+    const t = totals.get(p.id)
+    if (!t || t.apps !== p.comps[cid].apps || t.goals !== p.comps[cid].goals)
+      throw new Error(`C5 rollup mismatch for player ${p.id}: perf ${JSON.stringify(t)} vs history ${JSON.stringify(p.comps[cid])}`)
+    for (const [tid, cv] of Object.entries(p.comps[cid].clubs)) {
+      const c = clubTotals.get(`${p.id}|${tid}`)
+      if (!c || c.apps !== cv.apps || c.goals !== cv.goals) throw new Error(`C5 rollup club mismatch ${p.id}/${tid}`)
+    }
+  }
+  perf.sort((a, b) => a[0].localeCompare(b[0], undefined, { numeric: true }) || Number(a[2]) - Number(b[2]) || a[1].localeCompare(b[1], undefined, { numeric: true }))
+  const perfMeta = {
+    schemaVersion: PERF_SCHEMA_VERSION, source: 'transfermarkt:leistungsdaten (scraped)',
+    competition: { id: COMPETITION.id, name: COMPETITION.name }, grain: 'player×team×season',
+    columns: ['playerId', 'teamId', 'seasonId', 'apps', 'goals'], rows: perf.length, generatedAt: meta.builtAt,
+  }
+  writeFileSync(OUT_PERF, JSON.stringify({ meta: perfMeta, performance: perf }) + '\n')
+  console.error(`✓ ${perf.length} performance rows (player×team×season) → ${path.relative(process.cwd(), OUT_PERF)} [rollup verified == history]`)
 }
 
 build()

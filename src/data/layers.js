@@ -40,7 +40,8 @@ export const CANONICAL_FACTS = [
   'canonical/seasons.generated.json',
   'canonical/teams.generated.json',
   'canonical/editions.generated.json',
-  'football501/history.', // history.<comp>.generated.json (Performance-precursor)
+  'football501/performance.', // canonical Performance, player×team×season (C5)
+  'football501/history.', // derived career-rollup of performance (kept for consumers)
 ]
 
 // DERIVED: reshaped projections of the canonical model — what games consume.
