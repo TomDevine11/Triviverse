@@ -21,9 +21,11 @@ describe('Football 501 sourced rosters', () => {
     }
   })
 
-  it('every roster entry carries provenance (a Wikipedia source)', () => {
+  it('every roster entry carries provenance (transfermarkt club data, or wikipedia for intl)', () => {
+    // Phase 1: the four club boards derive from the canonical Transfermarkt
+    // history tables; intl-goals remains wikipedia-sourced (temporary exception).
     for (const id of SOURCED_CHALLENGES)
-      for (const e of Object.values(ROSTERS[id])) expect(e.source).toMatch(/^wikipedia:/)
+      for (const e of Object.values(ROSTERS[id])) expect(e.source).toMatch(/^(transfermarkt|wikipedia):/)
   })
 
   it('real tallies are kept — over-180 scorers exist (they bust the board in-game)', () => {

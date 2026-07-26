@@ -2,22 +2,30 @@
 // ─────────────────────────────────────────────────────────────────────────
 // BUILD LEADERBOARDS  →  src/data/canonical/stats.generated.json
 //
-// Standalone, build-time refresh of the all-time top-scorer leaderboards that
-// power Higher or Lower (and Football 501). Fetches the authoritative Wikipedia
-// list articles directly via the parse API and parses the ranked goals table —
-// the same proven logic the server uses for its Tier-1 preload, but with NO
-// server, NO server/cache.json, and NO runtime/StatMuse scraping.
+// Build-time refresh of the all-time top-scorer leaderboards that power Higher
+// or Lower. Output schema is UNCHANGED (five01.js consumes it as-is).
 //
-// Safety guard: it loads the EXISTING stats file first and only replaces a
-// leaderboard if the fresh parse looks sane (enough rows, and not a big shrink
-// vs what we already have). So a Wikipedia layout change or a flaky fetch can
-// never blank out or gut the data — worst case a board keeps its last-good
-// values until the parser is fixed. Exits non-zero only on a real failure.
+// Sources (Phase 1):
+//   • The four CLUB-competition boards (Premier League, La Liga, Bundesliga,
+//     Champions League) are derived OFFLINE from the canonical Transfermarkt
+//     history fact tables (src/data/football501/history.<comp>.generated.json) —
+//     the SAME data Football 501 uses. So one football-data refresh now keeps
+//     Higher or Lower in sync (no more Wikipedia drift).
+//   • intl-goals is a TEMPORARY EXCEPTION: international goals are not in the
+//     Transfermarkt club data, so this board is carried through unchanged from
+//     the existing file. Pass REFRESH_INTL=1 to re-fetch it from Wikipedia
+//     (needs network). Migrating intl to a canonical source is Phase 2+ work.
 //
-// Run:  node scripts/build-leaderboards.mjs   (needs network)
+// Safety guard (unchanged): loads the EXISTING stats file first and only
+// replaces a board if the fresh build looks sane (>= MIN_ROWS, not a big shrink
+// vs existing). A missing history file or bad parse keeps that board's last-good
+// values. Exits non-zero only on a real failure.
+//
+// Run:  node scripts/build-leaderboards.mjs                 (offline; club boards + carry intl)
+//       REFRESH_INTL=1 node scripts/build-leaderboards.mjs  (also re-fetch intl from Wikipedia)
 // ─────────────────────────────────────────────────────────────────────────
 
-import { readFileSync, writeFileSync } from 'fs'
+import { readFileSync, writeFileSync, existsSync } from 'fs'
 import { fileURLToPath } from 'url'
 import path from 'path'
 import * as cheerio from 'cheerio'
@@ -27,17 +35,40 @@ const OUT = path.join(__dirname, '..', 'src', 'data', 'canonical', 'stats.genera
 
 const WIKI_UA = { 'User-Agent': 'Football501Game/1.0 (educational; tom.devine.tpd02@gmail.com)' }
 
-// challengeId → page + table + display meta (must match what five01.js expects).
+// challengeId → source + display meta (output schema must match what five01.js
+// expects). `comp` = derive OFFLINE from that Transfermarkt history table;
+// `page` = fetch from Wikipedia (intl only, via REFRESH_INTL).
 const LEADERBOARDS = {
   'intl-goals':       { page: "List_of_men's_footballers_with_50_or_more_international_goals", tableIndex: 1, competition: 'International',    statLabel: 'international goals' },
-  'ucl-goals':        { page: 'List_of_UEFA_Champions_League_top_scorers',                     tableIndex: 0, competition: 'Champions League', statLabel: 'Champions League goals' },
-  'prem-goals':       { page: 'List_of_footballers_with_100_or_more_Premier_League_goals',     tableIndex: 0, competition: 'Premier League',   statLabel: 'Premier League goals' },
-  'laliga-goals':     { page: 'List_of_La_Liga_top_scorers',                                   tableIndex: 0, competition: 'La Liga',          statLabel: 'La Liga goals' },
-  'bundesliga-goals': { page: 'List_of_Bundesliga_top_scorers',                                tableIndex: 0, competition: 'Bundesliga',       statLabel: 'Bundesliga goals' },
+  'ucl-goals':        { comp: 'CL',  competition: 'Champions League', statLabel: 'Champions League goals' },
+  'prem-goals':       { comp: 'GB1', competition: 'Premier League',   statLabel: 'Premier League goals' },
+  'laliga-goals':     { comp: 'ES1', competition: 'La Liga',          statLabel: 'La Liga goals' },
+  'bundesliga-goals': { comp: 'L1',  competition: 'Bundesliga',       statLabel: 'Bundesliga goals' },
 }
 
+const HISTORY = (comp) => path.join(__dirname, '..', 'src', 'data', 'football501', `history.${comp}.generated.json`)
+const DEFAULT_LIMIT = 40     // board depth when there's no existing board to match
 const MIN_ROWS = 10          // a sane board must have at least this many players
 const SHRINK_FLOOR = 0.8     // reject a refresh that drops below 80% of existing size
+
+// Build a club-competition board from a Transfermarkt history fact table:
+// { name: goals } for the top `limit` scorers. Namesakes (two different tm
+// players sharing a display name) are merged to the higher tally and counted.
+function buildClubBoard(comp, limit) {
+  const file = HISTORY(comp)
+  if (!existsSync(file)) throw new Error(`missing ${path.basename(file)}`)
+  const players = JSON.parse(readFileSync(file, 'utf8')).players || []
+  const byName = new Map()
+  let namesakes = 0
+  for (const p of players) {
+    const goals = p.comps?.[comp]?.goals || 0
+    if (goals <= 0) continue
+    if (byName.has(p.name)) { namesakes++; byName.set(p.name, Math.max(byName.get(p.name), goals)) }
+    else byName.set(p.name, goals)
+  }
+  const top = [...byName.entries()].sort((a, b) => b[1] - a[1]).slice(0, limit)
+  return { players: Object.fromEntries(top), namesakes }
+}
 
 async function fetchWikiHTML(pageTitle) {
   const url = new URL('https://en.wikipedia.org/w/api.php')
@@ -102,7 +133,7 @@ function loadExisting() {
 async function main() {
   const existing = loadExisting()
   const out = {
-    meta: { source: 'wikipedia top-scorer lists', fetchedAt: new Date().toISOString().slice(0, 10) },
+    meta: { source: 'transfermarkt history (club) + wikipedia (intl)', fetchedAt: new Date().toISOString().slice(0, 10) },
     challenges: {},
   }
   let refreshed = 0, kept = 0
@@ -110,27 +141,49 @@ async function main() {
   for (const [id, cfg] of Object.entries(LEADERBOARDS)) {
     const prev = existing.challenges?.[id]
     const prevCount = prev ? Object.keys(prev.players || {}).length : 0
-    const meta = { competition: cfg.competition, statLabel: cfg.statLabel, source: `wikipedia:${cfg.page.replace(/_/g, ' ')}` }
     try {
-      process.stderr.write(`  ↓ ${id} (${cfg.page})… `)
-      const html = await fetchWikiHTML(cfg.page)
-      const players = parseGoalsTable(html, cfg.tableIndex)
+      let players, source
+
+      if (cfg.comp) {
+        // Club board: derive offline from the Transfermarkt history fact table,
+        // matching the existing board depth so the pool never shrinks.
+        const limit = prevCount || DEFAULT_LIMIT
+        const built = buildClubBoard(cfg.comp, limit)
+        players = built.players
+        source = `transfermarkt:${cfg.comp}`
+        process.stderr.write(`  ${id} (${cfg.comp})… ${built.namesakes ? `${built.namesakes} namesake(s) merged; ` : ''}`)
+      } else if (process.env.REFRESH_INTL) {
+        // intl-goals: opt-in Wikipedia refresh (network).
+        process.stderr.write(`  ↓ ${id} (${cfg.page}, Wikipedia)… `)
+        const html = await fetchWikiHTML(cfg.page)
+        players = parseGoalsTable(html, cfg.tableIndex)
+        source = `wikipedia:${cfg.page.replace(/_/g, ' ')}`
+        await new Promise(r => setTimeout(r, 600))
+      } else if (prev) {
+        // intl-goals default: carry through unchanged (offline). Set REFRESH_INTL=1 to refresh.
+        out.challenges[id] = prev
+        kept++
+        process.stderr.write(`  ${id}: carried through — intl exception (REFRESH_INTL=1 to refresh)\n`)
+        continue
+      } else {
+        throw new Error('intl board has no existing data and REFRESH_INTL not set')
+      }
+
       const count = Object.keys(players).length
       if (count < MIN_ROWS) throw new Error(`only ${count} rows (< ${MIN_ROWS})`)
       if (prevCount && count < prevCount * SHRINK_FLOOR) throw new Error(`suspicious shrink ${prevCount} → ${count}`)
-      out.challenges[id] = { ...meta, players }
+      out.challenges[id] = { competition: cfg.competition, statLabel: cfg.statLabel, source, players }
       refreshed++
       process.stderr.write(`${count} players ✓\n`)
     } catch (err) {
       if (prev) {
         out.challenges[id] = prev // keep last-good data
         kept++
-        process.stderr.write(`FAILED (${err.message}) — kept ${prevCount} existing\n`)
+        process.stderr.write(`  ${id}: FAILED (${err.message}) — kept ${prevCount} existing\n`)
       } else {
-        process.stderr.write(`FAILED (${err.message}) — no existing data!\n`)
+        process.stderr.write(`  ${id}: FAILED (${err.message}) — no existing data!\n`)
       }
     }
-    await new Promise(r => setTimeout(r, 600))
   }
 
   if (Object.keys(out.challenges).length < Object.keys(LEADERBOARDS).length) {
