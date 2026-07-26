@@ -15,6 +15,39 @@ export function fetchHtml(url) {
   throw new Error(`fetch failed after ${RETRIES} tries: ${url}\n${lastErr?.message || ''}`)
 }
 
+// Player national-team page (/nationalmannschaft/spieler/{id}) → senior caps +
+// goals for the player's national side. The per-tournament breakdown table is a
+// JS-hydrated web component (<tm-player-national-team-career>) and is NOT in the
+// static curl HTML — but the senior total lives in the static data-header:
+//   <li class="data-header__label">Caps/Goals:
+//     <a ... href=".../verein_id/{teamId}">137 </a>/ <a ...>71 </a></li>
+//   <li class="data-header__label">Current/Former International: <a href="/…/verein/{teamId}">Germany</a></li>
+// Returns { team, teamId, caps, goals } (null team/0 when no international career).
+export function parseNationalTeam(html) {
+  const $ = cheerio.load(html)
+  const num = (t) => { const n = parseInt(String(t).replace(/[^\d]/g, ''), 10); return Number.isNaN(n) ? 0 : n }
+  const labels = $('.data-header__label').toArray()
+  const labelText = (el) => $(el).text().replace(/\s+/g, ' ').trim()
+
+  // Caps/Goals: two highlighted anchors; teamId from the verein_id in the href.
+  let caps = 0, goals = 0, teamId = null
+  const cg = labels.find(el => /Caps\/Goals:/i.test(labelText(el)))
+  if (cg) {
+    const nums = $(cg).find('a.data-header__content--highlight').map((_, a) => num($(a).text())).get()
+    caps = nums[0] || 0; goals = nums[1] || 0
+    teamId = $(cg).find('a[href*="/verein_id/"]').attr('href')?.match(/verein_id\/(\d+)/)?.[1] || null
+  }
+
+  // National side name (+ id) from the "Current/Former International:" label.
+  let team = null
+  const intl = labels.find(el => /International:/i.test(labelText(el)))
+  if (intl) {
+    const a = $(intl).find('a[href*="/verein/"]').first()
+    if (a.length) { team = a.attr('title')?.trim() || a.text().trim() || null; teamId = teamId || a.attr('href')?.match(/\/verein\/(\d+)/)?.[1] || null }
+  }
+  return { team, teamId, caps, goals }
+}
+
 // Enumerate the clubs in a competition-season → [{ id, slug }].
 // Works for a league table (startseite) AND the CL participants page
 // (/teilnehmer/), which lists clubs the same way.

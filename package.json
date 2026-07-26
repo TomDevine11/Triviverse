@@ -13,6 +13,7 @@
     "search-console-report": "node scripts/seo/gsc.mjs",
     "seo-suggest": "node scripts/seo/suggest.mjs",
     "scrape:pl-history": "node scripts/pl-history/scrape.mjs",
+    "scrape:intl": "node scripts/pl-history/scrape-intl.mjs",
     "build:pl-positions": "node scripts/pl-history/positions.mjs",
     "build:pl-clubnames": "node scripts/pl-history/clubnames.mjs",
     "clubnames:all": "for c in ES1 IT1 FR1 L1 CL; do COMP=$c node scripts/pl-history/clubnames.mjs; done",
