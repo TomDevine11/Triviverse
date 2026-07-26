@@ -1,0 +1,593 @@
+{
+ "meta": {
+  "schemaVersion": 1,
+  "source": "transfermarkt history (derived dimensions)",
+  "generatedAt": "2026-07-26",
+  "count": 97,
+  "span": "1929–2025"
+ },
+ "seasons": [
+  {
+   "id": "1929",
+   "label": "1929/30",
+   "startYear": 1929,
+   "endYear": 1930
+  },
+  {
+   "id": "1930",
+   "label": "1930/31",
+   "startYear": 1930,
+   "endYear": 1931
+  },
+  {
+   "id": "1931",
+   "label": "1931/32",
+   "startYear": 1931,
+   "endYear": 1932
+  },
+  {
+   "id": "1932",
+   "label": "1932/33",
+   "startYear": 1932,
+   "endYear": 1933
+  },
+  {
+   "id": "1933",
+   "label": "1933/34",
+   "startYear": 1933,
+   "endYear": 1934
+  },
+  {
+   "id": "1934",
+   "label": "1934/35",
+   "startYear": 1934,
+   "endYear": 1935
+  },
+  {
+   "id": "1935",
+   "label": "1935/36",
+   "startYear": 1935,
+   "endYear": 1936
+  },
+  {
+   "id": "1936",
+   "label": "1936/37",
+   "startYear": 1936,
+   "endYear": 1937
+  },
+  {
+   "id": "1937",
+   "label": "1937/38",
+   "startYear": 1937,
+   "endYear": 1938
+  },
+  {
+   "id": "1938",
+   "label": "1938/39",
+   "startYear": 1938,
+   "endYear": 1939
+  },
+  {
+   "id": "1939",
+   "label": "1939/40",
+   "startYear": 1939,
+   "endYear": 1940
+  },
+  {
+   "id": "1940",
+   "label": "1940/41",
+   "startYear": 1940,
+   "endYear": 1941
+  },
+  {
+   "id": "1941",
+   "label": "1941/42",
+   "startYear": 1941,
+   "endYear": 1942
+  },
+  {
+   "id": "1942",
+   "label": "1942/43",
+   "startYear": 1942,
+   "endYear": 1943
+  },
+  {
+   "id": "1943",
+   "label": "1943/44",
+   "startYear": 1943,
+   "endYear": 1944
+  },
+  {
+   "id": "1944",
+   "label": "1944/45",
+   "startYear": 1944,
+   "endYear": 1945
+  },
+  {
+   "id": "1945",
+   "label": "1945/46",
+   "startYear": 1945,
+   "endYear": 1946
+  },
+  {
+   "id": "1946",
+   "label": "1946/47",
+   "startYear": 1946,
+   "endYear": 1947
+  },
+  {
+   "id": "1947",
+   "label": "1947/48",
+   "startYear": 1947,
+   "endYear": 1948
+  },
+  {
+   "id": "1948",
+   "label": "1948/49",
+   "startYear": 1948,
+   "endYear": 1949
+  },
+  {
+   "id": "1949",
+   "label": "1949/50",
+   "startYear": 1949,
+   "endYear": 1950
+  },
+  {
+   "id": "1950",
+   "label": "1950/51",
+   "startYear": 1950,
+   "endYear": 1951
+  },
+  {
+   "id": "1951",
+   "label": "1951/52",
+   "startYear": 1951,
+   "endYear": 1952
+  },
+  {
+   "id": "1952",
+   "label": "1952/53",
+   "startYear": 1952,
+   "endYear": 1953
+  },
+  {
+   "id": "1953",
+   "label": "1953/54",
+   "startYear": 1953,
+   "endYear": 1954
+  },
+  {
+   "id": "1954",
+   "label": "1954/55",
+   "startYear": 1954,
+   "endYear": 1955
+  },
+  {
+   "id": "1955",
+   "label": "1955/56",
+   "startYear": 1955,
+   "endYear": 1956
+  },
+  {
+   "id": "1956",
+   "label": "1956/57",
+   "startYear": 1956,
+   "endYear": 1957
+  },
+  {
+   "id": "1957",
+   "label": "1957/58",
+   "startYear": 1957,
+   "endYear": 1958
+  },
+  {
+   "id": "1958",
+   "label": "1958/59",
+   "startYear": 1958,
+   "endYear": 1959
+  },
+  {
+   "id": "1959",
+   "label": "1959/60",
+   "startYear": 1959,
+   "endYear": 1960
+  },
+  {
+   "id": "1960",
+   "label": "1960/61",
+   "startYear": 1960,
+   "endYear": 1961
+  },
+  {
+   "id": "1961",
+   "label": "1961/62",
+   "startYear": 1961,
+   "endYear": 1962
+  },
+  {
+   "id": "1962",
+   "label": "1962/63",
+   "startYear": 1962,
+   "endYear": 1963
+  },
+  {
+   "id": "1963",
+   "label": "1963/64",
+   "startYear": 1963,
+   "endYear": 1964
+  },
+  {
+   "id": "1964",
+   "label": "1964/65",
+   "startYear": 1964,
+   "endYear": 1965
+  },
+  {
+   "id": "1965",
+   "label": "1965/66",
+   "startYear": 1965,
+   "endYear": 1966
+  },
+  {
+   "id": "1966",
+   "label": "1966/67",
+   "startYear": 1966,
+   "endYear": 1967
+  },
+  {
+   "id": "1967",
+   "label": "1967/68",
+   "startYear": 1967,
+   "endYear": 1968
+  },
+  {
+   "id": "1968",
+   "label": "1968/69",
+   "startYear": 1968,
+   "endYear": 1969
+  },
+  {
+   "id": "1969",
+   "label": "1969/70",
+   "startYear": 1969,
+   "endYear": 1970
+  },
+  {
+   "id": "1970",
+   "label": "1970/71",
+   "startYear": 1970,
+   "endYear": 1971
+  },
+  {
+   "id": "1971",
+   "label": "1971/72",
+   "startYear": 1971,
+   "endYear": 1972
+  },
+  {
+   "id": "1972",
+   "label": "1972/73",
+   "startYear": 1972,
+   "endYear": 1973
+  },
+  {
+   "id": "1973",
+   "label": "1973/74",
+   "startYear": 1973,
+   "endYear": 1974
+  },
+  {
+   "id": "1974",
+   "label": "1974/75",
+   "startYear": 1974,
+   "endYear": 1975
+  },
+  {
+   "id": "1975",
+   "label": "1975/76",
+   "startYear": 1975,
+   "endYear": 1976
+  },
+  {
+   "id": "1976",
+   "label": "1976/77",
+   "startYear": 1976,
+   "endYear": 1977
+  },
+  {
+   "id": "1977",
+   "label": "1977/78",
+   "startYear": 1977,
+   "endYear": 1978
+  },
+  {
+   "id": "1978",
+   "label": "1978/79",
+   "startYear": 1978,
+   "endYear": 1979
+  },
+  {
+   "id": "1979",
+   "label": "1979/80",
+   "startYear": 1979,
+   "endYear": 1980
+  },
+  {
+   "id": "1980",
+   "label": "1980/81",
+   "startYear": 1980,
+   "endYear": 1981
+  },
+  {
+   "id": "1981",
+   "label": "1981/82",
+   "startYear": 1981,
+   "endYear": 1982
+  },
+  {
+   "id": "1982",
+   "label": "1982/83",
+   "startYear": 1982,
+   "endYear": 1983
+  },
+  {
+   "id": "1983",
+   "label": "1983/84",
+   "startYear": 1983,
+   "endYear": 1984
+  },
+  {
+   "id": "1984",
+   "label": "1984/85",
+   "startYear": 1984,
+   "endYear": 1985
+  },
+  {
+   "id": "1985",
+   "label": "1985/86",
+   "startYear": 1985,
+   "endYear": 1986
+  },
+  {
+   "id": "1986",
+   "label": "1986/87",
+   "startYear": 1986,
+   "endYear": 1987
+  },
+  {
+   "id": "1987",
+   "label": "1987/88",
+   "startYear": 1987,
+   "endYear": 1988
+  },
+  {
+   "id": "1988",
+   "label": "1988/89",
+   "startYear": 1988,
+   "endYear": 1989
+  },
+  {
+   "id": "1989",
+   "label": "1989/90",
+   "startYear": 1989,
+   "endYear": 1990
+  },
+  {
+   "id": "1990",
+   "label": "1990/91",
+   "startYear": 1990,
+   "endYear": 1991
+  },
+  {
+   "id": "1991",
+   "label": "1991/92",
+   "startYear": 1991,
+   "endYear": 1992
+  },
+  {
+   "id": "1992",
+   "label": "1992/93",
+   "startYear": 1992,
+   "endYear": 1993
+  },
+  {
+   "id": "1993",
+   "label": "1993/94",
+   "startYear": 1993,
+   "endYear": 1994
+  },
+  {
+   "id": "1994",
+   "label": "1994/95",
+   "startYear": 1994,
+   "endYear": 1995
+  },
+  {
+   "id": "1995",
+   "label": "1995/96",
+   "startYear": 1995,
+   "endYear": 1996
+  },
+  {
+   "id": "1996",
+   "label": "1996/97",
+   "startYear": 1996,
+   "endYear": 1997
+  },
+  {
+   "id": "1997",
+   "label": "1997/98",
+   "startYear": 1997,
+   "endYear": 1998
+  },
+  {
+   "id": "1998",
+   "label": "1998/99",
+   "startYear": 1998,
+   "endYear": 1999
+  },
+  {
+   "id": "1999",
+   "label": "1999/00",
+   "startYear": 1999,
+   "endYear": 2000
+  },
+  {
+   "id": "2000",
+   "label": "2000/01",
+   "startYear": 2000,
+   "endYear": 2001
+  },
+  {
+   "id": "2001",
+   "label": "2001/02",
+   "startYear": 2001,
+   "endYear": 2002
+  },
+  {
+   "id": "2002",
+   "label": "2002/03",
+   "startYear": 2002,
+   "endYear": 2003
+  },
+  {
+   "id": "2003",
+   "label": "2003/04",
+   "startYear": 2003,
+   "endYear": 2004
+  },
+  {
+   "id": "2004",
+   "label": "2004/05",
+   "startYear": 2004,
+   "endYear": 2005
+  },
+  {
+   "id": "2005",
+   "label": "2005/06",
+   "startYear": 2005,
+   "endYear": 2006
+  },
+  {
+   "id": "2006",
+   "label": "2006/07",
+   "startYear": 2006,
+   "endYear": 2007
+  },
+  {
+   "id": "2007",
+   "label": "2007/08",
+   "startYear": 2007,
+   "endYear": 2008
+  },
+  {
+   "id": "2008",
+   "label": "2008/09",
+   "startYear": 2008,
+   "endYear": 2009
+  },
+  {
+   "id": "2009",
+   "label": "2009/10",
+   "startYear": 2009,
+   "endYear": 2010
+  },
+  {
+   "id": "2010",
+   "label": "2010/11",
+   "startYear": 2010,
+   "endYear": 2011
+  },
+  {
+   "id": "2011",
+   "label": "2011/12",
+   "startYear": 2011,
+   "endYear": 2012
+  },
+  {
+   "id": "2012",
+   "label": "2012/13",
+   "startYear": 2012,
+   "endYear": 2013
+  },
+  {
+   "id": "2013",
+   "label": "2013/14",
+   "startYear": 2013,
+   "endYear": 2014
+  },
+  {
+   "id": "2014",
+   "label": "2014/15",
+   "startYear": 2014,
+   "endYear": 2015
+  },
+  {
+   "id": "2015",
+   "label": "2015/16",
+   "startYear": 2015,
+   "endYear": 2016
+  },
+  {
+   "id": "2016",
+   "label": "2016/17",
+   "startYear": 2016,
+   "endYear": 2017
+  },
+  {
+   "id": "2017",
+   "label": "2017/18",
+   "startYear": 2017,
+   "endYear": 2018
+  },
+  {
+   "id": "2018",
+   "label": "2018/19",
+   "startYear": 2018,
+   "endYear": 2019
+  },
+  {
+   "id": "2019",
+   "label": "2019/20",
+   "startYear": 2019,
+   "endYear": 2020
+  },
+  {
+   "id": "2020",
+   "label": "2020/21",
+   "startYear": 2020,
+   "endYear": 2021
+  },
+  {
+   "id": "2021",
+   "label": "2021/22",
+   "startYear": 2021,
+   "endYear": 2022
+  },
+  {
+   "id": "2022",
+   "label": "2022/23",
+   "startYear": 2022,
+   "endYear": 2023
+  },
+  {
+   "id": "2023",
+   "label": "2023/24",
+   "startYear": 2023,
+   "endYear": 2024
+  },
+  {
+   "id": "2024",
+   "label": "2024/25",
+   "startYear": 2024,
+   "endYear": 2025
+  },
+  {
+   "id": "2025",
+   "label": "2025/26",
+   "startYear": 2025,
+   "endYear": 2026
+  }
+ ]
+}

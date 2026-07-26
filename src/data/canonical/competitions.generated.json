@@ -1,0 +1,64 @@
+{
+ "meta": {
+  "schemaVersion": 1,
+  "source": "transfermarkt history (derived dimensions)",
+  "generatedAt": "2026-07-26",
+  "count": 6
+ },
+ "competitions": [
+  {
+   "id": "GB1",
+   "name": "Premier League",
+   "slug": "premier-league",
+   "firstSeason": "1992",
+   "type": "domestic_league",
+   "tier": 1,
+   "country": "England"
+  },
+  {
+   "id": "ES1",
+   "name": "La Liga",
+   "slug": "laliga",
+   "firstSeason": "1929",
+   "type": "domestic_league",
+   "tier": 1,
+   "country": "Spain"
+  },
+  {
+   "id": "IT1",
+   "name": "Serie A",
+   "slug": "serie-a",
+   "firstSeason": "1929",
+   "type": "domestic_league",
+   "tier": 1,
+   "country": "Italy"
+  },
+  {
+   "id": "FR1",
+   "name": "Ligue 1",
+   "slug": "ligue-1",
+   "firstSeason": "1932",
+   "type": "domestic_league",
+   "tier": 1,
+   "country": "France"
+  },
+  {
+   "id": "L1",
+   "name": "Bundesliga",
+   "slug": "bundesliga",
+   "firstSeason": "1963",
+   "type": "domestic_league",
+   "tier": 1,
+   "country": "Germany"
+  },
+  {
+   "id": "CL",
+   "name": "Champions League",
+   "slug": "uefa-champions-league",
+   "firstSeason": "1992",
+   "type": "continental",
+   "tier": 1,
+   "confederation": "UEFA"
+  }
+ ]
+}

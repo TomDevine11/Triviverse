@@ -1,0 +1,3782 @@
+{
+ "meta": {
+  "schemaVersion": 1,
+  "source": "transfermarkt history (derived dimensions)",
+  "generatedAt": "2026-07-26",
+  "count": 419,
+  "outcomes": "skeleton (null — C11)"
+ },
+ "editions": [
+  {
+   "id": "GB1_1992",
+   "competitionId": "GB1",
+   "seasonId": "1992",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_1993",
+   "competitionId": "GB1",
+   "seasonId": "1993",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_1994",
+   "competitionId": "GB1",
+   "seasonId": "1994",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_1995",
+   "competitionId": "GB1",
+   "seasonId": "1995",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_1996",
+   "competitionId": "GB1",
+   "seasonId": "1996",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_1997",
+   "competitionId": "GB1",
+   "seasonId": "1997",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_1998",
+   "competitionId": "GB1",
+   "seasonId": "1998",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_1999",
+   "competitionId": "GB1",
+   "seasonId": "1999",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2000",
+   "competitionId": "GB1",
+   "seasonId": "2000",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2001",
+   "competitionId": "GB1",
+   "seasonId": "2001",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2002",
+   "competitionId": "GB1",
+   "seasonId": "2002",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2003",
+   "competitionId": "GB1",
+   "seasonId": "2003",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2004",
+   "competitionId": "GB1",
+   "seasonId": "2004",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2005",
+   "competitionId": "GB1",
+   "seasonId": "2005",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2006",
+   "competitionId": "GB1",
+   "seasonId": "2006",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2007",
+   "competitionId": "GB1",
+   "seasonId": "2007",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2008",
+   "competitionId": "GB1",
+   "seasonId": "2008",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2009",
+   "competitionId": "GB1",
+   "seasonId": "2009",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2010",
+   "competitionId": "GB1",
+   "seasonId": "2010",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2011",
+   "competitionId": "GB1",
+   "seasonId": "2011",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2012",
+   "competitionId": "GB1",
+   "seasonId": "2012",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2013",
+   "competitionId": "GB1",
+   "seasonId": "2013",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2014",
+   "competitionId": "GB1",
+   "seasonId": "2014",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2015",
+   "competitionId": "GB1",
+   "seasonId": "2015",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2016",
+   "competitionId": "GB1",
+   "seasonId": "2016",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2017",
+   "competitionId": "GB1",
+   "seasonId": "2017",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2018",
+   "competitionId": "GB1",
+   "seasonId": "2018",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2019",
+   "competitionId": "GB1",
+   "seasonId": "2019",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2020",
+   "competitionId": "GB1",
+   "seasonId": "2020",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2021",
+   "competitionId": "GB1",
+   "seasonId": "2021",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2022",
+   "competitionId": "GB1",
+   "seasonId": "2022",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2023",
+   "competitionId": "GB1",
+   "seasonId": "2023",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2024",
+   "competitionId": "GB1",
+   "seasonId": "2024",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2025",
+   "competitionId": "GB1",
+   "seasonId": "2025",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1929",
+   "competitionId": "ES1",
+   "seasonId": "1929",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1930",
+   "competitionId": "ES1",
+   "seasonId": "1930",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1931",
+   "competitionId": "ES1",
+   "seasonId": "1931",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1932",
+   "competitionId": "ES1",
+   "seasonId": "1932",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1933",
+   "competitionId": "ES1",
+   "seasonId": "1933",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1934",
+   "competitionId": "ES1",
+   "seasonId": "1934",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1935",
+   "competitionId": "ES1",
+   "seasonId": "1935",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1936",
+   "competitionId": "ES1",
+   "seasonId": "1936",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1937",
+   "competitionId": "ES1",
+   "seasonId": "1937",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1938",
+   "competitionId": "ES1",
+   "seasonId": "1938",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1939",
+   "competitionId": "ES1",
+   "seasonId": "1939",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1940",
+   "competitionId": "ES1",
+   "seasonId": "1940",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1941",
+   "competitionId": "ES1",
+   "seasonId": "1941",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1942",
+   "competitionId": "ES1",
+   "seasonId": "1942",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1943",
+   "competitionId": "ES1",
+   "seasonId": "1943",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1944",
+   "competitionId": "ES1",
+   "seasonId": "1944",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1945",
+   "competitionId": "ES1",
+   "seasonId": "1945",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1946",
+   "competitionId": "ES1",
+   "seasonId": "1946",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1947",
+   "competitionId": "ES1",
+   "seasonId": "1947",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1948",
+   "competitionId": "ES1",
+   "seasonId": "1948",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1949",
+   "competitionId": "ES1",
+   "seasonId": "1949",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1950",
+   "competitionId": "ES1",
+   "seasonId": "1950",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1951",
+   "competitionId": "ES1",
+   "seasonId": "1951",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1952",
+   "competitionId": "ES1",
+   "seasonId": "1952",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1953",
+   "competitionId": "ES1",
+   "seasonId": "1953",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1954",
+   "competitionId": "ES1",
+   "seasonId": "1954",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1955",
+   "competitionId": "ES1",
+   "seasonId": "1955",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1956",
+   "competitionId": "ES1",
+   "seasonId": "1956",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1957",
+   "competitionId": "ES1",
+   "seasonId": "1957",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1958",
+   "competitionId": "ES1",
+   "seasonId": "1958",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1959",
+   "competitionId": "ES1",
+   "seasonId": "1959",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1960",
+   "competitionId": "ES1",
+   "seasonId": "1960",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1961",
+   "competitionId": "ES1",
+   "seasonId": "1961",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1962",
+   "competitionId": "ES1",
+   "seasonId": "1962",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1963",
+   "competitionId": "ES1",
+   "seasonId": "1963",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1964",
+   "competitionId": "ES1",
+   "seasonId": "1964",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1965",
+   "competitionId": "ES1",
+   "seasonId": "1965",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1966",
+   "competitionId": "ES1",
+   "seasonId": "1966",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1967",
+   "competitionId": "ES1",
+   "seasonId": "1967",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1968",
+   "competitionId": "ES1",
+   "seasonId": "1968",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1969",
+   "competitionId": "ES1",
+   "seasonId": "1969",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1970",
+   "competitionId": "ES1",
+   "seasonId": "1970",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1971",
+   "competitionId": "ES1",
+   "seasonId": "1971",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1972",
+   "competitionId": "ES1",
+   "seasonId": "1972",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1973",
+   "competitionId": "ES1",
+   "seasonId": "1973",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1974",
+   "competitionId": "ES1",
+   "seasonId": "1974",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1975",
+   "competitionId": "ES1",
+   "seasonId": "1975",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1976",
+   "competitionId": "ES1",
+   "seasonId": "1976",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1977",
+   "competitionId": "ES1",
+   "seasonId": "1977",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1978",
+   "competitionId": "ES1",
+   "seasonId": "1978",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1979",
+   "competitionId": "ES1",
+   "seasonId": "1979",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1980",
+   "competitionId": "ES1",
+   "seasonId": "1980",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1981",
+   "competitionId": "ES1",
+   "seasonId": "1981",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1982",
+   "competitionId": "ES1",
+   "seasonId": "1982",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1983",
+   "competitionId": "ES1",
+   "seasonId": "1983",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1984",
+   "competitionId": "ES1",
+   "seasonId": "1984",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1985",
+   "competitionId": "ES1",
+   "seasonId": "1985",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1986",
+   "competitionId": "ES1",
+   "seasonId": "1986",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1987",
+   "competitionId": "ES1",
+   "seasonId": "1987",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1988",
+   "competitionId": "ES1",
+   "seasonId": "1988",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1989",
+   "competitionId": "ES1",
+   "seasonId": "1989",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1990",
+   "competitionId": "ES1",
+   "seasonId": "1990",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1991",
+   "competitionId": "ES1",
+   "seasonId": "1991",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1992",
+   "competitionId": "ES1",
+   "seasonId": "1992",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1993",
+   "competitionId": "ES1",
+   "seasonId": "1993",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1994",
+   "competitionId": "ES1",
+   "seasonId": "1994",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1995",
+   "competitionId": "ES1",
+   "seasonId": "1995",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1996",
+   "competitionId": "ES1",
+   "seasonId": "1996",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1997",
+   "competitionId": "ES1",
+   "seasonId": "1997",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1998",
+   "competitionId": "ES1",
+   "seasonId": "1998",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_1999",
+   "competitionId": "ES1",
+   "seasonId": "1999",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2000",
+   "competitionId": "ES1",
+   "seasonId": "2000",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2001",
+   "competitionId": "ES1",
+   "seasonId": "2001",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2002",
+   "competitionId": "ES1",
+   "seasonId": "2002",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2003",
+   "competitionId": "ES1",
+   "seasonId": "2003",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2004",
+   "competitionId": "ES1",
+   "seasonId": "2004",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2005",
+   "competitionId": "ES1",
+   "seasonId": "2005",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2006",
+   "competitionId": "ES1",
+   "seasonId": "2006",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2007",
+   "competitionId": "ES1",
+   "seasonId": "2007",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2008",
+   "competitionId": "ES1",
+   "seasonId": "2008",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2009",
+   "competitionId": "ES1",
+   "seasonId": "2009",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2010",
+   "competitionId": "ES1",
+   "seasonId": "2010",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2011",
+   "competitionId": "ES1",
+   "seasonId": "2011",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2012",
+   "competitionId": "ES1",
+   "seasonId": "2012",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2013",
+   "competitionId": "ES1",
+   "seasonId": "2013",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2014",
+   "competitionId": "ES1",
+   "seasonId": "2014",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2015",
+   "competitionId": "ES1",
+   "seasonId": "2015",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2016",
+   "competitionId": "ES1",
+   "seasonId": "2016",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2017",
+   "competitionId": "ES1",
+   "seasonId": "2017",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2018",
+   "competitionId": "ES1",
+   "seasonId": "2018",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2019",
+   "competitionId": "ES1",
+   "seasonId": "2019",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2020",
+   "competitionId": "ES1",
+   "seasonId": "2020",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2021",
+   "competitionId": "ES1",
+   "seasonId": "2021",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2022",
+   "competitionId": "ES1",
+   "seasonId": "2022",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2023",
+   "competitionId": "ES1",
+   "seasonId": "2023",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2024",
+   "competitionId": "ES1",
+   "seasonId": "2024",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "ES1_2025",
+   "competitionId": "ES1",
+   "seasonId": "2025",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1929",
+   "competitionId": "IT1",
+   "seasonId": "1929",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1930",
+   "competitionId": "IT1",
+   "seasonId": "1930",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1931",
+   "competitionId": "IT1",
+   "seasonId": "1931",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1932",
+   "competitionId": "IT1",
+   "seasonId": "1932",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1933",
+   "competitionId": "IT1",
+   "seasonId": "1933",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1934",
+   "competitionId": "IT1",
+   "seasonId": "1934",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1935",
+   "competitionId": "IT1",
+   "seasonId": "1935",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1936",
+   "competitionId": "IT1",
+   "seasonId": "1936",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1937",
+   "competitionId": "IT1",
+   "seasonId": "1937",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1938",
+   "competitionId": "IT1",
+   "seasonId": "1938",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1939",
+   "competitionId": "IT1",
+   "seasonId": "1939",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1940",
+   "competitionId": "IT1",
+   "seasonId": "1940",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1941",
+   "competitionId": "IT1",
+   "seasonId": "1941",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1942",
+   "competitionId": "IT1",
+   "seasonId": "1942",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1943",
+   "competitionId": "IT1",
+   "seasonId": "1943",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1944",
+   "competitionId": "IT1",
+   "seasonId": "1944",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1945",
+   "competitionId": "IT1",
+   "seasonId": "1945",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1946",
+   "competitionId": "IT1",
+   "seasonId": "1946",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1947",
+   "competitionId": "IT1",
+   "seasonId": "1947",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1948",
+   "competitionId": "IT1",
+   "seasonId": "1948",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1949",
+   "competitionId": "IT1",
+   "seasonId": "1949",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1950",
+   "competitionId": "IT1",
+   "seasonId": "1950",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1951",
+   "competitionId": "IT1",
+   "seasonId": "1951",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1952",
+   "competitionId": "IT1",
+   "seasonId": "1952",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1953",
+   "competitionId": "IT1",
+   "seasonId": "1953",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1954",
+   "competitionId": "IT1",
+   "seasonId": "1954",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1955",
+   "competitionId": "IT1",
+   "seasonId": "1955",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1956",
+   "competitionId": "IT1",
+   "seasonId": "1956",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1957",
+   "competitionId": "IT1",
+   "seasonId": "1957",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1958",
+   "competitionId": "IT1",
+   "seasonId": "1958",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1959",
+   "competitionId": "IT1",
+   "seasonId": "1959",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1960",
+   "competitionId": "IT1",
+   "seasonId": "1960",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1961",
+   "competitionId": "IT1",
+   "seasonId": "1961",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1962",
+   "competitionId": "IT1",
+   "seasonId": "1962",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1963",
+   "competitionId": "IT1",
+   "seasonId": "1963",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1964",
+   "competitionId": "IT1",
+   "seasonId": "1964",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1965",
+   "competitionId": "IT1",
+   "seasonId": "1965",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1966",
+   "competitionId": "IT1",
+   "seasonId": "1966",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1967",
+   "competitionId": "IT1",
+   "seasonId": "1967",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1968",
+   "competitionId": "IT1",
+   "seasonId": "1968",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1969",
+   "competitionId": "IT1",
+   "seasonId": "1969",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1970",
+   "competitionId": "IT1",
+   "seasonId": "1970",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1971",
+   "competitionId": "IT1",
+   "seasonId": "1971",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1972",
+   "competitionId": "IT1",
+   "seasonId": "1972",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1973",
+   "competitionId": "IT1",
+   "seasonId": "1973",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1974",
+   "competitionId": "IT1",
+   "seasonId": "1974",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1975",
+   "competitionId": "IT1",
+   "seasonId": "1975",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1976",
+   "competitionId": "IT1",
+   "seasonId": "1976",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1977",
+   "competitionId": "IT1",
+   "seasonId": "1977",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1978",
+   "competitionId": "IT1",
+   "seasonId": "1978",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1979",
+   "competitionId": "IT1",
+   "seasonId": "1979",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1980",
+   "competitionId": "IT1",
+   "seasonId": "1980",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1981",
+   "competitionId": "IT1",
+   "seasonId": "1981",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1982",
+   "competitionId": "IT1",
+   "seasonId": "1982",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1983",
+   "competitionId": "IT1",
+   "seasonId": "1983",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1984",
+   "competitionId": "IT1",
+   "seasonId": "1984",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1985",
+   "competitionId": "IT1",
+   "seasonId": "1985",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1986",
+   "competitionId": "IT1",
+   "seasonId": "1986",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1987",
+   "competitionId": "IT1",
+   "seasonId": "1987",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1988",
+   "competitionId": "IT1",
+   "seasonId": "1988",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1989",
+   "competitionId": "IT1",
+   "seasonId": "1989",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1990",
+   "competitionId": "IT1",
+   "seasonId": "1990",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1991",
+   "competitionId": "IT1",
+   "seasonId": "1991",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1992",
+   "competitionId": "IT1",
+   "seasonId": "1992",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1993",
+   "competitionId": "IT1",
+   "seasonId": "1993",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1994",
+   "competitionId": "IT1",
+   "seasonId": "1994",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1995",
+   "competitionId": "IT1",
+   "seasonId": "1995",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1996",
+   "competitionId": "IT1",
+   "seasonId": "1996",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1997",
+   "competitionId": "IT1",
+   "seasonId": "1997",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1998",
+   "competitionId": "IT1",
+   "seasonId": "1998",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_1999",
+   "competitionId": "IT1",
+   "seasonId": "1999",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2000",
+   "competitionId": "IT1",
+   "seasonId": "2000",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2001",
+   "competitionId": "IT1",
+   "seasonId": "2001",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2002",
+   "competitionId": "IT1",
+   "seasonId": "2002",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2003",
+   "competitionId": "IT1",
+   "seasonId": "2003",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2004",
+   "competitionId": "IT1",
+   "seasonId": "2004",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2005",
+   "competitionId": "IT1",
+   "seasonId": "2005",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2006",
+   "competitionId": "IT1",
+   "seasonId": "2006",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2007",
+   "competitionId": "IT1",
+   "seasonId": "2007",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2008",
+   "competitionId": "IT1",
+   "seasonId": "2008",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2009",
+   "competitionId": "IT1",
+   "seasonId": "2009",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2010",
+   "competitionId": "IT1",
+   "seasonId": "2010",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2011",
+   "competitionId": "IT1",
+   "seasonId": "2011",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2012",
+   "competitionId": "IT1",
+   "seasonId": "2012",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2013",
+   "competitionId": "IT1",
+   "seasonId": "2013",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2014",
+   "competitionId": "IT1",
+   "seasonId": "2014",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2015",
+   "competitionId": "IT1",
+   "seasonId": "2015",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2016",
+   "competitionId": "IT1",
+   "seasonId": "2016",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2017",
+   "competitionId": "IT1",
+   "seasonId": "2017",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2018",
+   "competitionId": "IT1",
+   "seasonId": "2018",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2019",
+   "competitionId": "IT1",
+   "seasonId": "2019",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2020",
+   "competitionId": "IT1",
+   "seasonId": "2020",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2021",
+   "competitionId": "IT1",
+   "seasonId": "2021",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2022",
+   "competitionId": "IT1",
+   "seasonId": "2022",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2023",
+   "competitionId": "IT1",
+   "seasonId": "2023",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2024",
+   "competitionId": "IT1",
+   "seasonId": "2024",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "IT1_2025",
+   "competitionId": "IT1",
+   "seasonId": "2025",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1932",
+   "competitionId": "FR1",
+   "seasonId": "1932",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1933",
+   "competitionId": "FR1",
+   "seasonId": "1933",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1934",
+   "competitionId": "FR1",
+   "seasonId": "1934",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1935",
+   "competitionId": "FR1",
+   "seasonId": "1935",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1936",
+   "competitionId": "FR1",
+   "seasonId": "1936",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1937",
+   "competitionId": "FR1",
+   "seasonId": "1937",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1938",
+   "competitionId": "FR1",
+   "seasonId": "1938",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1939",
+   "competitionId": "FR1",
+   "seasonId": "1939",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1940",
+   "competitionId": "FR1",
+   "seasonId": "1940",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1941",
+   "competitionId": "FR1",
+   "seasonId": "1941",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1942",
+   "competitionId": "FR1",
+   "seasonId": "1942",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1943",
+   "competitionId": "FR1",
+   "seasonId": "1943",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1944",
+   "competitionId": "FR1",
+   "seasonId": "1944",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1945",
+   "competitionId": "FR1",
+   "seasonId": "1945",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1946",
+   "competitionId": "FR1",
+   "seasonId": "1946",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1947",
+   "competitionId": "FR1",
+   "seasonId": "1947",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1948",
+   "competitionId": "FR1",
+   "seasonId": "1948",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1949",
+   "competitionId": "FR1",
+   "seasonId": "1949",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1950",
+   "competitionId": "FR1",
+   "seasonId": "1950",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1951",
+   "competitionId": "FR1",
+   "seasonId": "1951",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1952",
+   "competitionId": "FR1",
+   "seasonId": "1952",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1953",
+   "competitionId": "FR1",
+   "seasonId": "1953",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1954",
+   "competitionId": "FR1",
+   "seasonId": "1954",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1955",
+   "competitionId": "FR1",
+   "seasonId": "1955",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1956",
+   "competitionId": "FR1",
+   "seasonId": "1956",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1957",
+   "competitionId": "FR1",
+   "seasonId": "1957",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1958",
+   "competitionId": "FR1",
+   "seasonId": "1958",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1959",
+   "competitionId": "FR1",
+   "seasonId": "1959",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1960",
+   "competitionId": "FR1",
+   "seasonId": "1960",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1961",
+   "competitionId": "FR1",
+   "seasonId": "1961",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1962",
+   "competitionId": "FR1",
+   "seasonId": "1962",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1963",
+   "competitionId": "FR1",
+   "seasonId": "1963",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1964",
+   "competitionId": "FR1",
+   "seasonId": "1964",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1965",
+   "competitionId": "FR1",
+   "seasonId": "1965",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1966",
+   "competitionId": "FR1",
+   "seasonId": "1966",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1967",
+   "competitionId": "FR1",
+   "seasonId": "1967",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1968",
+   "competitionId": "FR1",
+   "seasonId": "1968",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1969",
+   "competitionId": "FR1",
+   "seasonId": "1969",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1970",
+   "competitionId": "FR1",
+   "seasonId": "1970",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1971",
+   "competitionId": "FR1",
+   "seasonId": "1971",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1972",
+   "competitionId": "FR1",
+   "seasonId": "1972",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1973",
+   "competitionId": "FR1",
+   "seasonId": "1973",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1974",
+   "competitionId": "FR1",
+   "seasonId": "1974",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1975",
+   "competitionId": "FR1",
+   "seasonId": "1975",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1976",
+   "competitionId": "FR1",
+   "seasonId": "1976",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1977",
+   "competitionId": "FR1",
+   "seasonId": "1977",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1978",
+   "competitionId": "FR1",
+   "seasonId": "1978",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1979",
+   "competitionId": "FR1",
+   "seasonId": "1979",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1980",
+   "competitionId": "FR1",
+   "seasonId": "1980",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1981",
+   "competitionId": "FR1",
+   "seasonId": "1981",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1982",
+   "competitionId": "FR1",
+   "seasonId": "1982",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1983",
+   "competitionId": "FR1",
+   "seasonId": "1983",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1984",
+   "competitionId": "FR1",
+   "seasonId": "1984",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1985",
+   "competitionId": "FR1",
+   "seasonId": "1985",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1986",
+   "competitionId": "FR1",
+   "seasonId": "1986",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1987",
+   "competitionId": "FR1",
+   "seasonId": "1987",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1988",
+   "competitionId": "FR1",
+   "seasonId": "1988",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1989",
+   "competitionId": "FR1",
+   "seasonId": "1989",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1990",
+   "competitionId": "FR1",
+   "seasonId": "1990",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1991",
+   "competitionId": "FR1",
+   "seasonId": "1991",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1992",
+   "competitionId": "FR1",
+   "seasonId": "1992",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1993",
+   "competitionId": "FR1",
+   "seasonId": "1993",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1994",
+   "competitionId": "FR1",
+   "seasonId": "1994",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1995",
+   "competitionId": "FR1",
+   "seasonId": "1995",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1996",
+   "competitionId": "FR1",
+   "seasonId": "1996",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1997",
+   "competitionId": "FR1",
+   "seasonId": "1997",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1998",
+   "competitionId": "FR1",
+   "seasonId": "1998",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_1999",
+   "competitionId": "FR1",
+   "seasonId": "1999",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2000",
+   "competitionId": "FR1",
+   "seasonId": "2000",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2001",
+   "competitionId": "FR1",
+   "seasonId": "2001",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2002",
+   "competitionId": "FR1",
+   "seasonId": "2002",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2003",
+   "competitionId": "FR1",
+   "seasonId": "2003",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2004",
+   "competitionId": "FR1",
+   "seasonId": "2004",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2005",
+   "competitionId": "FR1",
+   "seasonId": "2005",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2006",
+   "competitionId": "FR1",
+   "seasonId": "2006",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2007",
+   "competitionId": "FR1",
+   "seasonId": "2007",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2008",
+   "competitionId": "FR1",
+   "seasonId": "2008",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2009",
+   "competitionId": "FR1",
+   "seasonId": "2009",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2010",
+   "competitionId": "FR1",
+   "seasonId": "2010",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2011",
+   "competitionId": "FR1",
+   "seasonId": "2011",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2012",
+   "competitionId": "FR1",
+   "seasonId": "2012",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2013",
+   "competitionId": "FR1",
+   "seasonId": "2013",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2014",
+   "competitionId": "FR1",
+   "seasonId": "2014",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2015",
+   "competitionId": "FR1",
+   "seasonId": "2015",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2016",
+   "competitionId": "FR1",
+   "seasonId": "2016",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2017",
+   "competitionId": "FR1",
+   "seasonId": "2017",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2018",
+   "competitionId": "FR1",
+   "seasonId": "2018",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2019",
+   "competitionId": "FR1",
+   "seasonId": "2019",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2020",
+   "competitionId": "FR1",
+   "seasonId": "2020",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2021",
+   "competitionId": "FR1",
+   "seasonId": "2021",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2022",
+   "competitionId": "FR1",
+   "seasonId": "2022",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2023",
+   "competitionId": "FR1",
+   "seasonId": "2023",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2024",
+   "competitionId": "FR1",
+   "seasonId": "2024",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "FR1_2025",
+   "competitionId": "FR1",
+   "seasonId": "2025",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1963",
+   "competitionId": "L1",
+   "seasonId": "1963",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1964",
+   "competitionId": "L1",
+   "seasonId": "1964",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1965",
+   "competitionId": "L1",
+   "seasonId": "1965",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1966",
+   "competitionId": "L1",
+   "seasonId": "1966",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1967",
+   "competitionId": "L1",
+   "seasonId": "1967",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1968",
+   "competitionId": "L1",
+   "seasonId": "1968",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1969",
+   "competitionId": "L1",
+   "seasonId": "1969",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1970",
+   "competitionId": "L1",
+   "seasonId": "1970",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1971",
+   "competitionId": "L1",
+   "seasonId": "1971",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1972",
+   "competitionId": "L1",
+   "seasonId": "1972",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1973",
+   "competitionId": "L1",
+   "seasonId": "1973",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1974",
+   "competitionId": "L1",
+   "seasonId": "1974",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1975",
+   "competitionId": "L1",
+   "seasonId": "1975",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1976",
+   "competitionId": "L1",
+   "seasonId": "1976",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1977",
+   "competitionId": "L1",
+   "seasonId": "1977",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1978",
+   "competitionId": "L1",
+   "seasonId": "1978",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1979",
+   "competitionId": "L1",
+   "seasonId": "1979",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1980",
+   "competitionId": "L1",
+   "seasonId": "1980",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1981",
+   "competitionId": "L1",
+   "seasonId": "1981",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1982",
+   "competitionId": "L1",
+   "seasonId": "1982",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1983",
+   "competitionId": "L1",
+   "seasonId": "1983",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1984",
+   "competitionId": "L1",
+   "seasonId": "1984",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1985",
+   "competitionId": "L1",
+   "seasonId": "1985",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1986",
+   "competitionId": "L1",
+   "seasonId": "1986",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1987",
+   "competitionId": "L1",
+   "seasonId": "1987",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1988",
+   "competitionId": "L1",
+   "seasonId": "1988",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1989",
+   "competitionId": "L1",
+   "seasonId": "1989",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1990",
+   "competitionId": "L1",
+   "seasonId": "1990",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1991",
+   "competitionId": "L1",
+   "seasonId": "1991",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1992",
+   "competitionId": "L1",
+   "seasonId": "1992",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1993",
+   "competitionId": "L1",
+   "seasonId": "1993",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1994",
+   "competitionId": "L1",
+   "seasonId": "1994",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1995",
+   "competitionId": "L1",
+   "seasonId": "1995",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1996",
+   "competitionId": "L1",
+   "seasonId": "1996",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1997",
+   "competitionId": "L1",
+   "seasonId": "1997",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1998",
+   "competitionId": "L1",
+   "seasonId": "1998",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_1999",
+   "competitionId": "L1",
+   "seasonId": "1999",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2000",
+   "competitionId": "L1",
+   "seasonId": "2000",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2001",
+   "competitionId": "L1",
+   "seasonId": "2001",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2002",
+   "competitionId": "L1",
+   "seasonId": "2002",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2003",
+   "competitionId": "L1",
+   "seasonId": "2003",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2004",
+   "competitionId": "L1",
+   "seasonId": "2004",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2005",
+   "competitionId": "L1",
+   "seasonId": "2005",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2006",
+   "competitionId": "L1",
+   "seasonId": "2006",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2007",
+   "competitionId": "L1",
+   "seasonId": "2007",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2008",
+   "competitionId": "L1",
+   "seasonId": "2008",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2009",
+   "competitionId": "L1",
+   "seasonId": "2009",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2010",
+   "competitionId": "L1",
+   "seasonId": "2010",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2011",
+   "competitionId": "L1",
+   "seasonId": "2011",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2012",
+   "competitionId": "L1",
+   "seasonId": "2012",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2013",
+   "competitionId": "L1",
+   "seasonId": "2013",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2014",
+   "competitionId": "L1",
+   "seasonId": "2014",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2015",
+   "competitionId": "L1",
+   "seasonId": "2015",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2016",
+   "competitionId": "L1",
+   "seasonId": "2016",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2017",
+   "competitionId": "L1",
+   "seasonId": "2017",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2018",
+   "competitionId": "L1",
+   "seasonId": "2018",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2019",
+   "competitionId": "L1",
+   "seasonId": "2019",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2020",
+   "competitionId": "L1",
+   "seasonId": "2020",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2021",
+   "competitionId": "L1",
+   "seasonId": "2021",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2022",
+   "competitionId": "L1",
+   "seasonId": "2022",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2023",
+   "competitionId": "L1",
+   "seasonId": "2023",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2024",
+   "competitionId": "L1",
+   "seasonId": "2024",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "L1_2025",
+   "competitionId": "L1",
+   "seasonId": "2025",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_1992",
+   "competitionId": "CL",
+   "seasonId": "1992",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_1993",
+   "competitionId": "CL",
+   "seasonId": "1993",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_1994",
+   "competitionId": "CL",
+   "seasonId": "1994",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_1995",
+   "competitionId": "CL",
+   "seasonId": "1995",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_1996",
+   "competitionId": "CL",
+   "seasonId": "1996",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_1997",
+   "competitionId": "CL",
+   "seasonId": "1997",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_1998",
+   "competitionId": "CL",
+   "seasonId": "1998",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_1999",
+   "competitionId": "CL",
+   "seasonId": "1999",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2000",
+   "competitionId": "CL",
+   "seasonId": "2000",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2001",
+   "competitionId": "CL",
+   "seasonId": "2001",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2002",
+   "competitionId": "CL",
+   "seasonId": "2002",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2003",
+   "competitionId": "CL",
+   "seasonId": "2003",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2004",
+   "competitionId": "CL",
+   "seasonId": "2004",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2005",
+   "competitionId": "CL",
+   "seasonId": "2005",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2006",
+   "competitionId": "CL",
+   "seasonId": "2006",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2007",
+   "competitionId": "CL",
+   "seasonId": "2007",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2008",
+   "competitionId": "CL",
+   "seasonId": "2008",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2009",
+   "competitionId": "CL",
+   "seasonId": "2009",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2010",
+   "competitionId": "CL",
+   "seasonId": "2010",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2011",
+   "competitionId": "CL",
+   "seasonId": "2011",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2012",
+   "competitionId": "CL",
+   "seasonId": "2012",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2013",
+   "competitionId": "CL",
+   "seasonId": "2013",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2014",
+   "competitionId": "CL",
+   "seasonId": "2014",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2015",
+   "competitionId": "CL",
+   "seasonId": "2015",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2016",
+   "competitionId": "CL",
+   "seasonId": "2016",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2017",
+   "competitionId": "CL",
+   "seasonId": "2017",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2018",
+   "competitionId": "CL",
+   "seasonId": "2018",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2019",
+   "competitionId": "CL",
+   "seasonId": "2019",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2020",
+   "competitionId": "CL",
+   "seasonId": "2020",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2021",
+   "competitionId": "CL",
+   "seasonId": "2021",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2022",
+   "competitionId": "CL",
+   "seasonId": "2022",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2023",
+   "competitionId": "CL",
+   "seasonId": "2023",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2024",
+   "competitionId": "CL",
+   "seasonId": "2024",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2025",
+   "competitionId": "CL",
+   "seasonId": "2025",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  }
+ ]
+}

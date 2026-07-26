@@ -1,0 +1,4826 @@
+{
+ "meta": {
+  "schemaVersion": 1,
+  "source": "transfermarkt history (derived dimensions)",
+  "generatedAt": "2026-07-26",
+  "count": 432,
+  "kind": "club"
+ },
+ "teams": [
+  {
+   "id": "1",
+   "kind": "club",
+   "name": "1.FC Saarbrücken",
+   "norm": "1fc saarbrucken",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1992
+  },
+  {
+   "id": "2",
+   "kind": "club",
+   "name": "1.FC Kaiserslautern",
+   "norm": "1fc kaiserslautern",
+   "country": null,
+   "competitions": [
+    "L1",
+    "CL"
+   ],
+   "last": 2012
+  },
+  {
+   "id": "3",
+   "kind": "club",
+   "name": "1.FC Köln",
+   "norm": "1fc koln",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "4",
+   "kind": "club",
+   "name": "1.FC Nuremberg",
+   "norm": "1fc nuremberg",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2018
+  },
+  {
+   "id": "5",
+   "kind": "club",
+   "name": "AC Milan",
+   "norm": "ac milan",
+   "country": null,
+   "competitions": [
+    "IT1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "8",
+   "kind": "club",
+   "name": "Alemannia Aachen",
+   "norm": "alemannia aachen",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2006
+  },
+  {
+   "id": "10",
+   "kind": "club",
+   "name": "Arminia Bielefeld",
+   "norm": "arminia bielefeld",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2021
+  },
+  {
+   "id": "11",
+   "kind": "club",
+   "name": "Arsenal FC",
+   "norm": "arsenal fc",
+   "country": null,
+   "competitions": [
+    "GB1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "12",
+   "kind": "club",
+   "name": "AS Roma",
+   "norm": "as roma",
+   "country": null,
+   "competitions": [
+    "IT1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "13",
+   "kind": "club",
+   "name": "Atlético de Madrid",
+   "norm": "atletico de madrid",
+   "country": null,
+   "competitions": [
+    "ES1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "14",
+   "kind": "club",
+   "name": "Austria Vienna",
+   "norm": "austria vienna",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2013
+  },
+  {
+   "id": "15",
+   "kind": "club",
+   "name": "Bayer 04 Leverkusen",
+   "norm": "bayer 04 leverkusen",
+   "country": null,
+   "competitions": [
+    "L1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "16",
+   "kind": "club",
+   "name": "Borussia Dortmund",
+   "norm": "borussia dortmund",
+   "country": null,
+   "competitions": [
+    "L1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "18",
+   "kind": "club",
+   "name": "Borussia Mönchengladbach",
+   "norm": "borussia monchengladbach",
+   "country": null,
+   "competitions": [
+    "L1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "19",
+   "kind": "club",
+   "name": "FBC Brescia",
+   "norm": "fbc brescia",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2019
+  },
+  {
+   "id": "20",
+   "kind": "club",
+   "name": "Bursaspor",
+   "norm": "bursaspor",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2010
+  },
+  {
+   "id": "22",
+   "kind": "club",
+   "name": "Derby County",
+   "norm": "derby county",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2007
+  },
+  {
+   "id": "23",
+   "kind": "club",
+   "name": "Eintracht Braunschweig",
+   "norm": "eintracht braunschweig",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2016
+  },
+  {
+   "id": "24",
+   "kind": "club",
+   "name": "Eintracht Frankfurt",
+   "norm": "eintracht frankfurt",
+   "country": null,
+   "competitions": [
+    "L1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "25",
+   "kind": "club",
+   "name": "FC Energie Cottbus",
+   "norm": "fc energie cottbus",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2008
+  },
+  {
+   "id": "26",
+   "kind": "club",
+   "name": "FC Basel 1893",
+   "norm": "fc basel 1893",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2017
+  },
+  {
+   "id": "27",
+   "kind": "club",
+   "name": "Bayern Munich",
+   "norm": "bayern munich",
+   "country": null,
+   "competitions": [
+    "L1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "29",
+   "kind": "club",
+   "name": "Everton FC",
+   "norm": "everton fc",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "30",
+   "kind": "club",
+   "name": "FC Hansa Rostock",
+   "norm": "fc hansa rostock",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2007
+  },
+  {
+   "id": "31",
+   "kind": "club",
+   "name": "Liverpool FC",
+   "norm": "liverpool fc",
+   "country": null,
+   "competitions": [
+    "GB1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "33",
+   "kind": "club",
+   "name": "FC Schalke 04",
+   "norm": "fc schalke 04",
+   "country": null,
+   "competitions": [
+    "L1",
+    "CL"
+   ],
+   "last": 2022
+  },
+  {
+   "id": "35",
+   "kind": "club",
+   "name": "FC St. Pauli",
+   "norm": "fc st pauli",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "36",
+   "kind": "club",
+   "name": "Fenerbahce",
+   "norm": "fenerbahce",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2008
+  },
+  {
+   "id": "38",
+   "kind": "club",
+   "name": "Fortuna Düsseldorf",
+   "norm": "fortuna dusseldorf",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2023
+  },
+  {
+   "id": "39",
+   "kind": "club",
+   "name": "1.FSV Mainz 05",
+   "norm": "1fsv mainz 05",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "40",
+   "kind": "club",
+   "name": "FC Girondins Bordeaux",
+   "norm": "fc girondins bordeaux",
+   "country": null,
+   "competitions": [
+    "FR1",
+    "CL"
+   ],
+   "last": 2021
+  },
+  {
+   "id": "41",
+   "kind": "club",
+   "name": "Hamburger SV",
+   "norm": "hamburger sv",
+   "country": null,
+   "competitions": [
+    "L1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "42",
+   "kind": "club",
+   "name": "Hannover 96",
+   "norm": "hannover 96",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2018
+  },
+  {
+   "id": "44",
+   "kind": "club",
+   "name": "Hertha BSC",
+   "norm": "hertha bsc",
+   "country": null,
+   "competitions": [
+    "L1",
+    "CL"
+   ],
+   "last": 2022
+  },
+  {
+   "id": "46",
+   "kind": "club",
+   "name": "Inter Milan",
+   "norm": "inter milan",
+   "country": null,
+   "competitions": [
+    "IT1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "48",
+   "kind": "club",
+   "name": "Karlsruher SC",
+   "norm": "karlsruher sc",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2014
+  },
+  {
+   "id": "52",
+   "kind": "club",
+   "name": "Meidericher SV",
+   "norm": "meidericher sv",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2007
+  },
+  {
+   "id": "56",
+   "kind": "club",
+   "name": "Rot-Weiss Essen",
+   "norm": "rot weiss essen",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1976
+  },
+  {
+   "id": "57",
+   "kind": "club",
+   "name": "Rot-Weiß Oberhausen",
+   "norm": "rot wei oberhausen",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1972
+  },
+  {
+   "id": "58",
+   "kind": "club",
+   "name": "RSC Anderlecht",
+   "norm": "rsc anderlecht",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2017
+  },
+  {
+   "id": "60",
+   "kind": "club",
+   "name": "SC Freiburg",
+   "norm": "sc freiburg",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "62",
+   "kind": "club",
+   "name": "SK Slavia Prague",
+   "norm": "sk slavia prague",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "65",
+   "kind": "club",
+   "name": "SpVgg Greuther Fürth",
+   "norm": "spvgg greuther furth",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2021
+  },
+  {
+   "id": "66",
+   "kind": "club",
+   "name": "SpVgg Unterhaching",
+   "norm": "spvgg unterhaching",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2000
+  },
+  {
+   "id": "69",
+   "kind": "club",
+   "name": "SSV Ulm 1846",
+   "norm": "ssv ulm 1846",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1999
+  },
+  {
+   "id": "71",
+   "kind": "club",
+   "name": "Stuttgarter Kickers",
+   "norm": "stuttgarter kickers",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1991
+  },
+  {
+   "id": "72",
+   "kind": "club",
+   "name": "TSV 1860 Munich",
+   "norm": "tsv 1860 munich",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2003
+  },
+  {
+   "id": "79",
+   "kind": "club",
+   "name": "VfB Stuttgart",
+   "norm": "vfb stuttgart",
+   "country": null,
+   "competitions": [
+    "L1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "80",
+   "kind": "club",
+   "name": "VfL Bochum",
+   "norm": "vfl bochum",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "82",
+   "kind": "club",
+   "name": "VfL Wolfsburg",
+   "norm": "vfl wolfsburg",
+   "country": null,
+   "competitions": [
+    "L1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "84",
+   "kind": "club",
+   "name": "Debreceni VSC",
+   "norm": "debreceni vsc",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2009
+  },
+  {
+   "id": "85",
+   "kind": "club",
+   "name": "SV Waldhof Mannheim",
+   "norm": "sv waldhof mannheim",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1989
+  },
+  {
+   "id": "86",
+   "kind": "club",
+   "name": "SV Werder Bremen",
+   "norm": "sv werder bremen",
+   "country": null,
+   "competitions": [
+    "L1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "88",
+   "kind": "club",
+   "name": "Widzew Lodz",
+   "norm": "widzew lodz",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1996
+  },
+  {
+   "id": "89",
+   "kind": "club",
+   "name": "1.FC Union Berlin",
+   "norm": "1fc union berlin",
+   "country": null,
+   "competitions": [
+    "L1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "91",
+   "kind": "club",
+   "name": "Preußen Münster",
+   "norm": "preu en munster",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1963
+  },
+  {
+   "id": "92",
+   "kind": "club",
+   "name": "SC Fortuna Köln",
+   "norm": "sc fortuna koln",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1973
+  },
+  {
+   "id": "95",
+   "kind": "club",
+   "name": "Bayer 05 Uerdingen",
+   "norm": "bayer 05 uerdingen",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1995
+  },
+  {
+   "id": "97",
+   "kind": "club",
+   "name": "SG Wattenscheid 09",
+   "norm": "sg wattenscheid 09",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1993
+  },
+  {
+   "id": "101",
+   "kind": "club",
+   "name": "Tennis Borussia Berlin",
+   "norm": "tennis borussia berlin",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1976
+  },
+  {
+   "id": "105",
+   "kind": "club",
+   "name": "SV Darmstadt 98",
+   "norm": "sv darmstadt 98",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2023
+  },
+  {
+   "id": "107",
+   "kind": "club",
+   "name": "Kickers Offenbach",
+   "norm": "kickers offenbach",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1983
+  },
+  {
+   "id": "114",
+   "kind": "club",
+   "name": "Besiktas JK",
+   "norm": "besiktas jk",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2021
+  },
+  {
+   "id": "116",
+   "kind": "club",
+   "name": "FC Aarau",
+   "norm": "fc aarau",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1993
+  },
+  {
+   "id": "119",
+   "kind": "club",
+   "name": "Maccabi Tel Aviv",
+   "norm": "maccabi tel aviv",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2015
+  },
+  {
+   "id": "122",
+   "kind": "club",
+   "name": "SK Sturm Graz",
+   "norm": "sk sturm graz",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "124",
+   "kind": "club",
+   "name": "Rangers FC",
+   "norm": "rangers fc",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2022
+  },
+  {
+   "id": "127",
+   "kind": "club",
+   "name": "SC Paderborn 07",
+   "norm": "sc paderborn 07",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "129",
+   "kind": "club",
+   "name": "SG Dynamo Dresden",
+   "norm": "sg dynamo dresden",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1994
+  },
+  {
+   "id": "130",
+   "kind": "club",
+   "name": "Parma Calcio 1913",
+   "norm": "parma calcio 1913",
+   "country": null,
+   "competitions": [
+    "IT1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "131",
+   "kind": "club",
+   "name": "FC Barcelona",
+   "norm": "fc barcelona",
+   "country": null,
+   "competitions": [
+    "ES1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "134",
+   "kind": "club",
+   "name": "Xerez CD",
+   "norm": "xerez cd",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2009
+  },
+  {
+   "id": "141",
+   "kind": "club",
+   "name": "Galatasaray",
+   "norm": "galatasaray",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "142",
+   "kind": "club",
+   "name": "Zaragoza FC",
+   "norm": "zaragoza fc",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2012
+  },
+  {
+   "id": "148",
+   "kind": "club",
+   "name": "Tottenham Hotspur",
+   "norm": "tottenham hotspur",
+   "country": null,
+   "competitions": [
+    "GB1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "150",
+   "kind": "club",
+   "name": "Real Betis Balompié",
+   "norm": "real betis balompie",
+   "country": null,
+   "competitions": [
+    "ES1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "156",
+   "kind": "club",
+   "name": "Levski Sofia",
+   "norm": "levski sofia",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2006
+  },
+  {
+   "id": "157",
+   "kind": "club",
+   "name": "KAA Gent",
+   "norm": "kaa gent",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2015
+  },
+  {
+   "id": "159",
+   "kind": "club",
+   "name": "Red Star Belgrade",
+   "norm": "red star belgrade",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "162",
+   "kind": "club",
+   "name": "AS Monaco",
+   "norm": "as monaco",
+   "country": null,
+   "competitions": [
+    "FR1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "164",
+   "kind": "club",
+   "name": "Blackburn Rovers",
+   "norm": "blackburn rovers",
+   "country": null,
+   "competitions": [
+    "GB1",
+    "CL"
+   ],
+   "last": 2011
+  },
+  {
+   "id": "167",
+   "kind": "club",
+   "name": "FC Augsburg",
+   "norm": "fc augsburg",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "170",
+   "kind": "club",
+   "name": "Rapid Vienna",
+   "norm": "rapid vienna",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2005
+  },
+  {
+   "id": "171",
+   "kind": "club",
+   "name": "Club Real Murcia",
+   "norm": "club real murcia",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2007
+  },
+  {
+   "id": "180",
+   "kind": "club",
+   "name": "Southampton FC",
+   "norm": "southampton fc",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "190",
+   "kind": "club",
+   "name": "FC Copenhagen",
+   "norm": "fc copenhagen",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "195",
+   "kind": "club",
+   "name": "Rosenborg BK",
+   "norm": "rosenborg bk",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2007
+  },
+  {
+   "id": "197",
+   "kind": "club",
+   "name": "AC Sparta Prague",
+   "norm": "ac sparta prague",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "204",
+   "kind": "club",
+   "name": "Lierse SK (-2018)",
+   "norm": "lierse sk 2018",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1997
+  },
+  {
+   "id": "206",
+   "kind": "club",
+   "name": "Bröndby IF",
+   "norm": "brondby if",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1998
+  },
+  {
+   "id": "208",
+   "kind": "club",
+   "name": "CSKA Sofia",
+   "norm": "cska sofia",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1992
+  },
+  {
+   "id": "232",
+   "kind": "club",
+   "name": "Spartak Moscow",
+   "norm": "spartak moscow",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2017
+  },
+  {
+   "id": "234",
+   "kind": "club",
+   "name": "Feyenoord Rotterdam",
+   "norm": "feyenoord rotterdam",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "236",
+   "kind": "club",
+   "name": "CD Logroñés",
+   "norm": "cd logrones",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1996
+  },
+  {
+   "id": "237",
+   "kind": "club",
+   "name": "RCD Mallorca",
+   "norm": "rcd mallorca",
+   "country": null,
+   "competitions": [
+    "ES1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "238",
+   "kind": "club",
+   "name": "Lech Poznan",
+   "norm": "lech poznan",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1993
+  },
+  {
+   "id": "239",
+   "kind": "club",
+   "name": "Viking FK",
+   "norm": "viking fk",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1992
+  },
+  {
+   "id": "244",
+   "kind": "club",
+   "name": "Olympique Marseille",
+   "norm": "olympique marseille",
+   "country": null,
+   "competitions": [
+    "FR1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "252",
+   "kind": "club",
+   "name": "Genoa CFC",
+   "norm": "genoa cfc",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "255",
+   "kind": "club",
+   "name": "Legia Warszawa",
+   "norm": "legia warszawa",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2016
+  },
+  {
+   "id": "260",
+   "kind": "club",
+   "name": "FC Zürich",
+   "norm": "fc zurich",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2009
+  },
+  {
+   "id": "265",
+   "kind": "club",
+   "name": "Panathinaikos",
+   "norm": "panathinaikos",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2010
+  },
+  {
+   "id": "269",
+   "kind": "club",
+   "name": "Holstein Kiel",
+   "norm": "holstein kiel",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "272",
+   "kind": "club",
+   "name": "AIK",
+   "norm": "aik",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1999
+  },
+  {
+   "id": "273",
+   "kind": "club",
+   "name": "Stade Rennais FC",
+   "norm": "stade rennais fc",
+   "country": null,
+   "competitions": [
+    "FR1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "276",
+   "kind": "club",
+   "name": "Hellas Verona",
+   "norm": "hellas verona",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "279",
+   "kind": "club",
+   "name": "Ferencvárosi TC",
+   "norm": "ferencvarosi tc",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2020
+  },
+  {
+   "id": "281",
+   "kind": "club",
+   "name": "Manchester City",
+   "norm": "manchester city",
+   "country": null,
+   "competitions": [
+    "GB1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "289",
+   "kind": "club",
+   "name": "Sunderland AFC",
+   "norm": "sunderland afc",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "290",
+   "kind": "club",
+   "name": "AJ Auxerre",
+   "norm": "aj auxerre",
+   "country": null,
+   "competitions": [
+    "FR1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "294",
+   "kind": "club",
+   "name": "SL Benfica",
+   "norm": "sl benfica",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "299",
+   "kind": "club",
+   "name": "Wuppertaler SV",
+   "norm": "wuppertaler sv",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1974
+  },
+  {
+   "id": "301",
+   "kind": "club",
+   "name": "FCSB",
+   "norm": "fcsb",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2013
+  },
+  {
+   "id": "306",
+   "kind": "club",
+   "name": "SC Heerenveen",
+   "norm": "sc heerenveen",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2000
+  },
+  {
+   "id": "312",
+   "kind": "club",
+   "name": "FC Dinamo 1948",
+   "norm": "fc dinamo 1948",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1992
+  },
+  {
+   "id": "317",
+   "kind": "club",
+   "name": "FC Twente Enschede",
+   "norm": "fc twente enschede",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2010
+  },
+  {
+   "id": "321",
+   "kind": "club",
+   "name": "FC Sion",
+   "norm": "fc sion",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1992
+  },
+  {
+   "id": "328",
+   "kind": "club",
+   "name": "Borussia Neunkirchen",
+   "norm": "borussia neunkirchen",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1967
+  },
+  {
+   "id": "331",
+   "kind": "club",
+   "name": "CA Osasuna",
+   "norm": "ca osasuna",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "332",
+   "kind": "club",
+   "name": "US Bari",
+   "norm": "us bari",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2010
+  },
+  {
+   "id": "336",
+   "kind": "club",
+   "name": "Sporting CP",
+   "norm": "sporting cp",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "337",
+   "kind": "club",
+   "name": "Birmingham City",
+   "norm": "birmingham city",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2010
+  },
+  {
+   "id": "338",
+   "kind": "club",
+   "name": "Dynamo Kyiv",
+   "norm": "dynamo kyiv",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2021
+  },
+  {
+   "id": "347",
+   "kind": "club",
+   "name": "FC Metz",
+   "norm": "fc metz",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "349",
+   "kind": "club",
+   "name": "Barnsley FC",
+   "norm": "barnsley fc",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 1997
+  },
+  {
+   "id": "350",
+   "kind": "club",
+   "name": "Sheffield United",
+   "norm": "sheffield united",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2023
+  },
+  {
+   "id": "352",
+   "kind": "club",
+   "name": "Swindon Town",
+   "norm": "swindon town",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 1993
+  },
+  {
+   "id": "355",
+   "kind": "club",
+   "name": "Bolton Wanderers",
+   "norm": "bolton wanderers",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2011
+  },
+  {
+   "id": "358",
+   "kind": "club",
+   "name": "Charlton Athletic",
+   "norm": "charlton athletic",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2006
+  },
+  {
+   "id": "366",
+   "kind": "club",
+   "name": "Real Valladolid CF",
+   "norm": "real valladolid cf",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "367",
+   "kind": "club",
+   "name": "Rayo Vallecano",
+   "norm": "rayo vallecano",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "368",
+   "kind": "club",
+   "name": "Sevilla FC",
+   "norm": "sevilla fc",
+   "country": null,
+   "competitions": [
+    "ES1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "369",
+   "kind": "club",
+   "name": "Lyngby Boldklub",
+   "norm": "lyngby boldklub",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1992
+  },
+  {
+   "id": "371",
+   "kind": "club",
+   "name": "Celtic FC",
+   "norm": "celtic fc",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "379",
+   "kind": "club",
+   "name": "West Ham United",
+   "norm": "west ham united",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "380",
+   "kind": "club",
+   "name": "US Salernitana 1919",
+   "norm": "us salernitana 1919",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2023
+  },
+  {
+   "id": "383",
+   "kind": "club",
+   "name": "PSV Eindhoven",
+   "norm": "psv eindhoven",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "398",
+   "kind": "club",
+   "name": "SS Lazio",
+   "norm": "ss lazio",
+   "country": null,
+   "competitions": [
+    "IT1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "399",
+   "kind": "club",
+   "name": "Leeds United",
+   "norm": "leeds united",
+   "country": null,
+   "competitions": [
+    "GB1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "403",
+   "kind": "club",
+   "name": "Willem II Tilburg",
+   "norm": "willem ii tilburg",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1999
+  },
+  {
+   "id": "405",
+   "kind": "club",
+   "name": "Aston Villa",
+   "norm": "aston villa",
+   "country": null,
+   "competitions": [
+    "GB1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "408",
+   "kind": "club",
+   "name": "Ascoli Calcio 1898",
+   "norm": "ascoli calcio 1898",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2006
+  },
+  {
+   "id": "409",
+   "kind": "club",
+   "name": "Red Bull Salzburg",
+   "norm": "red bull salzburg",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "410",
+   "kind": "club",
+   "name": "Udinese Calcio",
+   "norm": "udinese calcio",
+   "country": null,
+   "competitions": [
+    "IT1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "415",
+   "kind": "club",
+   "name": "FC Toulouse",
+   "norm": "fc toulouse",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "416",
+   "kind": "club",
+   "name": "Torino FC",
+   "norm": "torino fc",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "417",
+   "kind": "club",
+   "name": "OGC Nice",
+   "norm": "ogc nice",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "418",
+   "kind": "club",
+   "name": "Real Madrid",
+   "norm": "real madrid",
+   "country": null,
+   "competitions": [
+    "ES1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "419",
+   "kind": "club",
+   "name": "GNK Dinamo Zagreb",
+   "norm": "gnk dinamo zagreb",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "430",
+   "kind": "club",
+   "name": "ACF Fiorentina",
+   "norm": "acf fiorentina",
+   "country": null,
+   "competitions": [
+    "IT1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "447",
+   "kind": "club",
+   "name": "HNK Hajduk Split",
+   "norm": "hnk hajduk split",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1994
+  },
+  {
+   "id": "449",
+   "kind": "club",
+   "name": "Trabzonspor",
+   "norm": "trabzonspor",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2011
+  },
+  {
+   "id": "452",
+   "kind": "club",
+   "name": "BSC Young Boys",
+   "norm": "bsc young boys",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "458",
+   "kind": "club",
+   "name": "Palermo FC",
+   "norm": "palermo fc",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2016
+  },
+  {
+   "id": "459",
+   "kind": "club",
+   "name": "FC 08 Homburg",
+   "norm": "fc 08 homburg",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1989
+  },
+  {
+   "id": "472",
+   "kind": "club",
+   "name": "UD Las Palmas",
+   "norm": "ud las palmas",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "494",
+   "kind": "club",
+   "name": "Sporting Club de Toulon",
+   "norm": "sporting club de toulon",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1992
+  },
+  {
+   "id": "496",
+   "kind": "club",
+   "name": "Malmö FF",
+   "norm": "malmo ff",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2021
+  },
+  {
+   "id": "497",
+   "kind": "club",
+   "name": "VfB Leipzig",
+   "norm": "vfb leipzig",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1993
+  },
+  {
+   "id": "501",
+   "kind": "club",
+   "name": "FK Bodø/Glimt",
+   "norm": "fk bod glimt",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "504",
+   "kind": "club",
+   "name": "Grasshopper Club Zurich",
+   "norm": "grasshopper club zurich",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1996
+  },
+  {
+   "id": "506",
+   "kind": "club",
+   "name": "Juventus FC",
+   "norm": "juventus fc",
+   "country": null,
+   "competitions": [
+    "IT1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "512",
+   "kind": "club",
+   "name": "Stoke City",
+   "norm": "stoke city",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2017
+  },
+  {
+   "id": "533",
+   "kind": "club",
+   "name": "TSG 1899 Hoffenheim",
+   "norm": "tsg 1899 hoffenheim",
+   "country": null,
+   "competitions": [
+    "L1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "540",
+   "kind": "club",
+   "name": "Slovan Bratislava",
+   "norm": "slovan bratislava",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "543",
+   "kind": "club",
+   "name": "Wolverhampton Wanderers",
+   "norm": "wolverhampton wanderers",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "583",
+   "kind": "club",
+   "name": "Paris Saint-Germain",
+   "norm": "paris saint germain",
+   "country": null,
+   "competitions": [
+    "FR1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "595",
+   "kind": "club",
+   "name": "Sporting Étoile Club Bastia",
+   "norm": "sporting etoile club bastia",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2016
+  },
+  {
+   "id": "602",
+   "kind": "club",
+   "name": "FK Zalgiris Vilnius",
+   "norm": "fk zalgiris vilnius",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1992
+  },
+  {
+   "id": "603",
+   "kind": "club",
+   "name": "Cardiff City",
+   "norm": "cardiff city",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2018
+  },
+  {
+   "id": "607",
+   "kind": "club",
+   "name": "Venezia FC",
+   "norm": "venezia fc",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "610",
+   "kind": "club",
+   "name": "Ajax Amsterdam",
+   "norm": "ajax amsterdam",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "618",
+   "kind": "club",
+   "name": "AS Saint-Étienne",
+   "norm": "as saint etienne",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "621",
+   "kind": "club",
+   "name": "Athletic Bilbao",
+   "norm": "athletic bilbao",
+   "country": null,
+   "competitions": [
+    "ES1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "630",
+   "kind": "club",
+   "name": "Racing Santander",
+   "norm": "racing santander",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2011
+  },
+  {
+   "id": "631",
+   "kind": "club",
+   "name": "Chelsea FC",
+   "norm": "chelsea fc",
+   "country": null,
+   "competitions": [
+    "GB1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "641",
+   "kind": "club",
+   "name": "Middlesbrough FC",
+   "norm": "middlesbrough fc",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2016
+  },
+  {
+   "id": "648",
+   "kind": "club",
+   "name": "CD Tenerife",
+   "norm": "cd tenerife",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2009
+  },
+  {
+   "id": "660",
+   "kind": "club",
+   "name": "Shakhtar Donetsk",
+   "norm": "shakhtar donetsk",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "666",
+   "kind": "club",
+   "name": "Real Jaén CF",
+   "norm": "real jaen cf",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1957
+  },
+  {
+   "id": "667",
+   "kind": "club",
+   "name": "RC Strasbourg Alsace",
+   "norm": "rc strasbourg alsace",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "669",
+   "kind": "club",
+   "name": "FK Partizan Belgrade",
+   "norm": "fk partizan belgrade",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2010
+  },
+  {
+   "id": "677",
+   "kind": "club",
+   "name": "Ipswich Town",
+   "norm": "ipswich town",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "681",
+   "kind": "club",
+   "name": "Real Sociedad",
+   "norm": "real sociedad",
+   "country": null,
+   "competitions": [
+    "ES1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "683",
+   "kind": "club",
+   "name": "Olympiacos Piraeus",
+   "norm": "olympiacos piraeus",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "687",
+   "kind": "club",
+   "name": "Molde FK",
+   "norm": "molde fk",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1999
+  },
+  {
+   "id": "699",
+   "kind": "club",
+   "name": "Helsingborgs IF",
+   "norm": "helsingborgs if",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2000
+  },
+  {
+   "id": "703",
+   "kind": "club",
+   "name": "Nottingham Forest",
+   "norm": "nottingham forest",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "704",
+   "kind": "club",
+   "name": "US Foggia  Incedit",
+   "norm": "us foggia incedit",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1994
+  },
+  {
+   "id": "709",
+   "kind": "club",
+   "name": "Kispest–Honvéd FC",
+   "norm": "kispest honved fc",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1993
+  },
+  {
+   "id": "713",
+   "kind": "club",
+   "name": "BATE Borisov",
+   "norm": "bate borisov",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2015
+  },
+  {
+   "id": "714",
+   "kind": "club",
+   "name": "RCD Espanyol Barcelona",
+   "norm": "rcd espanyol barcelona",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "720",
+   "kind": "club",
+   "name": "FC Porto",
+   "norm": "fc porto",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2023
+  },
+  {
+   "id": "738",
+   "kind": "club",
+   "name": "Le Havre AC",
+   "norm": "le havre ac",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "749",
+   "kind": "club",
+   "name": "FC Empoli",
+   "norm": "fc empoli",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "750",
+   "kind": "club",
+   "name": "FC Sochaux-Montbéliard",
+   "norm": "fc sochaux montbeliard",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2021
+  },
+  {
+   "id": "762",
+   "kind": "club",
+   "name": "Newcastle United",
+   "norm": "newcastle united",
+   "country": null,
+   "competitions": [
+    "GB1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "790",
+   "kind": "club",
+   "name": "NK Maribor",
+   "norm": "nk maribor",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2017
+  },
+  {
+   "id": "800",
+   "kind": "club",
+   "name": "Atalanta BC",
+   "norm": "atalanta bc",
+   "country": null,
+   "competitions": [
+    "IT1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "801",
+   "kind": "club",
+   "name": "IFK Göteborg",
+   "norm": "ifk goteborg",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1997
+  },
+  {
+   "id": "811",
+   "kind": "club",
+   "name": "CF Extremadura",
+   "norm": "cf extremadura",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1998
+  },
+  {
+   "id": "826",
+   "kind": "club",
+   "name": "RC Lens",
+   "norm": "rc lens",
+   "country": null,
+   "competitions": [
+    "FR1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "839",
+   "kind": "club",
+   "name": "AC Perugia",
+   "norm": "ac perugia",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2003
+  },
+  {
+   "id": "855",
+   "kind": "club",
+   "name": "EA Guingamp",
+   "norm": "ea guingamp",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "862",
+   "kind": "club",
+   "name": "Chievo Verona",
+   "norm": "chievo verona",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2018
+  },
+  {
+   "id": "865",
+   "kind": "club",
+   "name": "FC Midtjylland",
+   "norm": "fc midtjylland",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2020
+  },
+  {
+   "id": "873",
+   "kind": "club",
+   "name": "Crystal Palace",
+   "norm": "crystal palace",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "895",
+   "kind": "club",
+   "name": "AS Cannes",
+   "norm": "as cannes",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1997
+  },
+  {
+   "id": "897",
+   "kind": "club",
+   "name": "Deportivo A Coruña",
+   "norm": "deportivo a coruna",
+   "country": null,
+   "competitions": [
+    "ES1",
+    "CL"
+   ],
+   "last": 2017
+  },
+  {
+   "id": "931",
+   "kind": "club",
+   "name": "Fulham FC",
+   "norm": "fulham fc",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "932",
+   "kind": "club",
+   "name": "Lokomotiv Moscow",
+   "norm": "lokomotiv moscow",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2020
+  },
+  {
+   "id": "938",
+   "kind": "club",
+   "name": "FC Thun",
+   "norm": "fc thun",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2005
+  },
+  {
+   "id": "940",
+   "kind": "club",
+   "name": "Celta de Vigo",
+   "norm": "celta de vigo",
+   "country": null,
+   "competitions": [
+    "ES1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "941",
+   "kind": "club",
+   "name": "FC Viktoria Plzen",
+   "norm": "fc viktoria plzen",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2022
+  },
+  {
+   "id": "964",
+   "kind": "club",
+   "name": "Zenit St. Petersburg",
+   "norm": "zenit st petersburg",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2021
+  },
+  {
+   "id": "969",
+   "kind": "club",
+   "name": "Montpellier HSC",
+   "norm": "montpellier hsc",
+   "country": null,
+   "competitions": [
+    "FR1",
+    "CL"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "984",
+   "kind": "club",
+   "name": "West Bromwich Albion",
+   "norm": "west bromwich albion",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2020
+  },
+  {
+   "id": "985",
+   "kind": "club",
+   "name": "Manchester United",
+   "norm": "manchester united",
+   "country": null,
+   "competitions": [
+    "GB1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "989",
+   "kind": "club",
+   "name": "AFC Bournemouth",
+   "norm": "afc bournemouth",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "990",
+   "kind": "club",
+   "name": "Coventry City",
+   "norm": "coventry city",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2000
+  },
+  {
+   "id": "993",
+   "kind": "club",
+   "name": "Córdoba CF",
+   "norm": "cordoba cf",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2014
+  },
+  {
+   "id": "995",
+   "kind": "club",
+   "name": "FC Nantes",
+   "norm": "fc nantes",
+   "country": null,
+   "competitions": [
+    "FR1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "1003",
+   "kind": "club",
+   "name": "Leicester City",
+   "norm": "leicester city",
+   "country": null,
+   "competitions": [
+    "GB1",
+    "CL"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "1005",
+   "kind": "club",
+   "name": "US Lecce",
+   "norm": "us lecce",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "1008",
+   "kind": "club",
+   "name": "HJK Helsinki",
+   "norm": "hjk helsinki",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1998
+  },
+  {
+   "id": "1010",
+   "kind": "club",
+   "name": "Watford FC",
+   "norm": "watford fc",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2021
+  },
+  {
+   "id": "1017",
+   "kind": "club",
+   "name": "Hapoel Tel Aviv",
+   "norm": "hapoel tel aviv",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2010
+  },
+  {
+   "id": "1020",
+   "kind": "club",
+   "name": "Portsmouth FC",
+   "norm": "portsmouth fc",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2009
+  },
+  {
+   "id": "1025",
+   "kind": "club",
+   "name": "Bologna FC 1909",
+   "norm": "bologna fc 1909",
+   "country": null,
+   "competitions": [
+    "IT1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "1027",
+   "kind": "club",
+   "name": "Bradford City",
+   "norm": "bradford city",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2000
+  },
+  {
+   "id": "1031",
+   "kind": "club",
+   "name": "Luton Town",
+   "norm": "luton town",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2023
+  },
+  {
+   "id": "1032",
+   "kind": "club",
+   "name": "Reading FC",
+   "norm": "reading fc",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2012
+  },
+  {
+   "id": "1035",
+   "kind": "club",
+   "name": "Sheffield Wednesday",
+   "norm": "sheffield wednesday",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 1999
+  },
+  {
+   "id": "1038",
+   "kind": "club",
+   "name": "UC Sampdoria",
+   "norm": "uc sampdoria",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2022
+  },
+  {
+   "id": "1039",
+   "kind": "club",
+   "name": "Queens Park Rangers",
+   "norm": "queens park rangers",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2014
+  },
+  {
+   "id": "1041",
+   "kind": "club",
+   "name": "Olympique Lyon",
+   "norm": "olympique lyon",
+   "country": null,
+   "competitions": [
+    "FR1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "1043",
+   "kind": "club",
+   "name": "Skonto Riga (- 2016)",
+   "norm": "skonto riga 2016",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1993
+  },
+  {
+   "id": "1047",
+   "kind": "club",
+   "name": "Como 1907",
+   "norm": "como 1907",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "1049",
+   "kind": "club",
+   "name": "Valencia CF",
+   "norm": "valencia cf",
+   "country": null,
+   "competitions": [
+    "ES1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "1050",
+   "kind": "club",
+   "name": "Villarreal CF",
+   "norm": "villarreal cf",
+   "country": null,
+   "competitions": [
+    "ES1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "1053",
+   "kind": "club",
+   "name": "Aalborg BK",
+   "norm": "aalborg bk",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2008
+  },
+  {
+   "id": "1064",
+   "kind": "club",
+   "name": "Maccabi Haifa",
+   "norm": "maccabi haifa",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2022
+  },
+  {
+   "id": "1071",
+   "kind": "club",
+   "name": "Wigan Athletic",
+   "norm": "wigan athletic",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2012
+  },
+  {
+   "id": "1075",
+   "kind": "club",
+   "name": "SC Braga",
+   "norm": "sc braga",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2023
+  },
+  {
+   "id": "1078",
+   "kind": "club",
+   "name": "Oldham Athletic",
+   "norm": "oldham athletic",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 1993
+  },
+  {
+   "id": "1080",
+   "kind": "club",
+   "name": "Stade Lavallois",
+   "norm": "stade lavallois",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1990
+  },
+  {
+   "id": "1081",
+   "kind": "club",
+   "name": "CS Sedan-Ardennes",
+   "norm": "cs sedan ardennes",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2006
+  },
+  {
+   "id": "1082",
+   "kind": "club",
+   "name": "LOSC Lille",
+   "norm": "losc lille",
+   "country": null,
+   "competitions": [
+    "FR1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "1083",
+   "kind": "club",
+   "name": "FC Rostov",
+   "norm": "fc rostov",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2016
+  },
+  {
+   "id": "1084",
+   "kind": "club",
+   "name": "Málaga CF",
+   "norm": "malaga cf",
+   "country": null,
+   "competitions": [
+    "ES1",
+    "CL"
+   ],
+   "last": 2017
+  },
+  {
+   "id": "1087",
+   "kind": "club",
+   "name": "UD Salamanca",
+   "norm": "ud salamanca",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1998
+  },
+  {
+   "id": "1090",
+   "kind": "club",
+   "name": "AZ Alkmaar",
+   "norm": "az alkmaar",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2009
+  },
+  {
+   "id": "1095",
+   "kind": "club",
+   "name": "ESTAC Troyes",
+   "norm": "estac troyes",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2022
+  },
+  {
+   "id": "1096",
+   "kind": "club",
+   "name": "Royal Antwerp FC",
+   "norm": "royal antwerp fc",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2023
+  },
+  {
+   "id": "1103",
+   "kind": "club",
+   "name": "AC Ternana",
+   "norm": "ac ternana",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1974
+  },
+  {
+   "id": "1104",
+   "kind": "club",
+   "name": "AC Riunite Messina",
+   "norm": "ac riunite messina",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2006
+  },
+  {
+   "id": "1108",
+   "kind": "club",
+   "name": "Deportivo Alavés",
+   "norm": "deportivo alaves",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "1110",
+   "kind": "club",
+   "name": "Huddersfield Town",
+   "norm": "huddersfield town",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2018
+  },
+  {
+   "id": "1123",
+   "kind": "club",
+   "name": "Norwich City",
+   "norm": "norwich city",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2021
+  },
+  {
+   "id": "1132",
+   "kind": "club",
+   "name": "Burnley FC",
+   "norm": "burnley fc",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "1147",
+   "kind": "club",
+   "name": "AC Ajaccio",
+   "norm": "ac ajaccio",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2022
+  },
+  {
+   "id": "1148",
+   "kind": "club",
+   "name": "Brentford FC",
+   "norm": "brentford fc",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "1154",
+   "kind": "club",
+   "name": "Red Star Olympique",
+   "norm": "red star olympique",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "1158",
+   "kind": "club",
+   "name": "FC Lorient",
+   "norm": "fc lorient",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "1159",
+   "kind": "club",
+   "name": "AS Nancy-Lorraine",
+   "norm": "as nancy lorraine",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2016
+  },
+  {
+   "id": "1160",
+   "kind": "club",
+   "name": "Nîmes Olympique",
+   "norm": "nimes olympique",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2020
+  },
+  {
+   "id": "1161",
+   "kind": "club",
+   "name": "Chamois Niortais FC",
+   "norm": "chamois niortais fc",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1987
+  },
+  {
+   "id": "1162",
+   "kind": "club",
+   "name": "SM Caen",
+   "norm": "sm caen",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2018
+  },
+  {
+   "id": "1164",
+   "kind": "club",
+   "name": "Le Mans FC",
+   "norm": "le mans fc",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2009
+  },
+  {
+   "id": "1165",
+   "kind": "club",
+   "name": "FC Martigues",
+   "norm": "fc martigues",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1995
+  },
+  {
+   "id": "1175",
+   "kind": "club",
+   "name": "LB Châteauroux",
+   "norm": "lb chateauroux",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1997
+  },
+  {
+   "id": "1180",
+   "kind": "club",
+   "name": "Dinamo Minsk",
+   "norm": "dinamo minsk",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1993
+  },
+  {
+   "id": "1181",
+   "kind": "club",
+   "name": "Blackpool FC",
+   "norm": "blackpool fc",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2010
+  },
+  {
+   "id": "1184",
+   "kind": "club",
+   "name": "KRC Genk",
+   "norm": "krc genk",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2019
+  },
+  {
+   "id": "1210",
+   "kind": "club",
+   "name": "US Livorno",
+   "norm": "us livorno",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2013
+  },
+  {
+   "id": "1231",
+   "kind": "club",
+   "name": "ÍA Akranes",
+   "norm": "ia akranes",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1993
+  },
+  {
+   "id": "1237",
+   "kind": "club",
+   "name": "Brighton & Hove Albion",
+   "norm": "brighton hove albion",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "1244",
+   "kind": "club",
+   "name": "CD Leganés",
+   "norm": "cd leganes",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "1253",
+   "kind": "club",
+   "name": "AS Lucchese Libertas",
+   "norm": "as lucchese libertas",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1951
+  },
+  {
+   "id": "1290",
+   "kind": "club",
+   "name": "Football Club de Grenoble 1892",
+   "norm": "football club de grenoble 1892",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2020
+  },
+  {
+   "id": "1307",
+   "kind": "club",
+   "name": "US Pistoiese",
+   "norm": "us pistoiese",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1980
+  },
+  {
+   "id": "1385",
+   "kind": "club",
+   "name": "Modena FC",
+   "norm": "modena fc",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2003
+  },
+  {
+   "id": "1386",
+   "kind": "club",
+   "name": "Reggina Calcio",
+   "norm": "reggina calcio",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2008
+  },
+  {
+   "id": "1387",
+   "kind": "club",
+   "name": "AC Siena",
+   "norm": "ac siena",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2012
+  },
+  {
+   "id": "1388",
+   "kind": "club",
+   "name": "Ancona Calcio",
+   "norm": "ancona calcio",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2003
+  },
+  {
+   "id": "1390",
+   "kind": "club",
+   "name": "Cagliari Calcio",
+   "norm": "cagliari calcio",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "1397",
+   "kind": "club",
+   "name": "FC Gueugnon",
+   "norm": "fc gueugnon",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1995
+  },
+  {
+   "id": "1408",
+   "kind": "club",
+   "name": "Piacenza FC",
+   "norm": "piacenza fc",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2002
+  },
+  {
+   "id": "1416",
+   "kind": "club",
+   "name": "Amiens SC",
+   "norm": "amiens sc",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2019
+  },
+  {
+   "id": "1420",
+   "kind": "club",
+   "name": "Angers SCO",
+   "norm": "angers sco",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "1421",
+   "kind": "club",
+   "name": "Stade Reims",
+   "norm": "stade reims",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "1423",
+   "kind": "club",
+   "name": "US Valenciennes-Anzin",
+   "norm": "us valenciennes anzin",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2013
+  },
+  {
+   "id": "1429",
+   "kind": "club",
+   "name": "AC Cesena",
+   "norm": "ac cesena",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2014
+  },
+  {
+   "id": "1443",
+   "kind": "club",
+   "name": "MSK Zilina",
+   "norm": "msk zilina",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2010
+  },
+  {
+   "id": "1531",
+   "kind": "club",
+   "name": "Elche CF",
+   "norm": "elche cf",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "1532",
+   "kind": "club",
+   "name": "Albacete Balompié",
+   "norm": "albacete balompie",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2004
+  },
+  {
+   "id": "1533",
+   "kind": "club",
+   "name": "SD Eibar",
+   "norm": "sd eibar",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2020
+  },
+  {
+   "id": "1536",
+   "kind": "club",
+   "name": "Burgos CF",
+   "norm": "burgos cf",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1979
+  },
+  {
+   "id": "1564",
+   "kind": "club",
+   "name": "FC Rouen",
+   "norm": "fc rouen",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1992
+  },
+  {
+   "id": "1627",
+   "kind": "club",
+   "name": "Club Calcio Catania",
+   "norm": "club calcio catania",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2013
+  },
+  {
+   "id": "1774",
+   "kind": "club",
+   "name": "FC Mulhouse 1893",
+   "norm": "fc mulhouse 1893",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1989
+  },
+  {
+   "id": "2036",
+   "kind": "club",
+   "name": "1.FC Heidenheim 1846",
+   "norm": "1fc heidenheim 1846",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "2149",
+   "kind": "club",
+   "name": "Blau-Weiß 90 Berlin",
+   "norm": "blau wei 90 berlin",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1986
+  },
+  {
+   "id": "2227",
+   "kind": "club",
+   "name": "SC Tavriya Simferopol (-2022)",
+   "norm": "sc tavriya simferopol 2022",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1992
+  },
+  {
+   "id": "2239",
+   "kind": "club",
+   "name": "US Cremonese",
+   "norm": "us cremonese",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "2251",
+   "kind": "club",
+   "name": "Treviso FBC 1993",
+   "norm": "treviso fbc 1993",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2005
+  },
+  {
+   "id": "2282",
+   "kind": "club",
+   "name": "Club Brugge KV",
+   "norm": "club brugge kv",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "2288",
+   "kind": "club",
+   "name": "Swansea City",
+   "norm": "swansea city",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2017
+  },
+  {
+   "id": "2296",
+   "kind": "club",
+   "name": "CD Numancia",
+   "norm": "cd numancia",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2008
+  },
+  {
+   "id": "2331",
+   "kind": "club",
+   "name": "US Avellino",
+   "norm": "us avellino",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1987
+  },
+  {
+   "id": "2410",
+   "kind": "club",
+   "name": "CSKA Moscow",
+   "norm": "cska moscow",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2018
+  },
+  {
+   "id": "2441",
+   "kind": "club",
+   "name": "AEK Athens",
+   "norm": "aek athens",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2018
+  },
+  {
+   "id": "2448",
+   "kind": "club",
+   "name": "Real Gijón",
+   "norm": "real gijon",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2016
+  },
+  {
+   "id": "2481",
+   "kind": "club",
+   "name": "FC Sheriff Tiraspol",
+   "norm": "fc sheriff tiraspol",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2021
+  },
+  {
+   "id": "2497",
+   "kind": "club",
+   "name": "Oviedo FC",
+   "norm": "oviedo fc",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "2502",
+   "kind": "club",
+   "name": "CD Castellón",
+   "norm": "cd castellon",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1990
+  },
+  {
+   "id": "2503",
+   "kind": "club",
+   "name": "Boavista FC",
+   "norm": "boavista fc",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2001
+  },
+  {
+   "id": "2580",
+   "kind": "club",
+   "name": "FC Istres Ville Nouvelle",
+   "norm": "fc istres ville nouvelle",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2004
+  },
+  {
+   "id": "2581",
+   "kind": "club",
+   "name": "AC Mantova",
+   "norm": "ac mantova",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1971
+  },
+  {
+   "id": "2618",
+   "kind": "club",
+   "name": "Olympique d'Alès en Cévennes",
+   "norm": "olympique dales en cevennes",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1987
+  },
+  {
+   "id": "2655",
+   "kind": "club",
+   "name": "AC Vicenza",
+   "norm": "ac vicenza",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2000
+  },
+  {
+   "id": "2687",
+   "kind": "club",
+   "name": "Cádiz CF",
+   "norm": "cadiz cf",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2023
+  },
+  {
+   "id": "2698",
+   "kind": "club",
+   "name": "Rubin Kazan",
+   "norm": "rubin kazan",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2010
+  },
+  {
+   "id": "2721",
+   "kind": "club",
+   "name": "Alessandria US",
+   "norm": "alessandria us",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1959
+  },
+  {
+   "id": "2722",
+   "kind": "club",
+   "name": "SP Ars et Labor",
+   "norm": "sp ars et labor",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2019
+  },
+  {
+   "id": "2778",
+   "kind": "club",
+   "name": "FC Nordsjaelland",
+   "norm": "fc nordsjaelland",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2012
+  },
+  {
+   "id": "2781",
+   "kind": "club",
+   "name": "FC Petrzalka",
+   "norm": "fc petrzalka",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2005
+  },
+  {
+   "id": "2784",
+   "kind": "club",
+   "name": "APOEL Nicosia",
+   "norm": "apoel nicosia",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2017
+  },
+  {
+   "id": "2855",
+   "kind": "club",
+   "name": "SD Compostela",
+   "norm": "sd compostela",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1997
+  },
+  {
+   "id": "2867",
+   "kind": "club",
+   "name": "Recreativo Huelva",
+   "norm": "recreativo huelva",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2008
+  },
+  {
+   "id": "2919",
+   "kind": "club",
+   "name": "AC Monza",
+   "norm": "ac monza",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2024
+  },
+  {
+   "id": "2921",
+   "kind": "club",
+   "name": "Pescara Calcio",
+   "norm": "pescara calcio",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2016
+  },
+  {
+   "id": "2969",
+   "kind": "club",
+   "name": "Dijon FCO",
+   "norm": "dijon fco",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2020
+  },
+  {
+   "id": "3008",
+   "kind": "club",
+   "name": "Hull City",
+   "norm": "hull city",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 2016
+  },
+  {
+   "id": "3037",
+   "kind": "club",
+   "name": "AC Padova",
+   "norm": "ac padova",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1995
+  },
+  {
+   "id": "3057",
+   "kind": "club",
+   "name": "Standard Liège",
+   "norm": "standard liege",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2009
+  },
+  {
+   "id": "3161",
+   "kind": "club",
+   "name": "FC Tours",
+   "norm": "fc tours",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1984
+  },
+  {
+   "id": "3239",
+   "kind": "club",
+   "name": "UD Lérida",
+   "norm": "ud lerida",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1994
+  },
+  {
+   "id": "3302",
+   "kind": "club",
+   "name": "UD Almería",
+   "norm": "ud almeria",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2023
+  },
+  {
+   "id": "3318",
+   "kind": "club",
+   "name": "Racing Club Paris",
+   "norm": "racing club paris",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1989
+  },
+  {
+   "id": "3368",
+   "kind": "club",
+   "name": "Levante UD",
+   "norm": "levante ud",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "3471",
+   "kind": "club",
+   "name": "Linfield FC",
+   "norm": "linfield fc",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1993
+  },
+  {
+   "id": "3520",
+   "kind": "club",
+   "name": "FC Sète 34",
+   "norm": "fc sete 34",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1953
+  },
+  {
+   "id": "3522",
+   "kind": "club",
+   "name": "Spezia Calcio",
+   "norm": "spezia calcio",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2022
+  },
+  {
+   "id": "3524",
+   "kind": "club",
+   "name": "Clermont Foot 63",
+   "norm": "clermont foot 63",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2023
+  },
+  {
+   "id": "3528",
+   "kind": "club",
+   "name": "Association sportive aixoise",
+   "norm": "association sportive aixoise",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1967
+  },
+  {
+   "id": "3558",
+   "kind": "club",
+   "name": "GFC Ajaccio",
+   "norm": "gfc ajaccio",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2015
+  },
+  {
+   "id": "3709",
+   "kind": "club",
+   "name": "Getafe CF",
+   "norm": "getafe cf",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "3793",
+   "kind": "club",
+   "name": "Beitar Jerusalem",
+   "norm": "beitar jerusalem",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1993
+  },
+  {
+   "id": "3899",
+   "kind": "club",
+   "name": "Anorthosis Famagusta",
+   "norm": "anorthosis famagusta",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2008
+  },
+  {
+   "id": "3911",
+   "kind": "club",
+   "name": "Stade Brestois 29",
+   "norm": "stade brestois 29",
+   "country": null,
+   "competitions": [
+    "FR1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "3915",
+   "kind": "club",
+   "name": "AS Angoulême",
+   "norm": "as angouleme",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1971
+  },
+  {
+   "id": "3948",
+   "kind": "club",
+   "name": "Union Saint-Gilloise",
+   "norm": "union saint gilloise",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "4083",
+   "kind": "club",
+   "name": "FC Crotone",
+   "norm": "fc crotone",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2020
+  },
+  {
+   "id": "4097",
+   "kind": "club",
+   "name": "US Catanzaro",
+   "norm": "us catanzaro",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1982
+  },
+  {
+   "id": "4102",
+   "kind": "club",
+   "name": "Carpi FC 1909",
+   "norm": "carpi fc 1909",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2015
+  },
+  {
+   "id": "4146",
+   "kind": "club",
+   "name": "Pro Patria et Libertate",
+   "norm": "pro patria et libertate",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1955
+  },
+  {
+   "id": "4147",
+   "kind": "club",
+   "name": "Casale FBC",
+   "norm": "casale fbc",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1933
+  },
+  {
+   "id": "4171",
+   "kind": "club",
+   "name": "Benevento Calcio",
+   "norm": "benevento calcio",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2020
+  },
+  {
+   "id": "4172",
+   "kind": "club",
+   "name": "AC Pisa 1909",
+   "norm": "ac pisa 1909",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "4271",
+   "kind": "club",
+   "name": "US Triestina",
+   "norm": "us triestina",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1958
+  },
+  {
+   "id": "4361",
+   "kind": "club",
+   "name": "Varese FC",
+   "norm": "varese fc",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1974
+  },
+  {
+   "id": "4542",
+   "kind": "club",
+   "name": "Cultural Leonesa",
+   "norm": "cultural leonesa",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1955
+  },
+  {
+   "id": "4550",
+   "kind": "club",
+   "name": "FC Legnano",
+   "norm": "fc legnano",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1953
+  },
+  {
+   "id": "4772",
+   "kind": "club",
+   "name": "NK Olimpija Ljubljana",
+   "norm": "nk olimpija ljubljana",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1992
+  },
+  {
+   "id": "4795",
+   "kind": "club",
+   "name": "FC Ingolstadt 04",
+   "norm": "fc ingolstadt 04",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 2016
+  },
+  {
+   "id": "4959",
+   "kind": "club",
+   "name": "SC Otelul Galati",
+   "norm": "sc otelul galati",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2011
+  },
+  {
+   "id": "5358",
+   "kind": "club",
+   "name": "SD Huesca",
+   "norm": "sd huesca",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2020
+  },
+  {
+   "id": "5407",
+   "kind": "club",
+   "name": "Sports Réunis Colmar",
+   "norm": "sports reunis colmar",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1948
+  },
+  {
+   "id": "5514",
+   "kind": "club",
+   "name": "Calcio Lecco 1912",
+   "norm": "calcio lecco 1912",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1966
+  },
+  {
+   "id": "5621",
+   "kind": "club",
+   "name": "AC Reggiana",
+   "norm": "ac reggiana",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1996
+  },
+  {
+   "id": "5648",
+   "kind": "club",
+   "name": "Gimnástico de Tarragona",
+   "norm": "gimnastico de tarragona",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2006
+  },
+  {
+   "id": "5650",
+   "kind": "club",
+   "name": "Pontevedra CF",
+   "norm": "pontevedra cf",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1969
+  },
+  {
+   "id": "5849",
+   "kind": "club",
+   "name": "Víkingur Reykjavík",
+   "norm": "vikingur reykjavik",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1992
+  },
+  {
+   "id": "6195",
+   "kind": "club",
+   "name": "SSC Napoli",
+   "norm": "ssc napoli",
+   "country": null,
+   "competitions": [
+    "IT1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "6574",
+   "kind": "club",
+   "name": "US Sassuolo",
+   "norm": "us sassuolo",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "6692",
+   "kind": "club",
+   "name": "AC Novara",
+   "norm": "ac novara",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2011
+  },
+  {
+   "id": "6890",
+   "kind": "club",
+   "name": "Basaksehir FK",
+   "norm": "basaksehir fk",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2020
+  },
+  {
+   "id": "7042",
+   "kind": "club",
+   "name": "Union sportive boulonnaise",
+   "norm": "union sportive boulonnaise",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2009
+  },
+  {
+   "id": "7723",
+   "kind": "club",
+   "name": "Limoges FC",
+   "norm": "limoges fc",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1965
+  },
+  {
+   "id": "7769",
+   "kind": "club",
+   "name": "CFR Cluj",
+   "norm": "cfr cluj",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2012
+  },
+  {
+   "id": "7971",
+   "kind": "club",
+   "name": "FC Hércules",
+   "norm": "fc hercules",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2010
+  },
+  {
+   "id": "8970",
+   "kind": "club",
+   "name": "Frosinone Calcio",
+   "norm": "frosinone calcio",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 2023
+  },
+  {
+   "id": "9026",
+   "kind": "club",
+   "name": "Glentoran FC",
+   "norm": "glentoran fc",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1992
+  },
+  {
+   "id": "9523",
+   "kind": "club",
+   "name": "Racing Club de Roubaix",
+   "norm": "racing club de roubaix",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1938
+  },
+  {
+   "id": "10004",
+   "kind": "club",
+   "name": "Paris FC",
+   "norm": "paris fc",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "10442",
+   "kind": "club",
+   "name": "Unirea Urziceni ( - 2011)",
+   "norm": "unirea urziceni 2011",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2009
+  },
+  {
+   "id": "10482",
+   "kind": "club",
+   "name": "Kairat Almaty",
+   "norm": "kairat almaty",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "10493",
+   "kind": "club",
+   "name": "FC Kuusysi",
+   "norm": "fc kuusysi",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1992
+  },
+  {
+   "id": "10603",
+   "kind": "club",
+   "name": "Floriana FC",
+   "norm": "floriana fc",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1993
+  },
+  {
+   "id": "10625",
+   "kind": "club",
+   "name": "Qarabağ FK",
+   "norm": "qarabag fk",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "11259",
+   "kind": "club",
+   "name": "CD Alcoyano",
+   "norm": "cd alcoyano",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1951
+  },
+  {
+   "id": "11300",
+   "kind": "club",
+   "name": "AC Arles-Avignon",
+   "norm": "ac arles avignon",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2010
+  },
+  {
+   "id": "11422",
+   "kind": "club",
+   "name": "CD Sabadell CF",
+   "norm": "cd sabadell cf",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1987
+  },
+  {
+   "id": "12321",
+   "kind": "club",
+   "name": "Girona FC",
+   "norm": "girona fc",
+   "country": null,
+   "competitions": [
+    "ES1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "12405",
+   "kind": "club",
+   "name": "Real Unión Club",
+   "norm": "real union club",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1931
+  },
+  {
+   "id": "14171",
+   "kind": "club",
+   "name": "FC Évian Thonon Gaillard",
+   "norm": "fc evian thonon gaillard",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 2014
+  },
+  {
+   "id": "16122",
+   "kind": "club",
+   "name": "Arenas Club de Guecho",
+   "norm": "arenas club de guecho",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1934
+  },
+  {
+   "id": "16704",
+   "kind": "club",
+   "name": "FC Krasnodar",
+   "norm": "fc krasnodar",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2020
+  },
+  {
+   "id": "16795",
+   "kind": "club",
+   "name": "Granada CF",
+   "norm": "granada cf",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 2023
+  },
+  {
+   "id": "17629",
+   "kind": "club",
+   "name": "1.FC Kosice (1951 - 2004)",
+   "norm": "1fc kosice 1951 2004",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1997
+  },
+  {
+   "id": "20528",
+   "kind": "club",
+   "name": "CD Europa",
+   "norm": "cd europa",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1930
+  },
+  {
+   "id": "21816",
+   "kind": "club",
+   "name": "Stade Français",
+   "norm": "stade francais",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1966
+  },
+  {
+   "id": "21955",
+   "kind": "club",
+   "name": "Union Luxembourg (- 2005)",
+   "norm": "union luxembourg 2005",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1992
+  },
+  {
+   "id": "22220",
+   "kind": "club",
+   "name": "FC Astana",
+   "norm": "fc astana",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2015
+  },
+  {
+   "id": "23341",
+   "kind": "club",
+   "name": "Olympique avignonnais",
+   "norm": "olympique avignonnais",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1979
+  },
+  {
+   "id": "23826",
+   "kind": "club",
+   "name": "RB Leipzig",
+   "norm": "rb leipzig",
+   "country": null,
+   "competitions": [
+    "L1",
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "25639",
+   "kind": "club",
+   "name": "Hyères FC",
+   "norm": "hyeres fc",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1932
+  },
+  {
+   "id": "26789",
+   "kind": "club",
+   "name": "US Pro Vercelli",
+   "norm": "us pro vercelli",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1934
+  },
+  {
+   "id": "27774",
+   "kind": "club",
+   "name": "Cork City FC",
+   "norm": "cork city fc",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 1993
+  },
+  {
+   "id": "30633",
+   "kind": "club",
+   "name": "CA Paris-Charenton",
+   "norm": "ca paris charenton",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1933
+  },
+  {
+   "id": "30944",
+   "kind": "club",
+   "name": "FC Nancy",
+   "norm": "fc nancy",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1962
+  },
+  {
+   "id": "31614",
+   "kind": "club",
+   "name": "Ludogorets Razgrad",
+   "norm": "ludogorets razgrad",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2016
+  },
+  {
+   "id": "37393",
+   "kind": "club",
+   "name": "Olympique d'Antibes",
+   "norm": "olympique dantibes",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1938
+  },
+  {
+   "id": "38011",
+   "kind": "club",
+   "name": "CP Mérida",
+   "norm": "cp merida",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1997
+  },
+  {
+   "id": "42811",
+   "kind": "club",
+   "name": "AD Almería",
+   "norm": "ad almeria",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1980
+  },
+  {
+   "id": "42848",
+   "kind": "club",
+   "name": "Club Atlético de Tetuán",
+   "norm": "club atletico de tetuan",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1954
+  },
+  {
+   "id": "42849",
+   "kind": "club",
+   "name": "SD La España Industrial",
+   "norm": "sd la espana industrial",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1956
+  },
+  {
+   "id": "42864",
+   "kind": "club",
+   "name": "Associazione Calcio Liguria",
+   "norm": "associazione calcio liguria",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1942
+  },
+  {
+   "id": "42865",
+   "kind": "club",
+   "name": "SG Sampierdarenese",
+   "norm": "sg sampierdarenese",
+   "country": null,
+   "competitions": [
+    "IT1"
+   ],
+   "last": 1936
+  },
+  {
+   "id": "44396",
+   "kind": "club",
+   "name": "SC Tasmania 1900 Berlin (-1973)",
+   "norm": "sc tasmania 1900 berlin 1973",
+   "country": null,
+   "competitions": [
+    "L1"
+   ],
+   "last": 1965
+  },
+  {
+   "id": "45457",
+   "kind": "club",
+   "name": "Pafos FC",
+   "norm": "pafos fc",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2025
+  },
+  {
+   "id": "57429",
+   "kind": "club",
+   "name": "Real Burgos CF",
+   "norm": "real burgos cf",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1992
+  },
+  {
+   "id": "57854",
+   "kind": "club",
+   "name": "Sporting Club fivois",
+   "norm": "sporting club fivois",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1938
+  },
+  {
+   "id": "57855",
+   "kind": "club",
+   "name": "Toulouse FC",
+   "norm": "toulouse fc",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1966
+  },
+  {
+   "id": "58556",
+   "kind": "club",
+   "name": "AS Béziers (- 1990)",
+   "norm": "as beziers 1990",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1957
+  },
+  {
+   "id": "60836",
+   "kind": "club",
+   "name": "Olympique lillois",
+   "norm": "olympique lillois",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1938
+  },
+  {
+   "id": "63668",
+   "kind": "club",
+   "name": "SC Nîmes",
+   "norm": "sc nimes",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1934
+  },
+  {
+   "id": "100990",
+   "kind": "club",
+   "name": "Club Olympique de Roubaix-Tourcoing",
+   "norm": "club olympique de roubaix tourcoing",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1954
+  },
+  {
+   "id": "101982",
+   "kind": "club",
+   "name": "Excelsior AC Roubaix",
+   "norm": "excelsior ac roubaix",
+   "country": null,
+   "competitions": [
+    "FR1"
+   ],
+   "last": 1938
+  },
+  {
+   "id": "114309",
+   "kind": "club",
+   "name": "Wimbledon FC (- 2004)",
+   "norm": "wimbledon fc 2004",
+   "country": null,
+   "competitions": [
+    "GB1"
+   ],
+   "last": 1999
+  },
+  {
+   "id": "118067",
+   "kind": "club",
+   "name": "CD Málaga",
+   "norm": "cd malaga",
+   "country": null,
+   "competitions": [
+    "ES1"
+   ],
+   "last": 1990
+  }
+ ]
+}

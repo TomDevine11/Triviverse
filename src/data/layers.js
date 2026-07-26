@@ -36,6 +36,10 @@ export const CANONICAL_FACTS = [
   'canonical/players.positions.generated.json',
   'canonical/wikidata.generated.json',
   'canonical/wikidata-positions.generated.json',
+  'canonical/competitions.generated.json', // dimension entities (C4)
+  'canonical/seasons.generated.json',
+  'canonical/teams.generated.json',
+  'canonical/editions.generated.json',
   'football501/history.', // history.<comp>.generated.json (Performance-precursor)
 ]
 
