@@ -14,10 +14,7 @@
 import { readdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs'
 import path from 'node:path'
 import { DIR, OUT_FACTS, COMPETITION } from './config.mjs'
-import { normalize, normalizeCountry } from '../transfermarkt/lib/normalize.mjs'
-import { resolveChallenges } from '../transfermarkt/60-resolve-challenges.mjs'
-import { OUT } from '../transfermarkt/config.mjs'
-import { CHALLENGES } from '../../src/data/football501/challenges.js'
+import { normalize, normalizeCountry } from './normalize.mjs'
 
 // Prettify a Transfermarkt club slug → display name ("fc-barcelona" → "FC
 // Barcelona"). Used for non-PL clubs, which aren't in the PL scaffold.
@@ -124,14 +121,6 @@ function build() {
   const topA = [...out].sort((a, b) => b.comps[cid].apps - a.comps[cid].apps).slice(0, 5)
   console.error('  top goals:', topG.map(p => `${p.name} ${p.comps[cid].goals}`).join(', '))
   console.error('  top apps: ', topA.map(p => `${p.name} ${p.comps[cid].apps}`).join(', '))
-
-  // (Legacy) resolve the hand-authored GB1 challenges → questionCache. The live
-  // game uses the procedural catalog now; only kept for GB1 backward-compat.
-  if (cid === 'GB1') {
-    const challenges = CHALLENGES.filter(c => c.competition === cid)
-    const resolved = resolveChallenges(out, challenges)
-    writeFileSync(OUT.questionCache, JSON.stringify({ meta: { builtFrom: path.basename(OUT_FACTS), builtAt: meta.builtAt, competition: COMPETITION }, challenges: resolved }, null, 1) + '\n')
-  }
 }
 
 build()

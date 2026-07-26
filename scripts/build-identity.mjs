@@ -436,7 +436,6 @@ function collectTmIndex() {
   const J = p => JSON.parse(readFileSync(path.join(ROOT, p), 'utf8'))
   const idx = {}
   const add = arr => { for (const p of arr || []) { if (!p?.id || !p?.name) continue; const n = normalize(p.name); (idx[n] ||= new Set()).add(String(p.id)) } }
-  add(J('src/data/football501/football501.generated.json').players)
   for (const c of ['GB1', 'ES1', 'IT1', 'FR1', 'L1', 'CL']) add(J(`src/data/football501/history.${c}.generated.json`).players)
   const out = {}
   for (const [n, set] of Object.entries(idx)) out[n] = [...set].sort()
@@ -458,7 +457,6 @@ function collectTmPositions() {
   const J = p => JSON.parse(readFileSync(path.join(ROOT, p), 'utf8'))
   const pos = {}
   const add = arr => { for (const p of arr || []) { if (!p?.id) continue; const t = TM_POS[p.pos]; if (t && !pos[p.id]) pos[p.id] = t } }
-  add(J('src/data/football501/football501.generated.json').players)
   for (const c of ['GB1', 'ES1', 'IT1', 'FR1', 'L1', 'CL']) add(J(`src/data/football501/history.${c}.generated.json`).players)
   return pos
 }

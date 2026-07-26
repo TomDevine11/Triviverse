@@ -1,13 +1,16 @@
 // ─────────────────────────────────────────────────────────────────────────
-// PIPELINE NORMALISATION HELPERS
+// SCRAPE NORMALISATION HELPERS
 //
 // Reuses the game's exact name normalisation (canonical/normalize.js) so
 // built keys line up with in-game guess resolution, plus a small country-name
 // map to reconcile Transfermarkt's citizenship strings with the flag/
 // nationality vocabulary the app already uses.
+//
+// (Relocated from the retired Kaggle pipeline in backlog C3; it is a shared
+// scrape util, not Kaggle-specific, and is consumed by build-facts.mjs.)
 // ─────────────────────────────────────────────────────────────────────────
 
-import { normalize, surnameKeys } from '../../../src/data/canonical/normalize.js'
+import { normalize, surnameKeys } from '../../src/data/canonical/normalize.js'
 
 export { normalize, surnameKeys }
 

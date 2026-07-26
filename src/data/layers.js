@@ -25,7 +25,7 @@
 
 // RAW: external-provider capture. Games and derived builders must never import
 // from these locations. (Matched as path fragments against import specifiers.)
-export const RAW_MARKERS = ['/scripts/', '/data/pl-history/', '/data/transfermarkt/']
+export const RAW_MARKERS = ['/scripts/', '/data/pl-history/']
 
 // CANONICAL: football FACTS (single authoritative owners). Games must not import
 // these directly — they reach facts only through derived datasets / adapters.

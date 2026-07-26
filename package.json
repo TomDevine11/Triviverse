@@ -12,8 +12,6 @@
     "analytics-report": "node scripts/seo/ga4.mjs",
     "search-console-report": "node scripts/seo/gsc.mjs",
     "seo-suggest": "node scripts/seo/suggest.mjs",
-    "build:501-data": "node scripts/transfermarkt/build.mjs",
-    "build:501-challenges": "node scripts/transfermarkt/60-resolve-challenges.mjs",
     "scrape:pl-history": "node scripts/pl-history/scrape.mjs",
     "build:pl-positions": "node scripts/pl-history/positions.mjs",
     "build:pl-clubnames": "node scripts/pl-history/clubnames.mjs",
