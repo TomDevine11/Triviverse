@@ -67,6 +67,7 @@ export const DERIVED = [
   'crests.generated.json',
   'categoryIcons.generated.json',
   'canonical/nameFixes.generated',
+  'recognisability.generated.json', // derived contemporary-recognisability score (replaces Wikidata fame)
 ]
 
 // Tracked, sanctioned exceptions: game→canonical imports that exist TODAY and
