@@ -9,7 +9,8 @@
 
 import { membersOf, getPlayer, CATEGORY_KEYS } from './canonical/facts.js'
 
-// Only use genuinely well-known players (Wikipedia language-edition count).
+// Only use genuinely well-known players (canonical recognisability score 0-100,
+// recency-first contemporary recognisability — RFC-001, replaced Wikipedia count).
 const STAR_FAME = 48
 // Choose each group's four from the most famous exclusive members (a small
 // fame-ranked shortlist), seeded for daily variety — never the obscure tail.

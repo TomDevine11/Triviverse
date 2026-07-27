@@ -23,6 +23,7 @@ import {
   MANAGER_MEMBERS, TROPHY_MEMBERS, AS_OF_DATE,
 } from './membership.js'
 import wikidata from './wikidata.generated.json'
+import recognisability from '../recognisability.generated.json'
 // Phase 2 — stable stored identity. The identity crosswalk is the source of
 // truth for player ids; facts.js resolves display names to those ids rather
 // than deriving them, so it shares ONE id space with the migrated games.
@@ -30,10 +31,12 @@ import crosswalk from './players.crosswalk.json'
 import { normalize as normalizeName } from './normalize.js'
 import { fixName } from './nameFixes.js'
 
-// Fame threshold (number of language Wikipedias) at/above which a player is
-// "notable" enough to feature in generated grids. Curated players are always
-// notable (they were hand-picked for fame).
-const NOTABLE_FAME = 35
+// `fame` here is the canonical RECOGNISABILITY score (0-100, recency-first
+// contemporary recognisability — see build-recognisability.mjs), which REPLACED
+// the old Wikidata Wikipedia-language-count signal (RFC-001). Threshold at/above
+// which a player is "notable" enough to feature in generated grids / reveals.
+// Curated players stay always-notable (membership flag, separate concern).
+const NOTABLE_FAME = 25
 
 // Canonicalise imported club display names so they match the curated spelling
 // (otherwise "Barcelona" and "FC Barcelona" become two separate categories).
@@ -127,6 +130,13 @@ for (const [trophy, members] of Object.entries(wikidata.trophies || {})) {
   const source = trophy === 'FIFA World Cup' ? 'wikipedia' : 'wikidata'
   for (const m of members) addFact(m.name, 'won_trophy', trophy, 'trophies', source, m.fame)
 }
+
+// Replace the legacy Wikidata "fame" with canonical recognisability (RFC-001):
+// contemporary fan recognisability by name, not Wikipedia language count. Players
+// absent from the canonical top-flight/international data score 0 (correctly low
+// contemporary recognisability); curated players stay notable via their flag.
+const RECOG = recognisability.byName || {}
+for (const p of registry.values()) p.fame = RECOG[normalizeName(p.displayName)] || 0
 
 export const PLAYERS = registry
 export const FACTS = facts

@@ -29,7 +29,7 @@ const OUT = path.join(ROOT, 'src', 'data', 'football501', 'catalog.generated.jso
 // would actually know — measured against the canonical fame data. Drives the
 // DAILY pool so it stops serving obscure clubs/slices (e.g. Real Murcia) while
 // leaving the full catalogue intact for Random/Unlimited.
-const CANON = path.join(ROOT, 'src', 'data', 'canonical', 'wikidata.generated.json')
+const RECOG = path.join(ROOT, 'src', 'data', 'recognisability.generated.json')
 const FAME_BAR = 30   // fame floor for "recognisable" (canonical's own floor is ~20)
 const PROM_SINCE = 2018 // club "prominence" is measured over squads since this season
 const RECENCY = 2012  // and active since ~this season — all-time fame skews to legends a
@@ -37,12 +37,11 @@ const RECENCY = 2012  // and active since ~this season — all-time fame skews t
                       // also defuses name-collision fame (an obscure old namesake drops out).
 const normName = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
 const FAME = (() => {
-  const m = new Map()
   try {
-    const wd = JSON.parse(readFileSync(CANON, 'utf8'))
-    for (const g of ['clubs', 'nationalities', 'trophies']) for (const arr of Object.values(wd[g])) for (const p of arr) { const k = normName(p.name); m.set(k, Math.max(m.get(k) || 0, p.fame || 0)) }
-  } catch { /* no canonical facts → reco stays 0, daily falls back gracefully */ }
-  return m
+    // Canonical recognisability (RFC-001) replaces the Wikidata fame signal — and
+    // already bakes in recency, so it aligns with the RECENCY gate below.
+    return new Map(Object.entries(JSON.parse(readFileSync(RECOG, 'utf8')).byName))
+  } catch { return new Map() /* no recognisability → reco stays 0, daily falls back gracefully */ }
 })()
 const isReco = (id, p, lastById) => (FAME.get(normName(p.name)) || 0) >= FAME_BAR && (lastById[id] || 0) >= RECENCY
 const recoOf = (roster, lastById) => Object.entries(roster).filter(([id, p]) => isReco(id, p, lastById)).length

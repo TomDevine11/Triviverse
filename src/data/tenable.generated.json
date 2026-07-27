@@ -1,16 +1,16 @@
 {
  "meta": {
-  "builtAt": "2026-07-08",
+  "builtAt": "2026-07-26",
   "count": 380,
-  "dailyEligible": 136,
+  "dailyEligible": 272,
   "source": "football501 fact tables (transfermarkt)",
   "floor": {
    "goals": 20,
    "apps": 100
   },
   "dailyFame": {
-   "goals": 6,
-   "apps": 7
+   "goals": 3,
+   "apps": 3
   }
  },
  "questions": [
@@ -216,7 +216,7 @@
     "type": "club",
     "value": "1.FC Köln"
    },
-   "daily": true,
+   "daily": false,
    "answers": [
     {
      "rank": 1,
@@ -280,7 +280,7 @@
     "type": "club",
     "value": "1.FC Nuremberg"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -472,7 +472,7 @@
     "type": "club",
     "value": "Angers SCO"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -1048,7 +1048,7 @@
     "type": "club",
     "value": "FC Toulouse"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -1304,7 +1304,7 @@
     "type": "nationality",
     "value": "Bosnia-Herzegovina"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -1368,7 +1368,7 @@
     "type": "club",
     "value": "UC Sampdoria"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -1432,7 +1432,7 @@
     "type": "nationality",
     "value": "Ghana"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -1688,7 +1688,7 @@
     "type": "nationality",
     "value": "Northern Ireland"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -1880,7 +1880,7 @@
     "type": "nationality",
     "value": "United States"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -2008,7 +2008,7 @@
     "type": "club",
     "value": "FC Girondins Bordeaux"
    },
-   "daily": true,
+   "daily": false,
    "answers": [
     {
      "rank": 1,
@@ -2456,7 +2456,7 @@
     "type": "club",
     "value": "Oviedo FC"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -2776,7 +2776,7 @@
     "type": "club",
     "value": "RB Leipzig"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -2840,7 +2840,7 @@
     "type": "club",
     "value": "UD Las Palmas"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -2904,7 +2904,7 @@
     "type": "nationality",
     "value": "Guinea"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -3160,7 +3160,7 @@
     "type": "club",
     "value": "Genoa CFC"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -3288,7 +3288,7 @@
     "type": "club",
     "value": "Middlesbrough FC"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -3352,7 +3352,7 @@
     "type": "nationality",
     "value": "Germany"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -3416,7 +3416,7 @@
     "type": "nationality",
     "value": "Sweden"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -3544,7 +3544,7 @@
     "type": "club",
     "value": "Oviedo FC"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -3736,7 +3736,7 @@
     "type": "club",
     "value": "VfL Wolfsburg"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -3864,7 +3864,7 @@
     "type": "club",
     "value": "SS Lazio"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -3992,7 +3992,7 @@
     "type": "nationality",
     "value": "Serbia"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -4056,7 +4056,7 @@
     "type": "club",
     "value": "Nottingham Forest"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -4120,7 +4120,7 @@
     "type": "nationality",
     "value": "Cameroon"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -4440,7 +4440,7 @@
     "type": "nationality",
     "value": "Albania"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -4760,7 +4760,7 @@
     "type": "club",
     "value": "Montpellier HSC"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -4888,7 +4888,7 @@
     "type": "nationality",
     "value": "Türkiye"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -4952,7 +4952,7 @@
     "type": "club",
     "value": "CA Osasuna"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -5016,7 +5016,7 @@
     "type": "club",
     "value": "Stade Rennais FC"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -5080,7 +5080,7 @@
     "type": "club",
     "value": "Elche CF"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -5208,7 +5208,7 @@
     "type": "club",
     "value": "Borussia Mönchengladbach"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -5272,7 +5272,7 @@
     "type": "club",
     "value": "Olympique Lyon"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -5336,7 +5336,7 @@
     "type": "nationality",
     "value": "Switzerland"
    },
-   "daily": true,
+   "daily": false,
    "answers": [
     {
      "rank": 1,
@@ -5464,7 +5464,7 @@
     "type": "nationality",
     "value": "France"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -5912,7 +5912,7 @@
     "type": "club",
     "value": "SC Freiburg"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -6104,7 +6104,7 @@
     "type": "club",
     "value": "Borussia Dortmund"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -6296,7 +6296,7 @@
     "type": "nationality",
     "value": "Morocco"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -6616,7 +6616,7 @@
     "type": "nationality",
     "value": "Denmark"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -6680,7 +6680,7 @@
     "type": "nationality",
     "value": "Mali"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -6872,7 +6872,7 @@
     "type": "nationality",
     "value": "Cameroon"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -6936,7 +6936,7 @@
     "type": "nationality",
     "value": "Morocco"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -7000,7 +7000,7 @@
     "type": "nationality",
     "value": "Portugal"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -7064,7 +7064,7 @@
     "type": "club",
     "value": "Levante UD"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -7704,7 +7704,7 @@
     "type": "club",
     "value": "Cádiz CF"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -7768,7 +7768,7 @@
     "type": "nationality",
     "value": "France"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -7832,7 +7832,7 @@
     "type": "club",
     "value": "UD Salamanca"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -7960,7 +7960,7 @@
     "type": "nationality",
     "value": "Scotland"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -8024,7 +8024,7 @@
     "type": "club",
     "value": "RCD Espanyol Barcelona"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -8216,7 +8216,7 @@
     "type": "nationality",
     "value": "Brazil"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -8280,7 +8280,7 @@
     "type": "club",
     "value": "TSG 1899 Hoffenheim"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -8408,7 +8408,7 @@
     "type": "club",
     "value": "Málaga CF"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -8472,7 +8472,7 @@
     "type": "club",
     "value": "Real Betis Balompié"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -8600,7 +8600,7 @@
     "type": "nationality",
     "value": "Paraguay"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -8728,7 +8728,7 @@
     "type": "club",
     "value": "AS Saint-Étienne"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -8792,7 +8792,7 @@
     "type": "club",
     "value": "Deportivo Alavés"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -8856,7 +8856,7 @@
     "type": "nationality",
     "value": "Mali"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -8920,7 +8920,7 @@
     "type": "nationality",
     "value": "Cote d'Ivoire"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -8984,7 +8984,7 @@
     "type": "club",
     "value": "Zaragoza FC"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -9112,7 +9112,7 @@
     "type": "nationality",
     "value": "Senegal"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -9176,7 +9176,7 @@
     "type": "nationality",
     "value": "Portugal"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -9240,7 +9240,7 @@
     "type": "nationality",
     "value": "Sweden"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -9304,7 +9304,7 @@
     "type": "nationality",
     "value": "Cote d'Ivoire"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -9432,7 +9432,7 @@
     "type": "nationality",
     "value": "Tunisia"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -9752,7 +9752,7 @@
     "type": "club",
     "value": "Chievo Verona"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -9944,7 +9944,7 @@
     "type": "nationality",
     "value": "Croatia"
    },
-   "daily": true,
+   "daily": false,
    "answers": [
     {
      "rank": 1,
@@ -10392,7 +10392,7 @@
     "type": "club",
     "value": "Leeds United"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -10584,7 +10584,7 @@
     "type": "club",
     "value": "Atalanta BC"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -10648,7 +10648,7 @@
     "type": "club",
     "value": "Wolverhampton Wanderers"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -10840,7 +10840,7 @@
     "type": "nationality",
     "value": "Cote d'Ivoire"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -10968,7 +10968,7 @@
     "type": "club",
     "value": "CD Tenerife"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -11032,7 +11032,7 @@
     "type": "club",
     "value": "Paris Saint-Germain"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -11160,7 +11160,7 @@
     "type": "club",
     "value": "UC Sampdoria"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -11224,7 +11224,7 @@
     "type": "nationality",
     "value": "Netherlands"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -11288,7 +11288,7 @@
     "type": "club",
     "value": "West Bromwich Albion"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -11352,7 +11352,7 @@
     "type": "nationality",
     "value": "Switzerland"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -11416,7 +11416,7 @@
     "type": "nationality",
     "value": "Serbia"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -11544,7 +11544,7 @@
     "type": "nationality",
     "value": "Croatia"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -11736,7 +11736,7 @@
     "type": "club",
     "value": "Atlético de Madrid"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -11800,7 +11800,7 @@
     "type": "club",
     "value": "West Ham United"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -12056,7 +12056,7 @@
     "type": "nationality",
     "value": "Senegal"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -12258,7 +12258,7 @@
     "type": "nationality",
     "value": "Sweden"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -12322,7 +12322,7 @@
     "type": "club",
     "value": "SC Freiburg"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -12386,7 +12386,7 @@
     "type": "nationality",
     "value": "Denmark"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -12642,7 +12642,7 @@
     "type": "nationality",
     "value": "Denmark"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -12898,7 +12898,7 @@
     "type": "club",
     "value": "FC Empoli"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -13794,7 +13794,7 @@
     "type": "club",
     "value": "Real Gijón"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -13858,7 +13858,7 @@
     "type": "club",
     "value": "US Sassuolo"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -13922,7 +13922,7 @@
     "type": "club",
     "value": "FC Augsburg"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -14188,7 +14188,7 @@
     "type": "club",
     "value": "Getafe CF"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -14316,7 +14316,7 @@
     "type": "nationality",
     "value": "Brazil"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -14380,7 +14380,7 @@
     "type": "nationality",
     "value": "Denmark"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -14518,7 +14518,7 @@
     "type": "nationality",
     "value": "Poland"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -14646,7 +14646,7 @@
     "type": "nationality",
     "value": "Austria"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -14774,7 +14774,7 @@
     "type": "club",
     "value": "SD Eibar"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -14921,7 +14921,7 @@
     "type": "club",
     "value": "Elche CF"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -15305,7 +15305,7 @@
     "type": "club",
     "value": "Stade Brestois 29"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -15369,7 +15369,7 @@
     "type": "club",
     "value": "Blackburn Rovers"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -15497,7 +15497,7 @@
     "type": "club",
     "value": "Udinese Calcio"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -15625,7 +15625,7 @@
     "type": "club",
     "value": "Atalanta BC"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -15753,7 +15753,7 @@
     "type": "nationality",
     "value": "Argentina"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -15817,7 +15817,7 @@
     "type": "club",
     "value": "Rayo Vallecano"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -15881,7 +15881,7 @@
     "type": "club",
     "value": "Real Valladolid CF"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -16201,7 +16201,7 @@
     "type": "club",
     "value": "Hellas Verona"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -16265,7 +16265,7 @@
     "type": "club",
     "value": "CA Osasuna"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -16393,7 +16393,7 @@
     "type": "nationality",
     "value": "Sweden"
    },
-   "daily": true,
+   "daily": false,
    "answers": [
     {
      "rank": 1,
@@ -16521,7 +16521,7 @@
     "type": "club",
     "value": "Rayo Vallecano"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -16649,7 +16649,7 @@
     "type": "nationality",
     "value": "Czech Republic"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -16713,7 +16713,7 @@
     "type": "nationality",
     "value": "Czech Republic"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -16777,7 +16777,7 @@
     "type": "club",
     "value": "Real Valladolid CF"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -16969,7 +16969,7 @@
     "type": "club",
     "value": "Sevilla FC"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -17033,7 +17033,7 @@
     "type": "nationality",
     "value": "Switzerland"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -17225,7 +17225,7 @@
     "type": "nationality",
     "value": "Sweden"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -17289,7 +17289,7 @@
     "type": "club",
     "value": "FC Schalke 04"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -17353,7 +17353,7 @@
     "type": "nationality",
     "value": "Japan"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -17628,7 +17628,7 @@
     "type": "nationality",
     "value": "Belgium"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -17692,7 +17692,7 @@
     "type": "club",
     "value": "1.FSV Mainz 05"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -17820,7 +17820,7 @@
     "type": "nationality",
     "value": "Sweden"
    },
-   "daily": true,
+   "daily": false,
    "answers": [
     {
      "rank": 1,
@@ -18140,7 +18140,7 @@
     "type": "club",
     "value": "RCD Mallorca"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -18332,7 +18332,7 @@
     "type": "club",
     "value": "SS Lazio"
    },
-   "daily": true,
+   "daily": false,
    "answers": [
     {
      "rank": 1,
@@ -18460,7 +18460,7 @@
     "type": "club",
     "value": "Real Gijón"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -18716,7 +18716,7 @@
     "type": "nationality",
     "value": "Norway"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -19100,7 +19100,7 @@
     "type": "nationality",
     "value": "Poland"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -19356,7 +19356,7 @@
     "type": "club",
     "value": "Montpellier HSC"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -19548,7 +19548,7 @@
     "type": "club",
     "value": "Atlético de Madrid"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -19996,7 +19996,7 @@
     "type": "club",
     "value": "Brentford FC"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -20060,7 +20060,7 @@
     "type": "nationality",
     "value": "Chile"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -20124,7 +20124,7 @@
     "type": "club",
     "value": "Valencia CF"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -20188,7 +20188,7 @@
     "type": "nationality",
     "value": "Ghana"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -20508,7 +20508,7 @@
     "type": "club",
     "value": "Real Betis Balompié"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -20764,7 +20764,7 @@
     "type": "club",
     "value": "AS Nancy-Lorraine"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -20828,7 +20828,7 @@
     "type": "nationality",
     "value": "Brazil"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -20892,7 +20892,7 @@
     "type": "club",
     "value": "FC Lorient"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -21148,7 +21148,7 @@
     "type": "nationality",
     "value": "Denmark"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -21212,7 +21212,7 @@
     "type": "nationality",
     "value": "Netherlands"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -21926,7 +21926,7 @@
     "type": "club",
     "value": "US Lecce"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -22054,7 +22054,7 @@
     "type": "club",
     "value": "Celta de Vigo"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -22118,7 +22118,7 @@
     "type": "club",
     "value": "Celta de Vigo"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -22438,7 +22438,7 @@
     "type": "nationality",
     "value": "Morocco"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -22694,7 +22694,7 @@
     "type": "nationality",
     "value": "Netherlands"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -22886,7 +22886,7 @@
     "type": "club",
     "value": "1.FSV Mainz 05"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -23142,7 +23142,7 @@
     "type": "club",
     "value": "Hertha BSC"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -23334,7 +23334,7 @@
     "type": "club",
     "value": "Leicester City"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -23398,7 +23398,7 @@
     "type": "club",
     "value": "Borussia Mönchengladbach"
    },
-   "daily": true,
+   "daily": false,
    "answers": [
     {
      "rank": 1,
@@ -23590,7 +23590,7 @@
     "type": "nationality",
     "value": "Scotland"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -23654,7 +23654,7 @@
     "type": "club",
     "value": "FC Augsburg"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -23718,7 +23718,7 @@
     "type": "club",
     "value": "Swansea City"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -23910,7 +23910,7 @@
     "type": "nationality",
     "value": "Italy"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -23974,7 +23974,7 @@
     "type": "club",
     "value": "Blackburn Rovers"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -24038,7 +24038,7 @@
     "type": "club",
     "value": "Racing Santander"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -24166,7 +24166,7 @@
     "type": "club",
     "value": "FC Schalke 04"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -24230,7 +24230,7 @@
     "type": "club",
     "value": "Coventry City"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,
@@ -24358,7 +24358,7 @@
     "type": "nationality",
     "value": "Belgium"
    },
-   "daily": false,
+   "daily": true,
    "answers": [
     {
      "rank": 1,

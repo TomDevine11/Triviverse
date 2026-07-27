@@ -26,9 +26,9 @@ const J = (p) => JSON.parse(readFileSync(path.join(ROOT, p), 'utf8'))
 const OUT = path.join(ROOT, 'src', 'data', 'teammates.generated.json')
 const COMPS = ['GB1', 'ES1', 'IT1', 'FR1', 'L1', 'CL']
 
-const MATE_FAME_MIN = 40 // teammates must be recognisable (matches the old importer)
+const MATE_FAME_MIN = 30 // teammates must be recognisable (recognisability score, 0-100)
 const MIN_MATES = 6      // targets need at least this many to be playable
-const TOTAL_CAP = 30     // keep the most-famous N mates per target (keeps the file lean)
+const TOTAL_CAP = 30     // keep the most-recognisable N mates per target (keeps the file lean)
 
 // Curated marquee targets, merged with the famousPlayers pool (as the old importer did).
 const HARDCODED = [
@@ -56,12 +56,14 @@ for (const c of COMPS) for (const p of J(`src/data/football501/history.${c}.gene
 const nameToId = new Map()
 for (const [id, e] of idInfo) { const n = normalize(e.name); const cur = nameToId.get(n); if (!cur || e.apps > idInfo.get(cur).apps) nameToId.set(n, id) }
 
-// ── fame: normName → fame (unchanged recognisability signal) ────────────────
-const wd = J('src/data/canonical/wikidata.generated.json')
-const FAME = new Map()
-for (const g of ['clubs', 'nationalities', 'trophies']) for (const arr of Object.values(wd[g] || {})) for (const p of arr) {
-  const n = normalize(p.name); FAME.set(n, Math.max(FAME.get(n) || 0, p.fame || 0))
-}
+// ── recognisability: normName → 0-100 contemporary-recognisability (RFC-001,
+// replaces the Wikidata fame signal). Drives both the mate cutoff and clue order.
+const FAME = new Map(Object.entries(J('src/data/recognisability.generated.json').byName))
+// getPlayer-known proxy: a target must exist in the facts registry (wikidata
+// membership) so the game can resolve it. That is a C12 (category-membership)
+// concern, not a fame one — kept until membership is canonical.
+const KNOWN = new Set()
+for (const g of ['clubs', 'nationalities', 'trophies']) for (const arr of Object.values(J('src/data/canonical/wikidata.generated.json')[g] || {})) for (const p of arr) KNOWN.add(normalize(p.name))
 const teamName = new Map(J('src/data/canonical/teams.generated.json').teams.map(t => [t.id, t.name]))
 
 // ── rosters from canonical SquadMembership ──────────────────────────────────
@@ -101,11 +103,9 @@ for (const name of TARGETS) {
   const id = nameToId.get(normalize(name))
   if (!id) continue
   tried.push(name)
-  // Only emit targets the game can identify: the player must exist in the
-  // canonical facts (wikidata.generated / FAME) that getPlayer() reads, so the
-  // runtime resolveNameToId→getPlayer lookup in teammates.js is never null. Emit
-  // the curated target name (a clean, game-resolvable label).
-  if (!FAME.has(normalize(name))) continue
+  // Only emit targets the game can identify (getPlayer-known), so the runtime
+  // resolveNameToId→getPlayer lookup in teammates.js is never null.
+  if (!KNOWN.has(normalize(name))) continue
   const mates = teammatesOf(id)
   if (mates.length >= MIN_MATES) players.push({ name, teammates: mates })
 }
