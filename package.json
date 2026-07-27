@@ -16,6 +16,7 @@
     "scrape:intl": "node scripts/pl-history/scrape-intl.mjs",
     "build:intl": "node scripts/pl-history/build-intl.mjs",
     "scrape:transfers": "node scripts/pl-history/scrape-transfers.mjs",
+    "scrape:honours": "node scripts/pl-history/scrape-honours.mjs",
     "build:pl-positions": "node scripts/pl-history/positions.mjs",
     "build:pl-clubnames": "node scripts/pl-history/clubnames.mjs",
     "clubnames:all": "for c in ES1 IT1 FR1 L1 CL; do COMP=$c node scripts/pl-history/clubnames.mjs; done",

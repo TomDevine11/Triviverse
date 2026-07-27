@@ -48,6 +48,30 @@ export function parseNationalTeam(html) {
   return { team, teamId, caps, goals }
 }
 
+// Player honours page (/erfolge/spieler/{id}) → [{ trophy, count }]. Trophies on
+// TM appear as sections/rows with a title and a "Nx" count. SELECTORS ARE
+// PROVISIONAL — confirmed against the probe HTML that scrape-honours saves.
+export function parseHonours(html) {
+  const $ = cheerio.load(html)
+  const num = (t) => { const n = parseInt(String(t).replace(/[^\d]/g, ''), 10); return Number.isNaN(n) ? 0 : n }
+  const out = []
+  const seen = new Set()
+  // Each honour block: a header/label carrying the trophy name and an "Nx" badge.
+  $('.large-6, .box, table').find('h2, .content-box-headline, a[href*="/erfolge/"], a[href*="/pokalwettbewerb/"], a[href*="/wettbewerb/"]').each((_, el) => {
+    let name = ($(el).attr('title') || $(el).text() || '').replace(/\s+/g, ' ').trim()
+    // strip a leading count badge like "5x " and pull the count if present.
+    const m = name.match(/(\d+)\s*x\b/i)
+    const count = m ? num(m[1]) : 1
+    name = name.replace(/^\s*\d+\s*x\s*/i, '').replace(/\s*\d+\s*x\s*$/i, '').trim()
+    if (!name || name.length < 3 || /^\d/.test(name)) return
+    const key = name.toLowerCase()
+    if (seen.has(key)) return
+    seen.add(key)
+    out.push({ trophy: name, count })
+  })
+  return out
+}
+
 // Enumerate the clubs in a competition-season → [{ id, slug }].
 // Works for a league table (startseite) AND the CL participants page
 // (/teilnehmer/), which lists clubs the same way.
