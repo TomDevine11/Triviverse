@@ -68,6 +68,7 @@ export const DERIVED = [
   'categoryIcons.generated.json',
   'canonical/nameFixes.generated',
   'recognisability.generated.json', // derived contemporary-recognisability score (replaces Wikidata fame)
+  'categories.generated.json', // derived tic-tac-toe/connections membership from canonical (C12, trophies pending C11)
 ]
 
 // Tracked, sanctioned exceptions: game→canonical imports that exist TODAY and
