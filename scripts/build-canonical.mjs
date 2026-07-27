@@ -93,6 +93,15 @@ function main() {
       } else if (!t.competitions.includes(c)) t.competitions.push(c)
     }
   }
+  // National teams (kind:'national') from the canonical international facts (C7),
+  // if present. TM national sides are "verein" entities with their own ids.
+  const intlFile = path.join(ROOT, 'src', 'data', 'football501', 'intl.generated.json')
+  if (existsSync(intlFile)) {
+    const natTeams = JSON.parse(readFileSync(intlFile, 'utf8')).teams || {}
+    for (const [id, name] of Object.entries(natTeams)) {
+      if (!teamMap.has(id)) teamMap.set(id, { id, kind: 'national', name, norm: normalize(name), country: null, competitions: [], last: 0 })
+    }
+  }
   const teams = [...teamMap.values()].sort((a, b) => Number(a.id) - Number(b.id))
   const teamIds = new Set(teams.map(t => t.id))
 
@@ -124,10 +133,11 @@ function main() {
   const write = (name, arr, extra) => writeFileSync(path.join(CANON, name), JSON.stringify({ meta: { ...meta, ...extra }, [name.split('.')[0]]: arr }, null, 1) + '\n')
   write('competitions.generated.json', competitions, { count: competitions.length })
   write('seasons.generated.json', seasons, { count: seasons.length, span: `${minY}–${maxY}` })
-  write('teams.generated.json', teams, { count: teams.length, kind: 'club' })
+  const clubCount = teams.filter(t => t.kind === 'club').length
+  write('teams.generated.json', teams, { count: teams.length, club: clubCount, national: teams.length - clubCount })
   write('editions.generated.json', editions, { count: editions.length, outcomes: 'skeleton (null — C11)' })
 
-  console.error(`✓ canonical dimensions: ${competitions.length} competitions, ${seasons.length} seasons, ${teams.length} teams (club), ${editions.length} editions`)
+  console.error(`✓ canonical dimensions: ${competitions.length} competitions, ${seasons.length} seasons, ${teams.length} teams (${clubCount} club + ${teams.length - clubCount} national), ${editions.length} editions`)
 }
 
 main()

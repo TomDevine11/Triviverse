@@ -2,8 +2,8 @@
  "meta": {
   "schemaVersion": 1,
   "source": "transfermarkt history (derived dimensions)",
-  "generatedAt": "2026-07-26",
-  "count": 455,
+  "generatedAt": "2026-07-27",
+  "count": 894,
   "kind": "club"
  },
  "teams": [
@@ -3851,6 +3851,33 @@
    "last": 1949
   },
   {
+   "id": "3262",
+   "kind": "national",
+   "name": "Germany",
+   "norm": "germany",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3299",
+   "kind": "national",
+   "name": "England",
+   "norm": "england",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3300",
+   "kind": "national",
+   "name": "Portugal",
+   "norm": "portugal",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "3302",
    "kind": "club",
    "name": "UD Almería",
@@ -3884,6 +3911,276 @@
    "last": 1936
   },
   {
+   "id": "3375",
+   "kind": "national",
+   "name": "Spain",
+   "norm": "spain",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3376",
+   "kind": "national",
+   "name": "Italy",
+   "norm": "italy",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3377",
+   "kind": "national",
+   "name": "France",
+   "norm": "france",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3378",
+   "kind": "national",
+   "name": "Greece",
+   "norm": "greece",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3379",
+   "kind": "national",
+   "name": "Netherlands",
+   "norm": "netherlands",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3380",
+   "kind": "national",
+   "name": "Scotland",
+   "norm": "scotland",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3381",
+   "kind": "national",
+   "name": "Turkiye",
+   "norm": "turkiye",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3382",
+   "kind": "national",
+   "name": "Belgium",
+   "norm": "belgium",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3383",
+   "kind": "national",
+   "name": "Austria",
+   "norm": "austria",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3384",
+   "kind": "national",
+   "name": "Switzerland",
+   "norm": "switzerland",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3394",
+   "kind": "national",
+   "name": "Bulgaria",
+   "norm": "bulgaria",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3433",
+   "kind": "national",
+   "name": "Australia",
+   "norm": "australia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3434",
+   "kind": "national",
+   "name": "Cameroon",
+   "norm": "cameroon",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3435",
+   "kind": "national",
+   "name": "Japan",
+   "norm": "japan",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3436",
+   "kind": "national",
+   "name": "Denmark",
+   "norm": "denmark",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3437",
+   "kind": "national",
+   "name": "Argentina",
+   "norm": "argentina",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3438",
+   "kind": "national",
+   "name": "Serbia",
+   "norm": "serbia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3439",
+   "kind": "national",
+   "name": "Brazil",
+   "norm": "brazil",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3440",
+   "kind": "national",
+   "name": "Norway",
+   "norm": "norway",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3441",
+   "kind": "national",
+   "name": "Ghana",
+   "norm": "ghana",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3442",
+   "kind": "national",
+   "name": "Poland",
+   "norm": "poland",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3443",
+   "kind": "national",
+   "name": "Finland",
+   "norm": "finland",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3444",
+   "kind": "national",
+   "name": "Nigeria",
+   "norm": "nigeria",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3445",
+   "kind": "national",
+   "name": "Czechia",
+   "norm": "czechia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3446",
+   "kind": "national",
+   "name": "Bosnia-Herzegovina",
+   "norm": "bosnia herzegovina",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3447",
+   "kind": "national",
+   "name": "Romania",
+   "norm": "romania",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3448",
+   "kind": "national",
+   "name": "Russia",
+   "norm": "russia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3449",
+   "kind": "national",
+   "name": "Uruguay",
+   "norm": "uruguay",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3450",
+   "kind": "national",
+   "name": "Belarus",
+   "norm": "belarus",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3468",
+   "kind": "national",
+   "name": "Hungary",
+   "norm": "hungary",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "3471",
    "kind": "club",
    "name": "Linfield FC",
@@ -3893,6 +4190,60 @@
     "CL"
    ],
    "last": 1993
+  },
+  {
+   "id": "3499",
+   "kind": "national",
+   "name": "Senegal",
+   "norm": "senegal",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3503",
+   "kind": "national",
+   "name": "Slovakia",
+   "norm": "slovakia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3504",
+   "kind": "national",
+   "name": "Venezuela",
+   "norm": "venezuela",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3505",
+   "kind": "national",
+   "name": "United States",
+   "norm": "united states",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3509",
+   "kind": "national",
+   "name": "Republic of Ireland",
+   "norm": "republic of ireland",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3510",
+   "kind": "national",
+   "name": "Canada",
+   "norm": "canada",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "3520",
@@ -3939,6 +4290,33 @@
    "last": 1966
   },
   {
+   "id": "3555",
+   "kind": "national",
+   "name": "Latvia",
+   "norm": "latvia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3556",
+   "kind": "national",
+   "name": "Croatia",
+   "norm": "croatia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3557",
+   "kind": "national",
+   "name": "Sweden",
+   "norm": "sweden",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "3558",
    "kind": "club",
    "name": "GFC Ajaccio",
@@ -3948,6 +4326,294 @@
     "FR1"
    ],
    "last": 2015
+  },
+  {
+   "id": "3560",
+   "kind": "national",
+   "name": "Iraq",
+   "norm": "iraq",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3561",
+   "kind": "national",
+   "name": "Albania",
+   "norm": "albania",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3562",
+   "kind": "national",
+   "name": "Seychelles",
+   "norm": "seychelles",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3563",
+   "kind": "national",
+   "name": "Uzbekistan",
+   "norm": "uzbekistan",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3573",
+   "kind": "national",
+   "name": "Namibia",
+   "norm": "namibia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3574",
+   "kind": "national",
+   "name": "Iceland",
+   "norm": "iceland",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3575",
+   "kind": "national",
+   "name": "Morocco",
+   "norm": "morocco",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3577",
+   "kind": "national",
+   "name": "Panama",
+   "norm": "panama",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3580",
+   "kind": "national",
+   "name": "Luxembourg",
+   "norm": "luxembourg",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3581",
+   "kind": "national",
+   "name": "Paraguay",
+   "norm": "paraguay",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3582",
+   "kind": "national",
+   "name": "Iran",
+   "norm": "iran",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3583",
+   "kind": "national",
+   "name": "Zimbabwe",
+   "norm": "zimbabwe",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3584",
+   "kind": "national",
+   "name": "Peru",
+   "norm": "peru",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3585",
+   "kind": "national",
+   "name": "Angola",
+   "norm": "angola",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3586",
+   "kind": "national",
+   "name": "Lebanon",
+   "norm": "lebanon",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3587",
+   "kind": "national",
+   "name": "Malta",
+   "norm": "malta",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3588",
+   "kind": "national",
+   "name": "Slovenia",
+   "norm": "slovenia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3589",
+   "kind": "national",
+   "name": "South Korea",
+   "norm": "south korea",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3590",
+   "kind": "national",
+   "name": "Honduras",
+   "norm": "honduras",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3591",
+   "kind": "national",
+   "name": "Ivory Coast",
+   "norm": "ivory coast",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3614",
+   "kind": "national",
+   "name": "Algeria",
+   "norm": "algeria",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3668",
+   "kind": "national",
+   "name": "Cyprus",
+   "norm": "cyprus",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3669",
+   "kind": "national",
+   "name": "Georgia",
+   "norm": "georgia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3670",
+   "kind": "national",
+   "name": "Tunisia",
+   "norm": "tunisia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3671",
+   "kind": "national",
+   "name": "Jamaica",
+   "norm": "jamaica",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3672",
+   "kind": "national",
+   "name": "Egypt",
+   "norm": "egypt",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3674",
+   "kind": "national",
+   "name": "Mali",
+   "norm": "mali",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3699",
+   "kind": "national",
+   "name": "Ukraine",
+   "norm": "ukraine",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3700",
+   "kind": "national",
+   "name": "Chile",
+   "norm": "chile",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3701",
+   "kind": "national",
+   "name": "Guinea-Bissau",
+   "norm": "guinea bissau",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3702",
+   "kind": "national",
+   "name": "Republic of the Congo",
+   "norm": "republic of the congo",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3703",
+   "kind": "national",
+   "name": "Zambia",
+   "norm": "zambia",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "3708",
@@ -3981,6 +4647,96 @@
     "CL"
    ],
    "last": 1993
+  },
+  {
+   "id": "3806",
+   "kind": "national",
+   "name": "South Africa",
+   "norm": "south africa",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3807",
+   "kind": "national",
+   "name": "Saudi Arabia",
+   "norm": "saudi arabia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3808",
+   "kind": "national",
+   "name": "Cuba",
+   "norm": "cuba",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3815",
+   "kind": "national",
+   "name": "Togo",
+   "norm": "togo",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3816",
+   "kind": "national",
+   "name": "Colombia",
+   "norm": "colombia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3817",
+   "kind": "national",
+   "name": "Germany U21",
+   "norm": "germany u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3851",
+   "kind": "national",
+   "name": "Lithuania",
+   "norm": "lithuania",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3854",
+   "kind": "national",
+   "name": "Democratic Republic of the Congo",
+   "norm": "democratic republic of the congo",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3856",
+   "kind": "national",
+   "name": "Guinea",
+   "norm": "guinea",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3864",
+   "kind": "national",
+   "name": "Wales",
+   "norm": "wales",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "3899",
@@ -4026,6 +4782,24 @@
     "CL"
    ],
    "last": 2025
+  },
+  {
+   "id": "3955",
+   "kind": "national",
+   "name": "Benin",
+   "norm": "benin",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "3956",
+   "kind": "national",
+   "name": "Kyrgyzstan",
+   "norm": "kyrgyzstan",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "4083",
@@ -4116,6 +4890,15 @@
    "last": 1929
   },
   {
+   "id": "4311",
+   "kind": "national",
+   "name": "Cape Verde",
+   "norm": "cape verde",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "4361",
    "kind": "club",
    "name": "Varese FC",
@@ -4182,6 +4965,33 @@
    "last": 2011
   },
   {
+   "id": "5129",
+   "kind": "national",
+   "name": "Mozambique",
+   "norm": "mozambique",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "5148",
+   "kind": "national",
+   "name": "North Macedonia",
+   "norm": "north macedonia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "5233",
+   "kind": "national",
+   "name": "Bolivia",
+   "norm": "bolivia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "5358",
    "kind": "club",
    "name": "SD Huesca",
@@ -4213,6 +5023,24 @@
     "IT1"
    ],
    "last": 1960
+  },
+  {
+   "id": "5547",
+   "kind": "national",
+   "name": "Israel",
+   "norm": "israel",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "5598",
+   "kind": "national",
+   "name": "China",
+   "norm": "china",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "5621",
@@ -4248,6 +5076,69 @@
    "last": 1963
   },
   {
+   "id": "5673",
+   "kind": "national",
+   "name": "Liechtenstein",
+   "norm": "liechtenstein",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "5674",
+   "kind": "national",
+   "name": "Northern Ireland",
+   "norm": "northern ireland",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "5676",
+   "kind": "national",
+   "name": "Thailand",
+   "norm": "thailand",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "5704",
+   "kind": "national",
+   "name": "Gabon",
+   "norm": "gabon",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "5709",
+   "kind": "national",
+   "name": "Germany U20",
+   "norm": "germany u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "5710",
+   "kind": "national",
+   "name": "Germany U19",
+   "norm": "germany u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "5750",
+   "kind": "national",
+   "name": "Ecuador",
+   "norm": "ecuador",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "5849",
    "kind": "club",
    "name": "Víkingur Reykjavík",
@@ -4259,6 +5150,33 @@
    "last": 1992
   },
   {
+   "id": "5872",
+   "kind": "national",
+   "name": "Burkina Faso",
+   "norm": "burkina faso",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "6090",
+   "kind": "national",
+   "name": "Moldova",
+   "norm": "moldova",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "6133",
+   "kind": "national",
+   "name": "Estonia",
+   "norm": "estonia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "6182",
    "kind": "club",
    "name": "FC Valencia B Mestalla",
@@ -4268,6 +5186,24 @@
     "ES1"
    ],
    "last": 1951
+  },
+  {
+   "id": "6186",
+   "kind": "national",
+   "name": "The Gambia",
+   "norm": "the gambia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "6187",
+   "kind": "national",
+   "name": "Sierra Leone",
+   "norm": "sierra leone",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "6195",
@@ -4282,6 +5218,24 @@
    "last": 1929
   },
   {
+   "id": "6219",
+   "kind": "national",
+   "name": "Armenia",
+   "norm": "armenia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "6303",
+   "kind": "national",
+   "name": "Mexico",
+   "norm": "mexico",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "6574",
    "kind": "club",
    "name": "US Sassuolo",
@@ -4291,6 +5245,15 @@
     "IT1"
    ],
    "last": 1943
+  },
+  {
+   "id": "6602",
+   "kind": "national",
+   "name": "Libya",
+   "norm": "libya",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "6692",
@@ -4326,6 +5289,33 @@
    "last": 1964
   },
   {
+   "id": "7149",
+   "kind": "national",
+   "name": "Trinidad and Tobago",
+   "norm": "trinidad and tobago",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "7214",
+   "kind": "national",
+   "name": "Bahrain",
+   "norm": "bahrain",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "7658",
+   "kind": "national",
+   "name": "Brazil U20",
+   "norm": "brazil u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "7723",
    "kind": "club",
    "name": "Limoges FC",
@@ -4359,6 +5349,15 @@
    "last": 1935
   },
   {
+   "id": "8497",
+   "kind": "national",
+   "name": "Costa Rica",
+   "norm": "costa rica",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "8568",
    "kind": "club",
    "name": "Ad Ceuta",
@@ -4368,6 +5367,42 @@
     "ES1"
    ],
    "last": 1960
+  },
+  {
+   "id": "8595",
+   "kind": "national",
+   "name": "Sweden U21",
+   "norm": "sweden u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "8605",
+   "kind": "national",
+   "name": "Azerbaijan",
+   "norm": "azerbaijan",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "8771",
+   "kind": "national",
+   "name": "Czechia U21",
+   "norm": "czechia u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "8776",
+   "kind": "national",
+   "name": "Austria U20",
+   "norm": "austria u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "8970",
@@ -4381,6 +5416,24 @@
    "last": 1943
   },
   {
+   "id": "8987",
+   "kind": "national",
+   "name": "Kenya",
+   "norm": "kenya",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "8988",
+   "kind": "national",
+   "name": "Malawi",
+   "norm": "malawi",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "9026",
    "kind": "club",
    "name": "Glentoran FC",
@@ -4390,6 +5443,51 @@
     "CL"
    ],
    "last": 1992
+  },
+  {
+   "id": "9067",
+   "kind": "national",
+   "name": "Germany U18",
+   "norm": "germany u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "9110",
+   "kind": "national",
+   "name": "Kazakhstan",
+   "norm": "kazakhstan",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "9171",
+   "kind": "national",
+   "name": "New Zealand",
+   "norm": "new zealand",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "9172",
+   "kind": "national",
+   "name": "Liberia",
+   "norm": "liberia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "9173",
+   "kind": "national",
+   "name": "Faroe Islands",
+   "norm": "faroe islands",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "9202",
@@ -4403,6 +5501,51 @@
    "last": 2024
   },
   {
+   "id": "9315",
+   "kind": "national",
+   "name": "Belgium U21",
+   "norm": "belgium u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "9316",
+   "kind": "national",
+   "name": "Austria U21",
+   "norm": "austria u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "9317",
+   "kind": "national",
+   "name": "Greece U21",
+   "norm": "greece u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "9323",
+   "kind": "national",
+   "name": "France U21",
+   "norm": "france u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "9324",
+   "kind": "national",
+   "name": "Poland U21",
+   "norm": "poland u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "9523",
    "kind": "club",
    "name": "Racing Club de Roubaix",
@@ -4412,6 +5555,51 @@
     "FR1"
    ],
    "last": 1936
+  },
+  {
+   "id": "9534",
+   "kind": "national",
+   "name": "Switzerland U21",
+   "norm": "switzerland u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "9565",
+   "kind": "national",
+   "name": "England U21",
+   "norm": "england u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "9566",
+   "kind": "national",
+   "name": "Serbia U21",
+   "norm": "serbia u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "9567",
+   "kind": "national",
+   "name": "Spain U21",
+   "norm": "spain u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "9568",
+   "kind": "national",
+   "name": "Türkiye U21",
+   "norm": "turkiye u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "10004",
@@ -4458,6 +5646,24 @@
    "last": 1992
   },
   {
+   "id": "10521",
+   "kind": "national",
+   "name": "San Marino",
+   "norm": "san marino",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "10533",
+   "kind": "national",
+   "name": "Andorra",
+   "norm": "andorra",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "10603",
    "kind": "club",
    "name": "Floriana FC",
@@ -4478,6 +5684,33 @@
     "CL"
    ],
    "last": 2017
+  },
+  {
+   "id": "10831",
+   "kind": "national",
+   "name": "France U17",
+   "norm": "france u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "10844",
+   "kind": "national",
+   "name": "France U16",
+   "norm": "france u16",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "10933",
+   "kind": "national",
+   "name": "Netherlands U17",
+   "norm": "netherlands u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "11259",
@@ -4524,6 +5757,96 @@
    "last": 1941
   },
   {
+   "id": "11940",
+   "kind": "national",
+   "name": "Argentina U20",
+   "norm": "argentina u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "11941",
+   "kind": "national",
+   "name": "Bosnia-Herzegovina U21",
+   "norm": "bosnia herzegovina u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "11943",
+   "kind": "national",
+   "name": "Croatia U21",
+   "norm": "croatia u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "11944",
+   "kind": "national",
+   "name": "Netherlands U21",
+   "norm": "netherlands u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "11945",
+   "kind": "national",
+   "name": "Russia U21",
+   "norm": "russia u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "11946",
+   "kind": "national",
+   "name": "United States U20",
+   "norm": "united states u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "11947",
+   "kind": "national",
+   "name": "Italy U21",
+   "norm": "italy u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "11952",
+   "kind": "national",
+   "name": "Albania U21",
+   "norm": "albania u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "11953",
+   "kind": "national",
+   "name": "Montenegro",
+   "norm": "montenegro",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "12148",
+   "kind": "national",
+   "name": "Georgia U21",
+   "norm": "georgia u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "12321",
    "kind": "club",
    "name": "Girona FC",
@@ -4536,6 +5859,15 @@
    "last": 2017
   },
   {
+   "id": "12395",
+   "kind": "national",
+   "name": "Spain U17",
+   "norm": "spain u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "12405",
    "kind": "club",
    "name": "Real Unión Club",
@@ -4545,6 +5877,33 @@
     "ES1"
    ],
    "last": 1929
+  },
+  {
+   "id": "12519",
+   "kind": "national",
+   "name": "Austria U19",
+   "norm": "austria u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "12609",
+   "kind": "national",
+   "name": "Spain U19",
+   "norm": "spain u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "12933",
+   "kind": "national",
+   "name": "Central African Republic",
+   "norm": "central african republic",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "13242",
@@ -4569,6 +5928,123 @@
    "last": 1992
   },
   {
+   "id": "13485",
+   "kind": "national",
+   "name": "Equatorial Guinea",
+   "norm": "equatorial guinea",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "13497",
+   "kind": "national",
+   "name": "Uganda",
+   "norm": "uganda",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "13943",
+   "kind": "national",
+   "name": "Burundi",
+   "norm": "burundi",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "13951",
+   "kind": "national",
+   "name": "El Salvador",
+   "norm": "el salvador",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "13953",
+   "kind": "national",
+   "name": "Eritrea",
+   "norm": "eritrea",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "13958",
+   "kind": "national",
+   "name": "Indonesia",
+   "norm": "indonesia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "13974",
+   "kind": "national",
+   "name": "Somalia",
+   "norm": "somalia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "13975",
+   "kind": "national",
+   "name": "Tajikistan",
+   "norm": "tajikistan",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "13978",
+   "kind": "national",
+   "name": "Chad",
+   "norm": "chad",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "14161",
+   "kind": "national",
+   "name": "Haiti",
+   "norm": "haiti",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "14162",
+   "kind": "national",
+   "name": "Qatar",
+   "norm": "qatar",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "14163",
+   "kind": "national",
+   "name": "Niger",
+   "norm": "niger",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "14165",
+   "kind": "national",
+   "name": "Oman",
+   "norm": "oman",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "14171",
    "kind": "club",
    "name": "FC Évian Thonon Gaillard",
@@ -4578,6 +6054,195 @@
     "FR1"
    ],
    "last": 2011
+  },
+  {
+   "id": "14175",
+   "kind": "national",
+   "name": "Grenada",
+   "norm": "grenada",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "14238",
+   "kind": "national",
+   "name": "Mauritania",
+   "norm": "mauritania",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "14239",
+   "kind": "national",
+   "name": "Mauritius",
+   "norm": "mauritius",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "14248",
+   "kind": "national",
+   "name": "Turkmenistan",
+   "norm": "turkmenistan",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "14635",
+   "kind": "national",
+   "name": "Madagascar",
+   "norm": "madagascar",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "14666",
+   "kind": "national",
+   "name": "Tanzania",
+   "norm": "tanzania",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "15033",
+   "kind": "national",
+   "name": "Bangladesh",
+   "norm": "bangladesh",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "15232",
+   "kind": "national",
+   "name": "Dominican Republic",
+   "norm": "dominican republic",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "15234",
+   "kind": "national",
+   "name": "Philippines",
+   "norm": "philippines",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "15352",
+   "kind": "national",
+   "name": "Pakistan",
+   "norm": "pakistan",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "15359",
+   "kind": "national",
+   "name": "Suriname",
+   "norm": "suriname",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "15457",
+   "kind": "national",
+   "name": "North Korea",
+   "norm": "north korea",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "15735",
+   "kind": "national",
+   "name": "Bermuda",
+   "norm": "bermuda",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "15736",
+   "kind": "national",
+   "name": "Guyana",
+   "norm": "guyana",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "15737",
+   "kind": "national",
+   "name": "Jordan",
+   "norm": "jordan",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "15738",
+   "kind": "national",
+   "name": "Malaysia",
+   "norm": "malaysia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "15977",
+   "kind": "national",
+   "name": "Hong Kong",
+   "norm": "hong kong",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16028",
+   "kind": "national",
+   "name": "Antigua and Barbuda",
+   "norm": "antigua and barbuda",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16030",
+   "kind": "national",
+   "name": "Barbados",
+   "norm": "barbados",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16038",
+   "kind": "national",
+   "name": "Cambodia",
+   "norm": "cambodia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16121",
+   "kind": "national",
+   "name": "Egypt U20",
+   "norm": "egypt u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "16122",
@@ -4591,6 +6256,177 @@
    "last": 1929
   },
   {
+   "id": "16267",
+   "kind": "national",
+   "name": "Montenegro U21",
+   "norm": "montenegro u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16272",
+   "kind": "national",
+   "name": "Slovenia U21",
+   "norm": "slovenia u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16274",
+   "kind": "national",
+   "name": "Ukraine U21",
+   "norm": "ukraine u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16297",
+   "kind": "national",
+   "name": "Poland U18",
+   "norm": "poland u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16298",
+   "kind": "national",
+   "name": "Poland U19",
+   "norm": "poland u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16299",
+   "kind": "national",
+   "name": "Poland U20",
+   "norm": "poland u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16337",
+   "kind": "national",
+   "name": "Belgium U18",
+   "norm": "belgium u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16338",
+   "kind": "national",
+   "name": "Belgium U19",
+   "norm": "belgium u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16339",
+   "kind": "national",
+   "name": "Belgium U20",
+   "norm": "belgium u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16340",
+   "kind": "national",
+   "name": "Netherlands U18",
+   "norm": "netherlands u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16341",
+   "kind": "national",
+   "name": "Netherlands U19",
+   "norm": "netherlands u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16342",
+   "kind": "national",
+   "name": "Netherlands U20",
+   "norm": "netherlands u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16371",
+   "kind": "national",
+   "name": "Portugal U18",
+   "norm": "portugal u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16372",
+   "kind": "national",
+   "name": "Portugal U19",
+   "norm": "portugal u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16373",
+   "kind": "national",
+   "name": "Portugal U20",
+   "norm": "portugal u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16374",
+   "kind": "national",
+   "name": "Portugal U21",
+   "norm": "portugal u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16418",
+   "kind": "national",
+   "name": "Mexico U23",
+   "norm": "mexico u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16430",
+   "kind": "national",
+   "name": "Comoros",
+   "norm": "comoros",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16431",
+   "kind": "national",
+   "name": "Laos",
+   "norm": "laos",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "16704",
    "kind": "club",
    "name": "FC Krasnodar",
@@ -4600,6 +6436,15 @@
     "CL"
    ],
    "last": 2020
+  },
+  {
+   "id": "16783",
+   "kind": "national",
+   "name": "Denmark U21",
+   "norm": "denmark u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "16795",
@@ -4613,6 +6458,123 @@
    "last": 1941
   },
   {
+   "id": "16817",
+   "kind": "national",
+   "name": "Switzerland U20",
+   "norm": "switzerland u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16844",
+   "kind": "national",
+   "name": "North Macedonia U21",
+   "norm": "north macedonia u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16854",
+   "kind": "national",
+   "name": "Norway U21",
+   "norm": "norway u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16864",
+   "kind": "national",
+   "name": "Romania U21",
+   "norm": "romania u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "16868",
+   "kind": "national",
+   "name": "Scotland U21",
+   "norm": "scotland u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "17201",
+   "kind": "national",
+   "name": "East Germany",
+   "norm": "east germany",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "17202",
+   "kind": "national",
+   "name": "Czechoslovakia (-1993)",
+   "norm": "czechoslovakia 1993",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "17203",
+   "kind": "national",
+   "name": "Soviet Union (-1991)",
+   "norm": "soviet union 1991",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "17335",
+   "kind": "national",
+   "name": "Yugoslavia",
+   "norm": "yugoslavia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "17368",
+   "kind": "national",
+   "name": "Germany U16",
+   "norm": "germany u16",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "17379",
+   "kind": "national",
+   "name": "Croatia U19",
+   "norm": "croatia u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "17383",
+   "kind": "national",
+   "name": "Serbia U19",
+   "norm": "serbia u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "17622",
+   "kind": "national",
+   "name": "Scotland U19",
+   "norm": "scotland u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "17629",
    "kind": "club",
    "name": "1.FC Kosice (1951 - 2004)",
@@ -4622,6 +6584,132 @@
     "CL"
    ],
    "last": 1997
+  },
+  {
+   "id": "17662",
+   "kind": "national",
+   "name": "Germany U17",
+   "norm": "germany u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "17749",
+   "kind": "national",
+   "name": "Aruba",
+   "norm": "aruba",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "17754",
+   "kind": "national",
+   "name": "Montserrat",
+   "norm": "montserrat",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "17755",
+   "kind": "national",
+   "name": "New Caledonia",
+   "norm": "new caledonia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "17756",
+   "kind": "national",
+   "name": "Netherlands Antilles",
+   "norm": "netherlands antilles",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "17758",
+   "kind": "national",
+   "name": "Palestine",
+   "norm": "palestine",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "17759",
+   "kind": "national",
+   "name": "Puerto Rico",
+   "norm": "puerto rico",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "17760",
+   "kind": "national",
+   "name": "Saint Kitts and Nevis",
+   "norm": "saint kitts and nevis",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "17763",
+   "kind": "national",
+   "name": "Tahiti",
+   "norm": "tahiti",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "19429",
+   "kind": "national",
+   "name": "Switzerland U19",
+   "norm": "switzerland u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "19753",
+   "kind": "national",
+   "name": "French Guiana",
+   "norm": "french guiana",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "19755",
+   "kind": "national",
+   "name": "Guadeloupe",
+   "norm": "guadeloupe",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "19758",
+   "kind": "national",
+   "name": "Martinique",
+   "norm": "martinique",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "20267",
+   "kind": "national",
+   "name": "Israel U21",
+   "norm": "israel u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "20528",
@@ -4635,6 +6723,24 @@
    "last": 1929
   },
   {
+   "id": "20713",
+   "kind": "national",
+   "name": "Netherlands B",
+   "norm": "netherlands b",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "20796",
+   "kind": "national",
+   "name": "Finland U21",
+   "norm": "finland u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "20844",
    "kind": "club",
    "name": "Real Aviles CF",
@@ -4646,6 +6752,42 @@
    "last": 1952
   },
   {
+   "id": "20901",
+   "kind": "national",
+   "name": "Denmark U17",
+   "norm": "denmark u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "20902",
+   "kind": "national",
+   "name": "Denmark U19",
+   "norm": "denmark u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "20911",
+   "kind": "national",
+   "name": "Spain U20",
+   "norm": "spain u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "20947",
+   "kind": "national",
+   "name": "Spain U18",
+   "norm": "spain u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "20963",
    "kind": "club",
    "name": "Ce Constancia",
@@ -4655,6 +6797,159 @@
     "ES1"
    ],
    "last": 1943
+  },
+  {
+   "id": "21100",
+   "kind": "national",
+   "name": "Italy U20",
+   "norm": "italy u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "21102",
+   "kind": "national",
+   "name": "Czechia U19",
+   "norm": "czechia u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "21103",
+   "kind": "national",
+   "name": "Republic of Ireland U21",
+   "norm": "republic of ireland u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "21141",
+   "kind": "national",
+   "name": "Croatia U17",
+   "norm": "croatia u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "21233",
+   "kind": "national",
+   "name": "Ukraine U19",
+   "norm": "ukraine u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "21340",
+   "kind": "national",
+   "name": "England U19",
+   "norm": "england u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "21361",
+   "kind": "national",
+   "name": "Bulgaria U21",
+   "norm": "bulgaria u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "21426",
+   "kind": "national",
+   "name": "Italy U19",
+   "norm": "italy u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "21428",
+   "kind": "national",
+   "name": "Romania U19",
+   "norm": "romania u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "21647",
+   "kind": "national",
+   "name": "Luxembourg U17",
+   "norm": "luxembourg u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "21649",
+   "kind": "national",
+   "name": "Luxembourg U21",
+   "norm": "luxembourg u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "21668",
+   "kind": "national",
+   "name": "Russia U18",
+   "norm": "russia u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "21669",
+   "kind": "national",
+   "name": "Russia U19",
+   "norm": "russia u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "21670",
+   "kind": "national",
+   "name": "Russia U20",
+   "norm": "russia u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "21705",
+   "kind": "national",
+   "name": "Bosnia-Herzegovina U19",
+   "norm": "bosnia herzegovina u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "21741",
+   "kind": "national",
+   "name": "Denmark U18",
+   "norm": "denmark u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "21746",
+   "kind": "national",
+   "name": "Italy U18",
+   "norm": "italy u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "21816",
@@ -4679,6 +6974,15 @@
    "last": 1992
   },
   {
+   "id": "22027",
+   "kind": "national",
+   "name": "Austria U16",
+   "norm": "austria u16",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "22220",
    "kind": "club",
    "name": "FC Astana",
@@ -4690,6 +6994,321 @@
    "last": 2015
   },
   {
+   "id": "22247",
+   "kind": "national",
+   "name": "Belarus U21",
+   "norm": "belarus u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "22360",
+   "kind": "national",
+   "name": "Japan U20",
+   "norm": "japan u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "22414",
+   "kind": "national",
+   "name": "Iceland U21",
+   "norm": "iceland u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "22513",
+   "kind": "national",
+   "name": "Hungary U19",
+   "norm": "hungary u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "22514",
+   "kind": "national",
+   "name": "Hungary U21",
+   "norm": "hungary u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "22515",
+   "kind": "national",
+   "name": "Norway U19",
+   "norm": "norway u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "22584",
+   "kind": "national",
+   "name": "Türkiye U18",
+   "norm": "turkiye u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "22585",
+   "kind": "national",
+   "name": "Türkiye U19",
+   "norm": "turkiye u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "22586",
+   "kind": "national",
+   "name": "Türkiye U20",
+   "norm": "turkiye u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "22907",
+   "kind": "national",
+   "name": "England U20",
+   "norm": "england u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "22976",
+   "kind": "national",
+   "name": "Australia U20",
+   "norm": "australia u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "22978",
+   "kind": "national",
+   "name": "Ghana U20",
+   "norm": "ghana u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "22980",
+   "kind": "national",
+   "name": "Cameroon U20",
+   "norm": "cameroon u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "22981",
+   "kind": "national",
+   "name": "Nigeria U20",
+   "norm": "nigeria u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "22982",
+   "kind": "national",
+   "name": "Paraguay U20",
+   "norm": "paraguay u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "22983",
+   "kind": "national",
+   "name": "South Korea U20",
+   "norm": "south korea u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "22987",
+   "kind": "national",
+   "name": "Czechia U20",
+   "norm": "czechia u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "22989",
+   "kind": "national",
+   "name": "Uruguay U20",
+   "norm": "uruguay u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "22998",
+   "kind": "national",
+   "name": "Switzerland U18",
+   "norm": "switzerland u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23100",
+   "kind": "national",
+   "name": "German Democratic Republic U21",
+   "norm": "german democratic republic u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23101",
+   "kind": "national",
+   "name": "France U19",
+   "norm": "france u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23102",
+   "kind": "national",
+   "name": "Republic of Ireland U19",
+   "norm": "republic of ireland u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23103",
+   "kind": "national",
+   "name": "Yugoslavia U20",
+   "norm": "yugoslavia u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23115",
+   "kind": "national",
+   "name": "Yugoslavia U21",
+   "norm": "yugoslavia u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23126",
+   "kind": "national",
+   "name": "Soviet Union U21 (-1991)",
+   "norm": "soviet union u21 1991",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23130",
+   "kind": "national",
+   "name": "Brazil U17",
+   "norm": "brazil u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23131",
+   "kind": "national",
+   "name": "Ghana U17",
+   "norm": "ghana u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23133",
+   "kind": "national",
+   "name": "Italy U17",
+   "norm": "italy u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23135",
+   "kind": "national",
+   "name": "Nigeria U17",
+   "norm": "nigeria u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23137",
+   "kind": "national",
+   "name": "Portugal U17",
+   "norm": "portugal u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23140",
+   "kind": "national",
+   "name": "Switzerland U17",
+   "norm": "switzerland u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23243",
+   "kind": "national",
+   "name": "Italy U16",
+   "norm": "italy u16",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23260",
+   "kind": "national",
+   "name": "England U17",
+   "norm": "england u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23282",
+   "kind": "national",
+   "name": "Belgium U16",
+   "norm": "belgium u16",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23313",
+   "kind": "national",
+   "name": "Ukraine U17",
+   "norm": "ukraine u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "23341",
    "kind": "club",
    "name": "Olympique avignonnais",
@@ -4699,6 +7318,42 @@
     "FR1"
    ],
    "last": 1975
+  },
+  {
+   "id": "23380",
+   "kind": "national",
+   "name": "Serbia and Montenegro",
+   "norm": "serbia and montenegro",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23488",
+   "kind": "national",
+   "name": "Sweden U19",
+   "norm": "sweden u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23657",
+   "kind": "national",
+   "name": "Chile U20",
+   "norm": "chile u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "23658",
+   "kind": "national",
+   "name": "France U20",
+   "norm": "france u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "23826",
@@ -4713,6 +7368,123 @@
    "last": 2016
   },
   {
+   "id": "24750",
+   "kind": "national",
+   "name": "Japan U18",
+   "norm": "japan u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "24956",
+   "kind": "national",
+   "name": "Andorra U21",
+   "norm": "andorra u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "24960",
+   "kind": "national",
+   "name": "Kazakhstan U21",
+   "norm": "kazakhstan u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "24963",
+   "kind": "national",
+   "name": "Malta U21",
+   "norm": "malta u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "24965",
+   "kind": "national",
+   "name": "Slovakia U21",
+   "norm": "slovakia u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "24966",
+   "kind": "national",
+   "name": "Wales U21",
+   "norm": "wales u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "24967",
+   "kind": "national",
+   "name": "Cyprus U21",
+   "norm": "cyprus u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "24978",
+   "kind": "national",
+   "name": "Sweden U18",
+   "norm": "sweden u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "25249",
+   "kind": "national",
+   "name": "Ivory Coast U20",
+   "norm": "ivory coast u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "25250",
+   "kind": "national",
+   "name": "France U18",
+   "norm": "france u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "25501",
+   "kind": "national",
+   "name": "Argentina U17",
+   "norm": "argentina u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "25512",
+   "kind": "national",
+   "name": "Uruguay U17",
+   "norm": "uruguay u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "25565",
+   "kind": "national",
+   "name": "Czechia U18",
+   "norm": "czechia u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "25639",
    "kind": "club",
    "name": "Hyères FC",
@@ -4722,6 +7494,51 @@
     "FR1"
    ],
    "last": 1932
+  },
+  {
+   "id": "25793",
+   "kind": "national",
+   "name": "Czechia U16",
+   "norm": "czechia u16",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "26035",
+   "kind": "national",
+   "name": "Czechia U17",
+   "norm": "czechia u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "26399",
+   "kind": "national",
+   "name": "Scotland B",
+   "norm": "scotland b",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "26440",
+   "kind": "national",
+   "name": "Zaire",
+   "norm": "zaire",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "26469",
+   "kind": "national",
+   "name": "Greece U17",
+   "norm": "greece u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "26789",
@@ -4735,6 +7552,33 @@
    "last": 1929
   },
   {
+   "id": "27261",
+   "kind": "national",
+   "name": "Canada U20",
+   "norm": "canada u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "27262",
+   "kind": "national",
+   "name": "Democratic Republic of the Congo U20",
+   "norm": "democratic republic of the congo u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "27300",
+   "kind": "national",
+   "name": "Germany U15",
+   "norm": "germany u15",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "27774",
    "kind": "club",
    "name": "Cork City FC",
@@ -4744,6 +7588,159 @@
     "CL"
    ],
    "last": 1993
+  },
+  {
+   "id": "28076",
+   "kind": "national",
+   "name": "Denmark U20",
+   "norm": "denmark u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "28137",
+   "kind": "national",
+   "name": "Algeria U18",
+   "norm": "algeria u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "28143",
+   "kind": "national",
+   "name": "Denmark U16",
+   "norm": "denmark u16",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "28147",
+   "kind": "national",
+   "name": "Israel U18",
+   "norm": "israel u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "28164",
+   "kind": "national",
+   "name": "United States U19",
+   "norm": "united states u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "28207",
+   "kind": "national",
+   "name": "Croatia U18",
+   "norm": "croatia u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "28208",
+   "kind": "national",
+   "name": "South Korea U19",
+   "norm": "south korea u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "28266",
+   "kind": "national",
+   "name": "Colombia U20",
+   "norm": "colombia u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "28425",
+   "kind": "national",
+   "name": "Japan U19",
+   "norm": "japan u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "28434",
+   "kind": "national",
+   "name": "Cyprus U19",
+   "norm": "cyprus u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "28436",
+   "kind": "national",
+   "name": "Switzerland U15",
+   "norm": "switzerland u15",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "28461",
+   "kind": "national",
+   "name": "Italy U15",
+   "norm": "italy u15",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "28642",
+   "kind": "national",
+   "name": "Japan U23",
+   "norm": "japan u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "29380",
+   "kind": "national",
+   "name": "Croatia U20",
+   "norm": "croatia u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "29809",
+   "kind": "national",
+   "name": "Ecuador U17",
+   "norm": "ecuador u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "30322",
+   "kind": "national",
+   "name": "England U16",
+   "norm": "england u16",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "30431",
+   "kind": "national",
+   "name": "Wales U17",
+   "norm": "wales u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "30633",
@@ -4768,6 +7765,51 @@
    "last": 1946
   },
   {
+   "id": "31096",
+   "kind": "national",
+   "name": "Nigeria U23",
+   "norm": "nigeria u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "31269",
+   "kind": "national",
+   "name": "England U18",
+   "norm": "england u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "31463",
+   "kind": "national",
+   "name": "Ecuador U20",
+   "norm": "ecuador u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "31519",
+   "kind": "national",
+   "name": "Republic of the Congo U17",
+   "norm": "republic of the congo u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "31523",
+   "kind": "national",
+   "name": "Senegal U17",
+   "norm": "senegal u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "31614",
    "kind": "club",
    "name": "Ludogorets Razgrad",
@@ -4777,6 +7819,213 @@
     "CL"
    ],
    "last": 2014
+  },
+  {
+   "id": "31919",
+   "kind": "national",
+   "name": "Norway U18",
+   "norm": "norway u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "32270",
+   "kind": "national",
+   "name": "Australia U23",
+   "norm": "australia u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "32344",
+   "kind": "national",
+   "name": "Algeria U20",
+   "norm": "algeria u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "32364",
+   "kind": "national",
+   "name": "Curaçao",
+   "norm": "curacao",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "32441",
+   "kind": "national",
+   "name": "Mali U20",
+   "norm": "mali u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "33289",
+   "kind": "national",
+   "name": "Serbia and Montenegro U21",
+   "norm": "serbia and montenegro u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "33397",
+   "kind": "national",
+   "name": "Russia B",
+   "norm": "russia b",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "33541",
+   "kind": "national",
+   "name": "Belarus U23",
+   "norm": "belarus u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "33775",
+   "kind": "national",
+   "name": "Spain U16",
+   "norm": "spain u16",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "34183",
+   "kind": "national",
+   "name": "Saar",
+   "norm": "saar",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "34592",
+   "kind": "national",
+   "name": "United Arab Emirates U23",
+   "norm": "united arab emirates u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "34684",
+   "kind": "national",
+   "name": "Netherlands U15",
+   "norm": "netherlands u15",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "34867",
+   "kind": "national",
+   "name": "Algeria U23",
+   "norm": "algeria u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "34868",
+   "kind": "national",
+   "name": "Ivory Coast U23",
+   "norm": "ivory coast u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "34870",
+   "kind": "national",
+   "name": "Senegal U23",
+   "norm": "senegal u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "34903",
+   "kind": "national",
+   "name": "Morocco U23",
+   "norm": "morocco u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "34950",
+   "kind": "national",
+   "name": "South Korea U23",
+   "norm": "south korea u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "35707",
+   "kind": "national",
+   "name": "United States U23",
+   "norm": "united states u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "35742",
+   "kind": "national",
+   "name": "Spain U23",
+   "norm": "spain u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "36329",
+   "kind": "national",
+   "name": "Uruguay U23",
+   "norm": "uruguay u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "36495",
+   "kind": "national",
+   "name": "Norway U16",
+   "norm": "norway u16",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "36635",
+   "kind": "national",
+   "name": "Serbia and Montenegro U19",
+   "norm": "serbia and montenegro u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "37018",
+   "kind": "national",
+   "name": "Brazil U23",
+   "norm": "brazil u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "37393",
@@ -4790,6 +8039,60 @@
    "last": 1932
   },
   {
+   "id": "37488",
+   "kind": "national",
+   "name": "Democratic Republic of the Congo U21",
+   "norm": "democratic republic of the congo u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "37497",
+   "kind": "national",
+   "name": "Senegal U20",
+   "norm": "senegal u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "37515",
+   "kind": "national",
+   "name": "Romania U18",
+   "norm": "romania u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "37524",
+   "kind": "national",
+   "name": "Morocco U17",
+   "norm": "morocco u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "37574",
+   "kind": "national",
+   "name": "Gibraltar",
+   "norm": "gibraltar",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "37630",
+   "kind": "national",
+   "name": "Morocco U20",
+   "norm": "morocco u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "38011",
    "kind": "club",
    "name": "CP Mérida",
@@ -4799,6 +8102,132 @@
     "ES1"
    ],
    "last": 1995
+  },
+  {
+   "id": "38280",
+   "kind": "national",
+   "name": "Saint-Martin",
+   "norm": "saint martin",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "38740",
+   "kind": "national",
+   "name": "Norway U20",
+   "norm": "norway u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "39099",
+   "kind": "national",
+   "name": "Guinea U23",
+   "norm": "guinea u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "39118",
+   "kind": "national",
+   "name": "Netherlands U16",
+   "norm": "netherlands u16",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "39417",
+   "kind": "national",
+   "name": "Türkiye U23",
+   "norm": "turkiye u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "39435",
+   "kind": "national",
+   "name": "Greece U16",
+   "norm": "greece u16",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "39543",
+   "kind": "national",
+   "name": "Serbia U20",
+   "norm": "serbia u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "40453",
+   "kind": "national",
+   "name": "England C",
+   "norm": "england c",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "40468",
+   "kind": "national",
+   "name": "France U23",
+   "norm": "france u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "40487",
+   "kind": "national",
+   "name": "Romania B",
+   "norm": "romania b",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "40750",
+   "kind": "national",
+   "name": "Denmark U23",
+   "norm": "denmark u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "40791",
+   "kind": "national",
+   "name": "Germany Team 2006 (2001-2005)",
+   "norm": "germany team 2006 2001 2005",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "40796",
+   "kind": "national",
+   "name": "Czechia B",
+   "norm": "czechia b",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "41864",
+   "kind": "national",
+   "name": "Slovakia U23",
+   "norm": "slovakia u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "42613",
@@ -4867,6 +8296,24 @@
    "last": 1934
   },
   {
+   "id": "42880",
+   "kind": "national",
+   "name": "Yugoslavia U18",
+   "norm": "yugoslavia u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "43903",
+   "kind": "national",
+   "name": "Tunisia U20",
+   "norm": "tunisia u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "44396",
    "kind": "club",
    "name": "SC Tasmania 1900 Berlin (-1973)",
@@ -4878,6 +8325,15 @@
    "last": 1965
   },
   {
+   "id": "45444",
+   "kind": "national",
+   "name": "Colombia U23",
+   "norm": "colombia u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "45457",
    "kind": "club",
    "name": "Pafos FC",
@@ -4887,6 +8343,312 @@
     "CL"
    ],
    "last": 2025
+  },
+  {
+   "id": "46122",
+   "kind": "national",
+   "name": "Mali U23",
+   "norm": "mali u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "46607",
+   "kind": "national",
+   "name": "Sweden U20",
+   "norm": "sweden u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "46770",
+   "kind": "national",
+   "name": "Ghana U23",
+   "norm": "ghana u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "48616",
+   "kind": "national",
+   "name": "Chile U17",
+   "norm": "chile u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "49503",
+   "kind": "national",
+   "name": "Germany Olympic Team",
+   "norm": "germany olympic team",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "51661",
+   "kind": "national",
+   "name": "Republic of Ireland U23",
+   "norm": "republic of ireland u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "52450",
+   "kind": "national",
+   "name": "German Democratic Republic U18",
+   "norm": "german democratic republic u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "52540",
+   "kind": "national",
+   "name": "Argentina U23",
+   "norm": "argentina u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "52690",
+   "kind": "national",
+   "name": "Ukraine U23",
+   "norm": "ukraine u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "52786",
+   "kind": "national",
+   "name": "England B",
+   "norm": "england b",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "52820",
+   "kind": "national",
+   "name": "Cameroon U23",
+   "norm": "cameroon u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53246",
+   "kind": "national",
+   "name": "Portugal B",
+   "norm": "portugal b",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53638",
+   "kind": "national",
+   "name": "England U15",
+   "norm": "england u15",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53762",
+   "kind": "national",
+   "name": "France B",
+   "norm": "france b",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53807",
+   "kind": "national",
+   "name": "Portugal Olympic Team",
+   "norm": "portugal olympic team",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53818",
+   "kind": "national",
+   "name": "Brazil Olympic Team",
+   "norm": "brazil olympic team",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53819",
+   "kind": "national",
+   "name": "Argentina Olympic Team",
+   "norm": "argentina olympic team",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53820",
+   "kind": "national",
+   "name": "Morocco Olympic Team",
+   "norm": "morocco olympic team",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53824",
+   "kind": "national",
+   "name": "Spain Olympic Team",
+   "norm": "spain olympic team",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53838",
+   "kind": "national",
+   "name": "Netherlands Olympic Team",
+   "norm": "netherlands olympic team",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53839",
+   "kind": "national",
+   "name": "Belgium Olympic Team",
+   "norm": "belgium olympic team",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53840",
+   "kind": "national",
+   "name": "Italy Olympic Team",
+   "norm": "italy olympic team",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53843",
+   "kind": "national",
+   "name": "Cameroon Olympic Team",
+   "norm": "cameroon olympic team",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53845",
+   "kind": "national",
+   "name": "Australia Olympic Team",
+   "norm": "australia olympic team",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53850",
+   "kind": "national",
+   "name": "Greece Olympic Team",
+   "norm": "greece olympic team",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53853",
+   "kind": "national",
+   "name": "Paraguay Olympia",
+   "norm": "paraguay olympia",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53858",
+   "kind": "national",
+   "name": "Chile Olympic Team",
+   "norm": "chile olympic team",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53860",
+   "kind": "national",
+   "name": "France Olympic Team",
+   "norm": "france olympic team",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53888",
+   "kind": "national",
+   "name": "Yugoslavia Olympic Team",
+   "norm": "yugoslavia olympic team",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53898",
+   "kind": "national",
+   "name": "German Democratic Republic Olympic Team",
+   "norm": "german democratic republic olympic team",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "53982",
+   "kind": "national",
+   "name": "Kosovo",
+   "norm": "kosovo",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "55471",
+   "kind": "national",
+   "name": "Cameroon U17",
+   "norm": "cameroon u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "56252",
+   "kind": "national",
+   "name": "Kosovo U21",
+   "norm": "kosovo u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "57263",
+   "kind": "national",
+   "name": "Suriname U20",
+   "norm": "suriname u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "57429",
@@ -4966,6 +8728,15 @@
    "last": 1932
   },
   {
+   "id": "63387",
+   "kind": "national",
+   "name": "German Democratic Republic U20",
+   "norm": "german democratic republic u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "63668",
    "kind": "club",
    "name": "SC Nîmes",
@@ -4977,6 +8748,78 @@
    "last": 1932
   },
   {
+   "id": "65623",
+   "kind": "national",
+   "name": "Brazil U16",
+   "norm": "brazil u16",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "69534",
+   "kind": "national",
+   "name": "Soviet Union B (-1991)",
+   "norm": "soviet union b 1991",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "70166",
+   "kind": "national",
+   "name": "Serbia B",
+   "norm": "serbia b",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "71658",
+   "kind": "national",
+   "name": "Dominican Republic U23",
+   "norm": "dominican republic u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "73100",
+   "kind": "national",
+   "name": "Romania U20",
+   "norm": "romania u20",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "73490",
+   "kind": "national",
+   "name": "German Democratic Republic B",
+   "norm": "german democratic republic b",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "74644",
+   "kind": "national",
+   "name": "Democratic Republic of Congo U23",
+   "norm": "democratic republic of congo u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "74967",
+   "kind": "national",
+   "name": "Venezuela U23",
+   "norm": "venezuela u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "77193",
    "kind": "club",
    "name": "SD Ceuta Aufgel",
@@ -4986,6 +8829,87 @@
     "ES1"
    ],
    "last": 1942
+  },
+  {
+   "id": "81384",
+   "kind": "national",
+   "name": "German Democratic Republic U23",
+   "norm": "german democratic republic u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "82768",
+   "kind": "national",
+   "name": "German Democratic Republic U17",
+   "norm": "german democratic republic u17",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "88257",
+   "kind": "national",
+   "name": "Slowenien B",
+   "norm": "slowenien b",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "91523",
+   "kind": "national",
+   "name": "Portugal U23",
+   "norm": "portugal u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "96529",
+   "kind": "national",
+   "name": "Hungary B",
+   "norm": "hungary b",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "97531",
+   "kind": "national",
+   "name": "Austria Amateur Team",
+   "norm": "austria amateur team",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "100198",
+   "kind": "national",
+   "name": "West Germany Amateur Team (- 1979)",
+   "norm": "west germany amateur team 1979",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "100200",
+   "kind": "national",
+   "name": "Germany B (1951-1986)",
+   "norm": "germany b 1951 1986",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "100211",
+   "kind": "national",
+   "name": "Deutschland A2 (1999-2001)",
+   "norm": "deutschland a2 1999 2001",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "100990",
@@ -5010,6 +8934,15 @@
    "last": 1932
   },
   {
+   "id": "104166",
+   "kind": "national",
+   "name": "Bulgaria U23",
+   "norm": "bulgaria u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "104192",
    "kind": "club",
    "name": "Lyon Ou",
@@ -5019,6 +8952,24 @@
     "FR1"
    ],
    "last": 1945
+  },
+  {
+   "id": "106288",
+   "kind": "national",
+   "name": "Austria B",
+   "norm": "austria b",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "112576",
+   "kind": "national",
+   "name": "Russia U23",
+   "norm": "russia u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "114309",

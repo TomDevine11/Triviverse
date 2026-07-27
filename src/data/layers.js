@@ -42,6 +42,7 @@ export const CANONICAL_FACTS = [
   'canonical/editions.generated.json',
   'football501/performance.', // canonical Performance, player×team×season (C5)
   'football501/squads.', // canonical SquadMembership, player×team×season (C8)
+  'football501/intl.generated.json', // canonical international career, player×nationalTeam (C7)
 ]
 
 // DERIVED but INTERNAL: not a game-facing dataset — a career-totals rollup of

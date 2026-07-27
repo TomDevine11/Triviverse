@@ -32,10 +32,11 @@ describe('canonical dimensions (C4)', () => {
     for (const c of competitions) expect(c.type, c.id).toBeTruthy()
   })
 
-  it('teams are club-kind with unique ids', () => {
+  it('teams have unique ids and a valid kind (club or national)', () => {
     expect(teams.length).toBeGreaterThan(100)
     expect(new Set(teams.map(t => t.id)).size).toBe(teams.length)
-    for (const t of teams) expect(t.kind).toBe('club')
+    for (const t of teams) expect(['club', 'national']).toContain(t.kind)
+    expect(teams.some(t => t.kind === 'club')).toBe(true)
   })
 
   it('editions are skeletons (no outcomes yet — C11)', () => {
