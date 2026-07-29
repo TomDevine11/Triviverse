@@ -27,11 +27,10 @@ import {
 import categories from '../categories.generated.json'
 import recognisablePlayers from './players.recognisable.generated.json'
 import playerPositions from './players.positions.generated.json'
-import recognisability from '../recognisability.generated.json'
 // Phase 2 — stable stored identity. The identity crosswalk is the source of
 // truth for player ids; facts.js resolves display names to those ids rather
 // than deriving them, so it shares ONE id space with the migrated games.
-import crosswalk from './players.crosswalk.json'
+import byAlias from './players.aliases.generated.json' // lean client alias index (recognisable players)
 import { normalize as normalizeName } from './normalize.js'
 import { fixName } from './nameFixes.js'
 
@@ -76,7 +75,7 @@ export const LEAGUES = [...new Set(Object.values(CLUB_LEAGUE))]
 // caller (ensurePlayer), so explicit aliases like "Ronaldo" stay unified.
 export function playerId(displayName) {
   const n = normalizeName(displayName)
-  const hit = crosswalk.byAlias[n]
+  const hit = byAlias[n]
   if (typeof hit === 'string') return hit
   return n.replace(/\s+/g, '-').replace(/^-|-$/g, '')
 }
@@ -152,16 +151,15 @@ for (const [trophy, members] of Object.entries(categories.trophies || {}))
 // category fact. Kept lean (~thousands) via the recognisable subset.
 for (const r of recognisablePlayers) {
   const p = ensureById(r.id, r.displayName)
+  if ((r.fame || 0) > p.fame) p.fame = r.fame // recognisability, baked into the subset (no full byName import)
   for (const nat of r.nationalities || []) if (!p.nationalities.includes(nat)) p.nationalities.push(nat)
   for (const pos of r.positions || []) if (!p.positions.includes(pos)) p.positions.push(pos)
 }
 
-// Replace the legacy Wikidata "fame" with canonical recognisability (RFC-001):
-// contemporary fan recognisability by name, not Wikipedia language count. Players
-// absent from the canonical top-flight/international data score 0 (correctly low
-// contemporary recognisability); curated players stay notable via their flag.
-const RECOG = recognisability.byName || {}
-for (const p of registry.values()) p.fame = RECOG[normalizeName(p.displayName)] || 0
+// `fame` = canonical recognisability, set per player by id from the recognisable
+// subset (seed above) and the category members — no full recognisability byName
+// import in the client. Curated players absent from both score 0 but stay notable
+// via their flag.
 
 // Positions from canonical (players.positions.generated: id → GK/DEF/MID/FWD),
 // for the autocomplete badge — replacing the old Wikidata positions.

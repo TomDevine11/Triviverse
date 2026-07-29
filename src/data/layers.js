@@ -33,6 +33,7 @@ export const RAW_MARKERS = ['/scripts/', '/data/pl-history/']
 export const CANONICAL_FACTS = [
   'canonical/players.registry.json',
   'canonical/players.recognisable.generated.json', // lean recognisable-player universe (facts.js seed)
+  'canonical/players.aliases.generated.json', // lean client name→id index (recognisable; resolve.js/facts.js)
   'canonical/players.crosswalk.json',
   'canonical/players.positions.generated.json',
   'canonical/wikidata-positions.generated.json',

@@ -19,7 +19,9 @@ import { normalize, surnameKeys } from './normalize.js'
 export { normalize } from './normalize.js'
 // Phase 3 — the identity crosswalk backs name→id resolution for games migrating
 // to id-based validation.
-import crosswalk from './players.crosswalk.json'
+// Lean client alias index (name → id, recognisable players only) — NOT the full
+// crosswalk (byRef is derivable; obscure names never typed). Keeps the bundle small.
+import byAlias from './players.aliases.generated.json'
 
 export const OK = 'ok'
 export const AMBIGUOUS = 'ambiguous'
@@ -48,7 +50,7 @@ export function resolveNameToId(name) {
   // A curated alias fix is an override (a name that means a specific canonical
   // player) → resolve THROUGH it, ahead of byAlias, so it wins over a namesake.
   const key = ALIAS_FIXES[n] ? normalize(ALIAS_FIXES[n]) : n
-  const hit = crosswalk.byAlias[key]
+  const hit = byAlias[key]
   return typeof hit === 'string' ? hit : null
 }
 

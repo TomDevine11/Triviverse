@@ -659,12 +659,22 @@ async function main() {
   const recogById = (() => { try { return JSON.parse(readFileSync(path.join(ROOT, 'src/data/recognisability.generated.json'), 'utf8')).byId } catch { return {} } })()
   for (const rec of registry) if (rec.refs.tm != null && (recogById[rec.refs.tm] || 0) >= RECOG_BAR) recognisableIds.add(rec.id)
   const recognisable = registry.filter(r => recognisableIds.has(r.id))
-    .map(r => ({ id: r.id, displayName: r.displayName, nationalities: r.nationalities, positions: r.positions }))
+    .map(r => ({ id: r.id, displayName: r.displayName, nationalities: r.nationalities, positions: r.positions, fame: r.refs.tm != null ? (recogById[r.refs.tm] || 0) : 0 }))
+
+  // Lean CLIENT alias index (name → id) — only names that resolve to a recognisable
+  // player, so the browser ships ~recognisable names, not the full 44k crosswalk
+  // (byRef is derivable from the tm:<id> id and never needed client-side).
+  const clientAlias = {}
+  for (const [name, v] of Object.entries(crosswalk.byAlias)) {
+    if (Array.isArray(v)) { const keep = v.filter(id => recognisableIds.has(id)); if (keep.length) clientAlias[name] = keep.length === 1 ? keep[0] : keep }
+    else if (recognisableIds.has(v)) clientAlias[name] = v
+  }
 
   writeFileSync(REGISTRY_PATH, JSON.stringify(registry, null, 1) + '\n')
   writeFileSync(CROSSWALK_PATH, JSON.stringify(crosswalk, null, 1) + '\n')
   writeFileSync(POSITIONS_PATH, JSON.stringify(positions) + '\n')
   writeFileSync(path.join(CANON, 'players.recognisable.generated.json'), JSON.stringify(recognisable) + '\n')
+  writeFileSync(path.join(CANON, 'players.aliases.generated.json'), JSON.stringify(clientAlias) + '\n')
   writeFileSync(AUDIT_PATH, renderAudit({ registry, crosswalk, report }))
 
   const withPos = registry.filter(r => r.positions.length).length

@@ -17,13 +17,12 @@ import cat from './catalog.generated.json'
 import { resolveRoster, statLabel, titleFor } from './spec.js'
 import { checkoutCombos, maxDisjoint, SOLO_MIN_COMBOS } from './checkout.js'
 import { normalize, surnameKeys } from '../canonical/normalize.js'
-import crosswalk from '../canonical/players.crosswalk.json'
 import curatedDaily from './daily.curated.generated.json'
 
-// Phase 3: map our internal player id → Transfermarkt id (the key 501 rosters
-// use), so a suggestion picked by identity can be validated against the roster.
-const TM_BY_INTERNAL = new Map()
-for (const [ref, id] of Object.entries(crosswalk.byRef)) if (ref.startsWith('tm:')) TM_BY_INTERNAL.set(id, ref.slice(3))
+// Internal player id → Transfermarkt id (the key 501 rosters use). Since the
+// canonical id IS tm:<tmId> (RFC-001 Phase A), the tm id is a pure prefix strip —
+// no crosswalk needed (keeps the 2.5MB crosswalk out of the client bundle).
+const tmOf = (id) => (typeof id === 'string' && id.startsWith('tm:')) ? id.slice(3) : null
 
 const CATALOG = cat.catalog
 
@@ -98,7 +97,7 @@ async function makeChallenge(spec) {
       // dropdown no longer sneaks in via a shared surname. Ids without a tm ref
       // fall through to name/surname matching.
       if (selectedId != null) {
-        const tm = TM_BY_INTERNAL.get(selectedId)
+        const tm = tmOf(selectedId)
         if (tm) {
           const r = roster[tm]
           return r ? { status: 'valid', name: r.name, value: r.value, breakdown: r.breakdown } : { status: 'not-eligible' }
@@ -126,7 +125,7 @@ async function makeChallenge(spec) {
     // Competition-accurate position by identity: map the internal id → tm id →
     // this competition's position. Catches players whose canonical name doesn't
     // match the Transfermarkt spelling (where badgeFor by name would miss).
-    badgeForId(id) { const tm = id != null ? TM_BY_INTERNAL.get(id) : null; return tm ? (posById.get(tm) || null) : null },
+    badgeForId(id) { const tm = id != null ? tmOf(id) : null; return tm ? (posById.get(tm) || null) : null },
   }
 }
 export const makeCustomChallenge = (spec) => makeChallenge(spec)
