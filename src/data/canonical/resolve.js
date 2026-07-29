@@ -11,7 +11,7 @@
 // quietly picking one and scoring the wrong player.
 // ─────────────────────────────────────────────────────────────────────────
 
-import { allPlayers, isNotable } from './facts.js'
+import { allPlayers, isNotable, getPlayer } from './facts.js'
 import { getFlagFromNationality } from '../../utils/flags.js'
 // normalize/surnameKeys live in a pure, registry-free module so build scripts can
 // reuse them; re-exported here so existing `from './resolve.js'` imports work.
@@ -45,6 +45,10 @@ const ALIAS_FIXES = {
 // Resolve a display name to its stable internal player id via the identity
 // crosswalk. Returns null for ambiguous (multiple candidates) or unknown names,
 // so callers can fall back to name matching. Additive — does not affect resolve().
+// Position badge (GK/DEF/MID/FWD) for a resolved internal id — via the facts
+// registry, so games don't import the canonical positions file directly (C13).
+export function positionBadge(id) { return POS_BADGE[getPlayer(id)?.positions?.[0]] || null }
+
 export function resolveNameToId(name) {
   const n = normalize(name)
   // A curated alias fix is an override (a name that means a specific canonical

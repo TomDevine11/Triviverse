@@ -72,7 +72,7 @@ function fuzzyKey(name) {
 //   prior:   { registry: [...], crosswalk: {...} } | null
 //   seedAmbiguous: { token -> [displayName, …] }
 // ─────────────────────────────────────────────────────────────────────────
-export function buildIdentity({ sources = [], tmIndex = {}, tmPositions = {}, wpPositions = {}, prior = null, seedAmbiguous = SEED_AMBIGUOUS, recog = {} } = {}) {
+export function buildIdentity({ sources = [], tmIndex = {}, tmPositions = {}, prior = null, seedAmbiguous = SEED_AMBIGUOUS, recog = {} } = {}) {
   const byId = new Map()        // id -> record
   const byAlias = new Map()     // normalized spelling -> id  (single) — mutated as we go
   const byRefLocal = new Map()  // "src:value" -> id
@@ -266,14 +266,11 @@ export function buildIdentity({ sources = [], tmIndex = {}, tmPositions = {}, wp
     report.tmAttached++
   }
 
-  // Backfill missing positions: Transfermarkt first (covers modern players),
-  // then Wikidata P413 (covers pre-Transfermarkt legends known only via a
-  // national team) — so the games' position badges are populated everywhere.
+  // Backfill missing positions from Transfermarkt (RFC-001 C13 — Wikidata P413
+  // dropped; TM covers 99.4% of the registry).
   for (const rec of byId.values()) {
     if (rec.positions.length) continue
-    if (rec.refs.tm != null && tmPositions[rec.refs.tm]) { rec.positions = [tmPositions[rec.refs.tm]]; continue }
-    const wp = wpPositions[normalize(rec.displayName)]
-    if (wp) rec.positions = [wp]
+    if (rec.refs.tm != null && tmPositions[rec.refs.tm]) rec.positions = [tmPositions[rec.refs.tm]]
   }
 
   // ── DUPLICATE CANDIDATES (review only — never merged) ──────────────────────
@@ -485,16 +482,6 @@ function collectTmIndex() {
   return out
 }
 
-// Wikidata P413 positions (name → registry term), from fetch-positions.mjs.
-function collectWpPositions() {
-  const p = path.join(ROOT, 'src/data/canonical/wikidata-positions.generated.json')
-  if (!existsSync(p)) return {}
-  const { positions = {} } = JSON.parse(readFileSync(p, 'utf8'))
-  const out = {}
-  for (const [name, term] of Object.entries(positions)) { const n = normalize(name); if (!out[n]) out[n] = term }
-  return out
-}
-
 // Transfermarkt id → registry position term (for backfilling missing positions).
 function collectTmPositions() {
   const J = p => JSON.parse(readFileSync(path.join(ROOT, p), 'utf8'))
@@ -632,12 +619,11 @@ async function main() {
   const sources = await collectSources()
   const tmIndex = collectTmIndex()
   const tmPositions = collectTmPositions()
-  const wpPositions = collectWpPositions()
   // Career appearances per tm id — the namesake-disambiguation signal (the real
   // Aaron Ramsey has 262 apps; his namesake 14). Summed across all competitions.
   const apps = {}
   for (const c of ['GB1', 'ES1', 'IT1', 'FR1', 'L1', 'CL']) for (const p of JSON.parse(readFileSync(path.join(ROOT, `src/data/football501/history.${c}.generated.json`), 'utf8')).players) apps[p.id] = (apps[p.id] || 0) + (p.comps?.[c]?.apps || 0)
-  const { registry, crosswalk, report, recognisableNames } = buildIdentity({ sources, tmIndex, tmPositions, wpPositions, prior, recog: apps })
+  const { registry, crosswalk, report, recognisableNames } = buildIdentity({ sources, tmIndex, tmPositions, prior, recog: apps })
 
   rekeyDeterministic(registry, crosswalk)
   runIntegrityChecks(registry, crosswalk) // throws → non-zero exit on violation

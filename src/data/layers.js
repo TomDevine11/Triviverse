@@ -36,7 +36,6 @@ export const CANONICAL_FACTS = [
   'canonical/players.aliases.generated.json', // lean client name→id index (recognisable; resolve.js/facts.js)
   'canonical/players.crosswalk.json',
   'canonical/players.positions.generated.json',
-  'canonical/wikidata-positions.generated.json',
   'canonical/competitions.generated.json', // dimension entities (C4)
   'canonical/seasons.generated.json',
   'canonical/teams.generated.json',
@@ -79,9 +78,6 @@ export const DERIVED = [
 // and fails on any other game→canonical/raw import. Each entry MUST name the
 // backlog task that retires it, so the list can only shrink.
 export const GAME_IMPORT_EXCEPTIONS = [
-  {
-    file: 'src/games/football501/Football501.jsx',
-    imports: 'canonical/players.positions.generated.json',
-    retiredBy: 'C13', // positions move to a Transfermarkt-derived source
-  },
+  // (empty) — C13 retired the last one: Football501 now gets position badges via
+  // resolve.js (positionBadge), not a direct canonical import.
 ]

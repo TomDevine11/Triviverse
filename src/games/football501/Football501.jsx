@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
 import { players as localPlayers } from '../../data/players'
-import positionById from '../../data/canonical/players.positions.generated.json'
 import { getFlagFromNationality, formatDOB } from '../../utils/flags'
 import { ShareCard } from '../../components/ShareCard'
 import GameChrome from '../../components/GameChrome'
@@ -11,7 +10,7 @@ import { getDailyChallenge, getDailyEntry, getRandomChallenge, makeCustomChallen
 import { recordResult, getStats, formGuide, matchdayNumber } from '../../data/dailyStats'
 import { loadDailyProgress, saveDailyProgress, inProgressToday, finishedToday } from '../../data/dailyProgress'
 import { TILE } from '../../utils/shareImage'
-import { refineSuggestions, searchRegistry } from '../../data/canonical/resolve.js'
+import { refineSuggestions, searchRegistry, positionBadge } from '../../data/canonical/resolve.js'
 import { accentVars } from '../../design/accents'
 
 const MAX_SCORE    = 501
@@ -615,7 +614,7 @@ export default function Football501() {
       // the badge never lies; then the identity registry's position (Wikidata ∪
       // Transfermarkt, ~88% coverage), then any API/local position.
       return rankSuggestions(refined, input, knownNames)
-        .map(p => ({ ...p, position: (challenge && (challenge.badgeForId(p.id) || challenge.badgeFor(p.name))) || positionById[p.id] || p.position || null }))
+        .map(p => ({ ...p, position: (challenge && (challenge.badgeForId(p.id) || challenge.badgeFor(p.name))) || positionBadge(p.id) || p.position || null }))
         // 501 only validates Transfermarkt players, who all have a position — so a
         // position-less suggestion is almost always a non-TM player that's
         // auto-invalid. Drop it so the list isn't padded with names that can never
