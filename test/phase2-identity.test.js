@@ -12,8 +12,10 @@ describe('phase 2: facts.js shares the crosswalk id space', () => {
   const players = allPlayers()
   const registryIds = new Set(registry.map(r => r.id))
 
-  it('no facts.js player id carries the legacy p: prefix', () => {
-    expect(players.every(p => !p.id.startsWith('p:'))).toBe(true)
+  it('every facts.js id uses the deterministic scheme (tm:<id> or p:<slug>)', () => {
+    // RFC-001 Phase A: internal ids are tm:<tmId> (from the Transfermarkt id) or
+    // p:<slug> (players not on TM). Legacy bare slugs are gone.
+    expect(players.filter(p => p.id).every(p => /^(tm:\d+|p:[a-z0-9]+(?:-[a-z0-9]+)*)$/.test(p.id))).toBe(true)
   })
 
   it('every facts.js id (non-empty) exists in the generated registry', () => {
@@ -22,7 +24,7 @@ describe('phase 2: facts.js shares the crosswalk id space', () => {
   })
 
   it('the R9 explicit alias stays unified onto one stored id', () => {
-    const r9 = players.filter(p => p.id === 'ronaldo-nazario')
+    const r9 = players.filter(p => p.displayName === 'Ronaldo Nazario')
     expect(r9.length).toBe(1)
   })
 })

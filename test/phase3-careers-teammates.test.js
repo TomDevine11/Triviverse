@@ -20,7 +20,7 @@ function isCorrect(target, text, selectedId = null) {
 
 describe('resolveNameToId', () => {
   it('resolves an unambiguous name to its stable id', () => {
-    expect(resolveNameToId('Cristiano Ronaldo')).toBe('cristiano-ronaldo')
+    expect(resolveNameToId('Cristiano Ronaldo')).toBe('tm:8198') // RFC-001 Phase A: deterministic id
   })
   it('returns null for an ambiguous bare token', () => {
     expect(resolveNameToId('Ronaldo')).toBeNull()
@@ -56,7 +56,7 @@ describe('single-target games carry a resolvable id', () => {
 })
 
 describe('id-based validation (picked suggestion) + fallback', () => {
-  const target = { name: 'Cristiano Ronaldo', id: 'cristiano-ronaldo' }
+  const target = { name: 'Cristiano Ronaldo', id: 'tm:8198' }
 
   it('accepts the correct player picked from the dropdown', () => {
     expect(isCorrect(target, 'Cristiano Ronaldo', resolveNameToId('Cristiano Ronaldo'))).toBe(true)

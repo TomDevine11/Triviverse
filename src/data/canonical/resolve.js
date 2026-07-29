@@ -34,8 +34,10 @@ export const UNKNOWN = 'unknown'
 // are different twin brothers, "Keith"/"Gary Gillespie" are different players.
 // Only add a pair once you've confirmed it is the SAME human — never by surname
 // alone. This mirrors the curated MANUAL_FIXES in nameFixes.js.
+// Value is a CANONICAL NAME (resolved through byAlias), not an id — so these
+// survive id-scheme changes (RFC-001 Phase A: ids are now tm:<id> / p:<slug>).
 const ALIAS_FIXES = {
-  'andrew robertson': 'andy-robertson', // Liverpool/Scotland LB — official "Andrew", known as "Andy"
+  'andrew robertson': 'Andy Robertson', // Liverpool/Scotland LB — official "Andrew", known as "Andy"
 }
 
 // Resolve a display name to its stable internal player id via the identity
@@ -43,7 +45,10 @@ const ALIAS_FIXES = {
 // so callers can fall back to name matching. Additive — does not affect resolve().
 export function resolveNameToId(name) {
   const n = normalize(name)
-  const hit = crosswalk.byAlias[n] ?? ALIAS_FIXES[n]
+  // A curated alias fix is an override (a name that means a specific canonical
+  // player) → resolve THROUGH it, ahead of byAlias, so it wins over a namesake.
+  const key = ALIAS_FIXES[n] ? normalize(ALIAS_FIXES[n]) : n
+  const hit = crosswalk.byAlias[key]
   return typeof hit === 'string' ? hit : null
 }
 

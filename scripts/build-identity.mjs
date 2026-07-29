@@ -35,7 +35,10 @@ const CROSSWALK_PATH = path.join(CANON, 'players.crosswalk.json')
 const AUDIT_PATH = path.join(ROOT, 'docs/player-identity-audit.md')
 
 const SCHEMA = 1
-const ID_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
+// Internal id: `tm:<tmId>` (deterministic from the Transfermarkt id — RFC-001
+// Phase A), `p:<slug>` (players not on TM), or a bare slug (the engine mints
+// these; main() re-keys them to tm:/p: before writing).
+const ID_RE = /^(tm:\d+|p:[a-z0-9]+(?:-[a-z0-9]+)*|[a-z0-9]+(?:-[a-z0-9]+)*)$/
 
 // Curated ambiguity — mirrors the existing (un-exported) AMBIGUOUS_ALIASES in
 // resolve.js / PLAYER_ALIASES in facts.js. This build becomes the source of
@@ -69,7 +72,7 @@ function fuzzyKey(name) {
 //   prior:   { registry: [...], crosswalk: {...} } | null
 //   seedAmbiguous: { token -> [displayName, …] }
 // ─────────────────────────────────────────────────────────────────────────
-export function buildIdentity({ sources = [], tmIndex = {}, tmPositions = {}, wpPositions = {}, prior = null, seedAmbiguous = SEED_AMBIGUOUS } = {}) {
+export function buildIdentity({ sources = [], tmIndex = {}, tmPositions = {}, wpPositions = {}, prior = null, seedAmbiguous = SEED_AMBIGUOUS, recog = {} } = {}) {
   const byId = new Map()        // id -> record
   const byAlias = new Map()     // normalized spelling -> id  (single) — mutated as we go
   const byRefLocal = new Map()  // "src:value" -> id
@@ -138,6 +141,7 @@ export function buildIdentity({ sources = [], tmIndex = {}, tmPositions = {}, wp
     // normalise null-vs-absent on refs
     for (const k of ['tm', 'qid', 'tsdb', 'wp']) if (rec.refs[k] === undefined) rec.refs[k] = null
     byId.set(id, rec)
+    for (const [k, v] of Object.entries(rec.refs)) if (v != null) byRefLocal.set(`${k}:${v}`, id) // so same-ref rows dedup by ref regardless of spelling
     addAlias(rec, displayName)
     report.minted++
     return rec
@@ -195,6 +199,7 @@ export function buildIdentity({ sources = [], tmIndex = {}, tmPositions = {}, wp
     const rec = resolve(entry)
     if (!rec) continue
     // merge facts / provenance onto the (possibly pre-existing) record
+    if (entry.source && entry.source !== 'history') rec.recognisable = true // appeared in a game dataset → a name a player might type
     if ((entry.fame || 0) > rec.fame) rec.fame = entry.fame
     if (entry.curated) rec.curated = true
     for (const nat of entry.nationalities || []) if (!rec.nationalities.includes(nat)) rec.nationalities.push(nat)
@@ -302,9 +307,30 @@ export function buildIdentity({ sources = [], tmIndex = {}, tmPositions = {}, wp
     if (!aliasToIds.has(token)) aliasToIds.set(token, new Set())
     for (const id of ids) aliasToIds.get(token).add(id)
   }
+  // byAlias with a RECOGNISABILITY tie-break: adding the full TM universe surfaces
+  // many namesakes (Aaron Ramsey the Wales star vs an obscure one). A name resolves
+  // to a single player when one is clearly dominant by recognisability; otherwise
+  // it stays an ambiguous array (and each member records the token so the metadata
+  // is consistent). Curated-ambiguous tokens (e.g. "ronaldo") always stay arrays.
+  const curatedAmbig = new Set(ambiguousTokens.keys())
+  const recogOf = (id) => { const r = byId.get(id); return r?.refs?.tm != null ? (recog[r.refs.tm] || 0) : 0 }
   const byAliasOut = {}
-  for (const [a, ids] of [...aliasToIds].sort((x, y) => x[0].localeCompare(y[0]))) {
-    byAliasOut[a] = ids.size === 1 ? [...ids][0] : [...ids].sort()
+  for (const [a, idSet] of [...aliasToIds].sort((x, y) => x[0].localeCompare(y[0]))) {
+    const idsArr = [...idSet]
+    if (idsArr.length === 1) { byAliasOut[a] = idsArr[0]; continue }
+    if (!curatedAmbig.has(a)) {
+      // Disambiguate namesakes (Aaron Ramsey the Wales star, 262 apps, vs a 14-app
+      // one) by CAREER APPEARANCES — the reliable "which player is meant" signal
+      // (a name-only game dataset can't tell namesakes apart, so its recognisable
+      // flag is unreliable; apps aren't). A clearly dominant career wins; else a
+      // single recognisable namesake (for not-in-history greats); else ambiguous.
+      const ranked = idsArr.map(id => ({ id, f: recogOf(id) })).sort((x, y) => y.f - x.f)
+      if (ranked[0].f >= 20 && ranked[0].f >= 2 * (ranked[1].f || 0)) { byAliasOut[a] = ranked[0].id; continue }
+      const recg = idsArr.filter(id => byId.get(id)?.recognisable)
+      if (recg.length === 1) { byAliasOut[a] = recg[0]; continue }
+    }
+    byAliasOut[a] = idsArr.sort()
+    for (const id of idsArr) { const rec = byId.get(id); if (rec) { rec.ambiguousTokens = rec.ambiguousTokens || []; if (!rec.ambiguousTokens.includes(a)) { rec.ambiguousTokens.push(a); rec.ambiguousTokens.sort() } } }
   }
   const byRefOut = {}
   for (const rec of registry) for (const [k, v] of Object.entries(rec.refs)) if (v != null) byRefOut[`${k}:${v}`] = rec.id
@@ -422,6 +448,18 @@ async function collectSources() {
   const fam = await import(path.join(ROOT, 'src/data/famousPlayers.js'))
   for (const p of fam.famousPlayers || []) push(p.name, { nationalities: p.nationality ? [p.nationality] : [], source: 'wordle' })
 
+  // 8. CANONICAL UNIVERSE — every Transfermarkt player in the history fact tables
+  // (RFC-001 Phase A). Ingested LAST so curated/game datasets keep display-name
+  // precedence; history carries the tm ref (→ deterministic id) and adds the
+  // ~36k players the game datasets never mentioned, making the registry TOTAL.
+  for (const c of ['GB1', 'ES1', 'IT1', 'FR1', 'L1', 'CL']) {
+    for (const p of J(`src/data/football501/history.${c}.generated.json`).players) {
+      if (!p?.id || !p?.name) continue
+      const pos = TM_POS[p.pos]
+      push(p.name, { refs: { tm: String(p.id) }, nationalities: p.nat ? [p.nat] : [], positions: pos ? [pos] : [], source: 'history' })
+    }
+  }
+
   return sources
 }
 
@@ -538,14 +576,52 @@ function loadPrior() {
 const POS_BADGE = { goalkeeper: 'GK', defender: 'DEF', midfielder: 'MID', forward: 'FWD' }
 const POSITIONS_PATH = path.join(CANON, 'players.positions.generated.json')
 
+// Re-key every identity to a DETERMINISTIC internal id (RFC-001 Phase A):
+//   tm:<tmId>  when the player has a Transfermarkt ref (the vast majority),
+//   p:<slug>   otherwise (players not on TM — curated-only tail).
+// The engine mints stable slugs; this maps them onto the deterministic scheme
+// once, keeping the domain PK internal (namespaced) while making it a pure
+// function of the source id. Remaps the registry + both crosswalk indices.
+function rekeyDeterministic(registry, crosswalk) {
+  const idMap = new Map()
+  // idempotent: derive p:<slug> from the bare slug (rec.slug from a prior re-key,
+  // else strip any existing p: prefix) so rebuilding never double-prefixes.
+  for (const rec of registry) {
+    const slug = String(rec.slug || rec.id).replace(/^(?:p:)+/, '') // strip any accumulated prefix (idempotent)
+    idMap.set(rec.id, rec.refs.tm != null ? `tm:${rec.refs.tm}` : `p:${slug}`)
+  }
+  const inv = new Map()
+  for (const [oldId, newId] of idMap) {
+    if (inv.has(newId)) throw new Error(`re-key collision: ${newId} ← ${inv.get(newId)} and ${oldId}`)
+    inv.set(newId, oldId)
+  }
+  const map1 = (v) => Array.isArray(v) ? [...new Set(v.map(x => idMap.get(x) || x))].sort() : (idMap.get(v) || v)
+  for (const rec of registry) { rec.slug = rec.id; rec.id = idMap.get(rec.id) }
+  registry.sort((a, b) => a.id.localeCompare(b.id))
+  const remapObj = (obj, keyToo) => {
+    const out = {}
+    for (const [k, v] of Object.entries(obj || {})) out[keyToo ? (idMap.get(k) || k) : k] = map1(v)
+    return Object.fromEntries(Object.entries(out).sort((a, b) => a[0].localeCompare(b[0])))
+  }
+  crosswalk.byRef = remapObj(crosswalk.byRef, false)   // tm:8198 → tm:8198
+  crosswalk.byAlias = remapObj(crosswalk.byAlias, false)
+  crosswalk.retired = remapObj(crosswalk.retired, true)
+  crosswalk.meta.count = registry.length
+}
+
 async function main() {
   const prior = loadPrior()
   const sources = await collectSources()
   const tmIndex = collectTmIndex()
   const tmPositions = collectTmPositions()
   const wpPositions = collectWpPositions()
-  const { registry, crosswalk, report } = buildIdentity({ sources, tmIndex, tmPositions, wpPositions, prior })
+  // Career appearances per tm id — the namesake-disambiguation signal (the real
+  // Aaron Ramsey has 262 apps; his namesake 14). Summed across all competitions.
+  const apps = {}
+  for (const c of ['GB1', 'ES1', 'IT1', 'FR1', 'L1', 'CL']) for (const p of JSON.parse(readFileSync(path.join(ROOT, `src/data/football501/history.${c}.generated.json`), 'utf8')).players) apps[p.id] = (apps[p.id] || 0) + (p.comps?.[c]?.apps || 0)
+  const { registry, crosswalk, report } = buildIdentity({ sources, tmIndex, tmPositions, wpPositions, prior, recog: apps })
 
+  rekeyDeterministic(registry, crosswalk)
   runIntegrityChecks(registry, crosswalk) // throws → non-zero exit on violation
 
   // Compact internal-id → position-badge map for the games' dropdowns.

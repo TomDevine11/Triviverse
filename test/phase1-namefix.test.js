@@ -20,8 +20,9 @@ describe('curated name fixes', () => {
   })
 
   it('both spellings resolve to the SAME stable id (corrupt form kept as alias)', () => {
-    expect(resolveNameToId('Divock Origi')).toBe('divock-origi')
-    expect(resolveNameToId('Divock Origi kolman')).toBe('divock-origi')
+    const id = resolveNameToId('Divock Origi')
+    expect(id).toBeTruthy()
+    expect(resolveNameToId('Divock Origi kolman')).toBe(id) // corrupt form → same deterministic id
   })
 
   it('the dropdown dedups the two Origi entries into one', () => {

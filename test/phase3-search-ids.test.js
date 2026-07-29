@@ -25,7 +25,7 @@ describe('searchRegistry carries stable ids', () => {
 describe('refineSuggestions attaches ids and dedups by identity', () => {
   it('a resolved suggestion gets its stable id', () => {
     const [s] = refineSuggestions([{ name: 'Cristiano Ronaldo' }])
-    expect(s.id).toBe('cristiano-ronaldo')
+    expect(s.id).toBe('tm:8198') // RFC-001 Phase A: deterministic id from the Transfermarkt id
   })
 
   it('two spellings of one player collapse to a single suggestion', () => {

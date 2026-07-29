@@ -80,7 +80,7 @@ describe('Wikidata club-roster merge (Option A)', () => {
     // "Julian Alvarez" (curated) and "Julián Alvarez" (Wikidata) unify to one id;
     // the curated spelling is kept for display.
     // Phase 2: ids are the stable crosswalk slugs (no legacy 'p:' prefix).
-    const p = getPlayer('julian-alvarez')
+    const p = allPlayers().find(x => x.displayName === 'Julian Alvarez')
     expect(p).not.toBeNull()
     expect(p.displayName).toBe('Julian Alvarez')
     expect(p.clubs).toContain('Manchester City')
