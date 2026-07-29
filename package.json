@@ -18,8 +18,6 @@
     "scrape:transfers": "node scripts/pl-history/scrape-transfers.mjs",
     "build:transfers": "node scripts/build-transfers.mjs",
     "scrape:honours": "node scripts/pl-history/scrape-honours.mjs",
-    "scrape:wcsquads": "node scripts/pl-history/scrape-wcsquads.mjs",
-    "build:wcsquads": "node scripts/pl-history/build-wcsquads.mjs",
     "build:pl-positions": "node scripts/pl-history/positions.mjs",
     "build:pl-clubnames": "node scripts/pl-history/clubnames.mjs",
     "clubnames:all": "for c in ES1 IT1 FR1 L1 CL; do COMP=$c node scripts/pl-history/clubnames.mjs; done",

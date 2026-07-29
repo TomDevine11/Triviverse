@@ -147,21 +147,3 @@ export function parseClubSeason(html) {
   })
   return out
 }
-
-// Parse a tournament-scoped national-team SQUAD (kader) page → the players named
-// in that nation's tournament roster: [{ id, name }]. Deliberately column-count
-// agnostic (the kader table layout differs from the leistungsdaten one) — it just
-// takes the one player link per row from the main squad table (#yw1). RFC-001 C9.
-export function parseWcSquad(html) {
-  const $ = cheerio.load(html)
-  const out = []
-  const seen = new Set()
-  $('#yw1 table.items > tbody > tr').each((i, tr) => {
-    const a = $(tr).find('td.hauptlink a[href*="/spieler/"]').first()
-    const m = (a.attr('href') || '').match(/\/spieler\/(\d+)/)
-    if (!m || seen.has(m[1])) return
-    seen.add(m[1])
-    out.push({ id: m[1], name: a.text().trim() })
-  })
-  return out
-}

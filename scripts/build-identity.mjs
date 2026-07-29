@@ -442,15 +442,11 @@ async function collectSources() {
   const tm = J('src/data/teammates.generated.json')
   for (const p of tm.players || []) { push(p.name, { source: 'teammates' }); for (const mate of p.teammates || []) push(mate.name, { fame: mate.fame, nationalities: mate.nationality ? [mate.nationality] : [], source: 'teammates:mate' }) }
 
-  // 6. world cup squads
-  const wc = J('src/data/wcsquads.generated.json')
-  for (const s of wc.squads || []) for (const n of s.players || []) push(n, { nationalities: [s.nation], source: 'wcsquads' })
-
-  // 7. wordle famous pool
+  // 6. wordle famous pool
   const fam = await import(path.join(ROOT, 'src/data/famousPlayers.js'))
   for (const p of fam.famousPlayers || []) push(p.name, { nationalities: p.nationality ? [p.nationality] : [], source: 'wordle' })
 
-  // 8. CANONICAL UNIVERSE — every Transfermarkt player in the history fact tables
+  // 7. CANONICAL UNIVERSE — every Transfermarkt player in the history fact tables
   // (RFC-001 Phase A). Ingested LAST so curated/game datasets keep display-name
   // precedence; history carries the tm ref (→ deterministic id) and adds the
   // ~36k players the game datasets never mentioned, making the registry TOTAL.
