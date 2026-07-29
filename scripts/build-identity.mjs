@@ -93,6 +93,7 @@ export function buildIdentity({ sources = [], tmIndex = {}, tmPositions = {}, wp
   }
 
   const ambiguousSet = new Set(Object.keys(seedAmbiguous).map(normalize))
+  const recognisableNames = new Set() // normalized names from game datasets (players a user might type)
 
   // ── seed from prior build (stability spine) ────────────────────────────────
   if (prior?.registry) {
@@ -153,8 +154,14 @@ export function buildIdentity({ sources = [], tmIndex = {}, tmPositions = {}, wp
     const n = normalize(displayName)
     if (!n) return null
 
-    // A bare token that is curated-ambiguous is NOT one player → don't mint/merge.
-    if (ambiguousSet.has(n)) { report.ambiguousStandalone.add(n); return null }
+    // A NAME-ONLY curated-ambiguous token (e.g. "ronaldo") is not one player → skip.
+    // But a REF-bearing row (a Transfermarkt id) IS a specific player, so it must
+    // get its own identity even if the name is ambiguous (e.g. history's "Ronaldo"
+    // = tm:3140, the real Ronaldo Nazário) — mint it directly by ref.
+    if (ambiguousSet.has(n)) {
+      if (Object.values(entry.refs || {}).some(v => v != null)) return mint(displayName, entry)
+      report.ambiguousStandalone.add(n); return null
+    }
 
     // 1. external reference match (stable across renames & rebuilds)
     for (const [k, v] of Object.entries(entry.refs || {})) {
@@ -196,10 +203,11 @@ export function buildIdentity({ sources = [], tmIndex = {}, tmPositions = {}, wp
     if (!entry?.displayName) continue
     report.sourcePlayerRows++
     report.distinctInputNames.add(normalize(entry.displayName))
+    if (entry.source && entry.source !== 'history') recognisableNames.add(normalize(entry.displayName)) // a name a player might type
     const rec = resolve(entry)
     if (!rec) continue
     // merge facts / provenance onto the (possibly pre-existing) record
-    if (entry.source && entry.source !== 'history') rec.recognisable = true // appeared in a game dataset → a name a player might type
+    if (entry.source && entry.source !== 'history') rec.recognisable = true // appeared in a game dataset
     if ((entry.fame || 0) > rec.fame) rec.fame = entry.fame
     if (entry.curated) rec.curated = true
     for (const nat of entry.nationalities || []) if (!rec.nationalities.includes(nat)) rec.nationalities.push(nat)
@@ -342,7 +350,7 @@ export function buildIdentity({ sources = [], tmIndex = {}, tmPositions = {}, wp
     retired: sortKeys(retired),
   }
 
-  return { registry, crosswalk, report }
+  return { registry, crosswalk, report, recognisableNames }
 }
 
 function sortKeys(obj) {
@@ -583,18 +591,31 @@ const POSITIONS_PATH = path.join(CANON, 'players.positions.generated.json')
 // once, keeping the domain PK internal (namespaced) while making it a pure
 // function of the source id. Remaps the registry + both crosswalk indices.
 function rekeyDeterministic(registry, crosswalk) {
-  const idMap = new Map()
-  // idempotent: derive p:<slug> from the bare slug (rec.slug from a prior re-key,
-  // else strip any existing p: prefix) so rebuilding never double-prefixes.
+  const idMap = new Map()          // old id → new id
+  const winners = new Map()        // new id → surviving record
+  const keep = []
+  // idempotent: derive p:<slug> from the bare slug (strip any accumulated prefix).
+  const newIdOf = (rec) => rec.refs.tm != null ? `tm:${rec.refs.tm}` : `p:${String(rec.slug || rec.id).replace(/^(?:p:)+/, '')}`
   for (const rec of registry) {
-    const slug = String(rec.slug || rec.id).replace(/^(?:p:)+/, '') // strip any accumulated prefix (idempotent)
-    idMap.set(rec.id, rec.refs.tm != null ? `tm:${rec.refs.tm}` : `p:${slug}`)
+    const newId = newIdOf(rec)
+    idMap.set(rec.id, newId)
+    const w = winners.get(newId)
+    if (!w) { winners.set(newId, rec); keep.push(rec); continue }
+    // Same deterministic id from two records = the same TM player under two name
+    // representations (history "Ronaldo" tm:3140 + curated "Ronaldo Nazário").
+    // Merge the loser into the winner (prefer curated, then recognisable).
+    const takeRec = (rec.curated && !w.curated) || (rec.recognisable && !w.recognisable && !w.curated)
+    const win = takeRec ? rec : w, lose = takeRec ? w : rec
+    if (takeRec) { winners.set(newId, rec); keep[keep.indexOf(w)] = rec }
+    for (const a of new Set([lose.displayName, ...lose.aliases])) if (a !== win.displayName && !win.aliases.includes(a)) win.aliases.push(a)
+    for (const nat of lose.nationalities) if (!win.nationalities.includes(nat)) win.nationalities.push(nat)
+    for (const pos of lose.positions) if (!win.positions.includes(pos)) win.positions.push(pos)
+    win.fame = Math.max(win.fame || 0, lose.fame || 0); win.curated = win.curated || lose.curated
+    if (lose.recognisable) win.recognisable = true
+    for (const k of ['tm', 'qid', 'tsdb', 'wp']) if (win.refs[k] == null && lose.refs[k] != null) win.refs[k] = lose.refs[k]
+    idMap.set(lose.id, newId)
   }
-  const inv = new Map()
-  for (const [oldId, newId] of idMap) {
-    if (inv.has(newId)) throw new Error(`re-key collision: ${newId} ← ${inv.get(newId)} and ${oldId}`)
-    inv.set(newId, oldId)
-  }
+  registry.length = 0; for (const rec of keep) registry.push(rec)
   const map1 = (v) => Array.isArray(v) ? [...new Set(v.map(x => idMap.get(x) || x))].sort() : (idMap.get(v) || v)
   for (const rec of registry) { rec.slug = rec.id; rec.id = idMap.get(rec.id) }
   registry.sort((a, b) => a.id.localeCompare(b.id))
@@ -619,7 +640,7 @@ async function main() {
   // Aaron Ramsey has 262 apps; his namesake 14). Summed across all competitions.
   const apps = {}
   for (const c of ['GB1', 'ES1', 'IT1', 'FR1', 'L1', 'CL']) for (const p of JSON.parse(readFileSync(path.join(ROOT, `src/data/football501/history.${c}.generated.json`), 'utf8')).players) apps[p.id] = (apps[p.id] || 0) + (p.comps?.[c]?.apps || 0)
-  const { registry, crosswalk, report } = buildIdentity({ sources, tmIndex, tmPositions, wpPositions, prior, recog: apps })
+  const { registry, crosswalk, report, recognisableNames } = buildIdentity({ sources, tmIndex, tmPositions, wpPositions, prior, recog: apps })
 
   rekeyDeterministic(registry, crosswalk)
   runIntegrityChecks(registry, crosswalk) // throws → non-zero exit on violation
@@ -628,9 +649,19 @@ async function main() {
   const positions = {}
   for (const rec of registry) { const b = POS_BADGE[rec.positions[0]]; if (b) positions[rec.id] = b }
 
+  // Lean RECOGNISABLE subset — the players a game dataset resolves to (what a user
+  // might type). This is facts.js's client universe (getPlayer/search), so it stays
+  // small (~thousands) instead of the full 44k registry. Computed by RESOLUTION
+  // (byAlias), not the ingestion-touch flag, so the right namesake is chosen.
+  const recognisableIds = new Set()
+  for (const name of recognisableNames) { const v = crosswalk.byAlias[name]; if (v) for (const id of (Array.isArray(v) ? v : [v])) recognisableIds.add(id) }
+  const recognisable = registry.filter(r => recognisableIds.has(r.id))
+    .map(r => ({ id: r.id, displayName: r.displayName, nationalities: r.nationalities, positions: r.positions }))
+
   writeFileSync(REGISTRY_PATH, JSON.stringify(registry, null, 1) + '\n')
   writeFileSync(CROSSWALK_PATH, JSON.stringify(crosswalk, null, 1) + '\n')
   writeFileSync(POSITIONS_PATH, JSON.stringify(positions) + '\n')
+  writeFileSync(path.join(CANON, 'players.recognisable.generated.json'), JSON.stringify(recognisable) + '\n')
   writeFileSync(AUDIT_PATH, renderAudit({ registry, crosswalk, report }))
 
   const withPos = registry.filter(r => r.positions.length).length

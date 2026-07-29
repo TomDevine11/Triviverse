@@ -29,6 +29,10 @@ const J = (p) => JSON.parse(readFileSync(path.join(ROOT, p), 'utf8'))
 const OUT = path.join(ROOT, 'src', 'data', 'categories.generated.json')
 const COMPS = ['GB1', 'ES1', 'IT1', 'FR1', 'L1', 'CL']
 const LEAGUE_OF = { GB1: 'Premier League', ES1: 'La Liga', IT1: 'Serie A', FR1: 'Ligue 1', L1: 'Bundesliga' }
+// Only members with at least this recognisability enter the game categories — the
+// old Wikidata groups were similarly fame-gated. Keeps facts.js (and the client)
+// to plausible answers instead of the full squad roster (~33k → a few thousand).
+const MEMBER_MIN = 10
 
 // Category sets kept identical to the current game (from the wikidata groups);
 // only the MEMBERS move to canonical. Dotted Italian names need the same aliases
@@ -66,7 +70,10 @@ for (const t of teams) {
 // team id → domestic league (from the club's competitions)
 const teamComps = new Map(teams.map(t => [t.id, t.competitions]))
 
-const member = (id) => ({ name: idName.get(id), fame: recogById[id] || 0 })
+// Members carry the canonical Player id (tm:<tmId>) so facts.js keys by id, not
+// name (RFC-001 Phase B — no name reconciliation).
+const member = (id) => ({ id: `tm:${id}`, name: idName.get(id), fame: recogById[id] || 0 })
+const membersOf = (ids) => ids.map(member).filter(m => m.fame >= MEMBER_MIN).sort((a, b) => b.fame - a.fame)
 
 // ── clubs + clubLeague ──────────────────────────────────────────────────────
 const clubs = {}, clubLeague = {}
@@ -75,7 +82,7 @@ for (const cat of clubCats) {
   const t = teamByNorm.get(clubNorm(CLUB_ALIASES[cat] || cat))
   if (!t) { unmapped.push(cat); continue }
   const ids = [...(membersByTeam.get(t.id) || [])].filter(id => idName.has(id))
-  clubs[cat] = ids.map(member).sort((a, b) => b.fame - a.fame)
+  clubs[cat] = membersOf(ids)
   const league = (teamComps.get(t.id) || []).map(c => LEAGUE_OF[c]).find(Boolean)
   if (league) clubLeague[cat] = league
 }
@@ -85,7 +92,7 @@ const nationalities = {}
 for (const cat of natCats) {
   const key = normalize(cat)
   const ids = [...idNat.entries()].filter(([, v]) => v.natKey === key).map(([id]) => id)
-  nationalities[cat] = ids.map(member).sort((a, b) => b.fame - a.fame)
+  nationalities[cat] = membersOf(ids)
 }
 
 // ── trophies (from canonical Honours) ───────────────────────────────────────
@@ -95,7 +102,7 @@ try {
   const honTrophies = J('src/data/football501/honours.generated.json').trophies
   for (const [cat, honourName] of Object.entries(TROPHY_MAP)) {
     const ids = (honTrophies[honourName] || []).filter(id => idName.has(id))
-    trophies[cat] = ids.map(member).sort((a, b) => b.fame - a.fame)
+    trophies[cat] = membersOf(ids)
   }
 } catch { honoursMissing = true }
 

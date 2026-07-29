@@ -2,7 +2,7 @@
  "meta": {
   "schema": 1,
   "generatedAt": "2026-07-29",
-  "count": 44194
+  "count": 44196
  },
  "byRef": {
   "tm:1": "tm:1",
@@ -7558,6 +7558,7 @@
   "tm:14660": "tm:14660",
   "tm:146612": "tm:146612",
   "tm:146648": "tm:146648",
+  "tm:146660": "tm:146660",
   "tm:146667": "tm:146667",
   "tm:146676": "tm:146676",
   "tm:146680": "tm:146680",
@@ -19476,6 +19477,7 @@
   "tm:313996": "tm:313996",
   "tm:313997": "tm:313997",
   "tm:314": "tm:314",
+  "tm:3140": "tm:3140",
   "tm:314000": "tm:314000",
   "tm:314002": "tm:314002",
   "tm:314004": "tm:314004",
@@ -43299,7 +43301,13 @@
   "adrian spyrka": "tm:1069",
   "adrian stoian": "tm:96853",
   "adrian whitbread": "tm:225376",
-  "adriano": "tm:34495",
+  "adriano": [
+   "tm:14225",
+   "tm:25469",
+   "tm:34495",
+   "tm:55254",
+   "tm:5876"
+  ],
   "adriano alex taribello": "tm:227703",
   "adriano banelli": "tm:372170",
   "adriano bardin": "tm:372989",
@@ -43740,7 +43748,10 @@
   "albert genet": "tm:1255218",
   "albert gougain": "tm:1053387",
   "albert gr nb k": "tm:503866",
-  "albert gudmundsson": "tm:305947",
+  "albert gudmundsson": [
+   "tm:305947",
+   "tm:509067"
+  ],
   "albert haroux": "tm:1173007",
   "albert jansen": "tm:97388",
   "albert jaraczewski": "tm:1152440",
@@ -44424,7 +44435,11 @@
   "alex dias": "tm:53310",
   "alex dominguez": "tm:524937",
   "alex felip": "tm:285957",
-  "alex fernandez": "tm:7885",
+  "alex fernandez": [
+   "tm:72394",
+   "tm:7885",
+   "tm:89733"
+  ],
   "alex ferrari": "tm:197491",
   "alex fores": "tm:709380",
   "alex freeman": "tm:985806",
@@ -45082,8 +45097,14 @@
   "amara traore": "tm:151355",
   "amaral": "tm:17474",
   "amarii bell": "tm:278166",
-  "amarildo": "tm:226393",
-  "amarildo footballer born 1939": "tm:226393",
+  "amarildo": [
+   "tm:226393",
+   "tm:237723"
+  ],
+  "amarildo footballer born 1939": [
+   "tm:226393",
+   "tm:237723"
+  ],
   "amarildo tavares da silveira": "p:amarildo-tavares-da-silveira",
   "amaro dauder": "tm:308893",
   "amaro mendez": "tm:675227",
@@ -51322,7 +51343,11 @@
   "danil krugovoy": "tm:372535",
   "danila prokhin": "tm:486083",
   "danilho doekhi": "tm:387047",
-  "danilo": "tm:145707",
+  "danilo": [
+   "tm:145707",
+   "tm:32816",
+   "tm:808509"
+  ],
   "danilo alvim": "p:danilo-alvim",
   "danilo arboleda": "tm:364586",
   "danilo avelar": "tm:140748",
@@ -51402,7 +51427,10 @@
   "danny thomas": "tm:34614",
   "danny tiatto": "tm:3227",
   "danny wallace": "tm:176635",
-  "danny ward": "tm:124172",
+  "danny ward": [
+   "tm:124172",
+   "tm:203026"
+  ],
   "danny webber": "tm:3551",
   "danny welbeck": "tm:67063",
   "danny williams": "tm:38383",
@@ -51742,7 +51770,13 @@
   "david linighan": "tm:224386",
   "david ljung": "tm:32915",
   "david lomban": "tm:63723",
-  "david lopez": "tm:25462",
+  "david lopez": [
+   "tm:129444",
+   "tm:25462",
+   "tm:662596",
+   "tm:733718",
+   "tm:947431"
+  ],
   "david lopez silva": "p:david-lopez-silva",
   "david lowe": "tm:228023",
   "david luiz": "tm:46741",
@@ -51751,7 +51785,10 @@
   "david maresu": "tm:174447",
   "david marraud": "tm:173562",
   "david marshall": "tm:9500",
-  "david martin": "tm:15930",
+  "david martin": [
+   "tm:15930",
+   "tm:253675"
+  ],
   "david martot": "tm:23954",
   "david mateos": "tm:45304",
   "david may": "tm:3538",
@@ -52061,7 +52098,10 @@
   "demy de zeeuw": "tm:19087",
   "denes dibusz": "tm:162695",
   "denilho cleonise": "tm:582131",
-  "denilson": "tm:42352",
+  "denilson": [
+   "tm:42352",
+   "tm:7660"
+  ],
   "denilson 1977": "p:denilson-1977",
   "denilson de oliveira": "p:denilson-de-oliveira",
   "denilson footballer born 1977": "p:denilson-1977",
@@ -52265,7 +52305,11 @@
   "dida footballer born 1934": "p:dida-1934",
   "dida footballer born 1973": "p:dida-1973",
   "didac vila": "tm:67090",
-  "didi": "tm:137264",
+  "didi": [
+   "tm:137264",
+   "tm:17303",
+   "tm:24733"
+  ],
   "didi 1928": "p:didi-1928",
   "didi footballer born 1928": "p:didi-1928",
   "didier agathe": "tm:9490",
@@ -52374,7 +52418,12 @@
   "diego leon": "tm:28490",
   "diego llopis": "tm:309978",
   "diego llorente": "tm:246291",
-  "diego lopez": "tm:20740",
+  "diego lopez": [
+   "tm:20740",
+   "tm:259703",
+   "tm:34370",
+   "tm:617081"
+  ],
   "diego lopez noguerol": "p:diego-lopez-noguerol",
   "diego lozano": "tm:313867",
   "diego lugano": "tm:13829",
@@ -52788,7 +52837,10 @@
   "dobrivoje trivic": "tm:215978",
   "dobrosav krstic": "tm:247101",
   "dodi lukebakio": "tm:303259",
-  "dodo": "tm:109038",
+  "dodo": [
+   "tm:109038",
+   "tm:401529"
+  ],
   "dogan alemdar": "tm:576033",
   "dolev haziza": "tm:367633",
   "dolfi": "tm:640193",
@@ -53194,7 +53246,11 @@
   "eder militao": "tm:401530",
   "eder rigonat": "tm:505383",
   "eder vilarchao": "tm:156892",
-  "ederson": "tm:238223",
+  "ederson": [
+   "tm:238223",
+   "tm:29035",
+   "tm:607854"
+  ],
   "ederson honorato campos": "p:ederson-honorato-campos",
   "ederson santana de moraes": "p:ederson-santana-de-moraes",
   "edgar": "tm:3621",
@@ -55410,7 +55466,18 @@
   "fernandao": "tm:5332",
   "fernandez florez": "tm:1368254",
   "fernandinho": "tm:26267",
-  "fernando": "tm:51174",
+  "fernando": [
+   "tm:105456",
+   "tm:1373492",
+   "tm:145534",
+   "tm:15338",
+   "tm:15450",
+   "tm:15721",
+   "tm:2757",
+   "tm:314061",
+   "tm:51174",
+   "tm:550495"
+  ],
   "fernando abreu": "tm:72003",
   "fernando aguilera carvajal": "tm:587172",
   "fernando ali": "tm:310816",
@@ -56714,7 +56781,10 @@
   "fraser wishart": "tm:179183",
   "frazer richardson": "tm:4094",
   "frechaut": "tm:13159",
-  "fred": "tm:191614",
+  "fred": [
+   "tm:191614",
+   "tm:31005"
+  ],
   "fred arbinger": "tm:95439",
   "fred englert": "tm:130243",
   "fred heiser": "tm:109454",
@@ -60429,7 +60499,11 @@
   "higinio vilches": "tm:310626",
   "hikmet capanoglu": "tm:172362",
   "hilan hamzaoui slimani": "tm:1070591",
-  "hilario": "tm:13886",
+  "hilario": [
+   "tm:1381732",
+   "tm:13886",
+   "tm:195579"
+  ],
   "hilario marrero": "tm:348723",
   "hilario velasco": "tm:347161",
   "hilderaldo bellini": "p:hilderaldo-bellini",
@@ -62220,7 +62294,10 @@
   "javi garcia": "tm:36350",
   "javi gonzalez": "tm:7632",
   "javi gracia": "tm:172656",
-  "javi guerra": "tm:46215",
+  "javi guerra": [
+   "tm:46215",
+   "tm:834764"
+  ],
   "javi guerrero": "tm:7869",
   "javi hernandez": "tm:422466",
   "javi hervas": "tm:184218",
@@ -66041,7 +66118,20 @@
    "tm:699212"
   ],
   "juanin garcia": "tm:308987",
-  "juanito": "tm:7647",
+  "juanito": [
+   "tm:135096",
+   "tm:253530",
+   "tm:282880",
+   "tm:305455",
+   "tm:314023",
+   "tm:348482",
+   "tm:363679",
+   "tm:478817",
+   "tm:660327",
+   "tm:661483",
+   "tm:7647",
+   "tm:7795"
+  ],
   "juanito alonso": "tm:170709",
   "juanito gomez": "tm:38592",
   "juanito mariana": "tm:723925",
@@ -66076,7 +66166,10 @@
   "juanma prieto": "tm:253521",
   "juanma suarez": "tm:273582",
   "juanma valero": "tm:8007",
-  "juanmi": "tm:126737",
+  "juanmi": [
+   "tm:126737",
+   "tm:7484"
+  ],
   "juanmi callejon": "tm:8187",
   "juanmi gelabert": "tm:7697",
   "juanmi jimenez": "p:juanmi-jimenez",
@@ -66242,7 +66335,14 @@
   "julio bernad": "tm:508617",
   "julio caceres": "tm:18733",
   "julio cardenosa": "tm:135093",
-  "julio cesar": "tm:2943",
+  "julio cesar": [
+   "tm:13208",
+   "tm:22412",
+   "tm:2943",
+   "tm:30945",
+   "tm:52647",
+   "tm:79116"
+  ],
   "julio cesar arzu": "tm:141747",
   "julio cesar baldivieso": "p:julio-cesar-baldivieso",
   "julio cesar benitez": "tm:308709",
@@ -66327,7 +66427,11 @@
   "juninho paulista": "tm:3505",
   "juninho pernambucano": "tm:5354",
   "juninho quixada": "tm:142136",
-  "junior": "tm:5861",
+  "junior": [
+   "tm:117623",
+   "tm:5861",
+   "tm:770"
+  ],
   "junior 1973": "p:junior-1973",
   "junior adamu": "tm:452477",
   "junior agogo": "tm:27761",
@@ -67828,7 +67932,10 @@
   "lee kang in": "p:lee-kang-in",
   "lee makel": "tm:13331",
   "lee marshall": "tm:3671",
-  "lee martin": "tm:15449",
+  "lee martin": [
+   "tm:15449",
+   "tm:176025"
+  ],
   "lee matthews": "tm:20977",
   "lee mcculloch": "tm:11360",
   "lee mills": "tm:211264",
@@ -68614,7 +68721,10 @@
   "luca netz": "tm:524285",
   "luca paganini": "tm:167444",
   "luca pastine": "tm:227499",
-  "luca pellegrini": "tm:229200",
+  "luca pellegrini": [
+   "tm:229200",
+   "tm:346567"
+  ],
   "luca pfeiffer": "tm:232463",
   "luca philipp": "tm:432671",
   "luca pinton": "tm:165311",
@@ -69169,7 +69279,14 @@
   "luis galvan": "p:luis-galvan",
   "luis gamonal": "tm:313832",
   "luis garbizu": "tm:674652",
-  "luis garcia": "tm:7920",
+  "luis garcia": [
+   "tm:26149",
+   "tm:271572",
+   "tm:637252",
+   "tm:7920",
+   "tm:80024",
+   "tm:8006"
+  ],
   "luis garcia blanco": "tm:504017",
   "luis garcia fernandez": "p:luis-garcia-fernandez",
   "luis garcia plaza": "p:luis-garcia-plaza",
@@ -69231,7 +69348,10 @@
   "luis miguel naharro": "tm:488635",
   "luis miguel ramis": "tm:154986",
   "luis miguel santos": "tm:604677",
-  "luis milla": "tm:147796",
+  "luis milla": [
+   "tm:147796",
+   "tm:281989"
+  ],
   "luis minguela": "tm:273634",
   "luis miranda": "tm:892764",
   "luis molowny": "tm:248813",
@@ -69746,7 +69866,14 @@
   "manolis saliakas": "tm:242661",
   "manolito": "tm:585646",
   "manolito munoz": "tm:276631",
-  "manolo": "tm:135736",
+  "manolo": [
+   "tm:135736",
+   "tm:214137",
+   "tm:309155",
+   "tm:310938",
+   "tm:466768",
+   "tm:692732"
+  ],
   "manolo agujetas": "tm:310560",
   "manolo alfaro": "tm:221878",
   "manolo botubot": "tm:187733",
@@ -70641,7 +70768,10 @@
   "marcos 1973": "p:marcos-1973",
   "marcos acuna": "tm:60410",
   "marcos aguirre": "tm:54573",
-  "marcos alonso": "tm:112515",
+  "marcos alonso": [
+   "tm:112515",
+   "tm:214107"
+  ],
   "marcos alonso mendoza": "p:marcos-alonso-mendoza",
   "marcos alonso pena": "p:marcos-alonso-pena",
   "marcos alvarez": "tm:47944",
@@ -70663,7 +70793,10 @@
   "marcos martin": "tm:7683",
   "marcos mauro": "tm:247366",
   "marcos painter": "tm:36591",
-  "marcos paulo": "tm:13808",
+  "marcos paulo": [
+   "tm:13808",
+   "tm:77832"
+  ],
   "marcos pena": "tm:1064121",
   "marcos perez": [
    "tm:58110",
@@ -73180,7 +73313,10 @@
   "miguel vinuesa": "tm:314116",
   "miguel vitor": "tm:57814",
   "miguel xirau": "tm:314120",
-  "migueli": "tm:135089",
+  "migueli": [
+   "tm:135089",
+   "tm:328126"
+  ],
   "miguelin": [
    "tm:593328",
    "tm:853466"
@@ -73986,7 +74122,13 @@
   "naby sarr": "tm:203532",
   "nacer barazite": "p:nacer-barazite",
   "nacer chadli": "tm:59631",
-  "nacho": "tm:23287",
+  "nacho": [
+   "tm:23287",
+   "tm:258193",
+   "tm:310592",
+   "tm:310977",
+   "tm:623856"
+  ],
   "nacho cases": "tm:89473",
   "nacho conte": "tm:258845",
   "nacho fernandez": "tm:58884",
@@ -74291,7 +74433,14 @@
   "nenad savic": "tm:2892",
   "nenad stojkovic": "tm:132391",
   "nenad tomovic": "tm:47085",
-  "nene": "tm:29091",
+  "nene": [
+   "tm:1270761",
+   "tm:1776",
+   "tm:29091",
+   "tm:303981",
+   "tm:45717",
+   "tm:72082"
+  ],
   "nene ballina": "tm:312791",
   "nene suarez": "tm:311016",
   "neofytos michail": "tm:416359",
@@ -74408,7 +74557,10 @@
   "nico elvedi": "tm:192635",
   "nico frommer": "tm:1036",
   "nico gaitan": "tm:75442",
-  "nico gonzalez": "tm:466805",
+  "nico gonzalez": [
+   "tm:466805",
+   "tm:486031"
+  ],
   "nico herzig": "tm:3955",
   "nico hillenbrand": "tm:31853",
   "nico jan hoogma": "tm:311",
@@ -78382,7 +78534,10 @@
   "raphael clapson": "tm:102654",
   "raphael dwamena": "tm:254290",
   "raphael framberger": "tm:146163",
-  "raphael guerreiro": "tm:167997",
+  "raphael guerreiro": [
+   "tm:167997",
+   "tm:170986"
+  ],
   "raphael holzhauser": "tm:104414",
   "raphael jurilli": "tm:1138670",
   "raphael krauss": "tm:81281",
@@ -79106,7 +79261,10 @@
   "ricardo veron": "tm:6073",
   "ricardo villa": "p:ricardo-villa",
   "ricardo visus": "tm:630989",
-  "ricardo zamora": "tm:171149",
+  "ricardo zamora": [
+   "tm:171149",
+   "tm:310005"
+  ],
   "ricardo zulueta": "tm:734467",
   "riccardo allegretti": "tm:17143",
   "riccardo baich": "tm:2714",
@@ -80270,6 +80428,8 @@
   "ronaldinho": "tm:3373",
   "ronaldo": [
    "p:ronaldo-nazario",
+   "tm:146660",
+   "tm:3140",
    "tm:8198"
   ],
   "ronaldo brazilian footballer": "p:ronaldo-brazilian-footballer",
@@ -85230,7 +85390,11 @@
   "viti": "tm:273209",
   "viti rozada": "tm:438971",
   "vitin": "tm:546465",
-  "vitinha": "tm:487469",
+  "vitinha": [
+   "tm:48662",
+   "tm:487469",
+   "tm:586853"
+  ],
   "vitinho": "tm:468249",
   "vito bernardis": "tm:388630",
   "vito callioni": "tm:445311",

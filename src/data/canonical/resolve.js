@@ -159,7 +159,7 @@ const asShown = (canonicalName) => primaryBare.get(normalize(canonicalName)) || 
 // the small local list happen to return. Exact full-name and exact-surname
 // matches rank first, then more famous players. Cached index built once.
 // Map registry position terms → the compact badge codes the games display.
-const POS_BADGE = { goalkeeper: 'GK', defender: 'DEF', midfielder: 'MID', forward: 'FWD' }
+const POS_BADGE = { goalkeeper: 'GK', defender: 'DEF', midfielder: 'MID', forward: 'FWD', GK: 'GK', DEF: 'DEF', MID: 'MID', FWD: 'FWD' }
 let searchIndex = null
 function buildSearchIndex() {
   searchIndex = allPlayers().map(p => ({

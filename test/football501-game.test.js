@@ -21,7 +21,7 @@ describe('501 catalog + generator', () => {
 
   it('random multiplayer question supports the requested player count', async () => {
     for (let i = 0; i < 5; i++) expect((await getRandomChallenge(3)).maxPlayers).toBeGreaterThanOrEqual(3)
-  })
+  }, 15000) // loads 5× multi-MB fact tables; needs headroom over the 5s default under parallel load
 
   it('position badge comes from the challenge’s competition data', async () => {
     const c = await makeCustomChallenge({ comp: 'GB1', stat: 'goals', filter: {} })

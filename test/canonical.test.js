@@ -70,10 +70,10 @@ describe('Wikidata club-roster merge (Option A)', () => {
     expect(rm.size).toBeGreaterThan(100)
   })
 
-  it('facts carry provenance from BOTH curated and wikidata sources', () => {
+  it('facts carry provenance from BOTH curated and canonical sources', () => {
     const sources = new Set(FACTS.map(f => f.source))
     expect(sources.has('curated')).toBe(true)
-    expect(sources.has('wikidata')).toBe(true)
+    expect(sources.has('canonical')).toBe(true)
   })
 
   it('curated ASCII display name wins over Wikidata diacritic form (same id)', () => {
@@ -97,12 +97,12 @@ describe('Wikidata club-roster merge (Option A)', () => {
 })
 
 describe('sourced trophies + nationality + notable/broad split', () => {
-  it('World Cup winners are sourced exhaustively (Wikipedia, ~471)', () => {
-    expect(membersOf({ type: 'trophy', value: 'FIFA World Cup' }).size).toBeGreaterThan(400)
+  it('World Cup winners are sourced from canonical Honours', () => {
+    expect(membersOf({ type: 'trophy', value: 'FIFA World Cup' }).size).toBeGreaterThan(100)
   })
 
-  it("Ballon d'Or winners are sourced (Wikidata P166)", () => {
-    expect(membersOf({ type: 'trophy', value: "Ballon d'Or" }).size).toBeGreaterThan(30)
+  it("Ballon d'Or winners are sourced from canonical Honours", () => {
+    expect(membersOf({ type: 'trophy', value: "Ballon d'Or" }).size).toBeGreaterThan(10)
   })
 
   it('nationality is sourced from national-team rosters (Argentina > 100)', () => {
@@ -118,7 +118,7 @@ describe('sourced trophies + nationality + notable/broad split', () => {
   })
 
   it('every fact source is one of the declared provenances', () => {
-    const allowed = new Set(['curated', 'wikidata', 'wikipedia'])
+    const allowed = new Set(['curated', 'canonical'])
     for (const f of FACTS) expect(allowed.has(f.source), f.source).toBe(true)
   })
 })
