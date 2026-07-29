@@ -37,6 +37,8 @@ const wd = J('src/data/canonical/wikidata.generated.json')
 const CLUB_ALIASES = { 'A.S. Roma': 'Roma', 'S.S.C. Napoli': 'Napoli' }
 const clubCats = Object.keys(wd.clubLeague)
 const natCats = Object.keys(wd.nationalities)
+// Trophy categories ← canonical Honours (C11). Category name → the TM honour name.
+const TROPHY_MAP = { "Ballon d'Or": 'Winner Ballon d\'Or', 'FIFA World Cup': 'World Cup winner' }
 
 // ── canonical lookups ───────────────────────────────────────────────────────
 const recogById = J('src/data/recognisability.generated.json').byId
@@ -86,11 +88,24 @@ for (const cat of natCats) {
   nationalities[cat] = ids.map(member).sort((a, b) => b.fame - a.fame)
 }
 
+// ── trophies (from canonical Honours) ───────────────────────────────────────
+const trophies = {}
+let honoursMissing = false
+try {
+  const honTrophies = J('src/data/football501/honours.generated.json').trophies
+  for (const [cat, honourName] of Object.entries(TROPHY_MAP)) {
+    const ids = (honTrophies[honourName] || []).filter(id => idName.has(id))
+    trophies[cat] = ids.map(member).sort((a, b) => b.fame - a.fame)
+  }
+} catch { honoursMissing = true }
+
 const meta = {
-  schemaVersion: 1, source: 'derived from canonical SquadMembership + Player nationality',
-  note: 'trophies pending canonical Honours (C11) — until then facts.js keeps trophies from wikidata',
-  clubs: Object.keys(clubs).length, nationalities: Object.keys(nationalities).length, generatedAt: new Date().toISOString().slice(0, 10),
+  schemaVersion: 1, source: 'derived from canonical SquadMembership + Player nationality + Honours',
+  clubs: Object.keys(clubs).length, nationalities: Object.keys(nationalities).length,
+  trophies: Object.keys(trophies).length, honours: honoursMissing ? 'MISSING (run build:honours)' : 'ok',
+  generatedAt: new Date().toISOString().slice(0, 10),
 }
 if (unmapped.length) { console.error(`✗ unmapped club categories: ${unmapped.join(', ')}`); process.exit(1) }
-writeFileSync(OUT, JSON.stringify({ meta, clubLeague, clubs, nationalities }) + '\n')
-console.error(`✓ categories: ${Object.keys(clubs).length} clubs, ${Object.keys(nationalities).length} nationalities (members from canonical). Trophies pending C11 honours.`)
+writeFileSync(OUT, JSON.stringify({ meta, clubLeague, clubs, nationalities, trophies }) + '\n')
+console.error(`✓ categories: ${Object.keys(clubs).length} clubs, ${Object.keys(nationalities).length} nationalities, ${Object.keys(trophies).length} trophies (all from canonical)` +
+  `${honoursMissing ? ' — WARNING: honours missing, trophies empty' : ''}`)

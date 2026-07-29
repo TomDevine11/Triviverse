@@ -27,14 +27,15 @@
     "build:teammates": "node scripts/build-teammates.mjs",
     "build:recognisability": "node scripts/build-recognisability.mjs",
     "build:categories": "node scripts/build-categories.mjs",
-    "build:pl-catalog": "node scripts/pl-history/build-intl.mjs && node scripts/build-canonical.mjs && node scripts/pl-history/build-squads.mjs && node scripts/build-transfers.mjs && node scripts/build-recognisability.mjs && node scripts/build-categories.mjs && node scripts/build-teammates.mjs && node scripts/pl-history/build-catalog.mjs && node scripts/build-leaderboards.mjs && node scripts/build-tenable.mjs",
+    "build:pl-catalog": "node scripts/pl-history/build-intl.mjs && node scripts/build-canonical.mjs && node scripts/build-honours.mjs && node scripts/pl-history/build-squads.mjs && node scripts/build-transfers.mjs && node scripts/build-recognisability.mjs && node scripts/build-categories.mjs && node scripts/build-teammates.mjs && node scripts/pl-history/build-catalog.mjs && node scripts/build-leaderboards.mjs && node scripts/build-tenable.mjs",
     "build:stats": "node scripts/build-leaderboards.mjs",
     "build:tenable": "node scripts/build-tenable.mjs",
     "scrape:all": "for c in ES1 L1 IT1 FR1 CL; do COMP=$c node scripts/pl-history/scrape.mjs && COMP=$c node scripts/pl-history/build-facts.mjs; done",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "build:honours": "node scripts/build-honours.mjs"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
