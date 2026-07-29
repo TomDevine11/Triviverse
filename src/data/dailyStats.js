@@ -18,15 +18,15 @@ const KEY = 'ftg-stats-v1'
 const VISIT_KEY = 'ftg-visits-v1'
 const POINTS_KEY = 'ftg-points-v1'
 
-// The nine daily games (dailyStats keys). Perfect day = all of these in one day.
-export const DAILY_GAMES = ['tenable', 'wordle', 'tictactoe', 'teammates', 'careers', 'wcsquads', 'connections', 'higherlower', '501']
+// The eight daily games (dailyStats keys). Perfect day = all of these in one day.
+export const DAILY_GAMES = ['tenable', 'wordle', 'tictactoe', 'teammates', 'careers', 'connections', 'higherlower', '501']
 
 // ── Points economy (tune here, nowhere else) ──────────────────────
 export const PTS_PLAY = 10 //          playing a daily
 export const PTS_WIN = 25 //           winning it (replaces PTS_PLAY, not added)
 export const PTS_STREAK_PER = 5 //     bonus per day of that game's current streak…
 export const PTS_STREAK_CAP = 25 //    …capped here
-export const PERFECT_MULT = 2 //       clearing all nine doubles the whole day
+export const PERFECT_MULT = 2 //       clearing all eight doubles the whole day
 
 export function todayIndex() {
   const now = new Date()
@@ -118,7 +118,7 @@ function awardPoints(all, won, streak) {
   const pts = (won ? PTS_WIN : PTS_PLAY) + Math.min(streak * PTS_STREAK_PER, PTS_STREAK_CAP)
   p.total += pts
   p.dayBase += pts
-  // Perfect day: the moment all nine have recorded today, the day's base doubles.
+  // Perfect day: the moment all eight have recorded today, the day's base doubles.
   const day = todayIndex()
   if (!p.perfect && DAILY_GAMES.every(g => all[g]?.lastPlayed === day)) {
     p.total += p.dayBase * (PERFECT_MULT - 1)

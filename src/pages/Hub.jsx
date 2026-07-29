@@ -18,7 +18,6 @@ const GAMES = [
   { to: '/tictactoe', stats: 'tictactoe', color: '#6366f1' },
   { to: '/teammates', stats: 'teammates', color: '#ec4899' },
   { to: '/career-path', stats: 'careers', color: '#06b6d4' },
-  { to: '/world-cup', stats: 'wcsquads', color: '#f59e0b' },
   { to: '/connections', stats: 'connections', color: '#a3e635' },
   { to: '/higher-or-lower', stats: 'higherlower', color: '#f97316' },
   { to: '/501', stats: '501', color: '#ef4444' },

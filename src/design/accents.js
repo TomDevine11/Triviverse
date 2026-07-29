@@ -10,7 +10,6 @@ export const GAME_ACCENTS = {
   tictactoe: { accent: '#6366f1', bright: '#818cf8', tint: 'rgb(99 102 241 / 0.12)' },
   teammates: { accent: '#ec4899', bright: '#f472b6', tint: 'rgb(236 72 153 / 0.12)' },
   careers: { accent: '#06b6d4', bright: '#22d3ee', tint: 'rgb(6 182 212 / 0.12)' },
-  wcsquads: { accent: '#f59e0b', bright: '#fbbf24', tint: 'rgb(245 158 11 / 0.12)' },
   connections: { accent: '#a3e635', bright: '#bef264', tint: 'rgb(163 230 53 / 0.12)' }, // volt
   higherlower: { accent: '#f97316', bright: '#fb923c', tint: 'rgb(249 115 22 / 0.12)' },
   501: { accent: '#ef4444', bright: '#f87171', tint: 'rgb(239 68 68 / 0.12)' },

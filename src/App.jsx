@@ -13,7 +13,6 @@ const FootballWordle = lazy(() => import('./games/wordle/FootballWordle'))
 const TicTacToeMenu = lazy(() => import('./games/tictactoe/TicTacToeMenu'))
 const GuessByTeammates = lazy(() => import('./games/teammates/GuessByTeammates'))
 const CareerPath = lazy(() => import('./games/careers/CareerPath'))
-const WorldCupSquads = lazy(() => import('./games/wcsquads/WorldCupSquads'))
 const HigherLower = lazy(() => import('./games/higherlower/HigherLower'))
 const FootballConnections = lazy(() => import('./games/connections/FootballConnections'))
 
@@ -33,7 +32,6 @@ const GAME_ROUTES = [
   { path: '/tictactoe', el: <GamePage path="/tictactoe"><TicTacToeMenu /></GamePage> },
   { path: '/teammates', el: <GamePage path="/teammates"><GuessByTeammates /></GamePage> },
   { path: '/career-path', el: <GamePage path="/career-path"><CareerPath /></GamePage> },
-  { path: '/world-cup', el: <GamePage path="/world-cup"><WorldCupSquads /></GamePage> },
   { path: '/connections', el: <GamePage path="/connections"><FootballConnections /></GamePage> },
   { path: '/higher-or-lower', el: <GamePage path="/higher-or-lower"><HigherLower /></GamePage> },
 ]

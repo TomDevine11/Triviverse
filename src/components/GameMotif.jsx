@@ -35,14 +35,6 @@ const MOTIFS = {
       <path d="M6.8 16.5 10 12.4M14.5 11.7l3.2 2.2" stroke="currentColor" strokeWidth="2.6" fill="none" strokeLinecap="round" />
     </>
   ),
-  'world-cup': (
-    <>
-      <path d="M7 3.5h10V9a5 5 0 0 1-10 0z" />
-      <path d="M7 4.5H4a3.2 3.2 0 0 0 3.4 4.3M17 4.5h3a3.2 3.2 0 0 1-3.4 4.3" fill="none" stroke="currentColor" strokeWidth="2.2" />
-      <rect x="10.9" y="13" width="2.2" height="4" />
-      <rect x="7.5" y="18.5" width="9" height="2.7" rx="1" />
-    </>
-  ),
   connections: (
     <>
       <rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2" />

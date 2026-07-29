@@ -24,7 +24,7 @@ export const TILE = { hit: '#22c55e', near: '#fbbf24', miss: '#26243a' }
 export const GAME_ROUTES = {
   '501': '/501', wordle: '/wordle', tenable: '/tenable', tictactoe: '/tictactoe',
   teammates: '/teammates', connections: '/connections', careers: '/career-path',
-  wcsquads: '/world-cup', higherlower: '/higher-or-lower',
+  higherlower: '/higher-or-lower',
 }
 
 const hostname = SITE_URL.replace(/^https?:\/\//, '').replace(/\/$/, '')

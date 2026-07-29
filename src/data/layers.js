@@ -65,7 +65,6 @@ export const DERIVED = [
   'football501/daily.curated.generated.json',
   'careers.generated.json',
   'teammates.generated.json',
-  'wcsquads.generated.json',
   'crests.generated.json',
   'categoryIcons.generated.json',
   'canonical/nameFixes.generated',

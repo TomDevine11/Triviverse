@@ -12,7 +12,6 @@ const POOL = [
   { stats: 'tictactoe', to: '/tictactoe' },
   { stats: 'teammates', to: '/teammates' },
   { stats: 'careers', to: '/career-path' },
-  { stats: 'wcsquads', to: '/world-cup' },
   { stats: 'connections', to: '/connections' },
   { stats: 'higherlower', to: '/higher-or-lower' },
   { stats: '501', to: '/501' },

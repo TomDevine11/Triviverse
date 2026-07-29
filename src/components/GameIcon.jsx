@@ -46,14 +46,6 @@ const ICONS = {
       <circle cx="20" cy="7" r="1.6" {...S} />
     </>
   ),
-  // Trophy — "guess the world cup"
-  'world-cup': (
-    <>
-      <path d="M7 4h10v4a5 5 0 0 1-10 0V4z" {...S} />
-      <path d="M7 5H4.5v1.5A3.5 3.5 0 0 0 8 10M17 5h2.5v1.5A3.5 3.5 0 0 1 16 10" {...S} />
-      <path d="M12 13v3.5M9 20h6M10 20l.5-3.5h3l.5 3.5" {...S} />
-    </>
-  ),
   // Four squares — the Connections motif
   connections: (
     <>

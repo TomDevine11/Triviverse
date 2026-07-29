@@ -59,7 +59,7 @@ export const ROUTES = [
       {
         h2: 'A game for every kind of football fan',
         body: [
-          'Word-game lovers can tackle Football Wordle; quiz buffs will enjoy Football Tenable and Football Connections; and anyone who knows their transfers will fly through Teammates and Career Path. Test your memory with Name the Winning Squad, or chase a streak in Higher or Lower. Whether you follow the Premier League, La Liga, the Champions League or the World Cup, there is a daily football game here for you.',
+          'Word-game lovers can tackle Football Wordle; quiz buffs will enjoy Football Tenable and Football Connections; and anyone who knows their transfers will fly through Teammates and Career Path. Test your instincts with Football Tic-Tac-Toe, or chase a streak in Higher or Lower. Whether you follow the Premier League, La Liga or the Champions League, there is a daily football game here for you.',
         ],
       },
     ],
@@ -287,46 +287,6 @@ export const ROUTES = [
     schema: 'VideoGame',
     priority: '0.9',
     changefreq: 'daily',
-  },
-  {
-    path: '/world-cup',
-    name: 'World Cup Squads',
-    title: 'Name the World Cup Winning Squad | Triviverse',
-    description: 'Free daily game — name the World Cup winning squads: pick a winning team (Brazil 2002, France 98, Argentina 2022) and recall as many of the squad as you can.',
-    keywords: ['world cup winning squads', 'name the world cup winning squad', 'world cup squads', 'name the world cup squad', 'guess the world cup squad', 'world cup winning teams quiz', 'football squad quiz', 'world cup 2022 squad'],
-    h1: 'Name the Winning Squad',
-    tagline: 'How many of a World Cup-winning squad can you name?',
-    ogImage: '/og/world-cup.png',
-    about: 'Name the Winning Squad is a football memory game about the FIFA World Cup. Pick one of the great World Cup-winning teams — from England 1966 to Argentina 2022 — and type as many of its 22-to-26-man squad as you can recall, including the reserves. How well do you really know the legendary teams?',
-    howTo: [
-      'Choose a World Cup-winning team (e.g. Brazil 2002, France 1998, Argentina 2022).',
-      'Type the names of players who were in that winning squad.',
-      'Each correct name fills in its place; the counter tracks how many of the full squad you have.',
-      'Recall as many as you can — then reveal the rest to see who you missed.',
-    ],
-    sections: [
-      {
-        h2: 'Tips for naming the squad',
-        body: [
-          'Work through the team position by position — start with the famous starting XI, then dig into the substitutes and squad players who are easy to forget. Running through the matches you remember from the tournament often jogs loose the deeper cuts.',
-        ],
-      },
-      {
-        h2: 'The winning squads',
-        body: [
-          'Play any World Cup-winning squad from England 1966 right through to Argentina 2022, including iconic teams like Brazil 1970, Italy 1982, France 1998, Italy 2006 and Spain 2010. Each squad is sourced from the official tournament record, reserves and all.',
-        ],
-      },
-    ],
-    faq: [
-      { q: 'How do I play Name the Winning Squad?', a: 'Pick a World Cup-winning team and type the players from its squad. Every correct name is revealed and counted; try to name the whole 22-to-26-man squad.' },
-      { q: 'Which teams can I play?', a: 'Every World Cup-winning squad from England 1966 through to Argentina 2022.' },
-      { q: 'Where do the squads come from?', a: 'The squads are sourced from Wikipedia’s official record of FIFA World Cup winning players.' },
-      { q: 'Is there a Daily and an Unlimited mode?', a: 'Yes. Daily gives everyone the same “squad of the day” and tracks your best score and day streak; Unlimited lets you pick any winning squad to practise, without affecting your stats.' },
-    ],
-    schema: 'VideoGame',
-    priority: '0.9',
-    changefreq: 'weekly',
   },
   {
     path: '/connections',

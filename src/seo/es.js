@@ -81,19 +81,6 @@ export const ES = {
       { q: '¿Hay una pregunta nueva cada día?', a: 'Sí — cada día aparece una nueva pregunta del top 10.' },
     ],
   },
-  '/world-cup': {
-    title: 'Nombra la Plantilla Campeona del Mundial | Triviverse',
-    description: 'Nombra la plantilla campeona: elige una selección campeona del Mundial — Brasil 2002, Francia 98, Argentina 2022 — y recuerda a tantos jugadores como puedas.',
-    keywords: ['plantillas mundial', 'nombra la plantilla del mundial', 'quiz selecciones campeonas', 'plantilla mundial 2022'],
-    h1: 'Nombra la Plantilla Campeona',
-    tagline: '¿A cuántos de una plantilla campeona del Mundial puedes nombrar?',
-    about: 'Nombra la Plantilla Campeona es un juego de memoria sobre la Copa del Mundo. Elige una de las grandes selecciones campeonas — desde Inglaterra 1966 hasta Argentina 2022 — y escribe a tantos de su plantilla como recuerdes, incluidos los suplentes.',
-    faq: [
-      { q: '¿Cómo se juega?', a: 'Elige una selección campeona del Mundial y escribe los jugadores de su plantilla. Cada acierto se revela y se cuenta; intenta nombrar a toda la plantilla.' },
-      { q: '¿Qué equipos puedo jugar?', a: 'Todas las plantillas campeonas del Mundial, desde Inglaterra 1966 hasta Argentina 2022.' },
-      { q: '¿De dónde salen las plantillas?', a: 'Las plantillas provienen del registro oficial de jugadores campeones del Mundial de Wikipedia.' },
-    ],
-  },
   '/connections': {
     title: 'Connections de Fútbol — Puzle Diario | Triviverse',
     description: 'Connections de fútbol: un puzle diario de 16 futbolistas que esconden cuatro grupos de cuatro — clubes, nacionalidades y trofeos. Encuentra los cuatro grupos en cuatro fallos.',

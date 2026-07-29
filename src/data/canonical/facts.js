@@ -146,7 +146,7 @@ for (const [nat, members] of Object.entries(categories.nationalities || {}))
 for (const [trophy, members] of Object.entries(categories.trophies || {}))
   for (const m of members) addFactById(m.id, m.name, 'won_trophy', trophy, 'trophies', 'canonical', m.fame)
 
-// ── 3. Universe seed: every RECOGNISABLE player (careers/teammates/wcsquads/…
+// ── 3. Universe seed: every RECOGNISABLE player (careers/teammates/…
 // targets a game may reference), so getPlayer/search resolve them even without a
 // category fact. Kept lean (~thousands) via the recognisable subset.
 for (const r of recognisablePlayers) {
