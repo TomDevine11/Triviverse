@@ -2,18 +2,14 @@
 // ─────────────────────────────────────────────────────────────────────────
 // BUILD CATEGORIES  →  src/data/categories.generated.json   (RFC-001 C12)
 //
-// Derives tic-tac-toe / connections CATEGORY MEMBERSHIP from canonical facts,
-// to replace the Wikidata category groups in wikidata.generated.json:
+// Derives tic-tac-toe / connections CATEGORY MEMBERSHIP entirely from canonical
+// facts (the Wikidata category groups are retired — RFC-001 C12):
 //   • clubs        — who played for each category club  (canonical SquadMembership)
 //   • nationalities — players by nationality              (canonical Player.nat)
+//   • trophies     — Ballon d'Or / World Cup winners      (canonical Honours)
 //   • clubLeague   — each category club's league          (canonical Competition)
-// Members carry their recognisability score as `fame` so the notable/broad split
-// in facts.js works unchanged.
-//
-// TROPHIES (Ballon d'Or, World Cup) are NOT derived here — they need canonical
-// Honours (scrape-honours / build-honours, C11). Until then facts.js keeps the
-// two trophy groups from wikidata.generated; once honours land, this build emits
-// trophies too and wikidata.generated can be deleted.
+// Members carry the canonical Player id (tm:<id>) + recognisability as `fame` so
+// facts.js keys by id and the notable/broad split works unchanged.
 //
 //   node scripts/build-categories.mjs   (offline)
 // ─────────────────────────────────────────────────────────────────────────
@@ -34,13 +30,11 @@ const LEAGUE_OF = { GB1: 'Premier League', ES1: 'La Liga', IT1: 'Serie A', FR1: 
 // to plausible answers instead of the full squad roster (~33k → a few thousand).
 const MEMBER_MIN = 10
 
-// Category sets kept identical to the current game (from the wikidata groups);
-// only the MEMBERS move to canonical. Dotted Italian names need the same aliases
-// facts.js already applies.
-const wd = J('src/data/canonical/wikidata.generated.json')
+// The featured category sets (editorial — the clubs/nations the games quiz on).
+// Members are derived from canonical facts below; only these NAMES are curated.
 const CLUB_ALIASES = { 'A.S. Roma': 'Roma', 'S.S.C. Napoli': 'Napoli' }
-const clubCats = Object.keys(wd.clubLeague)
-const natCats = Object.keys(wd.nationalities)
+const clubCats = ['Manchester United', 'Manchester City', 'Chelsea', 'Liverpool', 'Arsenal', 'Tottenham Hotspur', 'Everton', 'Newcastle United', 'Real Madrid', 'FC Barcelona', 'Atlético Madrid', 'Valencia', 'Sevilla', 'Juventus', 'AC Milan', 'Inter Milan', 'A.S. Roma', 'S.S.C. Napoli', 'FC Bayern Munich', 'Borussia Dortmund', 'Bayer 04 Leverkusen', 'Paris Saint-Germain', 'Olympique de Marseille', 'AS Monaco']
+const natCats = ['Argentina', 'Brazil', 'France', 'Spain', 'England', 'Germany', 'Netherlands', 'Portugal', 'Italy', 'Belgium', 'Croatia', 'Uruguay']
 // Trophy categories ← canonical Honours (C11). Category name → the TM honour name.
 const TROPHY_MAP = { "Ballon d'Or": 'Winner Ballon d\'Or', 'FIFA World Cup': 'World Cup winner' }
 

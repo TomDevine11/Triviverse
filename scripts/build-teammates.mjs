@@ -6,9 +6,9 @@
 // SquadMembership (squads.<comp>): two players are teammates if they shared a
 // club-season roster. Replaces the network Wikidata importer (import-teammates).
 //
-// Fame (recognisability) is unchanged — still the committed wikidata.generated
-// signal — so clue quality is preserved; only the co-occurrence SOURCE changes
-// from Wikidata P54 spells to Transfermarkt rosters. Coverage is club-only across
+// Fame ordering uses the canonical recognisability signal, so clue quality is
+// preserved; only the co-occurrence SOURCE changes from Wikidata P54 spells to
+// Transfermarkt rosters. Coverage is club-only across
 // the six scraped competitions (national-team teammates arrive with C9 squads).
 //
 //   node scripts/build-teammates.mjs   (offline)
@@ -59,11 +59,12 @@ for (const [id, e] of idInfo) { const n = normalize(e.name); const cur = nameToI
 // ── recognisability: normName → 0-100 contemporary-recognisability (RFC-001,
 // replaces the Wikidata fame signal). Drives both the mate cutoff and clue order.
 const FAME = new Map(Object.entries(J('src/data/recognisability.generated.json').byName))
-// getPlayer-known proxy: a target must exist in the facts registry (wikidata
-// membership) so the game can resolve it. That is a C12 (category-membership)
-// concern, not a fame one — kept until membership is canonical.
+// getPlayer-known proxy: names that resolve to a RECOGNISABLE canonical player
+// (facts.js's universe) — so the game can identify the target (RFC-001 C12,
+// replaces the old wikidata-membership set).
+const recogIds = new Set(J('src/data/canonical/players.recognisable.generated.json').map(r => r.id))
 const KNOWN = new Set()
-for (const g of ['clubs', 'nationalities', 'trophies']) for (const arr of Object.values(J('src/data/canonical/wikidata.generated.json')[g] || {})) for (const p of arr) KNOWN.add(normalize(p.name))
+for (const [n, v] of Object.entries(J('src/data/canonical/players.crosswalk.json').byAlias)) if (typeof v === 'string' && recogIds.has(v)) KNOWN.add(n)
 const teamName = new Map(J('src/data/canonical/teams.generated.json').teams.map(t => [t.id, t.name]))
 
 // ── rosters from canonical SquadMembership ──────────────────────────────────

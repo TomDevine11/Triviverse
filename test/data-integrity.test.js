@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import teammates from '../src/data/teammates.generated.json'
 import careers from '../src/data/careers.generated.json'
-import wikidata from '../src/data/canonical/wikidata.generated.json'
+import categories from '../src/data/categories.generated.json'
 import stats from '../src/data/canonical/stats.generated.json'
 
 // A name that's just a Wikidata QID (e.g. "Q119562") means a label lookup
@@ -20,8 +20,8 @@ function collectNames() {
     names.push(p.name)
     for (const c of p.clubs) names.push(c.name)
   }
-  for (const group of [wikidata.clubs, wikidata.nationalities, wikidata.trophies]) {
-    for (const arr of Object.values(group || {})) for (const p of arr) names.push(p.name)
+  for (const group of [categories.clubs, categories.nationalities, categories.trophies]) {
+    for (const arr of Object.values(group || {})) for (const m of arr) names.push(m.name)
   }
   for (const ch of Object.values(stats.challenges || {})) names.push(...Object.keys(ch.players || {}))
   return names

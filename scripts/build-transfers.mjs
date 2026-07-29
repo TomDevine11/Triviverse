@@ -42,10 +42,12 @@ function parseFee(fee) {
   return { eur, type: loan ? 'loan' : 'permanent' }
 }
 
-// recognisability + getPlayer-known proxy (facts registry via wikidata membership)
+// recognisability + getPlayer-known proxy: names that resolve to a RECOGNISABLE
+// canonical player (facts.js's universe) — replaces wikidata membership (C12).
 const recog = J('src/data/recognisability.generated.json').byName
+const recogIds = new Set(J('src/data/canonical/players.recognisable.generated.json').map(r => r.id))
 const KNOWN = new Set()
-for (const g of ['clubs', 'nationalities', 'trophies']) for (const arr of Object.values(J('src/data/canonical/wikidata.generated.json')[g] || {})) for (const p of arr) KNOWN.add(normalize(p.name))
+for (const [n, v] of Object.entries(J('src/data/canonical/players.crosswalk.json').byAlias)) if (typeof v === 'string' && recogIds.has(v)) KNOWN.add(n)
 
 // The cache holds the raw ceapi response (no id/name) — id is the filename, name
 // comes from the history tables.

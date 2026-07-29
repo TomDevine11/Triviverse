@@ -430,11 +430,8 @@ async function collectSources() {
   for (const members of Object.values(mem.TROPHY_MEMBERS)) for (const n of members) push(n, { curated: true, source: 'curated:trophy' })
   for (const members of Object.values(mem.MANAGER_MEMBERS)) for (const n of members) push(n, { curated: true, source: 'curated:mgr' })
 
-  // 2. wikidata clubs / nationalities / trophies
-  const wd = J('src/data/canonical/wikidata.generated.json')
-  for (const list of Object.values(wd.clubs || {})) for (const p of list) push(p.name, { fame: p.fame, positions: p.positions || [], nationalities: p.nationalities || [], source: 'wikidata:club' })
-  for (const [nat, list] of Object.entries(wd.nationalities || {})) for (const p of list) push(p.name, { fame: p.fame, nationalities: [nat], source: 'wikidata:nat' })
-  for (const list of Object.values(wd.trophies || {})) for (const p of list) push(p.name, { fame: p.fame, source: 'wikidata:trophy' })
+  // 2. (Wikidata source removed — RFC-001 C12. Recognisable players now come from
+  //    the game datasets below + the full history universe added at the end.)
 
   // 3. five01 stat leaderboards
   const st = J('src/data/canonical/stats.generated.json')
@@ -655,6 +652,12 @@ async function main() {
   // (byAlias), not the ingestion-touch flag, so the right namesake is chosen.
   const recognisableIds = new Set()
   for (const name of recognisableNames) { const v = crosswalk.byAlias[name]; if (v) for (const id of (Array.isArray(v) ? v : [v])) recognisableIds.add(id) }
+  // …plus every genuinely-recognisable canonical player (recognisability ≥ RECOG_BAR),
+  // so the autocomplete universe is broad and canonical-derived (not dependent on
+  // which game datasets happen to mention a player).
+  const RECOG_BAR = 20
+  const recogById = (() => { try { return JSON.parse(readFileSync(path.join(ROOT, 'src/data/recognisability.generated.json'), 'utf8')).byId } catch { return {} } })()
+  for (const rec of registry) if (rec.refs.tm != null && (recogById[rec.refs.tm] || 0) >= RECOG_BAR) recognisableIds.add(rec.id)
   const recognisable = registry.filter(r => recognisableIds.has(r.id))
     .map(r => ({ id: r.id, displayName: r.displayName, nationalities: r.nationalities, positions: r.positions }))
 

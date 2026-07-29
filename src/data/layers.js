@@ -32,9 +32,9 @@ export const RAW_MARKERS = ['/scripts/', '/data/pl-history/']
 // Identified by unique filename fragments (folder-independent by design).
 export const CANONICAL_FACTS = [
   'canonical/players.registry.json',
+  'canonical/players.recognisable.generated.json', // lean recognisable-player universe (facts.js seed)
   'canonical/players.crosswalk.json',
   'canonical/players.positions.generated.json',
-  'canonical/wikidata.generated.json',
   'canonical/wikidata-positions.generated.json',
   'canonical/competitions.generated.json', // dimension entities (C4)
   'canonical/seasons.generated.json',
@@ -70,7 +70,7 @@ export const DERIVED = [
   'categoryIcons.generated.json',
   'canonical/nameFixes.generated',
   'recognisability.generated.json', // derived contemporary-recognisability score (replaces Wikidata fame)
-  'categories.generated.json', // derived tic-tac-toe/connections membership from canonical (C12, trophies pending C11)
+  'categories.generated.json', // derived tic-tac-toe/connections membership from canonical (C12: clubs/nats/trophies)
 ]
 
 // Tracked, sanctioned exceptions: game→canonical imports that exist TODAY and
