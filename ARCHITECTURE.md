@@ -237,7 +237,7 @@ because no mechanical derivation produces acceptable quality for that specific j
 |---|---|
 | `src/data/famousPlayers.js` | The Football Wordle answer pool. Needs **cross-era, casual-fan** recognisability, which no match-derived metric captures (see §8). |
 | `501_updated_questions.txt`, `tenable-daily-questions.txt` | Curated daily question sets for 501 / Tenable — editorial choices about what makes a good daily puzzle. |
-| `src/data/canonical/membership.js` | Curated club/nationality/trophy/manager member lists, unioned with canonical categories. Managers have no canonical source at all; the rest is a hand-verified safety net. *(Under review for possible retirement now that canonical categories are complete — evidence-gated.)* |
+| `src/data/canonical/membership.js` | Curated club/nationality/trophy/manager member lists, unioned with canonical categories. **Measured against canonical (2026-07): keep.** Managers, UEFA Champions League and the Euros have no canonical source at all; and even where canonical has the category it misses ~7–16% of these members — disproportionately legends (Maradona, Cruyff, Pelé), because canonical categories apply a recency floor. It also acts as an always-notable whitelist so iconic players appear in generated grids. |
 | Small alias maps: `ALIAS_FIXES` (resolve.js), `PLAYER_ALIASES`/`CLUB_ALIASES` (facts.js), `MANUAL_FIXES` (nameFixes.js) | Hand-verified same-person / same-club name corrections the automatic identity build cannot infer safely. Every entry must be a confirmed human match, not a surname guess. |
 
 ---

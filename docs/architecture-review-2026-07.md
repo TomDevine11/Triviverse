@@ -61,9 +61,18 @@ Each item: why it exists · effort · risk · benefit · recommendation.
 ### 5. Complexity reducible now migrations are complete
 - **5.1 Curated `membership.js` (269 lines) ∪ canonical categories.** Possibly
   redundant now canonical categories are complete; retiring it would also unlock
-  3.1 and collapse `facts.js` to one id-keyed path. — M–L / Med (display-name
-  ownership, hand-verified members) / Med–High. *Recommend: measure first; retire
-  only the subset canonical provably covers.*
+  3.1 and collapse `facts.js` to one id-keyed path. — M–L / Med / Med–High.
+  *Recommend: measure first.*
+  **→ MEASURED (2026-07-30): KEEP — not redundant.** Managers, UEFA Champions
+  League and the Euros have **no** canonical counterpart (managers unscraped;
+  CL/Euro exist only as ~815 ambiguous honour strings needing fresh curation).
+  Even where canonical has the category, coverage is only ~84–93% for
+  clubs/nationalities and 26% for trophies — the misses are disproportionately
+  legends (Maradona, Cruyff, Pelé, Di Stéfano, Ronaldo Nazário), because canonical
+  categories apply a recency floor (the same bias that sank the C14/Wordle idea).
+  6–21% of curated members fall below the notability threshold, so de-curating
+  would drop them from generated grids. Removing it would reduce game quality; the
+  coupled name→id shims (3.1) therefore stay. No code change made.
 - **5.2 Two OG-image systems** (static `og-images.mjs` + dynamic Next `og-service`).
   Different jobs. — M / Med / Low–Med. *Recommend: no; both purposeful.*
 

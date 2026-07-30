@@ -1,21 +1,30 @@
 // ─────────────────────────────────────────────────────────────────────────
-// CANONICAL MEMBERSHIP SOURCE OF TRUTH
+// CURATED CATEGORY MEMBERSHIP  (intentional editorial layer)
 //
-// This is the single curated source for "which players belong to which
-// category" across the whole platform. Every other derived structure
-// (the player registry, normalised facts, TicTacToe category members,
-// entity resolution) is built FROM this file — nothing is hand-maintained
-// in two places.
+// A hand-curated set of "which players belong to which category", UNIONED with
+// the canonical category membership (`categories.generated.json`, derived from
+// SquadMembership / Player nationality / Honours) inside `facts.js`. Canonical is
+// the bulk source; this file is the editorial safety net on top of it.
 //
-// Adding a player once here (e.g. a new Man City signing) makes them
-// correctly appear everywhere that derives from it: their club, their
-// league (derived from the club → league map), and any cross-consistency
-// checks. This is the structural fix for the "valid answer silently
-// rejected" bug class (Álvarez/Saliba/Fàbregas): membership is derived,
-// league is never authored separately, and CI tests flag gaps.
+// ⚠ KEPT DELIBERATELY — do not "delete now that categories are canonical". This
+// was measured against canonical on 2026-07-30 and is NOT redundant:
+//   • Managers, the UEFA Champions League and the UEFA European Championship have
+//     NO canonical source at all (managers are never scraped; CL/Euro exist only
+//     as ~815 messy, ambiguous honour strings that would need fresh curation to
+//     disambiguate). Removing this file deletes those categories from the games.
+//   • Even where canonical HAS the category, it covers only ~84–93% of these
+//     members for clubs/nationalities (26% for trophies) — the misses are
+//     disproportionately legends (Maradona, Cruyff, Pelé, Di Stéfano, Ronaldo
+//     Nazário), because canonical categories apply a recency floor. This is the
+//     same recency bias documented for famousPlayers.js.
+//   • Curated members are always-notable, so they're guaranteed to appear in
+//     GENERATED grids; 6–21% score below the notability threshold and would drop
+//     out of daily puzzles if de-curated.
+// See ARCHITECTURE.md §7 (editorial datasets) and docs/architecture-review-2026-07.md §5.1.
 //
-// Provenance: seeded from the manually-curated TicTacToe lists that were
-// reviewed and corrected over multiple sessions. `source: 'curated'`.
+// Adding a player here makes them appear in their club/league/nationality/trophy
+// categories (league is derived from CLUB_LEAGUE, never authored separately).
+// Provenance: seeded from the manually-curated TicTacToe lists. `source: 'curated'`.
 // ─────────────────────────────────────────────────────────────────────────
 
 export const AS_OF_DATE = '2026-06-13'
