@@ -1,6 +1,23 @@
 // Curated list of footballers who'd be widely recognized by football fans
 // globally today — a mix of enduring legends and current stars. Used as the
 // daily pool for Football Wordle, so the answer should always be guessable.
+//
+// ⚠ INTENTIONAL EDITORIAL DATASET — DO NOT auto-derive this from canonical data.
+// This is the one deliberate exception to "Transfermarkt is the sole source". It
+// is NOT technical debt or an unfinished migration: it is a hand-curated answer
+// pool whose value is cross-era, casual-fan recognisability, which no metric we
+// derive from match data captures.
+//
+// Rejected (with evidence) 2026-07: replacing this with the canonical
+// `recognisability` score. That score is recency-first BY DESIGN (a current
+// player keeps ~100% of their footprint, a 1980s legend ~4%) because its real
+// job is generating daily grids that should feature current stars. Pointing it
+// at Wordle produced a pool that was 99% 2020s players and dropped Maradona,
+// Cruyff, Beckenbauer and Romário in favour of active journeymen (Darmian,
+// Milner, Widmer). Wordle needs cross-era fame, which is a DIFFERENT target from
+// contemporary recognisability — do not conflate them or "fix" this file.
+// If zero hand-maintained data ever becomes a hard requirement, build a NEW
+// honours-weighted, recency-neutral signal; do not bend `recognisability`.
 export const famousPlayers = [
   // Argentina
   { name: 'Lionel Messi', nationality: 'Argentina' },

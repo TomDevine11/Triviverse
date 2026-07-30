@@ -1,6 +1,6 @@
 # Game Design Conventions
 
-The product-level rules that make nine games feel like one. Part of the [Floodlight design system](./design-system.md). This is about *game* design — loops, fairness, reward — where the other docs are about pixels.
+The product-level rules that make the games feel like one. Part of the [Floodlight design system](./design-system.md). This is about *game* design — loops, fairness, reward — where the other docs are about pixels.
 
 ---
 
@@ -13,7 +13,6 @@ The product-level rules that make nine games feel like one. Part of the [Floodli
 | Football TicTacToe | `/tictactoe` | Player fitting row×col categories | 3×3 category grid | 3 lives (solo) / turns (1v1) |
 | Teammates | `/teammates` | Guess player from teammate clues | Clue list (drip-fed) | clues run out |
 | Career Path | `/career-path` | Guess player from club history | Crest clue list | clubs run out |
-| World Cup Squads | `/world-cup` | Name a full 23-man squad | Slot grid | give up only |
 | Football Connections | `/connections` | Sort 16 names into 4 groups | 4×4 tile grid | 4 mistakes |
 | Higher or Lower | `/higher-or-lower` | Compare two players' stats | Versus cards | 1 mistake ends run |
 | Football 501 | `/501` | Darts countdown using career stats | Giant score + input | bust rules / give up |

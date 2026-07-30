@@ -1,6 +1,13 @@
 # Player Identity Refactor — Technical Design
 
-**Status:** Design — no implementation yet.
+> **Status update (2026-07-30):** the core of this design **shipped**. Deterministic
+> namespaced ids (`tm:<id>` / `p:<slug>`) are live, the registry is total over the
+> Transfermarkt universe, and games compare by opaque id. Phases 4–5 (delete dead
+> constructs / CI-gate the integrity checks) were **intentionally deferred** — not
+> load-bearing. The World Cup Squads row in the per-game table (below) is obsolete;
+> that game was removed. For the live design see [`../ARCHITECTURE.md`](../ARCHITECTURE.md) §4.
+
+**Status:** Design — no implementation yet. *(historical — see status update above)*
 **Author:** Engineering, 2026-07-14.
 **Decision already ratified:** Internal player IDs are the primary identity. External IDs (Transfermarkt, Wikidata QID, TheSportsDB) are references. Aliases are for *input matching only*, never identity. `normalize()` is demoted from "identity" to "matching."
 

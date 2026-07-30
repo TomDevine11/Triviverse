@@ -1,5 +1,9 @@
 # Design Audit — July 2026
 
+> **Point-in-time snapshot.** This audit predates the removal of the World Cup
+> Squads game (2026-07-30) — §9 and any "nine games / all nine" counts are
+> superseded; the hub now has **eight** games. Kept as a dated design record.
+
 Every page scored 1–10 across eight criteria, grounded in the actual markup (file references throughout). Part of the [Floodlight design system](./design-system.md) docs.
 
 **Scoring lens:** 5 = competent generic; 7 = good, consistent, on-brand; 9+ = premium game UI. Scores are deliberately hard — the target is 8+ across the board after the token/redesign work.

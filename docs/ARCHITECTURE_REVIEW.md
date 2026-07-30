@@ -1,5 +1,14 @@
 # Football Trivia Platform — Forensic Architecture Review
 
+> ⚠ **HISTORICAL — SUPERSEDED. This is not the current architecture.**
+> This is the *original* forensic review (early 2026) that motivated the canonical
+> migration. It describes the pre-migration world — Football 501 scraping StatMuse
+> at guess time, a runtime `/api`, hand-typed member lists — **all of which no
+> longer exist.** The migration it recommended is complete. For the current
+> architecture read [`../ARCHITECTURE.md`](../ARCHITECTURE.md); for the review that
+> declared it complete see [`architecture-review-2026-07.md`](./architecture-review-2026-07.md).
+> Kept for context: it explains *why* the architecture is shaped the way it is.
+
 > Scope: full read of `server/index.js`, `src/data/{modes,tenable,wordle,tictactoe,players,famousPlayers}.js`,
 > and `src/games/**`. Reviewed as principal architect / QA / data-systems. Verdict-driven, not cosmetic.
 
