@@ -1,23 +1,30 @@
 // ─────────────────────────────────────────────────────────────────────────
-// DERIVED CANONICAL FACTS + PLAYER REGISTRY  (merged, provenance-tagged)
+// PLAYER REGISTRY + CATEGORY MEMBERSHIP  —  two views over ONE truth.
 //
-// Single source of truth, built at module load by merging (RFC-001 C12):
-//   • curated membership.js         (source: 'curated')    — owns display names
-//   • categories.generated.json     (source: 'canonical')  — club/nationality/
-//     trophy membership derived from SquadMembership + Player nationality + Honours
-//   • players.recognisable.generated (universe seed: every player a game references)
-//   keyed by canonical Player id (tm:<id> / p:<slug>) — no name reconciliation.
+//   • VALIDATION  (membersOf)        — the COMPLETE, canonical set of real players
+//                                      who satisfy a category. Pruned by NOTHING
+//                                      (no recognisability floor, no editorial
+//                                      pruning). Answers "is this football fact
+//                                      objectively true?". This is what accepts a
+//                                      guess.
+//   • GENERATION  (notableMembersOf) — a deterministic PROJECTION of validation:
+//                                      its recognisable members (fame ≥ NOTABLE_FAME)
+//                                      PLUS the curated editorial whitelist. Used to
+//                                      pick and reveal puzzles. ALWAYS a subset of
+//                                      validation, so a revealed answer is never
+//                                      rejected. Generation cannot drift from
+//                                      validation because it is computed from it here.
 //
-//   clubs        — canonical SquadMembership (∪ curated)
-//   leagues      — DERIVED from club facts via CLUB_LEAGUE (never authored)
-//   nationality  — canonical Player nationality (∪ curated); categories only
-//   trophies     — canonical Honours (Ballon d'Or, World Cup) (∪ curated)
-//   managers     — curated only (not exposed as a grid category any more)
+// No data is duplicated: player ATTRIBUTES (name, fame, nationality, position) live
+// once in the universe seed (players.recognisable.generated — every valid answer);
+// category MEMBERSHIP lives once in categories.generated (complete, bare ids).
+// NATIONALITY is NOT materialised — it is validated directly from the seed's
+// `nationalities` attribute (no giant per-nation lists).
 //
-// NOTABLE/BROAD SPLIT: every player carries `fame` = canonical RECOGNISABILITY.
-// `membersOf` returns the BROAD set (validate guesses — accept any real player who
-// fits); `notableMembersOf` returns only recognisable players (GENERATE/reveal
-// grids, so daily puzzles stay star-studded).
+// The curated membership.js layer is a GENERATION whitelist only: it force-includes
+// a canonical member into puzzles (and owns its display name), but never defines
+// validation truth. A curated name absent from the canonical validation set is
+// ignored — so a category can never become an incomplete curated stub.
 // ─────────────────────────────────────────────────────────────────────────
 
 import {
@@ -25,175 +32,130 @@ import {
   MANAGER_MEMBERS, TROPHY_MEMBERS, AS_OF_DATE,
 } from './membership.js'
 import categories from '../categories.generated.json'
-import recognisablePlayers from './players.recognisable.generated.json'
-import playerPositions from './players.positions.generated.json'
-// Phase 2 — stable stored identity. The identity crosswalk is the source of
-// truth for player ids; facts.js resolves display names to those ids rather
-// than deriving them, so it shares ONE id space with the migrated games.
-import byAlias from './players.aliases.generated.json' // lean client alias index (recognisable players)
+import universePlayers from './players.recognisable.generated.json'
+import byAlias from './players.aliases.generated.json'
 import { normalize as normalizeName } from './normalize.js'
 import { fixName } from './nameFixes.js'
 
-// `fame` here is the canonical RECOGNISABILITY score (0-100, recency-first
-// contemporary recognisability — see build-recognisability.mjs), which REPLACED
-// the old Wikidata Wikipedia-language-count signal (RFC-001). Threshold at/above
-// which a player is "notable" enough to feature in generated grids / reveals.
-// Curated players stay always-notable (membership flag, separate concern).
+// Threshold at/above which a validation member is "recognisable" enough to feature
+// in generated grids / reveals. GENERATION concern only — never affects validation.
 const NOTABLE_FAME = 15
 
-// Canonicalise imported club display names so they match the curated spelling
-// (otherwise "Barcelona" and "FC Barcelona" become two separate categories).
-const CLUB_ALIASES = {
-  'FC Barcelona': 'Barcelona',
-  'FC Bayern Munich': 'Bayern Munich',
-  'A.S. Roma': 'Roma',
-  'S.S.C. Napoli': 'Napoli',
-}
+// Offered NATIONALITY categories (editorial — WHICH nationalities the games quiz on).
+// Membership is NOT materialised: nationality is validated from each player's
+// canonical `nationalities` attribute. These are only the names offered as cells.
+const NAT_CATEGORIES = new Set(['Argentina', 'Brazil', 'France', 'Spain', 'England', 'Germany', 'Netherlands', 'Portugal', 'Italy', 'Belgium', 'Croatia', 'Uruguay'])
+
+// Canonical club display name → curated spelling, so "FC Barcelona" and "Barcelona"
+// are one category.
+const CLUB_ALIASES = { 'FC Barcelona': 'Barcelona', 'FC Bayern Munich': 'Bayern Munich', 'A.S. Roma': 'Roma', 'S.S.C. Napoli': 'Napoli' }
 const canonClub = name => CLUB_ALIASES[name] || name
 
-// Some famous players arrive under several names across sources (curated vs
-// Wikidata full/legal name), which fragments their facts and clutters search.
-// Merge those explicit aliases onto one canonical entry. EXPLICIT only — never
-// merges genuinely different people (e.g. "Ronaldo Vieira" stays itself).
-const PLAYER_ALIASES = {
-  'Ronaldo': 'Ronaldo Nazario',
-  'Ronaldo (Brazilian footballer)': 'Ronaldo Nazario',
-  'Ronaldo Rodrigues de Jesus': 'Ronaldo Nazario',
-}
+// Explicit same-person aliases (curated vs full/legal name) → one canonical entry.
+const PLAYER_ALIASES = { 'Ronaldo': 'Ronaldo Nazario', 'Ronaldo (Brazilian footballer)': 'Ronaldo Nazario', 'Ronaldo Rodrigues de Jesus': 'Ronaldo Nazario' }
 const canonPlayer = name => PLAYER_ALIASES[name] || name
 
 const importedClubLeague = {}
 for (const [club, league] of Object.entries(categories.clubLeague || {})) importedClubLeague[canonClub(club)] = league
-
 export const CLUB_LEAGUE = { ...CURATED_CLUB_LEAGUE, ...importedClubLeague }
 export const LEAGUES = [...new Set(Object.values(CLUB_LEAGUE))]
 
-// Resolve a display name to its persisted internal id via the identity
-// crosswalk. Ambiguous or unknown names fall back to a deterministic slug so
-// facts.js stays self-sufficient. IDs no longer carry the legacy 'p:' prefix or
-// derive from the (mutable) display name. `canonPlayer` is still applied by the
-// caller (ensurePlayer), so explicit aliases like "Ronaldo" stay unified.
+// Resolve a display name to its canonical id via the client alias index — which
+// covers EVERY valid answer (every category member), so no real answer is
+// unresolvable. Returns null for ambiguous / unknown names.
 export function playerId(displayName) {
-  const n = normalizeName(displayName)
-  const hit = byAlias[n]
-  if (typeof hit === 'string') return hit
-  return n.replace(/\s+/g, '-').replace(/^-|-$/g, '')
+  const hit = byAlias[normalizeName(displayName)]
+  return typeof hit === 'string' ? hit : null
 }
 
 const registry = new Map()
 const facts = []
 const factSeen = new Set()
 
-function ensurePlayer(displayName) {
-  displayName = fixName(canonPlayer(displayName))
-  const id = playerId(displayName)
-  // Only accept a resolved canonical id (tm:/p:). A bare-slug fallback means the
-  // name is ambiguous/unknown in the crosswalk → skip rather than fabricate an
-  // orphan id (RFC-001 Phase B: facts.js shares the crosswalk id space).
-  if (!/^(tm:|p:)/.test(id)) return null
-  if (!registry.has(id)) {
-    registry.set(id, { id, displayName, nationalities: [], clubs: [], managers: [], trophies: [], positions: [], fame: 0, curated: false })
-  }
-  return registry.get(id)
-}
-
-function addFact(displayName, type, value, key, source, fame = 0) {
-  const p = ensurePlayer(displayName)
-  if (!p) return
-  if (fame > p.fame) p.fame = fame
-  if (source === 'curated') p.curated = true
-  const k = `${p.id}|${type}|${value}`
-  if (!factSeen.has(k)) {
-    factSeen.add(k)
-    facts.push({ playerId: p.id, type, value, source, asOfDate: AS_OF_DATE })
-  }
-  if (key && value != null && !p[key].includes(value)) p[key].push(value)
-}
-
-// ── 1. Curated (first; owns display names) ──────────────────────────────────
-for (const [club, members] of Object.entries(CLUB_MEMBERS))
-  for (const name of members) addFact(name, 'played_for_club', club, 'clubs', 'curated')
-for (const [nat, members] of Object.entries(NATIONALITY_MEMBERS))
-  for (const name of members) addFact(name, 'has_nationality', nat, 'nationalities', 'curated')
-for (const [mgr, members] of Object.entries(MANAGER_MEMBERS))
-  for (const name of members) addFact(name, 'played_under_manager', mgr, 'managers', 'curated')
-for (const [trophy, members] of Object.entries(TROPHY_MEMBERS))
-  for (const name of members) addFact(name, 'won_trophy', trophy, 'trophies', 'curated')
-
-// ── 2. Canonical category membership (RFC-001 C12) ───────────────────────────
-// Members carry a canonical Player id (tm:<id>), so we key by id — no name
-// reconciliation. A curated record for the same player (created above by name →
-// the same id via the total crosswalk) merges here on the shared id. We do NOT
-// apply canonPlayer here (ids already disambiguate; renaming every "Ronaldo"
-// namesake to "Ronaldo Nazário" would be wrong).
 function ensureById(id, displayName) {
-  if (!registry.has(id)) registry.set(id, { id, displayName: fixName(displayName), nationalities: [], clubs: [], managers: [], trophies: [], positions: [], fame: 0, curated: false })
+  if (!registry.has(id)) registry.set(id, { id, displayName: fixName(displayName), nationalities: [], clubs: [], trophies: [], positions: [], fame: 0, curated: false })
   return registry.get(id)
 }
-function addFactById(id, displayName, type, value, key, source, fame = 0) {
-  const p = ensureById(id, displayName)
-  if (fame > p.fame) p.fame = fame
-  const k = `${p.id}|${type}|${value}`
-  if (!factSeen.has(k)) { factSeen.add(k); facts.push({ playerId: p.id, type, value, source, asOfDate: AS_OF_DATE }) }
-  if (key && value != null && !p[key].includes(value)) p[key].push(value)
-}
-for (const [club, members] of Object.entries(categories.clubs || {})) {
-  const clubName = canonClub(club)
-  for (const m of members) addFactById(m.id, m.name, 'played_for_club', clubName, 'clubs', 'canonical', m.fame)
-}
-for (const [nat, members] of Object.entries(categories.nationalities || {}))
-  for (const m of members) addFactById(m.id, m.name, 'has_nationality', nat, 'nationalities', 'canonical', m.fame)
-for (const [trophy, members] of Object.entries(categories.trophies || {}))
-  for (const m of members) addFactById(m.id, m.name, 'won_trophy', trophy, 'trophies', 'canonical', m.fame)
-
-// ── 3. Universe seed: every RECOGNISABLE player (careers/teammates/…
-// targets a game may reference), so getPlayer/search resolve them even without a
-// category fact. Kept lean (~thousands) via the recognisable subset.
-for (const r of recognisablePlayers) {
-  const p = ensureById(r.id, r.displayName)
-  if ((r.fame || 0) > p.fame) p.fame = r.fame // recognisability, baked into the subset (no full byName import)
-  for (const nat of r.nationalities || []) if (!p.nationalities.includes(nat)) p.nationalities.push(nat)
-  for (const pos of r.positions || []) if (!p.positions.includes(pos)) p.positions.push(pos)
+function recordFact(playerId, type, value, source) {
+  if (value == null) return
+  const k = `${playerId}|${type}|${value}`
+  if (factSeen.has(k)) return
+  factSeen.add(k)
+  facts.push({ playerId, type, value, source, asOfDate: AS_OF_DATE })
 }
 
-// `fame` = canonical recognisability, set per player by id from the recognisable
-// subset (seed above) and the category members — no full recognisability byName
-// import in the client. Curated players absent from both score 0 but stay notable
-// via their flag.
+// ── 1. UNIVERSE SEED — the single source of player attributes ────────────────
+for (const p of universePlayers) {
+  const r = ensureById(p.id, p.displayName)
+  if ((p.fame || 0) > r.fame) r.fame = p.fame
+  for (const n of p.nationalities || []) if (!r.nationalities.includes(n)) r.nationalities.push(n)
+  for (const pos of p.positions || []) if (!r.positions.includes(pos)) r.positions.push(pos)
+}
 
-// Positions from canonical (players.positions.generated: id → GK/DEF/MID/FWD),
-// for the autocomplete badge — replacing the old Wikidata positions.
-for (const p of registry.values()) { const pos = playerPositions[p.id]; if (pos && !p.positions.includes(pos)) p.positions.push(pos) }
+// ── 2. CANONICAL VALIDATION MEMBERSHIP (complete, bare ids) ──────────────────
+// clubs + trophies from categories.generated → registry.clubs/trophies. This — plus
+// the nationality attribute — IS the validation truth (broad set, below).
+// Only members present in the universe seed are indexed: a member with no canonical
+// name (in a squad/honour list but never in our history → registry) is unresolvable,
+// so a user can never type them. Skipping them is invisible to any typeable answer
+// and keeps facts.js within the registry id-space.
+for (const [club, ids] of Object.entries(categories.clubs || {})) {
+  const cat = canonClub(club)
+  for (const id of ids) { const r = registry.get(id); if (!r) continue; if (!r.clubs.includes(cat)) r.clubs.push(cat); recordFact(id, 'played_for_club', cat, 'canonical') }
+}
+for (const [trophy, ids] of Object.entries(categories.trophies || {})) {
+  for (const id of ids) { const r = registry.get(id); if (!r) continue; if (!r.trophies.includes(trophy)) r.trophies.push(trophy); recordFact(id, 'won_trophy', trophy, 'canonical') }
+}
+
+// ── 3. CURATED EDITORIAL WHITELIST (membership.js) → GENERATION only ──────────
+// Resolve curated names → ids. A curated entry force-includes a canonical member
+// into the generation set (and owns the display spelling), but NEVER defines
+// validation. A curated name absent from the canonical set is simply ignored.
+const curatedMembers = new Map() // `${type}:${value}` -> Set(id)
+function addCurated(members, type, valueMap = x => x) {
+  for (const [rawCat, names] of Object.entries(members)) {
+    const cat = valueMap(rawCat)
+    const key = `${type}:${cat}`
+    if (!curatedMembers.has(key)) curatedMembers.set(key, new Set())
+    for (const nm of names) {
+      const id = playerId(canonPlayer(nm)); if (!id) continue
+      const r = ensureById(id, nm)
+      r.displayName = fixName(canonPlayer(nm)) // curated owns the display name (ASCII/known spelling)
+      r.curated = true
+      curatedMembers.get(key).add(id)
+      recordFact(id, `curated_${type}`, cat, 'curated')
+    }
+  }
+}
+addCurated(CLUB_MEMBERS, 'club', canonClub)
+addCurated(NATIONALITY_MEMBERS, 'nationality')
+addCurated(TROPHY_MEMBERS, 'trophy')
+addCurated(MANAGER_MEMBERS, 'manager')
 
 export const PLAYERS = registry
 export const FACTS = facts
 export function getPlayer(id) { return registry.get(id) || null }
-// Resolve a Transfermarkt id straight to its canonical Player (RFC-001 Phase B):
-// facts carry tm ids, the id is deterministic, so this needs no reconciliation.
+// Resolve a Transfermarkt id straight to its canonical Player (ids are deterministic).
 export function getPlayerByTm(tmId) { return registry.get(`tm:${tmId}`) || null }
 export function allPlayers() { return [...registry.values()] }
 export function isNotable(p) { return p.curated || p.fame >= NOTABLE_FAME }
 
-// ── Precomputed category member index (broad + notable) ─────────────────────
+// ── Category member index: broad (VALIDATION) + notable (GENERATION) ─────────
 const memberIndex = new Map() // `${type}:${value}` -> { broad:Set, notable:Set }
-function idx(type, value, id, notable) {
+function addBroad(type, value, id) {
   if (value == null) return
   const key = `${type}:${value}`
-  if (!memberIndex.has(key)) memberIndex.set(key, { broad: new Set(), notable: new Set() })
-  const e = memberIndex.get(key)
+  let e = memberIndex.get(key)
+  if (!e) memberIndex.set(key, e = { broad: new Set(), notable: new Set() })
   e.broad.add(id)
-  if (notable) e.notable.add(id)
+  // generation = recognisable OR curated-whitelisted — necessarily a subset of broad.
+  if ((registry.get(id)?.fame || 0) >= NOTABLE_FAME || curatedMembers.get(key)?.has(id)) e.notable.add(id)
 }
-// Nationality CATEGORIES are the curated set (categories.generated + curated) —
-// NOT every nationality the recognisable-universe seed attaches to a player (that
-// would spawn 100+ obscure nations, e.g. Faroe Islands, and make grids unsolvable).
-const NAT_CATEGORIES = new Set([...Object.keys(categories.nationalities || {}), ...Object.keys(NATIONALITY_MEMBERS || {})])
 for (const p of registry.values()) {
-  const notable = isNotable(p)
-  for (const club of p.clubs) { idx('club', club, p.id, notable); idx('league', CLUB_LEAGUE[club], p.id, notable) }
-  for (const nat of p.nationalities) if (NAT_CATEGORIES.has(nat)) idx('nationality', nat, p.id, notable)
-  for (const mgr of p.managers) idx('manager', mgr, p.id, notable)
-  for (const tr of p.trophies) idx('trophy', tr, p.id, notable)
+  for (const club of p.clubs) { addBroad('club', club, p.id); addBroad('league', CLUB_LEAGUE[club], p.id) }
+  for (const tr of p.trophies) addBroad('trophy', tr, p.id)
+  // nationality — validated straight from the canonical attribute (not materialised).
+  for (const nat of p.nationalities) if (NAT_CATEGORIES.has(nat)) { addBroad('nationality', nat, p.id); recordFact(p.id, 'has_nationality', nat, 'canonical') }
 }
 
 export function membersOf(category) {
@@ -203,9 +165,10 @@ export function notableMembersOf(category) {
   return memberIndex.get(`${category.type}:${category.value}`)?.notable || new Set()
 }
 
-// Category catalogue, derived from what actually has members. Managers are
-// intentionally excluded from the playable catalogue (cannot be sourced
-// reliably → would reintroduce false rejections); the data is kept for tests.
+// Category catalogue = only categories with a canonical GENERATION set. Because
+// notable ⊆ broad ⊆ canonical, requiring notable members structurally excludes any
+// curated-only stub (e.g. the Euros, managers) — no category can be offered without
+// canonical backing. Managers are kept here for tests but not a playable catalogue.
 function keysWithMembers(type, minNotable = 1) {
   const out = []
   for (const [key, e] of memberIndex) {
@@ -219,5 +182,5 @@ export const CATEGORY_KEYS = {
   leagues: keysWithMembers('league'),
   nationalities: keysWithMembers('nationality'),
   trophies: keysWithMembers('trophy'),
-  managers: Object.keys(MANAGER_MEMBERS), // kept for tests; not in playable catalogue
+  managers: Object.keys(MANAGER_MEMBERS), // kept for tests; not in the playable catalogue
 }

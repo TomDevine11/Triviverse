@@ -1,17 +1,23 @@
 #!/usr/bin/env node
 // ─────────────────────────────────────────────────────────────────────────
-// BUILD CATEGORIES  →  src/data/categories.generated.json   (RFC-001 C12)
+// BUILD CATEGORIES  →  src/data/categories.generated.json
 //
-// Derives tic-tac-toe / connections CATEGORY MEMBERSHIP entirely from canonical
-// facts (the Wikidata category groups are retired — RFC-001 C12):
-//   • clubs        — who played for each category club  (canonical SquadMembership)
-//   • nationalities — players by nationality              (canonical Player.nat)
-//   • trophies     — Ballon d'Or / World Cup winners      (canonical Honours)
-//   • clubLeague   — each category club's league          (canonical Competition)
-// Members carry the canonical Player id (tm:<id>) + recognisability as `fame` so
-// facts.js keys by id and the notable/broad split works unchanged.
+// The COMPLETE, canonical VALIDATION membership for club and trophy categories —
+// the objective truth "did player X play for this club / win this trophy", derived
+// wholly from canonical facts (SquadMembership + Honours). This is the source of
+// truth for accepting a guess. It is deliberately:
+//   • COMPLETE   — every real member, NO recognisability floor (unlike generation).
+//   • BARE IDS   — member lists are just canonical Player ids (tm:<id>); the display
+//                  name / fame / nationality live once in the player universe seed
+//                  (players.recognisable.generated), so nothing is duplicated here.
+// Generation (which recognisable members make a good puzzle) is a PROJECTION of this
+// truth, computed in facts.js — it is NOT a second dataset.
 //
-//   node scripts/build-categories.mjs   (offline)
+// NATIONALITY is intentionally NOT materialised here: it is a player attribute, so
+// facts.js validates it directly from the seed's `nationalities` (no giant per-nation
+// lists, no duplication).
+//
+//   node scripts/build-categories.mjs   (offline)   — run BEFORE build-identity.
 // ─────────────────────────────────────────────────────────────────────────
 
 import { readFileSync, writeFileSync } from 'node:fs'
@@ -25,26 +31,26 @@ const J = (p) => JSON.parse(readFileSync(path.join(ROOT, p), 'utf8'))
 const OUT = path.join(ROOT, 'src', 'data', 'categories.generated.json')
 const COMPS = ['GB1', 'ES1', 'IT1', 'FR1', 'L1', 'CL']
 const LEAGUE_OF = { GB1: 'Premier League', ES1: 'La Liga', IT1: 'Serie A', FR1: 'Ligue 1', L1: 'Bundesliga' }
-// Only members with at least this recognisability enter the game categories — the
-// old Wikidata groups were similarly fame-gated. Keeps facts.js (and the client)
-// to plausible answers instead of the full squad roster (~33k → a few thousand).
-const MEMBER_MIN = 10
 
-// The featured category sets (editorial — the clubs/nations the games quiz on).
-// Members are derived from canonical facts below; only these NAMES are curated.
+// The featured club categories (editorial — WHICH clubs the games quiz on). Only
+// these NAMES are curated; membership is complete canonical fact.
 const CLUB_ALIASES = { 'A.S. Roma': 'Roma', 'S.S.C. Napoli': 'Napoli' }
 const clubCats = ['Manchester United', 'Manchester City', 'Chelsea', 'Liverpool', 'Arsenal', 'Tottenham Hotspur', 'Everton', 'Newcastle United', 'Real Madrid', 'FC Barcelona', 'Atlético Madrid', 'Valencia', 'Sevilla', 'Juventus', 'AC Milan', 'Inter Milan', 'A.S. Roma', 'S.S.C. Napoli', 'FC Bayern Munich', 'Borussia Dortmund', 'Bayer 04 Leverkusen', 'Paris Saint-Germain', 'Olympique de Marseille', 'AS Monaco']
-const natCats = ['Argentina', 'Brazil', 'France', 'Spain', 'England', 'Germany', 'Netherlands', 'Portugal', 'Italy', 'Belgium', 'Croatia', 'Uruguay']
-// Trophy categories ← canonical Honours (C11). Category name → the TM honour name.
-const TROPHY_MAP = { "Ballon d'Or": 'Winner Ballon d\'Or', 'FIFA World Cup': 'World Cup winner' }
+// Trophy categories ← canonical Honours. Category name → the exact TM honour key(s)
+// that define it. This mapping is editorial + tiny; the resulting MEMBERSHIP is
+// complete canonical fact. A trophy only becomes a playable category if it has a
+// clean, complete honour key.
+//   NOTE: the European Championship is intentionally ABSENT — its honour data in
+//   Transfermarkt is unreliable (tangled with club/youth competitions; genuine
+//   winners like Iniesta are missing). Better to omit the category than ship an
+//   incomplete one. Re-add here only once a clean, complete key is confirmed.
+const TROPHY_MAP = {
+  "Ballon d'Or": ["Winner Ballon d'Or"],
+  'FIFA World Cup': ['World Cup winner'],
+  'UEFA Champions League': ['UEFA Champions League winner'],
+}
 
 // ── canonical lookups ───────────────────────────────────────────────────────
-const recogById = J('src/data/recognisability.generated.json').byId
-const idName = new Map(), idNat = new Map()
-for (const c of COMPS) for (const p of J(`src/data/football501/history.${c}.generated.json`).players) {
-  if (!idName.has(p.id) || (p.name || '').length > idName.get(p.id).length) idName.set(p.id, p.name)
-  if (p.natKey && !idNat.has(p.id)) idNat.set(p.id, { natKey: p.natKey, nat: p.nat })
-}
 const teams = J('src/data/canonical/teams.generated.json').teams.filter(t => t.kind === 'club')
 const clubNorm = (s) => normalize(String(s).replace(/\b(FC|CF|AFC|AC|AS|SS|SSC|RC|Club|de)\b/gi, '')).replace(/\s+/g, ' ').trim()
 
@@ -64,49 +70,40 @@ for (const t of teams) {
 // team id → domestic league (from the club's competitions)
 const teamComps = new Map(teams.map(t => [t.id, t.competitions]))
 
-// Members carry the canonical Player id (tm:<tmId>) so facts.js keys by id, not
-// name (RFC-001 Phase B — no name reconciliation).
-const member = (id) => ({ id: `tm:${id}`, name: idName.get(id), fame: recogById[id] || 0 })
-const membersOf = (ids) => ids.map(member).filter(m => m.fame >= MEMBER_MIN).sort((a, b) => b.fame - a.fame)
+const tmIds = (ids) => [...ids].map(id => `tm:${id}`)
 
 // ── clubs + clubLeague ──────────────────────────────────────────────────────
+// COMPLETE squad membership, no recognisability floor (validation truth).
 const clubs = {}, clubLeague = {}
 let unmapped = []
 for (const cat of clubCats) {
   const t = teamByNorm.get(clubNorm(CLUB_ALIASES[cat] || cat))
   if (!t) { unmapped.push(cat); continue }
-  const ids = [...(membersByTeam.get(t.id) || [])].filter(id => idName.has(id))
-  clubs[cat] = membersOf(ids)
+  clubs[cat] = tmIds(membersByTeam.get(t.id) || [])
   const league = (teamComps.get(t.id) || []).map(c => LEAGUE_OF[c]).find(Boolean)
   if (league) clubLeague[cat] = league
 }
 
-// ── nationalities ───────────────────────────────────────────────────────────
-const nationalities = {}
-for (const cat of natCats) {
-  const key = normalize(cat)
-  const ids = [...idNat.entries()].filter(([, v]) => v.natKey === key).map(([id]) => id)
-  nationalities[cat] = membersOf(ids)
-}
-
-// ── trophies (from canonical Honours) ───────────────────────────────────────
+// ── trophies (from canonical Honours) — COMPLETE, no floor ───────────────────
 const trophies = {}
 let honoursMissing = false
 try {
   const honTrophies = J('src/data/football501/honours.generated.json').trophies
-  for (const [cat, honourName] of Object.entries(TROPHY_MAP)) {
-    const ids = (honTrophies[honourName] || []).filter(id => idName.has(id))
-    trophies[cat] = membersOf(ids)
+  for (const [cat, honourKeys] of Object.entries(TROPHY_MAP)) {
+    const ids = new Set()
+    for (const key of honourKeys) for (const id of (honTrophies[key] || [])) ids.add(id)
+    trophies[cat] = tmIds(ids)
   }
 } catch { honoursMissing = true }
 
 const meta = {
-  schemaVersion: 1, source: 'derived from canonical SquadMembership + Player nationality + Honours',
-  clubs: Object.keys(clubs).length, nationalities: Object.keys(nationalities).length,
-  trophies: Object.keys(trophies).length, honours: honoursMissing ? 'MISSING (run build:honours)' : 'ok',
+  schemaVersion: 2, source: 'complete canonical validation membership (SquadMembership + Honours); bare ids; no floor; nationality validated from player attribute',
+  clubs: Object.keys(clubs).length, trophies: Object.keys(trophies).length,
+  honours: honoursMissing ? 'MISSING (run build:honours)' : 'ok',
   generatedAt: new Date().toISOString().slice(0, 10),
 }
 if (unmapped.length) { console.error(`✗ unmapped club categories: ${unmapped.join(', ')}`); process.exit(1) }
-writeFileSync(OUT, JSON.stringify({ meta, clubLeague, clubs, nationalities, trophies }) + '\n')
-console.error(`✓ categories: ${Object.keys(clubs).length} clubs, ${Object.keys(nationalities).length} nationalities, ${Object.keys(trophies).length} trophies (all from canonical)` +
-  `${honoursMissing ? ' — WARNING: honours missing, trophies empty' : ''}`)
+if (honoursMissing) { console.error('✗ honours.generated.json missing — run build:honours first'); process.exit(1) }
+writeFileSync(OUT, JSON.stringify({ meta, clubLeague, clubs, trophies }) + '\n')
+console.error(`✓ categories (validation truth): ${Object.keys(clubs).length} clubs, ${Object.keys(trophies).length} trophies — complete, unfloored. ` +
+  `CL members: ${trophies['UEFA Champions League']?.length ?? 0}`)

@@ -640,6 +640,15 @@ async function main() {
   const RECOG_BAR = 20
   const recogById = (() => { try { return JSON.parse(readFileSync(path.join(ROOT, 'src/data/recognisability.generated.json'), 'utf8')).byId } catch { return {} } })()
   for (const rec of registry) if (rec.refs.tm != null && (recogById[rec.refs.tm] || 0) >= RECOG_BAR) recognisableIds.add(rec.id)
+  // …plus EVERY member of a validation category (club / trophy), regardless of
+  // recognisability — these are valid Tic-Tac-Toe / Connections answers, so a user
+  // must be able to type them. This is what makes the alias index cover every
+  // possible valid answer (e.g. squad players like Ramires) rather than only the
+  // recognisable ones. (Categories are built first; see build:pl-catalog order.)
+  try {
+    const cats = JSON.parse(readFileSync(path.join(ROOT, 'src/data/categories.generated.json'), 'utf8'))
+    for (const grp of [cats.clubs, cats.trophies]) for (const ids of Object.values(grp || {})) for (const id of ids) recognisableIds.add(id)
+  } catch { /* categories not built yet — seed stays recognisable-only */ }
   const recognisable = registry.filter(r => recognisableIds.has(r.id))
     .map(r => ({ id: r.id, displayName: r.displayName, nationalities: r.nationalities, positions: r.positions, fame: r.refs.tm != null ? (recogById[r.refs.tm] || 0) : 0 }))
 
