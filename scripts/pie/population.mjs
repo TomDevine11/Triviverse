@@ -54,6 +54,22 @@ export function buildPopulation({ clubId = null, competition = null, nationality
   return [...acc.values()]
 }
 
+// Global player metadata (id → name/nat/pos/fame), built once from history + recog.
+// Needed by seeds that read datasets without inline player attributes (performance
+// per-season, transfers) — seeds.mjs.
+let _META = null
+export function metaOf(id) {
+  if (!_META) {
+    _META = new Map()
+    for (const cid of COMP_IDS) for (const p of comp(cid).players) {
+      const m = _META.get(p.id)
+      if (!m) _META.set(p.id, { name: p.name, nat: p.nat, natKey: p.natKey, pos: p.pos, fame: recog[p.id] || 0 })
+      else if ((p.name || '').length > m.name.length) m.name = p.name
+    }
+  }
+  return _META.get(id) || null
+}
+
 // Nationalities present in a base population, with a minimum count (for enumeration).
 export function nationalitiesIn(players, min = 2) {
   const c = {}

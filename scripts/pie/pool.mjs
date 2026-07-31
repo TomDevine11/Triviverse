@@ -53,9 +53,30 @@ function competitionCandidates(cid, out) {
   }
 }
 
+// NEW · Era — competition scorers/appearance-makers of a decade (generational recall).
+const DECADES = [{ from: 1990, to: 1999 }, { from: 2000, to: 2009 }, { from: 2010, to: 2019 }]
+function eraCandidates(out) {
+  for (const cid of COMP_IDS) for (const era of DECADES) for (const statKey of ['goals', 'apps', 'apps_minus_goals']) {
+    for (const filters of [{}, ...POS_KEYS.map((p) => ({ position: p }))]) {
+      const c = makeCandidate({ seed: 'era', competition: cid, era, statKey, filters })
+      if (playable(c)) out.push(c)
+    }
+  }
+}
+
+// NEW · Trajectory — a club's record signings, valued by transfer fee.
+function signingCandidates(out) {
+  for (const club of CLUBS) {
+    const c = makeCandidate({ seed: 'recordSignings', club, statKey: 'fee', filters: {} })
+    if (c && c.profile.recognisableCount >= 8) out.push(c) // fee boards are smaller; keep them if nameable
+  }
+}
+
 const pool = []
 for (const c of CLUBS) clubCandidates(c, pool)
 for (const cid of COMP_IDS) competitionCandidates(cid, pool)
+eraCandidates(pool)
+signingCandidates(pool)
 
 // de-dupe by id
 const seen = new Set(), uniq = []

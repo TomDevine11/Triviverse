@@ -27,8 +27,9 @@ picks rank against the machine.
 | File | Component |
 |---|---|
 | `config.mjs` | **The one tunable file** — recognisability threshold, hard gates, metric weights + normalisation. Change this (or the sliders). |
-| `population.mjs` | Population compiler — Club · Competition · Nationality · Position, AND-composed → qualifying players with scoped (apps, goals). |
-| `projection.mjs` | 501 leaderboard projection — Goals / Appearances / Apps+Goals / Apps−Goals. |
+| `population.mjs` | Population compiler — the **Attribute** seed (Club · Competition · Nationality · Position, AND-composed) + shared player metadata. |
+| `seeds.mjs` | New population **seeds** (set-constructors, not filters): **Era** (per-season performance → generational recall) and **Trajectory · record signings** (transfers → fee-valued). |
+| `projection.mjs` | 501 leaderboard projection — Goals / Appearances / Apps+Goals / Apps−Goals / **Transfer fee (€m)**. |
 | `metrics.mjs` | Independent metric passes — raw profile only, no scoring. |
 | `rank.mjs` | Gates + a deliberately-simple weighted score + explanation. The explorer inlines the same maths. |
 | `compile.mjs` | Driver — enumerate every legal candidate, evaluate, mark curated, emit the explorer. |
