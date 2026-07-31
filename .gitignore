@@ -34,3 +34,4 @@ data/pl-history/
 .env.seo.local
 scripts/seo/.secrets/
 scripts/seo/reports/
+scripts/pie/out/
