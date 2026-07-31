@@ -28,6 +28,10 @@ const CLUBS = ['Chelsea', 'Manchester United', 'Liverpool', 'Arsenal', 'Manchest
 // "playable enough to compare": real answer set + can actually finish.
 const playable = (c) => c && c.profile.recognisableCount >= 8 && c.profile.checkoutFeasible
 
+// Goalkeepers barely score — goal-based stats make degenerate GK questions. So a
+// GK-filtered population only ever gets Appearances (a coherence rule at generation).
+const statsFor = (filters, base = STAT_KEYS) => filters.position === 'GK' ? ['apps'] : base
+
 function clubCandidates(name, out) {
   const club = resolveClub(name); if (!club) return
   for (const scope of [...club.comps, 'ALL']) {
@@ -36,7 +40,7 @@ function clubCandidates(name, out) {
     if (base.length < 8) continue
     const nats = nationalitiesIn(base, 3).slice(0, 8)
     const filterSets = [{}, ...POS_KEYS.map((p) => ({ position: p })), ...nats.map((n) => ({ nationality: n }))]
-    for (const filters of filterSets) for (const statKey of STAT_KEYS) {
+    for (const filters of filterSets) for (const statKey of statsFor(filters)) {
       const c = makeCandidate({ club: club.name, clubId: club.id, competition, statKey, filters, base })
       if (playable(c)) out.push(c)
     }
@@ -47,7 +51,7 @@ function competitionCandidates(cid, out) {
   const base = buildPopulation({ competition: cid })
   const nats = nationalitiesIn(base, 20).slice(0, 8) // "Foreign Legion" angles
   const filterSets = [{}, ...POS_KEYS.map((p) => ({ position: p })), ...nats.map((n) => ({ nationality: n }))]
-  for (const filters of filterSets) for (const statKey of STAT_KEYS) {
+  for (const filters of filterSets) for (const statKey of statsFor(filters)) {
     const c = makeCandidate({ competition: cid, statKey, filters, base })
     if (playable(c)) out.push(c)
   }
@@ -56,10 +60,12 @@ function competitionCandidates(cid, out) {
 // NEW · Era — competition scorers/appearance-makers of a decade (generational recall).
 const DECADES = [{ from: 1990, to: 1999 }, { from: 2000, to: 2009 }, { from: 2010, to: 2019 }]
 function eraCandidates(out) {
-  for (const cid of COMP_IDS) for (const era of DECADES) for (const statKey of ['goals', 'apps', 'apps_minus_goals']) {
+  for (const cid of COMP_IDS) for (const era of DECADES) {
     for (const filters of [{}, ...POS_KEYS.map((p) => ({ position: p }))]) {
-      const c = makeCandidate({ seed: 'era', competition: cid, era, statKey, filters })
-      if (playable(c)) out.push(c)
+      for (const statKey of statsFor(filters, ['goals', 'apps', 'apps_minus_goals'])) {
+        const c = makeCandidate({ seed: 'era', competition: cid, era, statKey, filters })
+        if (playable(c)) out.push(c)
+      }
     }
   }
 }

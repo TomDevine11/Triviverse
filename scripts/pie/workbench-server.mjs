@@ -47,7 +47,9 @@ const server = http.createServer((req, res) => {
     req.on('end', () => {
       try {
         const v = JSON.parse(body)
-        if (!v.a || !v.b || !['a', 'b', 'skip'].includes(v.winner)) return send(res, 400, 'application/json', JSON.stringify({ error: 'bad vote' }))
+        const pair = v.a && v.b && ['a', 'b', 'skip'].includes(v.winner)
+        const rate = v.kind === 'rate' && v.candidate && ['yes', 'no', 'skip'].includes(v.verdict)
+        if (!pair && !rate) return send(res, 400, 'application/json', JSON.stringify({ error: 'bad vote' }))
         v.ts = new Date().toISOString()
         appendFileSync(PREFS, JSON.stringify(v) + '\n')  // APPEND ONLY
         send(res, 200, 'application/json', JSON.stringify({ ok: true, total: readPrefs().length }))
