@@ -57,7 +57,44 @@ These are calibration signals, not bugs — the tool exists to expose them:
 4. **The checkout metric is a proxy** (subset-sum into [501, 511]); it can later be
    aligned to the game's exact `checkout.js` rules if we want fidelity.
 
+## The Calibration Workbench
+
+The editorial training environment — collects evidence about *where the engine and
+your judgement disagree*, so future scoring changes are data-driven, not intuition.
+It is a local editorial tool, **not telemetry** (no player data, no game hook) and
+never touches the live game.
+
+```bash
+node scripts/pie/pool.mjs             # build a diverse cross-dimensional candidate pool
+node scripts/pie/workbench-server.mjs # then open http://localhost:4501
+```
+
+- **Compare** (P1) — two candidates side by side, *machine scores hidden*. Click
+  `← Left wins` / `Skip` / `Right wins →` (or arrow keys). Pairs are sampled to
+  often differ on exactly one axis (stat, position, europe…) so each choice is
+  informative. Every decision is POSTed and **appended** to
+  `scripts/pie/preferences.jsonl` — the durable preference dataset (A, B, winner,
+  timestamp, compiler version, and **both full metric profiles**). The compiler
+  never writes this file; the server only appends (git-ignored by default — commit
+  it when you want to preserve the dataset).
+- **Analysis** (P3 + P6) — preference-by-dimension win-rates ("Goals beat
+  Appearances 78%, n=23"), the biggest disagreements (you chose the option the
+  engine scored *lower*), and mispredictions with the metrics that drove the wrong
+  call.
+- **Correlation** (P4) — Pearson *r* of each metric's raw difference against your
+  chosen winner: which metrics predict your taste, which predict nothing, and how
+  well the current weights predict overall.
+- **Weight simulator** (P5) — a simple coordinate hill-climb (no ML) that finds
+  weights best predicting your decisions. **Recommendation only** — it prints a
+  `config.mjs` block to paste if you agree; nothing is applied automatically.
+
+Everything is computed transparently in the browser from the pool + your
+preference file, so you can always see *why* the engine believed one question was
+better. **Transparency over accuracy at this stage** — the point is to learn, not
+to win the prediction game yet.
+
 ## Deliberately NOT built (per scope)
 
 scheduler · telemetry · registry · other games' projections · free-form composition ·
-machine learning. This slice proves the compiler only.
+machine learning. This slice proves the compiler and builds its calibration
+environment only.

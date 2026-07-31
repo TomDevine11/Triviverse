@@ -35,3 +35,4 @@ data/pl-history/
 scripts/seo/.secrets/
 scripts/seo/reports/
 scripts/pie/out/
+scripts/pie/preferences.jsonl
