@@ -32,9 +32,18 @@ export function evaluate(board) {
   const ck = checkout(values)
   const ckKnown = checkout(recog.map((b) => b.value))
 
+  // "surprise headroom" — room to name a valid answer that ISN'T top-of-mind. The
+  // fun of 501 is pulling from this tail; filters and one-per-team positions (GK)
+  // squeeze it. Measured here, UNWEIGHTED (see config) — the workbench's Correlation
+  // tab will tell us whether it predicts real preferences before we ever weight it.
+  const obviousCount = board.filter((b) => b.fame >= 50).length              // everyone names these
+  const surpriseHeadroom = board.filter((b) => b.fame >= RECOG_MIN && b.fame < 50).length // recognisable, not obvious
+
   return {
     poolSize: n,
     recognisableCount: recog.length,
+    obviousCount,
+    surpriseHeadroom,
     recognisableShare: n ? +(recog.length / n).toFixed(2) : 0,
     dominance: total ? +(max / total).toFixed(3) : 1,        // share of the single biggest value
     top3Share: total ? +(top3 / total).toFixed(3) : 1,       // share of the top three

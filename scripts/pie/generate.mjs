@@ -56,6 +56,7 @@ export function makeCandidate({ seed = 'attribute', club = null, clubId = null, 
   if (board.length < 1) return null
 
   const profile = evaluate(board)
+  profile.filterCount = (filters.position ? 1 : 0) + (filters.nationality ? 1 : 0) // measured, unweighted
   const gatesFailed = gateCheck(profile)
   const { score, breakdown } = scoreProfile(profile)
 

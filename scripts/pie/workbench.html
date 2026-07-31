@@ -94,7 +94,7 @@ function updateCount(){const d=PREFS.filter(p=>p.winner!=='skip').length;$('#cou
 function tab(t){document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));document.querySelectorAll('.tab').forEach(s=>s.classList.remove('on'));$('#t-'+t).classList.add('on');if(t==='analysis')renderAnalysis();if(t==='corr')renderCorr();if(t==='sim')renderSim()}
 
 // —— P1 pairwise ——
-const DIMS=['seed','stat','populationType','competition','europe','decade','hasPosition','hasNationality'];
+const DIMS=['seed','stat','populationType','competition','europe','decade','position','hasPosition','hasNationality'];
 function nextPair(){
   const a=POOL[Math.floor(Math.random()*POOL.length)];
   let b;
@@ -165,7 +165,8 @@ function renderCorr(){
   if(D.length<10){el.innerHTML=`<div class="empty">Collect ~10+ decisions to compute correlations. (${D.length} so far)</div>`;return}
   const rows=METRIC_KEYS().map(m=>{
     const xs=[],ys=[];let agree=0,dis=0;
-    for(const p of D){const dv=(+p.profileA[m])-(+p.profileB[m]);const y=p.winner==='a'?1:0;xs.push(dv);ys.push(y);
+    for(const p of D){if(p.profileA[m]==null||p.profileB[m]==null)continue; // metric didn't exist when this vote was cast
+      const dv=(+p.profileA[m])-(+p.profileB[m]);const y=p.winner==='a'?1:0;xs.push(dv);ys.push(y);
       if(dv!==0){const metricSaysA=dv>0;if(metricSaysA===(y===1))agree++;else dis++}}
     return{m,r:pearson(xs,ys),n:agree+dis,agree,dis};
   }).sort((a,b)=>Math.abs(b.r)-Math.abs(a.r));
