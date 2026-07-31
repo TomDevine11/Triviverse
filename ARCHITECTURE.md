@@ -237,8 +237,41 @@ because no mechanical derivation produces acceptable quality for that specific j
 |---|---|
 | `src/data/famousPlayers.js` | The Football Wordle answer pool. Needs **cross-era, casual-fan** recognisability, which no match-derived metric captures (see §8). |
 | `501_updated_questions.txt`, `tenable-daily-questions.txt` | Curated daily question sets for 501 / Tenable — editorial choices about what makes a good daily puzzle. |
-| `src/data/canonical/membership.js` | Curated club/nationality/trophy/manager member lists, unioned with canonical categories. **Measured against canonical (2026-07): keep.** Managers, UEFA Champions League and the Euros have no canonical source at all; and even where canonical has the category it misses ~7–16% of these members — disproportionately legends (Maradona, Cruyff, Pelé), because canonical categories apply a recency floor. It also acts as an always-notable whitelist so iconic players appear in generated grids. |
+| `src/data/canonical/membership.js` | Curated club/nationality/trophy/manager member lists — a **GENERATION whitelist only** (which recognisable players feature in daily grids). It is **not** validation truth (see §7a). A curated name force-features a player in puzzles *iff* they are already a canonical member; a name absent from canonical is ignored, so it can never make a category incomplete. Managers live here but aren't a playable category (no canonical manager data). |
 | Small alias maps: `ALIAS_FIXES` (resolve.js), `PLAYER_ALIASES`/`CLUB_ALIASES` (facts.js), `MANUAL_FIXES` (nameFixes.js) | Hand-verified same-person / same-club name corrections the automatic identity build cannot infer safely. Every entry must be a confirmed human match, not a surname guess. |
+
+## 7a. Validation vs. generation (category games)
+
+For the category games (Tic-Tac-Toe, Connections) the single most important
+distinction is between two questions about a category:
+
+- **Validation** — "is this football fact objectively true?" (did player X play for
+  Chelsea / win the Champions League). This must be **complete and canonical**:
+  pruned by nothing — no recognisability floor, no editorial pruning. It is what
+  accepts or rejects a guess. In `facts.js` this is `membersOf(category)` (the
+  *broad* set), sourced entirely from `categories.generated.json` (complete, bare
+  ids) plus the nationality attribute.
+- **Generation** — "does this make a good puzzle?" Optimises for playability, so it
+  *is* recognisability-filtered and editorially curated. In `facts.js` this is
+  `notableMembersOf(category)` (the *notable* set).
+
+**Generation is a deterministic projection of validation, not a second dataset:**
+`notable = broad ∩ (fame ≥ NOTABLE_FAME ∪ curated-whitelist)`, computed at load in
+`facts.js`. It is therefore always a **subset** of validation (a revealed answer can
+never be rejected) and can never drift from it. `membership.js` is the curated
+whitelist that feeds *generation only*.
+
+Two rules protect this and are enforced by `test/category-completeness.test.js`:
+a category is **offered only if it has canonical validation members** (so no
+curated-only stub — this is why the Euros and managers aren't offered), and
+validation must contain **every resolvable canonical member** (so no false
+negatives). This separation is what fixed the Chelsea × Champions League bug, where
+a 74-name curated "famous winners" list had been doing validation's job and
+rejecting real winners like Bertrand and Ramires (the canonical honour has 345).
+
+The recognisability warning in §5 is exactly why this split matters: recency-first
+fame is right for *generation* and wrong for *validation* — so it must never touch
+the validation set.
 
 ---
 
@@ -284,6 +317,10 @@ and evidence (the C14/famousPlayers episode is the model: *measure, then decide*
 6. **Editorial datasets are intentional.** Before "deriving away" any file in §7,
    produce evidence that the derived replacement is at least as good. Absent that,
    keep the manual data — evidence beats ideology.
+7. **Validation is complete & canonical; generation is a projection of it** (§7a).
+   Never floor or editorially prune the validation set; a category is offered only
+   with canonical backing; generation ⊆ validation. Enforced by
+   `test/category-completeness.test.js`.
 
 ---
 

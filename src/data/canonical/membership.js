@@ -1,29 +1,24 @@
 // ─────────────────────────────────────────────────────────────────────────
-// CURATED CATEGORY MEMBERSHIP  (intentional editorial layer)
+// CURATED CATEGORY MEMBERSHIP  —  GENERATION whitelist (editorial), NOT validation.
 //
-// A hand-curated set of "which players belong to which category", UNIONED with
-// the canonical category membership (`categories.generated.json`, derived from
-// SquadMembership / Player nationality / Honours) inside `facts.js`. Canonical is
-// the bulk source; this file is the editorial safety net on top of it.
+// ⚠ This layer feeds GENERATION only (which recognisable players feature in daily
+// puzzles). It is NOT a source of validation truth. Validation — "did player X
+// really play for this club / win this trophy" — is the COMPLETE canonical set in
+// categories.generated.json (see facts.js: membersOf = canonical; notableMembersOf
+// = canonical ∩ recognisable ∪ THIS list). A name here only force-includes a player
+// into puzzles IF they are already a canonical member; a curated name absent from
+// canonical is ignored. So this file can never make a category incomplete or
+// silently accept/reject a guess — that was the point of the 2026-07 rewrite (it
+// fixed the Chelsea × Champions League bug, where a curated 74-name "famous winners"
+// stub was being used as validation and rejected real winners like Bertrand/Ramires).
 //
-// ⚠ KEPT DELIBERATELY — do not "delete now that categories are canonical". This
-// was measured against canonical on 2026-07-30 and is NOT redundant:
-//   • Managers, the UEFA Champions League and the UEFA European Championship have
-//     NO canonical source at all (managers are never scraped; CL/Euro exist only
-//     as ~815 messy, ambiguous honour strings that would need fresh curation to
-//     disambiguate). Removing this file deletes those categories from the games.
-//   • Even where canonical HAS the category, it covers only ~84–93% of these
-//     members for clubs/nationalities (26% for trophies) — the misses are
-//     disproportionately legends (Maradona, Cruyff, Pelé, Di Stéfano, Ronaldo
-//     Nazário), because canonical categories apply a recency floor. This is the
-//     same recency bias documented for famousPlayers.js.
-//   • Curated members are always-notable, so they're guaranteed to appear in
-//     GENERATED grids; 6–21% score below the notability threshold and would drop
-//     out of daily puzzles if de-curated.
-// See ARCHITECTURE.md §7 (editorial datasets) and docs/architecture-review-2026-07.md §5.1.
+// Its remaining job: guarantee beloved-but-lower-recognisability players (who ARE
+// canonical members) still appear in generated grids, so daily puzzles stay
+// star-studded. Managers live here too but are not a playable category (no canonical
+// manager data). See ARCHITECTURE.md §7.
 //
-// Adding a player here makes them appear in their club/league/nationality/trophy
-// categories (league is derived from CLUB_LEAGUE, never authored separately).
+// Adding a player here force-features them in their club/league/nationality/trophy
+// grids (league is derived from CLUB_LEAGUE, never authored separately).
 // Provenance: seeded from the manually-curated TicTacToe lists. `source: 'curated'`.
 // ─────────────────────────────────────────────────────────────────────────
 

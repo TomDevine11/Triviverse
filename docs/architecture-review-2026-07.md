@@ -66,6 +66,14 @@ Each item: why it exists · effort · risk · benefit · recommendation.
   **→ MEASURED (2026-07-30): KEEP — not redundant.** Managers, UEFA Champions
   League and the Euros have **no** canonical counterpart (managers unscraped;
   CL/Euro exist only as ~815 ambiguous honour strings needing fresh curation).
+  **↑ CORRECTION (2026-07-31): the CL claim was wrong** — canonical honours *does*
+  contain a clean, complete `UEFA Champions League winner` list (345 players). That
+  mischaracterisation was the direct cause of the Chelsea × CL validation bug. It's
+  since been fixed: CL is now canonicalised, `membership.js` is relocated to a
+  generation-only whitelist, and validation is complete/canonical (see
+  `ARCHITECTURE.md` §7a). `membership.js` is still kept — but as a generation
+  whitelist, not a validation source. (Euros remain out: their honour data is
+  genuinely unreliable — Iniesta missing.)
   Even where canonical has the category, coverage is only ~84–93% for
   clubs/nationalities and 26% for trophies — the misses are disproportionately
   legends (Maradona, Cruyff, Pelé, Di Stéfano, Ronaldo Nazário), because canonical
