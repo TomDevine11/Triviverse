@@ -14,6 +14,10 @@ export const COMPILER_VERSION = '0.2.0'   // + Era, Trajectory seeds
 
 const decadeLabel = (from) => `${from}s`
 
+// Stat "charisma" — goals feel glamorous, appearances worthy, the fee novel. Measured
+// (unweighted) so the workbench can test whether you actually prefer high-charisma stats.
+const CHARISMA = { goals: 1.0, fee: 0.9, apps_plus_goals: 0.7, apps_minus_goals: 0.5, apps: 0.4 }
+
 // Build the population + a title for a given SEED. Everything after this (metrics,
 // gates, score) is seed-agnostic — that is the whole point of the abstraction.
 function buildForSeed({ seed, club, clubId, competition, statKey, filters, era, base }) {
@@ -35,7 +39,7 @@ function buildForSeed({ seed, club, clubId, competition, statKey, filters, era, 
   return { players, valueStat: statKey, title: `${compName} · ${STATS[statKey].label} · ${[subject, scope].filter(Boolean).join(' ')}`.replace(/  +/g, ' ') }
 }
 
-function dimensions({ seed, competition, statKey, filters, populationType, era }) {
+function dimensions({ seed, competition, statKey, filters, populationType, era, club }) {
   return {
     seed,                                            // 'attribute' | 'era' | 'recordSignings'
     stat: statKey,
@@ -46,6 +50,8 @@ function dimensions({ seed, competition, statKey, filters, populationType, era }
     hasPosition: !!filters.position,
     hasNationality: !!filters.nationality,
     position: filters.position || null,
+    nationality: filters.nationality || null,        // surfaces a national bias (e.g. England)
+    club: club ? club.replace(/ FC$/, '') : null,    // surfaces a club bias (e.g. Man City)
   }
 }
 
@@ -57,6 +63,8 @@ export function makeCandidate({ seed = 'attribute', club = null, clubId = null, 
 
   const profile = evaluate(board)
   profile.filterCount = (filters.position ? 1 : 0) + (filters.nationality ? 1 : 0) // measured, unweighted
+  profile.statCharisma = CHARISMA[built.valueStat] ?? 0.5
+  profile.isGoalkeeper = filters.position === 'GK' ? 1 : 0
   const gatesFailed = gateCheck(profile)
   const { score, breakdown } = scoreProfile(profile)
 
@@ -68,7 +76,7 @@ export function makeCandidate({ seed = 'attribute', club = null, clubId = null, 
     id, title: built.title,
     population: { type: populationType, seed, club: club || null, competition: competition ? COMPS[competition] : (seed === 'recordSignings' ? null : 'All competitions'), decade: era ? decadeLabel(era.from) : null, ...filters },
     projection: { stat: built.valueStat, statLabel: STATS[built.valueStat].label },
-    dimensions: dimensions({ seed, competition, statKey: built.valueStat, filters, populationType, era }),
+    dimensions: dimensions({ seed, competition, statKey: built.valueStat, filters, populationType, era, club }),
     profile, gatesFailed, defaultScore: score, breakdown, explanation: explain(profile, breakdown, gatesFailed),
     curated: curated.has(`${competition}|${statKey}|${filterKey}`),
     board: board.slice(0, 20).map((b) => ({ n: b.name, v: b.value, f: b.fame })),

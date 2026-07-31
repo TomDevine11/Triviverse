@@ -94,7 +94,7 @@ function updateCount(){const d=PREFS.filter(p=>p.winner!=='skip').length;$('#cou
 function tab(t){document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));document.querySelectorAll('.tab').forEach(s=>s.classList.remove('on'));$('#t-'+t).classList.add('on');if(t==='analysis')renderAnalysis();if(t==='corr')renderCorr();if(t==='sim')renderSim()}
 
 // —— P1 pairwise ——
-const DIMS=['seed','stat','populationType','competition','europe','decade','position','hasPosition','hasNationality'];
+const DIMS=['seed','stat','populationType','competition','europe','decade','position','nationality','club','hasPosition','hasNationality'];
 function nextPair(){
   const a=POOL[Math.floor(Math.random()*POOL.length)];
   let b;
