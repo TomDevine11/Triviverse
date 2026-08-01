@@ -47,7 +47,7 @@ export const STAT_OPTIONS = [
 // ── Lazy fact tables (one code-split chunk per competition) ────────────────
 const factLoaders = import.meta.glob('./history.*.generated.json')
 const factCache = {}
-async function loadFact(comp) {
+export async function loadFact(comp) {
   if (factCache[comp]) return factCache[comp]
   const loader = factLoaders[`./history.${comp}.generated.json`]
   if (!loader) throw new Error(`no fact table for ${comp}`)
@@ -78,17 +78,20 @@ const resolveIds = (index, raw) => { const q = normalize(raw); if (!q) return ne
 
 const titleOf = (spec, fact) => spec.title || titleFor(spec, { compName: COMP_NAME[spec.comp], clubName: fact.clubs[spec.filter?.club]?.name, natDisplay: fact.__d.natDisplay[spec.filter?.nationality] })
 
-// A playable challenge (async — resolves against its competition's fact table).
-async function makeChallenge(spec) {
-  const fact = await loadFact(spec.comp)
-  const { players: roster, values } = resolveRoster(spec, fact.players)
-  const rosterIndex = buildIndex(Object.entries(roster).map(([id, r]) => ({ id, name: r.name })))
+// Wrap a RESOLVED roster into a playable challenge. This is the single
+// challenge-construction path: the attribute grammar (via resolveRoster) and every
+// relational population provider (teammates/era/trophy/…) both funnel through here,
+// so validation, insights and position badges can never diverge by source.
+//   { comp, id?, title, statLabel, roster:{id:{name,value,breakdown}}, values:[],
+//     fact, answers?, maxPlayers? }
+export function wrapRoster({ comp, id, title, statLabel: sl, roster, values, fact, answers, maxPlayers }) {
+  const rosterIndex = buildIndex(Object.entries(roster).map(([rid, r]) => ({ id: rid, name: r.name })))
   const factIndex = buildIndex(fact.players)             // for the position badge (all comp players)
   const posById = new Map(fact.players.map(p => [p.id, p.pos]))
   return {
-    id: spec.id, comp: spec.comp, title: titleOf(spec, fact), statLabel: statLabel(spec.stat),
-    answers: spec.answers ?? Object.keys(roster).length,
-    maxPlayers: spec.maxPlayers ?? maxDisjoint(values),
+    id, comp, title, statLabel: sl,
+    answers: answers ?? Object.keys(roster).length,
+    maxPlayers: maxPlayers ?? maxDisjoint(values),
     validate(rawName, selectedId = null) {
       // Phase 3: a picked suggestion validates by identity. Map its internal id
       // to this roster's Transfermarkt key; if that player is on the roster it's
@@ -127,6 +130,15 @@ async function makeChallenge(spec) {
     // match the Transfermarkt spelling (where badgeFor by name would miss).
     badgeForId(id) { const tm = id != null ? tmOf(id) : null; return tm ? (posById.get(tm) || null) : null },
   }
+}
+// Attribute-grammar challenge: resolve the spec's roster, then wrap it.
+async function makeChallenge(spec) {
+  const fact = await loadFact(spec.comp)
+  const { players: roster, values } = resolveRoster(spec, fact.players)
+  return wrapRoster({
+    comp: spec.comp, id: spec.id, title: titleOf(spec, fact), statLabel: statLabel(spec.stat),
+    roster, values, fact, answers: spec.answers, maxPlayers: spec.maxPlayers,
+  })
 }
 export const makeCustomChallenge = (spec) => makeChallenge(spec)
 

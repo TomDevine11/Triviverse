@@ -26,7 +26,7 @@ export function statLabel(stat) {
   const sym = stat.op === '-' ? '−' : '+'
   return `${STAT_LABEL[stat.a]} ${sym} ${STAT_LABEL[stat.b]}`
 }
-function breakdownOf(rec, stat) {
+export function breakdownOf(rec, stat) {
   if (typeof stat === 'string') return { [stat]: num(rec[stat]) }
   return { [stat.a]: num(rec[stat.a]), [stat.b]: num(rec[stat.b]) }
 }
@@ -38,18 +38,36 @@ function breakdownOf(rec, stat) {
 // Nationality/position filter WHICH players count (a person property); club
 // scopes WHICH apps/goals count. Eligibility: value ≥ 1 (≥180 is a recognised
 // bust, still included).
+// A filter facet may be a single value OR a set of values (an array / Set) — the
+// latter powers club GROUPS (union of clubs) and CONTINENTS (union of nationalities)
+// without a second code path. `oneOf` is the single membership test; club sets
+// additionally AGGREGATE apps/goals across the player's clubs inside the set.
+const asSet = (f) => (f == null ? null : Array.isArray(f) ? f : f instanceof Set ? [...f] : [f])
+const oneOf = (val, f) => { const s = asSet(f); return s == null || s.includes(val) }
+
 export function resolveRoster(spec, factPlayers) {
   const f = spec.filter || {}
   const compId = spec.comp || 'GB1'
+  const clubSet = f.club != null ? asSet(f.club) : null
+  const idSet = f.ids != null ? (f.ids instanceof Set ? f.ids : new Set(f.ids)) : null
   const players = {}
   const values = []
   for (const p of factPlayers) {
-    if (f.nationality && p.natKey !== f.nationality) continue
-    if (f.position && p.pos !== f.position) continue
+    if (idSet && !idSet.has(p.id)) continue          // membership population (trophy winners, teammates…)
+    if (f.nationality != null && !oneOf(p.natKey, f.nationality)) continue
+    if (f.position != null && !oneOf(p.pos, f.position)) continue
     const compRec = p.comps?.[compId]
     if (!compRec) continue
-    const rec = f.club ? compRec.clubs?.[f.club] : compRec
-    if (!rec) continue
+    let rec
+    if (clubSet) {
+      if (clubSet.length === 1) { rec = compRec.clubs?.[clubSet[0]]; if (!rec) continue }
+      else { // union of clubs → aggregate apps/goals across the ones this player featured for
+        let apps = 0, goals = 0, any = false
+        for (const cid of clubSet) { const cl = compRec.clubs?.[cid]; if (cl) { any = true; apps += cl.apps || 0; goals += cl.goals || 0 } }
+        if (!any) continue
+        rec = { apps, goals }
+      }
+    } else rec = compRec
     const value = evalStat(rec, spec.stat)
     if (value < 1) continue
     players[p.id] = { name: p.name, value, breakdown: breakdownOf(rec, spec.stat) }

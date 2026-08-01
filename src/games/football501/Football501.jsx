@@ -6,7 +6,8 @@ import GameChrome from '../../components/GameChrome'
 import UpNext from '../../components/UpNext'
 import GameMotif from '../../components/GameMotif'
 import { useI18n } from '../../i18n'
-import { getDailyChallenge, getDailyEntry, getRandomChallenge, makeCustomChallenge, evaluateSpec, loadCompetition, COMPETITIONS, POSITIONS, STAT_OPTIONS } from '../../data/football501/game'
+import { getDailyChallenge, getDailyEntry, getRandomChallenge } from '../../data/football501/game'
+import QuestionBuilder from './QuestionBuilder'
 import { recordResult, getStats, formGuide, matchdayNumber } from '../../data/dailyStats'
 import { loadDailyProgress, saveDailyProgress, inProgressToday, finishedToday } from '../../data/dailyProgress'
 import { TILE } from '../../utils/shareImage'
@@ -400,120 +401,11 @@ function CountPicker({ title, sub, onPick, onBack }) {
   )
 }
 
-// Build-your-own question — competition first, then the same parameters the
-// generator uses, with live completability feedback. Emits (spec, count).
-function CustomBuilder({ onStart, onBack }) {
-  const { t } = useI18n()
-  const [comp, setComp] = useState('GB1')
-  const [statId, setStatId] = useState('goals')
-  const [club, setClub] = useState('')
-  const [nat, setNat] = useState('')
-  const [pos, setPos] = useState('')
-  const [count, setCount] = useState(2)
-  const [data, setData] = useState(null) // { fact, clubs, nations } for the selected competition
-
-  // Load the chosen competition's data; reset comp-specific filters.
-  useEffect(() => {
-    let cancelled = false
-    setData(null); setClub(''); setNat('')
-    loadCompetition(comp).then(d => { if (!cancelled) setData(d) })
-    return () => { cancelled = true }
-  }, [comp])
-
-  const spec = useMemo(() => {
-    const filter = {}
-    if (club) filter.club = club
-    if (nat) filter.nationality = nat
-    if (pos) filter.position = pos
-    return { comp, stat: STAT_OPTIONS.find(s => s.id === statId).stat, filter }
-  }, [comp, statId, club, nat, pos])
-  const ev = useMemo(() => (data ? evaluateSpec(spec, data.fact) : null), [spec, data])
-  const ok = ev && ev.answers > 0 && ev.solvable && ev.maxPlayers >= count
-
-  // Filters as a team-sheet: uniform boxes, label over value.
-  const box = 'bg-surface border border-border rounded-lg px-3 py-2 focus-within:border-brand transition-colors'
-  const boxLabel = 'block text-[0.52rem] font-black tracking-[0.16em] text-faint mb-0.5'
-  const sel = 'w-full bg-transparent text-primary text-sm font-bold outline-none cursor-pointer'
-  const meterPct = ev ? Math.min(100, Math.round((ev.answers / 60) * 100)) : 0
-
-  return (
-    <div className="max-w-2xl mx-auto px-4 pb-12">
-      <GameChrome motifId="501" title={t('five01.wordmark')} />
-      <button onClick={onBack} className="text-muted hover:text-secondary text-sm transition-colors mt-4">{t('common.back')}</button>
-      <div className="mt-6 mb-6 text-center">
-        <h2 className="score-number text-[clamp(2rem,5vw,2.6rem)] tv-wordmark leading-none">{t('five01.buildQuestion').toUpperCase()}</h2>
-      </div>
-
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-        <label className={box}><span className={boxLabel}>{t('five01.competition').toUpperCase()}</span>
-          <select value={comp} onChange={e => setComp(e.target.value)} className={sel}>
-            {COMPETITIONS.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
-          </select>
-        </label>
-        <label className={box}><span className={boxLabel}>{t('five01.stat').toUpperCase()}</span>
-          <select value={statId} onChange={e => setStatId(e.target.value)} className={sel}>
-            {STAT_OPTIONS.map(o => <option key={o.id} value={o.id}>{t(`five01.statOpt.${o.id}`)}</option>)}
-          </select>
-        </label>
-        <label className={box}><span className={boxLabel}>{t('five01.nationality').toUpperCase()}</span>
-          <select value={nat} onChange={e => setNat(e.target.value)} disabled={!data} className={sel}>
-            <option value="">{t('five01.anyNationality')}</option>
-            {(data?.nations || []).map(n => <option key={n.key} value={n.key}>{n.display}</option>)}
-          </select>
-        </label>
-        <label className={box}><span className={boxLabel}>{t('five01.club').toUpperCase()}</span>
-          <select value={club} onChange={e => setClub(e.target.value)} disabled={!data} className={sel}>
-            <option value="">{t('five01.anyClub')}</option>
-            {(data?.clubs || []).map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
-          </select>
-        </label>
-        <label className={box}><span className={boxLabel}>{t('five01.position').toUpperCase()}</span>
-          <select value={pos} onChange={e => setPos(e.target.value)} className={sel}>
-            <option value="">{t('five01.any')}</option>
-            {POSITIONS.map(o => <option key={o.code} value={o.code}>{t(`five01.posOpt.${o.code}`)}</option>)}
-          </select>
-        </label>
-        <label className={box}><span className={boxLabel}>{t('five01.players').toUpperCase()}</span>
-          <select value={count} onChange={e => setCount(Number(e.target.value))} className={sel}>
-            {[2, 3, 4, 5].map(n => <option key={n} value={n}>{n}</option>)}
-          </select>
-        </label>
-      </div>
-
-      {/* live question preview + validity meter */}
-      <div className="mt-4 bg-card border border-l-4 border-border-strong border-l-accent rounded-xl px-4 py-3">
-        {!ev ? <div className="text-muted text-xs">{t('five01.loadingComp', { name: COMPETITIONS.find(c => c.id === comp)?.name })}</div> : (
-          <>
-            <div className="text-[0.55rem] font-black tracking-[0.18em] text-accent-bright">{t('five01.buildQuestion').toUpperCase()}</div>
-            <div className="text-primary text-sm font-bold mt-0.5">{ev.title}</div>
-            <div className="flex items-center gap-3 mt-2.5">
-              <div className="flex-1 h-2 bg-surface rounded-full overflow-hidden">
-                <i className={`block h-full rounded-full transition-[width] duration-base ease-out ${ok ? 'bg-success' : 'bg-warn'}`} style={{ width: `${meterPct}%` }} />
-              </div>
-              <span className={`text-xs shrink-0 ${ok ? 'text-success-bright' : 'text-warn'}`}>
-                {ev.answers === 0 ? t('five01.noMatch')
-                  : !ev.solvable ? t('five01.notEnough', { n: ev.answers })
-                    : ev.maxPlayers < count ? t('five01.notEnoughPlayers', { max: ev.maxPlayers, count })
-                      : `✓ ${t('five01.okInfo', { answers: ev.answers, count })}`}
-              </span>
-            </div>
-          </>
-        )}
-      </div>
-
-      <button disabled={!ok} onClick={() => onStart(spec, count)}
-        className="mt-4 w-full bg-brand hover:bg-brand-hover disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold rounded-xl py-3.5 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-bright">
-        {t('five01.startGame')}
-      </button>
-    </div>
-  )
-}
-
 function UnlimitedSetup({ onStart, onBack }) {
   const { t } = useI18n()
   const [step, setStep] = useState('mode')
   if (step === 'random') return <CountPicker title={t('five01.randomTitle')} sub={t('five01.randomSub')} onBack={() => setStep('mode')} onPick={(n) => onStart(getRandomChallenge(n), n)} />
-  if (step === 'custom') return <CustomBuilder onBack={() => setStep('mode')} onStart={(spec, count) => onStart(makeCustomChallenge(spec), count)} />
+  if (step === 'custom') return <QuestionBuilder onBack={() => setStep('mode')} onStart={(challenge, count) => onStart(challenge, count)} />
   return (
     <div className="max-w-2xl mx-auto px-4 pb-12">
       <GameChrome motifId="501" title={t('five01.wordmark')} />
