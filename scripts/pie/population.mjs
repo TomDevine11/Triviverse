@@ -41,7 +41,7 @@ export function buildPopulation({ clubId = null, competition = null, nationality
   for (const cid of comps) {
     for (const p of comp(cid).players) {
       const cc = p.comps?.[cid]; if (!cc) continue
-      if (nationality && p.natKey !== nationality) continue
+      if (nationality && !(Array.isArray(nationality) ? nationality.includes(p.natKey) : p.natKey === nationality)) continue
       if (position && p.pos !== position) continue
       let apps = 0, goals = 0
       if (clubId) { const cl = cc.clubs?.[clubId]; if (!cl) continue; apps = cl.apps || 0; goals = cl.goals || 0 }

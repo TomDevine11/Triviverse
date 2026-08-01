@@ -38,7 +38,9 @@ function buildForSeed({ seed, club, clubId, competition, statKey, filters, era, 
   // attribute (the original grammar)
   const players = buildPopulation({ clubId, competition, ...filters })
   const compName = competition ? COMPS[competition] : 'All competitions'
-  const scope = filters.position ? POSITIONS[filters.position] : filters.nationality ? `(${natDisplay(base || players, filters.nationality)})` : (clubId ? 'players' : 'all players')
+  const scope = filters.position ? POSITIONS[filters.position]
+    : filters.nationality ? (filters.natLabel ? `${filters.natLabel} players` : `(${natDisplay(base || players, filters.nationality)})`)
+    : (clubId ? 'players' : 'all players')
   const subject = clubId ? club.replace(/ FC$/, '') : ''
   return { players, valueStat: statKey, title: `${compName} · ${STATS[statKey].label} · ${[subject, scope].filter(Boolean).join(' ')}`.replace(/  +/g, ' ') }
 }
@@ -54,7 +56,7 @@ function dimensions({ seed, competition, statKey, filters, populationType, era, 
     hasPosition: !!filters.position,
     hasNationality: !!filters.nationality,
     position: filters.position || null,
-    nationality: filters.nationality || null,        // surfaces a national bias (e.g. England)
+    nationality: filters.natLabel || (typeof filters.nationality === 'string' ? filters.nationality : null), // national/group bias (e.g. England, African)
     club: club ? club.replace(/ FC$/, '') : null,    // surfaces a club bias (e.g. Man City)
     anchor: anchor || null,
   }
@@ -77,7 +79,8 @@ export function makeCandidate({ seed = 'attribute', club = null, clubId = null, 
   const { score, breakdown } = scoreProfile(profile)
 
   const populationType = seed === 'teammates' ? 'relation' : seed === 'recordSignings' ? 'trajectory' : (clubId ? 'club' : 'competition')
-  const filterKey = [filters.position && `pos:${filters.position}`, filters.nationality && `nat:${filters.nationality}`].filter(Boolean).join('|') || 'all'
+  const natKey = filters.nationality ? (filters.natLabel ? filters.natLabel.toLowerCase().replace(/[^a-z0-9]+/g, '') : filters.nationality) : null
+  const filterKey = [filters.position && `pos:${filters.position}`, natKey && `nat:${natKey}`].filter(Boolean).join('|') || 'all'
   const id = `${seed}:${clubId || club || anchor || competition || 'x'}|${competition || 'ALL'}|${era ? era.from : ''}|${built.valueStat}|${filterKey}`
 
   return {

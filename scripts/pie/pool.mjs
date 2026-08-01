@@ -57,6 +57,30 @@ function clubCandidates(name, out) {
   }
 }
 
+// NATIONALITY GROUPS — the "stack multiple of the same filter" idea: continents and a
+// few cultural regions (African, South American, Scandinavian, Iberian…). A group is a
+// UNION of nationalities. Only generated where the group is DENSE in that competition —
+// a base-count guard skips thin ones, and the normal gates prune the rest.
+const GROUPS = {
+  African: ['nigeria', 'ghana', 'ivory coast', 'cameroon', 'senegal', 'mali', 'morocco', 'algeria', 'egypt', 'tunisia', 'south africa', 'dr congo', 'congo', 'togo', 'gabon', 'guinea', 'burkina faso', 'zambia', 'kenya', 'angola', 'benin', 'cape verde', 'equatorial guinea', 'mozambique', 'sierra leone'],
+  'South American': ['brazil', 'argentina', 'uruguay', 'colombia', 'chile', 'peru', 'ecuador', 'paraguay', 'venezuela', 'bolivia'],
+  Scandinavian: ['sweden', 'norway', 'denmark', 'iceland', 'finland'],
+  Iberian: ['spain', 'portugal'],
+}
+function groupCandidates(out) {
+  for (const cid of COMP_IDS) {
+    const base = buildPopulation({ competition: cid })
+    for (const [natLabel, keys] of Object.entries(GROUPS)) {
+      const set = new Set(keys)
+      if (base.filter((p) => set.has(p.natKey)).length < 12) continue // density guard
+      for (const statKey of STAT_KEYS) {
+        const c = makeCandidate({ competition: cid, statKey, filters: { nationality: keys, natLabel }, base })
+        if (playable(c)) out.push(c)
+      }
+    }
+  }
+}
+
 function competitionCandidates(cid, out) {
   const base = buildPopulation({ competition: cid })
   const nats = compNats(cid, nationalitiesIn(base, 20))
@@ -68,7 +92,7 @@ function competitionCandidates(cid, out) {
 }
 
 // NEW · Era — competition scorers/appearance-makers of a decade (generational recall).
-const DECADES = [{ from: 2000, to: 2009 }, { from: 2010, to: 2019 }] // 1990s scrapped (disliked)
+const DECADES = [{ from: 1990, to: 1999 }, { from: 2000, to: 2009 }, { from: 2010, to: 2019 }, { from: 2020, to: 2029 }]
 function eraCandidates(out) {
   for (const cid of COMP_IDS) for (const era of DECADES) {
     for (const filters of [{}, ...POS_KEYS.map((p) => ({ position: p }))]) {
@@ -105,6 +129,7 @@ function teammateCandidates(out) {
 const pool = []
 for (const c of CLUBS) clubCandidates(c, pool)
 for (const cid of COMP_IDS) competitionCandidates(cid, pool)
+groupCandidates(pool)
 eraCandidates(pool)
 signingCandidates(pool)
 teammateCandidates(pool)
