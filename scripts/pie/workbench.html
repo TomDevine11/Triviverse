@@ -36,6 +36,32 @@
   .wgrid .k{color:var(--muted)} .wgrid .old{color:var(--faint)} .wgrid .new{font-weight:700}
   pre{background:var(--code);border:1px solid var(--line);border-radius:9px;padding:12px;overflow-x:auto;font-size:12px}
   button.act{background:var(--brand);color:#fff;border:none;border-radius:8px;padding:9px 16px;font:600 13px system-ui;cursor:pointer}
+  button.act.ghost{background:var(--p2);color:var(--muted);border:1px solid var(--line)}
+  /* schedule */
+  .sctl{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+  .sctl label{font-size:12px;color:var(--faint);display:flex;gap:6px;align-items:center}
+  .sctl input{width:88px;background:var(--p2);border:1px solid var(--line);border-radius:7px;color:var(--ink);padding:6px 8px;font:13px system-ui}
+  .stats-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .chip{font-size:12px;color:var(--muted);background:var(--p2);border:1px solid var(--line);border-radius:20px;padding:3px 10px}
+  .chip b{color:var(--ink)}
+  .sday{background:var(--panel);border:1px solid var(--line);border-radius:11px;margin-bottom:7px;overflow:hidden}
+  .shead{display:flex;align-items:center;gap:11px;padding:11px 14px;cursor:pointer}
+  .shead:hover{background:var(--p2)}
+  .sdate{font:600 12.5px ui-monospace,Menlo,monospace;color:var(--faint);flex:0 0 92px}
+  .shook{flex:0 0 84px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;padding:2px 8px;border-radius:5px;text-align:center}
+  .shook.category{background:rgba(157,140,245,.16);color:var(--brand)}
+  .shook.nostalgia{background:rgba(224,169,78,.16);color:var(--warn)}
+  .shook.transfer{background:rgba(60,201,160,.16);color:var(--good)}
+  .shook.connection{background:rgba(224,106,85,.16);color:var(--bad)}
+  .stitle{flex:1;font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .sdiff{flex:0 0 auto;font-size:11.5px;color:var(--faint)}
+  .sacts{flex:0 0 auto;display:flex;gap:5px}
+  .sacts button{font-size:11px;padding:4px 9px;border-radius:6px;border:1px solid var(--line);background:var(--p2);color:var(--muted);cursor:pointer}
+  .sacts button.pinned{background:var(--warn);color:#fff;border-color:transparent}
+  .sbody{display:none;padding:0 14px 13px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+  .sday.open .sbody{display:block}
+  .sbody .row{margin-top:9px} .sbody b{color:var(--ink);font-weight:600}
+  .sbody .beat{color:var(--faint)}
 </style></head>
 <body>
 <header>
@@ -45,6 +71,7 @@
     <button data-t="analysis">Analysis</button>
     <button data-t="corr">Correlation</button>
     <button data-t="sim">Weight simulator</button>
+    <button data-t="schedule">Schedule</button>
   </nav>
   <span class="count" id="count">…</span>
 </header>
@@ -62,6 +89,19 @@
   <section class="tab" id="t-analysis"><h2>What you say yes to</h2><div id="analysis"></div></section>
   <section class="tab" id="t-corr"><h2>Which metrics predict "yes"</h2><div id="corr"></div></section>
   <section class="tab" id="t-sim"><h2>Weight simulator</h2><div id="sim"></div></section>
+  <section class="tab" id="t-schedule">
+    <h2>Daily schedule — automatic Football 501</h2>
+    <div class="sctl">
+      <label>days <input id="sc-days" type="number" value="90" min="7" max="365"></label>
+      <label>seed <input id="sc-seed" type="number" value="1" min="1"></label>
+      <label>from <input id="sc-start" type="date" value="2026-08-01"></label>
+      <button class="act" onclick="loadSchedule()">Regenerate</button>
+      <button class="act ghost" onclick="reseed()">🎲 New seed</button>
+      <span id="sc-status" style="color:var(--faint);font-size:12px"></span>
+    </div>
+    <div id="sched-stats"></div>
+    <div id="sched-list"></div>
+  </section>
 </main>
 <script>
 const $=s=>document.querySelector(s), api=(p,o)=>fetch(p,o).then(r=>r.json());
@@ -88,7 +128,7 @@ function score(p,w=W){let s=0,ws=0;for(const m in w){if(p[m]==null)continue;s+=n
 })();
 const rated=()=>PREFS.filter(p=>p.kind==='rate'&&p.verdict!=='skip'&&p.profile);
 function updateCount(){const r=rated();const y=r.filter(p=>p.verdict==='yes').length;$('#count').textContent=`${r.length} rated · ${y} yes / ${r.length-y} no`}
-function tab(t){document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));document.querySelectorAll('.tab').forEach(s=>s.classList.remove('on'));$('#t-'+t).classList.add('on');if(t==='analysis')renderAnalysis();if(t==='corr')renderCorr();if(t==='sim')renderSim()}
+function tab(t){document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));document.querySelectorAll('.tab').forEach(s=>s.classList.remove('on'));$('#t-'+t).classList.add('on');if(t==='analysis')renderAnalysis();if(t==='corr')renderCorr();if(t==='sim')renderSim();if(t==='schedule'&&!SCHED.length)loadSchedule()}
 
 // —— Rate: single candidate, prefer unrated ——
 function nextCard(){
@@ -173,5 +213,58 @@ window.runOpt=()=>{const R=rated();const{w,acc}=optimise(R);
   const cfg='export const WEIGHTS = {\n'+WEIGHT_KEYS().map(m=>`  ${m}: { weight: ${w[m].weight}, norm: ${JSON.stringify(W[m].norm)} },`).join('\n')+'\n}';
   $('#optout').innerHTML=`<div>Optimised weights classify <b class="pos">${(acc*100).toFixed(0)}%</b> correctly.</div><div class="wgrid" style="margin:10px 0">${rows}</div><div style="font-size:12px;color:var(--faint);margin-bottom:4px">Paste into config.mjs:</div><pre>${cfg}</pre>`;
 };
+</script>
+
+/* ── Schedule control centre ─────────────────────────────────────────── */
+let SCHED=[], SMETA={};
+async function loadSchedule(){
+  const days=$('#sc-days').value||90, seed=$('#sc-seed').value||1, start=$('#sc-start').value||'2026-08-01';
+  $('#sc-status').textContent='generating…';
+  const r=await api(`/schedule?days=${days}&seed=${seed}&start=${start}`);
+  if(r.error){$('#sc-status').textContent=r.error;return}
+  SCHED=r.schedule; SMETA=r.meta;
+  $('#sc-status').textContent=`generated ${new Date(r.meta.generatedAt).toLocaleTimeString()}`;
+  renderSchedStats(); renderSchedList();
+}
+function reseed(){$('#sc-seed').value=Math.floor(Math.random()*9999)+1;loadSchedule()}
+function tally(f){const m={};for(const d of SCHED){const v=f(d)||'—';m[v]=(m[v]||0)+1}return Object.entries(m).sort((a,b)=>b[1]-a[1])}
+function renderSchedStats(){
+  const uniq=new Set(SCHED.map(d=>d.questionId)).size;
+  const repeats=SCHED.length-uniq;
+  const chips=a=>a.map(([k,v])=>`<span class="chip">${k} <b>${v}</b></span>`).join('');
+  $('#sched-stats').innerHTML=
+    `<div class="box"><h3>Diversity — ${SCHED.length} days · <b class="pos">${uniq}</b> unique · ${repeats} reused · ${SMETA.eligible} eligible</h3>
+      <div class="stats-row" style="margin-bottom:8px"><b style="color:var(--faint);font-size:11px;text-transform:uppercase;align-self:center">hook</b>${chips(tally(d=>d.hook))}</div>
+      <div class="stats-row" style="margin-bottom:8px"><b style="color:var(--faint);font-size:11px;text-transform:uppercase;align-self:center">seed</b>${chips(tally(d=>d.population.seed))}</div>
+      <div class="stats-row"><b style="color:var(--faint);font-size:11px;text-transform:uppercase;align-self:center">comp</b>${chips(tally(d=>d.population.competition).slice(0,9))}</div>
+     </div>`;
+}
+function renderSchedList(){
+  $('#sched-list').innerHTML=SCHED.map((d,i)=>{
+    const r=d.reasons;
+    const why=[`quality ${r.score}`,r.avoided.length?`avoided repeating ${r.avoided.join(', ')}`:'','',r.houseBoost?'PL/England lean':'',`difficulty ${d.difficulty} vs target ${r.difficultyTarget}`].filter(Boolean).join(' · ');
+    const board=d.board.slice(0,10).map(b=>`${b.n} <span style="color:var(--faint)">${b.v}</span>`).join(', ');
+    const beat=d.rejected.length?d.rejected.map(x=>`${x.title} <span style="color:var(--faint)">(${x.dayScore})</span>`).join(' · '):'—';
+    return `<div class="sday" data-i="${i}">
+      <div class="shead" onclick="this.parentNode.classList.toggle('open')">
+        <span class="sdate">${d.date}</span>
+        <span class="shook ${d.hook}">${d.hook}</span>
+        <span class="stitle">${d.pinned?'📌 ':''}${d.title}</span>
+        <span class="sdiff">diff ${d.difficulty}</span>
+        <span class="sacts">
+          <button class="${d.pinned?'pinned':''}" title="Lock this question to this date" onclick="event.stopPropagation();togglePin('${d.date}','${d.questionId}',${d.pinned})">📌</button>
+          <button title="Never schedule this question again" onclick="event.stopPropagation();veto('${d.questionId}')">🚫</button>
+        </span>
+      </div>
+      <div class="sbody">
+        <div class="row"><b>Why chosen:</b> ${why}</div>
+        <div class="row"><b>Answers:</b> ${board}</div>
+        <div class="row beat"><b style="color:var(--ink)">Beat:</b> ${beat}</div>
+      </div></div>`;
+  }).join('');
+}
+async function reg(action,body){return api('/registry',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action,...body})})}
+async function togglePin(date,questionId,isPinned){await reg(isPinned?'unpin':'pin',{date,questionId});loadSchedule()}
+async function veto(questionId){if(!confirm('Never schedule this question again? (removes it from every future day)'))return;await reg('veto',{questionId});loadSchedule()}
 </script>
 </body></html>
