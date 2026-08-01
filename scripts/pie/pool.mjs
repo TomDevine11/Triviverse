@@ -80,8 +80,11 @@ function signingCandidates(out) {
 
 // NEW · Relation — most games played alongside an iconic anchor (co-appearances).
 const ANCHORS = ['Steven Gerrard', 'Frank Lampard', 'Ryan Giggs', 'Paul Scholes', 'John Terry', 'Wayne Rooney',
-  'Thierry Henry', 'Xavi', 'Andrés Iniesta', 'Lionel Messi', 'Cristiano Ronaldo', 'Karim Benzema', 'Sergio Ramos',
-  'Francesco Totti', 'Paolo Maldini', 'Andrea Pirlo', 'Gianluigi Buffon', 'Zlatan Ibrahimović', 'Kevin De Bruyne']
+  'Rio Ferdinand', 'Ashley Cole', 'Didier Drogba', 'David Silva', 'Vincent Kompany', 'Mohamed Salah', 'Virgil van Dijk',
+  'Thierry Henry', 'Dennis Bergkamp', 'Patrick Vieira', 'Xavi', 'Andrés Iniesta', 'Lionel Messi', 'Sergio Busquets',
+  'Gerard Piqué', 'Carles Puyol', 'Cristiano Ronaldo', 'Karim Benzema', 'Sergio Ramos', 'Luka Modrić', 'Marcelo',
+  'Francesco Totti', 'Paolo Maldini', 'Andrea Pirlo', 'Gianluigi Buffon', 'Alessandro Del Piero', 'Zlatan Ibrahimović',
+  'Kevin De Bruyne', 'Robert Lewandowski', 'Thomas Müller', 'Philipp Lahm', 'Bastian Schweinsteiger', 'Neymar', 'Luis Suárez']
 function teammateCandidates(out) {
   for (const anchor of ANCHORS) {
     const c = makeCandidate({ seed: 'teammates', anchor, statKey: 'co_apps', filters: {} })

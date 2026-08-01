@@ -93,10 +93,12 @@ function tab(t){document.querySelectorAll('#nav button').forEach(b=>b.classList.
 // —— Rate: single candidate, prefer unrated ——
 function nextCard(){
   const done=new Set(PREFS.filter(p=>p.kind==='rate').map(p=>p.candidate));
-  const fresh=POOL.filter(c=>!done.has(c.id));
-  const src=fresh.length?fresh:POOL;
-  cur=src[Math.floor(Math.random()*src.length)];
-  renderCard();
+  const NOVEL=new Set(['era','recordSignings','teammates']);
+  // weighted sampling: novel seeds ×5, unrated ×3 — surface the cool/under-sampled
+  // families far more often (for enjoyment AND to calibrate them).
+  let total=0; const w=POOL.map(c=>{const x=(NOVEL.has(c.dimensions.seed)?5:1)*(done.has(c.id)?1:3);total+=x;return x});
+  let r=Math.random()*total,i=0; while(r>=w[i]){r-=w[i];i++}
+  cur=POOL[i]; renderCard();
 }
 function renderCard(){const c=cur,pop=c.population;
   const filt=[pop.competition,c.projection.statLabel,pop.club||'',pop.position||'',pop.decade||'',pop.nationality?('nat '+pop.nationality):''].filter(Boolean).join(' · ');
