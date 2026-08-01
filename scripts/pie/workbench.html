@@ -68,14 +68,14 @@ const $=s=>document.querySelector(s), api=(p,o)=>fetch(p,o).then(r=>r.json());
 let POOL=[], BYID={}, PREFS=[], CFG=null, W={}, cur=null;
 const WEIGHT_KEYS=()=>Object.keys(W);
 const METRIC_KEYS=()=>Object.keys(POOL[0]?.profile||{}).filter(k=>typeof POOL[0].profile[k]==='number');
-const DIMS=['seed','stat','populationType','competition','europe','decade','position','nationality','club','hasPosition','hasNationality'];
+const DIMS=['seed','stat','populationType','competition','europe','decade','position','nationality','club','anchor','hasPosition','hasNationality'];
 
 // scoring (identical to rank.mjs)
 function normVal(spec,x){const[t,a,b,c]=spec;
   if(t==='band'){if(x<=a||x>=c)return 0;return x<b?(x-a)/(b-a):(c-x)/(c-b)}
   if(t==='lower'){if(x<=a)return 1;if(x>=b)return 0;return(b-x)/(b-a)}
   if(t==='higher')return Math.max(0,Math.min(1,x/a));if(t==='bool')return x?1:0;return 0}
-function score(p,w=W){let s=0,ws=0;for(const m in w){s+=normVal(w[m].norm,p[m])*w[m].weight;ws+=w[m].weight}return ws?s/ws:0}
+function score(p,w=W){let s=0,ws=0;for(const m in w){if(p[m]==null)continue;s+=normVal(w[m].norm,p[m])*w[m].weight;ws+=w[m].weight}return ws?s/ws:0}
 
 (async()=>{
   const pool=await api('/pool'); if(pool.error){document.body.innerHTML='<main><p style="padding:40px">Run <code>node scripts/pie/pool.mjs</code> first.</p></main>';return}

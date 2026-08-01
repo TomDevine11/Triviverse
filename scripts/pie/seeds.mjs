@@ -10,7 +10,8 @@
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { metaOf } from './population.mjs'
+import { metaOf, COMP_IDS } from './population.mjs'
+import { normalize } from '../../src/data/canonical/normalize.js'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..')
 const J = (p) => JSON.parse(readFileSync(path.join(ROOT, p), 'utf8'))
@@ -20,6 +21,8 @@ const _perf = {}
 const perf = (cid) => (_perf[cid] ||= J(`src/data/football501/performance.${cid}.generated.json`).performance)
 let _tr = null
 const transfers = () => (_tr ||= J('src/data/football501/transfers.generated.json'))
+let _aliases = null
+const aliases = () => (_aliases ||= J('src/data/canonical/players.aliases.generated.json'))
 
 const attach = (id, extra, nationality, position) => {
   const m = metaOf(id); if (!m) return null
@@ -38,6 +41,29 @@ export function eraPopulation({ competition, from, to, nationality = null, posit
   }
   const out = []
   for (const [id, v] of acc) { if (v.apps <= 0) continue; const p = attach(id, { apps: v.apps, goals: v.goals }, nationality, position); if (p) out.push(p) }
+  return out
+}
+
+// RELATION · teammates — players who shared a squad with an anchor, VALUED by an
+// estimate of games played TOGETHER: Σ over every shared club-season of
+// min(anchor's apps, teammate's apps) (an upper bound on their co-appearances).
+// A genuinely different memory ("who played alongside X") with a novel darts value.
+export function teammatesOf({ anchor, nationality = null, position = null }) {
+  const hit = aliases()[normalize(anchor)]
+  const anchorId = typeof hit === 'string' ? hit : Array.isArray(hit) ? hit[0] : null
+  if (!anchorId) return []
+  const atm = anchorId.startsWith('tm:') ? anchorId.slice(3) : anchorId
+  const slots = new Map() // "comp|team|season" → anchor's apps there
+  for (const cid of COMP_IDS) for (const [p, team, season, apps] of perf(cid)) if (String(p) === atm) slots.set(`${cid}|${team}|${season}`, apps || 0)
+  if (!slots.size) return []
+  const co = new Map()
+  for (const cid of COMP_IDS) for (const [p, team, season, apps] of perf(cid)) {
+    if (String(p) === atm) continue
+    const a = slots.get(`${cid}|${team}|${season}`); if (a == null) continue
+    co.set(p, (co.get(p) || 0) + Math.min(a, apps || 0))
+  }
+  const out = []
+  for (const [id, coApps] of co) { if (coApps <= 0) continue; const m = attach(id, { coApps }, nationality, position); if (m) out.push(m) }
   return out
 }
 

@@ -6,7 +6,7 @@
 
 import { COMPS, POSITIONS, buildPopulation, natDisplay } from './population.mjs'
 import { STATS, project } from './projection.mjs'
-import { eraPopulation, recordSignings } from './seeds.mjs'
+import { eraPopulation, recordSignings, teammatesOf } from './seeds.mjs'
 import { evaluate } from './metrics.mjs'
 import { gateCheck, scoreProfile, explain } from './rank.mjs'
 
@@ -20,7 +20,11 @@ const CHARISMA = { goals: 1.0, fee: 0.9, apps_plus_goals: 0.7, apps_minus_goals:
 
 // Build the population + a title for a given SEED. Everything after this (metrics,
 // gates, score) is seed-agnostic — that is the whole point of the abstraction.
-function buildForSeed({ seed, club, clubId, competition, statKey, filters, era, base }) {
+function buildForSeed({ seed, club, clubId, competition, statKey, filters, era, anchor, base }) {
+  if (seed === 'teammates') {
+    const players = teammatesOf({ anchor, ...filters })
+    return { players, valueStat: 'co_apps', title: `Most games played alongside ${anchor}` }
+  }
   if (seed === 'era') {
     const players = eraPopulation({ competition, from: era.from, to: era.to, ...filters })
     const scope = filters.position ? POSITIONS[filters.position] : filters.nationality ? `(${natDisplay(players, filters.nationality)})` : 'all players'
@@ -39,7 +43,7 @@ function buildForSeed({ seed, club, clubId, competition, statKey, filters, era, 
   return { players, valueStat: statKey, title: `${compName} · ${STATS[statKey].label} · ${[subject, scope].filter(Boolean).join(' ')}`.replace(/  +/g, ' ') }
 }
 
-function dimensions({ seed, competition, statKey, filters, populationType, era, club }) {
+function dimensions({ seed, competition, statKey, filters, populationType, era, club, anchor }) {
   return {
     seed,                                            // 'attribute' | 'era' | 'recordSignings'
     stat: statKey,
@@ -52,11 +56,12 @@ function dimensions({ seed, competition, statKey, filters, populationType, era, 
     position: filters.position || null,
     nationality: filters.nationality || null,        // surfaces a national bias (e.g. England)
     club: club ? club.replace(/ FC$/, '') : null,    // surfaces a club bias (e.g. Man City)
+    anchor: anchor || null,
   }
 }
 
-export function makeCandidate({ seed = 'attribute', club = null, clubId = null, competition = null, statKey, filters = {}, era = null, base = null, curated = new Set() }) {
-  const built = buildForSeed({ seed, club, clubId, competition, statKey, filters, era, base })
+export function makeCandidate({ seed = 'attribute', club = null, clubId = null, competition = null, statKey, filters = {}, era = null, anchor = null, base = null, curated = new Set() }) {
+  const built = buildForSeed({ seed, club, clubId, competition, statKey, filters, era, anchor, base })
   if (!built.players || built.players.length < 1) return null
   const board = project(built.players, built.valueStat)
   if (board.length < 1) return null
@@ -65,18 +70,19 @@ export function makeCandidate({ seed = 'attribute', club = null, clubId = null, 
   profile.filterCount = (filters.position ? 1 : 0) + (filters.nationality ? 1 : 0) // measured, unweighted
   profile.statCharisma = CHARISMA[built.valueStat] ?? 0.5
   profile.isGoalkeeper = filters.position === 'GK' ? 1 : 0
+  profile.nationalityFilter = filters.nationality ? 1 : 0 // nationality filters hurt (position filters don't)
   const gatesFailed = gateCheck(profile)
   const { score, breakdown } = scoreProfile(profile)
 
-  const populationType = seed === 'recordSignings' ? 'trajectory' : (clubId ? 'club' : 'competition')
+  const populationType = seed === 'teammates' ? 'relation' : seed === 'recordSignings' ? 'trajectory' : (clubId ? 'club' : 'competition')
   const filterKey = [filters.position && `pos:${filters.position}`, filters.nationality && `nat:${filters.nationality}`].filter(Boolean).join('|') || 'all'
-  const id = `${seed}:${clubId || club || competition || 'x'}|${competition || 'ALL'}|${era ? era.from : ''}|${built.valueStat}|${filterKey}`
+  const id = `${seed}:${clubId || club || anchor || competition || 'x'}|${competition || 'ALL'}|${era ? era.from : ''}|${built.valueStat}|${filterKey}`
 
   return {
     id, title: built.title,
-    population: { type: populationType, seed, club: club || null, competition: competition ? COMPS[competition] : (seed === 'recordSignings' ? null : 'All competitions'), decade: era ? decadeLabel(era.from) : null, ...filters },
+    population: { type: populationType, seed, club: club || null, anchor: anchor || null, competition: competition ? COMPS[competition] : (seed === 'recordSignings' || seed === 'teammates' ? null : 'All competitions'), decade: era ? decadeLabel(era.from) : null, ...filters },
     projection: { stat: built.valueStat, statLabel: STATS[built.valueStat].label },
-    dimensions: dimensions({ seed, competition, statKey: built.valueStat, filters, populationType, era, club }),
+    dimensions: dimensions({ seed, competition, statKey: built.valueStat, filters, populationType, era, club, anchor }),
     profile, gatesFailed, defaultScore: score, breakdown, explanation: explain(profile, breakdown, gatesFailed),
     curated: curated.has(`${competition}|${statKey}|${filterKey}`),
     board: board.slice(0, 20).map((b) => ({ n: b.name, v: b.value, f: b.fame })),

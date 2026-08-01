@@ -12,6 +12,7 @@ export const STATS = {
   apps_plus_goals:  { label: 'Appearances + Goals',   f: (p) => p.apps + p.goals },
   apps_minus_goals: { label: 'Appearances − Goals',   f: (p) => p.apps - p.goals },
   fee:              { label: 'Transfer fee (€m)',      f: (p) => p.fee },   // Trajectory · record signings
+  co_apps:          { label: 'Games alongside',        f: (p) => p.coApps }, // Relation · teammates
 }
 
 export function project(players, statKey) {

@@ -78,11 +78,23 @@ function signingCandidates(out) {
   }
 }
 
+// NEW · Relation — most games played alongside an iconic anchor (co-appearances).
+const ANCHORS = ['Steven Gerrard', 'Frank Lampard', 'Ryan Giggs', 'Paul Scholes', 'John Terry', 'Wayne Rooney',
+  'Thierry Henry', 'Xavi', 'Andrés Iniesta', 'Lionel Messi', 'Cristiano Ronaldo', 'Karim Benzema', 'Sergio Ramos',
+  'Francesco Totti', 'Paolo Maldini', 'Andrea Pirlo', 'Gianluigi Buffon', 'Zlatan Ibrahimović', 'Kevin De Bruyne']
+function teammateCandidates(out) {
+  for (const anchor of ANCHORS) {
+    const c = makeCandidate({ seed: 'teammates', anchor, statKey: 'co_apps', filters: {} })
+    if (c && c.profile.recognisableCount >= 8) out.push(c)
+  }
+}
+
 const pool = []
 for (const c of CLUBS) clubCandidates(c, pool)
 for (const cid of COMP_IDS) competitionCandidates(cid, pool)
 eraCandidates(pool)
 signingCandidates(pool)
+teammateCandidates(pool)
 
 // de-dupe by id
 const seen = new Set(), uniq = []
