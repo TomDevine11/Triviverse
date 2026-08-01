@@ -32,13 +32,23 @@ const playable = (c) => c && c.profile.recognisableCount >= 8 && c.profile.check
 // GK-filtered population only ever gets Appearances (a coherence rule at generation).
 const statsFor = (filters, base = STAT_KEYS) => filters.position === 'GK' ? ['apps'] : base
 
+// NATIONALITY-filter policy (from ratings: nationality filters are only good when the
+// nation is DENSE in that competition). Non-PL leagues → home nation only. The PL is
+// cosmopolitan → a popular set, but competition-level only (never club × nationality).
+// Champions League → none.
+const HOME_NAT = { ES1: 'spain', IT1: 'italy', FR1: 'france', L1: 'germany' }
+const PL_NATS = new Set(['england', 'france', 'spain', 'belgium', 'italy', 'argentina', 'portugal', 'brazil', 'netherlands', 'germany', 'ireland'])
+const clubNats = (domestic, present) => domestic === 'GB1' ? [] : (HOME_NAT[domestic] && present.includes(HOME_NAT[domestic]) ? [HOME_NAT[domestic]] : [])
+const compNats = (cid, present) => cid === 'GB1' ? present.filter((n) => PL_NATS.has(n)).slice(0, 8) : cid === 'CL' ? [] : (HOME_NAT[cid] && present.includes(HOME_NAT[cid]) ? [HOME_NAT[cid]] : [])
+
 function clubCandidates(name, out) {
   const club = resolveClub(name); if (!club) return
   for (const scope of [...club.comps, 'ALL']) {
     const competition = scope === 'ALL' ? null : scope
     const base = buildPopulation({ clubId: club.id, competition })
     if (base.length < 8) continue
-    const nats = nationalitiesIn(base, 3).slice(0, 8)
+    const domestic = club.comps.find((c) => c !== 'CL') || club.comps[0]
+    const nats = clubNats(domestic, nationalitiesIn(base, 3))
     const filterSets = [{}, ...POS_KEYS.map((p) => ({ position: p })), ...nats.map((n) => ({ nationality: n }))]
     for (const filters of filterSets) for (const statKey of statsFor(filters)) {
       const c = makeCandidate({ club: club.name, clubId: club.id, competition, statKey, filters, base })
@@ -49,7 +59,7 @@ function clubCandidates(name, out) {
 
 function competitionCandidates(cid, out) {
   const base = buildPopulation({ competition: cid })
-  const nats = nationalitiesIn(base, 20).slice(0, 8) // "Foreign Legion" angles
+  const nats = compNats(cid, nationalitiesIn(base, 20))
   const filterSets = [{}, ...POS_KEYS.map((p) => ({ position: p })), ...nats.map((n) => ({ nationality: n }))]
   for (const filters of filterSets) for (const statKey of statsFor(filters)) {
     const c = makeCandidate({ competition: cid, statKey, filters, base })
@@ -58,7 +68,7 @@ function competitionCandidates(cid, out) {
 }
 
 // NEW · Era — competition scorers/appearance-makers of a decade (generational recall).
-const DECADES = [{ from: 1990, to: 1999 }, { from: 2000, to: 2009 }, { from: 2010, to: 2019 }]
+const DECADES = [{ from: 2000, to: 2009 }, { from: 2010, to: 2019 }] // 1990s scrapped (disliked)
 function eraCandidates(out) {
   for (const cid of COMP_IDS) for (const era of DECADES) {
     for (const filters of [{}, ...POS_KEYS.map((p) => ({ position: p }))]) {
