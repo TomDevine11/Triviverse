@@ -71,6 +71,8 @@ export function makeCandidate({ seed = 'attribute', club = null, clubId = null, 
   profile.statCharisma = CHARISMA[built.valueStat] ?? 0.5
   profile.isGoalkeeper = filters.position === 'GK' ? 1 : 0
   profile.nationalityFilter = filters.nationality ? 1 : 0 // nationality filters hurt (position filters don't)
+  // clauseCount — how many "parts" the question has (your "past 3–4 I reject" hypothesis).
+  profile.clauseCount = (competition ? 1 : 0) + (club ? 1 : 0) + (filters.position ? 1 : 0) + (filters.nationality ? 1 : 0) + (era ? 1 : 0) + (anchor ? 1 : 0)
   const gatesFailed = gateCheck(profile)
   const { score, breakdown } = scoreProfile(profile)
 
