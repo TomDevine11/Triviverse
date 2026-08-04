@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useMemo } from 'react'
 import { getDailyTenableQuestion, getRandomTenableQuestion } from '../../data/tenable'
+import QuestionBuilder from '../football501/QuestionBuilder'
 import { players as localPlayers } from '../../data/players'
 import { clubs } from '../../data/clubs'
 import { refineSuggestions, searchRegistry, resolveNameToId } from '../../data/canonical/resolve.js'
@@ -66,6 +67,7 @@ export default function FootballTenable() {
   const restoredDone = !!saved?.done
 
   const [mode, setMode] = useState('daily') // 'daily' | 'unlimited'
+  const [building, setBuilding] = useState(false)
   const [question, setQuestion] = useState(() => getDailyTenableQuestion())
   const [revealed, setRevealed] = useState(() => saved?.revealed ?? {}) // rank -> answer
   const [lives, setLives] = useState(() => saved?.lives ?? MAX_LIVES)
@@ -88,6 +90,14 @@ export default function FootballTenable() {
     setPhase('playing'); setDailyStats(null); setGaveUp(false); setShowGiveUpConfirm(false)
     setPendingRank(null); setPendingAnswer(null); setPulseRow(null); setShowResult(false); setResultTab('answers')
   }
+  // Build-your-own: play a custom top-10 built in the shared facet builder.
+  const startCustom = (p) => {
+    setBuilding(false); setMode('unlimited')
+    setQuestion({ id: `byo-${Date.now()}`, type: 'player', scope: 'custom', title: p.title, description: p.description, icon: null, answers: p.answers, tiePool: p.tiePool || [] })
+    setRevealed({}); setLives(MAX_LIVES); setInput(''); setHistory([])
+    setPhase('playing'); setDailyStats(null); setGaveUp(false); setShowGiveUpConfirm(false)
+    setPendingRank(null); setPendingAnswer(null); setPulseRow(null); setShowResult(false); setResultTab('answers')
+  }
   // Return to the daily: rehydrate today's saved state (locked, resumed, or fresh).
   const restoreDaily = () => {
     const s = loadDailyProgress('tenable', getDailyTenableQuestion().id)
@@ -96,7 +106,7 @@ export default function FootballTenable() {
     setPhase(s?.phase ?? 'playing'); setDailyStats(null); setGaveUp(s?.gaveUp ?? false); setShowGiveUpConfirm(false)
     setPendingRank(null); setPendingAnswer(null); setPulseRow(null); setShowResult(!!s?.done); setResultTab('answers')
   }
-  const onModeChange = (m) => (m === 'daily' ? restoreDaily() : startUnlimited())
+  const onModeChange = (m) => (m === 'daily' ? restoreDaily() : m === 'build' ? setBuilding(true) : startUnlimited())
   const [showResult, setShowResult] = useState(restoredDone)
   const [resultTab, setResultTab] = useState('answers')
   useEffect(() => {
@@ -337,6 +347,8 @@ export default function FootballTenable() {
 
   const correctCount = Object.keys(revealed).length
 
+  if (building) return <QuestionBuilder mode="tenable" onStart={startCustom} onBack={() => setBuilding(false)} />
+
   return (
     <div className="tv-scene min-h-dvh text-primary" style={accentVars('tenable')}>
     <div className="flex flex-col items-center px-4 pb-8 max-w-3xl mx-auto">
@@ -353,7 +365,8 @@ export default function FootballTenable() {
         }
       /></div>
 
-      <ModeToggle mode={mode} onChange={onModeChange} className="mt-1 mb-4" />
+      <ModeToggle mode={mode} onChange={onModeChange} className="mt-1 mb-4"
+        modes={[['daily', t('common.daily')], ['unlimited', 'Random'], ['build', 'Build your own']]} />
 
       {/* Question card */}
       <div className="w-full max-w-lg mb-4">

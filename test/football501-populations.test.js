@@ -1,125 +1,130 @@
-// Build-Your-Own population registry — functional QA / regression suite.
-// Drives the REAL providers through the generic registry API and asserts every
-// valid combination yields a playable challenge, and impossible ones are flagged.
+// Build-Your-Own facet composer — functional QA / regression suite.
+// Drives the REAL resolver: stats × freely-combining layers, contextual stats,
+// natural-language phrasing, and the cross-competition co-appearance fix.
 import { describe, it, expect } from 'vitest'
 import * as P from '../src/data/football501/populations.js'
 
-const sel = (o) => ({ params: {}, stat: 'goals', scope: { comp: 'GB1' }, refine: {}, ...o })
-const clubValue = async (rx = /Liverpool/) => {
-  const opts = await P.getPopulationOptions('club', 'club', sel({ kind: 'club' }))
-  return opts.find(o => rx.test(o.label))?.value
-}
-const assertPlayable = (r) => {
+const q = (stat, layers = {}) => P.resolveQuestion({ stat, layers })
+const clubId = async (name) => (await P.getLayerOptions('club', {})).find(o => o.label === name)?.value
+const playerId = async (name) => (await P.getLayerOptions('player', {})).find(o => o.label === name)?.value
+const trophyId = async (label) => (await P.getLayerOptions('trophy', {})).find(o => o.label === label)?.value
+const playable = (r) => {
   expect(r.empty).toBe(false)
   expect(r.solvable).toBe(true)
-  expect(r.board.length).toBeGreaterThan(0)
   expect(r.challenge.validate(r.board[0].name).status).toBe('valid')
-  expect(r.challenge.validate('Zzqx Not A Player').status).toBe('not-eligible')
-  expect(Array.isArray(r.narrative)).toBe(true)
-  for (const line of r.narrative) for (const tok of line) expect(tok).toHaveProperty('t')
+  expect(r.challenge.validate('Zzqx Nobody').status).toBe('not-eligible')
 }
 
-describe('registry surface', () => {
-  it('exposes the six Phase-1 kinds, popular→niche', () => {
-    const kinds = P.getPopulationKinds()
-    expect(kinds.map(k => k.id)).toEqual(['club', 'group', 'teammates', 'trophy', 'era', 'anyone'])
-    for (const k of kinds) { expect(k.label).toBeTruthy(); expect(k.example).toBeTruthy() }
+describe('stats & layers surface', () => {
+  it('six stats; fee needs a club, together needs a player', () => {
+    const s = P.getStats()
+    expect(s.map(x => x.id)).toEqual(['goals', 'apps', 'apps+goals', 'apps-goals', 'fee', 'together'])
+    expect(s.find(x => x.id === 'fee').needs).toBe('club')
+    expect(s.find(x => x.id === 'together').needs).toBe('player')
   })
-  it('rankings lead with Goals; scopes lead with the Premier League', () => {
-    expect(P.getRankingOptions('anyone', sel())[0].id).toBe('goals')
-    expect(P.getScopes('anyone', sel())[0].value).toBe('GB1')
-    expect(P.getRankingOptions('anyone', sel()).map(r => r.id)).toEqual(['goals', 'apps', 'apps+goals', 'apps-goals'])
-  })
-  it('refinements are position + origin, each with an "any" default first', () => {
-    const rf = P.getRefinements('anyone', sel())
-    expect(rf.map(r => r.id)).toEqual(['position', 'origin'])
-    for (const r of rf) expect(r.options[0].value).toBe('')
+  it('seven layers; competition leads with All competitions', async () => {
+    expect(P.getLayers().map(l => l.id)).toEqual(['competition', 'club', 'player', 'nationality', 'era', 'position', 'trophy'])
+    expect((await P.getLayerOptions('competition', {}))[0].value).toBe('ALL')
   })
 })
 
-describe('every population resolves playable (valid combos)', () => {
-  it('club', async () => assertPlayable(await P.resolveQuestion(sel({ kind: 'club', params: { club: await clubValue() } }))))
-  it('group', async () => {
-    const opts = P.getPopulationOptions('group', 'group', sel({ kind: 'group' }))
-    assertPlayable(await P.resolveQuestion(sel({ kind: 'group', stat: 'apps', params: { group: opts[0].value } })))
+describe('layers combine freely (the whole point)', () => {
+  it('club + era — the combination the old model could not express', async () => {
+    const r = await q('apps', { club: await clubId('Manchester City'), era: '2010s' })
+    playable(r)
+    expect(r.question).toBe('Appearances for Manchester City in the 2010s')
   })
-  it('teammates', async () => {
-    const opts = P.getPopulationOptions('teammates', 'anchor', sel({ kind: 'teammates' }))
-    assertPlayable(await P.resolveQuestion(sel({ kind: 'teammates', params: { anchor: opts[0].value } })))
+  it('scoped club goals', async () => {
+    const r = await q('goals', { competition: 'GB1', club: await clubId('Liverpool') })
+    playable(r)
+    expect(r.question).toBe('Premier League goals for Liverpool')
   })
-  it('trophy', async () => {
-    const opts = await P.getPopulationOptions('trophy', 'trophy', sel({ kind: 'trophy' }))
-    expect(opts[0].label).toBe('Champions League')
-    assertPlayable(await P.resolveQuestion(sel({ kind: 'trophy', params: { trophy: opts[0].value } })))
+  it('nationality on its own (operator stat)', async () => {
+    const r = await q('apps-goals', { competition: 'GB1', nationality: 'nat:spain' })
+    expect(r.question).toBe('Premier League appearances − goals for Spanish players')
   })
-  it('era', async () => {
-    const opts = P.getPopulationOptions('era', 'decade', sel({ kind: 'era' }))
-    assertPlayable(await P.resolveQuestion(sel({ kind: 'era', params: { decade: '2010s' } })))
-    expect(opts.map(o => o.value)).toEqual(['1990s', '2000s', '2010s', '2020s'])
+  it('continent + position + era all at once', async () => {
+    const r = await q('goals', { competition: 'GB1', nationality: 'cont:Africa', position: 'FWD', era: '2010s' })
+    expect(typeof r.question).toBe('string')
+    expect(r.question).toBe('Premier League goals for African forwards in the 2010s')
   })
-  it('anyone', async () => assertPlayable(await P.resolveQuestion(sel({ kind: 'anyone', stat: 'apps' }))))
-})
-
-describe('every ranking works on a big club', () => {
-  it('goals / apps / apps+goals / apps−goals', async () => {
-    const club = await clubValue()
-    for (const rk of P.getRankingOptions('club', sel({ kind: 'club' }))) {
-      const r = await P.resolveQuestion(sel({ kind: 'club', params: { club }, stat: rk.id }))
-      expect(r.empty).toBe(false)
-      expect(r.statLabel).toBe(rk.label)
-    }
+  it('trophy as a layer', async () => {
+    const r = await q('goals', { competition: 'GB1', trophy: await trophyId('Champions League') })
+    playable(r)
+    expect(r.question).toBe('Premier League goals for players who won the Champions League')
+  })
+  it('played-with as a plain filter (their own goals)', async () => {
+    const r = await q('goals', { competition: 'GB1', player: await playerId('Steven Gerrard') })
+    expect(r.question).toBe('Premier League goals for players who played with Steven Gerrard')
   })
 })
 
-describe('every competition scope resolves', () => {
-  it('anyone · appearances in each competition', async () => {
-    for (const s of P.getScopes('anyone', sel({ kind: 'anyone' }))) {
-      const r = await P.resolveQuestion(sel({ kind: 'anyone', stat: 'apps', scope: { comp: s.value } }))
-      expect(r.solvable).toBe(true)
-    }
+describe('contextual stats', () => {
+  it('transfer fee (needs a club)', async () => {
+    const r = await q('fee', { club: await clubId('Manchester City') })
+    playable(r)
+    expect(r.question.startsWith('Transfer fee for players signed by Manchester City')).toBe(true)
+    expect(r.statLabel).toBe('Transfer fee (€m)')
+  })
+  it('transfer fee works for a club group (union of the members)', async () => {
+    const bigSix = (await P.getLayerOptions('club', {})).find(o => o.label === 'the Big Six').value
+    const r = await q('fee', { club: bigSix })
+    expect(r.empty).toBe(false)
+    expect(r.solvable).toBe(true)
+    expect(r.question.startsWith('Transfer fee for players signed by the Big Six')).toBe(true)
+  })
+  it('games together = co-appearances, and cross-competition ids do not collide', async () => {
+    const r = await q('together', { player: await playerId('Lionel Messi') }) // all competitions
+    const busquets = r.board.find(b => b.name === 'Sergio Busquets')
+    expect(busquets.value).toBeGreaterThan(400) // ~523 (La Liga + CL), not the collided ~241
+    expect(r.question).toBe('Games alongside Lionel Messi')
+    expect(r.statLabel).toBe('Games together')
+  })
+  it('games together scoped to a competition', async () => {
+    const r = await q('together', { competition: 'GB1', player: await playerId('Steven Gerrard') })
+    expect(r.question).toBe('Premier League games alongside Steven Gerrard')
+    expect(r.empty).toBe(false)
   })
 })
 
-describe('every refinement resolves', () => {
-  it('each position', async () => {
-    for (const pos of ['GK', 'DEF', 'MID', 'FWD']) {
-      const r = await P.resolveQuestion(sel({ kind: 'anyone', stat: 'apps', refine: { position: pos } }))
-      expect(r.empty).toBe(false)
-    }
-  })
-  it('each continent (resolves without throwing)', async () => {
-    for (const c of P.CONTINENTS) {
-      const r = await P.resolveQuestion(sel({ kind: 'anyone', stat: 'apps', refine: { origin: `cont:${c}` } }))
-      expect(r).toBeTruthy()
-    }
+describe('difficulty score', () => {
+  it('a famous pool scores easier than an obscure cross-cut', async () => {
+    const liv = (await P.getLayerOptions('club', {})).find(o => o.label === 'Liverpool').value
+    const easy = await q('goals', { competition: 'GB1', club: liv })
+    const hard = await q('goals', { competition: 'GB1', nationality: 'cont:Africa', position: 'GK' })
+    expect(['Easy', 'Moderate', 'Tricky', 'Hard', 'Very hard']).toContain(easy.difficulty.label)
+    expect(easy.difficulty.level).toBeLessThanOrEqual(hard.difficulty.level)
   })
 })
 
-describe('invalid combinations give the right guidance', () => {
-  it('goalkeepers by goals cannot reach 501', async () => {
-    const r = await P.resolveQuestion(sel({ kind: 'anyone', stat: 'goals', refine: { position: 'GK' } }))
-    expect(r.solvable).toBe(false) // real "cannot be completed"
+describe('Tenable — same layers, top 10 instead of a checkout', () => {
+  it('produces a ranked top-10 with detail strings + title', async () => {
+    const liv = (await P.getLayerOptions('club', {})).find(o => o.label === 'Liverpool').value
+    const r = await P.resolveTenable({ stat: 'goals', layers: { competition: 'GB1', club: liv } })
+    expect(r.title).toBe('Premier League goals for Liverpool')
+    expect(r.answers).toHaveLength(10)
+    expect(r.answers[0].rank).toBe(1)
+    expect(r.answers[0].detail).toMatch(/^\d+ goals$/)
+    expect(r.answers[0].value ?? Infinity)
+    expect(r.valid).toBe(true) // > 10 answers → a real "make the cut"
+    expect(r.total).toBeGreaterThan(10)
+    expect(r.difficulty.level).toBeGreaterThanOrEqual(1)
   })
-  it('a vanishingly thin cross-cut is not solvable', async () => {
-    // South-American goalkeepers, by goals, in the Premier League → basically nobody
-    const r = await P.resolveQuestion(sel({ kind: 'anyone', stat: 'goals', refine: { position: 'GK', origin: 'cont:South America' } }))
-    expect(r.solvable).toBe(false)
+  it('carries across every stat (games together, transfer fee)', async () => {
+    const messi = (await P.getLayerOptions('player', {})).find(o => o.label === 'Lionel Messi').value
+    const t = await P.resolveTenable({ stat: 'together', layers: { player: messi } })
+    expect(t.title).toBe('Games alongside Lionel Messi')
+    expect(t.answers[0].detail).toMatch(/^\d+ games$/)
+    const city = (await P.getLayerOptions('club', {})).find(o => o.label === 'Manchester City').value
+    const f = await P.resolveTenable({ stat: 'fee', layers: { club: city } })
+    expect(f.answers[0].detail).toMatch(/^€\d+m$/)
   })
 })
 
-describe('edge cases / cannot break state', () => {
-  it('resolves with default (unset) params without throwing', async () => {
-    for (const kind of ['teammates', 'trophy', 'era', 'anyone']) {
-      const r = await P.resolveQuestion(sel({ kind }))
-      expect(r).toBeTruthy()
-    }
-  })
-  it('rapid ranking swaps are each independently valid', async () => {
-    const club = await clubValue()
-    const ids = ['goals', 'apps', 'apps-goals', 'goals', 'apps+goals']
-    for (const stat of ids) {
-      const r = await P.resolveQuestion(sel({ kind: 'club', params: { club }, stat }))
-      expect(r.empty).toBe(false)
-    }
+describe('player search is the whole database', () => {
+  it('every player selectable, incl. non-marquee accented names', async () => {
+    const opts = await P.getLayerOptions('player', {})
+    expect(opts.length).toBeGreaterThan(1000)
+    expect(opts.some(o => /Aubameyang/.test(o.label))).toBe(true)
   })
 })

@@ -1,21 +1,18 @@
 // ─────────────────────────────────────────────────────────────────────────
-// BUILD YOUR OWN — the generic question constructor.
+// BUILD YOUR OWN — the generic facet constructor.
 //
-// This component knows NO football. It talks only to the population registry:
-// it asks which population kinds exist, what to ask for each, how they can be
-// ranked, where they apply and what refinements exist — and renders whatever it
-// receives. Adding a new population (e.g. Record Signings) is a registry change;
-// this file does not move.
+// Knows NO football. It asks the registry which stats and layers exist, their
+// options, and calls resolveQuestion(sel). You pick a stat, then stack any layers
+// (competition, club, player, nationality, era, position, trophy). Adding a new
+// layer or stat is a registry change; this file does not move.
 // ─────────────────────────────────────────────────────────────────────────
 
 import { useState, useEffect, useMemo } from 'react'
 import GameChrome from '../../components/GameChrome'
 import { useI18n } from '../../i18n'
-import {
-  getPopulationKinds, getPopulationParams, getPopulationOptions,
-  getRankingOptions, getScopes, getRefinements, resolveQuestion, withScopeMeta,
-} from '../../data/football501/populations.js'
+import { getStats, getLayers, getLayerOptions, resolveQuestion, resolveTenable } from '../../data/football501/populations.js'
 
+const fold = (s) => (s || '').normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase()
 const Chip = ({ on, onClick, children, sub }) => (
   <button onClick={onClick}
     className={`text-left rounded-lg px-3 py-2 border text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-bright
@@ -24,187 +21,192 @@ const Chip = ({ on, onClick, children, sub }) => (
     {sub && <span className={`block text-[0.68rem] font-medium mt-0.5 ${on ? 'text-white/70' : 'text-faint'}`}>{sub}</span>}
   </button>
 )
-const StepCard = ({ n, title, sub, children }) => (
-  <div className="bg-card border border-border-strong rounded-xl p-4 mb-3">
-    <div className="flex items-baseline gap-2.5 mb-3">
-      <span className="grid place-items-center w-5 h-5 rounded-md bg-brand/15 text-brand-bright text-[0.7rem] font-black shrink-0">{n}</span>
-      <h3 className="text-primary font-bold text-[0.95rem]">{title}</h3>
-    </div>
-    {sub && <p className="text-faint text-xs -mt-2 mb-3">{sub}</p>}
-    {children}
+const Label = ({ children, onRemove }) => (
+  <div className="flex items-center gap-2 mb-2">
+    <span className="text-[0.6rem] font-black tracking-[0.12em] text-faint uppercase">{children}</span>
+    {onRemove && <button onClick={onRemove} className="text-faint hover:text-danger text-xs leading-none">✕</button>}
   </div>
 )
 
-export default function QuestionBuilder({ onStart, onBack }) {
+export default function QuestionBuilder({ onStart, onBack, mode = '501' }) {
+  const isTenable = mode === 'tenable'
   const { t } = useI18n()
-  const kinds = useMemo(() => getPopulationKinds(), [])
+  const stats = useMemo(() => getStats(), [])
+  const layersMeta = useMemo(() => getLayers(), [])
+  const layerMeta = (id) => layersMeta.find(l => l.id === id)
 
-  const [kind, setKind] = useState(null)
-  const [params, setParams] = useState({})       // { paramId: value }
-  const [stat, setStat] = useState(null)          // ranking id — seeded from the registry on kind pick
-  const [comp, setComp] = useState(null)          // competition id — seeded from the registry on kind pick
-  const [refine, setRefine] = useState({})        // { refinementId: value }
-  const [count, setCount] = useState(2)
-
-  const [paramOpts, setParamOpts] = useState({})  // { paramId: [options] }
-  const [nations, setNations] = useState([])
+  const [stat, setStat] = useState(null)
+  const [layers, setLayers] = useState({ competition: 'ALL' })
+  const [active, setActive] = useState(['competition'])
+  const [opts, setOpts] = useState({})
+  const [query, setQuery] = useState({})
+  const [count, setCount] = useState(1) // 1 = solo; 2–5 = local multiplayer (501 only)
   const [preview, setPreview] = useState(null)
   const [busy, setBusy] = useState(false)
 
-  const sel = useMemo(() => ({ kind, params, stat, scope: { comp }, refine, _nations: nations }), [kind, params, stat, comp, refine, nations])
+  const statMeta = stats.find(s => s.id === stat)
+  const needs = statMeta?.needs
 
-  const paramDefs = kind ? getPopulationParams(kind) : []
-  const rankings = kind ? getRankingOptions(kind, sel) : []
-  const scopes = kind ? getScopes(kind, sel) : []
-  const refinements = kind ? getRefinements(kind, sel) : []
-  const populationReady = !!kind && paramDefs.every(p => params[p.id] != null)
-
-  // Pick a population kind → seed its default ranking + competition from the
-  // registry (the UI never names a stat or a league), clear prior params/refinements.
-  const chooseKind = (k) => {
-    setKind(k); setParams({}); setRefine({})
-    setStat(getRankingOptions(k, { kind: k })[0]?.id || null)
-    setComp(getScopes(k, { kind: k })[0]?.value || null)
+  const chooseStat = (id) => {
+    const sd = stats.find(s => s.id === id)
+    setStat(id)
+    if (sd.needs) setActive(a => a.includes(sd.needs) ? a : [...a, sd.needs])
   }
+  const addLayer = (id) => setActive(a => a.includes(id) ? a : [...a, id])
+  const removeLayer = (id) => { setActive(a => a.filter(x => x !== id)); setLayers(l => { const n = { ...l }; delete n[id]; return n }) }
+  const setLayer = (id, v) => setLayers(l => ({ ...l, [id]: v }))
 
-  // Load this kind+competition's option lists; keep still-valid param picks.
+  // Load option lists for the active layers (the club list depends on competition).
   useEffect(() => {
-    if (!kind || !comp) return
     let dead = false
     ;(async () => {
-      const defs = getPopulationParams(kind)
-      const entries = await Promise.all(defs.map(async d => [d.id, await getPopulationOptions(kind, d.id, { kind, params, scope: { comp } })]))
-      if (dead) return
-      const opts = Object.fromEntries(entries)
-      setParamOpts(opts)
-      setParams(prev => { // drop picks no longer offered (e.g. a club that isn't in the new competition)
-        const next = {}
-        for (const d of defs) if (prev[d.id] != null && opts[d.id]?.some(o => o.value === prev[d.id])) next[d.id] = prev[d.id]
-        return next
-      })
-      const meta = await withScopeMeta({ scope: { comp } })
-      if (!dead) setNations(meta._nations || [])
+      const entries = await Promise.all(active.map(async id => [id, await getLayerOptions(id, { layers })]))
+      if (!dead) setOpts(Object.fromEntries(entries))
     })()
     return () => { dead = true }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [kind, comp])
+  }, [active.join(','), layers.competition])
 
-  // Live resolve → preview (natural language, board, playability). When the
-  // population isn't complete the render shows the placeholder, so we simply skip.
+  // Live resolve → preview.
   useEffect(() => {
-    if (!populationReady || !comp || !stat) return
+    if (!stat) return
     let dead = false
     ;(async () => {
       setBusy(true)
-      try { const r = await resolveQuestion(sel); if (!dead) setPreview(r) }
+      try { const r = await (isTenable ? resolveTenable : resolveQuestion)({ stat, layers }); if (!dead) setPreview(r) }
       catch { if (!dead) setPreview({ error: true }) }
       finally { if (!dead) setBusy(false) }
     })()
     return () => { dead = true }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [kind, JSON.stringify(params), stat, comp, JSON.stringify(refine), populationReady])
+  }, [stat, JSON.stringify(layers)])
 
-  const ready = preview && !preview.error && !preview.empty && preview.solvable && preview.maxPlayers >= count
+  const needsUnmet = needs && !layers[needs]
+  const ready = preview && !preview.error && !preview.empty && !needsUnmet &&
+    (isTenable ? preview.valid : (preview.solvable && preview.maxPlayers >= count))
+  const addable = layersMeta.filter(l => !active.includes(l.id))
+
+  const renderLayer = (id) => {
+    const meta = layerMeta(id), list = opts[id] || []
+    const raw = (query[id] || '').trim(), fq = fold(raw)
+    const removable = id !== 'competition' && !(needs === id) // keep competition + a stat-required layer
+    return (
+      <div key={id} className="mb-3.5 last:mb-0">
+        <Label onRemove={removable ? () => removeLayer(id) : null}>{meta.label}{needs === id && <span className="text-brand-bright"> · required</span>}</Label>
+        {meta.type === 'search' ? (
+          layers[id] != null ? (
+            <Chip on onClick={() => setLayer(id, undefined)}>{list.find(o => o.value === layers[id])?.label || layers[id]}&nbsp;✕</Chip>
+          ) : (
+            <>
+              <input value={query[id] || ''} onChange={e => setQuery(v => ({ ...v, [id]: e.target.value }))}
+                placeholder={meta.searchPlaceholder || 'Search…'} autoComplete="off"
+                className="w-full bg-surface border border-border rounded-lg px-3 py-2 text-sm text-primary outline-none focus:border-brand mb-2" />
+              {!raw && <div className="text-[0.55rem] font-black tracking-[0.12em] text-faint uppercase mb-1.5">Popular picks</div>}
+              <div className="flex flex-wrap gap-2 max-h-44 overflow-y-auto">
+                {list.filter(o => fold(o.label).includes(fq)).slice(0, raw ? 40 : 12).map(o => (
+                  <Chip key={o.value} onClick={() => { setLayer(id, o.value); setQuery(v => ({ ...v, [id]: '' })) }}>{o.label}</Chip>
+                ))}
+                {raw && !list.some(o => fold(o.label).includes(fq)) && <span className="text-faint text-xs">No matches.</span>}
+              </div>
+            </>
+          )
+        ) : (
+          <div className="flex flex-wrap gap-2">
+            {list.map(o => <Chip key={o.value} on={layers[id] === o.value} onClick={() => setLayer(id, o.value)}>{o.label}</Chip>)}
+            {!list.length && <span className="text-faint text-xs">…</span>}
+          </div>
+        )}
+      </div>
+    )
+  }
 
   return (
     <div className="max-w-4xl mx-auto px-4 pb-12">
-      <GameChrome motifId="501" title={t('five01.wordmark')} />
+      <GameChrome motifId={isTenable ? 'tenable' : '501'} title={isTenable ? 'Tenable' : t('five01.wordmark')} />
       <button onClick={onBack} className="text-muted hover:text-secondary text-sm transition-colors mt-4">{t('common.back')}</button>
       <div className="mt-5 mb-5 text-center">
         <h2 className="score-number text-[clamp(2rem,5vw,2.6rem)] tv-wordmark leading-none">BUILD A QUESTION</h2>
       </div>
 
       <div className="grid md:grid-cols-[1fr_20rem] gap-4 items-start">
-        {/* ── the build ── */}
         <div>
-          <StepCard n={1} title="Who are we talking about?" sub="Everything else follows from this.">
-            <div className="grid sm:grid-cols-2 gap-2">
-              {kinds.map(k => <Chip key={k.id} on={kind === k.id} onClick={() => chooseKind(k.id)} sub={k.example}>{k.label}</Chip>)}
+          <div className="bg-card border border-border-strong rounded-xl p-4 mb-3">
+            <div className="flex items-baseline gap-2.5 mb-3">
+              <span className="grid place-items-center w-5 h-5 rounded-md bg-brand/15 text-brand-bright text-[0.7rem] font-black">1</span>
+              <h3 className="text-primary font-bold text-[0.95rem]">What are we measuring?</h3>
             </div>
-            {paramDefs.map(p => (
-              <div key={p.id} className="mt-4">
-                <div className="text-[0.6rem] font-black tracking-[0.12em] text-faint uppercase mb-2">{p.label}</div>
-                <div className="flex flex-wrap gap-2">
-                  {(paramOpts[p.id] || []).map(o => <Chip key={o.value} on={params[p.id] === o.value} onClick={() => setParams(s => ({ ...s, [p.id]: o.value }))}>{o.label}</Chip>)}
-                  {!paramOpts[p.id]?.length && <span className="text-faint text-xs">…</span>}
-                </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              {stats.map(s => <Chip key={s.id} on={stat === s.id} onClick={() => chooseStat(s.id)} sub={s.needs ? `needs a ${s.needs}` : null}>{s.label}</Chip>)}
+            </div>
+          </div>
+
+          {stat && (
+            <div className="bg-card border border-border-strong rounded-xl p-4">
+              <div className="flex items-baseline gap-2.5 mb-1">
+                <span className="grid place-items-center w-5 h-5 rounded-md bg-brand/15 text-brand-bright text-[0.7rem] font-black">2</span>
+                <h3 className="text-primary font-bold text-[0.95rem]">Narrow it down</h3>
               </div>
-            ))}
-          </StepCard>
-
-          {populationReady && (
-            <>
-              <StepCard n={2} title="How should we rank them?">
-                <div className="flex flex-wrap gap-2">
-                  {rankings.map(r => <Chip key={r.id} on={stat === r.id} onClick={() => setStat(r.id)}>{r.label}</Chip>)}
+              <p className="text-faint text-xs mb-3 ml-[1.9rem]">Stack any filters — or leave it wide open.</p>
+              {active.map(renderLayer)}
+              {addable.length > 0 && (
+                <div className="flex flex-wrap gap-2 mt-3 pt-3 border-t border-border">
+                  {addable.map(l => <button key={l.id} onClick={() => addLayer(l.id)}
+                    className="text-xs font-semibold rounded-lg px-3 py-1.5 border border-dashed border-border-strong text-muted hover:text-primary hover:border-brand transition-colors">+ {l.label}</button>)}
                 </div>
-              </StepCard>
-
-              <StepCard n={3} title="Where does this apply?">
-                <div className="flex flex-wrap gap-2">
-                  {scopes.map(s => <Chip key={s.value} on={comp === s.value} onClick={() => setComp(s.value)}>{s.label}</Chip>)}
-                </div>
-              </StepCard>
-
-              <StepCard n={4} title="Anything else?" sub="Optional — leave it wide open, or narrow it down.">
-                {refinements.map(rf => (
-                  <div key={rf.id} className="mb-3 last:mb-0">
-                    <div className="text-[0.6rem] font-black tracking-[0.12em] text-faint uppercase mb-2">{rf.label}</div>
-                    <div className="flex flex-wrap gap-2">
-                      {rf.options.map(o => <Chip key={o.value || 'any'} on={(refine[rf.id] || '') === o.value} onClick={() => setRefine(s => ({ ...s, [rf.id]: o.value }))}>{o.label}</Chip>)}
-                    </div>
-                  </div>
-                ))}
-              </StepCard>
-            </>
+              )}
+            </div>
           )}
         </div>
 
-        {/* ── live preview ── */}
+        {/* live preview */}
         <aside className="md:sticky md:top-4">
           <div className="bg-card border border-border-strong rounded-xl p-4">
-            {!populationReady ? (
-              <p className="text-faint text-sm italic text-center py-6">Choose who you’re talking about, and your question takes shape here.</p>
+            {!stat ? (
+              <p className="text-faint text-sm italic text-center py-6">Choose what to measure, and your question appears here.</p>
             ) : preview?.error ? (
               <p className="text-warn text-sm py-4">Couldn’t build that one — try another choice.</p>
             ) : (
               <>
-                <div className="text-[0.55rem] font-black tracking-[0.18em] text-accent-bright uppercase mb-2">Your question</div>
-                <div className="space-y-1.5">
-                  {(preview?.narrative || []).map((line, i) => (
-                    <p key={i} className="text-secondary text-[0.95rem] leading-snug">
-                      {line.map((tok, j) => tok.em ? <b key={j} className="text-primary font-semibold">{tok.t}</b> : <span key={j}>{tok.t}</span>)}
-                    </p>
-                  ))}
-                </div>
+                <div className="text-[0.55rem] font-black tracking-[0.18em] text-accent-bright uppercase mb-1.5">Your question</div>
+                <p className="text-primary font-bold text-[1.05rem] leading-snug first-letter:uppercase">{preview?.question}</p>
 
-                <div className={`mt-4 rounded-lg px-3 py-2.5 text-sm font-bold flex items-center gap-2
-                  ${ready ? 'bg-success/12 text-success-bright' : 'bg-warn/12 text-warn'}`}>
-                  {busy ? '…' : ready ? '✓ Ready to play' : preview?.empty ? 'Nobody fits — widen a choice' : !preview?.solvable ? 'Can’t reach 501 — try a wider set' : `Needs ${count} finishers; only ${preview?.maxPlayers} available`}
+                <div className={`mt-3.5 rounded-lg px-3 py-2.5 text-sm font-bold flex items-center gap-2 ${ready ? 'bg-success/12 text-success-bright' : 'bg-warn/12 text-warn'}`}>
+                  {busy ? '…' : needsUnmet ? `Add a ${needs} to rank by ${statMeta.label.toLowerCase()}`
+                    : ready ? '✓ Ready to play' : preview?.empty ? 'Nobody fits — widen a filter'
+                      : isTenable ? 'Not enough answers for a top 10 — widen it'
+                        : !preview?.solvable ? 'Can’t reach 501 — try a wider set' : `Needs ${count} finishers; only ${preview?.maxPlayers} available`}
                 </div>
 
                 {preview && !preview.empty && (
-                  <div className="mt-3">
-                    <div className="text-[0.55rem] font-black tracking-[0.16em] text-faint uppercase mb-1.5">Leaderboard · {preview.statLabel} · {preview.answers} answers</div>
-                    <ol className="space-y-0.5">
-                      {preview.board.slice(0, 6).map((b, i) => (
-                        <li key={i} className="flex justify-between text-xs">
-                          <span className="text-secondary truncate">{i + 1}. {b.name}</span>
-                          <span className={`font-bold tabular-nums ${b.value > 180 ? 'text-warn' : 'text-primary'}`}>{b.value}</span>
-                        </li>
-                      ))}
-                    </ol>
+                  <div className="mt-3 grid grid-cols-2 gap-2">
+                    <div className="bg-surface border border-border rounded-lg px-3 py-2.5">
+                      <div className="text-[0.55rem] font-black tracking-[0.12em] text-faint uppercase">{isTenable ? 'In the pool' : 'Answers'}</div>
+                      <div className="text-primary text-2xl font-black tabular-nums leading-tight mt-0.5">{isTenable ? preview.total : preview.answers}</div>
+                    </div>
+                    <div className="bg-surface border border-border rounded-lg px-3 py-2.5">
+                      <div className="text-[0.55rem] font-black tracking-[0.12em] text-faint uppercase">Difficulty</div>
+                      <div className="flex gap-1 mt-2">
+                        {[1, 2, 3, 4, 5].map(i => <span key={i} className={`w-2.5 h-2.5 rounded-full ${i <= (preview.difficulty?.level || 0) ? 'bg-brand-bright' : 'bg-border-strong'}`} />)}
+                      </div>
+                      <div className="text-secondary text-xs font-bold mt-1.5">{preview.difficulty?.label}</div>
+                    </div>
                   </div>
                 )}
 
-                <div className="mt-4 flex items-center gap-2">
-                  <label className="text-[0.6rem] font-black tracking-[0.12em] text-faint uppercase">Players</label>
-                  <select value={count} onChange={e => setCount(Number(e.target.value))}
-                    className="bg-surface border border-border rounded-lg px-2 py-1.5 text-sm font-bold text-primary outline-none cursor-pointer">
-                    {[2, 3, 4, 5].map(n => <option key={n} value={n} disabled={preview && preview.maxPlayers < n}>{n}</option>)}
-                  </select>
-                </div>
-                <button disabled={!ready} onClick={() => onStart(preview.challenge, count)}
+                {!isTenable && (
+                  <div className="mt-4">
+                    <div className="text-[0.6rem] font-black tracking-[0.12em] text-faint uppercase mb-0.5">How many players?</div>
+                    <div className="text-faint text-[0.68rem] mb-2">1 = solo · 2+ = local multiplayer</div>
+                    <div className="grid grid-cols-5 gap-2">
+                      {[1, 2, 3, 4, 5].map(n => (
+                        <button key={n} disabled={preview && preview.maxPlayers < n} onClick={() => setCount(n)}
+                          className={`py-3 rounded-lg border font-black text-lg tabular-nums transition-colors disabled:opacity-30 disabled:cursor-not-allowed
+                            ${count === n ? 'bg-brand border-brand text-white' : 'bg-surface border-border text-secondary hover:border-border-strong'}`}>{n}</button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                <button disabled={!ready} onClick={() => isTenable ? onStart(preview) : onStart(preview.challenge, count)}
                   className="mt-3 w-full bg-brand hover:bg-brand-hover disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold rounded-xl py-3 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-bright">
                   {t('five01.startGame')}
                 </button>

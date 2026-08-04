@@ -3,9 +3,12 @@
 //   • Unlimited — random, replayable practice; never touches stats.
 import { useI18n } from '../i18n'
 
-export default function ModeToggle({ mode, onChange, className = '' }) {
+export default function ModeToggle({ mode, onChange, className = '', modes }) {
   const { t } = useI18n()
-  const MODES = [['daily', t('common.daily')], ['unlimited', t('common.unlimited')]]
+  // Default: the Daily ⇄ Unlimited pair. Callers can pass a custom `modes` list
+  // (e.g. Daily · Random · Build your own) — one of them may be an action, not a
+  // persistent mode, in which case it simply never shows as active.
+  const MODES = modes || [['daily', t('common.daily')], ['unlimited', t('common.unlimited')]]
   return (
     <div className={`inline-flex rounded-lg border border-border bg-surface p-0.5 ${className}`}>
       {MODES.map(([id, label]) => (

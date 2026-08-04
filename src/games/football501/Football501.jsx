@@ -3,13 +3,14 @@ import { players as localPlayers } from '../../data/players'
 import { getFlagFromNationality, formatDOB } from '../../utils/flags'
 import { ShareCard } from '../../components/ShareCard'
 import GameChrome from '../../components/GameChrome'
+import ModeToggle from '../../components/ModeToggle'
 import UpNext from '../../components/UpNext'
 import GameMotif from '../../components/GameMotif'
 import { useI18n } from '../../i18n'
 import { getDailyChallenge, getDailyEntry, getRandomChallenge } from '../../data/football501/game'
 import QuestionBuilder from './QuestionBuilder'
-import { recordResult, getStats, formGuide, matchdayNumber } from '../../data/dailyStats'
-import { loadDailyProgress, saveDailyProgress, inProgressToday, finishedToday } from '../../data/dailyProgress'
+import { recordResult, matchdayNumber } from '../../data/dailyStats'
+import { loadDailyProgress, saveDailyProgress } from '../../data/dailyProgress'
 import { TILE } from '../../utils/shareImage'
 import { refineSuggestions, searchRegistry, positionBadge } from '../../data/canonical/resolve.js'
 import { accentVars } from '../../design/accents'
@@ -325,50 +326,6 @@ function GuessHistory({ history, showPlayer, className = '' }) {
 }
 
 // ── Entry: the mode select ─────────────────────────────────────────
-function EntryScreen({ onDaily, onUnlimited, dailyStatus = 'kickoff' }) {
-  const { t } = useI18n()
-  const daily = getDailyEntry()
-  const streak = getStats('501').currentStreak
-  const form = formGuide('501')
-  const formDot = { W: 'bg-success', L: 'bg-danger/75', '-': 'bg-inert' }
-  // KICK OFF (fresh) · IN PLAY (started, resumable) · FT (finished, locked to result)
-  const tag = dailyStatus === 'ft'
-    ? { label: 'FT', cls: 'text-success border-success/40' }
-    : dailyStatus === 'inplay'
-      ? { label: t('common.inPlay').toUpperCase(), cls: 'text-warn border-warn/40' }
-      : { label: t('hub.kickOff'), cls: 'text-brand-bright border-brand/55' }
-  return (
-    <div className="max-w-3xl mx-auto px-4 pb-12">
-      <GameChrome motifId="501" title={t('five01.wordmark')} />
-      <div className="mt-8 mb-8 text-center">
-        <h1 className="score-number text-[clamp(3rem,9vw,4.5rem)] tv-wordmark leading-none mb-3">{t('five01.wordmark')}</h1>
-        <p className="text-secondary text-base max-w-md mx-auto leading-relaxed">{t('five01.entryBlurb')}</p>
-      </div>
-      <div className="grid grid-cols-1 gap-3">
-        <button onClick={onDaily} className="group relative text-left bg-[linear-gradient(120deg,var(--accent-tint),transparent_45%)] bg-card border border-border-strong hover:border-[color-mix(in_srgb,var(--accent)_55%,transparent)] rounded-xl p-5 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-bright">
-          <span className={`absolute top-4 right-4 text-[0.58rem] font-black tracking-[0.1em] rounded px-1.5 py-0.5 border ${tag.cls}`}>
-            {tag.label}
-          </span>
-          <GameMotif id="501" className="w-9 h-9 text-accent-bright mb-2" />
-          <div className="text-primary font-bold text-xl">{t('five01.dailyChallenge')}</div>
-          <div className="text-muted text-xs mt-1 leading-relaxed">{t('five01.today', { title: daily.title })}</div>
-          <div className="flex items-center gap-2 mt-3">
-            {streak > 0 ? <b className="text-[0.72rem] font-black text-warn">🔥 {streak} <em className="not-italic text-[0.55rem] tracking-[0.12em] text-muted">{t('hub.streak')}</em></b> : <b className="text-[0.6rem] font-black text-dim">—</b>}
-            <span className="inline-flex gap-[3px]" aria-hidden="true">{form.split('').map((ch, i) => <i key={i} className={`w-2 h-2 rounded-[2px] ${formDot[ch]}`} />)}</span>
-          </div>
-        </button>
-        <button onClick={onUnlimited} className="group text-left bg-card border border-border-strong hover:border-[color-mix(in_srgb,var(--accent)_55%,transparent)] rounded-xl p-5 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-bright">
-          <GameMotif id="501" className="w-7 h-7 text-muted mb-2" />
-          <div className="text-primary font-bold text-lg">{t('five01.unlimited')}</div>
-          <div className="text-brand-bright text-xs mt-0.5 font-bold uppercase tracking-[0.08em]">{t('five01.localMultiplayer')}</div>
-          <div className="text-muted text-xs mt-2 leading-relaxed">{t('five01.unlimitedBlurb')}</div>
-        </button>
-      </div>
-      <div className="mt-6 text-muted text-xs text-center max-w-sm mx-auto leading-relaxed">{t('five01.rulesFooter')}</div>
-    </div>
-  )
-}
-
 // ── Unlimited setup: pick a challenge, then player count ───────────
 const InfoBox = ({ label, value, tone }) => (
   <div className="bg-surface border border-border rounded-lg px-2 py-2 text-center">
@@ -387,13 +344,14 @@ function CountPicker({ title, sub, onPick, onBack }) {
         <h2 className="score-number text-[clamp(2rem,5vw,2.6rem)] tv-wordmark leading-none mb-2">{title.toUpperCase()}</h2>
         {sub && <div className="text-secondary text-sm">{sub}</div>}
         <div className="text-muted text-xs mt-1 font-bold tracking-[0.12em] uppercase">{t('five01.howManyPlayers')}</div>
+        <div className="text-faint text-[0.7rem] mt-1">1 = solo · 2+ = pass-and-play local multiplayer</div>
       </div>
-      <div className="grid grid-cols-4 gap-3">
-        {[2, 3, 4, 5].map(n => (
+      <div className="grid grid-cols-5 gap-2">
+        {[1, 2, 3, 4, 5].map(n => (
           <button key={n} onClick={() => onPick(n)}
-            className="group bg-card border border-border-strong hover:border-[color-mix(in_srgb,var(--accent)_55%,transparent)] rounded-xl py-7 text-center transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-bright">
+            className="group bg-card border border-border-strong hover:border-[color-mix(in_srgb,var(--accent)_55%,transparent)] rounded-xl py-6 text-center transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-bright">
             <span className="score-number text-4xl text-primary group-hover:text-accent-bright transition-colors">{n}</span>
-            <span className="block mt-1 text-[0.55rem] font-black tracking-[0.14em] text-faint">{t('five01.players').toUpperCase()}</span>
+            <span className="block mt-1 text-[0.5rem] font-black tracking-[0.12em] text-faint">{n === 1 ? 'SOLO' : t('five01.players').toUpperCase()}</span>
           </button>
         ))}
       </div>
@@ -401,55 +359,15 @@ function CountPicker({ title, sub, onPick, onBack }) {
   )
 }
 
-function UnlimitedSetup({ onStart, onBack }) {
-  const { t } = useI18n()
-  const [step, setStep] = useState('mode')
-  if (step === 'random') return <CountPicker title={t('five01.randomTitle')} sub={t('five01.randomSub')} onBack={() => setStep('mode')} onPick={(n) => onStart(getRandomChallenge(n), n)} />
-  if (step === 'custom') return <QuestionBuilder onBack={() => setStep('mode')} onStart={(challenge, count) => onStart(challenge, count)} />
-  return (
-    <div className="max-w-2xl mx-auto px-4 pb-12">
-      <GameChrome motifId="501" title={t('five01.wordmark')} />
-      <button onClick={onBack} className="text-muted hover:text-secondary text-sm transition-colors mt-4">{t('common.back')}</button>
-      <div className="mt-6 mb-8 text-center">
-        <h2 className="score-number text-[clamp(2.2rem,6vw,3rem)] tv-wordmark leading-none mb-2">{t('five01.localMultiplayerTitle').toUpperCase()}</h2>
-        <div className="text-secondary text-sm">{t('five01.everyoneSame')}</div>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <button onClick={() => setStep('random')}
-          className="group relative text-left bg-[linear-gradient(120deg,var(--accent-tint),transparent_50%)] bg-card border border-border-strong hover:border-[color-mix(in_srgb,var(--accent)_55%,transparent)] rounded-xl p-6 transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-bright">
-          <svg viewBox="0 0 24 24" className="w-9 h-9 text-accent-bright mb-3" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M3 7h3.5c1.8 0 3.2.8 4.2 2.3l2.6 5.4c1 1.5 2.4 2.3 4.2 2.3H21" />
-            <path d="M18.5 14.5 21 17l-2.5 2.5M18.5 4.5 21 7l-2.5 2.5" />
-            <path d="M3 17h3.5c1 0 1.9-.25 2.6-.75" />
-          </svg>
-          <div className="text-primary font-bold text-lg">{t('five01.randomQuestion')}</div>
-          <div className="text-muted text-xs mt-2 leading-relaxed">{t('five01.randomQuestionBlurb')}</div>
-          <div className="mt-4 text-[0.58rem] font-black tracking-[0.12em] text-brand-bright opacity-0 group-hover:opacity-100 transition-opacity">{t('hub.kickOff')} →</div>
-        </button>
-        <button onClick={() => setStep('custom')}
-          className="group relative text-left bg-[linear-gradient(120deg,rgb(124_58_237/.14),transparent_50%)] bg-card border border-border-strong hover:border-brand rounded-xl p-6 transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-bright">
-          <svg viewBox="0 0 24 24" className="w-9 h-9 text-brand-bright mb-3" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-            <path d="M4 7h16M4 12h16M4 17h16" />
-            <circle cx="9" cy="7" r="2.2" fill="currentColor" stroke="none" /><circle cx="15.5" cy="12" r="2.2" fill="currentColor" stroke="none" /><circle cx="7" cy="17" r="2.2" fill="currentColor" stroke="none" />
-          </svg>
-          <div className="text-primary font-bold text-lg">{t('five01.buildYourOwn')}</div>
-          <div className="text-muted text-xs mt-2 leading-relaxed">{t('five01.buildYourOwnBlurb')}</div>
-          <div className="mt-4 text-[0.58rem] font-black tracking-[0.12em] text-brand-bright opacity-0 group-hover:opacity-100 transition-opacity">{t('five01.buildQuestion').toUpperCase()} →</div>
-        </button>
-      </div>
-      <div className="mt-6 text-muted text-xs text-center leading-relaxed">{t('five01.rulesFooter')}</div>
-    </div>
-  )
-}
-
 // ── Main ──────────────────────────────────────────────────────────
 export default function Football501() {
   const { t } = useI18n()
-  const [phase, setPhase] = useState('entry')   // entry | unlimited | playing | won
+  const [phase, setPhase] = useState('entry')   // entry | random | build | playing | won
+  const [mode, setMode] = useState('daily')     // which pill segment is live: daily | unlimited | build
   const [challenge, setChallenge] = useState(null)
   const [isDaily, setIsDaily] = useState(false)
   const [gaveUp, setGaveUp] = useState(false)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true) // boots straight into the daily
   const [knownNames, setKnownNames] = useState(new Set())
   const [players, setPlayers] = useState([])
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0)
@@ -553,11 +471,12 @@ export default function Football501() {
     try { startGame(await challengePromise, count, daily) }
     finally { setLoading(false) }
   }
-  const playDaily = () => startFrom(getDailyChallenge(), 1, true)
+  const playDaily = () => { setMode('daily'); return startFrom(getDailyChallenge(), 1, true) }
   // Return to today's daily: a finished one opens locked to its result (phase
   // 'won'), an in-progress one resumes mid-checkout. The board is restored from
   // the snapshot; the challenge is re-derived deterministically.
   const resumeDaily = async () => {
+    setMode('daily')
     const snap = loadDailyProgress('501', getDailyEntry().id)
     if (!snap) { playDaily(); return }
     setLoading(true)
@@ -574,6 +493,10 @@ export default function Football501() {
   }
   // Route the entry Daily card: fresh, resume, or locked result.
   const onDailyCard = () => (loadDailyProgress('501', getDailyEntry().id) ? resumeDaily() : playDaily())
+  // Open straight on the daily (like Tenable) — the menu is a step back, not a step in.
+  useEffect(() => { onDailyCard() }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  // The top-of-game pill: switch between today's daily, an unlimited random, and the builder.
+  const onPill = (m) => { if (m === mode) return; if (m === 'daily') onDailyCard(); else if (m === 'unlimited') setPhase('random'); else setPhase('build') }
   const playAgain = () => startFrom(isDaily ? getDailyChallenge() : getRandomChallenge(numPlayers), numPlayers, isDaily)
   const skipQuestion = () => startFrom(getRandomChallenge(numPlayers), numPlayers, false) // endless: new question
   const giveUp = () => {
@@ -670,11 +593,9 @@ export default function Football501() {
       <div className="text-muted text-sm">{t('five01.loading')}</div>
     </div>
   )
-  if (phase === 'entry') {
-    const dailyStatus = finishedToday('501') ? 'ft' : inProgressToday('501') ? 'inplay' : 'kickoff'
-    return shell(<EntryScreen onDaily={onDailyCard} onUnlimited={() => setPhase('unlimited')} dailyStatus={dailyStatus} />)
-  }
-  if (phase === 'unlimited') return shell(<UnlimitedSetup onStart={(challengePromise, n) => startFrom(challengePromise, n, false)} onBack={() => setPhase('entry')} />)
+  if (phase === 'entry') return shell(<div className="min-h-dvh flex items-center justify-center"><div className="w-8 h-8 border-2 border-border-strong border-t-brand rounded-full animate-spin" /></div>)
+  if (phase === 'random') return shell(<CountPicker title={t('five01.randomTitle')} sub={t('five01.randomSub')} onBack={onDailyCard} onPick={(n) => { setMode('unlimited'); startFrom(getRandomChallenge(n), n, false) }} />)
+  if (phase === 'build') return shell(<QuestionBuilder onBack={onDailyCard} onStart={(challenge, count) => { setMode('build'); startFrom(challenge, count, false) }} />)
 
   const validCount = history.filter(g => g.valid).length
   const currentPlayer = players[currentPlayerIndex]
@@ -686,9 +607,9 @@ export default function Football501() {
       <div className="result-card w-full max-w-2xl max-h-[88dvh] flex">
         <WinScreen
           history={history} players={players} challenge={challenge} gaveUp={gaveUp}
-          onPlayAgain={soloDaily ? () => setPhase('unlimited') : playAgain}
+          onPlayAgain={soloDaily ? () => setPhase('random') : playAgain}
           playAgainLabel={soloDaily ? t('common.playUnlimited') : t('five01.playAgain')}
-          onExit={() => setPhase('entry')}
+          onExit={onDailyCard}
         />
       </div>
     </div>
@@ -699,8 +620,12 @@ export default function Football501() {
       <GameChrome
         motifId="501"
         title={t('five01.wordmark')}
-        right={<button onClick={() => setPhase('entry')} className="text-muted hover:text-secondary transition-colors">{t('five01.menu')} · <b className="text-secondary tabular-nums">{t('five01.dartsCount', { n: validCount })}</b></button>}
+        right={<span className="text-muted text-xs tabular-nums">{t('five01.dartsCount', { n: validCount })}</span>}
       />
+      <div className="flex flex-col items-center gap-1 mb-1 shrink-0">
+        <ModeToggle mode={mode} onChange={onPill} modes={[['daily', t('common.daily')], ['unlimited', 'Unlimited'], ['build', 'Build your own']]} />
+        <div className="text-faint text-[0.62rem] text-center leading-tight">Unlimited = random questions · Build your own = custom · solo or up to 5 players</div>
+      </div>
 
       {/* One page: stage centre-top (rail on its left shoulder, absolutely
           positioned so it never shifts the centreline), history filling the
