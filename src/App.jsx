@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 import Hub from './pages/Hub'
 import GamePage from './seo/GamePage'
+import AnswersPage from './seo/AnswersPage'
 import ScrollToTop from './components/ScrollToTop'
 import Analytics from './components/Analytics'
 
@@ -36,6 +37,19 @@ const GAME_ROUTES = [
   { path: '/higher-or-lower', el: <GamePage path="/higher-or-lower"><HigherLower /></GamePage> },
 ]
 
+// Crawlable "past answers" archives (link magnet + "answers/today" capture).
+// Each reconstructs its game's daily answers deterministically — see
+// seo/archiveData.js. Kept separate from GAME_ROUTES so they stay out of the
+// primary game nav (their SEO routes carry hideFromNav), but each game page
+// links to its own archive contextually (see SeoContent).
+const ANSWER_ROUTES = [
+  { path: '/wordle/answers', game: '/wordle' },
+  { path: '/teammates/answers', game: '/teammates' },
+  { path: '/career-path/answers', game: '/career-path' },
+  { path: '/tenable/answers', game: '/tenable' },
+  { path: '/connections/answers', game: '/connections' },
+]
+
 export default function App() {
   return (
     <>
@@ -49,6 +63,10 @@ export default function App() {
           {GAME_ROUTES.flatMap(({ path, el }) => [
             <Route key={path} path={path} element={el} />,
             <Route key={`es${path}`} path={`/es${path}`} element={el} />,
+          ])}
+          {ANSWER_ROUTES.flatMap(({ path, game }) => [
+            <Route key={path} path={path} element={<AnswersPage path={path} gamePath={game} />} />,
+            <Route key={`es${path}`} path={`/es${path}`} element={<AnswersPage path={path} gamePath={game} />} />,
           ])}
         </Routes>
       </Suspense>

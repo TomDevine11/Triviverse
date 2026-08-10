@@ -81,7 +81,8 @@ function crawlable(route, lang) {
     for (const f of route.faq) h += `<dt>${esc(f.q)}</dt><dd>${esc(f.a)}</dd>`
     h += `</dl>`
   }
-  const others = indexableRoutes().filter(o => o.path !== route.path)
+  if (route.answersPath) h += `<p>${link(route.answersPath, `Past ${route.name} answers & solutions`)}</p>`
+  const others = indexableRoutes().filter(o => o.path !== route.path && !o.hideFromNav)
   h += `<nav aria-label="${esc(t('common.moreGames', lang))}"><h2>${esc(t('common.moreGames', lang))}</h2><ul>`
   if (route.path !== '/') h += `<li>${link('/', BRAND)}</li>`
   for (const o of others.filter(o => o.path !== '/')) h += `<li>${link(o.path, o.name)}</li>`

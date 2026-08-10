@@ -83,6 +83,7 @@ export const ROUTES = [
     h1: 'Football Wordle',
     tagline: "Guess the mystery footballer's surname in six tries.",
     ogImage: '/og/wordle.png',
+    answersPath: '/wordle/answers',
     about: "Football Wordle is a daily football word game in the style of Wordle. Each day a famous footballer is chosen and you have six guesses to work out their surname, using green and yellow letter clues to narrow it down. It is a quick, addictive test for any football fan — there is a fresh answer every day, and an Unlimited mode for endless guessing whenever you want more than today's player.",
     howTo: [
       'A new famous footballer is chosen every day.',
@@ -167,6 +168,7 @@ export const ROUTES = [
     h1: 'Guess the Footballer',
     tagline: "The daily 'Who Are Ya?' game — name the mystery footballer from his teammates.",
     ogImage: '/og/teammates.png',
+    answersPath: '/teammates/answers',
     about: 'Guess the Player is a football guessing game where you identify a mystery footballer from the real players they lined up alongside. A new teammate is revealed after every wrong guess, so the more football you know, the faster you will crack it.',
     howTo: [
       'A well-known footballer is chosen at random.',
@@ -208,6 +210,7 @@ export const ROUTES = [
     h1: 'Guess the Footballer by Career Path',
     tagline: 'Name the player from the clubs he played for.',
     ogImage: '/og/career-path.png',
+    answersPath: '/career-path/answers',
     about: 'Career Path is a football guessing game built around players’ club histories. You are shown one club from a mystery footballer’s career, and each wrong guess reveals the next club in their path. Work out who moved between all of them within five guesses.',
     howTo: [
       'A well-travelled footballer is chosen at random.',
@@ -248,6 +251,7 @@ export const ROUTES = [
     h1: 'Football Tenable',
     tagline: 'Name as many of the top 10 as you can before three wrong guesses end it.',
     ogImage: '/og/tenable.png',
+    answersPath: '/tenable/answers',
     about: 'Football Tenable is a daily list-based football quiz inspired by the TV format. Each question has ten correct answers — such as a competition’s all-time top scorers — and your job is to name as many as you can before three mistakes end the round.',
     howTo: [
       'Each day brings a new "name the top 10" football question.',
@@ -298,6 +302,7 @@ export const ROUTES = [
     h1: 'Football Connections',
     tagline: 'Sort 16 players into four hidden groups of four.',
     ogImage: '/og/connections.png',
+    answersPath: '/connections/answers',
     about: 'Football Connections is a daily football puzzle inspired by the grouping game. Sixteen footballers hide four secret groups of four — by club, nationality or trophy. Work out which players belong together and solve all four groups before you make four mistakes. A fresh puzzle lands every day, and an Unlimited mode serves extra rounds whenever you want more.',
     howTo: [
       'Sixteen players are shown — they form four hidden groups of four.',
@@ -413,6 +418,97 @@ export const ROUTES = [
     priority: '0.9',
     changefreq: 'daily',
   },
+
+  // ── "Past answers" archives ────────────────────────────────────────────────
+  // Crawlable link magnets that also capture "answer today" / "answers" intent.
+  // hideFromNav keeps them out of the primary game nav + ItemList, but they stay
+  // indexable (prerendered + in the sitemap) and each game page links to its own
+  // archive (answersPath). Content is rendered by AnswersPage / archiveData.js.
+  {
+    path: '/wordle/answers',
+    name: 'Football Wordle Answers',
+    hideFromNav: true,
+    title: 'Football Wordle Answers — Every Past Answer | Triviverse',
+    description: "Every past Football Wordle answer plus today's — the full archive of daily mystery footballers. Reveal today's answer or play the daily game free.",
+    keywords: ['football wordle answer', 'football wordle answer today', 'football wordle answers', 'football wordle today', 'footdle answer'],
+    h1: 'Football Wordle Answers',
+    tagline: 'Every past Football Wordle answer — and today’s, if you dare.',
+    about: 'The complete archive of Football Wordle answers: the mystery footballer for every past daily, newest first. Today’s answer is hidden behind a spoiler so you can still play first — or reveal it if you are stuck.',
+    faq: [
+      { q: "What is today's Football Wordle answer?", a: "Today's answer sits at the top of this page behind a spoiler tap — or play the daily game and it is revealed the moment you finish." },
+      { q: 'Where can I see past Football Wordle answers?', a: 'This page lists every previous daily answer, newest first, with its matchday number and date.' },
+    ],
+    priority: '0.6',
+    changefreq: 'daily',
+  },
+  {
+    path: '/teammates/answers',
+    name: 'Guess the Footballer Answers',
+    hideFromNav: true,
+    title: 'Guess the Footballer — Past Answers Archive | Triviverse',
+    description: "Every past Guess the Footballer (Who Are Ya?) answer plus today's mystery player. Browse the daily archive or play the free guessing game.",
+    keywords: ['guess the footballer answer', 'guess the footballer today', 'who are ya answer', 'guess the footballer answers'],
+    h1: 'Guess the Footballer: Past Answers',
+    tagline: 'Every past mystery footballer from the daily Who Are Ya? game.',
+    about: 'The full archive of daily Guess the Footballer answers — the mystery player revealed from his teammates each day, newest first. Today’s stays behind a spoiler so you can play it first.',
+    faq: [
+      { q: "Who is today's Guess the Footballer answer?", a: "Today's mystery player is at the top behind a spoiler tap, or is revealed when you finish the daily game." },
+      { q: 'Can I see previous answers?', a: 'Yes — every past daily answer is listed here, newest first, with its matchday and date.' },
+    ],
+    priority: '0.6',
+    changefreq: 'daily',
+  },
+  {
+    path: '/career-path/answers',
+    name: 'Career Path Answers',
+    hideFromNav: true,
+    title: 'Guess the Footballer by Career Path — Past Answers | Triviverse',
+    description: "Every past Career Path answer plus today's — the daily mystery footballer revealed from his clubs. Browse the archive or play the free game.",
+    keywords: ['career path football answer', 'guess the footballer by career path answer', 'career path answer today', 'football career path answers'],
+    h1: 'Career Path: Past Answers',
+    tagline: 'Every past player from the daily guess-by-clubs game.',
+    about: 'The full archive of daily Career Path answers — the footballer behind each day’s run of clubs, newest first. Today’s answer is hidden behind a spoiler so the daily stays playable.',
+    faq: [
+      { q: "What is today's Career Path answer?", a: "It is at the top of this page behind a spoiler tap, or is revealed when you finish today's daily game." },
+      { q: 'Where are the past answers?', a: 'Listed below, newest first, each with its matchday number and date.' },
+    ],
+    priority: '0.6',
+    changefreq: 'daily',
+  },
+  {
+    path: '/tenable/answers',
+    name: 'Football Tenable Answers',
+    hideFromNav: true,
+    title: 'Football Tenable Questions & Answers — Archive | Triviverse',
+    description: "Every past Football Tenable question with its full top-10 answers, plus today's. The complete questions-and-answers archive — browse free or play the daily.",
+    keywords: ['football tenable answers', 'football tenable questions and answers', 'football tenable answer today', 'football tenable questions', 'tenaball answers'],
+    h1: 'Football Tenable Questions & Answers',
+    tagline: 'Every past top-10 question with its full answer list.',
+    about: 'The complete Football Tenable archive: every past daily question and all ten correct answers, newest first. Today’s answers are hidden behind a spoiler so you can still play the daily first.',
+    faq: [
+      { q: "What are today's Football Tenable answers?", a: "Today's question and its top 10 are at the top behind a spoiler tap, or revealed when your daily round ends." },
+      { q: 'Can I see past Tenable questions and answers?', a: 'Yes — this page archives every previous daily question with its full top-10 answer list, newest first.' },
+    ],
+    priority: '0.7',
+    changefreq: 'daily',
+  },
+  {
+    path: '/connections/answers',
+    name: 'Football Connections Answers',
+    hideFromNav: true,
+    title: 'Football Connections Answers — Every Past Puzzle | Triviverse',
+    description: "Every past Football Connections answer plus today's four groups. The full solutions archive — see the groupings or play the free daily puzzle.",
+    keywords: ['football connections answers', 'football connections answers today', 'football connections answer', 'football connections solution', 'football connections today'],
+    h1: 'Football Connections Answers',
+    tagline: 'The four solved groups for every past daily puzzle.',
+    about: 'The complete archive of Football Connections solutions — all four groups for every past daily, newest first. Today’s solution is hidden behind a spoiler so the daily puzzle stays playable.',
+    faq: [
+      { q: "What are today's Football Connections answers?", a: "Today's four groups are at the top behind a spoiler tap, or are revealed when your daily puzzle ends." },
+      { q: 'Where can I see past solutions?', a: 'Every previous daily puzzle’s four groups are listed here, newest first, with its matchday and date.' },
+    ],
+    priority: '0.6',
+    changefreq: 'daily',
+  },
 ]
 
 export const routeByPath = (path, lang = 'en') => localize(ROUTES.find(r => r.path === path) || ROUTES[0], lang)
@@ -478,7 +574,7 @@ export function jsonLdFor(route, lang = 'en') {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
       name: 'Football trivia games',
-      itemListElement: indexableRoutes().filter(r => r.path !== '/').map((r, i) => ({
+      itemListElement: indexableRoutes().filter(r => r.path !== '/' && !r.hideFromNav).map((r, i) => ({
         '@type': 'ListItem', position: i + 1, name: r.name, url: absolute(r.path),
       })),
     })

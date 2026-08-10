@@ -13,7 +13,7 @@ import { useI18n } from '../i18n'
 export default function SeoContent({ path }) {
   const { locale, t, lp } = useI18n()
   const r = routeByPath(path, locale)
-  const others = indexableRoutes().filter(o => o.path !== path && o.path !== '/')
+  const others = indexableRoutes().filter(o => o.path !== path && o.path !== '/' && !o.hideFromNav)
 
   return (
     <section className="w-full max-w-lg mx-auto mt-12 mb-4 text-left border-t border-border pt-8">
@@ -51,6 +51,14 @@ export default function SeoContent({ path }) {
             ))}
           </dl>
         </>
+      )}
+
+      {r.answersPath && (
+        <p className="mb-6">
+          <Link to={lp(r.answersPath)} className="inline-block bg-surface border border-border rounded-lg px-3 py-2 text-sm font-bold text-brand-bright hover:border-brand transition-colors">
+            Past {r.name} answers &amp; solutions →
+          </Link>
+        </p>
       )}
 
       <nav aria-label={t('common.moreGames')}>
