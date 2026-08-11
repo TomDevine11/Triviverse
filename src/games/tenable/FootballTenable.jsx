@@ -92,7 +92,7 @@ export default function FootballTenable() {
   }
   // Build-your-own: play a custom top-10 built in the shared facet builder.
   const startCustom = (p) => {
-    setBuilding(false); setMode('unlimited')
+    setBuilding(false); setMode('build')
     setQuestion({ id: `byo-${Date.now()}`, type: 'player', scope: 'custom', title: p.title, description: p.description, icon: null, answers: p.answers, tiePool: p.tiePool || [] })
     setRevealed({}); setLives(MAX_LIVES); setInput(''); setHistory([])
     setPhase('playing'); setDailyStats(null); setGaveUp(false); setShowGiveUpConfirm(false)
@@ -388,7 +388,7 @@ export default function FootballTenable() {
               ? <CategoryIcon category={question.icon || QUESTION_ICON[question.id]} size={30} className="shrink-0 mt-0.5" />
               : <span className="text-2xl shrink-0">{question.emoji}</span>}
             <div className="min-w-0 flex-1">
-              <div className="text-[0.55rem] font-black tracking-[0.18em] text-accent-bright">{mode === 'daily' ? t('common.daily').toUpperCase() : t('common.unlimited').toUpperCase()} · TOP 10{dailyLocked ? ` · ${t('common.complete')}` : ''}</div>
+              <div className="text-[0.55rem] font-black tracking-[0.18em] text-accent-bright">{mode === 'daily' ? t('common.daily').toUpperCase() : mode === 'build' ? 'BUILD YOUR OWN' : t('common.unlimited').toUpperCase()} · TOP 10{dailyLocked ? ` · ${t('common.complete')}` : ''}</div>
               <div className="text-primary font-bold text-sm mt-0.5">{question.title}</div>
               <div className="text-muted text-xs mt-0.5">{dailyLocked ? t('common.comeBackTomorrow') : question.description}</div>
             </div>
