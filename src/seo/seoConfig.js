@@ -211,6 +211,7 @@ export const ROUTES = [
     tagline: 'Name the player from the clubs he played for.',
     ogImage: '/og/career-path.png',
     answersPath: '/career-path/answers',
+    themedQuizzes: [{ path: '/england-football-quiz', label: 'England Football Quiz' }],
     about: 'Career Path is a football guessing game built around players’ club histories. You are shown one club from a mystery footballer’s career, and each wrong guess reveals the next club in their path. Work out who moved between all of them within five guesses.',
     howTo: [
       'A well-travelled footballer is chosen at random.',
@@ -508,6 +509,31 @@ export const ROUTES = [
     ],
     priority: '0.6',
     changefreq: 'daily',
+  },
+
+  // ── Generated themed quiz (growth-engine PoC) ──────────────────────────────
+  // A data-derived landing page that IS a playable game: the growth brain found
+  // "england football quiz" as demand, and this page serves it by playing the
+  // England subset of the Career Path pool. themePool bakes the player list into
+  // the prerendered HTML (crawlable). Rendered by ThemedEnglandPage.
+  {
+    path: '/england-football-quiz',
+    name: 'England Football Quiz',
+    hideFromNav: true,
+    themePool: 'england',
+    title: 'England Football Quiz — Guess the Footballer by His Clubs | Triviverse',
+    description: 'Free England football quiz: name the England international from his career clubs, revealed one at a time — from Harry Kane to the deep cuts. Play free, no sign-up.',
+    keywords: ['england football quiz', 'england footballers quiz', 'guess the england player', 'england player quiz', 'england football trivia', 'name the england footballer'],
+    h1: 'England Football Quiz',
+    tagline: 'Name the England footballer from his career clubs — one club at a time.',
+    about: 'A free England football quiz that plays like a mini guessing game: you are shown an England international’s career clubs one at a time, and you name him before the clues run out. The pool spans household names to well-travelled squad players, so it rewards real depth of England knowledge — no sign-up, just play in your browser.',
+    faq: [
+      { q: 'How does the England football quiz work?', a: 'You are shown an England player’s clubs one at a time. Guess who it is; each wrong guess reveals another club. Name him before the clubs run out to score.' },
+      { q: 'Which players are included?', a: 'England internationals with a full club career on record — from stars like Harry Kane and Jamie Vardy down to well-travelled squad players and journeymen.' },
+      { q: 'Is the England football quiz free?', a: 'Yes — it plays free in your browser with no sign-up or download.' },
+    ],
+    priority: '0.6',
+    changefreq: 'weekly',
   },
 ]
 

@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react'
 import Hub from './pages/Hub'
 import GamePage from './seo/GamePage'
 import AnswersPage from './seo/AnswersPage'
+import ThemedEnglandPage from './seo/ThemedEnglandPage'
 import ScrollToTop from './components/ScrollToTop'
 import Analytics from './components/Analytics'
 
@@ -68,6 +69,9 @@ export default function App() {
             <Route key={path} path={path} element={<AnswersPage path={path} gamePath={game} />} />,
             <Route key={`es${path}`} path={`/es${path}`} element={<AnswersPage path={path} gamePath={game} />} />,
           ])}
+          {/* Generated data-derived landing page that is itself playable (growth PoC). */}
+          <Route path="/england-football-quiz" element={<ThemedEnglandPage path="/england-football-quiz" />} />
+          <Route path="/es/england-football-quiz" element={<ThemedEnglandPage path="/england-football-quiz" />} />
         </Routes>
       </Suspense>
     </>

@@ -61,6 +61,16 @@ export default function SeoContent({ path }) {
         </p>
       )}
 
+      {r.themedQuizzes?.length > 0 && (
+        <p className="mb-6 flex flex-wrap gap-2">
+          {r.themedQuizzes.map(q => (
+            <Link key={q.path} to={lp(q.path)} className="inline-block bg-surface border border-border rounded-lg px-3 py-2 text-sm font-bold text-brand-bright hover:border-brand transition-colors">
+              {q.label} →
+            </Link>
+          ))}
+        </p>
+      )}
+
       <nav aria-label={t('common.moreGames')}>
         <h2 className="text-primary font-semibold text-base mb-2">{t('common.moreGames')}</h2>
         <ul className="flex flex-wrap gap-x-4 gap-y-1 text-sm">

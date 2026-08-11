@@ -12,6 +12,7 @@
     "analytics-report": "node scripts/seo/ga4.mjs",
     "search-console-report": "node scripts/seo/gsc.mjs",
     "seo-suggest": "node scripts/seo/suggest.mjs",
+    "growth-discover": "node scripts/seo/growth/discover.mjs",
     "scrape:pl-history": "node scripts/pl-history/scrape.mjs",
     "scrape:intl": "node scripts/pl-history/scrape-intl.mjs",
     "build:intl": "node scripts/pl-history/build-intl.mjs",

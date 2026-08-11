@@ -1,0 +1,2846 @@
+{
+  "meta": {
+    "theme": "england",
+    "label": "England Football Quiz",
+    "generatedAt": "2026-08-11",
+    "count": 70,
+    "source": "careers × fame registry (nationality=England, 5+ clubs)"
+  },
+  "players": [
+    {
+      "name": "Ashley Young",
+      "fame": 100,
+      "clubs": [
+        {
+          "name": "Watford",
+          "from": "2003",
+          "to": "2007"
+        },
+        {
+          "name": "Aston Villa",
+          "from": "2007",
+          "to": "2011"
+        },
+        {
+          "name": "Man Utd",
+          "from": "2011",
+          "to": "2020"
+        },
+        {
+          "name": "Inter",
+          "from": "2020",
+          "to": "2021"
+        },
+        {
+          "name": "Aston Villa",
+          "from": "2021",
+          "to": "2023"
+        },
+        {
+          "name": "Everton",
+          "from": "2023",
+          "to": "2025"
+        },
+        {
+          "name": "Ipswich",
+          "from": "2025",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Ben Davies",
+      "fame": 100,
+      "clubs": [
+        {
+          "name": "Preston",
+          "from": "2013",
+          "to": "2013"
+        },
+        {
+          "name": "York City",
+          "from": "2013",
+          "to": "2014"
+        },
+        {
+          "name": "Tranmere",
+          "from": "2014",
+          "to": "2015"
+        },
+        {
+          "name": "Southport",
+          "from": "2015",
+          "to": "2016"
+        },
+        {
+          "name": "Newport County",
+          "from": "2016",
+          "to": "2017"
+        },
+        {
+          "name": "Fleetwood",
+          "from": "2017",
+          "to": "2021"
+        },
+        {
+          "name": "Liverpool",
+          "from": "2021",
+          "to": "2021"
+        },
+        {
+          "name": "Sheff Utd",
+          "from": "2021",
+          "to": "2022"
+        },
+        {
+          "name": "Rangers",
+          "from": "2022",
+          "to": "2024"
+        },
+        {
+          "name": "Birmingham",
+          "from": "2024",
+          "to": "2025"
+        },
+        {
+          "name": "Oxford United",
+          "from": "2025",
+          "to": "2026"
+        },
+        {
+          "name": "Bolton",
+          "from": "2026",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Callum Wilson",
+      "fame": 100,
+      "clubs": [
+        {
+          "name": "Kettering",
+          "from": "2011",
+          "to": "2011"
+        },
+        {
+          "name": "Tamworth",
+          "from": "2011",
+          "to": "2013"
+        },
+        {
+          "name": "Coventry",
+          "from": "2013",
+          "to": "2014"
+        },
+        {
+          "name": "Bournemouth",
+          "from": "2014",
+          "to": "2020"
+        },
+        {
+          "name": "Newcastle",
+          "from": "2020",
+          "to": "2025"
+        },
+        {
+          "name": "West Ham",
+          "from": "2025",
+          "to": "2026"
+        },
+        {
+          "name": "Brentford",
+          "from": "2026",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Danny Welbeck",
+      "fame": 100,
+      "clubs": [
+        {
+          "name": "Man Utd",
+          "from": "2008",
+          "to": "2010"
+        },
+        {
+          "name": "Preston",
+          "from": "2010",
+          "to": "2010"
+        },
+        {
+          "name": "Sunderland",
+          "from": "2010",
+          "to": "2014"
+        },
+        {
+          "name": "Arsenal",
+          "from": "2014",
+          "to": "2019"
+        },
+        {
+          "name": "Watford",
+          "from": "2019",
+          "to": "2020"
+        },
+        {
+          "name": "Brighton",
+          "from": "2020",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Harry Kane",
+      "fame": 100,
+      "clubs": [
+        {
+          "name": "Tottenham",
+          "from": "2010",
+          "to": "2011"
+        },
+        {
+          "name": "Leyton Orient",
+          "from": "2011",
+          "to": "2012"
+        },
+        {
+          "name": "Millwall",
+          "from": "2012",
+          "to": "2012"
+        },
+        {
+          "name": "Norwich",
+          "from": "2012",
+          "to": "2013"
+        },
+        {
+          "name": "Leicester",
+          "from": "2013",
+          "to": "2023"
+        },
+        {
+          "name": "Bayern Munich",
+          "from": "2023",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "James Milner",
+      "fame": 100,
+      "clubs": [
+        {
+          "name": "Leeds",
+          "from": "2002",
+          "to": "2003"
+        },
+        {
+          "name": "Swindon Town",
+          "from": "2003",
+          "to": "2004"
+        },
+        {
+          "name": "Newcastle",
+          "from": "2004",
+          "to": "2005"
+        },
+        {
+          "name": "Aston Villa",
+          "from": "2005",
+          "to": "2010"
+        },
+        {
+          "name": "Man City",
+          "from": "2010",
+          "to": "2015"
+        },
+        {
+          "name": "Liverpool",
+          "from": "2015",
+          "to": "2023"
+        },
+        {
+          "name": "Brighton",
+          "from": "2023",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "James Ward-Prowse",
+      "fame": 100,
+      "clubs": [
+        {
+          "name": "Southampton Aca",
+          "from": "",
+          "to": "2010"
+        },
+        {
+          "name": "Southampton",
+          "from": "2012",
+          "to": "2023"
+        },
+        {
+          "name": "West Ham",
+          "from": "2023",
+          "to": "2024"
+        },
+        {
+          "name": "Nott'm Forest",
+          "from": "2024",
+          "to": "2026"
+        },
+        {
+          "name": "Burnley",
+          "from": "2026",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Jamie Vardy",
+      "fame": 100,
+      "clubs": [
+        {
+          "name": "Stocksbridge",
+          "from": "2003",
+          "to": "2010"
+        },
+        {
+          "name": "Halifax Town",
+          "from": "2010",
+          "to": "2011"
+        },
+        {
+          "name": "Fleetwood",
+          "from": "2011",
+          "to": "2012"
+        },
+        {
+          "name": "Leicester",
+          "from": "2012",
+          "to": "2025"
+        },
+        {
+          "name": "Cremonese",
+          "from": "2025",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Jordan Henderson",
+      "fame": 100,
+      "clubs": [
+        {
+          "name": "Sunderland",
+          "from": "2008",
+          "to": "2009"
+        },
+        {
+          "name": "Coventry",
+          "from": "2009",
+          "to": "2011"
+        },
+        {
+          "name": "Liverpool",
+          "from": "2011",
+          "to": "2023"
+        },
+        {
+          "name": "Al-Ettifaq",
+          "from": "2023",
+          "to": "2024"
+        },
+        {
+          "name": "Ajax",
+          "from": "2024",
+          "to": "2025"
+        },
+        {
+          "name": "Brentford",
+          "from": "2025",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Kyle Walker",
+      "fame": 100,
+      "clubs": [
+        {
+          "name": "Sheff Utd",
+          "from": "2008",
+          "to": "2008"
+        },
+        {
+          "name": "Northampton",
+          "from": "2008",
+          "to": "2009"
+        },
+        {
+          "name": "Tottenham",
+          "from": "2009",
+          "to": "2009"
+        },
+        {
+          "name": "Sheff Utd",
+          "from": "2009",
+          "to": "2010"
+        },
+        {
+          "name": "QPR",
+          "from": "2010",
+          "to": "2011"
+        },
+        {
+          "name": "Aston Villa",
+          "from": "2011",
+          "to": "2017"
+        },
+        {
+          "name": "Man City",
+          "from": "2017",
+          "to": "2025"
+        },
+        {
+          "name": "AC Milan",
+          "from": "2025",
+          "to": "2025"
+        },
+        {
+          "name": "Burnley",
+          "from": "2025",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Raheem Sterling",
+      "fame": 100,
+      "clubs": [
+        {
+          "name": "Liverpool",
+          "from": "2012",
+          "to": "2015"
+        },
+        {
+          "name": "Man City",
+          "from": "2015",
+          "to": "2022"
+        },
+        {
+          "name": "Chelsea",
+          "from": "2022",
+          "to": "2024"
+        },
+        {
+          "name": "Arsenal",
+          "from": "2024",
+          "to": "2026"
+        },
+        {
+          "name": "Feyenoord",
+          "from": "2026",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Ross Barkley",
+      "fame": 100,
+      "clubs": [
+        {
+          "name": "Everton",
+          "from": "2011",
+          "to": "2012"
+        },
+        {
+          "name": "Sheff Wed",
+          "from": "2012",
+          "to": "2013"
+        },
+        {
+          "name": "Leeds",
+          "from": "2013",
+          "to": "2018"
+        },
+        {
+          "name": "Chelsea",
+          "from": "2018",
+          "to": "2020"
+        },
+        {
+          "name": "Aston Villa",
+          "from": "2020",
+          "to": "2022"
+        },
+        {
+          "name": "Nice",
+          "from": "2022",
+          "to": "2023"
+        },
+        {
+          "name": "Luton",
+          "from": "2023",
+          "to": "2024"
+        },
+        {
+          "name": "Aston Villa",
+          "from": "2024",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Dominic Calvert-Lewin",
+      "fame": 98,
+      "clubs": [
+        {
+          "name": "Sheff Utd",
+          "from": "2014",
+          "to": "2014"
+        },
+        {
+          "name": "Stalybridge",
+          "from": "2014",
+          "to": "2015"
+        },
+        {
+          "name": "Northampton",
+          "from": "2015",
+          "to": "2016"
+        },
+        {
+          "name": "Everton",
+          "from": "2016",
+          "to": "2025"
+        },
+        {
+          "name": "Leeds",
+          "from": "2025",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Jadon Sancho",
+      "fame": 96,
+      "clubs": [
+        {
+          "name": "Dortmund",
+          "from": "2017",
+          "to": "2021"
+        },
+        {
+          "name": "Man Utd",
+          "from": "2021",
+          "to": "2024"
+        },
+        {
+          "name": "Dortmund",
+          "from": "2024",
+          "to": "2024"
+        },
+        {
+          "name": "Chelsea",
+          "from": "2024",
+          "to": "2025"
+        },
+        {
+          "name": "Aston Villa",
+          "from": "2025",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Wilfried Zaha",
+      "fame": 95,
+      "clubs": [
+        {
+          "name": "Crystal Palace",
+          "from": "2010",
+          "to": "2013"
+        },
+        {
+          "name": "Man Utd",
+          "from": "2013",
+          "to": "2013"
+        },
+        {
+          "name": "Crystal Palace",
+          "from": "2013",
+          "to": "2014"
+        },
+        {
+          "name": "Cardiff",
+          "from": "2014",
+          "to": "2014"
+        },
+        {
+          "name": "Crystal Palace",
+          "from": "2014",
+          "to": "2023"
+        },
+        {
+          "name": "Galatasaray",
+          "from": "2023",
+          "to": "2024"
+        },
+        {
+          "name": "Lyon",
+          "from": "2024",
+          "to": "2025"
+        },
+        {
+          "name": "Charlotte",
+          "from": "2025",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Wayne Rooney",
+      "fame": 94,
+      "clubs": [
+        {
+          "name": "Everton",
+          "from": "2002",
+          "to": "2004"
+        },
+        {
+          "name": "Man Utd",
+          "from": "2004",
+          "to": "2017"
+        },
+        {
+          "name": "Everton",
+          "from": "2017",
+          "to": "2018"
+        },
+        {
+          "name": "D.C. United",
+          "from": "2018",
+          "to": "2020"
+        },
+        {
+          "name": "Derby",
+          "from": "2020",
+          "to": "2021"
+        }
+      ]
+    },
+    {
+      "name": "Harry Maguire",
+      "fame": 92,
+      "clubs": [
+        {
+          "name": "Sheff Utd",
+          "from": "2011",
+          "to": "2014"
+        },
+        {
+          "name": "Hull City",
+          "from": "2014",
+          "to": "2015"
+        },
+        {
+          "name": "Wigan",
+          "from": "2015",
+          "to": "2017"
+        },
+        {
+          "name": "Leicester",
+          "from": "2017",
+          "to": "2019"
+        },
+        {
+          "name": "Man Utd",
+          "from": "2019",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Jordan Pickford",
+      "fame": 91,
+      "clubs": [
+        {
+          "name": "Darlington",
+          "from": "2012",
+          "to": "2012"
+        },
+        {
+          "name": "Alfreton",
+          "from": "2013",
+          "to": "2013"
+        },
+        {
+          "name": "Sunderland",
+          "from": "2013",
+          "to": "2013"
+        },
+        {
+          "name": "Burton Albion",
+          "from": "2013",
+          "to": "2014"
+        },
+        {
+          "name": "Carlisle United",
+          "from": "2014",
+          "to": "2014"
+        },
+        {
+          "name": "Bradford",
+          "from": "2014",
+          "to": "2015"
+        },
+        {
+          "name": "Preston",
+          "from": "2015",
+          "to": "2017"
+        },
+        {
+          "name": "Everton",
+          "from": "2017",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Kieran Trippier",
+      "fame": 90,
+      "clubs": [
+        {
+          "name": "Man City Res.",
+          "from": "2009",
+          "to": "2010"
+        },
+        {
+          "name": "Barnsley",
+          "from": "2010",
+          "to": "2011"
+        },
+        {
+          "name": "Burnley",
+          "from": "2011",
+          "to": "2015"
+        },
+        {
+          "name": "Tottenham",
+          "from": "2015",
+          "to": "2019"
+        },
+        {
+          "name": "Atlético",
+          "from": "2019",
+          "to": "2022"
+        },
+        {
+          "name": "Newcastle",
+          "from": "2022",
+          "to": "2026"
+        },
+        {
+          "name": "Wolves",
+          "from": "2026",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Tammy Abraham",
+      "fame": 89,
+      "clubs": [
+        {
+          "name": "Bristol City",
+          "from": "2016",
+          "to": "2017"
+        },
+        {
+          "name": "Chelsea",
+          "from": "2017",
+          "to": "2017"
+        },
+        {
+          "name": "Swansea",
+          "from": "2017",
+          "to": "2018"
+        },
+        {
+          "name": "Aston Villa",
+          "from": "2018",
+          "to": "2021"
+        },
+        {
+          "name": "Roma",
+          "from": "2021",
+          "to": "2024"
+        },
+        {
+          "name": "AC Milan",
+          "from": "2024",
+          "to": "2025"
+        },
+        {
+          "name": "Besiktas",
+          "from": "2025",
+          "to": "2026"
+        },
+        {
+          "name": "Aston Villa",
+          "from": "2026",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Theo Walcott",
+      "fame": 86,
+      "clubs": [
+        {
+          "name": "Southampton Aca",
+          "from": "2000",
+          "to": "2004"
+        },
+        {
+          "name": "Southampton",
+          "from": "2005",
+          "to": "2006"
+        },
+        {
+          "name": "Arsenal",
+          "from": "2006",
+          "to": "2018"
+        },
+        {
+          "name": "Everton",
+          "from": "2018",
+          "to": "2020"
+        },
+        {
+          "name": "Southampton",
+          "from": "2020",
+          "to": "2023"
+        }
+      ]
+    },
+    {
+      "name": "Harvey Barnes",
+      "fame": 85,
+      "clubs": [
+        {
+          "name": "MK Dons",
+          "from": "2017",
+          "to": "2017"
+        },
+        {
+          "name": "Barnsley",
+          "from": "2017",
+          "to": "2018"
+        },
+        {
+          "name": "Leicester",
+          "from": "2018",
+          "to": "2018"
+        },
+        {
+          "name": "West Brom",
+          "from": "2018",
+          "to": "2023"
+        },
+        {
+          "name": "Newcastle",
+          "from": "2023",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Aaron Ramsey",
+      "fame": 81,
+      "clubs": [
+        {
+          "name": "Cardiff",
+          "from": "2007",
+          "to": "2008"
+        },
+        {
+          "name": "Arsenal",
+          "from": "2008",
+          "to": "2010"
+        },
+        {
+          "name": "Nott'm Forest",
+          "from": "2010",
+          "to": "2011"
+        },
+        {
+          "name": "Cardiff",
+          "from": "2011",
+          "to": "2019"
+        },
+        {
+          "name": "Juventus",
+          "from": "2019",
+          "to": "2022"
+        },
+        {
+          "name": "Rangers",
+          "from": "2022",
+          "to": "2022"
+        },
+        {
+          "name": "Nice",
+          "from": "2022",
+          "to": "2023"
+        },
+        {
+          "name": "Cardiff",
+          "from": "2023",
+          "to": "2025"
+        },
+        {
+          "name": "UNAM Pumas",
+          "from": "2025",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Aaron Ramsey",
+      "fame": 81,
+      "clubs": [
+        {
+          "name": "Cheltenham",
+          "from": "2022",
+          "to": "2022"
+        },
+        {
+          "name": "Norwich",
+          "from": "2022",
+          "to": "2023"
+        },
+        {
+          "name": "Middlesbrough",
+          "from": "2023",
+          "to": "2023"
+        },
+        {
+          "name": "Burnley",
+          "from": "2023",
+          "to": "2025"
+        },
+        {
+          "name": "Leicester",
+          "from": "2025",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Dele Alli",
+      "fame": 81,
+      "clubs": [
+        {
+          "name": "MK Dons",
+          "from": "2013",
+          "to": "2015"
+        },
+        {
+          "name": "Tottenham",
+          "from": "2015",
+          "to": "2015"
+        },
+        {
+          "name": "MK Dons",
+          "from": "2015",
+          "to": "2022"
+        },
+        {
+          "name": "Everton",
+          "from": "2022",
+          "to": "2022"
+        },
+        {
+          "name": "Besiktas",
+          "from": "2022",
+          "to": "2025"
+        },
+        {
+          "name": "Como",
+          "from": "2025",
+          "to": "2025"
+        }
+      ]
+    },
+    {
+      "name": "Adam Lallana",
+      "fame": 80,
+      "clubs": [
+        {
+          "name": "Southampton",
+          "from": "2006",
+          "to": "2007"
+        },
+        {
+          "name": "Bournemouth",
+          "from": "2007",
+          "to": "2014"
+        },
+        {
+          "name": "Liverpool",
+          "from": "2014",
+          "to": "2020"
+        },
+        {
+          "name": "Brighton",
+          "from": "2020",
+          "to": "2024"
+        },
+        {
+          "name": "Southampton",
+          "from": "2024",
+          "to": "2025"
+        }
+      ]
+    },
+    {
+      "name": "Danny Ings",
+      "fame": 80,
+      "clubs": [
+        {
+          "name": "Bournemouth",
+          "from": "2010",
+          "to": "2010"
+        },
+        {
+          "name": "Dorchester",
+          "from": "2010",
+          "to": "2011"
+        },
+        {
+          "name": "Burnley",
+          "from": "2011",
+          "to": "2015"
+        },
+        {
+          "name": "Liverpool",
+          "from": "2015",
+          "to": "2018"
+        },
+        {
+          "name": "Southampton",
+          "from": "2018",
+          "to": "2021"
+        },
+        {
+          "name": "Aston Villa",
+          "from": "2021",
+          "to": "2023"
+        },
+        {
+          "name": "West Ham",
+          "from": "2023",
+          "to": "2025"
+        },
+        {
+          "name": "Sheff Utd",
+          "from": "2025",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "James Maddison",
+      "fame": 80,
+      "clubs": [
+        {
+          "name": "Coventry",
+          "from": "2014",
+          "to": "2016"
+        },
+        {
+          "name": "Norwich",
+          "from": "2016",
+          "to": "2016"
+        },
+        {
+          "name": "Coventry",
+          "from": "2016",
+          "to": "2016"
+        },
+        {
+          "name": "Aberdeen FC",
+          "from": "2016",
+          "to": "2018"
+        },
+        {
+          "name": "Leicester",
+          "from": "2018",
+          "to": "2023"
+        },
+        {
+          "name": "Tottenham",
+          "from": "2023",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Conor Gallagher",
+      "fame": 74,
+      "clubs": [
+        {
+          "name": "Charlton",
+          "from": "2019",
+          "to": "2020"
+        },
+        {
+          "name": "Swansea",
+          "from": "2020",
+          "to": "2020"
+        },
+        {
+          "name": "West Brom",
+          "from": "2020",
+          "to": "2021"
+        },
+        {
+          "name": "Crystal Palace",
+          "from": "2021",
+          "to": "2022"
+        },
+        {
+          "name": "Chelsea",
+          "from": "2022",
+          "to": "2024"
+        },
+        {
+          "name": "Atlético",
+          "from": "2024",
+          "to": "2026"
+        },
+        {
+          "name": "Tottenham",
+          "from": "2026",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "James Tarkowski",
+      "fame": 72,
+      "clubs": [
+        {
+          "name": "Maine Road",
+          "from": "",
+          "to": "2009"
+        },
+        {
+          "name": "Oldham Athletic",
+          "from": "2011",
+          "to": "2014"
+        },
+        {
+          "name": "Brentford",
+          "from": "2014",
+          "to": "2016"
+        },
+        {
+          "name": "Burnley",
+          "from": "2016",
+          "to": "2022"
+        },
+        {
+          "name": "Everton",
+          "from": "2022",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Jermain Defoe",
+      "fame": 71,
+      "clubs": [
+        {
+          "name": "West Ham",
+          "from": "1999",
+          "to": "2000"
+        },
+        {
+          "name": "Bournemouth",
+          "from": "2000",
+          "to": "2004"
+        },
+        {
+          "name": "Tottenham",
+          "from": "2004",
+          "to": "2008"
+        },
+        {
+          "name": "Portsmouth",
+          "from": "2008",
+          "to": "2009"
+        },
+        {
+          "name": "Tottenham",
+          "from": "2009",
+          "to": "2014"
+        },
+        {
+          "name": "Toronto",
+          "from": "2014",
+          "to": "2015"
+        },
+        {
+          "name": "Sunderland",
+          "from": "2015",
+          "to": "2017"
+        },
+        {
+          "name": "Bournemouth",
+          "from": "2017",
+          "to": "2019"
+        },
+        {
+          "name": "Rangers",
+          "from": "2019",
+          "to": "2022"
+        },
+        {
+          "name": "Sunderland",
+          "from": "2022",
+          "to": "2022"
+        }
+      ]
+    },
+    {
+      "name": "Michael Keane",
+      "fame": 71,
+      "clubs": [
+        {
+          "name": "Man Utd Res.",
+          "from": "2011",
+          "to": "2012"
+        },
+        {
+          "name": "Leicester",
+          "from": "2012",
+          "to": "2013"
+        },
+        {
+          "name": "Derby",
+          "from": "2013",
+          "to": "2014"
+        },
+        {
+          "name": "Blackburn",
+          "from": "2014",
+          "to": "2014"
+        },
+        {
+          "name": "Burnley",
+          "from": "2014",
+          "to": "2017"
+        },
+        {
+          "name": "Everton",
+          "from": "2017",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Ben Chilwell",
+      "fame": 67,
+      "clubs": [
+        {
+          "name": "Leicester",
+          "from": "2015",
+          "to": "2015"
+        },
+        {
+          "name": "Huddersfield",
+          "from": "2015",
+          "to": "2020"
+        },
+        {
+          "name": "Chelsea",
+          "from": "2020",
+          "to": "2025"
+        },
+        {
+          "name": "Crystal Palace",
+          "from": "2025",
+          "to": "2025"
+        },
+        {
+          "name": "R. Strasbourg",
+          "from": "2025",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Jacob Murphy",
+      "fame": 67,
+      "clubs": [
+        {
+          "name": "Norwich",
+          "from": "2013",
+          "to": "2014"
+        },
+        {
+          "name": "Swindon Town",
+          "from": "2014",
+          "to": "2014"
+        },
+        {
+          "name": "Southend United",
+          "from": "2014",
+          "to": "2014"
+        },
+        {
+          "name": "Blackpool",
+          "from": "2014",
+          "to": "2015"
+        },
+        {
+          "name": "Scunthorpe Utd.",
+          "from": "2015",
+          "to": "2015"
+        },
+        {
+          "name": "Colchester Utd.",
+          "from": "2015",
+          "to": "2015"
+        },
+        {
+          "name": "Coventry",
+          "from": "2015",
+          "to": "2017"
+        },
+        {
+          "name": "Newcastle",
+          "from": "2017",
+          "to": "2019"
+        },
+        {
+          "name": "West Brom",
+          "from": "2019",
+          "to": "2019"
+        },
+        {
+          "name": "Sheff Wed",
+          "from": "2019",
+          "to": "2020"
+        }
+      ]
+    },
+    {
+      "name": "Joe Hart",
+      "fame": 64,
+      "clubs": [
+        {
+          "name": "Shrewsbury",
+          "from": "2003",
+          "to": "2006"
+        },
+        {
+          "name": "Man City",
+          "from": "2006",
+          "to": "2007"
+        },
+        {
+          "name": "Tranmere",
+          "from": "2007",
+          "to": "2007"
+        },
+        {
+          "name": "Blackpool",
+          "from": "2007",
+          "to": "2009"
+        },
+        {
+          "name": "Birmingham",
+          "from": "2009",
+          "to": "2016"
+        },
+        {
+          "name": "Torino",
+          "from": "2016",
+          "to": "2017"
+        },
+        {
+          "name": "West Ham",
+          "from": "2017",
+          "to": "2018"
+        },
+        {
+          "name": "Burnley",
+          "from": "2018",
+          "to": "2020"
+        },
+        {
+          "name": "Tottenham",
+          "from": "2020",
+          "to": "2021"
+        },
+        {
+          "name": "Celtic",
+          "from": "2021",
+          "to": "2024"
+        }
+      ]
+    },
+    {
+      "name": "Dan Burn",
+      "fame": 63,
+      "clubs": [
+        {
+          "name": "Hartley Juniors",
+          "from": "2004",
+          "to": "2005"
+        },
+        {
+          "name": "AFC Blyth",
+          "from": "2005",
+          "to": "2007"
+        },
+        {
+          "name": "Blyth Spartans",
+          "from": "2007",
+          "to": "2009"
+        },
+        {
+          "name": "Darlington",
+          "from": "2009",
+          "to": "2011"
+        },
+        {
+          "name": "Fulham",
+          "from": "2011",
+          "to": "2012"
+        },
+        {
+          "name": "Yeovil Town",
+          "from": "2012",
+          "to": "2013"
+        },
+        {
+          "name": "Birmingham",
+          "from": "2013",
+          "to": "2016"
+        },
+        {
+          "name": "Wigan",
+          "from": "2016",
+          "to": "2018"
+        },
+        {
+          "name": "Brighton",
+          "from": "2018",
+          "to": "2018"
+        },
+        {
+          "name": "Wigan",
+          "from": "2018",
+          "to": "2022"
+        },
+        {
+          "name": "Newcastle",
+          "from": "2022",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Nathaniel Clyne",
+      "fame": 63,
+      "clubs": [
+        {
+          "name": "Crystal Palace",
+          "from": "2008",
+          "to": "2012"
+        },
+        {
+          "name": "Southampton",
+          "from": "2012",
+          "to": "2015"
+        },
+        {
+          "name": "Liverpool",
+          "from": "2015",
+          "to": "2019"
+        },
+        {
+          "name": "Bournemouth",
+          "from": "2019",
+          "to": "2020"
+        },
+        {
+          "name": "Crystal Palace",
+          "from": "2020",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Frank Lampard",
+      "fame": 61,
+      "clubs": [
+        {
+          "name": "West Ham",
+          "from": "1995",
+          "to": "1995"
+        },
+        {
+          "name": "Swansea",
+          "from": "1995",
+          "to": "2001"
+        },
+        {
+          "name": "Chelsea",
+          "from": "2001",
+          "to": "2014"
+        },
+        {
+          "name": "New York City",
+          "from": "2014",
+          "to": "2014"
+        },
+        {
+          "name": "Man City",
+          "from": "2014",
+          "to": "2017"
+        }
+      ]
+    },
+    {
+      "name": "Jack Harrison",
+      "fame": 61,
+      "clubs": [
+        {
+          "name": "Black Rock FC ",
+          "from": "2010",
+          "to": "2013"
+        },
+        {
+          "name": "Manhattan",
+          "from": "2013",
+          "to": "2015"
+        },
+        {
+          "name": "Wake Forest",
+          "from": "2015",
+          "to": "2016"
+        },
+        {
+          "name": "Chicago",
+          "from": "2016",
+          "to": "2016"
+        },
+        {
+          "name": "New York City",
+          "from": "2016",
+          "to": "2018"
+        },
+        {
+          "name": "Man City",
+          "from": "2018",
+          "to": "2018"
+        },
+        {
+          "name": "Middlesbrough",
+          "from": "2018",
+          "to": "2018"
+        },
+        {
+          "name": "Leeds",
+          "from": "2018",
+          "to": "2023"
+        },
+        {
+          "name": "Everton",
+          "from": "2023",
+          "to": "2026"
+        },
+        {
+          "name": "Fiorentina",
+          "from": "2026",
+          "to": "2026"
+        },
+        {
+          "name": "New England",
+          "from": "2026",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Peter Crouch",
+      "fame": 61,
+      "clubs": [
+        {
+          "name": "Tottenham",
+          "from": "1998",
+          "to": "2000"
+        },
+        {
+          "name": "Dulwich Hamlet",
+          "from": "2000",
+          "to": "2000"
+        },
+        {
+          "name": "IFK Hässleholm",
+          "from": "2000",
+          "to": "2000"
+        },
+        {
+          "name": "QPR",
+          "from": "2000",
+          "to": "2001"
+        },
+        {
+          "name": "Portsmouth",
+          "from": "2001",
+          "to": "2002"
+        },
+        {
+          "name": "Aston Villa",
+          "from": "2002",
+          "to": "2003"
+        },
+        {
+          "name": "Norwich",
+          "from": "2003",
+          "to": "2004"
+        },
+        {
+          "name": "Southampton",
+          "from": "2004",
+          "to": "2005"
+        },
+        {
+          "name": "Liverpool",
+          "from": "2005",
+          "to": "2008"
+        },
+        {
+          "name": "Portsmouth",
+          "from": "2008",
+          "to": "2009"
+        },
+        {
+          "name": "Tottenham",
+          "from": "2009",
+          "to": "2011"
+        },
+        {
+          "name": "Stoke City",
+          "from": "2011",
+          "to": "2019"
+        },
+        {
+          "name": "Burnley",
+          "from": "2019",
+          "to": "2019"
+        }
+      ]
+    },
+    {
+      "name": "Adam Smith",
+      "fame": 60,
+      "clubs": [
+        {
+          "name": "Tottenham",
+          "from": "2008",
+          "to": "2009"
+        },
+        {
+          "name": "Wycombe",
+          "from": "2009",
+          "to": "2009"
+        },
+        {
+          "name": "Torquay",
+          "from": "2009",
+          "to": "2010"
+        },
+        {
+          "name": "Bournemouth",
+          "from": "2010",
+          "to": "2011"
+        },
+        {
+          "name": "MK Dons",
+          "from": "2011",
+          "to": "2012"
+        },
+        {
+          "name": "Leeds",
+          "from": "2012",
+          "to": "2012"
+        },
+        {
+          "name": "Millwall",
+          "from": "2012",
+          "to": "2013"
+        },
+        {
+          "name": "Derby",
+          "from": "2013",
+          "to": "2014"
+        },
+        {
+          "name": "Bournemouth",
+          "from": "2014",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Fikayo Tomori",
+      "fame": 60,
+      "clubs": [
+        {
+          "name": "Brighton",
+          "from": "2017",
+          "to": "2017"
+        },
+        {
+          "name": "Chelsea",
+          "from": "2017",
+          "to": "2017"
+        },
+        {
+          "name": "Hull City",
+          "from": "2017",
+          "to": "2018"
+        },
+        {
+          "name": "Derby",
+          "from": "2018",
+          "to": "2021"
+        },
+        {
+          "name": "AC Milan",
+          "from": "2021",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Nick Pope",
+      "fame": 60,
+      "clubs": [
+        {
+          "name": "Bury Town",
+          "from": "2008",
+          "to": "2011"
+        },
+        {
+          "name": "Charlton",
+          "from": "2011",
+          "to": "2011"
+        },
+        {
+          "name": "Harrow Borough",
+          "from": "2011",
+          "to": "2011"
+        },
+        {
+          "name": "Welling Utd.",
+          "from": "2011",
+          "to": "2013"
+        },
+        {
+          "name": "Cambridge Utd.",
+          "from": "2013",
+          "to": "2013"
+        },
+        {
+          "name": "Aldershot",
+          "from": "2013",
+          "to": "2013"
+        },
+        {
+          "name": "York City",
+          "from": "2013",
+          "to": "2015"
+        },
+        {
+          "name": "Bury",
+          "from": "2015",
+          "to": "2016"
+        },
+        {
+          "name": "Burnley",
+          "from": "2016",
+          "to": "2022"
+        },
+        {
+          "name": "Newcastle",
+          "from": "2022",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Ben White",
+      "fame": 59,
+      "clubs": [
+        {
+          "name": "Southampton Aca",
+          "from": "",
+          "to": "2014"
+        },
+        {
+          "name": "Newport County",
+          "from": "2017",
+          "to": "2018"
+        },
+        {
+          "name": "Brighton",
+          "from": "2018",
+          "to": "2019"
+        },
+        {
+          "name": "Peterborough",
+          "from": "2019",
+          "to": "2019"
+        },
+        {
+          "name": "Leeds",
+          "from": "2019",
+          "to": "2021"
+        },
+        {
+          "name": "Arsenal",
+          "from": "2021",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Chris Smalling",
+      "fame": 58,
+      "clubs": [
+        {
+          "name": "Maidstone",
+          "from": "2007",
+          "to": "2008"
+        },
+        {
+          "name": "Fulham",
+          "from": "2008",
+          "to": "2010"
+        },
+        {
+          "name": "Man Utd",
+          "from": "2010",
+          "to": "2019"
+        },
+        {
+          "name": "Roma",
+          "from": "2019",
+          "to": "2024"
+        },
+        {
+          "name": "Al-Fayha",
+          "from": "2024",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Ben Mee",
+      "fame": 57,
+      "clubs": [
+        {
+          "name": "Man City Res.",
+          "from": "2008",
+          "to": "2010"
+        },
+        {
+          "name": "Man City",
+          "from": "2010",
+          "to": "2011"
+        },
+        {
+          "name": "Leicester",
+          "from": "2011",
+          "to": "2011"
+        },
+        {
+          "name": "Burnley",
+          "from": "2011",
+          "to": "2022"
+        },
+        {
+          "name": "Brentford",
+          "from": "2022",
+          "to": "2025"
+        },
+        {
+          "name": "Sheff Utd",
+          "from": "2025",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Tyrone Mings",
+      "fame": 56,
+      "clubs": [
+        {
+          "name": "Southampton Aca",
+          "from": "",
+          "to": "2008"
+        },
+        {
+          "name": "Yate Town",
+          "from": "2010",
+          "to": "2012"
+        },
+        {
+          "name": "Chippenham",
+          "from": "2012",
+          "to": "2012"
+        },
+        {
+          "name": "Ipswich",
+          "from": "2012",
+          "to": "2015"
+        },
+        {
+          "name": "Bournemouth",
+          "from": "2015",
+          "to": "2019"
+        },
+        {
+          "name": "Aston Villa",
+          "from": "2019",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Morgan Rogers",
+      "fame": 54,
+      "clubs": [
+        {
+          "name": "Lincoln City",
+          "from": "2021",
+          "to": "2021"
+        },
+        {
+          "name": "Bournemouth",
+          "from": "2021",
+          "to": "2023"
+        },
+        {
+          "name": "Blackpool",
+          "from": "2023",
+          "to": "2023"
+        },
+        {
+          "name": "Middlesbrough",
+          "from": "2023",
+          "to": "2024"
+        },
+        {
+          "name": "Aston Villa",
+          "from": "2024",
+          "to": "2026"
+        },
+        {
+          "name": "Chelsea",
+          "from": "2026",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Trevoh Chalobah",
+      "fame": 53,
+      "clubs": [
+        {
+          "name": "Ipswich",
+          "from": "2018",
+          "to": "2019"
+        },
+        {
+          "name": "Huddersfield",
+          "from": "2019",
+          "to": "2020"
+        },
+        {
+          "name": "FC Lorient",
+          "from": "2020",
+          "to": "2021"
+        },
+        {
+          "name": "Chelsea",
+          "from": "2021",
+          "to": "2024"
+        },
+        {
+          "name": "Crystal Palace",
+          "from": "2024",
+          "to": "2025"
+        }
+      ]
+    },
+    {
+      "name": "Jamaal Lascelles",
+      "fame": 52,
+      "clubs": [
+        {
+          "name": "Nott'm Forest",
+          "from": "2011",
+          "to": "2012"
+        },
+        {
+          "name": "Stevenage",
+          "from": "2012",
+          "to": "2014"
+        },
+        {
+          "name": "Newcastle",
+          "from": "2014",
+          "to": "2014"
+        },
+        {
+          "name": "Nott'm Forest",
+          "from": "2014",
+          "to": "2026"
+        },
+        {
+          "name": "Leicester",
+          "from": "2026",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Stephy Mavididi",
+      "fame": 52,
+      "clubs": [
+        {
+          "name": "Charlton",
+          "from": "2017",
+          "to": "2017"
+        },
+        {
+          "name": "Preston",
+          "from": "2017",
+          "to": "2018"
+        },
+        {
+          "name": "Charlton",
+          "from": "2018",
+          "to": "2018"
+        },
+        {
+          "name": "Dijon",
+          "from": "2019",
+          "to": "2020"
+        },
+        {
+          "name": "Montpellier",
+          "from": "2020",
+          "to": "2023"
+        },
+        {
+          "name": "Leicester",
+          "from": "2023",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Ainsley Maitland-Niles",
+      "fame": 51,
+      "clubs": [
+        {
+          "name": "Ipswich",
+          "from": "2015",
+          "to": "2017"
+        },
+        {
+          "name": "Arsenal",
+          "from": "2017",
+          "to": "2021"
+        },
+        {
+          "name": "West Brom",
+          "from": "2021",
+          "to": "2022"
+        },
+        {
+          "name": "Roma",
+          "from": "2022",
+          "to": "2022"
+        },
+        {
+          "name": "Southampton",
+          "from": "2022",
+          "to": "2023"
+        },
+        {
+          "name": "Lyon",
+          "from": "2023",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Aaron Ramsdale",
+      "fame": 50,
+      "clubs": [
+        {
+          "name": "Sheff Utd Jgd.",
+          "from": "2013",
+          "to": "2015"
+        },
+        {
+          "name": "Worksop",
+          "from": "2015",
+          "to": "2016"
+        },
+        {
+          "name": "Sheff Utd",
+          "from": "2016",
+          "to": "2017"
+        },
+        {
+          "name": "Bournemouth",
+          "from": "2017",
+          "to": "2018"
+        },
+        {
+          "name": "Chesterfield",
+          "from": "2018",
+          "to": "2019"
+        },
+        {
+          "name": "AFC Wimbledon",
+          "from": "2019",
+          "to": "2020"
+        },
+        {
+          "name": "Sheff Utd",
+          "from": "2020",
+          "to": "2021"
+        },
+        {
+          "name": "Arsenal",
+          "from": "2021",
+          "to": "2024"
+        },
+        {
+          "name": "Southampton",
+          "from": "2024",
+          "to": "2025"
+        },
+        {
+          "name": "Newcastle",
+          "from": "2025",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Gary Cahill",
+      "fame": 50,
+      "clubs": [
+        {
+          "name": "Aston Villa",
+          "from": "2004",
+          "to": "2004"
+        },
+        {
+          "name": "Burnley",
+          "from": "2004",
+          "to": "2007"
+        },
+        {
+          "name": "Sheff Utd",
+          "from": "2007",
+          "to": "2008"
+        },
+        {
+          "name": "Bolton",
+          "from": "2008",
+          "to": "2012"
+        },
+        {
+          "name": "Chelsea",
+          "from": "2012",
+          "to": "2019"
+        },
+        {
+          "name": "Crystal Palace",
+          "from": "2019",
+          "to": "2021"
+        },
+        {
+          "name": "Bournemouth",
+          "from": "2021",
+          "to": "2022"
+        }
+      ]
+    },
+    {
+      "name": "Reiss Nelson",
+      "fame": 50,
+      "clubs": [
+        {
+          "name": "Hoffenheim",
+          "from": "2018",
+          "to": "2019"
+        },
+        {
+          "name": "Arsenal",
+          "from": "2019",
+          "to": "2021"
+        },
+        {
+          "name": "Feyenoord",
+          "from": "2021",
+          "to": "2024"
+        },
+        {
+          "name": "Fulham",
+          "from": "2024",
+          "to": "2025"
+        },
+        {
+          "name": "Brentford",
+          "from": "2025",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Angel Gomes",
+      "fame": 48,
+      "clubs": [
+        {
+          "name": "Man Utd",
+          "from": "2019",
+          "to": "2020"
+        },
+        {
+          "name": "Lille",
+          "from": "2020",
+          "to": "2020"
+        },
+        {
+          "name": "Boavista",
+          "from": "2020",
+          "to": "2025"
+        },
+        {
+          "name": "Marseille",
+          "from": "2025",
+          "to": "2026"
+        },
+        {
+          "name": "Wolves",
+          "from": "2026",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Conor Coady",
+      "fame": 48,
+      "clubs": [
+        {
+          "name": "Liverpool Res.",
+          "from": "2011",
+          "to": "2013"
+        },
+        {
+          "name": "Sheff Utd",
+          "from": "2013",
+          "to": "2014"
+        },
+        {
+          "name": "Huddersfield",
+          "from": "2014",
+          "to": "2015"
+        },
+        {
+          "name": "Wolves",
+          "from": "2015",
+          "to": "2022"
+        },
+        {
+          "name": "Everton",
+          "from": "2022",
+          "to": "2023"
+        },
+        {
+          "name": "Leicester",
+          "from": "2023",
+          "to": "2025"
+        },
+        {
+          "name": "Wrexham",
+          "from": "2025",
+          "to": "2026"
+        },
+        {
+          "name": "Charlton",
+          "from": "2026",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Aaron Lennon",
+      "fame": 47,
+      "clubs": [
+        {
+          "name": "Leeds",
+          "from": "2003",
+          "to": "2005"
+        },
+        {
+          "name": "Tottenham",
+          "from": "2005",
+          "to": "2015"
+        },
+        {
+          "name": "Everton",
+          "from": "2015",
+          "to": "2018"
+        },
+        {
+          "name": "Burnley",
+          "from": "2018",
+          "to": "2020"
+        },
+        {
+          "name": "Kayserispor",
+          "from": "2020",
+          "to": "2021"
+        },
+        {
+          "name": "Burnley",
+          "from": "2021",
+          "to": "2022"
+        }
+      ]
+    },
+    {
+      "name": "Alex Oxlade-Chamberlain",
+      "fame": 47,
+      "clubs": [
+        {
+          "name": "Southampton Aca",
+          "from": "",
+          "to": "2009"
+        },
+        {
+          "name": "Southampton",
+          "from": "2010",
+          "to": "2011"
+        },
+        {
+          "name": "Arsenal",
+          "from": "2011",
+          "to": "2017"
+        },
+        {
+          "name": "Liverpool",
+          "from": "2017",
+          "to": "2023"
+        },
+        {
+          "name": "Besiktas",
+          "from": "2023",
+          "to": "2026"
+        },
+        {
+          "name": "Celtic",
+          "from": "2026",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Gareth Barry",
+      "fame": 46,
+      "clubs": [
+        {
+          "name": "Aston Villa",
+          "from": "1998",
+          "to": "2009"
+        },
+        {
+          "name": "Man City",
+          "from": "2009",
+          "to": "2013"
+        },
+        {
+          "name": "Everton",
+          "from": "2013",
+          "to": "2017"
+        },
+        {
+          "name": "West Brom",
+          "from": "2017",
+          "to": "2024"
+        },
+        {
+          "name": "Hurstpierpoint",
+          "from": "2024",
+          "to": "2025"
+        }
+      ]
+    },
+    {
+      "name": "Dean Henderson",
+      "fame": 45,
+      "clubs": [
+        {
+          "name": "Stockport",
+          "from": "2016",
+          "to": "2016"
+        },
+        {
+          "name": "Grimsby Town",
+          "from": "2016",
+          "to": "2017"
+        },
+        {
+          "name": "Shrewsbury",
+          "from": "2017",
+          "to": "2018"
+        },
+        {
+          "name": "Sheff Utd",
+          "from": "2018",
+          "to": "2020"
+        },
+        {
+          "name": "Man Utd",
+          "from": "2020",
+          "to": "2022"
+        },
+        {
+          "name": "Nott'm Forest",
+          "from": "2022",
+          "to": "2023"
+        },
+        {
+          "name": "Crystal Palace",
+          "from": "2023",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Liam Delap",
+      "fame": 44,
+      "clubs": [
+        {
+          "name": "Stoke City",
+          "from": "2022",
+          "to": "2023"
+        },
+        {
+          "name": "Preston",
+          "from": "2023",
+          "to": "2023"
+        },
+        {
+          "name": "Hull City",
+          "from": "2023",
+          "to": "2024"
+        },
+        {
+          "name": "Ipswich",
+          "from": "2024",
+          "to": "2025"
+        },
+        {
+          "name": "Chelsea",
+          "from": "2025",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Fraser Forster",
+      "fame": 43,
+      "clubs": [
+        {
+          "name": "Newcastle",
+          "from": "2007",
+          "to": "2008"
+        },
+        {
+          "name": "Stockport",
+          "from": "2008",
+          "to": "2009"
+        },
+        {
+          "name": "Bristol Rovers",
+          "from": "2009",
+          "to": "2009"
+        },
+        {
+          "name": "Norwich",
+          "from": "2009",
+          "to": "2010"
+        },
+        {
+          "name": "Celtic",
+          "from": "2010",
+          "to": "2014"
+        },
+        {
+          "name": "Southampton",
+          "from": "2014",
+          "to": "2019"
+        },
+        {
+          "name": "Celtic",
+          "from": "2019",
+          "to": "2022"
+        },
+        {
+          "name": "Tottenham",
+          "from": "2022",
+          "to": "2026"
+        },
+        {
+          "name": "Bournemouth",
+          "from": "2026",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Jay Rodríguez",
+      "fame": 43,
+      "clubs": [
+        {
+          "name": "Burnley",
+          "from": "2007",
+          "to": "2008"
+        },
+        {
+          "name": "Stirling Albion",
+          "from": "2008",
+          "to": "2010"
+        },
+        {
+          "name": "Barnsley",
+          "from": "2010",
+          "to": "2012"
+        },
+        {
+          "name": "Southampton",
+          "from": "2012",
+          "to": "2017"
+        },
+        {
+          "name": "West Brom",
+          "from": "2017",
+          "to": "2019"
+        },
+        {
+          "name": "Burnley",
+          "from": "2019",
+          "to": "2025"
+        },
+        {
+          "name": "Wrexham",
+          "from": "2025",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Matt Targett",
+      "fame": 43,
+      "clubs": [
+        {
+          "name": "Southampton",
+          "from": "2014",
+          "to": "2018"
+        },
+        {
+          "name": "Fulham",
+          "from": "2018",
+          "to": "2019"
+        },
+        {
+          "name": "Aston Villa",
+          "from": "2019",
+          "to": "2022"
+        },
+        {
+          "name": "Newcastle",
+          "from": "2022",
+          "to": "2025"
+        },
+        {
+          "name": "Middlesbrough",
+          "from": "2025",
+          "to": "2026"
+        },
+        {
+          "name": "Hull City",
+          "from": "2026",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Andros Townsend",
+      "fame": 42,
+      "clubs": [
+        {
+          "name": "Yeovil Town",
+          "from": "2009",
+          "to": "2009"
+        },
+        {
+          "name": "Tottenham Res.",
+          "from": "2009",
+          "to": "2009"
+        },
+        {
+          "name": "Leyton Orient",
+          "from": "2009",
+          "to": "2010"
+        },
+        {
+          "name": "MK Dons",
+          "from": "2010",
+          "to": "2010"
+        },
+        {
+          "name": "Ipswich",
+          "from": "2010",
+          "to": "2011"
+        },
+        {
+          "name": "Watford",
+          "from": "2011",
+          "to": "2011"
+        },
+        {
+          "name": "Millwall",
+          "from": "2011",
+          "to": "2011"
+        },
+        {
+          "name": "Tottenham",
+          "from": "2011",
+          "to": "2012"
+        },
+        {
+          "name": "Leeds",
+          "from": "2012",
+          "to": "2012"
+        },
+        {
+          "name": "Birmingham",
+          "from": "2012",
+          "to": "2013"
+        },
+        {
+          "name": "QPR",
+          "from": "2013",
+          "to": "2016"
+        },
+        {
+          "name": "Newcastle",
+          "from": "2016",
+          "to": "2016"
+        },
+        {
+          "name": "Crystal Palace",
+          "from": "2016",
+          "to": "2021"
+        },
+        {
+          "name": "Everton",
+          "from": "2021",
+          "to": "2023"
+        },
+        {
+          "name": "Luton",
+          "from": "2023",
+          "to": "2024"
+        },
+        {
+          "name": "Antalyaspor",
+          "from": "2024",
+          "to": "2025"
+        },
+        {
+          "name": "Kanchanaburi FC",
+          "from": "2025",
+          "to": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Adam Armstrong",
+      "fame": 41,
+      "clubs": [
+        {
+          "name": "Newcastle",
+          "from": "2014",
+          "to": "2015"
+        },
+        {
+          "name": "Coventry",
+          "from": "2015",
+          "to": "2016"
+        },
+        {
+          "name": "Barnsley",
+          "from": "2016",
+          "to": "2017"
+        },
+        {
+          "name": "Bolton",
+          "from": "2017",
+          "to": "2018"
+        },
+        {
+          "name": "Blackburn",
+          "from": "2018",
+          "to": "2021"
+        },
+        {
+          "name": "Southampton",
+          "from": "2021",
+          "to": "2025"
+        },
+        {
+          "name": "West Brom",
+          "from": "2025",
+          "to": "2026"
+        },
+        {
+          "name": "Wolves",
+          "from": "2026",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Kiernan Dewsbury-Hall",
+      "fame": 41,
+      "clubs": [
+        {
+          "name": "Blackpool",
+          "from": "2020",
+          "to": "2020"
+        },
+        {
+          "name": "Luton",
+          "from": "2020",
+          "to": "2021"
+        },
+        {
+          "name": "Leicester",
+          "from": "2021",
+          "to": "2024"
+        },
+        {
+          "name": "Chelsea",
+          "from": "2024",
+          "to": "2025"
+        },
+        {
+          "name": "Everton",
+          "from": "2025",
+          "to": ""
+        }
+      ]
+    },
+    {
+      "name": "Djed Spence",
+      "fame": 40,
+      "clubs": [
+        {
+          "name": "Middlesbrough",
+          "from": "2020",
+          "to": "2021"
+        },
+        {
+          "name": "Nott'm Forest",
+          "from": "2021",
+          "to": "2022"
+        },
+        {
+          "name": "Tottenham",
+          "from": "2022",
+          "to": "2023"
+        },
+        {
+          "name": "Stade Rennais",
+          "from": "2023",
+          "to": "2023"
+        },
+        {
+          "name": "Leeds",
+          "from": "2023",
+          "to": "2024"
+        },
+        {
+          "name": "Genoa",
+          "from": "2024",
+          "to": "2024"
+        }
+      ]
+    },
+    {
+      "name": "Kalvin Phillips",
+      "fame": 40,
+      "clubs": [
+        {
+          "name": "Leeds",
+          "from": "2015",
+          "to": "2022"
+        },
+        {
+          "name": "Man City",
+          "from": "2022",
+          "to": "2024"
+        },
+        {
+          "name": "West Ham",
+          "from": "2024",
+          "to": "2024"
+        },
+        {
+          "name": "Ipswich",
+          "from": "2024",
+          "to": "2026"
+        },
+        {
+          "name": "Sheff Utd",
+          "from": "2026",
+          "to": "2026"
+        }
+      ]
+    }
+  ]
+}

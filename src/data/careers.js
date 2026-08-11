@@ -40,6 +40,10 @@ function toRound(p) {
   return { name, id: resolveNameToId(name), clues: clubs }
 }
 
+// Build a game round from any career player ({ name, clubs }). Used by themed
+// quizzes (e.g. the England pool) so they share Career Path's exact clue shape.
+export function roundFor(p) { return toRound(p) }
+
 export function getRandomTarget() {
   return toRound(ELIGIBLE[Math.floor(Math.random() * ELIGIBLE.length)])
 }
