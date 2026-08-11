@@ -85,7 +85,7 @@ export default function FootballTenable() {
 
   // Leave the daily untouched; start a fresh, replayable Unlimited round.
   const startUnlimited = () => {
-    setMode('unlimited'); setQuestion(getRandomTenableQuestion())
+    setBuilding(false); setMode('unlimited'); setQuestion(getRandomTenableQuestion())
     setRevealed({}); setLives(MAX_LIVES); setInput(''); setHistory([])
     setPhase('playing'); setDailyStats(null); setGaveUp(false); setShowGiveUpConfirm(false)
     setPendingRank(null); setPendingAnswer(null); setPulseRow(null); setShowResult(false); setResultTab('answers')
@@ -101,7 +101,7 @@ export default function FootballTenable() {
   // Return to the daily: rehydrate today's saved state (locked, resumed, or fresh).
   const restoreDaily = () => {
     const s = loadDailyProgress('tenable', getDailyTenableQuestion().id)
-    setMode('daily'); setQuestion(getDailyTenableQuestion())
+    setBuilding(false); setMode('daily'); setQuestion(getDailyTenableQuestion())
     setRevealed(s?.revealed ?? {}); setLives(s?.lives ?? MAX_LIVES); setInput(''); setHistory(s?.history ?? [])
     setPhase(s?.phase ?? 'playing'); setDailyStats(null); setGaveUp(s?.gaveUp ?? false); setShowGiveUpConfirm(false)
     setPendingRank(null); setPendingAnswer(null); setPulseRow(null); setShowResult(!!s?.done); setResultTab('answers')
@@ -347,7 +347,19 @@ export default function FootballTenable() {
 
   const correctCount = Object.keys(revealed).length
 
-  if (building) return <QuestionBuilder mode="tenable" onStart={startCustom} onBack={() => setBuilding(false)} />
+  // Build-your-own stays on the SAME page: same chrome + mode toggle (with Build
+  // active), the builder rendered where the pyramid normally is. Switching the
+  // toggle to Daily/Random leaves build mode.
+  if (building) return (
+    <div className="tv-scene min-h-dvh text-primary" style={accentVars('tenable')}>
+    <div className="flex flex-col items-center px-4 pb-8 max-w-3xl mx-auto">
+      <div className="w-full"><GameChrome motifId="tenable" title="FOOTBALL TENABLE" /></div>
+      <ModeToggle mode="build" onChange={onModeChange} className="mt-1 mb-4"
+        modes={[['daily', t('common.daily')], ['unlimited', 'Random'], ['build', 'Build your own']]} />
+      <QuestionBuilder embedded mode="tenable" onStart={startCustom} />
+    </div>
+    </div>
+  )
 
   return (
     <div className="tv-scene min-h-dvh text-primary" style={accentVars('tenable')}>

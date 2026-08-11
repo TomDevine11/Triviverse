@@ -334,13 +334,13 @@ const InfoBox = ({ label, value, tone }) => (
   </div>
 )
 
-function CountPicker({ title, sub, onPick, onBack }) {
+function CountPicker({ title, sub, onPick, onBack, embedded = false }) {
   const { t } = useI18n()
   return (
-    <div className="max-w-2xl mx-auto px-4 pb-12">
-      <GameChrome motifId="501" title={t('five01.wordmark')} />
-      <button onClick={onBack} className="text-muted hover:text-secondary text-sm transition-colors mt-4">{t('common.back')}</button>
-      <div className="mt-6 mb-8 text-center">
+    <div className={embedded ? 'w-full max-w-2xl mx-auto' : 'max-w-2xl mx-auto px-4 pb-12'}>
+      {!embedded && <GameChrome motifId="501" title={t('five01.wordmark')} />}
+      {!embedded && <button onClick={onBack} className="text-muted hover:text-secondary text-sm transition-colors mt-4">{t('common.back')}</button>}
+      <div className={`${embedded ? 'mb-8' : 'mt-6 mb-8'} text-center`}>
         <h2 className="score-number text-[clamp(2rem,5vw,2.6rem)] tv-wordmark leading-none mb-2">{title.toUpperCase()}</h2>
         {sub && <div className="text-secondary text-sm">{sub}</div>}
         <div className="text-muted text-xs mt-1 font-bold tracking-[0.12em] uppercase">{t('five01.howManyPlayers')}</div>
@@ -500,7 +500,13 @@ export default function Football501() {
   // Open straight on the daily (like Tenable) — the menu is a step back, not a step in.
   useEffect(() => { onDailyCard() }, []) // eslint-disable-line react-hooks/exhaustive-deps
   // The top-of-game pill: switch between today's daily, an unlimited random, and the builder.
-  const onPill = (m) => { if (m === mode) return; if (m === 'daily') onDailyCard(); else if (m === 'unlimited') setPhase('random'); else setPhase('build') }
+  const onPill = (m) => {
+    // The active pill follows the current screen, not just the play `mode` (build
+    // and the count-picker are their own phases), so the guard must too.
+    const cur = phase === 'build' ? 'build' : phase === 'random' ? 'unlimited' : mode
+    if (m === cur) return
+    if (m === 'daily') onDailyCard(); else if (m === 'unlimited') setPhase('random'); else setPhase('build')
+  }
   const playAgain = () => startFrom(isDaily ? getDailyChallenge() : getRandomChallenge(numPlayers), numPlayers, isDaily)
   const skipQuestion = () => startFrom(getRandomChallenge(numPlayers), numPlayers, false) // endless: new question
   const giveUp = () => {
@@ -590,6 +596,19 @@ export default function Football501() {
   const shell = (content) => (
     <div className="tv-scene min-h-dvh text-primary" style={accentVars('501')}>{content}</div>
   )
+  // Build-your-own and the count-picker render on the SAME page as play: same
+  // chrome + mode toggle (active pill = the current screen), with the panel
+  // where the board normally sits. Switching the toggle leaves the screen.
+  const modeShell = (active, content) => shell(
+    <div className="max-w-4xl mx-auto px-4 pb-6 min-h-dvh flex flex-col">
+      <GameChrome motifId="501" title={t('five01.wordmark')} />
+      <div className="flex flex-col items-center gap-1 mb-6 shrink-0">
+        <ModeToggle mode={active} onChange={onPill} modes={[['daily', t('common.daily')], ['unlimited', 'Unlimited'], ['build', 'Build your own']]} />
+        <div className="text-faint text-[0.62rem] text-center leading-tight">Unlimited = random questions · Build your own = custom · solo or up to 5 players</div>
+      </div>
+      {content}
+    </div>
+  )
 
   if (loading) return shell(
     <div className="min-h-dvh flex flex-col items-center justify-center px-4">
@@ -598,8 +617,8 @@ export default function Football501() {
     </div>
   )
   if (phase === 'entry') return shell(<div className="min-h-dvh flex items-center justify-center"><div className="w-8 h-8 border-2 border-border-strong border-t-brand rounded-full animate-spin" /></div>)
-  if (phase === 'random') return shell(<CountPicker title={t('five01.randomTitle')} sub={t('five01.randomSub')} onBack={onDailyCard} onPick={(n) => { setMode('unlimited'); startFrom(getRandomChallenge(n), n, false) }} />)
-  if (phase === 'build') return shell(<QuestionBuilder onBack={onDailyCard} onStart={(challenge, count) => { setMode('build'); startFrom(challenge, count, false) }} />)
+  if (phase === 'random') return modeShell('unlimited', <CountPicker embedded title={t('five01.randomTitle')} sub={t('five01.randomSub')} onPick={(n) => { setMode('unlimited'); startFrom(getRandomChallenge(n), n, false) }} />)
+  if (phase === 'build') return modeShell('build', <QuestionBuilder embedded mode="501" onStart={(challenge, count) => { setMode('build'); startFrom(challenge, count, false) }} />)
 
   const validCount = history.filter(g => g.valid).length
   const currentPlayer = players[currentPlayerIndex]

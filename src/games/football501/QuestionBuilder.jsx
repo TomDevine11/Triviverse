@@ -28,7 +28,7 @@ const Label = ({ children, onRemove }) => (
   </div>
 )
 
-export default function QuestionBuilder({ onStart, onBack, mode = '501' }) {
+export default function QuestionBuilder({ onStart, onBack, mode = '501', embedded = false }) {
   const isTenable = mode === 'tenable'
   const { t } = useI18n()
   const stats = useMemo(() => getStats(), [])
@@ -121,10 +121,12 @@ export default function QuestionBuilder({ onStart, onBack, mode = '501' }) {
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-4 pb-12">
-      <GameChrome motifId={isTenable ? 'tenable' : '501'} title={isTenable ? 'Tenable' : t('five01.wordmark')} />
-      <button onClick={onBack} className="text-muted hover:text-secondary text-sm transition-colors mt-4">{t('common.back')}</button>
-      <div className="mt-5 mb-5 text-center">
+    <div className={embedded ? 'w-full' : 'max-w-4xl mx-auto px-4 pb-12'}>
+      {/* When embedded, the host game provides the chrome + the mode toggle
+          (which doubles as "back"), so it reads as the same page in Build mode. */}
+      {!embedded && <GameChrome motifId={isTenable ? 'tenable' : '501'} title={isTenable ? 'Tenable' : t('five01.wordmark')} />}
+      {!embedded && <button onClick={onBack} className="text-muted hover:text-secondary text-sm transition-colors mt-4">{t('common.back')}</button>}
+      <div className={`${embedded ? '' : 'mt-5'} mb-5 text-center`}>
         <h2 className="score-number text-[clamp(2rem,5vw,2.6rem)] tv-wordmark leading-none">BUILD A QUESTION</h2>
       </div>
 
