@@ -367,6 +367,10 @@ export default function Football501() {
   const [challenge, setChallenge] = useState(null)
   const [isDaily, setIsDaily] = useState(false)
   const [gaveUp, setGaveUp] = useState(false)
+  // Lets the result card be dismissed (X) to reveal the finished board beneath,
+  // without changing `phase` away from 'won' (which would reopen it / lose the
+  // locked daily). Reset on every game entry so a fresh finish shows the card.
+  const [resultDismissed, setResultDismissed] = useState(false)
   const [loading, setLoading] = useState(true) // boots straight into the daily
   const [knownNames, setKnownNames] = useState(new Set())
   const [players, setPlayers] = useState([])
@@ -467,7 +471,7 @@ export default function Football501() {
   }
   // A challenge may need its competition's fact table loaded first (async).
   const startFrom = async (challengePromise, count, daily) => {
-    setLoading(true)
+    setLoading(true); setResultDismissed(false)
     try { startGame(await challengePromise, count, daily) }
     finally { setLoading(false) }
   }
@@ -476,7 +480,7 @@ export default function Football501() {
   // 'won'), an in-progress one resumes mid-checkout. The board is restored from
   // the snapshot; the challenge is re-derived deterministically.
   const resumeDaily = async () => {
-    setMode('daily')
+    setMode('daily'); setResultDismissed(false)
     const snap = loadDailyProgress('501', getDailyEntry().id)
     if (!snap) { playDaily(); return }
     setLoading(true)
@@ -602,14 +606,14 @@ export default function Football501() {
 
   // The board stays mounted under the result overlay so the report card
   // floats over a dimmed, still-visible oche (the product's modal contract).
-  const overlay = phase === 'won' && (
+  const overlay = phase === 'won' && !resultDismissed && (
     <div className="fixed inset-0 z-modal bg-black/70 backdrop-blur-sm result-modal-in flex items-center justify-center p-4 sm:p-6">
       <div className="result-card w-full max-w-2xl max-h-[88dvh] flex">
         <WinScreen
           history={history} players={players} challenge={challenge} gaveUp={gaveUp}
           onPlayAgain={soloDaily ? () => setPhase('random') : playAgain}
           playAgainLabel={soloDaily ? t('common.playUnlimited') : t('five01.playAgain')}
-          onExit={onDailyCard}
+          onExit={() => setResultDismissed(true)}
         />
       </div>
     </div>
@@ -701,10 +705,17 @@ export default function Football501() {
           )}
 
           {/* Give up (solo) — end the round from here and reveal the answers */}
-          {numPlayers === 1 && (
+          {numPlayers === 1 && phase === 'playing' && (
             <button type="button" onClick={giveUp}
               className="w-full border border-danger/40 text-danger-bright hover:bg-danger/10 hover:border-danger text-sm font-medium rounded-xl px-4 py-2.5 transition-colors">
               {t('five01.giveUpReveal')}
+            </button>
+          )}
+          {/* Result card dismissed to see the board — offer it back. */}
+          {phase === 'won' && resultDismissed && (
+            <button type="button" onClick={() => setResultDismissed(false)}
+              className="w-full border border-border-strong text-secondary hover:bg-surface hover:text-primary text-sm font-medium rounded-xl px-4 py-2.5 transition-colors">
+              {t('common.seeResult')}
             </button>
           )}
         </div>
