@@ -245,8 +245,8 @@ export const ROUTES = [
   {
     path: '/tenable',
     name: 'Football Tenable',
-    title: 'Football Tenable — Daily & Unlimited Top 10 Quiz | Triviverse',
-    description: 'Play free daily Football Tenable (a.k.a. Tenaball) — name as many of the top 10 as you can before three wrong guesses. Unlimited practice mode, no sign-up.',
+    title: 'Football Tenable (Teneball) — Daily Top 10 Quiz | Triviverse',
+    description: 'Play Football Tenable free — also spelled Teneball or Tenaball. Name as many of the top 10 as you can before three wrong guesses. Daily & Unlimited modes, no sign-up.',
     keywords: ['football tenable', 'footy tenable', 'tenable football', 'footytenable', 'tenaball', 'teneball', 'footy tenaball', 'football tenaball', 'football tenable unlimited', 'football tenable unlimited free', 'football tenable free', 'name the top 10 football', 'football top 10 quiz'],
     h1: 'Football Tenable',
     tagline: 'Name as many of the top 10 as you can before three wrong guesses end it.',

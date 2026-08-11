@@ -25,6 +25,33 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.join(__dirname, '..', 'dist')
 const template = readFileSync(path.join(DIST, 'index.html'), 'utf8')
 
+// Load the answer-archive builder through Vite's SSR pipeline. archiveData.js
+// imports the game data modules (which import generated JSON) that plain Node
+// ESM can't resolve — Vite transforms them — so this lets the prerender bake the
+// past-answers list into static HTML, crawlable by engines that don't run JS.
+const { createServer } = await import('vite')
+const vite = await createServer({ server: { middlewareMode: true }, appType: 'custom', logLevel: 'error' })
+const { buildArchive } = await vite.ssrLoadModule('/src/seo/archiveData.js')
+
+// Bake the stable PAST answers into static HTML. Today's answer is deliberately
+// left to the client: it would go stale between deploys, and its spoiler gate
+// stays intact for crawlers too.
+function archiveHtml(gamePath) {
+  let arch
+  try { arch = buildArchive(gamePath) } catch { return '' }
+  if (!arch?.past?.length) return ''
+  const line = (a) => {
+    if (arch.kind === 'word') return esc(a.primary + (a.secondary ? ` — ${a.secondary}` : ''))
+    if (arch.kind === 'player') return esc(a.primary)
+    if (arch.kind === 'list') return esc(`${a.primary}: ` + a.list.map(x => x.text + (x.detail ? ` (${x.detail})` : '')).join(', '))
+    if (arch.kind === 'groups') return esc(a.groups.map(g => `${g.label}: ${g.players.join(', ')}`).join(' — '))
+    return ''
+  }
+  let h = '<h2>Past answers</h2><ul>'
+  for (const e of arch.past) h += `<li>Matchday ${e.matchday} (${esc(e.date)}): ${line(e.answer)}</li>`
+  return h + '</ul>'
+}
+
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
 // Minimal translate for the prerender (no React/hooks in Node).
@@ -81,6 +108,7 @@ function crawlable(route, lang) {
     for (const f of route.faq) h += `<dt>${esc(f.q)}</dt><dd>${esc(f.a)}</dd>`
     h += `</dl>`
   }
+  if (route.path.endsWith('/answers')) h += archiveHtml(route.path.replace(/\/answers$/, ''))
   if (route.answersPath) h += `<p>${link(route.answersPath, `Past ${route.name} answers & solutions`)}</p>`
   const others = indexableRoutes().filter(o => o.path !== route.path && !o.hideFromNav)
   h += `<nav aria-label="${esc(t('common.moreGames', lang))}"><h2>${esc(t('common.moreGames', lang))}</h2><ul>`
@@ -152,4 +180,5 @@ console.error(`Prerendering ${BRAND} (${ROUTES.length} routes × ${LOCALES.lengt
 for (const route of ROUTES) writeRoute(route)
 writeSitemap()
 writeRobots()
+await vite.close()
 console.error('Done.')
