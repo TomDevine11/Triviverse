@@ -20,6 +20,7 @@ export default function FootballPointless() {
   const [shake, setShake] = useState(false)
   const [toast, setToast] = useState('')
   const [revealed, setRevealed] = useState(false)
+  const [showAll, setShowAll] = useState(false) // dev/testing: full scored list
   const inputRef = useRef(null)
   const dropdownRef = useRef(null)
 
@@ -62,7 +63,7 @@ export default function FootballPointless() {
   }
   const newQuestion = () => {
     setQIndex(i => (i + 1) % POINTLESS_QUESTIONS.length)
-    setAnswers([]); setInput(''); setRevealed(false); setHighlightedIndex(-1); setDismissed(false); setToast('')
+    setAnswers([]); setInput(''); setRevealed(false); setHighlightedIndex(-1); setDismissed(false); setToast(''); setShowAll(false)
   }
 
   return (
@@ -122,6 +123,21 @@ export default function FootballPointless() {
               </ul>
             </div>
             <button onClick={newQuestion} className="w-full mt-6 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-xl px-6 py-3 transition-colors">New question →</button>
+          </div>
+        )}
+
+        {/* dev/testing: full scored answer list */}
+        <button onClick={() => setShowAll(v => !v)} className="mt-6 text-[0.62rem] font-black tracking-[0.14em] uppercase text-faint hover:text-secondary transition-colors">
+          {showAll ? 'Hide' : 'Show'} all answers &amp; scores (test)
+        </button>
+        {showAll && (
+          <div className="w-full mt-3 max-h-80 overflow-y-auto border border-border rounded-xl divide-y divide-border/50">
+            {[...question.answers].sort((a, b) => b.p - a.p).map((a, i) => (
+              <div key={i} className="flex items-center justify-between px-3 py-1.5 text-xs">
+                <span className="text-secondary truncate mr-2">{a.d}</span>
+                <span className={`tabular-nums font-bold shrink-0 ${tone(a.p)}`}>{a.p}</span>
+              </div>
+            ))}
           </div>
         )}
       </div>

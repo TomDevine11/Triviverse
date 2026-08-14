@@ -37,16 +37,30 @@ const clubId = (comp, re) => Object.entries(clubs[comp]).find(([, v]) => re.test
 // keeps only the genuine stars high and lets the long obscure tail fall to ~0,
 // which is what real Pointless scoring looks like. `y` (last year) powers a
 // "gettable deep cuts" reveal. Sorted ascending → first entries are pointless.
-const FLOOR_PCT = 0.33 // bottom third of EVERY pool → pointless (0), so the band
-                       // is consistent regardless of how notable the pool is.
-function build(id, title, description, pred) {
-  const pool = all.filter(pred).map(p => ({ p, nm: nameability(p) })).sort((a, b) => a.nm - b.nm)
-  const max = pool[pool.length - 1]?.nm || 1
-  const nmFloor = pool[Math.floor(FLOOR_PCT * pool.length)]?.nm ?? 0
-  const pts = (nm) => (nm <= nmFloor ? 0 : Math.round(100 * (nm - nmFloor) / (max - nmFloor)))
-  const answers = pool.map(({ p, nm }) => ({ n: norm(p.name), d: p.name, p: pts(nm), y: p.last || 0 }))
-  return { id, title, description, count: pool.length, answers }
+const FLOOR_PCT = 0.33 // bottom third of EVERY pool → pointless (0), consistent band
+const ANCHOR_PCT = 0.97 // normalise to the ~97th-pct player, not the single max, so
+                        // a mega-outlier (a Ronaldo) doesn't squash the whole star tier.
+// `relevant(p)` returns { apps, goals } for the STAT THE QUESTION ASKS ABOUT
+// (a club's record, or the sum across the relevant competitions), or null if the
+// player doesn't qualify. Scoring by the context — not global fame — is what
+// makes "how likely would you name them for THIS question" right: Rashford's few
+// Barça apps score low even though he's globally famous.
+function build(id, title, description, relevant) {
+  const scored = []
+  for (const p of all) {
+    const r = relevant(p)
+    if (!r || r.apps < 5) continue
+    scored.push({ p, nm: (r.apps + K_GOALS * r.goals) * recency(p.last) })
+  }
+  scored.sort((a, b) => a.nm - b.nm)
+  const at = (f) => scored[Math.floor(f * (scored.length - 1))]?.nm ?? 0
+  const nmFloor = at(FLOOR_PCT)
+  const nmAnchor = Math.max(at(ANCHOR_PCT), nmFloor + 1)
+  const pts = (nm) => (nm <= nmFloor ? 0 : Math.min(100, Math.round(100 * (nm - nmFloor) / (nmAnchor - nmFloor))))
+  const answers = scored.map(({ p, nm }) => ({ n: norm(p.name), d: p.name, p: pts(nm), y: p.last || 0 }))
+  return { id, title, description, count: scored.length, answers }
 }
+const sum = (...s) => ({ apps: s.reduce((a, x) => a + (x?.apps || 0), 0), goals: s.reduce((a, x) => a + (x?.goals || 0), 0) })
 
 const lpool = clubId('GB1', /liverpool/i)
 const real = clubId('ES1', /real madrid/i)
@@ -55,17 +69,17 @@ const bayern = clubId('L1', /bayern munich|bayern münchen|fc bayern/i)
 
 const questions = [
   build('pl-cl-scorers', 'Scored in the Premier League AND the Champions League', 'Name a player who has scored in both.',
-    p => p.comps.GB1?.goals > 0 && p.comps.CL?.goals > 0 && (p.comps.GB1.apps + p.comps.CL.apps) >= 15),
+    p => (p.comps.GB1?.goals > 0 && p.comps.CL?.goals > 0) ? sum(p.comps.GB1, p.comps.CL) : null),
   build('liverpool-pl', 'Played for Liverpool in the Premier League', 'Name anyone who made 5+ PL apps for Liverpool.',
-    p => p.comps.GB1?.clubs?.[lpool]?.apps >= 5),
+    p => p.comps.GB1?.clubs?.[lpool] || null),
   build('real-laliga', 'Played for Real Madrid in La Liga', 'Name anyone with 5+ La Liga apps for Real Madrid.',
-    p => p.comps.ES1?.clubs?.[real]?.apps >= 5),
+    p => p.comps.ES1?.clubs?.[real] || null),
   build('barca-laliga', 'Played for Barcelona in La Liga', 'Name anyone with 5+ La Liga apps for Barcelona.',
-    p => p.comps.ES1?.clubs?.[barca]?.apps >= 5),
+    p => p.comps.ES1?.clubs?.[barca] || null),
   build('seriea-pl', 'Played in BOTH Serie A and the Premier League', 'Name a player who appeared in both.',
-    p => p.comps.IT1?.apps >= 5 && p.comps.GB1?.apps >= 5),
+    p => (p.comps.IT1?.apps >= 5 && p.comps.GB1?.apps >= 5) ? sum(p.comps.IT1, p.comps.GB1) : null),
   build('bayern-bundesliga', 'Played for Bayern Munich in the Bundesliga', 'Name anyone with 5+ Bundesliga apps for Bayern.',
-    p => p.comps.L1?.clubs?.[bayern]?.apps >= 5),
+    p => p.comps.L1?.clubs?.[bayern] || null),
 ]
 
 const outDir = path.join(__dirname, '..', '..', 'src', 'data', 'pointless')
