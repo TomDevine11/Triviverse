@@ -36,7 +36,10 @@ export default function FootballPointless() {
 
   const total = answers.reduce((s, a) => s + a.p, 0)
   const foundPointless = answers.some(a => a.p === 0)
-  const ideal = question.answers.slice(0, 5)
+  // Reveal gettable low-scorers — the most pointless RECENT players (nameable
+  // deep cuts), not pre-war obscurities. Fall back to absolute lowest if sparse.
+  const recentLow = question.answers.filter(a => (a.y || 0) >= 2008)
+  const ideal = (recentLow.length >= 5 ? recentLow : question.answers).slice(0, 6)
   const verdict = total === 0 ? 'Flawless — pure pointless!' : total <= 40 ? 'Deep cuts. Excellent.' : total <= 120 ? 'Solid — but you named some obvious ones.' : 'Too famous! Dig more obscure.'
 
   const flash = (msg) => { setToast(msg); setShake(true); setTimeout(() => setShake(false), 400); setTimeout(() => setToast(''), 1600) }

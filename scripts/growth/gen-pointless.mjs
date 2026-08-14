@@ -13,7 +13,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const COMPS = ['CL', 'ES1', 'FR1', 'GB1', 'IT1', 'L1']
 const W = { GB1: 1.0, CL: 1.0, ES1: 0.95, IT1: 0.85, L1: 0.8, FR1: 0.7 }
 const K_GOALS = 4
-const CURVE = 2 // pts = 100 · percentile^CURVE → most answers low, stars high
 
 const players = new Map()
 const clubs = {}
@@ -33,13 +32,16 @@ const nameability = (p) => Object.entries(p.comps).reduce((s, [c, v]) => s + (W[
 const norm = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim()
 const clubId = (comp, re) => Object.entries(clubs[comp]).find(([, v]) => re.test(v.name))?.[0]
 
-// Build a question from a predicate. Scores by percentile within the pool.
+// Build a question from a predicate. Points = nameability as a % of the pool's
+// most-nameable player (linear, NOT percentile) — fame is a power law, so this
+// keeps only the genuine stars high and lets the long obscure tail fall to ~0,
+// which is what real Pointless scoring looks like. `y` (last year) powers a
+// "gettable deep cuts" reveal. Sorted ascending → first entries are pointless.
 function build(id, title, description, pred) {
-  const pool = all.filter(pred)
-  const scored = pool.map(p => ({ p, n: nameability(p) })).sort((a, b) => a.n - b.n)
-  const N = scored.length
-  const answers = scored.map((s, i) => ({ n: norm(s.p.name), d: s.p.name, p: Math.round(100 * (i / (N - 1)) ** CURVE) }))
-  return { id, title, description, count: N, answers }
+  const pool = all.filter(pred).map(p => ({ p, nm: nameability(p) })).sort((a, b) => a.nm - b.nm)
+  const max = pool[pool.length - 1]?.nm || 1
+  const answers = pool.map(({ p, nm }) => ({ n: norm(p.name), d: p.name, p: Math.round(100 * nm / max), y: p.last || 0 }))
+  return { id, title, description, count: pool.length, answers }
 }
 
 const lpool = clubId('GB1', /liverpool/i)
