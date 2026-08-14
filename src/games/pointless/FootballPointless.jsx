@@ -5,6 +5,7 @@ import { usePlayerSuggestions } from '../tictactoe/usePlayerSuggestions'
 import { accentVars } from '../../design/accents'
 import { todayIndex, recordResult } from '../../data/dailyStats'
 import { POINTLESS_QUESTIONS, matchAnswer } from '../../data/pointless/pointlessGame'
+import PointlessBoard from './PointlessBoard'
 
 // Name 5 valid answers, going as obscure as possible. Each scores "how many of
 // 100 would name this player for THIS question" (from Transfermarkt apps/goals) —
@@ -28,6 +29,7 @@ export default function FootballPointless() {
   const [revealed, setRevealed] = useState(false)
   const [showAll, setShowAll] = useState(false)
   const [recorded, setRecorded] = useState(false)
+  const [reveal, setReveal] = useState(null) // { score, name, key } for the tower
   const inputRef = useRef(null)
   const dropdownRef = useRef(null)
 
@@ -55,7 +57,7 @@ export default function FootballPointless() {
     if (done && mode === 'daily' && !recorded) { recordResult('pointless', foundPointless, total); setRecorded(true) }
   }, [done, mode, recorded, foundPointless, total])
 
-  const resetRound = () => { setAnswers([]); setInput(''); setRevealed(false); setHighlightedIndex(-1); setDismissed(false); setToast(''); setShowAll(false); setRecorded(false) }
+  const resetRound = () => { setAnswers([]); setInput(''); setRevealed(false); setHighlightedIndex(-1); setDismissed(false); setToast(''); setShowAll(false); setRecorded(false); setReveal(null) }
   const startDaily = () => { setMode('daily'); setQIndex(dailyIdx()); resetRound() }
   const startUnlimited = () => { setMode('unlimited'); setQIndex(randomIdx()); resetRound() }
   const onModeChange = (m) => (m === 'daily' ? startDaily() : startUnlimited())
@@ -69,6 +71,7 @@ export default function FootballPointless() {
     if (!m) { flash('Not a valid answer for this one'); return }
     if (answers.some(a => a.d === m.d)) { flash('Already used'); return }
     setAnswers(a => [...a, m])
+    setReveal({ score: m.p, name: m.d, key: Date.now() }) // drive the tower countdown
     setTimeout(() => inputRef.current?.focus(), 0)
   }
   const handleSubmit = (e) => { e.preventDefault(); if (!active) return; if (highlightedIndex >= 0 && visibleSuggestions[highlightedIndex]) { submit(visibleSuggestions[highlightedIndex].name); return } if (input.trim()) submit(input.trim()) }
@@ -80,7 +83,7 @@ export default function FootballPointless() {
   }
 
   return (
-    <div className="tv-scene min-h-dvh text-primary" style={accentVars('tenable')}>
+    <div className="tv-scene min-h-dvh text-primary" style={accentVars('pointless')}>
       <div className="flex flex-col items-center px-4 pb-10 max-w-lg mx-auto">
         <div className="w-full"><GameChrome motifId="tenable" title="FOOTBALL POINTLESS" right={<b className={`tabular-nums ${total <= 40 ? 'text-success-bright' : 'text-secondary'}`}>{total} pts</b>} /></div>
 
@@ -92,13 +95,17 @@ export default function FootballPointless() {
           <div className="text-muted text-xs mt-0.5">{question.description} The rarer the answer, the fewer points — find a <b className="text-success-bright">pointless (0)</b>.</div>
         </div>
 
-        <div className="w-full space-y-2 mb-4">
+        {/* the countdown tower — hero reveal for each answer */}
+        <div className="mb-5"><PointlessBoard reveal={reveal} /></div>
+
+        {/* accumulated answers, compact */}
+        <div className="w-full grid grid-cols-5 gap-1.5 mb-4">
           {Array.from({ length: MAX_ANSWERS }).map((_, i) => {
             const a = answers[i]
             return (
-              <div key={i} className={`flex items-center justify-between rounded-xl border px-4 py-3 ${a ? 'border-border-strong bg-surface' : 'border-dashed border-border bg-card/40'}`}>
-                <span className={`text-sm font-bold ${a ? 'text-primary' : 'text-faint'}`}>{a ? a.d : `Answer ${i + 1}`}</span>
-                {a && <span className={`score-number text-xl tabular-nums ${tone(a.p)}`}>{a.p}</span>}
+              <div key={i} className={`flex flex-col items-center justify-center rounded-lg border py-2 ${a ? 'border-border-strong bg-surface' : 'border-dashed border-border bg-card/40'}`} title={a?.d || ''}>
+                <span className={`score-number text-lg tabular-nums ${a ? tone(a.p) : 'text-faint'}`}>{a ? a.p : '·'}</span>
+                <span className="text-[0.5rem] text-faint truncate max-w-full px-1">{a ? a.d.split(' ').slice(-1)[0] : i + 1}</span>
               </div>
             )
           })}

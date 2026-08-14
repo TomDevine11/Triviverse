@@ -13,6 +13,7 @@ export const GAME_ACCENTS = {
   connections: { accent: '#a3e635', bright: '#bef264', tint: 'rgb(163 230 53 / 0.12)' }, // volt
   higherlower: { accent: '#f97316', bright: '#fb923c', tint: 'rgb(249 115 22 / 0.12)' },
   501: { accent: '#ef4444', bright: '#f87171', tint: 'rgb(239 68 68 / 0.12)' },
+  pointless: { accent: '#0ea5e9', bright: '#38bdf8', tint: 'rgb(14 165 233 / 0.12)' }, // display azure
 }
 
 // Style object for the element that roots a game's accent scope.
