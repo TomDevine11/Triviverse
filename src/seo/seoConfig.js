@@ -535,6 +535,36 @@ export const ROUTES = [
     priority: '0.6',
     changefreq: 'weekly',
   },
+
+  // ── Football Pointless (MVP) ───────────────────────────────────────────────
+  // Targets the underserved "football pointless" show-name term (see growth
+  // research). hideFromNav while it's an MVP. Rendered by FootballPointless;
+  // obscurity scored from Transfermarkt apps/goals (scripts/growth/gen-pointless).
+  {
+    path: '/football-pointless',
+    name: 'Football Pointless',
+    hideFromNav: true,
+    title: 'Football Pointless — Name the Rarest Answers | Triviverse',
+    description: 'Football Pointless: every question has loads of correct answers, but you want the obscure ones — the rarer your pick, the fewer points. Find a pointless answer to win. Free, no sign-up.',
+    keywords: ['football pointless', 'pointless football', 'football pointless quiz', 'football pointless game', 'pointless football quiz'],
+    h1: 'Football Pointless',
+    tagline: 'Name the rarest correct answer — the more obscure, the better.',
+    about: 'Football Pointless is a football quiz in the style of the TV show Pointless: every question has many correct answers, but you are hunting the obscure ones. The more obvious your answer, the more points it scores — and points are bad. Find a valid answer nobody would think of and score a pointless zero.',
+    howTo: [
+      'Read the question — it has lots of valid answers.',
+      'Name valid players, aiming for the most obscure ones.',
+      'The rarer your answer, the fewer points it scores — points are bad.',
+      'A valid answer nobody would name scores a pointless 0.',
+    ],
+    faq: [
+      { q: 'How does Football Pointless work?', a: 'Every question has many correct answers. You score points based on how obvious your answer is — the more obscure the correct answer, the fewer points, and points are bad. The rarest valid answer is “pointless” and scores 0.' },
+      { q: 'How are the scores worked out?', a: 'Each answer is scored by how recognisable the player is, derived from their real career appearances and goals — so household names score high and deep-cut squad players score low.' },
+      { q: 'Is Football Pointless free?', a: 'Yes — free to play in your browser, no sign-up or download.' },
+    ],
+    schema: 'VideoGame',
+    priority: '0.6',
+    changefreq: 'weekly',
+  },
 ]
 
 export const routeByPath = (path, lang = 'en') => localize(ROUTES.find(r => r.path === path) || ROUTES[0], lang)

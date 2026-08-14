@@ -17,6 +17,7 @@ const GuessByTeammates = lazy(() => import('./games/teammates/GuessByTeammates')
 const CareerPath = lazy(() => import('./games/careers/CareerPath'))
 const HigherLower = lazy(() => import('./games/higherlower/HigherLower'))
 const FootballConnections = lazy(() => import('./games/connections/FootballConnections'))
+const FootballPointless = lazy(() => import('./games/pointless/FootballPointless'))
 
 // Dev-only: identity foundation inspector (Phase 0). Not linked from the hub;
 // reads only the generated identity artifacts, touches no game code.
@@ -72,6 +73,9 @@ export default function App() {
           {/* Generated data-derived landing page that is itself playable (growth PoC). */}
           <Route path="/england-football-quiz" element={<ThemedEnglandPage path="/england-football-quiz" />} />
           <Route path="/es/england-football-quiz" element={<ThemedEnglandPage path="/england-football-quiz" />} />
+          {/* Football Pointless MVP */}
+          <Route path="/football-pointless" element={<GamePage path="/football-pointless"><FootballPointless /></GamePage>} />
+          <Route path="/es/football-pointless" element={<GamePage path="/football-pointless"><FootballPointless /></GamePage>} />
         </Routes>
       </Suspense>
     </>
