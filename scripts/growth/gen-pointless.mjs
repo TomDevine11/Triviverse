@@ -37,10 +37,12 @@ const clubId = (comp, re) => Object.entries(clubs[comp]).find(([, v]) => re.test
 // keeps only the genuine stars high and lets the long obscure tail fall to ~0,
 // which is what real Pointless scoring looks like. `y` (last year) powers a
 // "gettable deep cuts" reveal. Sorted ascending → first entries are pointless.
+const FLOOR = 0.03 // players below FLOOR × the pool's star → a "pointless" band (0)
 function build(id, title, description, pred) {
   const pool = all.filter(pred).map(p => ({ p, nm: nameability(p) })).sort((a, b) => a.nm - b.nm)
   const max = pool[pool.length - 1]?.nm || 1
-  const answers = pool.map(({ p, nm }) => ({ n: norm(p.name), d: p.name, p: Math.round(100 * nm / max), y: p.last || 0 }))
+  const pts = (nm) => Math.round(100 * Math.max(0, (nm / max - FLOOR) / (1 - FLOOR)))
+  const answers = pool.map(({ p, nm }) => ({ n: norm(p.name), d: p.name, p: pts(nm), y: p.last || 0 }))
   return { id, title, description, count: pool.length, answers }
 }
 
