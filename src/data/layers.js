@@ -65,8 +65,7 @@ export const DERIVED = [
   'football501/daily.curated.generated.json',
   'careers.generated.json',
   'teammates.generated.json',
-  'crests.generated.json',
-  'categoryIcons.generated.json',
+  'badges.generated.json',
   'canonical/nameFixes.generated',
   'recognisability.generated.json', // derived contemporary-recognisability score (replaces Wikidata fame)
   'categories.generated.json', // derived tic-tac-toe/connections membership from canonical (C12: clubs/nats/trophies)

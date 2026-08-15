@@ -1,13 +1,11 @@
-// Club crest lookup. Map is keyed by the EXACT club name our data uses (see
-// scripts/build-crests.mjs), so callers pass the same label they display.
-// Returns null when we have no crest — callers (the <Crest> component) then
-// fall back to a monogram, so the long tail of clubs degrades gracefully.
-import data from './crests.generated.json'
+// Club crest lookup. Callers pass the club name they display; we resolve it to a
+// Transfermarkt id and return TM's deterministic crest URL (see clubBadges.js /
+// scripts/build-badges.mjs). Returns null when the name doesn't resolve — the
+// <Crest> component then falls back to a monogram, so the tail degrades cleanly.
+import { clubBadgeUrl, BADGES_AS_OF } from './clubBadges'
 
-const CRESTS = data.crests || {}
-
-export const CRESTS_AS_OF = data.meta?.fetchedAt || ''
+export const CRESTS_AS_OF = BADGES_AS_OF
 
 export function crestUrl(clubName) {
-  return CRESTS[clubName] || null
+  return clubBadgeUrl(clubName)
 }
