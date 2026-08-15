@@ -5,6 +5,7 @@ import { usePlayerSuggestions } from '../tictactoe/usePlayerSuggestions'
 import DailyStats from '../../components/DailyStats'
 import { accentVars } from '../../design/accents'
 import { todayIndex, recordResult } from '../../data/dailyStats'
+import { loadDailyProgress, saveDailyProgress } from '../../data/dailyProgress'
 import { POINTLESS_QUESTIONS, matchAnswer } from '../../data/pointless/pointlessGame'
 import PointlessBoard from './PointlessBoard'
 
@@ -16,18 +17,21 @@ const N = POINTLESS_QUESTIONS.length
 const tone = (p) => (p === 0 ? 'text-success-bright' : p <= 15 ? 'text-success' : p <= 40 ? 'text-warn' : 'text-danger-bright')
 const dailyIdx = () => todayIndex() % N
 const randomIdx = () => Math.floor(Math.random() * N)
+const dailyKey = () => POINTLESS_QUESTIONS[dailyIdx()].id // stable per-day id for persistence
+const WIN_MAX = 100 // total under this wins the round (a pointless 0 still wins instantly)
 
 export default function FootballPointless() {
   const [mode, setMode] = useState('daily')            // 'daily' | 'unlimited'
   const [qIndex, setQIndex] = useState(dailyIdx)
   const question = POINTLESS_QUESTIONS[qIndex]
-  const [answers, setAnswers] = useState([])
+  const [saved] = useState(() => loadDailyProgress('pointless', dailyKey())) // today's daily, if already played
+  const [answers, setAnswers] = useState(() => saved?.answers ?? [])
   const [input, setInput] = useState('')
   const [highlightedIndex, setHighlightedIndex] = useState(-1)
   const [dismissed, setDismissed] = useState(false)
   const [shake, setShake] = useState(false)
   const [toast, setToast] = useState('')
-  const [revealed, setRevealed] = useState(false)
+  const [revealed, setRevealed] = useState(() => !!saved?.done)
   const [showAll, setShowAll] = useState(false)
   const [recorded, setRecorded] = useState(false)
   const [reveal, setReveal] = useState(null) // { score, name, key } for the tower
@@ -35,9 +39,12 @@ export default function FootballPointless() {
   const inputRef = useRef(null)
   const dropdownRef = useRef(null)
 
+  const total = answers.reduce((s, a) => s + a.p, 0)
   const foundPointless = answers.some(a => a.p === 0)
-  const won = foundPointless // a pointless (0) answer wins the round instantly
-  const done = won || answers.length >= MAX_ANSWERS || revealed
+  const done = foundPointless || answers.length >= MAX_ANSWERS || revealed
+  // Win: a pointless (0) wins instantly; otherwise finish all 5 answers with a
+  // total under 100.
+  const won = foundPointless || (answers.length >= MAX_ANSWERS && total < WIN_MAX)
   const active = !done
   const usedNames = useMemo(() => new Set(), [qIndex])
   const { suggestions, isSearching } = usePlayerSuggestions(input, active, usedNames)
@@ -48,22 +55,35 @@ export default function FootballPointless() {
     document.addEventListener('mousedown', h); return () => document.removeEventListener('mousedown', h)
   }, [])
 
-  const total = answers.reduce((s, a) => s + a.p, 0)
   // Every valid pointless (0) answer, most recognisable first (answers are stored
   // ascending nameability, so the 0-block reversed = recognisable → obscure).
   const allPointless = useMemo(() => question.answers.filter(a => a.p === 0).reverse(), [question])
   const fullList = useMemo(() => [...question.answers].sort((a, b) => b.p - a.p), [question])
   const verdict = total === 0 ? 'Flawless — pure pointless!' : total <= 40 ? 'Deep cuts. Excellent.' : total <= 120 ? 'Solid — but you named some obvious ones.' : 'Too famous! Dig more obscure.'
 
-  // Record the daily result once when it finishes (won = you found a pointless).
+  // Record the daily result once when it finishes (recordResult is idempotent, so
+  // this also just re-fetches the stats when a finished daily is restored).
   useEffect(() => {
     if (done && mode === 'daily' && !recorded) { setDailyStats(recordResult('pointless', won, total)); setRecorded(true) }
   }, [done, mode, recorded, won, total])
 
+  // Persist the daily as it's played, so a refresh resumes it and a finished one
+  // stays locked — the daily is one play a day (Unlimited is unlimited).
+  useEffect(() => {
+    if (mode !== 'daily' || (answers.length === 0 && !revealed)) return
+    saveDailyProgress('pointless', { answers, revealed }, done, dailyKey())
+  }, [mode, answers, revealed, done])
+
   const resetRound = () => { setAnswers([]); setInput(''); setRevealed(false); setHighlightedIndex(-1); setDismissed(false); setToast(''); setShowAll(false); setRecorded(false); setReveal(null); setDailyStats(null) }
-  const startDaily = () => { setMode('daily'); setQIndex(dailyIdx()); resetRound() }
+  // Return to today's daily — restore its saved state (locked if already played today).
+  const restoreDaily = () => {
+    const s = loadDailyProgress('pointless', dailyKey())
+    setMode('daily'); setQIndex(dailyIdx())
+    setAnswers(s?.answers ?? []); setRevealed(!!s?.done)
+    setInput(''); setHighlightedIndex(-1); setDismissed(false); setToast(''); setShowAll(false); setReveal(null); setRecorded(false); setDailyStats(null)
+  }
   const startUnlimited = () => { setMode('unlimited'); setQIndex(randomIdx()); resetRound() }
-  const onModeChange = (m) => (m === 'daily' ? startDaily() : startUnlimited())
+  const onModeChange = (m) => (m === 'daily' ? restoreDaily() : startUnlimited())
   const nextRandom = () => { let n; do { n = randomIdx() } while (n === qIndex && N > 1); setQIndex(n); resetRound() }
 
   const flash = (msg) => { setToast(msg); setShake(true); setTimeout(() => setShake(false), 400); setTimeout(() => setToast(''), 1600) }
@@ -95,7 +115,7 @@ export default function FootballPointless() {
         <div className="w-full bg-card border border-border-strong border-l-4 border-l-accent rounded-xl px-4 py-3 mb-4">
           <div className="text-[0.55rem] font-black tracking-[0.18em] text-accent-bright">{mode === 'daily' ? 'DAILY' : 'UNLIMITED'} · GO LOW</div>
           <div className="text-primary font-bold text-sm mt-0.5">{question.title}</div>
-          <div className="text-muted text-xs mt-0.5">{question.description} The rarer the answer, the fewer points — a <b className="text-success-bright">pointless (0)</b> wins it instantly.</div>
+          <div className="text-muted text-xs mt-0.5">{question.description} Keep your 5 answers <b className="text-success-bright">under 100 pts</b> total to win — a <b className="text-success-bright">pointless (0)</b> wins it instantly.</div>
         </div>
 
         {/* the countdown tower — hero reveal for each answer */}
@@ -134,22 +154,23 @@ export default function FootballPointless() {
           </form>
         )}
         {toast && <div className="text-danger-bright text-xs font-semibold mt-2">{toast}</div>}
-        {active && <button onClick={() => setRevealed(true)} className="mt-3 text-xs text-muted hover:text-secondary transition-colors">Finish early &amp; reveal the pointless answers →</button>}
+        {active && <button onClick={() => setRevealed(true)} className="mt-3 text-xs text-muted hover:text-secondary transition-colors">Give up &amp; reveal the answers →</button>}
 
         {done && (
           <div className="w-full mt-4 text-center">
             {won ? (
               <>
-                <div className="text-success-bright text-3xl font-black tracking-tight mb-1">★ POINTLESS — YOU WIN ★</div>
-                <div className="text-secondary text-sm">You named an answer nobody would think of{total > 0 ? ` (${total} pts total)` : ''}.</div>
+                <div className="text-success-bright text-3xl font-black tracking-tight mb-1">{foundPointless ? '★ POINTLESS — YOU WIN ★' : '★ YOU WIN ★'}</div>
+                <div className="text-secondary text-sm">{foundPointless ? `You named an answer nobody would think of${total > 0 ? ` (${total} pts total)` : ''}.` : `${total} pts — under 100. Nicely obscure.`}</div>
               </>
             ) : (
               <>
-                <div className={`score-number text-4xl mb-1 ${total <= 40 ? 'text-success-bright' : 'text-primary'}`}>{total} pts</div>
-                <div className="text-secondary text-sm">{verdict} No pointless this time — the goal is to find one.</div>
+                <div className="score-number text-4xl mb-1 text-danger-bright">{total} pts</div>
+                <div className="text-secondary text-sm">{answers.length >= MAX_ANSWERS ? 'Over 100 — too many big names. No win this time.' : 'You gave up early — no win.'}</div>
               </>
             )}
             {mode === 'daily' && dailyStats && <div className="mt-4"><DailyStats game="pointless" stats={dailyStats} /></div>}
+            {mode === 'daily' && <div className="mt-3 text-[0.62rem] font-black tracking-[0.14em] uppercase text-faint">That's today's daily — come back tomorrow</div>}
 
             {/* every pointless answer, recognisable first */}
             <div className="mt-5 text-left">
