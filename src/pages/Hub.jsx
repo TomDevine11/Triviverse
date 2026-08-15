@@ -21,6 +21,7 @@ const GAMES = [
   { to: '/connections', stats: 'connections', color: '#a3e635' },
   { to: '/higher-or-lower', stats: 'higherlower', color: '#f97316' },
   { to: '/501', stats: '501', color: '#ef4444' },
+  { to: '/football-pointless', stats: 'pointless', color: '#0ea5e9' },
 ]
 
 const FORM_DOT = { W: 'bg-success', L: 'bg-danger/75', '-': 'bg-inert' }

@@ -19,7 +19,7 @@ const VISIT_KEY = 'ftg-visits-v1'
 const POINTS_KEY = 'ftg-points-v1'
 
 // The eight daily games (dailyStats keys). Perfect day = all of these in one day.
-export const DAILY_GAMES = ['tenable', 'wordle', 'tictactoe', 'teammates', 'careers', 'connections', 'higherlower', '501']
+export const DAILY_GAMES = ['tenable', 'wordle', 'tictactoe', 'teammates', 'careers', 'connections', 'higherlower', '501', 'pointless']
 
 // ── Points economy (tune here, nowhere else) ──────────────────────
 export const PTS_PLAY = 10 //          playing a daily

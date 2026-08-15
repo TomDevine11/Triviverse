@@ -56,6 +56,14 @@ const MOTIFS = {
       <circle cx="12" cy="12" r="2.4" />
     </>
   ),
+  'football-pointless': ( // a draining countdown column — lines fading downward
+    <>
+      <rect x="7" y="3" width="10" height="2.6" rx="1.3" />
+      <rect x="7" y="7.6" width="10" height="2.6" rx="1.3" opacity=".7" />
+      <rect x="7" y="12.2" width="10" height="2.6" rx="1.3" opacity=".45" />
+      <rect x="7" y="16.8" width="10" height="2.6" rx="1.3" opacity=".28" />
+    </>
+  ),
 }
 
 export default function GameMotif({ id, className = 'w-9 h-9' }) {

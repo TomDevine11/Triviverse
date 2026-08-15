@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 // this question). A pointless 0 empties the whole column — the jackpot moment.
 // After each reveal it holds briefly, then refills to 100, ready for the next
 // guess. Recreated in Triviverse styling; the accent comes from the accent vars.
-export default function PointlessBoard({ reveal }) {
+export default function PointlessBoard({ reveal, final = false }) {
   const [count, setCount] = useState(100)
   const [running, setRunning] = useState(false)
   const [result, setResult] = useState(null) // the settled answer being shown, then cleared
@@ -22,8 +22,9 @@ export default function PointlessBoard({ reveal }) {
       setCount(Math.round(100 - eased * (100 - reveal.score)))
       if (p < 1) { raf = requestAnimationFrame(tick); return }
       // settled: show the result, hold, then refill to 100 for the next guess
+      // (unless the round is over — then hold the final result in place).
       setCount(reveal.score); setRunning(false); setResult(reveal)
-      holdTimer = setTimeout(() => { setResult(null); setCount(100) }, reveal.score === 0 ? 2200 : 1600)
+      if (!final) holdTimer = setTimeout(() => { setResult(null); setCount(100) }, reveal.score === 0 ? 2200 : 1600)
     }
     raf = requestAnimationFrame(tick)
     return () => { cancelAnimationFrame(raf); clearTimeout(holdTimer) }

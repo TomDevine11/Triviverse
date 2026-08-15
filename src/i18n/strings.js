@@ -246,7 +246,7 @@ export const strings = {
       lineupNote: 'YOUR LINEUP — 🔥 streak · form = last 5 dailies',
       kickOff: 'KICK OFF',
       perfectDay: 'PERFECT DAY',
-      perfectDayHint: 'light all eight for 2× points',
+      perfectDayHint: 'light all nine for 2× points',
       shareDay: 'Share my day',
       copied: 'Copied!',
     },
@@ -259,6 +259,7 @@ export const strings = {
       connections: { title: 'Football Connections', tagline: 'Find the four groups of four', description: 'A daily puzzle: 16 players hide four groups of four — by club, nationality or trophy. Find them all before four mistakes.' },
       'higher-or-lower': { title: 'Higher or Lower', tagline: 'Who scored more?', description: 'Pick a stat — PL, La Liga, Champions League or international goals — then guess which player scored more. Build a streak; one wrong guess ends it.' },
       '501': { title: 'Football 501', tagline: 'The football darts trivia game', description: "Count down from 501 by naming footballers. Each player's career stat is deducted from your score — land between 0 and −10 to checkout." },
+      'football-pointless': { title: 'Football Pointless', tagline: 'Name the rarest answer', description: 'Every question has loads of correct answers — you want the obscure ones. The more obvious your pick, the more points, and points are bad. A valid answer nobody would name is a pointless win.' },
     },
   },
   es: {
@@ -503,7 +504,7 @@ export const strings = {
       lineupNote: 'TU ALINEACIÓN — 🔥 racha · forma = últimos 5 retos',
       kickOff: 'JUGAR',
       perfectDay: 'DÍA PERFECTO',
-      perfectDayHint: 'completa los ocho para 2× puntos',
+      perfectDayHint: 'completa los nueve para 2× puntos',
       shareDay: 'Compartir mi día',
       copied: '¡Copiado!',
     },
@@ -516,6 +517,7 @@ export const strings = {
       connections: { title: 'Connections de Fútbol', tagline: 'Encuentra los cuatro grupos de cuatro', description: 'Un rompecabezas diario: 16 jugadores esconden cuatro grupos de cuatro — por club, nacionalidad o trofeo. Encuéntralos todos antes de cuatro errores.' },
       'higher-or-lower': { title: 'Mayor o Menor', tagline: '¿Quién marcó más?', description: 'Elige una estadística — goles en la Premier, LaLiga, Champions o con su selección — y adivina qué jugador marcó más. Haz una racha; un fallo la termina.' },
       '501': { title: 'Fútbol 501', tagline: 'El juego de trivia de fútbol estilo dardos', description: 'Cuenta atrás desde 501 nombrando futbolistas. La estadística de carrera de cada jugador se resta de tu marcador: cierra entre 0 y −10.' },
+      'football-pointless': { title: 'Football Pointless', tagline: 'Nombra la respuesta más rara', description: 'Cada pregunta tiene muchas respuestas correctas, pero buscas las más raras. Cuanto más obvia tu elección, más puntos, y los puntos son malos. Una respuesta válida que nadie nombraría es una victoria pointless.' },
     },
   },
 }

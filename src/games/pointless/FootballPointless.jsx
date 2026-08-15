@@ -2,6 +2,7 @@ import { useState, useRef, useEffect, useMemo } from 'react'
 import GameChrome from '../../components/GameChrome'
 import ModeToggle from '../../components/ModeToggle'
 import { usePlayerSuggestions } from '../tictactoe/usePlayerSuggestions'
+import DailyStats from '../../components/DailyStats'
 import { accentVars } from '../../design/accents'
 import { todayIndex, recordResult } from '../../data/dailyStats'
 import { POINTLESS_QUESTIONS, matchAnswer } from '../../data/pointless/pointlessGame'
@@ -30,10 +31,13 @@ export default function FootballPointless() {
   const [showAll, setShowAll] = useState(false)
   const [recorded, setRecorded] = useState(false)
   const [reveal, setReveal] = useState(null) // { score, name, key } for the tower
+  const [dailyStats, setDailyStats] = useState(null)
   const inputRef = useRef(null)
   const dropdownRef = useRef(null)
 
-  const done = answers.length >= MAX_ANSWERS || revealed
+  const foundPointless = answers.some(a => a.p === 0)
+  const won = foundPointless // a pointless (0) answer wins the round instantly
+  const done = won || answers.length >= MAX_ANSWERS || revealed
   const active = !done
   const usedNames = useMemo(() => new Set(), [qIndex])
   const { suggestions, isSearching } = usePlayerSuggestions(input, active, usedNames)
@@ -45,7 +49,6 @@ export default function FootballPointless() {
   }, [])
 
   const total = answers.reduce((s, a) => s + a.p, 0)
-  const foundPointless = answers.some(a => a.p === 0)
   // Every valid pointless (0) answer, most recognisable first (answers are stored
   // ascending nameability, so the 0-block reversed = recognisable → obscure).
   const allPointless = useMemo(() => question.answers.filter(a => a.p === 0).reverse(), [question])
@@ -54,10 +57,10 @@ export default function FootballPointless() {
 
   // Record the daily result once when it finishes (won = you found a pointless).
   useEffect(() => {
-    if (done && mode === 'daily' && !recorded) { recordResult('pointless', foundPointless, total); setRecorded(true) }
-  }, [done, mode, recorded, foundPointless, total])
+    if (done && mode === 'daily' && !recorded) { setDailyStats(recordResult('pointless', won, total)); setRecorded(true) }
+  }, [done, mode, recorded, won, total])
 
-  const resetRound = () => { setAnswers([]); setInput(''); setRevealed(false); setHighlightedIndex(-1); setDismissed(false); setToast(''); setShowAll(false); setRecorded(false); setReveal(null) }
+  const resetRound = () => { setAnswers([]); setInput(''); setRevealed(false); setHighlightedIndex(-1); setDismissed(false); setToast(''); setShowAll(false); setRecorded(false); setReveal(null); setDailyStats(null) }
   const startDaily = () => { setMode('daily'); setQIndex(dailyIdx()); resetRound() }
   const startUnlimited = () => { setMode('unlimited'); setQIndex(randomIdx()); resetRound() }
   const onModeChange = (m) => (m === 'daily' ? startDaily() : startUnlimited())
@@ -85,18 +88,18 @@ export default function FootballPointless() {
   return (
     <div className="tv-scene min-h-dvh text-primary" style={accentVars('pointless')}>
       <div className="flex flex-col items-center px-4 pb-10 max-w-lg mx-auto">
-        <div className="w-full"><GameChrome motifId="tenable" title="FOOTBALL POINTLESS" right={<b className={`tabular-nums ${total <= 40 ? 'text-success-bright' : 'text-secondary'}`}>{total} pts</b>} /></div>
+        <div className="w-full"><GameChrome motifId="football-pointless" title="FOOTBALL POINTLESS" right={<b className={`tabular-nums ${total <= 40 ? 'text-success-bright' : 'text-secondary'}`}>{total} pts</b>} /></div>
 
-        <ModeToggle mode={mode} onChange={onModeChange} className="mt-1 mb-4" modes={[['daily', 'Daily'], ['unlimited', 'Practice']]} />
+        <ModeToggle mode={mode} onChange={onModeChange} className="mt-1 mb-4" modes={[['daily', 'Daily'], ['unlimited', 'Unlimited']]} />
 
         <div className="w-full bg-card border border-border-strong border-l-4 border-l-accent rounded-xl px-4 py-3 mb-4">
-          <div className="text-[0.55rem] font-black tracking-[0.18em] text-accent-bright">{mode === 'daily' ? 'DAILY' : 'PRACTICE'} · GO LOW</div>
+          <div className="text-[0.55rem] font-black tracking-[0.18em] text-accent-bright">{mode === 'daily' ? 'DAILY' : 'UNLIMITED'} · GO LOW</div>
           <div className="text-primary font-bold text-sm mt-0.5">{question.title}</div>
-          <div className="text-muted text-xs mt-0.5">{question.description} The rarer the answer, the fewer points — find a <b className="text-success-bright">pointless (0)</b>.</div>
+          <div className="text-muted text-xs mt-0.5">{question.description} The rarer the answer, the fewer points — a <b className="text-success-bright">pointless (0)</b> wins it instantly.</div>
         </div>
 
         {/* the countdown tower — hero reveal for each answer */}
-        <div className="mb-5"><PointlessBoard reveal={reveal} /></div>
+        <div className="mb-5"><PointlessBoard reveal={reveal} final={done} /></div>
 
         {/* accumulated answers, compact */}
         <div className="w-full grid grid-cols-5 gap-1.5 mb-4">
@@ -135,9 +138,18 @@ export default function FootballPointless() {
 
         {done && (
           <div className="w-full mt-4 text-center">
-            <div className={`score-number text-4xl mb-1 ${total <= 40 ? 'text-success-bright' : 'text-primary'}`}>{total} pts</div>
-            <div className="text-secondary text-sm">{verdict}</div>
-            {foundPointless && <div className="text-success-bright text-xs font-black tracking-[0.14em] uppercase mt-1">★ Pointless answer found ★</div>}
+            {won ? (
+              <>
+                <div className="text-success-bright text-3xl font-black tracking-tight mb-1">★ POINTLESS — YOU WIN ★</div>
+                <div className="text-secondary text-sm">You named an answer nobody would think of{total > 0 ? ` (${total} pts total)` : ''}.</div>
+              </>
+            ) : (
+              <>
+                <div className={`score-number text-4xl mb-1 ${total <= 40 ? 'text-success-bright' : 'text-primary'}`}>{total} pts</div>
+                <div className="text-secondary text-sm">{verdict} No pointless this time — the goal is to find one.</div>
+              </>
+            )}
+            {mode === 'daily' && dailyStats && <div className="mt-4"><DailyStats game="pointless" stats={dailyStats} /></div>}
 
             {/* every pointless answer, recognisable first */}
             <div className="mt-5 text-left">
@@ -169,7 +181,7 @@ export default function FootballPointless() {
 
             {mode === 'unlimited'
               ? <button onClick={nextRandom} className="w-full mt-6 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-xl px-6 py-3 transition-colors">New question →</button>
-              : <button onClick={startUnlimited} className="w-full mt-6 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-xl px-6 py-3 transition-colors">Practice more →</button>}
+              : <button onClick={startUnlimited} className="w-full mt-6 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-xl px-6 py-3 transition-colors">Play unlimited →</button>}
           </div>
         )}
       </div>

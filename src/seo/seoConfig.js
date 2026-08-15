@@ -543,7 +543,6 @@ export const ROUTES = [
   {
     path: '/football-pointless',
     name: 'Football Pointless',
-    hideFromNav: true,
     title: 'Football Pointless — Name the Rarest Answers | Triviverse',
     description: 'Football Pointless: every question has loads of correct answers, but you want the obscure ones — the rarer your pick, the fewer points. Find a pointless answer to win. Free, no sign-up.',
     keywords: ['football pointless', 'pointless football', 'football pointless quiz', 'football pointless game', 'pointless football quiz'],
