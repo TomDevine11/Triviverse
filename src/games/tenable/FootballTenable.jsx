@@ -1,11 +1,9 @@
 import { useState, useRef, useEffect, useMemo } from 'react'
 import { getDailyTenableQuestion, getRandomTenableQuestion } from '../../data/tenable'
 import QuestionBuilder from '../football501/QuestionBuilder'
-import { players as localPlayers } from '../../data/players'
-import { clubs } from '../../data/clubs'
 import { refineSuggestions, searchRegistry, resolveNameToId } from '../../data/canonical/resolve.js'
+import { searchClubs } from '../../data/canonical/clubs.js'
 import { normalize, answerMatches } from './match.js'
-import { getFlagFromNationality } from '../../utils/flags'
 import { ShareCard } from '../../components/ShareCard'
 import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
@@ -49,9 +47,6 @@ const QUESTION_ICON = {
 }
 
 const MAX_LIVES = 3
-
-const TSDB = 'https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p='
-const EXCLUDE_SPORTS = new Set(['basketball','american football','baseball','ice hockey','tennis','golf','cricket','rugby','swimming','athletics','motorsport','cycling','boxing','mma'])
 
 // The tower, top to bottom: rank 1 is the apex rung, rank 10 the base.
 // One rank per rung so the reveal pulse climbs rung by rung.
@@ -189,56 +184,18 @@ export default function FootballTenable() {
   }, [lives, phase])
 
   // ── Suggestions dropdown ─────────────────────────────────────────
-  // Searches the full player/club universe (TheSportsDB + local lists),
-  // NOT just this question's answers — otherwise the dropdown would give
-  // the puzzle away. Picking from it just disambiguates spelling/surnames.
-  const [apiPlayers, setApiPlayers] = useState([])
-  const [isSearching, setIsSearching] = useState(false)
-
-  useEffect(() => {
-    if (question.type !== 'player' || phase !== 'playing' || pendingRank != null) {
-      setApiPlayers([]); setIsSearching(false); return
-    }
-    if (normalize(input).length < 2) { setApiPlayers([]); setIsSearching(false); return }
-
-    setIsSearching(true)
-    const controller = new AbortController()
-    const timer = setTimeout(async () => {
-      try {
-        const res  = await fetch(TSDB + encodeURIComponent(input), { signal: controller.signal })
-        const data = await res.json()
-        const players = (data.player || [])
-          .filter(p => !EXCLUDE_SPORTS.has((p.strSport || '').toLowerCase()))
-          .map(p => ({ name: p.strPlayer, flag: getFlagFromNationality(p.strNationality) }))
-        setApiPlayers(players)
-      } catch (err) {
-        if (err.name !== 'AbortError') setApiPlayers([])
-      } finally {
-        setIsSearching(false)
-      }
-    }, 280)
-    return () => { clearTimeout(timer); controller.abort(); setIsSearching(false) }
-  }, [input, phase, pendingRank, question.type])
-
+  // Searches the full canonical universe (registry for players, history clubs
+  // for club questions), NOT just this question's answers — otherwise the
+  // dropdown would give the puzzle away. Picking from it just disambiguates
+  // spelling/surnames; validity is checked separately against the answers.
   const suggestions = useMemo(() => {
     if (phase !== 'playing' || pendingRank != null) return []
     const norm = normalize(input)
     if (norm.length < 2) return []
 
-    if (question.type === 'club') {
-      return clubs
-        .filter(c => normalize(c).includes(norm))
-        .slice(0, 8)
-        .map(name => ({ name }))
-    }
+    if (question.type === 'club') return searchClubs(input, 8)
 
-    const localMatches = localPlayers
-      .filter(p => normalize(p.name).includes(norm))
-      .map(p => ({ name: p.name, flag: p.flag }))
-
-    // Sources: the external API, the local list, AND the whole registry (so any
-    // valid player is findable by name or surname). Canonicalised + deduped.
-    const merged = refineSuggestions([...apiPlayers, ...localMatches, ...searchRegistry(input)])
+    const merged = refineSuggestions(searchRegistry(input))
 
     const rank = (name) => {
       const n = normalize(name)
@@ -250,7 +207,7 @@ export default function FootballTenable() {
     merged.sort((a, b) => rank(a.name) - rank(b.name) || a.name.localeCompare(b.name))
 
     return merged.slice(0, 8)
-  }, [input, phase, pendingRank, question.type, apiPlayers])
+  }, [input, phase, pendingRank, question.type])
 
   const [dismissed, setDismissed] = useState(false)
   useEffect(() => {
@@ -453,11 +410,6 @@ export default function FootballTenable() {
               role="combobox" aria-expanded={visibleSuggestions.length > 0} aria-autocomplete="list" aria-label={t('tenable.placeholder')}
               autoComplete="off" autoCorrect="off" spellCheck="false"
             />
-            {isSearching && (
-              <div className="absolute right-4 top-1/2 -translate-y-1/2">
-                <div className="w-4 h-4 border-2 border-border-strong border-t-brand rounded-full animate-spin" />
-              </div>
-            )}
             {visibleSuggestions.length > 0 && (
               <div ref={dropdownRef} role="listbox" className="absolute top-full left-0 right-0 mt-1 bg-surface border border-border-strong rounded-xl overflow-hidden z-dropdown shadow-float">
                 {visibleSuggestions.map((item, i) => (

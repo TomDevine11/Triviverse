@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 import { getDailyGrid, getRandomGrid, categoryLabel, resolveGuess, findAssignment, normalizeName } from '../../data/tictactoe'
 import { resolveNameToId } from '../../data/canonical/resolve'
 import { refineSuggestions, searchRegistry } from '../../data/canonical/resolve.js'
-import { players as localPlayers } from '../../data/players'
-import { getFlagFromNationality } from '../../utils/flags'
 import { ShareCard } from '../../components/ShareCard'
 import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
@@ -21,9 +19,6 @@ import { useI18n } from '../../i18n'
 import { RESULT_REVEAL_DELAY_MS } from '../../utils/motion'
 
 const MAX_LIVES = 3
-
-const TSDB = 'https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p='
-const EXCLUDE_SPORTS = new Set(['basketball','american football','baseball','ice hockey','tennis','golf','cricket','rugby','swimming','athletics','motorsport','cycling','boxing','mma'])
 
 // Axis header chip — neutral, told apart by position + icon, never colour.
 function HeaderChip({ category, t }) {
@@ -151,46 +146,15 @@ export default function FootballTicTacToe({ onBackToModes }) {
   // this cell's valid answers — otherwise the dropdown would give the puzzle
   // away. Picking from it just disambiguates spelling/surnames; whether it's
   // actually correct is checked separately against the cell's candidates.
-  const [apiPlayers, setApiPlayers] = useState([])
-  const [isSearching, setIsSearching] = useState(false)
-
-  useEffect(() => {
-    if (phase !== 'playing' || selectedCell == null) {
-      setApiPlayers([]); setIsSearching(false); return
-    }
-    if (normalizeName(input).length < 2) { setApiPlayers([]); setIsSearching(false); return }
-
-    setIsSearching(true)
-    const controller = new AbortController()
-    const timer = setTimeout(async () => {
-      try {
-        const res  = await fetch(TSDB + encodeURIComponent(input), { signal: controller.signal })
-        const data = await res.json()
-        const fetched = (data.player || [])
-          .filter(p => !EXCLUDE_SPORTS.has((p.strSport || '').toLowerCase()))
-          .map(p => ({ name: p.strPlayer, flag: getFlagFromNationality(p.strNationality) }))
-        setApiPlayers(fetched)
-      } catch (err) {
-        if (err.name !== 'AbortError') setApiPlayers([])
-      } finally {
-        setIsSearching(false)
-      }
-    }, 280)
-    return () => { clearTimeout(timer); controller.abort(); setIsSearching(false) }
-  }, [input, phase, selectedCell])
-
   const suggestions = useMemo(() => {
     if (phase !== 'playing' || selectedCell == null) return []
     const norm = normalizeName(input)
     if (norm.length < 2) return []
 
-    const localMatches = localPlayers
-      .filter(p => normalizeName(p.name).includes(norm))
-      .map(p => ({ name: p.name, flag: p.flag }))
-
-    // Sources: the external API, the local list, AND the whole registry (so any
-    // valid player is findable by name or surname). Canonicalised + deduped.
-    const merged = refineSuggestions([...apiPlayers, ...localMatches, ...searchRegistry(input)], usedNames)
+    // The canonical registry is the single player universe — no third-party API,
+    // no hand list, so no name-order/spelling duplicates. It searches ALL players
+    // (not this cell's answers), so the dropdown never gives the puzzle away.
+    const merged = refineSuggestions(searchRegistry(input), usedNames)
 
     const rank = (name) => {
       const n = normalizeName(name)
@@ -202,7 +166,7 @@ export default function FootballTicTacToe({ onBackToModes }) {
     merged.sort((a, b) => rank(a.name) - rank(b.name) || a.name.localeCompare(b.name))
 
     return merged.slice(0, 10)
-  }, [input, phase, selectedCell, apiPlayers, usedNames])
+  }, [input, phase, selectedCell, usedNames])
 
   const [dismissed, setDismissed] = useState(false)
   useEffect(() => {
@@ -431,11 +395,6 @@ export default function FootballTicTacToe({ onBackToModes }) {
               className="w-full bg-surface border border-border-strong focus:border-accent rounded-xl px-4 py-3.5 text-primary placeholder-faint text-base outline-none transition-colors"
               autoComplete="off" autoCorrect="off" spellCheck="false"
             />
-            {isSearching && (
-              <div className="absolute right-4 top-1/2 -translate-y-1/2">
-                <div className="w-4 h-4 border-2 border-inert border-t-accent rounded-full animate-spin" />
-              </div>
-            )}
             {visibleSuggestions.length > 0 && (
               <div ref={dropdownRef} id="ttt-suggestions" role="listbox" className="absolute top-full left-0 right-0 mt-1 bg-surface border border-border-strong rounded-xl overflow-hidden z-10 shadow-2xl">
                 {visibleSuggestions.map((item, i) => (

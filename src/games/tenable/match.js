@@ -16,9 +16,9 @@ export function normalize(str) {
   return String(str)
     .toLowerCase()
     .normalize('NFD').replace(/[̀-ͯ]/g, '')
-    .replace(/[^a-z0-9\s]/g, '')
-    .replace(/\s+/g, ' ')
-    .trim()
+    .replace(/[^a-z0-9\s]/g, ' ') // punctuation → space, so hyphenated names stay
+    .replace(/\s+/g, ' ')         // multi-token ("Heung-min" → "heung min"), which
+    .trim()                       // keeps surname + id resolution working
 }
 
 const surname = (norm) => norm.split(' ').pop()
@@ -41,10 +41,16 @@ export function answerMatches(guessNorm, guessId, answer, isPlayer) {
   // fuller name, so "Atletico Madrid" can't match "Real Madrid".
   if (!isPlayer) return guessNorm === answerSurname
 
-  // Players: any guess whose surname equals the answer's surname counts…
+  // Strongest signal: guess and answer resolve to the SAME registry id → same
+  // player, accept regardless of name form. This is what makes East-Asian name
+  // order work ("Son Heung-min" ↔ "Heung-min Son"), where the "surname" (last
+  // word) differs between orders.
+  const answerId = resolveNameToId(answer.text)
+  if (guessId && answerId && guessId === answerId) return true
+
+  // Otherwise, players match by surname…
   if (surname(guessNorm) !== answerSurname) return false
   // …unless the guess and answer are known to be DIFFERENT players (namesake).
-  const answerId = resolveNameToId(answer.text)
   if (answerId && guessId && answerId !== guessId) return false
   return true
 }

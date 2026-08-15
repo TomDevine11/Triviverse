@@ -1,6 +1,4 @@
 import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
-import { players as localPlayers } from '../../data/players'
-import { getFlagFromNationality, formatDOB } from '../../utils/flags'
 import { ShareCard } from '../../components/ShareCard'
 import GameChrome from '../../components/GameChrome'
 import ModeToggle from '../../components/ModeToggle'
@@ -20,22 +18,9 @@ const CHECKOUT_MIN = -10
 const DARTS_MIN    = 1
 const DARTS_MAX    = 180
 
-const TSDB = 'https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p='
-const EXCLUDE_SPORTS = new Set(['basketball','american football','baseball','ice hockey','tennis','golf','cricket','rugby','swimming','athletics','motorsport','cycling','boxing','mma'])
-
 // Position badges use the same GK/DEF/MID/FWD codes as the challenge filter, so
 // what a player shows in the dropdown is exactly what the filter tests against.
 const POS_BADGE = 'shrink-0 text-[0.6rem] font-bold px-1.5 py-0.5 rounded border border-border-strong bg-surface text-secondary'
-
-function broadenPosition(raw) {
-  if (!raw) return null
-  const lc = raw.toLowerCase()
-  if (lc.includes('goalkeeper') || lc.includes('keeper')) return 'GK'
-  if (lc.includes('defender') || lc.includes('back') || lc.includes('sweeper') || lc.includes('libero')) return 'DEF'
-  if (lc.includes('midfield')) return 'MID'
-  if (lc.includes('forward') || lc.includes('striker') || lc.includes('wing') || lc.includes('attacker')) return 'FWD'
-  return null
-}
 
 const isValidDartsScore = (n) => Number.isInteger(n) && n >= DARTS_MIN && n <= DARTS_MAX
 
@@ -47,7 +32,7 @@ function scoreClasses(score) {
   return 'tv-wordmark'
 }
 
-function rankSuggestions(list, query, knownNames = new Set()) {
+function rankSuggestions(list, query) {
   const lower = query.trim().toLowerCase()
   const queryWords = lower.split(/\s+/)
   const lastWord = queryWords[queryWords.length - 1]
@@ -59,7 +44,6 @@ function rankSuggestions(list, query, knownNames = new Set()) {
     else if (words.some(w => w.startsWith(lastWord))) s += 60
     else if (queryWords.every(qw => words.some(w => w.startsWith(qw)))) s += 40
     else s += 10
-    if (knownNames.has(name)) s += 35
     return s
   }
   return [...list]
@@ -372,14 +356,12 @@ export default function Football501() {
   // locked daily). Reset on every game entry so a fresh finish shows the card.
   const [resultDismissed, setResultDismissed] = useState(false)
   const [loading, setLoading] = useState(true) // boots straight into the daily
-  const [knownNames, setKnownNames] = useState(new Set())
   const [players, setPlayers] = useState([])
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0)
   const [history, setHistory] = useState([])
   const [numPlayers, setNumPlayers] = useState(1)
   const [input, setInput] = useState('')
   const [suggestions, setSuggestions] = useState([])
-  const [isSearching, setIsSearching] = useState(false)
   const [highlightedIndex, setHighlightedIndex] = useState(-1)
 
   const inputRef = useRef(null)
@@ -411,49 +393,25 @@ export default function Football501() {
     saveDailyProgress('501', { players, history, currentPlayerIndex, gaveUp }, phase === 'won', getDailyEntry().id)
   }, [soloDaily, players, history, currentPlayerIndex, gaveUp, phase])
 
-  // ── Player search (TheSportsDB + local pool) ──────────────────
+  // ── Player search (canonical registry) ────────────────────────
   useEffect(() => {
     if (phase !== 'playing') return
-    if (input.trim().length < 2) { setSuggestions([]); setIsSearching(false); return }
+    if (input.trim().length < 2) { setSuggestions([]); return }
 
-    setIsSearching(true)
-    const controller = new AbortController()
-    const lower = input.toLowerCase()
-    const localMatches = localPlayers.filter(p => !usedNames.has(p.name) && p.name.toLowerCase().includes(lower))
-    const merge = (apiPlayers) => {
-      // Sources: the external API, the local list, AND the whole registry (so any
-      // valid player is findable by name/surname), canonicalised + deduped.
-      const refined = refineSuggestions([...apiPlayers, ...localMatches, ...searchRegistry(input)], usedNames)
-      // Prefer OUR competition position (by id first — exact — then by name) so
-      // the badge never lies; then the identity registry's position (Wikidata ∪
-      // Transfermarkt, ~88% coverage), then any API/local position.
-      return rankSuggestions(refined, input, knownNames)
-        .map(p => ({ ...p, position: (challenge && (challenge.badgeForId(p.id) || challenge.badgeFor(p.name))) || positionBadge(p.id) || p.position || null }))
-        // 501 only validates Transfermarkt players, who all have a position — so a
-        // position-less suggestion is almost always a non-TM player that's
-        // auto-invalid. Drop it so the list isn't padded with names that can never
-        // be right (real answers, from the API or registry, all carry a position).
-        .filter(p => p.position)
-        .slice(0, 10)
-    }
-
-    const timer = setTimeout(async () => {
-      try {
-        const res = await fetch(TSDB + encodeURIComponent(input), { signal: controller.signal })
-        const data = await res.json()
-        const apiPlayers = (data.player || [])
-          .filter(p => !EXCLUDE_SPORTS.has((p.strSport || '').toLowerCase()))
-          .filter(p => !usedNames.has(p.strPlayer))
-          .map(p => ({ name: p.strPlayer, nationality: p.strNationality || '', flag: getFlagFromNationality(p.strNationality), dob: formatDOB(p.dateBorn), position: broadenPosition(p.strPosition) }))
-        setSuggestions(merge(apiPlayers))
-      } catch (err) {
-        if (err.name === 'AbortError') return
-        setSuggestions(merge([]))
-      } finally { setIsSearching(false) }
-    }, 280)
-
-    setSuggestions(merge([]))
-    return () => { clearTimeout(timer); controller.abort(); setIsSearching(false) }
+    // The registry is the single player universe — 501 only validates
+    // Transfermarkt players anyway, so a third-party API only added spelling
+    // duplicates. Searches ALL players, not this challenge's answer, so it never
+    // gives the target away.
+    const refined = refineSuggestions(searchRegistry(input), usedNames)
+    // Prefer OUR competition position (by id first — exact — then by name) so the
+    // badge never lies; then the identity registry's position (~88% coverage).
+    const ranked = rankSuggestions(refined, input)
+      .map(p => ({ ...p, position: (challenge && (challenge.badgeForId(p.id) || challenge.badgeFor(p.name))) || positionBadge(p.id) || p.position || null }))
+      // A position-less suggestion is a non-TM player that can never be valid —
+      // drop it so the list isn't padded with names that can never be right.
+      .filter(p => p.position)
+      .slice(0, 10)
+    setSuggestions(ranked)
   }, [input, phase]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Start / reset ─────────────────────────────────────────────
@@ -462,7 +420,6 @@ export default function Football501() {
     setIsDaily(!!daily)
     setGaveUp(false)
     setNumPlayers(count)
-    setKnownNames(new Set(localPlayers.map(p => p.name)))
     setPlayers(Array.from({ length: count }, (_, i) => ({ name: count === 1 ? t('five01.you') : t('five01.playerN', { n: i + 1 }), score: MAX_SCORE, finished: false, finalScore: null })))
     setCurrentPlayerIndex(0)
     setHistory([]); setInput(''); setSuggestions([]); setHighlightedIndex(-1)
@@ -487,7 +444,6 @@ export default function Football501() {
     try {
       const ch = await getDailyChallenge()
       setChallenge(ch); setIsDaily(true); setNumPlayers(1)
-      setKnownNames(new Set(localPlayers.map(p => p.name)))
       setPlayers(snap.players); setHistory(snap.history)
       setCurrentPlayerIndex(snap.currentPlayerIndex ?? 0); setGaveUp(!!snap.gaveUp)
       setInput(''); setSuggestions([]); setHighlightedIndex(-1)
@@ -689,7 +645,6 @@ export default function Football501() {
               autoComplete="off" autoCorrect="off" spellCheck="false"
               role="combobox" aria-expanded={suggestions.length > 0} aria-autocomplete="list" aria-label={t('five01.typePlayer')}
             />
-            {isSearching && <div className="absolute right-4 top-6 -translate-y-1/2"><div className="w-4 h-4 border-2 border-border-strong border-t-brand rounded-full animate-spin" /></div>}
             {suggestions.length > 0 && (
               <div ref={dropdownRef} role="listbox" className="absolute top-full left-0 right-0 mt-1 bg-surface border border-border-strong rounded-xl overflow-hidden z-dropdown shadow-float">
                 {suggestions.map((player, i) => (
