@@ -49,7 +49,9 @@ function build(id, title, description, relevant) {
   const scored = []
   for (const p of all) {
     const r = relevant(p)
-    if (!r || r.apps < 5) continue
+    if (!r || r.apps < 1) continue // valid = actually appeared (≥1 app), not 5+ —
+                                   // "played in X" must accept a single cameo (a
+                                   // real answer), even if it scores a pointless 0.
     scored.push({ p, nm: (r.apps + K_GOALS * r.goals) * recency(p.last) })
   }
   scored.sort((a, b) => a.nm - b.nm)
@@ -70,15 +72,15 @@ const bayern = clubId('L1', /bayern munich|bayern münchen|fc bayern/i)
 const questions = [
   build('pl-cl-scorers', 'Scored in the Premier League AND the Champions League', 'Name a player who has scored in both.',
     p => (p.comps.GB1?.goals > 0 && p.comps.CL?.goals > 0) ? sum(p.comps.GB1, p.comps.CL) : null),
-  build('liverpool-pl', 'Played for Liverpool in the Premier League', 'Name anyone who made 5+ PL apps for Liverpool.',
+  build('liverpool-pl', 'Played for Liverpool in the Premier League', 'Name anyone who has made a PL appearance for Liverpool.',
     p => p.comps.GB1?.clubs?.[lpool] || null),
-  build('real-laliga', 'Played for Real Madrid in La Liga', 'Name anyone with 5+ La Liga apps for Real Madrid.',
+  build('real-laliga', 'Played for Real Madrid in La Liga', 'Name anyone who has made a La Liga appearance for Real Madrid.',
     p => p.comps.ES1?.clubs?.[real] || null),
-  build('barca-laliga', 'Played for Barcelona in La Liga', 'Name anyone with 5+ La Liga apps for Barcelona.',
+  build('barca-laliga', 'Played for Barcelona in La Liga', 'Name anyone who has made a La Liga appearance for Barcelona.',
     p => p.comps.ES1?.clubs?.[barca] || null),
-  build('seriea-pl', 'Played in BOTH Serie A and the Premier League', 'Name a player who appeared in both.',
-    p => (p.comps.IT1?.apps >= 5 && p.comps.GB1?.apps >= 5) ? sum(p.comps.IT1, p.comps.GB1) : null),
-  build('bayern-bundesliga', 'Played for Bayern Munich in the Bundesliga', 'Name anyone with 5+ Bundesliga apps for Bayern.',
+  build('seriea-pl', 'Played in BOTH Serie A and the Premier League', 'Name a player who appeared in both — even a single cameo counts.',
+    p => (p.comps.IT1?.apps >= 1 && p.comps.GB1?.apps >= 1) ? sum(p.comps.IT1, p.comps.GB1) : null),
+  build('bayern-bundesliga', 'Played for Bayern Munich in the Bundesliga', 'Name anyone who has made a Bundesliga appearance for Bayern.',
     p => p.comps.L1?.clubs?.[bayern] || null),
 ]
 
