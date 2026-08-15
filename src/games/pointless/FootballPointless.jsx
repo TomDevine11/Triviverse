@@ -3,9 +3,15 @@ import GameChrome from '../../components/GameChrome'
 import ModeToggle from '../../components/ModeToggle'
 import { usePlayerSuggestions } from '../tictactoe/usePlayerSuggestions'
 import DailyStats from '../../components/DailyStats'
+import ResultModal from '../../components/ResultModal'
+import GameMotif from '../../components/GameMotif'
+import UpNext from '../../components/UpNext'
+import { ShareCard } from '../../components/ShareCard'
 import { accentVars } from '../../design/accents'
-import { todayIndex, recordResult } from '../../data/dailyStats'
+import { todayIndex, recordResult, matchdayNumber } from '../../data/dailyStats'
 import { loadDailyProgress, saveDailyProgress } from '../../data/dailyProgress'
+import { TILE } from '../../utils/shareImage'
+import { RESULT_REVEAL_DELAY_MS } from '../../utils/motion'
 import { POINTLESS_QUESTIONS, matchAnswer } from '../../data/pointless/pointlessGame'
 import PointlessBoard from './PointlessBoard'
 
@@ -36,6 +42,7 @@ export default function FootballPointless() {
   const [recorded, setRecorded] = useState(false)
   const [reveal, setReveal] = useState(null) // { score, name, key } for the tower
   const [dailyStats, setDailyStats] = useState(null)
+  const [showResult, setShowResult] = useState(() => !!saved?.done) // daily result modal
   const inputRef = useRef(null)
   const dropdownRef = useRef(null)
 
@@ -74,13 +81,18 @@ export default function FootballPointless() {
     saveDailyProgress('pointless', { answers, revealed }, done, dailyKey())
   }, [mode, answers, revealed, done])
 
-  const resetRound = () => { setAnswers([]); setInput(''); setRevealed(false); setHighlightedIndex(-1); setDismissed(false); setToast(''); setShowAll(false); setRecorded(false); setReveal(null); setDailyStats(null) }
+  // Open the daily result modal shortly after the round ends (let the final reveal play).
+  useEffect(() => {
+    if (done && mode === 'daily') { const t = setTimeout(() => setShowResult(true), RESULT_REVEAL_DELAY_MS); return () => clearTimeout(t) }
+  }, [done, mode])
+
+  const resetRound = () => { setAnswers([]); setInput(''); setRevealed(false); setHighlightedIndex(-1); setDismissed(false); setToast(''); setShowAll(false); setRecorded(false); setReveal(null); setDailyStats(null); setShowResult(false) }
   // Return to today's daily — restore its saved state (locked if already played today).
   const restoreDaily = () => {
     const s = loadDailyProgress('pointless', dailyKey())
     setMode('daily'); setQIndex(dailyIdx())
     setAnswers(s?.answers ?? []); setRevealed(!!s?.done)
-    setInput(''); setHighlightedIndex(-1); setDismissed(false); setToast(''); setShowAll(false); setReveal(null); setRecorded(false); setDailyStats(null)
+    setInput(''); setHighlightedIndex(-1); setDismissed(false); setToast(''); setShowAll(false); setReveal(null); setRecorded(false); setDailyStats(null); setShowResult(!!s?.done)
   }
   const startUnlimited = () => { setMode('unlimited'); setQIndex(randomIdx()); resetRound() }
   const onModeChange = (m) => (m === 'daily' ? restoreDaily() : startUnlimited())
@@ -104,6 +116,32 @@ export default function FootballPointless() {
     if (e.key === 'ArrowDown') { e.preventDefault(); setHighlightedIndex(i => Math.min(i + 1, visibleSuggestions.length - 1)) }
     else if (e.key === 'ArrowUp') { e.preventDefault(); setHighlightedIndex(i => Math.max(i - 1, -1)) }
   }
+
+  const resultHeadline = won ? (
+    <>
+      <div className="text-success-bright text-3xl font-black tracking-tight mb-1">{foundPointless ? '★ POINTLESS — YOU WIN ★' : '★ YOU WIN ★'}</div>
+      <div className="text-secondary text-sm">{foundPointless ? `You named an answer nobody would think of${total > 0 ? ` (${total} pts total)` : ''}.` : `${total} pts — under 100. Nicely obscure.`}</div>
+    </>
+  ) : (
+    <>
+      <div className="score-number text-4xl mb-1 text-danger-bright">{total} pts</div>
+      <div className="text-secondary text-sm">{answers.length >= MAX_ANSWERS ? 'Over 100 — too many big names. No win this time.' : 'You gave up early — no win.'}</div>
+    </>
+  )
+  const pointlessListEl = (
+    <div className="mt-5 text-left w-full">
+      <div className="text-[0.56rem] text-faint uppercase tracking-[0.18em] mb-2 font-black">All {allPointless.length} pointless (0) answers</div>
+      <div className="max-h-52 overflow-y-auto rounded-xl border border-border divide-y divide-border/50">
+        {allPointless.map((a, i) => (<div key={i} className="flex items-center justify-between px-3 py-1.5 text-sm"><span className="text-secondary truncate mr-2">{a.d}</span><span className="score-number text-success-bright tabular-nums shrink-0">0</span></div>))}
+      </div>
+    </div>
+  )
+  const testListEl = (
+    <>
+      <button onClick={() => setShowAll(v => !v)} className="mt-4 text-[0.62rem] font-black tracking-[0.14em] uppercase text-faint hover:text-secondary transition-colors">{showAll ? 'Hide' : 'Show'} all answers &amp; scores (test)</button>
+      {showAll && (<div className="mt-2 max-h-60 overflow-y-auto rounded-xl border border-border divide-y divide-border/50 text-left w-full">{fullList.map((a, i) => (<div key={i} className="flex items-center justify-between px-3 py-1.5 text-xs"><span className="text-secondary truncate mr-2">{a.d}</span><span className={`tabular-nums font-bold shrink-0 ${tone(a.p)}`}>{a.p}</span></div>))}</div>)}
+    </>
+  )
 
   return (
     <div className="tv-scene min-h-dvh text-primary" style={accentVars('pointless')}>
@@ -156,55 +194,40 @@ export default function FootballPointless() {
         {toast && <div className="text-danger-bright text-xs font-semibold mt-2">{toast}</div>}
         {active && <button onClick={() => setRevealed(true)} className="mt-3 text-xs text-muted hover:text-secondary transition-colors">Give up &amp; reveal the answers →</button>}
 
-        {done && (
+        {/* Unlimited: reveal in place, replay freely */}
+        {done && mode === 'unlimited' && (
           <div className="w-full mt-4 text-center">
-            {won ? (
-              <>
-                <div className="text-success-bright text-3xl font-black tracking-tight mb-1">{foundPointless ? '★ POINTLESS — YOU WIN ★' : '★ YOU WIN ★'}</div>
-                <div className="text-secondary text-sm">{foundPointless ? `You named an answer nobody would think of${total > 0 ? ` (${total} pts total)` : ''}.` : `${total} pts — under 100. Nicely obscure.`}</div>
-              </>
-            ) : (
-              <>
-                <div className="score-number text-4xl mb-1 text-danger-bright">{total} pts</div>
-                <div className="text-secondary text-sm">{answers.length >= MAX_ANSWERS ? 'Over 100 — too many big names. No win this time.' : 'You gave up early — no win.'}</div>
-              </>
-            )}
-            {mode === 'daily' && dailyStats && <div className="mt-4"><DailyStats game="pointless" stats={dailyStats} /></div>}
-            {mode === 'daily' && <div className="mt-3 text-[0.62rem] font-black tracking-[0.14em] uppercase text-faint">That's today's daily — come back tomorrow</div>}
-
-            {/* every pointless answer, recognisable first */}
-            <div className="mt-5 text-left">
-              <div className="text-[0.56rem] text-faint uppercase tracking-[0.18em] mb-2 font-black">All {allPointless.length} pointless (0) answers</div>
-              <div className="max-h-64 overflow-y-auto rounded-xl border border-border divide-y divide-border/50">
-                {allPointless.map((a, i) => (
-                  <div key={i} className="flex items-center justify-between px-3 py-1.5 text-sm">
-                    <span className="text-secondary truncate mr-2">{a.d}</span>
-                    <span className="score-number text-success-bright tabular-nums shrink-0">0</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* full scored list — testing */}
-            <button onClick={() => setShowAll(v => !v)} className="mt-4 text-[0.62rem] font-black tracking-[0.14em] uppercase text-faint hover:text-secondary transition-colors">
-              {showAll ? 'Hide' : 'Show'} all answers &amp; scores (test)
-            </button>
-            {showAll && (
-              <div className="mt-2 max-h-72 overflow-y-auto rounded-xl border border-border divide-y divide-border/50 text-left">
-                {fullList.map((a, i) => (
-                  <div key={i} className="flex items-center justify-between px-3 py-1.5 text-xs">
-                    <span className="text-secondary truncate mr-2">{a.d}</span>
-                    <span className={`tabular-nums font-bold shrink-0 ${tone(a.p)}`}>{a.p}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {mode === 'unlimited'
-              ? <button onClick={nextRandom} className="w-full mt-6 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-xl px-6 py-3 transition-colors">New question →</button>
-              : <button onClick={startUnlimited} className="w-full mt-6 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-xl px-6 py-3 transition-colors">Play unlimited →</button>}
+            {resultHeadline}
+            {pointlessListEl}
+            {testListEl}
+            <button onClick={nextRandom} className="w-full mt-6 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-xl px-6 py-3 transition-colors">New question →</button>
           </div>
         )}
+
+        {/* Daily: the result card (modal), like every other game */}
+        {mode === 'daily' && done && !showResult && (
+          <button onClick={() => setShowResult(true)} className="mt-4 text-sm text-brand-bright hover:text-primary font-medium transition-colors">See result</button>
+        )}
+        <ResultModal open={showResult && mode === 'daily'} onClose={() => setShowResult(false)}>
+          <div className="w-full flex flex-col items-center text-center">
+            <GameMotif id="football-pointless" className={`w-11 h-11 mb-2 ${won ? 'text-accent-bright' : 'text-dim'}`} />
+            {resultHeadline}
+          </div>
+          {dailyStats && <DailyStats game="pointless" stats={dailyStats} />}
+          {pointlessListEl}
+          <ShareCard card={{
+            gameId: 'pointless',
+            title: 'Football Pointless',
+            challenge: question.title,
+            result: won ? (foundPointless ? 'Pointless!' : `${total} pts — under 100`) : `${total} pts`,
+            rows: [answers.map(a => (a.p === 0 ? TILE.hit : a.p <= 15 ? TILE.near : TILE.miss))],
+            matchday: matchdayNumber(),
+          }} />
+          <button onClick={startUnlimited} className="mt-2 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-lg px-6 py-2.5 transition-colors">Play unlimited</button>
+          <div className="mt-3 text-[0.62rem] font-black tracking-[0.14em] uppercase text-faint">Come back tomorrow for the next daily</div>
+          {testListEl}
+          <UpNext exclude="pointless" />
+        </ResultModal>
       </div>
     </div>
   )

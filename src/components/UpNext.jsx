@@ -15,6 +15,7 @@ const POOL = [
   { stats: 'connections', to: '/connections' },
   { stats: 'higherlower', to: '/higher-or-lower' },
   { stats: '501', to: '/501' },
+  { stats: 'pointless', to: '/football-pointless' },
 ]
 
 export default function UpNext({ exclude }) {
