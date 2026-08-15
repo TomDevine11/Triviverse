@@ -230,6 +230,49 @@ const FLAGS = {
   'zambia': '🇿🇲', 'zambian': '🇿🇲',
   // Zimbabwe
   'zimbabwe': '🇿🇼', 'zimbabwean': '🇿🇼',
+
+  // ── Transfermarkt naming variants → existing flags ──────────────────────
+  'bosnia-herzegovina': '🇧🇦', 'bosnia and herzegovina': '🇧🇦',
+  'korea, south': '🇰🇷', 'korea south': '🇰🇷', 'republic of korea': '🇰🇷', 'south korea': '🇰🇷', 'korean': '🇰🇷',
+  'korea, north': '🇰🇵', 'north korea': '🇰🇵',
+  'democratic republic of the congo': '🇨🇩',
+  "people's republic of china": '🇨🇳',
+  'hongkong': '🇭🇰', 'hong kong': '🇭🇰',
+  'united kingdom': '🇬🇧', 'great britain': '🇬🇧',
+  'united arab emirates': '🇦🇪', 'uae': '🇦🇪', 'emirati': '🇦🇪',
+
+  // ── Historical states → present-day successor flag ──────────────────────
+  'west germany': '🇩🇪', 'german democratic republic': '🇩🇪', 'east germany': '🇩🇪',
+  'soviet union': '🇷🇺', 'ussr': '🇷🇺', 'commonwealth of independent states': '🇷🇺', 'cis': '🇷🇺',
+  'czechoslovakia': '🇨🇿', 'cssr': '🇨🇿',
+  'yugoslavia': '🇷🇸', 'jugoslawien (sfr)': '🇷🇸', 'socialist federal republic of yugoslavia': '🇷🇸',
+  'federal republic of yugoslavia': '🇷🇸', 'serbia and montenegro': '🇷🇸',
+
+  // ── Overseas territories → own flag where one exists ────────────────────
+  'martinique': '🇲🇶', 'guadeloupe': '🇬🇵', 'french guiana': '🇬🇫', 'new caledonia': '🇳🇨',
+  'saint-martin': '🇲🇫', 'tahiti': '🇵🇫', 'french polynesia': '🇵🇫',
+  'curacao': '🇨🇼', 'curaçao': '🇨🇼', 'puerto rico': '🇵🇷', 'bermuda': '🇧🇲',
+  'montserrat': '🇲🇸', 'gibraltar': '🇬🇮',
+
+  // ── Missing sovereign nations ───────────────────────────────────────────
+  'belarus': '🇧🇾', 'belarusian': '🇧🇾', 'cyprus': '🇨🇾', 'cypriot': '🇨🇾',
+  'latvia': '🇱🇻', 'latvian': '🇱🇻', 'estonia': '🇪🇪', 'estonian': '🇪🇪',
+  'kazakhstan': '🇰🇿', 'kazakh': '🇰🇿', 'uzbekistan': '🇺🇿', 'uzbek': '🇺🇿',
+  'guinea-bissau': '🇬🇼', 'benin': '🇧🇯', 'beninese': '🇧🇯', 'haiti': '🇭🇹', 'haitian': '🇭🇹',
+  'comoros': '🇰🇲', 'madagascar': '🇲🇬', 'malagasy': '🇲🇬', 'suriname': '🇸🇷', 'surinamese': '🇸🇷',
+  'mauritania': '🇲🇷', 'mauritanian': '🇲🇷', 'equatorial guinea': '🇬🇶',
+  'central african republic': '🇨🇫', 'dominican republic': '🇩🇴', 'chad': '🇹🇩',
+  'philippines': '🇵🇭', 'filipino': '🇵🇭', 'niger': '🇳🇪', 'indonesia': '🇮🇩', 'indonesian': '🇮🇩',
+  'qatar': '🇶🇦', 'qatari': '🇶🇦', 'andorra': '🇦🇩', 'monaco': '🇲🇨', 'thailand': '🇹🇭', 'thai': '🇹🇭',
+  'mauritius': '🇲🇺', 'barbados': '🇧🇧', 'antigua and barbuda': '🇦🇬', 'guyana': '🇬🇾',
+  'faroe islands': '🇫🇴', 'liechtenstein': '🇱🇮', 'el salvador': '🇸🇻', 'salvadoran': '🇸🇻',
+  'malaysia': '🇲🇾', 'malaysian': '🇲🇾', 'grenada': '🇬🇩', 'san marino': '🇸🇲',
+  'seychelles': '🇸🇨', 'st. kitts & nevis': '🇰🇳', 'saint kitts and nevis': '🇰🇳',
+  'india': '🇮🇳', 'indian': '🇮🇳', 'pakistan': '🇵🇰', 'pakistani': '🇵🇰', 'bangladesh': '🇧🇩',
+  'laos': '🇱🇦', 'cambodia': '🇰🇭', 'malawi': '🇲🇼', 'oman': '🇴🇲', 'omani': '🇴🇲',
+  'jersey': '🇯🇪', 'aruba': '🇦🇼', 'tajikistan': '🇹🇯', 'palestine': '🇵🇸', 'palestinian': '🇵🇸',
+  'kyrgyzstan': '🇰🇬', 'reunion': '🇷🇪', 'réunion': '🇷🇪', 'republic of the congo': '🇨🇬',
+  'kingdom of the netherlands': '🇳🇱',
 }
 
 export function getFlagFromNationality(nationality) {
