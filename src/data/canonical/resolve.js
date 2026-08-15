@@ -49,13 +49,33 @@ const ALIAS_FIXES = {
 // registry, so games don't import the canonical positions file directly (C13).
 export function positionBadge(id) { return POS_BADGE[getPlayer(id)?.positions?.[0]] || null }
 
+// Order-insensitive key: a name's tokens, sorted. Lets "Son Heung-min" and
+// "Heung-Min Son" (East-Asian name order, or any transposition) resolve alike.
+const sortedKey = (name) => normalize(name).split(' ').filter(Boolean).sort().join(' ')
+
+let sortedIdIndex = null // sorted-token key -> Set(id), built once from byAlias
+function buildSortedIds() {
+  sortedIdIndex = new Map()
+  for (const [alias, id] of Object.entries(byAlias)) {
+    if (typeof id !== 'string') continue
+    const k = sortedKey(alias)
+    if (!k.includes(' ')) continue // multi-token names only (avoid mononym collisions)
+    if (!sortedIdIndex.has(k)) sortedIdIndex.set(k, new Set())
+    sortedIdIndex.get(k).add(id)
+  }
+}
+
 export function resolveNameToId(name) {
   const n = normalize(name)
   // A curated alias fix is an override (a name that means a specific canonical
   // player) → resolve THROUGH it, ahead of byAlias, so it wins over a namesake.
   const key = ALIAS_FIXES[n] ? normalize(ALIAS_FIXES[n]) : n
   const hit = byAlias[key]
-  return typeof hit === 'string' ? hit : null
+  if (typeof hit === 'string') return hit
+  // Fallback: same tokens in a different order → resolve if it's unambiguous.
+  if (!sortedIdIndex) buildSortedIds()
+  const s = sortedIdIndex.get(sortedKey(name))
+  return s && s.size === 1 ? [...s][0] : null
 }
 
 // Bare tokens that genuinely refer to more than one real person — must prompt,
@@ -67,10 +87,12 @@ const AMBIGUOUS_ALIASES = {
 // Build the indices once.
 let fullIndex = null      // normalized full name/alias -> Set(displayName)
 let surnameIndex = null   // normalized surname -> Set(displayName)
+let sortedIndex = null    // sorted-token key -> Set(displayName)
 
 function build() {
   fullIndex = new Map()
   surnameIndex = new Map()
+  sortedIndex = new Map()
   const add = (map, key, displayName) => {
     if (!key) return
     if (!map.has(key)) map.set(key, new Set())
@@ -79,6 +101,8 @@ function build() {
   for (const p of allPlayers()) {
     add(fullIndex, normalize(p.displayName), p.displayName)
     for (const key of surnameKeys(p.displayName)) add(surnameIndex, key, p.displayName)
+    const sk = sortedKey(p.displayName)
+    if (sk.includes(' ')) add(sortedIndex, sk, p.displayName)
   }
 }
 
@@ -108,6 +132,13 @@ export function resolve(rawInput) {
   if (surnameIndex.has(q)) {
     const set = surnameIndex.get(q)
     return set.size === 1 ? result(OK, set) : result(AMBIGUOUS, set)
+  }
+
+  // Same tokens in a different order (name-order variants) → ok if unambiguous.
+  const sk = sortedKey(rawInput)
+  if (sk.includes(' ') && sortedIndex.has(sk)) {
+    const set = sortedIndex.get(sk)
+    if (set.size === 1) return result(OK, set)
   }
 
   return result(UNKNOWN)
