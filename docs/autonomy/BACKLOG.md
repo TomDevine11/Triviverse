@@ -48,7 +48,7 @@ obsolete. Never delete rows — this is an audit trail.
 | ID | Title | Class | Value | Source | Effort | Priority | Status |
 |----|-------|-------|-------|--------|--------|----------|--------|
 | B-001 | Align CI + existing workflows to Node 22.12 (match Render) | internal | consistent runtime/CI | idea | S | P2 | todo |
-| B-002 | Investigate pushing "football tenable" from ~#10 into top-5 (title/schema/content/links) | user-facing | biggest current organic lever | gsc | M | P1 | todo |
+| B-002 | Investigate pushing "football tenable" from ~#10 into top-5 (title/schema/content/links) | user-facing | biggest current organic lever | gsc | M | P1 | done (#25 merged — misspelling cluster covered; ranking effect not yet measurable, see B-011) |
 | B-003 | Diagnose why 501 under-ranks its engagement; propose ranking plan | user-facing | high-demand page, near-zero visibility | gsc | M | P1 | todo |
 | B-004 | Resolve "triviverse" brand-SERP cannibalisation across 7 pages | user-facing | brand clarity (VISION §6) | gsc | M | P2 | todo |
 | B-005 | Investigate lifting AI-assistant discoverability (already ~25% of sessions) | user-facing | grow a proven channel | ga4 | M | P1 | todo |
@@ -57,3 +57,13 @@ obsolete. Never delete rows — this is an audit trail.
 | B-008 | Assess multi-mode architecture readiness (routing/data-model/brand generality) | internal | cheap future modes (VISION §20a) | arch-invariant | L | P3 | todo |
 | B-009 | Fix failing seo.test.js cases (length limits + archive-page JSON-LD) | user-facing | green test baseline; the gate must pass to mean anything | test-gap | S | P0 | done (#14) |
 | B-010 | Drive eslint to zero (~24 pre-existing errors, mostly react-hooks/set-state-in-effect), then remove `continue-on-error` in ci.yml to make lint a hard gate | internal | real server-side lint gate | test-gap | M | P1 | todo |
+
+## Discovered 2026-08-16 (session 2)
+
+| ID | Title | Class | Value | Source | Effort | Priority | Status |
+|----|-------|-------|-------|--------|--------|----------|--------|
+| B-011 | **Connect GA4 + Search Console (and Bing Webmaster) to the runner environment** | internal | unblocks all evidence-based prioritisation (VISION §18/§20) | sec | S | P0 | blocked-on-tom (needs credentials; Claude must never handle secrets — see REVIEW_QUEUE) |
+| B-012 | Resolve "football guessing game" cannibalisation between `/` and `/teammates` | user-facing | two pages compete for one real query, splitting ranking signal | seo-report | S | P1 | todo (unblocked — #25 merged) |
+| B-013 | Fix SERP-truncating titles/descriptions + H1↔route-name mismatches (7 flags) | user-facing | CTR + canonical-label consistency across 5 pages | seo-report | S | P2 | todo (unblocked — #25 merged) |
+| B-014 | "Career Path Answers" autocompletes to non-football intent — rename or re-anchor to football | user-facing | ambiguous name wastes an answers page that should capture football intent | seo-report | S | P2 | todo (unblocked — #25 merged) |
+| B-015 | Ship `llms.txt` + a machine-readable game index for AI-assistant discovery | user-facing | AI assistants are already ~25% of sessions — cheap, reversible bet on a proven channel | growth | S | P1 | in-review:#28 |
