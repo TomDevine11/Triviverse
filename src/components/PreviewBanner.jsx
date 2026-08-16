@@ -31,3 +31,5 @@ export default function PreviewBanner() {
     </div>
   )
 }
+
+// (dry-run: bot-authored user-facing PR, testing approve-to-unblock)
