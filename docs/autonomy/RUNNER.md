@@ -42,6 +42,30 @@ Persistent state = **the repository**: `main`, open PRs (`gh pr list`), BACKLOG.
 REVIEW_QUEUE.md, and committed report files. A cold session reconstructs everything from these
 (LOOP step 1). No reliance on chat history.
 
+## Review interface (product review, not code review)
+Tom's only review surface is the **[product digest](REVIEW_QUEUE.md)** ("Triviverse needs your
+attention") — not GitHub diffs. The design goal: Tom experiences and judges *products*, never
+reviews code.
+
+- **Every user-facing PR ships a product Review Brief** (the PR body; template
+  `reports/REVIEW_BRIEF_TEMPLATE.md`): what/why/evidence/impact/risks/tested/recommendation/what
+  to look at/**how to try it**. Internal work never appears (merged autonomously; at most an FYI line).
+- **Runnable, not readable.** Each item is playable:
+  - **Preview deployments (preferred):** a per-branch preview URL Tom clicks to play the change
+    live. *(To enable at activation — Render preview environments per PR, or an equivalent
+    per-branch static preview. Until enabled, briefs use the local fallback below.)*
+  - **Local fallback (always provided):** an exact `git fetch && git checkout <branch> && npm ci
+    && npm run dev` command + the route + the specific thing to try; variants flagged A/B/C.
+- **Prototype-/variants-first for big changes.** Large or strategic user-facing ideas arrive as
+  a lightweight MVP or 2–3 comparable variants (`prototype (direction check)`) so Tom steers the
+  direction before Claude builds the finished version (LOOP step 7).
+- **Consolidated, low-frequency.** All pending user-facing items are batched into the single
+  digest, refreshed each session and surfaced to Tom on a **digest cadence** (default: with the
+  weekly report, or sooner if a high-priority item is waiting) — plus an optional push
+  notification. Tom reviews in one sitting; he does not watch GitHub.
+- **Approve = Tom merges.** Claude never merges user-facing PRs. "Approved" means Tom clicks
+  merge (which deploys); "changes-requested" sends it back to the loop next run.
+
 ## Failure handling
 - **Red gate / build break:** fix within the run, or abandon the branch and set the item
   `todo` with a blocker note. Never PR/merge red.
@@ -96,7 +120,9 @@ finalised with Tom at activation.
       [ci.workflow.yml](ci.workflow.yml)). Requires a token/UI with GitHub **`workflow`
       scope** — the bootstrap OAuth token lacks it, so the runner's token must include it
       (or CI is committed once via the UI and left in place).
-- [ ] Confirm cadence + session budget (N tool-calls / M minutes).
+- [ ] Confirm cadence + session budget (N tool-calls / M minutes) + **digest cadence**.
+- [ ] (Preferred) Enable **per-branch preview deployments** so review items are click-to-play;
+      otherwise briefs use the local `npm run dev` fallback.
 - [ ] Enable GitHub **branch protection on `main`** (require CI, require PR, no force-push).
 - [ ] Enable repo **auto-merge** (so green internal PRs merge without a human).
 - [ ] Install the finalised runner `.claude/settings.json`.

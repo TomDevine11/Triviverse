@@ -8,9 +8,11 @@ from chat history. Scheduling/runner concerns (session limits, concurrency, cron
 
 ## Per-session procedure
 
-1. **Recover state.** `git fetch origin`; ensure `main` is up to date. Reconcile
-   [REVIEW_QUEUE.md](REVIEW_QUEUE.md) from `gh pr list --state open` (source of truth). Read
-   VISION.md, CLAUDE.md, this file, and [BACKLOG.md](BACKLOG.md).
+1. **Recover state.** `git fetch origin`; ensure `main` is up to date. Regenerate the product
+   digest [REVIEW_QUEUE.md](REVIEW_QUEUE.md) ("Triviverse needs your attention") from
+   `gh pr list --state open` filtered to **user-facing** PRs; compute each open PR's touched
+   files via `gh pr diff --name-only <pr>` for collision avoidance (not stored in the digest).
+   Read VISION.md, CLAUDE.md, this file, and [BACKLOG.md](BACKLOG.md).
 2. **Inspect repo health.** Working tree clean? Any red on `main`'s last CI run? Any
    dependency/security alerts? Note anything that becomes a P0.
 3. **Inspect analytics when relevant.** For growth/product/measurement work, pull GA4 +
@@ -22,27 +24,43 @@ from chat history. Scheduling/runner concerns (session limits, concurrency, cron
    merged/closed PRs: remove the worktree/branch, set the backlog item `done`, drop it from
    the review queue.
 5. **Select work.** Highest-scoring `todo` item (BACKLOG scoring) whose likely files do **not**
-   overlap any REVIEW_QUEUE collision globs. If the backlog is thin or stale, run **discovery**
+   overlap files touched by an open user-facing PR. If the backlog is thin or stale, run **discovery**
    (BACKLOG "Discovery sources"): scan tests/lint/layer-guard, GA4/GSC, perf, security, deps,
    data-quality, product/growth/retention/monetisation ideas — append items, then reselect.
    Respect the VISION §20a beachhead rule (no second-mode game-building pre-milestone).
 6. **Isolate.** Create a git worktree + `auto/<class>/<slug>` branch off fresh `main`
    (see RUNNER.md for worktree mechanics). Mark the item `in-progress:<branch>`.
-7. **Work deeply.** Do one coherent unit of work well. For large/strategic user-facing ideas,
-   build multiple lightweight MVP variants when that helps Tom compare approaches (VISION §14).
+7. **Work deeply — prototype-first for anything big.** Do one coherent unit of work well.
+   For a **large or strategically significant user-facing change, do NOT invest in a finished
+   build first.** Build a lightweight MVP/prototype — or 2–3 variants when the direction is
+   genuinely open — and ship *that* as a `prototype (direction check)` review item so Tom can
+   play it and steer before Claude commits to the full implementation (VISION §14). Only build
+   the finished version once the direction is approved. Small, obvious user-facing changes can
+   go straight to a finished item.
 8. **Quality gate.** `npm run lint && npm test && npm run build`; run relevant `build:*` +
    artefact diff if data is regenerated (diff ≠ ∅ ⇒ user-facing). Self-review with the
    `triviverse-reviewer` subagent where useful. Red gate ⇒ fix; if unfixable this session,
    abandon the branch and set the item back to `todo` with a blocker note. **Never PR/merge
    on a red gate.**
 9. **Ship.**
-   - **Internal & safe** → open PR, enable auto-merge, let CI merge. Set item `done`.
-   - **User-facing** → open PR, leave open, add to REVIEW_QUEUE.md, set item `in-review:#<pr>`.
+   - **Internal & safe** → open PR, enable auto-merge, let CI merge. Set item `done`. This
+     work is **invisible to Tom** — it never enters the review digest (it may appear in the
+     digest's "shipped autonomously (FYI)" list only for awareness).
+   - **User-facing** → open a PR whose body **is a product Review Brief**
+     ([template](../autonomy/reports/REVIEW_BRIEF_TEMPLATE.md)): what changed, why,
+     evidence/hypothesis, expected impact, risks, what was tested, recommendation, exactly what
+     to look at, and **how to try it** (a preview URL if enabled, else the exact
+     `git checkout … && npm run dev` command + route + action; list any variants). **Make it
+     runnable, not readable** — Tom experiences it on localhost/preview, never reads the diff.
+     Then add it to the [product digest](REVIEW_QUEUE.md), set the item `in-review:#<pr>`, and
+     move on. Never merge it.
    - **Research-and-propose / risky** (VISION §21) → do **not** implement; write a proposal
      (backlog note or a `docs/proposals/*.md`) surfacing the opportunity and its legal/ToS risk.
-10. **Record & learn.** Update BACKLOG.md / REVIEW_QUEUE.md (committed via an internal PR).
-    Capture learnings for the weekly report. On the weekly cadence, produce the **State of
-    Triviverse** report from [reports/TEMPLATE.md](reports/TEMPLATE.md).
+10. **Record & learn.** Update BACKLOG.md and regenerate the [product digest](REVIEW_QUEUE.md)
+    so all pending user-facing items are consolidated into one read for Tom (committed via an
+    internal PR). Capture learnings for the weekly report. On the weekly cadence, produce the
+    **State of Triviverse** report from [reports/TEMPLATE.md](reports/TEMPLATE.md). The digest
+    (and, weekly, the report) is what Tom reads — he should never need to watch GitHub.
 11. **Do not wait.** Return to step 5 and select the next item.
 12. **Stop** only at a natural stopping point: no worthwhile autonomous work remains, a
     session limit is reached (RUNNER.md), or a genuine blocker needs Tom. Leave the repo/

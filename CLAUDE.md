@@ -87,14 +87,23 @@ the safe way to complete an autonomous task.
   One concern per branch.
 - Commits end with:
   `Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>`
-- Every change goes through a PR so CI is always the gate. PR body states: what & why; the
-  **classification** (user-facing | internal) with reasoning; gate results; and a
-  generated-artefact diff summary if any. End PR bodies with:
+- Every change goes through a PR so CI is always the gate. End PR bodies with:
   `🤖 Generated with [Claude Code](https://claude.com/claude-code)`
-- **Internal PR:** enable auto-merge; it merges when CI is green.
-- **User-facing PR:** leave open, add to [REVIEW_QUEUE.md](docs/autonomy/REVIEW_QUEUE.md),
-  mark the backlog item in-review, and **move on to the next task — never wait.**
-- Do not start work that overlaps files in an open review-queue PR (collision avoidance).
+- **Internal PR (fully autonomous — Tom never reviews it):** enable auto-merge; it merges when
+  CI is green. Tom's review is **product** review, not code review — internal engineering with
+  no user-visible effect must not require or request his attention. It may appear only as an
+  FYI line in the digest.
+- **User-facing PR (product review — Tom experiences it, never reads the diff):** the PR body
+  **is a plain-English product Review Brief**
+  ([template](docs/autonomy/reports/REVIEW_BRIEF_TEMPLATE.md)) — what changed, why,
+  evidence/hypothesis, expected impact, risks, what was tested, recommendation, exactly what to
+  look at, and **how to try it** (a preview URL if enabled, else the exact
+  `git checkout … && npm run dev` command + route + action). **Make it runnable, not readable.**
+  For large/strategic changes, ship a **prototype or 2–3 variants first** (VISION §14) so Tom
+  steers direction before you build the finished version. Then add it to the
+  **[review digest](docs/autonomy/REVIEW_QUEUE.md)**, mark the backlog item in-review, and
+  **move on — never wait.** Tom's single surface is the digest; he should never have to watch GitHub.
+- Do not start work that overlaps files touched by an open user-facing PR (collision avoidance).
 
 ## Choosing work & never stopping
 Pull the highest-value unblocked item from [BACKLOG.md](docs/autonomy/BACKLOG.md), ranked by
