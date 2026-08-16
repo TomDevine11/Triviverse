@@ -283,6 +283,7 @@ export const ROUTES = [
     faq: [
       { q: 'What is Football Tenable?', a: 'Football Tenable is a daily football trivia game where you try to name all ten answers to a top-10 question — such as a competition’s all-time top scorers — before making three mistakes.' },
       { q: 'Is this the football version of Tenable?', a: "Yes — Football Tenable (also searched as 'Tenaball', 'footy tenaball' or 'footy Tenable') is a daily top-10 football quiz inspired by the ITV game show Tenable. Name as many of the top 10 as you can before three wrong guesses." },
+      { q: "Is 'Teneball' or 'ten a ball' the same as Football Tenable?", a: "Yes — 'Teneball', 'Teneable', 'ten a ball' and 'football ten' are all common ways people search for Football Tenable, the free daily top-10 football quiz. However you spell it, the game is the same: name as many of the ten answers as you can before three wrong guesses." },
       { q: 'Does Football Tenable show the answers?', a: 'Yes — when the round ends, the full top 10 is revealed, so you always see the answers you missed. Unlimited mode lets you work through more questions and their answers as often as you like.' },
       { q: 'What kind of questions come up?', a: 'Every question is a top-10 football list — a competition’s all-time top scorers, a club’s record appearance-makers, the nations or clubs with the most trophies, and more. A fresh one appears each day, with endless variety in Unlimited mode.' },
       { q: 'How many lives do I have?', a: 'You can make up to three wrong guesses before the game ends.' },
