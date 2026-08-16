@@ -9,7 +9,8 @@
 // JSON-LD baked into <head>, plus real crawlable content (h1, how-to, FAQ,
 // internal links) inside #root. The SPA then boots and replaces #root.
 //
-// Also emits dist/sitemap.xml (with hreflang alternates) and dist/robots.txt.
+// Also emits dist/sitemap.xml (with hreflang alternates), dist/robots.txt and
+// dist/llms.txt + dist/llms-full.txt (the AI-assistant read of the site).
 // ─────────────────────────────────────────────────────────────────────────
 
 import { readFileSync, writeFileSync, mkdirSync } from 'fs'
@@ -19,6 +20,7 @@ import {
   ROUTES, SITE_URL, BRAND, absolute, absoluteFor, localePrefix, routeByPath,
   metaTagsFor, jsonLdFor, indexableRoutes, alternatesFor, LOCALES,
 } from '../src/seo/seoConfig.js'
+import { llmsTxt, llmsFullTxt } from './seo/llms.mjs'
 import { strings } from '../src/i18n/strings.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -192,9 +194,18 @@ function writeRobots() {
   console.error('  ✓ robots.txt')
 }
 
+// The AI-assistant read of the site — see scripts/seo/llms.mjs for the why.
+function writeLlms() {
+  writeFileSync(path.join(DIST, 'llms.txt'), llmsTxt())
+  console.error('  ✓ llms.txt')
+  writeFileSync(path.join(DIST, 'llms-full.txt'), llmsFullTxt())
+  console.error('  ✓ llms-full.txt')
+}
+
 console.error(`Prerendering ${BRAND} (${ROUTES.length} routes × ${LOCALES.length} locales)…`)
 for (const route of ROUTES) writeRoute(route)
 writeSitemap()
 writeRobots()
+writeLlms()
 await vite.close()
 console.error('Done.')
