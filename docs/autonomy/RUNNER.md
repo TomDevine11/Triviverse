@@ -18,12 +18,25 @@ saying "continue." Each run is a **cold start** that recovers state from the rep
 - Mechanism: a scheduled autonomous trigger (cron) that invokes a fresh Claude session with
   the LOOP.md protocol. *(Configured only on approval.)*
 
-## Session limits (per run)
-- **Budget guard:** target ≤ N tool-calls / ≤ M minutes wall-clock per run (values set at
-  activation). On approaching the limit: finish the current item to a clean state (or abandon
-  its branch), update BACKLOG/REVIEW_QUEUE, stop. Never leave the tree half-edited on a shared
-  branch.
-- **One primary item per run** (plus quick review-queue unblocking). Depth over breadth.
+## Session budget (per run) — task-scoped, not a tool-call count
+The available mechanism (a scheduled Claude Code session) has no meaningful "N tool-calls"
+dial, and optimising against an arbitrary number would cause rushing. So the budget is
+**task-scoped**: a run gets enough to complete one substantial task — implement it, run the
+gate, open a PR, and leave the repo cleanly recoverable.
+
+A run **stops** when any of these is true (whichever comes first):
+1. the task is complete (PR opened / internal PR auto-merging);
+2. the task is cleanly parked (branch abandoned or item set back to `todo` with a note);
+3. a genuine blocker needs Tom;
+4. no worthwhile work remains (→ back off, schedule a distant check-in);
+5. the run is approaching the session's context/usage ceiling.
+
+It must **never** rush or leave the repo in a broken/ambiguous state to beat the limit: if the
+ceiling is near mid-task, wrap up to a clean state (finish or abandon the branch, update
+BACKLOG/REVIEW_QUEUE) and stop — the next scheduled run resumes from repo state.
+
+**One primary item per run** (plus quick review-queue unblocking). Depth over breadth — one
+meaningful piece of work beats four trivial ones. Practical guidance rather than a hard cap.
 
 ## Concurrency (prevent conflicting sessions)
 - **Single-writer lock.** A run acquires a lock before doing work (a short-lived branch/PR
@@ -51,9 +64,17 @@ reviews code.
   `reports/REVIEW_BRIEF_TEMPLATE.md`): what/why/evidence/impact/risks/tested/recommendation/what
   to look at/**how to try it**. Internal work never appears (merged autonomously; at most an FYI line).
 - **Runnable, not readable.** Each item is playable:
-  - **Preview deployments (preferred):** a per-branch preview URL Tom clicks to play the change
-    live. *(To enable at activation — Render preview environments per PR, or an equivalent
-    per-branch static preview. Until enabled, briefs use the local fallback below.)*
+  - **Preview deployments (preferred) — Cloudflare Pages / Netlify:** the app is a **fully
+    static prerendered SPA** (`npm run build` → `dist/`; the Express server only serves static
+    files, zero backend/data API), so any static host with per-PR previews gives a faithful,
+    click-to-play preview. **Recommended: Cloudflare Pages** (free, unlimited per-PR preview
+    URLs like `<branch>.<project>.pages.dev`, auto-rebuilds on push, build `npm run build`,
+    output `dist/`). Production stays on **Render, untouched** — previews are a separate,
+    read-only static deploy of a branch, with **no production data** to endanger (there is
+    none — data is static JSON). The preview subdomain makes it obvious it's not production; an
+    optional hostname-gated "PREVIEW" banner (renders only off the production domain) can make
+    it unmistakable. *(To connect at activation — see checklist. Until then, briefs use the
+    local fallback below.)*
   - **Local fallback (always provided):** an exact `git fetch && git checkout <branch> && npm ci
     && npm run dev` command + the route + the specific thing to try; variants flagged A/B/C.
 - **Prototype-/variants-first for big changes.** Large or strategic user-facing ideas arrive as
@@ -123,8 +144,12 @@ finalised with Tom at activation.
 - [ ] Confirm cadence + session budget (N tool-calls / M minutes) + **digest cadence**.
 - [ ] (Preferred) Enable **per-branch preview deployments** so review items are click-to-play;
       otherwise briefs use the local `npm run dev` fallback.
-- [ ] Enable GitHub **branch protection on `main`** (require CI, require PR, no force-push).
-- [ ] Enable repo **auto-merge** (so green internal PRs merge without a human).
+- [ ] Enable GitHub **branch protection on `main`**: require a PR before merging; require the
+      **CI** status check; **require review from Code Owners** (so any PR touching a
+      `.github/CODEOWNERS`-owned/user-facing path needs Tom); block force-pushes; no bypass.
+- [ ] Enable repo **auto-merge** (so green *internal* PRs — which touch no owned path — merge
+      without a human; user-facing PRs stay blocked on Tom's Code-Owner review, so auto-merge
+      can never merge Claude's own user-facing work).
 - [ ] Install the finalised runner `.claude/settings.json`.
 - [ ] Confirm the runner's GitHub token scope (PRs yes; no admin; cannot bypass protection).
 - [ ] Create the schedule (cron) invoking the LOOP session.

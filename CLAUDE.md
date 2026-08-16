@@ -119,6 +119,12 @@ backlog. Produce the weekly **State of Triviverse** report (VISION §20;
 template in `docs/autonomy/reports/`). Tag every claim as observed fact / reasonable inference
 / uncertain. Never claim something "worked" without enough data.
 
+**SEO is a means, not the goal — actual growth is.** Don't rank-chase or pile up technical-SEO
+tweaks because they're easy to measure. When the data shows a gap (e.g. 501 at #36 while Tenable
+is #10), think creatively about *why* and what could **materially** change the outcome, and
+propose unconventional growth experiments — not just incremental meta edits. (User-facing/
+search-facing changes still go through review.)
+
 ## Design work
 All UI/UX is user-facing → PR. Follow [docs/design-system.md](docs/design-system.md) and
 [docs/design-tokens.md](docs/design-tokens.md): premium, game-like, token-driven, no generic

@@ -4,7 +4,9 @@
 > summarised into the [review digest](../REVIEW_QUEUE.md). Written for a product owner, not a
 > code reviewer — no diffs, no file lists. Tom's job: try it and say yes / no / change.
 
-**The ask (one line):** <e.g. "Try the new 501 result screen and tell me if it feels better.">
+**⏱ Your job (state the MINIMUM):** <e.g. "2 min — play 501 once and tell me A or B." Do as
+much investigation/validation as possible *before* asking; give Tom the smallest possible task,
+not ten things to inspect.>
 **Type:** `prototype (direction check)` | `finished change` · **Size:** S/M/L · **Branch:** `auto/...` · **PR:** #—
 
 ## What changed

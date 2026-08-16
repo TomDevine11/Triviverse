@@ -23,7 +23,13 @@ from chat history. Scheduling/runner concerns (session limits, concurrency, cron
    fixing it is top priority (that progresses Tom's review — it is *not* "waiting"). For
    merged/closed PRs: remove the worktree/branch, set the backlog item `done`, drop it from
    the review queue.
-5. **Select work.** Highest-scoring `todo` item (BACKLOG scoring) whose likely files do **not**
+5. **Select work — think, don't just tick boxes.** First ask *"what is the single highest-value
+   thing I could do for Triviverse right now?"* — not *"what's the next unchecked box?"*. The
+   backlog is memory, not a deterministic checklist: freely **create, reprioritise, abandon
+   stale, challenge past assumptions, and propose entirely new** work when the evidence warrants.
+   Sanity-check the pick against *"is this something that could actually make Triviverse more
+   valuable (product/traffic/engagement/retention/data/revenue), or just easy technical polish?"*
+   Then take the highest-value `todo` item (BACKLOG scoring) whose likely files do **not**
    overlap files touched by an open user-facing PR. If the backlog is thin or stale, run **discovery**
    (BACKLOG "Discovery sources"): scan tests/lint/layer-guard, GA4/GSC, perf, security, deps,
    data-quality, product/growth/retention/monetisation ideas — append items, then reselect.

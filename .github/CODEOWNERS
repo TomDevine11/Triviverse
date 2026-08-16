@@ -1,0 +1,35 @@
+# CODEOWNERS — structural enforcement of the product-review boundary.
+#
+# A PR that touches ANY owned path below REQUIRES @TomDevine11's review before merge, and
+# therefore cannot auto-merge. A PR that touches NONE of these paths (pure internal — tests,
+# docs, most scripts, tooling, .claude, root config) can auto-merge once CI is green.
+# Pair with branch protection: "Require review from Code Owners" + "Require status checks".
+#
+# This owns the surfaces where "user-facing" is unambiguous and a mistake is costly. The
+# src/ interior (games/components/utils) is governed by Claude's own classification
+# (auto-merge enabled ONLY on PRs it classifies internal) + the triviverse-reviewer subagent
+# + the artefact-diff rule. For a STRICTER guarantee, uncomment the /src/ line at the bottom
+# to force review on ALL app-code changes (you then also approve internal src refactors).
+
+# Generated + source game data — the artefact-diff surface. Any change that alters what
+# players see (incl. a data-pipeline change whose regenerated output differs) lands here.
+/src/data/                      @TomDevine11
+# SEO / search-facing config + copy.
+/src/seo/                       @TomDevine11
+# Static assets, entry HTML, OG image service, prerender — user/search-facing output.
+/public/                        @TomDevine11
+/index.html                     @TomDevine11
+/og-service/                    @TomDevine11
+/scripts/prerender.mjs          @TomDevine11
+# Production deploy config.
+/render.yaml                    @TomDevine11
+# CI + the system's own charter — never auto-edited by the loop.
+/.github/                       @TomDevine11
+/VISION.md                      @TomDevine11
+/CLAUDE.md                      @TomDevine11
+/docs/autonomy/LOOP.md          @TomDevine11
+/docs/autonomy/RUNNER.md        @TomDevine11
+/docs/autonomy/ci.workflow.yml  @TomDevine11
+
+# Stricter option — force review on ALL app code (uncomment to enable):
+# /src/                         @TomDevine11

@@ -1,43 +1,30 @@
-# State of Triviverse — WEEK OF <YYYY-MM-DD>
+# State of Triviverse — <YYYY-MM-DD>
 
-> Weekly report (VISION §20). Tag every claim: **[fact]** observed data · **[inference]**
-> reasonable read · **[uncertain]** not enough data. Never say a change "worked" without data.
-> Filename: `state-of-triviverse-YYYY-MM-DD.md` in this folder.
+> Weekly **executive update**, not an engineering changelog. Aim: a 2–3 minute read.
+> Tag claims **[fact]** / **[inference]** / **[uncertain]**; never say something "worked"
+> without data. Save as `state-of-triviverse-YYYY-MM-DD.md`.
 
-## 1. Headline
-- **Current run-rate:** ~X pageviews / last 28d (prev 28d: ~Y) — trend ↑/↓/flat.
-- **Milestone 1 (10,000/mo):** ~Z% of the way, based on current run-rate.
-- One-line state of play.
+**TL;DR (3 lines max):** where we are · the one thing that matters this week · what needs you.
 
-## 2. Traffic & organic
-- Pageviews + trend (last 28d vs prior 28d). Sessions, users, new vs returning.
-- Channel mix (Organic / AI Assistant / Direct / Social / Referral).
-- Search Console: clicks, impressions, avg position; notable ranking moves (↑ and ↓);
-  striking-distance queries; new/lost queries; cannibalisation.
+## 📈 Progress to 10k monthly pageviews
+Current run-rate **~X /mo** (last 28d vs prior 28d: **±Y%**) → **Z%** of the 10k milestone. One line on trajectory.
 
-## 3. Engagement & retention
-- Games completed; engagement rate; traffic by game; by geography/device where useful.
-- Returning-user / repeat-play signals.
+## What changed & what moved
+- **Shipped** (user-facing, merged by you): … · **Autonomous** (internal, FYI): 1 line.
+- **Traffic / SEO / engagement / revenue** — only the movements that matter: notable ranking
+  changes, a channel shift, a retention signal, revenue (once live). Skip if flat.
 
-## 4. Revenue (once monetised)
-- Revenue, RPM/eCPM, trend vs milestone ladder (£100 → £250 → £500 → £1,000 → beyond).
+## What I learned
+- **Worked** [tag] · **Didn't** [tag] · **Still uncertain** [tag]. Be honest; short.
 
-## 5. Work completed this week
-- Internal (merged): …
-- User-facing PRs opened (awaiting review): … (link + collision globs)
+## 🤔 What changed my mind?
+Any strategy/priority view I revised this week and the evidence — incl. any recommendation to
+adjust the VISION §19 priority stack. (Omit if nothing changed.)
 
-## 6. Review queue
-- Open PRs, states, how long waiting, anything blocked on Tom.
+## ✅ Needs your decision
+The few things waiting on you (link the [review digest](../REVIEW_QUEUE.md)) with the
+**minimum action** each needs, e.g. "2 min — play 501 A/B." Nothing here = say so.
 
-## 7. Experiments & learnings
-- What was tried, the hypothesis, and the result so far.
-- **What I believe worked** [with confidence tag] · **what didn't** · **what I'm uncertain about**.
-
-## 8. What changed my mind?
-- Any strategy/task/hypothesis view Claude revised this week, and the evidence that caused it.
-- Any recommendation to adjust the VISION §19 priority stack (with evidence).
-
-## 9. Recommended next bets
-- Ranked, each with: upside · downside · evidence · reversibility · timescale to effect ·
-  success/failure metrics. Flag which need Tom's approval (all user-facing) and which are
-  research-and-propose-only (VISION §21).
+## ▶️ What I recommend next
+Top 1–3 bets, ranked, each one line: the bet + why + expected effect. Flag which need your
+approval (all user-facing) and which are research-only (VISION §21).
