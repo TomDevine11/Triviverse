@@ -64,7 +64,7 @@ reviews code.
   `reports/REVIEW_BRIEF_TEMPLATE.md`): what/why/evidence/impact/risks/tested/recommendation/what
   to look at/**how to try it**. Internal work never appears (merged autonomously; at most an FYI line).
 - **Runnable, not readable.** Each item is playable:
-  - **Preview deployments (preferred) — Cloudflare Pages / Netlify:** the app is a **fully
+  - **Preview deployments (ADOPTED) — Vercel:** the app is a **fully
     static prerendered SPA** (`npm run build` → `dist/`; the Express server only serves static
     files, zero backend/data API), so any static host with per-PR previews gives a faithful,
     click-to-play preview. **Recommended: Cloudflare Pages** (free, unlimited per-PR preview
