@@ -31,3 +31,5 @@ export default function PreviewBanner() {
     </div>
   )
 }
+
+// (dry-run 2: verify commit-status guard unblocks cleanly on approval)
