@@ -27,6 +27,10 @@ from chat history. Scheduling/runner concerns (session limits, concurrency, cron
    thing I could do for Triviverse right now?"* — not *"what's the next unchecked box?"*. The
    backlog is memory, not a deterministic checklist: freely **create, reprioritise, abandon
    stale, challenge past assumptions, and propose entirely new** work when the evidence warrants.
+   **The backlog is an input to this decision, never a mandatory queue** — do NOT pick an item
+   just because it is written down or easy to finish. A fresh opportunity in the latest GA4/GSC
+   data (e.g. a clear way to move Tenable/501) can and should outrank everything on the list; a
+   serious **security, reliability or data-integrity** problem preempts the queue entirely.
    Sanity-check the pick against *"is this something that could actually make Triviverse more
    valuable (product/traffic/engagement/retention/data/revenue), or just easy technical polish?"*
    Then take the highest-value `todo` item (BACKLOG scoring) whose likely files do **not**

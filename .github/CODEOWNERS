@@ -1,21 +1,21 @@
 # CODEOWNERS — structural enforcement of the product-review boundary.
 #
 # A PR that touches ANY owned path below REQUIRES @TomDevine11's review before merge, and
-# therefore cannot auto-merge. A PR that touches NONE of these paths (pure internal — tests,
-# docs, most scripts, tooling, .claude, root config) can auto-merge once CI is green.
-# Pair with branch protection: "Require review from Code Owners" + "Require status checks".
+# therefore cannot auto-merge. A PR that touches NONE of these paths can auto-merge once CI
+# is green. Pair with branch protection: "Require review from Code Owners" + "Require status
+# checks" (see docs/autonomy/RUNNER.md).
 #
-# This owns the surfaces where "user-facing" is unambiguous and a mistake is costly. The
-# src/ interior (games/components/utils) is governed by Claude's own classification
-# (auto-merge enabled ONLY on PRs it classifies internal) + the triviverse-reviewer subagent
-# + the artefact-diff rule. For a STRICTER guarantee, uncomment the /src/ line at the bottom
-# to force review on ALL app-code changes (you then also approve internal src refactors).
+# STRICT START (by design): all application code under /src/ is owned, so ANY change to app
+# code is assumed capable of affecting the product and needs Tom's review — even an ostensibly
+# "internal" src refactor. We start conservative and loosen later, once the autonomous system
+# has demonstrably operated safely (e.g. by carving out genuinely output-neutral src areas).
+#
+# What can still merge autonomously today: PRs touching NO owned path — tests (/test),
+# documentation, most build/tooling scripts, dependency bumps (package.json), root config,
+# and .claude. That is where "internal, self-mergeable after CI" currently applies.
 
-# Generated + source game data — the artefact-diff surface. Any change that alters what
-# players see (incl. a data-pipeline change whose regenerated output differs) lands here.
-/src/data/                      @TomDevine11
-# SEO / search-facing config + copy.
-/src/seo/                       @TomDevine11
+# All application code (games, components, utils, SEO config, and the generated game data).
+/src/                           @TomDevine11
 # Static assets, entry HTML, OG image service, prerender — user/search-facing output.
 /public/                        @TomDevine11
 /index.html                     @TomDevine11
@@ -30,6 +30,3 @@
 /docs/autonomy/LOOP.md          @TomDevine11
 /docs/autonomy/RUNNER.md        @TomDevine11
 /docs/autonomy/ci.workflow.yml  @TomDevine11
-
-# Stricter option — force review on ALL app code (uncomment to enable):
-# /src/                         @TomDevine11

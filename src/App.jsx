@@ -6,6 +6,7 @@ import AnswersPage from './seo/AnswersPage'
 import ThemedEnglandPage from './seo/ThemedEnglandPage'
 import ScrollToTop from './components/ScrollToTop'
 import Analytics from './components/Analytics'
+import PreviewBanner from './components/PreviewBanner'
 
 // Lazy-load each game so its (sometimes heavy) data only downloads on its own
 // route — the hub and lighter games stay fast, which helps Core Web Vitals.
@@ -57,6 +58,7 @@ export default function App() {
     <>
       <ScrollToTop />
       <Analytics />
+      <PreviewBanner />
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Hub />} />

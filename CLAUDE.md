@@ -80,6 +80,14 @@ the safe way to complete an autonomous task.
   deploy, rotating live secrets); spend money; publish outward beyond opening a PR. Surface
   these as a backlog item / proposal instead of acting.
 
+**Initial enforcement is deliberately stricter than this classification.** `.github/CODEOWNERS`
+currently owns all of `/src/`, so today *any* change to application code — even one you'd
+classify as internal (an output-neutral refactor or perf tweak) — requires Tom's review and
+cannot auto-merge. Autonomous self-merge therefore currently applies only to work touching **no
+owned path**: tests (`/test`), docs, most build/tooling scripts, dependency bumps
+(`package.json`), root config, and `.claude`. This conservative start loosens once the system
+has proven safe. When in doubt, this is the binding rule.
+
 ## Git, PR & worktree protocol
 - `main` is **protected production**. **No direct pushes to `main`.** Never force-push it.
 - Work on a branch **off fresh `main`**, in its own **git worktree** for isolation. Naming:
