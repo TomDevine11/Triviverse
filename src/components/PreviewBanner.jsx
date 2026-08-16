@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+// (dry-run: exercising the review guard on an owned /src/ path)
 
 // Hostname-gated PREVIEW badge. Renders ONLY on non-production hosts (e.g. Cloudflare
 // per-PR preview URLs) — never on triviverse.com and not in local dev — so it is
