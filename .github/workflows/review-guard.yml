@@ -7,21 +7,26 @@ on:
 permissions:
   contents: read
   pull-requests: read
+  statuses: write
 jobs:
-  guard:
+  eval:
     runs-on: ubuntu-latest
     steps:
-      - name: Require owner approval for user-facing PRs
+      - name: Evaluate guard and post commit status
         env:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
           PR: ${{ github.event.pull_request.number }}
+          SHA: ${{ github.event.pull_request.head.sha }}
           OWNER: TomDevine11
         run: |
           files=$(gh pr diff "$PR" --repo "$REPO" --name-only)
-          echo "$files"
           owned='^(src/|public/|index\.html|og-service/|scripts/prerender\.mjs|render\.yaml|\.github/|VISION\.md|CLAUDE\.md|docs/autonomy/(LOOP|RUNNER)\.md|docs/autonomy/ci\.workflow\.yml)'
-          if ! echo "$files" | grep -qE "$owned"; then echo "internal - pass"; exit 0; fi
-          approved=$(gh pr view "$PR" --repo "$REPO" --json latestReviews --jq "[.latestReviews[] | select(.author.login==\"$OWNER\" and .state==\"APPROVED\")] | length")
-          if [ "${approved:-0}" -ge 1 ]; then echo "approved - pass"; exit 0; fi
-          echo "needs @$OWNER approval"; exit 1
+          if ! echo "$files" | grep -qE "$owned"; then
+            state=success; desc="internal - no owned path"
+          else
+            approved=$(gh pr view "$PR" --repo "$REPO" --json latestReviews --jq "[.latestReviews[] | select(.author.login==\"$OWNER\" and .state==\"APPROVED\")] | length")
+            if [ "${approved:-0}" -ge 1 ]; then state=success; desc="approved by @$OWNER"; else state=failure; desc="needs @$OWNER approval"; fi
+          fi
+          echo "guard: $state ($desc)"
+          gh api -X POST "repos/$REPO/statuses/$SHA" -f state="$state" -f context=guard -f description="$desc" >/dev/null
