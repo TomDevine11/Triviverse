@@ -73,9 +73,19 @@ describe('structured data (JSON-LD)', () => {
   })
 
   it('each game exposes VideoGame, BreadcrumbList and FAQPage', () => {
-    for (const r of indexableRoutes().filter(r => r.path !== '/')) {
+    for (const r of indexableRoutes().filter(r => r.schema === 'VideoGame')) {
       const t = types(jsonLdFor(r))
       expect(t, r.path).toEqual(expect.arrayContaining(['VideoGame', 'BreadcrumbList', 'FAQPage']))
+    }
+  })
+
+  it('answers/archive pages expose BreadcrumbList + FAQPage (a game, not a VideoGame)', () => {
+    const content = indexableRoutes().filter(r => r.path !== '/' && r.schema !== 'VideoGame')
+    expect(content.length).toBeGreaterThan(0)
+    for (const r of content) {
+      const t = types(jsonLdFor(r))
+      expect(t, r.path).toEqual(expect.arrayContaining(['BreadcrumbList', 'FAQPage']))
+      expect(t, r.path).not.toContain('VideoGame')
     }
   })
 

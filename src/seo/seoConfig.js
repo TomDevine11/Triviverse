@@ -247,7 +247,7 @@ export const ROUTES = [
     path: '/tenable',
     name: 'Football Tenable',
     title: 'Football Tenable (Teneball) — Daily Top 10 Quiz | Triviverse',
-    description: 'Play Football Tenable free — also spelled Teneball or Tenaball. Name as many of the top 10 as you can before three wrong guesses. Daily & Unlimited modes, no sign-up.',
+    description: 'Play Football Tenable free — also spelled Teneball or Tenaball. Name as many of the top 10 as you can before three wrong guesses. Daily & Unlimited, no sign-up.',
     keywords: ['football tenable', 'footy tenable', 'tenable football', 'footytenable', 'tenaball', 'teneball', 'footy tenaball', 'football tenaball', 'football tenable unlimited', 'football tenable unlimited free', 'football tenable free', 'name the top 10 football', 'football top 10 quiz'],
     h1: 'Football Tenable',
     tagline: 'Name as many of the top 10 as you can before three wrong guesses end it.',
@@ -521,7 +521,7 @@ export const ROUTES = [
     name: 'England Football Quiz',
     hideFromNav: true,
     themePool: 'england',
-    title: 'England Football Quiz — Guess the Footballer by His Clubs | Triviverse',
+    title: 'England Football Quiz — Guess Players by Their Clubs | Triviverse',
     description: 'Free England football quiz: name the England international from his career clubs, revealed one at a time — from Harry Kane to the deep cuts. Play free, no sign-up.',
     keywords: ['england football quiz', 'england footballers quiz', 'guess the england player', 'england player quiz', 'england football trivia', 'name the england footballer'],
     h1: 'England Football Quiz',
@@ -544,7 +544,7 @@ export const ROUTES = [
     path: '/football-pointless',
     name: 'Football Pointless',
     title: 'Football Pointless — Name the Rarest Answers | Triviverse',
-    description: 'Football Pointless: every question has loads of correct answers, but you want the obscure ones — the rarer your pick, the fewer points. Find a pointless answer to win. Free, no sign-up.',
+    description: 'Football Pointless: every question has many correct answers, but you want rare ones — the more obscure your pick, the fewer points. Find a pointless answer to win.',
     keywords: ['football pointless', 'pointless football', 'football pointless quiz', 'football pointless game', 'pointless football quiz'],
     h1: 'Football Pointless',
     tagline: 'Name the rarest correct answer — the more obscure, the better.',
@@ -657,6 +657,16 @@ export function jsonLdFor(route, lang = 'en') {
         { '@type': 'ListItem', position: 2, name: route.name, item: url },
       ],
     })
+  } else {
+    // Content/archive pages (e.g. /wordle/answers): indexable but not a game, so
+    // they get a BreadcrumbList (Triviverse → parent game → this page) for
+    // navigation/SEO — never a VideoGame. FAQPage is added below if defined.
+    const parentPath = route.path.replace(/\/[^/]+$/, '')
+    const parent = ROUTES.find(r => r.path === parentPath)
+    const crumbs = [{ '@type': 'ListItem', position: 1, name: BRAND, item: SITE_URL + '/' }]
+    if (parent) crumbs.push({ '@type': 'ListItem', position: crumbs.length + 1, name: parent.name, item: absolute(parent.path) })
+    crumbs.push({ '@type': 'ListItem', position: crumbs.length + 1, name: route.name, item: url })
+    blocks.push({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: crumbs })
   }
 
   if (route.faq && route.faq.length) {
