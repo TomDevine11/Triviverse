@@ -1,0 +1,32 @@
+# CODEOWNERS — structural enforcement of the product-review boundary.
+#
+# A PR that touches ANY owned path below REQUIRES @TomDevine11's review before merge, and
+# therefore cannot auto-merge. A PR that touches NONE of these paths can auto-merge once CI
+# is green. Pair with branch protection: "Require review from Code Owners" + "Require status
+# checks" (see docs/autonomy/RUNNER.md).
+#
+# STRICT START (by design): all application code under /src/ is owned, so ANY change to app
+# code is assumed capable of affecting the product and needs Tom's review — even an ostensibly
+# "internal" src refactor. We start conservative and loosen later, once the autonomous system
+# has demonstrably operated safely (e.g. by carving out genuinely output-neutral src areas).
+#
+# What can still merge autonomously today: PRs touching NO owned path — tests (/test),
+# documentation, most build/tooling scripts, dependency bumps (package.json), root config,
+# and .claude. That is where "internal, self-mergeable after CI" currently applies.
+
+# All application code (games, components, utils, SEO config, and the generated game data).
+/src/                           @TomDevine11
+# Static assets, entry HTML, OG image service, prerender — user/search-facing output.
+/public/                        @TomDevine11
+/index.html                     @TomDevine11
+/og-service/                    @TomDevine11
+/scripts/prerender.mjs          @TomDevine11
+# Production deploy config.
+/render.yaml                    @TomDevine11
+# CI + the system's own charter — never auto-edited by the loop.
+/.github/                       @TomDevine11
+/VISION.md                      @TomDevine11
+/CLAUDE.md                      @TomDevine11
+/docs/autonomy/LOOP.md          @TomDevine11
+/docs/autonomy/RUNNER.md        @TomDevine11
+/docs/autonomy/ci.workflow.yml  @TomDevine11

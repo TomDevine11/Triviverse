@@ -232,8 +232,8 @@ const FLAGS = {
   'zimbabwe': '🇿🇼', 'zimbabwean': '🇿🇼',
 
   // ── Transfermarkt naming variants → existing flags ──────────────────────
-  'bosnia-herzegovina': '🇧🇦', 'bosnia and herzegovina': '🇧🇦',
-  'korea, south': '🇰🇷', 'korea south': '🇰🇷', 'republic of korea': '🇰🇷', 'south korea': '🇰🇷', 'korean': '🇰🇷',
+  'bosnia-herzegovina': '🇧🇦',
+  'korea, south': '🇰🇷', 'korea south': '🇰🇷', 'republic of korea': '🇰🇷',
   'korea, north': '🇰🇵', 'north korea': '🇰🇵',
   'democratic republic of the congo': '🇨🇩',
   "people's republic of china": '🇨🇳',
