@@ -55,5 +55,5 @@ obsolete. Never delete rows — this is an audit trail.
 | B-006 | Retention audit: which games drive return visits; propose stickiness bets | user-facing | returning users ~15% | ga4 | M | P2 | todo |
 | B-007 | Add nickname/mononym alias layer (close the last name-matching gap) | user-facing | data integrity (VISION §8) | data-quality | M | P2 | todo |
 | B-008 | Assess multi-mode architecture readiness (routing/data-model/brand generality) | internal | cheap future modes (VISION §20a) | arch-invariant | L | P3 | todo |
-| B-009 | Fix 2 failing seo.test.js cases: `/tenable` desc 166→≤165 chars; add VideoGame+BreadcrumbList JSON-LD to `/wordle/answers` | user-facing | green test baseline; the gate must pass to mean anything | test-gap | S | P0 | todo |
+| B-009 | Fix failing seo.test.js cases (length limits + archive-page JSON-LD) | user-facing | green test baseline; the gate must pass to mean anything | test-gap | S | P0 | done (#14) |
 | B-010 | Drive eslint to zero (~24 pre-existing errors, mostly react-hooks/set-state-in-effect), then remove `continue-on-error` in ci.yml to make lint a hard gate | internal | real server-side lint gate | test-gap | M | P1 | todo |
