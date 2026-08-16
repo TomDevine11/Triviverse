@@ -1,0 +1,33 @@
+name: Review guard
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+  pull_request_review:
+    types: [submitted, dismissed]
+permissions:
+  contents: read
+  pull-requests: read
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require owner approval for user-facing PRs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+          OWNER: TomDevine11
+        run: |
+          files=$(gh pr diff "$PR" --repo "$REPO" --name-only)
+          echo "$files"
+          owned='^(src/|public/|index\.html|og-service/|scripts/prerender\.mjs
+|render\.yaml|\.github/|VISION\.md|CLAUDE\.md|docs/autonomy/(LOOP|RUNNER)\.md|
+docs/autonomy/ci\.workflow\.yml)'
+          if ! echo "$files" | grep -qE "$owned"; then echo "internal - pass";
+exit 0; fi
+          approved=$(gh pr view "$PR" --repo "$REPO" --json latestReviews --jq
+"[.latestReviews[] | select(.author.login==\"$OWNER\" and 
+.state==\"APPROVED\")] | length")
+          if [ "${approved:-0}" -ge 1 ]; then echo "approved - pass"; exit 0; 
+fi
+          echo "needs @$OWNER approval"; exit 1
