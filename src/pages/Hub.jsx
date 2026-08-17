@@ -213,7 +213,20 @@ export default function Hub() {
       <div className="max-w-2xl mx-auto px-4 pt-14 pb-16">
         <section className="text-left">
           <h2 className="text-primary font-semibold text-lg mb-3">{t('home.aboutHeading')}</h2>
-          <p className="text-muted text-sm leading-relaxed mb-8">{home.about}</p>
+          <p className="text-muted text-sm leading-relaxed mb-4">{home.about}</p>
+
+          <nav aria-label={t('common.moreGames')} className="mb-8">
+            <ul className="flex flex-wrap gap-x-5 gap-y-1.5 text-sm">
+              {GAMES.map(g => {
+                const id = g.to.slice(1)
+                return (
+                  <li key={g.to}>
+                    <Link to={lp(g.to)} className="text-brand-bright hover:text-brand transition-colors">{t(`games.${id}.title`)}</Link>
+                  </li>
+                )
+              })}
+            </ul>
+          </nav>
 
           <h2 className="text-primary font-semibold text-lg mb-3">{t('home.faqHeading')}</h2>
           <dl className="space-y-4">
