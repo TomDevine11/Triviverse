@@ -56,11 +56,13 @@ const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta n
 .big{font-size:15px;font-weight:600}.time{color:#6b7488;font-size:11px;font-variant-numeric:tabular-nums}.why{color:#b7c0d4;font-size:13px;margin-top:3px}
 a{color:#7aa2ff;text-decoration:none}a:hover{text-decoration:underline}.k{color:#8b93a7}.tl .row{display:flex;gap:10px}.tl .time{min-width:96px}
 .hero{display:flex;align-items:center;gap:12px;background:#141824;border:1px solid #232a3a;border-radius:12px;padding:14px 16px;margin-bottom:14px}
-.hero .st{font-size:26px}.hero .lbl{font-size:16px;font-weight:700}</style></head><body><div class="wrap">
+.hero .st{font-size:26px}.hero .lbl{font-size:16px;font-weight:700}
+.ctl{display:flex;gap:8px;align-items:center;margin:-4px 0 14px}.ctl button{background:#1e2636;color:#e6e8ee;border:1px solid #2c3446;border-radius:8px;padding:7px 13px;font:600 13px ui-sans-serif,system-ui;cursor:pointer}.ctl button:hover{background:#26304a}.toast{color:#7aa2ff;font-size:12px}</style></head><body><div class="wrap">
 <h1>Triviverse — Autonomous System</h1><div class="sub">Live operational view · generated ${when(new Date().toISOString())} · 🟢 shipped · 🟡 working · 🔵 waiting for you · 🔴 blocked · ⚪ queued</div>
 
 <div class="hero"><div class="st">${SYS[0]}</div><div><div class="lbl">System: ${SYS[1]}</div>
 <div class="time">last run ${ago(status.lastRun || status.ts)} · next run ${status.nextRun ? (String(status.nextRun).includes('-') ? when(status.nextRun) : esc(status.nextRun)) : '—'} · ${reviewPRs.length} waiting for you${status.limitResets ? ' · <span style="color:#f0a020">usage limit — resets '+esc(status.limitResets)+'</span>' : ''}${status.error ? ' · <span style="color:#ff6b6b">'+esc(status.error)+'</span>' : ''}</div></div></div>
+<div class="ctl"><button onclick="ctl('/run')">▶ Run now</button><button onclick="ctl('/pause')">⏸ Pause</button><button onclick="ctl('/resume')">▶ Resume</button><span id="toast" class="toast"></span></div>
 
 <div class="grid">
 ${card('🟡 Current work', status.state === 'working' && status.task ? `
@@ -95,6 +97,7 @@ ${card('Decision history', rows(decisions.slice(0, 10), d => `<div class="row"><
   <div class="time">${when(d.ts)} · confidence: ${esc(d.confidence || '—')}</div></div>`))}
 </div>
 <div class="sub" style="margin-top:16px">Production is protected by GitHub branch protection — this dashboard is read-only and cannot ship anything. Strategy &amp; recommendations: see the weekly State of Triviverse report.</div>
+<script>function ctl(p){var t=document.getElementById('toast');if(t)t.textContent='…';fetch(p).then(function(r){return r.json()}).then(function(d){if(t)t.textContent=d.msg||(d.ok?'ok':'no-op');setTimeout(function(){location.reload()},1400)}).catch(function(){if(t)t.textContent='(open via http://localhost:8787 to use controls)'})}</script>
 </div></body></html>`
 
 mkdirSync(dirname(OUT), { recursive: true })
