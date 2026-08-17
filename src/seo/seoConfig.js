@@ -279,6 +279,12 @@ export const ROUTES = [
           'Plenty of players know this format as Tenaball, Teneball or footy Tenaball rather than Tenable — it is the same daily top-10 football quiz either way. However you spell it, and whether you searched “football tenable”, “tenable football” or “footy tenaball”, you are in the right place.',
         ],
       },
+      {
+        h2: 'What questions come up in Football Tenable?',
+        body: [
+          'Every round is a real top-10 list from football history — for example the Premier League’s all-time top scorers, the most-capped players for a nation like England or Brazil, a single club’s record appearance-makers, or the countries with the most World Cup wins. A fresh Football Tenable question lands every day, and Unlimited mode serves endless random ones, so no two games feel the same.',
+        ],
+      },
     ],
     faq: [
       { q: 'What is Football Tenable?', a: 'Football Tenable is a daily football trivia game where you try to name all ten answers to a top-10 question — such as a competition’s all-time top scorers — before making three mistakes.' },
