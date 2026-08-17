@@ -20,7 +20,10 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<':
 const ago = (ts) => { if (!ts) return ''; const m = Math.round((Date.now() - new Date(ts)) / 60000); return m < 60 ? `${m}m ago` : m < 1440 ? `${Math.round(m / 60)}h ago` : `${Math.round(m / 1440)}d ago` }
 const when = (ts) => ts ? new Date(ts).toLocaleString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) : ''
 
-const status = readJSON(join(STATE, 'status.json'), { state: 'idle' })
+let status = readJSON(join(STATE, 'status.json'), { state: 'idle' })
+// The live server injects real-time state (working/idle/usage-limit) via LIVE_OVERRIDE so
+// the dashboard reflects reality even if the run died without journaling a final status.
+try { if (process.env.LIVE_OVERRIDE) status = { ...status, ...JSON.parse(process.env.LIVE_OVERRIDE) } } catch {}
 const activity = readJSONL(join(STATE, 'activity.jsonl'), 60).reverse()
 const decisions = readJSONL(join(STATE, 'decisions.jsonl'), 20).reverse()
 const completed = readJSONL(join(STATE, 'completed.jsonl'), 60).reverse()
@@ -37,14 +40,14 @@ const prs = (gh(`pr list --state open --json number,title,author,headRefName,cre
 const reviewPRs = prs.filter(p => p.bot) // user-facing items the loop opened await Tom
 
 // ── system state light ─────────────────────────────────────────────────────
-const SYS = { working: ['🟡', 'Working'], idle: ['⚪', 'Idle'], paused: ['⏸️', 'Paused'], error: ['🔴', 'Error'], blocked: ['🔴', 'Blocked'] }[status.state] || ['⚪', status.state || 'Idle']
+const SYS = { working: ['🟡', 'Working'], idle: ['⚪', 'Idle'], paused: ['⏸️', 'Paused'], error: ['🔴', 'Error'], blocked: ['🔴', 'Blocked'], limited: ['🟠', 'Usage limit reached'], stopped: ['🔴', 'Stopped'] }[status.state] || ['⚪', status.state || 'Idle']
 const dot = (s) => ({ shipped: '🟢', working: '🟡', 'waiting-for-me': '🔵', review: '🔵', blocked: '🔴', error: '🔴', queued: '⚪', done: '🟢' }[s] || '⚪')
 
 const card = (title, inner) => `<section class="card"><h2>${title}</h2>${inner}</section>`
 const rows = (arr, fn) => arr.length ? arr.map(fn).join('') : `<p class="muted">Nothing yet.</p>`
 
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Triviverse Autonomy</title><style>
+<title>Triviverse Autonomy</title><meta http-equiv="refresh" content="12"><style>
 :root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#0b0d12;color:#e6e8ee;font:14px/1.5 ui-sans-serif,system-ui,sans-serif}
 .wrap{max-width:1100px;margin:0 auto;padding:20px}h1{font-size:20px;margin:0 0 2px}.sub{color:#8b93a7;font-size:12px;margin-bottom:18px}
 .grid{display:grid;gap:14px;grid-template-columns:1fr 1fr}@media(max-width:760px){.grid{grid-template-columns:1fr}}
@@ -57,7 +60,7 @@ a{color:#7aa2ff;text-decoration:none}a:hover{text-decoration:underline}.k{color:
 <h1>Triviverse — Autonomous System</h1><div class="sub">Live operational view · generated ${when(new Date().toISOString())} · 🟢 shipped · 🟡 working · 🔵 waiting for you · 🔴 blocked · ⚪ queued</div>
 
 <div class="hero"><div class="st">${SYS[0]}</div><div><div class="lbl">System: ${SYS[1]}</div>
-<div class="time">last run ${ago(status.lastRun || status.ts)} · next run ${status.nextRun ? when(status.nextRun) : '—'} · ${reviewPRs.length} waiting for you${status.error ? ' · <span style="color:#ff6b6b">'+esc(status.error)+'</span>' : ''}</div></div></div>
+<div class="time">last run ${ago(status.lastRun || status.ts)} · next run ${status.nextRun ? (String(status.nextRun).includes('-') ? when(status.nextRun) : esc(status.nextRun)) : '—'} · ${reviewPRs.length} waiting for you${status.limitResets ? ' · <span style="color:#f0a020">usage limit — resets '+esc(status.limitResets)+'</span>' : ''}${status.error ? ' · <span style="color:#ff6b6b">'+esc(status.error)+'</span>' : ''}</div></div></div>
 
 <div class="grid">
 ${card('🟡 Current work', status.state === 'working' && status.task ? `
