@@ -79,13 +79,15 @@ describe('structured data (JSON-LD)', () => {
     }
   })
 
-  it('answers/archive pages expose BreadcrumbList + FAQPage (a game, not a VideoGame)', () => {
+  it('content pages expose BreadcrumbList (+ FAQPage where defined), never VideoGame', () => {
     const content = indexableRoutes().filter(r => r.path !== '/' && r.schema !== 'VideoGame')
     expect(content.length).toBeGreaterThan(0)
     for (const r of content) {
       const t = types(jsonLdFor(r))
-      expect(t, r.path).toEqual(expect.arrayContaining(['BreadcrumbList', 'FAQPage']))
+      expect(t, r.path).toContain('BreadcrumbList')
       expect(t, r.path).not.toContain('VideoGame')
+      // FAQPage only where the route actually defines FAQs (relation pages use ItemList instead)
+      if (r.faq?.length) expect(t, r.path).toContain('FAQPage')
     }
   })
 

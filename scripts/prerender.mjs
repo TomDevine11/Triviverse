@@ -109,6 +109,12 @@ function crawlable(route, lang) {
   const link = (p, name) => `<a href="${localePrefix(p, lang)}">${esc(name)}</a>`
   let h = ''
   if (route.about) h += `<p>${esc(route.about)}</p>`
+  // Relation/list pages: the answer set itself is the content (unique + complete).
+  if (route.itemList?.items?.length) {
+    h += `<h2>${esc(route.itemList.heading)}</h2><ul>`
+    for (const it of route.itemList.items) h += `<li>${esc(it.text)}${it.detail ? ` — ${esc(it.detail)}` : ''}</li>`
+    h += `</ul>`
+  }
   if (route.sections?.length) {
     for (const s of route.sections) { h += `<h2>${esc(s.h2)}</h2>`; for (const p of s.body) h += `<p>${esc(p)}</p>` }
   }
@@ -126,6 +132,12 @@ function crawlable(route, lang) {
   if (route.themePool) h += themePoolHtml(route.themePool)
   if (route.answersPath) h += `<p>${link(route.answersPath, `Past ${route.name} answers & solutions`)}</p>`
   if (route.themedQuizzes) for (const q of route.themedQuizzes) h += `<p>${link(q.path, q.label)}</p>`
+  // Contextual internal links (related pairs, hub, a game to play).
+  if (route.relatedLinks?.length) {
+    h += `<h2>Related football trivia</h2><ul>`
+    for (const r of route.relatedLinks) h += `<li>${link(r.path, r.label)}</li>`
+    h += `</ul>`
+  }
   const others = indexableRoutes().filter(o => o.path !== route.path && !o.hideFromNav)
   h += `<nav aria-label="${esc(t('common.moreGames', lang))}"><h2>${esc(t('common.moreGames', lang))}</h2><ul>`
   if (route.path !== '/') h += `<li>${link('/', BRAND)}</li>`
@@ -168,16 +180,17 @@ function writeRouteLocale(route, lang) {
 
 function writeRoute(route) {
   writeRouteLocale(route, 'en')
-  if (!route.noindex) writeRouteLocale(route, 'es') // Spanish only for indexable routes
+  if (!route.noindex && !route.enOnly) writeRouteLocale(route, 'es') // Spanish only for indexable, non-English-only routes
 }
 
 function writeSitemap() {
   const today = new Date().toISOString().slice(0, 10)
   const urls = []
   for (const r of indexableRoutes()) {
-    const alts = LOCALES.map(l => `    <xhtml:link rel="alternate" hreflang="${l}" href="${absoluteFor(r.path, l)}"/>`)
+    const locales = r.enOnly ? ['en'] : LOCALES
+    const alts = locales.map(l => `    <xhtml:link rel="alternate" hreflang="${l}" href="${absoluteFor(r.path, l)}"/>`)
       .concat(`    <xhtml:link rel="alternate" hreflang="x-default" href="${absolute(r.path)}"/>`).join('\n')
-    for (const l of LOCALES) {
+    for (const l of locales) {
       urls.push(`  <url>\n    <loc>${absoluteFor(r.path, l)}</loc>\n${alts}\n    <lastmod>${today}</lastmod>\n    <changefreq>${r.changefreq || 'weekly'}</changefreq>\n    <priority>${r.priority || '0.7'}</priority>\n  </url>`)
     }
   }
