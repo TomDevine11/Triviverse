@@ -27,14 +27,17 @@ function makeTitle(a, b) {
 // One ROUTE per relation page.
 function routeFor(p) {
   const both = `${p.aName} and ${p.bName}`
+  // Lead names for meta: prefer "famous" players, but scarcity pairs (0 famous) fall
+  // back to the top qualifying players so we never emit a dangling "— including .".
   const stars = topNames(p, 4)
+  const lead = stars.length ? stars : p.players.slice(0, 3).map(x => x.n)
   const h1 = `Players Who Played for ${both}`
   const title = makeTitle(p.aName, p.bName)
   return {
     path: `${RELATION_BASE}/${p.slug}`,
     name: `${p.aName} & ${p.bName}`,
     title,
-    description: clip(`${p.total} players have played for both ${both} — including ${stars.slice(0, 3).join(', ')}. See the full list and name them all in this free football trivia challenge.`, 160),
+    description: clip(`${p.total} players have played for both ${both}${lead.length ? ` — including ${lead.slice(0, 3).join(', ')}` : ''}. See the full list and name them all in this free football trivia challenge.`, 160),
     keywords: [
       `players who played for ${p.aName.toLowerCase()} and ${p.bName.toLowerCase()}`,
       `${p.aName.toLowerCase()} and ${p.bName.toLowerCase()} players`,
@@ -42,7 +45,7 @@ function routeFor(p) {
     ],
     h1,
     tagline: `${p.total} footballers have turned out for both ${both}. How many can you name?`,
-    about: `${p.total} players have appeared for both ${p.aName} and ${p.bName}${stars.length ? `, among them ${stars.join(', ')}` : ''}. It's a classic football trivia question — here is the complete list, with a challenge to see how many you can recall from memory.`,
+    about: `${p.total} players have appeared for both ${p.aName} and ${p.bName}${lead.length ? `, among them ${lead.join(', ')}` : ''}. It's a classic football trivia question — here is the complete list, with a challenge to see how many you can recall from memory.`,
     itemList: { heading: `Every player who has played for both ${both}`, items: p.players.map(x => ({ text: x.n })) },
     relatedLinks: relatedLinksFor(p),
     schema: 'Relation',

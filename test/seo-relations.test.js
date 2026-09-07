@@ -3,17 +3,26 @@ import { ROUTES, jsonLdFor } from '../src/seo/seoConfig.js'
 import { RELATION_ROUTES, RELATION_PAGES, RELATION_BASE } from '../src/seo/relations.js'
 
 describe('SEO relation cluster — quality gates', () => {
-  it('is a substantial but bounded cluster (not a spam farm)', () => {
-    expect(RELATION_PAGES.length).toBeGreaterThan(50)
-    expect(RELATION_PAGES.length).toBeLessThan(1000)
+  it('is a curated launch set (not an exhaustive sweep)', () => {
+    expect(RELATION_PAGES.length).toBeGreaterThanOrEqual(8)
+    expect(RELATION_PAGES.length).toBeLessThanOrEqual(50)
   })
 
-  it('every page has a real, complete answer set (passes generation gates)', () => {
+  it('every page has a real answer set with the rich per-player schema', () => {
     for (const p of RELATION_PAGES) {
-      expect(p.total, p.slug).toBeGreaterThanOrEqual(10)     // substantial list
-      expect(p.famous, p.slug).toBeGreaterThanOrEqual(5)     // genuinely nameable
-      expect(p.players.length, p.slug).toBeGreaterThan(0)
-      expect(p.slug).toMatch(/^[a-z0-9-]+-and-[a-z0-9-]+$/)  // canonical, alphabetical
+      expect(p.total, p.slug).toBeGreaterThanOrEqual(1)          // ≥1 qualifying player
+      expect(p.players.length, p.slug).toBe(p.total)            // count matches the list
+      expect(p.slug).toMatch(/^[a-z0-9-]+-and-[a-z0-9-]+$/)     // canonical, alphabetical
+      expect(p.aId && p.bId, p.slug).toBeTruthy()               // exact club identity
+      expect(['rich', 'medium', 'scarcity']).toContain(p.tier)
+      expect(typeof p.coverageNote, p.slug).toBe('string')
+      for (const pl of p.players) {
+        expect(pl.id, `${p.slug}/${pl.n}`).toBeTruthy()          // resolves to a canonical id
+        expect(pl.a && typeof pl.a.apps === 'number', pl.n).toBe(true)
+        expect(pl.b && typeof pl.b.apps === 'number', pl.n).toBe(true)
+        expect(pl.a.apps >= 1 && pl.b.apps >= 1, `${pl.n} must have ≥1 app for BOTH clubs`).toBe(true)
+        expect(typeof pl.surname, pl.n).toBe('string')
+      }
     }
   })
 
