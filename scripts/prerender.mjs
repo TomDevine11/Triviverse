@@ -20,6 +20,7 @@ import {
   metaTagsFor, jsonLdFor, indexableRoutes, alternatesFor, LOCALES,
 } from '../src/seo/seoConfig.js'
 import { strings } from '../src/i18n/strings.js'
+import { RELATION_BASE, RELATION_PAGES, RELATION_REDIRECTS } from '../src/seo/relations.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.join(__dirname, '..', 'dist')
@@ -109,6 +110,13 @@ function crawlable(route, lang) {
   const link = (p, name) => `<a href="${localePrefix(p, lang)}">${esc(name)}</a>`
   let h = ''
   if (route.about) h += `<p>${esc(route.about)}</p>`
+  if (route.coverageNote) h += `<p class="coverage-note">${esc(route.coverageNote)}</p>`
+  // Relation/list pages: the answer set itself is the content (unique + complete).
+  if (route.itemList?.items?.length) {
+    h += `<h2>${esc(route.itemList.heading)}</h2><ul>`
+    for (const it of route.itemList.items) h += `<li>${esc(it.text)}${it.detail ? ` — ${esc(it.detail)}` : ''}</li>`
+    h += `</ul>`
+  }
   if (route.sections?.length) {
     for (const s of route.sections) { h += `<h2>${esc(s.h2)}</h2>`; for (const p of s.body) h += `<p>${esc(p)}</p>` }
   }
@@ -126,6 +134,12 @@ function crawlable(route, lang) {
   if (route.themePool) h += themePoolHtml(route.themePool)
   if (route.answersPath) h += `<p>${link(route.answersPath, `Past ${route.name} answers & solutions`)}</p>`
   if (route.themedQuizzes) for (const q of route.themedQuizzes) h += `<p>${link(q.path, q.label)}</p>`
+  // Contextual internal links (related pairs, hub, a game to play).
+  if (route.relatedLinks?.length) {
+    h += `<h2>Related football trivia</h2><ul>`
+    for (const r of route.relatedLinks) h += `<li>${link(r.path, r.label)}</li>`
+    h += `</ul>`
+  }
   const others = indexableRoutes().filter(o => o.path !== route.path && !o.hideFromNav)
   h += `<nav aria-label="${esc(t('common.moreGames', lang))}"><h2>${esc(t('common.moreGames', lang))}</h2><ul>`
   if (route.path !== '/') h += `<li>${link('/', BRAND)}</li>`
@@ -136,6 +150,20 @@ function crawlable(route, lang) {
 
 const SR_ONLY = 'position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0'
 function staticBody(route, lang) {
+  // Relation pages: the qualifying answer list IS the SEO content, so render it as
+  // real, VISIBLE prerendered HTML (names + apps/goals + coverage note + links) rather
+  // than the sr-only shell. React replaces #root on load with the interactive game
+  // (client render, not hydration), so this static content is what non-JS clients and
+  // crawlers that don't execute JS receive — it must stand on its own.
+  if (route.schema === 'Relation') {
+    return `<style>.rel-fallback{color:#e5e7eb}.rel-fallback a{color:#c4b5fd}.rel-fallback h2{color:#fff;font-size:1.1rem;margin:1.5rem 0 .5rem}.rel-fallback li{margin:.15rem 0}.rel-fallback .coverage-note{color:#9ca3af;font-size:.85rem}</style>`
+      + `<div style="min-height:100vh;background:#0b0a14;font-family:system-ui,-apple-system,sans-serif">`
+      + `<main class="rel-fallback" style="max-width:44rem;margin:0 auto;padding:2rem 1rem">`
+      + `<h1 style="color:#fff;font-size:1.75rem;font-weight:800;margin:0 0 .5rem">${esc(route.h1)}</h1>`
+      + `<p style="color:#9ca3af;margin:0 0 1rem">${esc(route.tagline)}</p>`
+      + crawlable(route, lang)
+      + `</main></div>`
+  }
   return `<div style="min-height:100vh;background:#0b0a14;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;font-family:system-ui,-apple-system,sans-serif">`
     + `<h1 style="color:#fff;font-size:1.75rem;font-weight:800;margin:0">${esc(route.h1)}</h1>`
     + `<p style="color:#9ca3af;margin:.5rem 0 0;max-width:34rem">${esc(route.tagline)}</p>`
@@ -168,16 +196,17 @@ function writeRouteLocale(route, lang) {
 
 function writeRoute(route) {
   writeRouteLocale(route, 'en')
-  if (!route.noindex) writeRouteLocale(route, 'es') // Spanish only for indexable routes
+  if (!route.noindex && !route.enOnly) writeRouteLocale(route, 'es') // Spanish only for indexable, non-English-only routes
 }
 
 function writeSitemap() {
   const today = new Date().toISOString().slice(0, 10)
   const urls = []
   for (const r of indexableRoutes()) {
-    const alts = LOCALES.map(l => `    <xhtml:link rel="alternate" hreflang="${l}" href="${absoluteFor(r.path, l)}"/>`)
+    const locales = r.enOnly ? ['en'] : LOCALES
+    const alts = locales.map(l => `    <xhtml:link rel="alternate" hreflang="${l}" href="${absoluteFor(r.path, l)}"/>`)
       .concat(`    <xhtml:link rel="alternate" hreflang="x-default" href="${absolute(r.path)}"/>`).join('\n')
-    for (const l of LOCALES) {
+    for (const l of locales) {
       urls.push(`  <url>\n    <loc>${absoluteFor(r.path, l)}</loc>\n${alts}\n    <lastmod>${today}</lastmod>\n    <changefreq>${r.changefreq || 'weekly'}</changefreq>\n    <priority>${r.priority || '0.7'}</priority>\n  </url>`)
     }
   }
@@ -192,9 +221,22 @@ function writeRobots() {
   console.error('  ✓ robots.txt')
 }
 
+// Manifest the server uses for player-pair URL handling: 301 old→new for renamed
+// launched pairs, and 410 Gone for any other retired/unknown pair slug (so the ~124
+// removed pages deindex cleanly instead of soft-404ing to the SPA shell).
+function writeRelationsManifest() {
+  writeFileSync(path.join(DIST, 'relations-manifest.json'), JSON.stringify({
+    base: RELATION_BASE,
+    current: RELATION_PAGES.map(p => p.slug),
+    redirects: RELATION_REDIRECTS,
+  }) + '\n')
+  console.error('  ✓ relations-manifest.json')
+}
+
 console.error(`Prerendering ${BRAND} (${ROUTES.length} routes × ${LOCALES.length} locales)…`)
 for (const route of ROUTES) writeRoute(route)
 writeSitemap()
 writeRobots()
+writeRelationsManifest()
 await vite.close()
 console.error('Done.')

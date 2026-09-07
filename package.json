@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "server": "node server/index.js",
-    "build": "vite build && node scripts/prerender.mjs",
+    "build": "node scripts/seo/build-relations.mjs && vite build && node scripts/prerender.mjs",
     "indexnow": "node scripts/indexnow.mjs",
     "seo-report": "node scripts/seo/report.mjs",
     "analytics-report": "node scripts/seo/ga4.mjs",
@@ -38,7 +38,13 @@
     "test:watch": "vitest",
     "build:honours": "node scripts/build-honours.mjs",
     "build:signings": "node scripts/build-signings.mjs",
-    "build:indexes": "node scripts/build-indexes.mjs"
+    "build:indexes": "node scripts/build-indexes.mjs",
+    "build:pointless": "node scripts/growth/gen-pointless.mjs",
+    "qgen:report": "node scripts/qgen/report.mjs",
+    "build:relations": "node scripts/seo/build-relations.mjs",
+    "seo-validate": "node scripts/seo/validate.mjs",
+    "seo-family-report": "node scripts/seo/family-report.mjs",
+    "pairs-qc": "node scripts/seo/pairs-qc.mjs"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
