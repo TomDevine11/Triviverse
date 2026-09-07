@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { buildMatcher, normName, surnameKey } from '../src/seo/pairMatch.js'
+import { buildMatcher, normName, surnameKey, applyGuess, acceptId } from '../src/seo/pairMatch.js'
 
 // A tiny hand-built cohort exercising every branch deterministically.
 const players = [
@@ -47,5 +47,33 @@ describe('pairMatch — deterministic answer resolution', () => {
   it('rejects a non-member and an empty guess', () => {
     expect(m.resolve('lionel messi').status).toBe('none')
     expect(m.resolve('   ').status).toBe('empty')
+  })
+})
+
+describe('game core — applyGuess / acceptId (deterministic, DOM-free)', () => {
+  it('adds a correct guess to the found list', () => {
+    expect(applyGuess([], m, 'figo')).toEqual({ found: [1], action: 'add', id: 1 })
+  })
+
+  it('a duplicate never increments (by full name OR alias OR surname)', () => {
+    let s = applyGuess([], m, 'figo').found          // [1]
+    expect(applyGuess(s, m, 'luis figo')).toEqual({ found: [1], action: 'dupe', id: 1 })
+    expect(applyGuess(s, m, 'figo')).toEqual({ found: [1], action: 'dupe', id: 1 })
+    // alias then the same player again → still one entry
+    s = applyGuess([], m, 'etoo').found              // [3]
+    expect(applyGuess(s, m, "eto'o")).toEqual({ found: [3], action: 'dupe', id: 3 })
+  })
+
+  it('an ambiguous guess never adds anyone; the disambiguation choice does', () => {
+    const amb = applyGuess([], m, 'navarro')
+    expect(amb.action).toBe('ambiguous')
+    expect(amb.found).toEqual([])                    // nothing added yet
+    expect(acceptId(amb.found, 4)).toEqual({ found: [4], action: 'add', id: 4 })
+    expect(acceptId([4], 4)).toEqual({ found: [4], action: 'dupe', id: 4 })
+  })
+
+  it('a miss and an empty guess leave the found list untouched', () => {
+    expect(applyGuess([1], m, 'messi')).toEqual({ found: [1], action: 'miss' })
+    expect(applyGuess([1], m, '  ')).toEqual({ found: [1], action: 'empty' })
   })
 })

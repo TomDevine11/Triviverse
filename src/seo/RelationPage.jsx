@@ -1,23 +1,28 @@
-import { useState } from 'react'
+import { useState, useMemo, useRef } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Seo from './Seo'
 import BrandMark from '../components/BrandMark'
+import { ShareIcon } from '../components/ShareCard'
 import { routeByPath } from './seoConfig'
 import { RELATION_BASE, relationBySlug } from './relations.js'
+import { buildMatcher, applyGuess, acceptId } from './pairMatch.js'
 import { accentVars } from '../design/accents'
 import { useI18n } from '../i18n'
 
-// "Players who played for both X and Y" — a data-derived football-trivia page.
-// Land from search, try to name the players, reveal the complete list, then play a
-// full game. The crawlable list + metadata come from the route config (baked by the
-// prerender); this hydrates the interactive "how many can you name?" experience.
+// "Players who played for both X and Y" — the interactive game (D3). You get the two
+// clubs; name the players who appeared for both. Deterministic canonical-id matching
+// (full name → alias → unique surname; ambiguous surname → disambiguation). Correct
+// answers lock as chips showing apps + goals at each club. No timer, no fuzzy matching.
+//
+// The game consumes the qualifying answer set produced by the builder verbatim — QC
+// metadata (low-app / CL-only flags) is for us; unusual-looking qualifiers are still
+// valid answers and are never hidden from play.
 export default function RelationPage() {
   const { slug } = useParams()
   const { lp } = useI18n()
   const p = relationBySlug(slug)
   const path = `${RELATION_BASE}/${slug}`
   const r = routeByPath(path)
-  const [revealed, setRevealed] = useState(false)
 
   if (!p) return (
     <div className="tv-scene min-h-dvh text-primary flex flex-col items-center justify-center gap-4 px-4 text-center" style={accentVars('careers')}>
@@ -26,8 +31,6 @@ export default function RelationPage() {
     </div>
   )
 
-  const famous = p.players.filter(x => x.s)
-  const rest = p.players.filter(x => !x.s)
   return (
     <div className="tv-scene min-h-dvh text-primary" style={accentVars('careers')}>
       <Seo path={path} />
@@ -47,27 +50,10 @@ export default function RelationPage() {
         </nav>
 
         <h1 className="text-2xl sm:text-3xl font-black tracking-tight mb-2">{r.h1}</h1>
-        <p className="text-secondary text-sm mb-1">{r.tagline}</p>
-        <p className="text-muted text-sm leading-relaxed mb-6">{r.about}</p>
+        <p className="text-secondary text-sm mb-6">{r.tagline}</p>
 
-        <div className="bg-card/40 border border-border rounded-2xl px-4 py-5 sm:px-6 mb-6 text-center">
-          <div className="score-number text-4xl font-black tv-wordmark leading-none">{p.total}</div>
-          <div className="text-secondary text-sm mt-1 mb-4">players have played for both {p.aName} and {p.bName}</div>
-          {!revealed
-            ? <button onClick={() => setRevealed(true)} className="rounded-xl border border-brand bg-brand/10 text-brand-bright font-bold text-sm px-5 py-2 hover:bg-brand/20 transition-colors">How many can you name? Reveal the list →</button>
-            : (
-              <div className="text-left">
-                {famous.length > 0 && <>
-                  <h2 className="text-[0.62rem] font-black tracking-[0.14em] text-brand-bright mb-2">BEST KNOWN</h2>
-                  <ul className="flex flex-wrap gap-1.5 mb-4">{famous.map((x, i) => <li key={i} className="text-sm bg-brand/10 border border-border-strong rounded-lg px-2.5 py-1">{x.n}</li>)}</ul>
-                </>}
-                {rest.length > 0 && <>
-                  <h2 className="text-[0.62rem] font-black tracking-[0.14em] text-faint mb-2">DEEPER CUTS</h2>
-                  <ul className="flex flex-wrap gap-1.5">{rest.map((x, i) => <li key={i} className="text-sm bg-card border border-border rounded-lg px-2.5 py-1 text-secondary">{x.n}</li>)}</ul>
-                </>}
-              </div>
-            )}
-        </div>
+        {/* Keyed by slug: switching/reloading pairs remounts the game → guaranteed clean state. */}
+        <PairGame key={slug} p={p} path={path} />
 
         <div className="bg-card/40 border border-border rounded-2xl px-4 py-4 sm:px-6 mb-8 text-center">
           <p className="text-secondary text-sm mb-3">Love this? Play the full games built from the same football data.</p>
@@ -81,7 +67,7 @@ export default function RelationPage() {
           <div className="mb-8">
             <h2 className="text-lg font-black tracking-tight mb-3">Related football trivia</h2>
             <ul className="flex flex-wrap gap-2">
-              {r.relatedLinks.filter(l => l.path.startsWith(RELATION_BASE + '/')).map((l, i) => (
+              {r.relatedLinks.filter((l) => l.path.startsWith(RELATION_BASE + '/')).map((l, i) => (
                 <li key={i}><Link to={lp(l.path)} className="text-sm text-brand-bright hover:text-brand border border-border-strong rounded-lg px-2.5 py-1 transition-colors">{l.label}</Link></li>
               ))}
             </ul>
@@ -94,5 +80,152 @@ export default function RelationPage() {
         </footer>
       </div>
     </div>
+  )
+}
+
+function PairGame({ p, path }) {
+  const matcher = useMemo(() => buildMatcher(p.players), [p])
+  const byId = useMemo(() => new Map(p.players.map((pl) => [pl.id, pl])), [p])
+
+  const [found, setFound] = useState([])          // player ids, in the order named
+  const [input, setInput] = useState('')
+  const [msg, setMsg] = useState(null)            // { tone: 'correct'|'dupe'|'miss', text }
+  const [disambig, setDisambig] = useState(null)  // { candidates, raw } | null
+  const [revealed, setRevealed] = useState(false)
+  const [copied, setCopied] = useState(false)
+  const inputRef = useRef(null)
+
+  const total = p.total
+  const complete = total > 0 && found.length === total
+  const over = complete || revealed
+
+  const applyResult = (res) => {
+    setFound(res.found)
+    if (res.action === 'add') setMsg({ tone: 'correct', text: `✓ ${byId.get(res.id).n}` })
+    else if (res.action === 'dupe') setMsg({ tone: 'dupe', text: `You’ve already named ${byId.get(res.id).n}.` })
+    else if (res.action === 'ambiguous') { setDisambig({ candidates: res.candidates, raw: input.trim() }); return }
+    else if (res.action === 'miss') { setMsg({ tone: 'miss', text: `“${input.trim()}” isn’t one of the answers — try another.` }); return }
+    setDisambig(null)
+  }
+
+  const submit = (e) => {
+    e.preventDefault()
+    const res = applyGuess(found, matcher, input)
+    if (res.action === 'empty') return
+    applyResult(res)
+    if (res.action !== 'ambiguous') { setInput(''); inputRef.current?.focus() }
+    else setInput('')
+  }
+
+  const chooseDisambig = (id) => { applyResult(acceptId(found, id)); setDisambig(null); inputRef.current?.focus() }
+
+  const share = async () => {
+    const url = typeof window !== 'undefined' ? window.location.href : `https://triviverse.com${path}`
+    const line = complete
+      ? `⚽ I named all ${total} players who played for both ${p.aName} & ${p.bName}!`
+      : `⚽ I named ${found.length}/${total} players who played for both ${p.aName} & ${p.bName}.`
+    const text = `${line} Can you? ${url}`
+    if (typeof navigator !== 'undefined' && typeof navigator.share === 'function') {
+      try { await navigator.share({ text, url }) } catch { /* cancelled */ } return
+    }
+    try { await navigator.clipboard.writeText(text); setCopied(true); setTimeout(() => setCopied(false), 2000) } catch { /* blocked */ }
+  }
+
+  const pct = total ? Math.round((found.length / total) * 100) : 0
+  const foundNewestFirst = [...found].reverse().map((id) => byId.get(id))
+  const missed = over ? p.players.filter((pl) => !found.includes(pl.id)) : []
+
+  const StatLine = ({ label, apps, goals }) => (
+    <span className="block text-[0.7rem] text-muted leading-tight">
+      <span className="text-secondary">{label}:</span> {apps} app{apps === 1 ? '' : 's'} · {goals} goal{goals === 1 ? '' : 's'}
+    </span>
+  )
+  const Chip = ({ pl, state }) => (
+    <li className={`rounded-xl px-3 py-2 border ${state === 'missed' ? 'bg-card/40 border-border border-dashed opacity-80' : 'bg-brand/10 border-border-strong'}`}>
+      <div className="flex items-center gap-1.5">
+        <span className="font-bold text-sm text-primary">{pl.n}</span>
+        {state === 'missed' && <span className="text-[0.55rem] font-black tracking-wider text-faint uppercase">missed</span>}
+      </div>
+      <StatLine label={p.aName} apps={pl.a.apps} goals={pl.a.goals} />
+      <StatLine label={p.bName} apps={pl.b.apps} goals={pl.b.goals} />
+    </li>
+  )
+
+  return (
+    <>
+      <section aria-label="Name the players" className="bg-card/40 border border-border rounded-2xl px-4 py-5 sm:px-6 mb-6">
+        <div className="flex items-baseline justify-between mb-1.5">
+          <span className="text-sm font-bold text-secondary">{complete ? 'Complete!' : over ? 'Revealed' : 'Name the players'}</span>
+          <span className="score-number text-lg font-black tv-wordmark">{found.length}<span className="text-muted text-sm font-bold"> / {total}</span></span>
+        </div>
+        <div className="h-2 rounded-full bg-card border border-border overflow-hidden mb-4" role="progressbar" aria-valuenow={found.length} aria-valuemin={0} aria-valuemax={total}>
+          <div className="h-full bg-brand transition-all duration-300" style={{ width: `${pct}%` }} />
+        </div>
+
+        {complete && (
+          <div className="rounded-xl border border-brand bg-brand/10 text-center px-4 py-3 mb-4">
+            <p className="font-black text-brand-bright">🎉 You named all {total}!</p>
+          </div>
+        )}
+
+        {!over && (
+          <form onSubmit={submit} className="flex gap-2 mb-2">
+            <label htmlFor="pair-guess" className="sr-only">Type a player’s name</label>
+            <input
+              id="pair-guess" ref={inputRef} value={input} onChange={(e) => setInput(e.target.value)}
+              placeholder="Type a player’s name…" autoComplete="off" autoCapitalize="words" spellCheck="false" enterKeyHint="done"
+              className="flex-1 min-w-0 rounded-xl bg-card border border-border-strong px-3.5 py-2.5 text-sm text-primary placeholder:text-faint focus:outline-none focus:border-brand"
+            />
+            <button type="submit" className="rounded-xl border border-brand bg-brand/10 text-brand-bright font-bold text-sm px-4 py-2.5 hover:bg-brand/20 transition-colors shrink-0">Guess</button>
+          </form>
+        )}
+
+        {disambig && (
+          <div className="rounded-xl border border-border-strong bg-card px-3 py-2.5 mb-2" role="group" aria-label="Which player did you mean?">
+            <p className="text-xs text-secondary mb-2">More than one “{disambig.raw}” played for both — which one?</p>
+            <div className="flex flex-wrap gap-1.5">
+              {disambig.candidates.map((c) => (
+                <button key={c.id} onClick={() => chooseDisambig(c.id)} className="text-sm rounded-lg border border-border-strong bg-brand/5 px-2.5 py-1 text-primary hover:bg-brand/15 transition-colors">{c.name}</button>
+              ))}
+              <button onClick={() => setDisambig(null)} className="text-sm rounded-lg border border-border px-2.5 py-1 text-faint hover:text-secondary transition-colors">Cancel</button>
+            </div>
+          </div>
+        )}
+
+        <p aria-live="polite" className={`text-sm min-h-[1.25rem] ${msg?.tone === 'correct' ? 'text-brand-bright' : msg?.tone === 'miss' ? 'text-red-400' : 'text-muted'}`}>
+          {msg?.text || ''}
+        </p>
+
+        <div className="flex flex-wrap gap-2 mt-3">
+          {!over && (
+            <button onClick={() => setRevealed(true)} className="rounded-xl border border-border-strong text-secondary font-bold text-sm px-4 py-2 hover:text-primary transition-colors">Give up & reveal all</button>
+          )}
+          {(over || found.length > 0) && (
+            <button onClick={share} className="flex items-center gap-2 rounded-xl border border-brand bg-brand/10 text-brand-bright font-bold text-sm px-4 py-2 hover:bg-brand/20 transition-colors">
+              <ShareIcon /> {copied ? 'Copied!' : 'Share result'}
+            </button>
+          )}
+        </div>
+      </section>
+
+      {(found.length > 0 || over) && (
+        <section aria-label="Named players" className="mb-8">
+          {!over && (
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {foundNewestFirst.map((pl) => <Chip key={pl.id} pl={pl} state="found" />)}
+            </ul>
+          )}
+          {over && (
+            <>
+              <h2 className="text-[0.62rem] font-black tracking-[0.14em] text-brand-bright mb-2">YOU NAMED {found.length} OF {total}</h2>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {found.map((id) => byId.get(id)).map((pl) => <Chip key={pl.id} pl={pl} state="found" />)}
+                {missed.map((pl) => <Chip key={pl.id} pl={pl} state="missed" />)}
+              </ul>
+            </>
+          )}
+        </section>
+      )}
+    </>
   )
 }

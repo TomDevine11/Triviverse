@@ -57,7 +57,11 @@ for (const { a: aKey, b: bKey, tier } of PAIRS) {
       aliases: (PLAYER_ALIASES[id] || []).map(norm),
       flags,
     }
-  }).sort((p, q) => (reco(q.id) - reco(p.id)) || (q.a.apps + q.b.apps - p.a.apps - p.b.apps))
+  // Default order = combined appearances at the two clubs (desc), name tiebreak. This
+  // is deterministic and uses existing data; it puts genuine mainstays (Figo, Luis
+  // Enrique) first and sinks 1-app academy cases — avoiding the decayed-reco ordering
+  // that wrongly ranked Marcos Alonso/Saviola ahead of Figo/Ronaldo. No new fame model.
+  }).sort((p, q) => (q.a.apps + q.b.apps) - (p.a.apps + p.b.apps) || p.n.localeCompare(q.n))
 
   const famous = players.filter((p) => p.s).length
   const notable = players.filter((p) => reco(p.id) >= NOTABLE).length

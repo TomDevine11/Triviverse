@@ -54,3 +54,22 @@ export function buildMatcher(players) {
 
   return { resolve, total: players.length, ids: players.map((p) => p.id) }
 }
+
+// Pure game core — apply a raw typed guess to the current found-id list. Deterministic
+// and DOM-free so the "can't count a duplicate twice / ambiguous never increments /
+// alias resolves to the same id" guarantees are unit-testable. The component turns the
+// returned `action` into UI (message text, disambiguation chooser).
+//   action ∈ 'empty' | 'miss' | 'ambiguous' | 'dupe' | 'add'
+export function applyGuess(found, matcher, raw) {
+  const res = matcher.resolve(raw)
+  if (res.status === 'ambiguous') return { found, action: 'ambiguous', candidates: res.candidates }
+  if (res.status === 'correct') return acceptId(found, res.id)
+  return { found, action: res.status === 'empty' ? 'empty' : 'miss' }
+}
+
+// Accept a specific canonical id (a correct guess, or a disambiguation choice). Never
+// adds the same id twice.
+export function acceptId(found, id) {
+  if (found.includes(id)) return { found, action: 'dupe', id }
+  return { found: [...found, id], action: 'add', id }
+}
