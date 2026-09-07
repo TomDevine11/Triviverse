@@ -5,6 +5,7 @@
 import { readFileSync, existsSync } from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { RELATION_BASE, RELATION_PAGES } from '../../src/seo/relations.js'
 const DIST = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'dist')
 const SITE = 'https://triviverse.com'
 
@@ -58,8 +59,24 @@ for (const url of urls) {
         if (!existsSync(target)) errors.push(`BROKEN INTERNAL LINK: ${url} → ${href}`)
       }
     }
+    // pair pages (not the hub) must prerender an H1 and the crawlable answer list with apps/goals
+    if (routePath !== RELATION_BASE) {
+      if (!/<h1[^>]*>[^<]+<\/h1>/.test(h)) errors.push(`MISSING H1: ${url}`)
+      if ((h.match(/<li>[^<]*apps[^<]*<\/li>/g) || []).length < 1) errors.push(`NO prerendered answer rows: ${url}`)
+    }
   }
 }
+
+// Player-pair family inventory: exactly the hub + 10 canonical pairs, no more, no fewer.
+const smPaths = new Set(urls.map(u => u.replace(SITE, '') || '/'))
+const expectedPairs = [RELATION_BASE, ...RELATION_PAGES.map(p => `${RELATION_BASE}/${p.slug}`)]
+const missingPairs = expectedPairs.filter(p => !smPaths.has(p))
+const relInSitemap = [...smPaths].filter(p => p.startsWith(RELATION_BASE))
+const unexpectedPairs = relInSitemap.filter(p => !expectedPairs.includes(p))
+if (RELATION_PAGES.length !== 10) errors.push(`PAIR INVENTORY: expected 10 pairs, config has ${RELATION_PAGES.length}`)
+if (missingPairs.length) errors.push(`PAIR INVENTORY: missing from sitemap: ${missingPairs.join(', ')}`)
+if (unexpectedPairs.length) errors.push(`PAIR INVENTORY: unexpected/retired relation URLs in sitemap: ${unexpectedPairs.join(', ')}`)
+console.log(`  player-pair inventory: ${relInSitemap.length}/11 in sitemap (hub + ${RELATION_PAGES.length} pairs)`)
 
 console.log(`  relation pages: ${relationPages} | JSON-LD blocks: ${jsonLdBlocks} | unique titles: ${titles.size}`)
 if (warns.length) { console.log(`\n⚠ ${warns.length} warnings`); warns.slice(0, 5).forEach(w => console.log('  ' + w)) }
