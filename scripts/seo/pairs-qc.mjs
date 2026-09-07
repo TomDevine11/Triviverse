@@ -121,9 +121,12 @@ for (const { a: aKey, b: bKey, tier } of PAIRS) {
   const verified = e.status === 'verified'
   if (Array.isArray(e.missingButQualifying) && e.missingButQualifying.length)
     add('BLOCK', `external check lists ${e.missingButQualifying.length} player(s) who qualify under our definition but are missing: ${e.missingButQualifying.join(', ')} — fix data before publish`)
+  // Severity per agreed rule: strong (rich) tier blocks on unverified; medium/scarcity
+  // only WARN on "pending" — a genuinely high-severity issue (a concrete qualifying
+  // omission) is caught above via missingButQualifying and blocks any tier.
   if (!verified) {
-    if (tier === 'rich' || tier === 'scarcity') add('BLOCK', `external verification ${e.status} (${tier} tier requires it before launch)`)
-    else add('WARN', `external verification ${e.status} (${tier} tier)`)
+    if (tier === 'rich') add('BLOCK', `external verification ${e.status} (rich tier requires it before launch)`)
+    else add('WARN', `external verification ${e.status} (${tier} tier — warns; a found omission would block)`)
   }
 
   const sev = issues.some((i) => i.sev === 'BLOCK') ? 'BLOCK' : issues.some((i) => i.sev === 'WARN') ? 'WARN' : 'OK'
