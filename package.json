@@ -44,7 +44,9 @@
     "build:relations": "node scripts/seo/build-relations.mjs",
     "seo-validate": "node scripts/seo/validate.mjs",
     "seo-family-report": "node scripts/seo/family-report.mjs",
-    "pairs-qc": "node scripts/seo/pairs-qc.mjs"
+    "pairs-qc": "node scripts/seo/pairs-qc.mjs",
+    "seo-health": "node scripts/seo/health.mjs",
+    "seo-smoke": "node scripts/seo/smoke.mjs"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
