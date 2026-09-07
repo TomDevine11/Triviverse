@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { ROUTES, jsonLdFor } from '../src/seo/seoConfig.js'
-import { RELATION_ROUTES, RELATION_PAGES, RELATION_BASE } from '../src/seo/relations.js'
+import { RELATION_ROUTES, RELATION_PAGES, RELATION_BASE, RELATION_REDIRECTS } from '../src/seo/relations.js'
 
 describe('SEO relation cluster — quality gates', () => {
   it('is a curated launch set (not an exhaustive sweep)', () => {
@@ -54,6 +54,26 @@ describe('SEO relation cluster — quality gates', () => {
     const il = blocks.find(b => b['@type'] === 'ItemList')
     expect(il.numberOfItems).toBe(p.players.length)
     expect(il.itemListElement.every(e => typeof e.name === 'string' && e.name.length > 0)).toBe(true)
+  })
+
+  it('crawlable list carries apps/goals detail + a coverage note (prerendered content)', () => {
+    for (const r of RELATION_ROUTES) {
+      if (r.path === RELATION_BASE) continue
+      expect(r.coverageNote, r.path).toMatch(/top-flight/i)
+      expect(r.itemList.items.length, r.path).toBe(r.rel.total)
+      for (const it of r.itemList.items) {
+        expect(it.detail, `${r.path}/${it.text}`).toMatch(/apps?.*goals?/)
+      }
+      expect(r.h1).toMatch(/Played for Both/)
+    }
+  })
+
+  it('redirect map only sends unambiguous old slugs to a REAL current pair (never to a bogus one)', () => {
+    const current = new Set(RELATION_PAGES.map(p => p.slug))
+    for (const [oldSlug, newSlug] of Object.entries(RELATION_REDIRECTS)) {
+      expect(current.has(newSlug), `${oldSlug} → ${newSlug}`).toBe(true)   // target exists
+      expect(current.has(oldSlug), `${oldSlug} should not also be current`).toBe(false)
+    }
   })
 
   it('no orphans — every page links to the hub, hub links to every page', () => {

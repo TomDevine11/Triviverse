@@ -50,10 +50,26 @@ export default function RelationPage() {
         </nav>
 
         <h1 className="text-2xl sm:text-3xl font-black tracking-tight mb-2">{r.h1}</h1>
-        <p className="text-secondary text-sm mb-6">{r.tagline}</p>
+        <p className="text-secondary text-sm mb-2">{r.tagline}</p>
+        <p className="text-muted text-sm leading-relaxed mb-6">{r.about}</p>
 
         {/* Keyed by slug: switching/reloading pairs remounts the game → guaranteed clean state. */}
         <PairGame key={slug} p={p} path={path} />
+
+        {/* Full qualifying list — always visible, matches the prerendered crawlable HTML. */}
+        <section aria-label="Full list of qualifying players" className="mb-8">
+          <h2 className="text-lg font-black tracking-tight mb-1">All {p.total} players who have played for both {p.aName} and {p.bName}</h2>
+          <p className="text-faint text-xs leading-relaxed mb-3">{p.coverageNote}</p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {p.players.map((pl) => (
+              <li key={pl.id} className="rounded-xl px-3 py-2 border border-border bg-card/40">
+                <span className="font-bold text-sm text-primary">{pl.n}</span>
+                <span className="block text-[0.7rem] text-muted leading-tight"><span className="text-secondary">{p.aName}:</span> {pl.a.apps} app{pl.a.apps === 1 ? '' : 's'} · {pl.a.goals} goal{pl.a.goals === 1 ? '' : 's'}</span>
+                <span className="block text-[0.7rem] text-muted leading-tight"><span className="text-secondary">{p.bName}:</span> {pl.b.apps} app{pl.b.apps === 1 ? '' : 's'} · {pl.b.goals} goal{pl.b.goals === 1 ? '' : 's'}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         <div className="bg-card/40 border border-border rounded-2xl px-4 py-4 sm:px-6 mb-8 text-center">
           <p className="text-secondary text-sm mb-3">Love this? Play the full games built from the same football data.</p>
@@ -133,19 +149,15 @@ function PairGame({ p, path }) {
 
   const pct = total ? Math.round((found.length / total) * 100) : 0
   const foundNewestFirst = [...found].reverse().map((id) => byId.get(id))
-  const missed = over ? p.players.filter((pl) => !found.includes(pl.id)) : []
 
   const StatLine = ({ label, apps, goals }) => (
     <span className="block text-[0.7rem] text-muted leading-tight">
       <span className="text-secondary">{label}:</span> {apps} app{apps === 1 ? '' : 's'} · {goals} goal{goals === 1 ? '' : 's'}
     </span>
   )
-  const Chip = ({ pl, state }) => (
-    <li className={`rounded-xl px-3 py-2 border ${state === 'missed' ? 'bg-card/40 border-border border-dashed opacity-80' : 'bg-brand/10 border-border-strong'}`}>
-      <div className="flex items-center gap-1.5">
-        <span className="font-bold text-sm text-primary">{pl.n}</span>
-        {state === 'missed' && <span className="text-[0.55rem] font-black tracking-wider text-faint uppercase">missed</span>}
-      </div>
+  const Chip = ({ pl }) => (
+    <li className="rounded-xl px-3 py-2 border bg-brand/10 border-border-strong">
+      <span className="font-bold text-sm text-primary">{pl.n}</span>
       <StatLine label={p.aName} apps={pl.a.apps} goals={pl.a.goals} />
       <StatLine label={p.bName} apps={pl.b.apps} goals={pl.b.goals} />
     </li>
@@ -155,7 +167,7 @@ function PairGame({ p, path }) {
     <>
       <section aria-label="Name the players" className="bg-card/40 border border-border rounded-2xl px-4 py-5 sm:px-6 mb-6">
         <div className="flex items-baseline justify-between mb-1.5">
-          <span className="text-sm font-bold text-secondary">{complete ? 'Complete!' : over ? 'Revealed' : 'Name the players'}</span>
+          <span className="text-sm font-bold text-secondary">{complete ? 'Complete!' : over ? 'Gave up' : 'Name the players'}</span>
           <span className="score-number text-lg font-black tv-wordmark">{found.length}<span className="text-muted text-sm font-bold"> / {total}</span></span>
         </div>
         <div className="h-2 rounded-full bg-card border border-border overflow-hidden mb-4" role="progressbar" aria-valuenow={found.length} aria-valuemin={0} aria-valuemax={total}>
@@ -198,7 +210,7 @@ function PairGame({ p, path }) {
 
         <div className="flex flex-wrap gap-2 mt-3">
           {!over && (
-            <button onClick={() => setRevealed(true)} className="rounded-xl border border-border-strong text-secondary font-bold text-sm px-4 py-2 hover:text-primary transition-colors">Give up & reveal all</button>
+            <button onClick={() => setRevealed(true)} className="rounded-xl border border-border-strong text-secondary font-bold text-sm px-4 py-2 hover:text-primary transition-colors">Give up</button>
           )}
           {(over || found.length > 0) && (
             <button onClick={share} className="flex items-center gap-2 rounded-xl border border-brand bg-brand/10 text-brand-bright font-bold text-sm px-4 py-2 hover:bg-brand/20 transition-colors">
@@ -206,24 +218,19 @@ function PairGame({ p, path }) {
             </button>
           )}
         </div>
+        {revealed && !complete && (
+          <p className="text-muted text-sm mt-2">You gave up — the full list of all {total} is below ↓</p>
+        )}
       </section>
 
-      {(found.length > 0 || over) && (
-        <section aria-label="Named players" className="mb-8">
-          {!over && (
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              {foundNewestFirst.map((pl) => <Chip key={pl.id} pl={pl} state="found" />)}
-            </ul>
-          )}
-          {over && (
-            <>
-              <h2 className="text-[0.62rem] font-black tracking-[0.14em] text-brand-bright mb-2">YOU NAMED {found.length} OF {total}</h2>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {found.map((id) => byId.get(id)).map((pl) => <Chip key={pl.id} pl={pl} state="found" />)}
-                {missed.map((pl) => <Chip key={pl.id} pl={pl} state="missed" />)}
-              </ul>
-            </>
-          )}
+      {found.length > 0 && (
+        <section aria-label="Players you named" className="mb-6">
+          <h2 className="text-[0.62rem] font-black tracking-[0.14em] text-brand-bright mb-2">
+            {over ? `YOU NAMED ${found.length} OF ${total}` : `NAMED · ${found.length}`}
+          </h2>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {(over ? found.map((id) => byId.get(id)) : foundNewestFirst).map((pl) => <Chip key={pl.id} pl={pl} />)}
+          </ul>
         </section>
       )}
     </>

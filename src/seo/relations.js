@@ -18,7 +18,7 @@ const clip = (s, n) => (s.length <= n ? s : s.slice(0, n - 1).trimEnd() + '…')
 // for long club-pair names (Borussia Mönchengladbach & Borussia Dortmund).
 const BRAND = ' | Triviverse'
 function makeTitle(a, b) {
-  for (const f of [`Players Who Played for ${a} & ${b}`, `${a} & ${b} Players Quiz`, `${a} & ${b} Players`, `${a} & ${b}`]) {
+  for (const f of [`Players Who Played for Both ${a} & ${b}`, `Players Who Played for ${a} & ${b}`, `${a} & ${b} Players Quiz`, `${a} & ${b} Players`, `${a} & ${b}`]) {
     if ((f + BRAND).length <= 65) return f + BRAND
   }
   return `${a} & ${b}`.slice(0, 65 - BRAND.length) + BRAND
@@ -31,8 +31,9 @@ function routeFor(p) {
   // back to the top qualifying players so we never emit a dangling "— including .".
   const stars = topNames(p, 4)
   const lead = stars.length ? stars : p.players.slice(0, 3).map(x => x.n)
-  const h1 = `Players Who Played for ${both}`
+  const h1 = `Players Who Played for Both ${both}`
   const title = makeTitle(p.aName, p.bName)
+  const appsGoals = (x) => `${p.aName}: ${x.a.apps} app${x.a.apps === 1 ? '' : 's'}, ${x.a.goals} goal${x.a.goals === 1 ? '' : 's'} · ${p.bName}: ${x.b.apps} app${x.b.apps === 1 ? '' : 's'}, ${x.b.goals} goal${x.b.goals === 1 ? '' : 's'}`
   return {
     path: `${RELATION_BASE}/${p.slug}`,
     name: `${p.aName} & ${p.bName}`,
@@ -46,7 +47,8 @@ function routeFor(p) {
     h1,
     tagline: `${p.total} footballers have turned out for both ${both}. How many can you name?`,
     about: `${p.total} players have appeared for both ${p.aName} and ${p.bName}${lead.length ? `, among them ${lead.join(', ')}` : ''}. It's a classic football trivia question — here is the complete list, with a challenge to see how many you can recall from memory.`,
-    itemList: { heading: `Every player who has played for both ${both}`, items: p.players.map(x => ({ text: x.n })) },
+    itemList: { heading: `All ${p.total} players who have played for both ${both}`, items: p.players.map(x => ({ text: x.n, detail: appsGoals(x) })) },
+    coverageNote: p.coverageNote,
     relatedLinks: relatedLinksFor(p),
     schema: 'Relation',
     priority: '0.5',
@@ -89,3 +91,14 @@ export const RELATION_HUB = {
 }
 
 export const RELATION_ROUTES = [RELATION_HUB, ...data.pages.map(routeFor)]
+
+// Old canonical slug → new canonical slug. ONLY where a pre-launch URL unambiguously
+// maps to a launched pair (same two clubs) but the slug changed because we authored a
+// cleaner club name in pairs.config (here: "Inter Milan"/"Milan" → "Inter"/"AC Milan").
+// Everything else that existed before and isn't a launched pair is retired (410) — we
+// never 301 a removed pair to a vaguely-similar one. The server uses this for 301s and
+// treats any other unknown /players-who-played-for/<slug> as 410 Gone.
+export const RELATION_REDIRECTS = {
+  'inter-milan-and-milan': 'ac-milan-and-inter',
+}
+
