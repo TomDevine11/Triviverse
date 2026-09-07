@@ -1,218 +1,254 @@
-// Build Football Tenable questions — a FUN-first, 100% Transfermarkt-sourced pool.
+#!/usr/bin/env node
+// ─────────────────────────────────────────────────────────────────────────
+// BUILD TENABLE — generate bounded "name the top 10" questions from the
+// the canonical Performance career-rollup (history.*, == rollup of performance.*,
+// RFC-001 C5/C6) — the SAME trusted Transfermarkt data 501 uses.
 //
-// Every question is a strict, tie-safe top-10 resolved from the daily-scraped fact
-// tables (leagues, international caps/goals) — NO hand-typed answers, which go stale
-// (e.g. a "World Cup top scorers" list frozen before a tournament). The only gate
-// that matters for fun is: CAN A FAN NAME THIS LIST? So each list must have a
-// recognisable top-10 with a marquee name near the top.
+// Philosophy (see the architecture review): Tenable AMPLIFIES data errors — a
+// single missing or misranked name breaks the whole question — so we only
+// generate BOUNDED, verifiable lists and gate them hard:
 //
-// What makes a list fun is mostly ENTITY PROMINENCE — a fan can name Germany's or
-// Arsenal's top-10 but not the USA's or Slovakia's, no matter how many caps those
-// players have. So questions are restricted to nations/clubs with a real density of
-// genuine stars (derived from the data, no manual whitelist). The RANKING itself is
-// always exact from the scraped data — this only decides what's fun to ship.
+//   • club-scoped     → "Premier League — Top Goalscorers for Arsenal"
+//   • nationality-scoped → "La Liga — Top Argentine Goalscorers"
 //
-// Writes src/data/tenable.generated.json + an (empty) daily allowlist so the runtime
-// falls back to each question's `daily` flag. Regenerate via `npm run build:tenable`.
-import { writeFileSync } from 'fs'
-import path from 'path'
-import { fileURLToPath } from 'url'
-import { createRequire } from 'module'
-import { loadRegistry } from './qgen/registry.mjs'
-import { COMP_NAME } from './qgen/predicates.mjs'
+// Phase 2: the six marquee COMPETITION-WIDE lists (PL / La Liga / Bundesliga /
+// Serie A top scorers, PL appearances, Champions League top scorers) are ALSO
+// generated here now (see COMPETITION_WIDE) — replacing the frozen hand-curated
+// copies so they refresh with the data instead of drifting. Cutoff ties are
+// handled via tiePool (not rejected), so every tied record-holder counts.
+// Everything else in tenable.js stays hand-authored (awards, trophies,
+// international goals, etc. — no canonical source yet).
+//
+//   npm run build:tenable   (after the 501 fact tables are built)
+// ─────────────────────────────────────────────────────────────────────────
 
-const require = createRequire(import.meta.url)
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const R = loadRegistry()
-const reco = (id) => R.players.get(id)?.reco || 0
-const nm = (id) => R.players.get(id)?.name
+import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { demonym } from '../src/data/football501/spec.js'
+import { players as FAMOUS_PLAYERS } from '../src/data/players.js'
 
-// The real driver of "is this fun?" is ENTITY PROMINENCE — is this a nation/club the
-// audience actually follows? A general fan can name Germany's or Arsenal's top-10 but
-// not the USA's or Slovakia's, however many caps those players racked up. `reco`
-// (which conflates "recently active in a big league" with fame — it rates Slovak
-// journeymen highly) can't separate them, but the CONCENTRATION OF GENUINE STARS at
-// an entity can, derived here from the data (no manual whitelist).
-const STAR = 80          // reco of a genuine megastar (Kane/Müller/Messi ~100)
-const natStars = new Map()
-for (const p of R.players.values()) {
-  if (reco(p.id) < STAR) continue
-  for (const nat of p.nats) natStars.set(nat, (natStars.get(nat) || 0) + 1)
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
+const DATA_DIR = path.join(ROOT, 'src', 'data', 'football501')
+const OUT = path.join(ROOT, 'src', 'data', 'tenable.generated.json')
+
+// ── Quality gate ───────────────────────────────────────────────────────────
+// A generated list only ships if it clears these. The value FLOOR is the real
+// quality lever: requiring the 10th name to still be a meaningful contributor
+// is what keeps out obscure clubs / minor footballing nations whose tail is a
+// string of players nobody could name.
+const MIN_POOL = 10        // need at least a full top-10
+const FLOOR = { goals: 20, apps: 100 } // the 10th name must clear this
+const STATS = [
+  { key: 'goals', unit: 'goals', noun: 'goals' },
+  { key: 'apps', unit: 'apps', noun: 'appearances' },
+]
+
+// ── Competition-wide top-10s (Phase 2) ──────────────────────────────────────
+// The six marquee lists formerly hand-curated in tenable.js, now generated from
+// the same fact tables. Titles are pinned to the previous exact wording so the
+// daily allow-list (tenable-daily-questions.txt) still matches by title.
+const COMPETITION_WIDE = {
+  GB1: { goals: 'Premier League — All-Time Top Goalscorers', apps: 'Premier League — Most Appearances All-Time' },
+  ES1: { goals: 'La Liga — All-Time Top Goalscorers' },
+  IT1: { goals: 'Serie A — All-Time Top Goalscorers' },
+  L1: { goals: 'Bundesliga — All-Time Top Goalscorers' },
+  CL: { goals: 'UEFA Champions League — All-Time Top Goalscorers' },
 }
-const NAT_MIN_STARS = 10   // ~11 nations (Spain…Switzerland); drops USA(2)/Slovakia(4)
-const majorNation = (nat) => (natStars.get(nat) || 0) >= NAT_MIN_STARS
 
-// Clubs: `reco` can't tell Liverpool from Villarreal — club STATURE isn't in the
-// data (star density says Liverpool 24 ≈ Villarreal 21). For a "name this club's
-// top-10" game the club itself must be globally famous, so club questions use a
-// curated ELITE set. Small + stable; edit this list to add/remove a club.
-const ELITE_RE = /real madrid|fc barcelona|^barcelona|atletico (de )?madrid|bayern|dortmund|paris saint|psg|manchester (city|united)|man (city|utd)|liverpool|chelsea|arsenal|tottenham|juventus|inter|milan|napoli/
-const normClub = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
-const ELITE_IDS = new Set()
-for (const [cid, name] of R.clubName) if (ELITE_RE.test(normClub(name))) ELITE_IDS.add(cid)
-const eliteClub = (cid) => ELITE_IDS.has(cid)
+const hash = (s) => { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619) } return h >>> 0 }
+const slug = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+const norm = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9 ]/g, '').trim()
+const lastName = (s) => norm(s).split(' ').pop()
 
-// Per-player recognisability is now only a light backstop (the entity gate does the
-// work), so a prominent entity's list isn't all obscure servants.
-const notable = (id) => reco(id) >= 40
-const marquee = (id) => reco(id) >= 65
+// ── Daily recognisability gate ──────────────────────────────────────────────
+// A question only enters DAILY rotation if enough of its top-10 are household
+// names — otherwise you'd need to know the *exact* ordering of players nobody
+// can name (the classic "top 10 Ghanaian Serie A apps" trap). Unlimited still
+// serves everything; this only trims Daily. "Famous" = the curated player list
+// (used for autocomplete) + every hand-authored Tenable answer (all A-listers).
+// Appearance lists are intrinsically harder than goal lists (journeymen top the
+// apps charts), so they need a higher bar.
+// How many of the top-10 must be recognisable for DAILY. Tightened now that the
+// "famous" set is broadened with the canonical fame data (a much wider, graded
+// popularity signal — the same one Football 501's daily uses). Apps lists keep a
+// higher bar than goal lists (journeymen top the apps charts).
+// Recalibrated for the recency-first recognisability signal (RFC-001): it scores
+// historical answers low, so a "good daily" now needs only a few contemporary-
+// recognisable answers among the top-10 (the fan can name a handful), not 6-7.
+const DAILY_FAME = { goals: 3, apps: 3 }
+const FAME_BAR = 25
+function buildFamousSet() {
+  const set = new Set()
+  const add = (name) => { set.add(norm(name)); set.add(lastName(name)) }
+  for (const p of FAMOUS_PLAYERS) add(p.name)                       // curated autocomplete list
+  try {
+    const src = readFileSync(path.join(DATA_DIR, '..', 'tenable.js'), 'utf8')
+    for (const m of src.matchAll(/text: *'([^']+)'/g)) add(m[1])    // hand-authored answer names
+  } catch { /* fall back to the curated list alone */ }
+  try {
+    // Canonical recognisability (RFC-001) replaces the Wikidata fame signal:
+    // names scoring >= FAME_BAR are "recognisable enough" to gate daily questions.
+    const recog = JSON.parse(readFileSync(path.join(DATA_DIR, '..', 'recognisability.generated.json'), 'utf8')).byName
+    for (const [n, s] of Object.entries(recog)) if (s >= FAME_BAR) { set.add(n); set.add(lastName(n)) }
+  } catch { /* recognisability optional */ }
+  return set
+}
 
-const FUN_MIN = 4        // backstop: ≥ this many of the top-10 recognisable
-const FUN_DAILY = 6      // ≥ this many ⇒ eligible for the DAILY rotation
-const ANCHOR_IN = 5      // a marquee name must appear within the top-N
-const FLOOR = { goals: 10, apps: 80, caps: 25, fee: 10_000_000 } // loosest per-unit tail floor (meta)
-
-const slug = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
-
-// Strict, tie-safe top-10 from [{id,value}]; null if it can't form a clean list.
+// Rank a set of {name, value} rows into a validated top-10, or null if the list
+// fails the gate. Ties inside the 10 are fine; a tie that straddles the 10/11
+// cutoff makes "the top 10" ambiguous, so we reject it (rather than guess).
 function topTen(rows, floor) {
-  if (rows.length < 10) return null
-  // de-dup by display name (guards the "unique names" invariant)
-  const seen = new Set(); rows = rows.filter(r => { const n = nm(r.id); if (!n || seen.has(n)) return false; seen.add(n); return true })
-  rows.sort((a, b) => b.value - a.value || nm(a.id).localeCompare(nm(b.id)))
+  if (rows.length < MIN_POOL) return null
+  rows.sort((a, b) => b.value - a.value || a.name.localeCompare(b.name) || String(a.id).localeCompare(String(b.id)))
   const top = rows.slice(0, 10)
-  if (top.length < 10 || top[9].value < floor) return null
-  // A tie on the 10th value is NOT a reason to drop a good list (England's most
-  // capped ties at 90). The extra tied record-holders join a tiePool so any of them
-  // counts for the joint slot — same pattern as the marquee competition lists.
+  if (top[9].value < floor) return null                 // tail too obscure
+  if (rows.length > 10 && rows[10].value === top[9].value) return null // ambiguous cutoff
+  return top
+}
+
+// Validate a competition-wide top-10: exactly 10, ranks 1..10, values
+// non-increasing. Throws so a bad fact table can never ship a broken marquee
+// question (these are the highest-stakes lists — one misrank breaks them).
+function assertRankedTop10(answers, title) {
+  if (answers.length !== 10) throw new Error(`"${title}": expected 10 answers, got ${answers.length}`)
+  for (let i = 0; i < 10; i++) {
+    if (answers[i].rank !== i + 1) throw new Error(`"${title}": bad rank ${answers[i].rank} at index ${i}`)
+    if (i > 0 && answers[i].value > answers[i - 1].value) throw new Error(`"${title}": misordered — ${answers[i].text} (${answers[i].value}) above ${answers[i - 1].text} (${answers[i - 1].value})`)
+  }
+}
+
+// Competition-wide top-10 (all players in the competition, by stat). Unlike the
+// bounded club/nat lists, a tie at the 10th value is NOT rejected — the extra
+// tied record-holders go into tiePool so any of them counts for the joint slot.
+function buildCompetitionWide(fact, cid, stat, unit, noun, compName, title) {
+  const rows = fact.players
+    .map(p => ({ id: p.id, name: p.name, value: p.comps?.[cid]?.[stat] || 0 }))
+    .filter(r => r.value >= 1)
+  if (rows.length < MIN_POOL) throw new Error(`"${title}": only ${rows.length} players (< ${MIN_POOL})`)
+  rows.sort((a, b) => b.value - a.value || a.name.localeCompare(b.name) || String(a.id).localeCompare(String(b.id)))
+  const top = rows.slice(0, 10)
+  if (top[9].value < FLOOR[stat]) throw new Error(`"${title}": 10th value ${top[9].value} < floor ${FLOOR[stat]}`)
+  const answers = top.map((p, i) => ({ rank: i + 1, text: p.name, detail: `${p.value} ${unit}`, value: p.value }))
+  assertRankedTop10(answers, title)
+  const q = {
+    id: `gen-${cid}-${stat}-all`,
+    type: 'player',
+    scope: 'competition',
+    title,
+    description: `Name the 10 players with the most ${compName} ${noun} of all time.`,
+    icon: { type: 'league', value: compName }, // league logo — matches the removed hand-authored UX
+    answers,
+  }
   const tied = rows.slice(10).filter(r => r.value === top[9].value)
-  return { top, tieValue: tied.length ? top[9].value : undefined, tiePool: tied.length ? tied.map(r => ({ text: nm(r.id) })) : undefined }
+  if (tied.length) { q.tieValue = top[9].value; q.tiePool = tied.map(r => ({ text: r.name })) }
+  return q
 }
 
-const questions = []
-function emit({ id, scope, title, description, icon, unit, list, detail }) {
-  if (!list) return
-  const { top, tieValue, tiePool } = list
-  const recogN = top.filter(r => notable(r.id)).length
-  const anchored = top.slice(0, ANCHOR_IN).some(r => marquee(r.id))
-  if (recogN < FUN_MIN || !anchored) return
-  const fmt = detail || ((v) => `${v} ${unit}`)
-  const answers = top.map((r, i) => ({ rank: i + 1, text: nm(r.id), detail: fmt(r.value), value: r.value }))
-  const q = { id, type: 'player', scope, title, description, icon, daily: recogN >= FUN_DAILY, answers }
-  if (tieValue) { q.tieValue = tieValue; q.tiePool = tiePool }
-  questions.push(q)
-}
+function build() {
+  const files = readdirSync(DATA_DIR).filter(f => /^history\..*\.generated\.json$/.test(f))
+  if (!files.length) { console.error('No history.*.generated.json fact tables found — build 501 data first.'); process.exit(1) }
 
-// ── International: most caps / top scorers per nation ────────────────────────
-const nations = new Map()
-for (const p of R.players.values()) for (const [tid, v] of p.caps) {
-  if (!nations.has(tid)) nations.set(tid, [])
-  nations.get(tid).push({ id: p.id, caps: v.caps, goals: v.goals })
-}
-for (const [tid, players] of nations) {
-  const nation = R.nationName.get(tid)
-  if (!nation || / U-?\d| B$| C$| [Ww]omen| Olympic/.test(nation)) continue // seniors only
-  if (!majorNation(nation)) continue // only nations the audience actually follows
-  const icon = { type: 'nationality', value: nation }
-  const caps = topTen(players.map(p => ({ id: p.id, value: p.caps })), FLOOR.caps)
-  if (caps) emit({ id: `gen-nat-${slug(nation)}-caps`, scope: 'nationality', title: `${nation} — Most Capped Players`, description: `Name the 10 players with the most caps for ${nation}.`, icon, unit: 'caps', list: caps })
-  const goals = topTen(players.map(p => ({ id: p.id, value: p.goals })).filter(r => r.value > 0), 12)
-  if (goals) emit({ id: `gen-nat-${slug(nation)}-goals`, scope: 'nationality', title: `${nation} — All-Time Top Goalscorers`, description: `Name the 10 all-time top goalscorers for ${nation}.`, icon, unit: 'goals', list: goals })
-}
+  const famous = buildFamousSet()
+  const fameOf = (answers) => answers.filter(a => famous.has(norm(a.text)) || famous.has(lastName(a.text))).length
 
-// ── Transfer fees: most expensive signings / sales (overall, per club, per league) ─
-// Real permanent moves only, keeping each player's single biggest fee. Very fun and
-// recognisable — these lists are recent by nature.
-{
-  const tr = require('../src/data/football501/transfers.generated.json')
-  const clubName = new Map(Object.entries(tr.clubs))
-  const feeDetail = (v) => `€${Math.round(v / 1e6)}m`
-  const real = tr.transfers.filter(t => t[4] > 0 && t[5] !== 'loan' && t[5] !== 'end-of-loan')
-  // dedup per player → biggest incoming fee; also index per destination + origin club
-  const bestIn = new Map(), byTo = new Map(), byFrom = new Map()
-  for (const [pid, from, to, , fee] of real) {
-    if (!R.players.get(pid)) continue
-    if (!bestIn.has(pid) || fee > bestIn.get(pid).fee) bestIn.set(pid, { id: pid, fee })
-    const keep = (m, cid) => { if (!cid) return; if (!m.has(cid)) m.set(cid, new Map()); const g = m.get(cid); if (!g.has(pid) || fee > g.get(pid).fee) g.set(pid, { id: pid, fee }) }
-    keep(byTo, to); keep(byFrom, from)
-  }
-  const feeRows = (m) => [...m.values()].map(r => ({ id: r.id, value: r.fee }))
-  const emitFee = (id, scope, title, description, icon, list) =>
-    list && emit({ id, scope, title, description, icon, unit: 'fee', list, detail: feeDetail })
+  const questions = []
+  const perComp = {}
+  let builtAt = new Date().toISOString().slice(0, 10)
 
-  // Overall
-  emitFee('gen-fee-all', 'competition', 'Most Expensive Signings of All Time',
-    'Name the 10 players who moved for the biggest transfer fees ever.', { type: 'league', value: 'Transfers' }, topTen(feeRows(bestIn), 40_000_000))
-  // Per destination club — record signings
-  for (const [cid, m] of byTo) {
-    const club = clubName.get(cid); if (!club || !eliteClub(cid)) continue
-    emitFee(`gen-fee-in-${cid}`, 'club', `${club} — Record Signings`, `Name the 10 most expensive signings in ${club}'s history.`, { type: 'club', value: club }, topTen(feeRows(m), 18_000_000))
-  }
-  // Per origin club — biggest sales
-  for (const [cid, m] of byFrom) {
-    const club = clubName.get(cid); if (!club || !eliteClub(cid)) continue
-    emitFee(`gen-fee-out-${cid}`, 'club', `${club} — Biggest Sales`, `Name the 10 players ${club} sold for the biggest fees.`, { type: 'club', value: club }, topTen(feeRows(m), 18_000_000))
-  }
-}
+  for (const file of files) {
+    const fact = JSON.parse(readFileSync(path.join(DATA_DIR, file), 'utf8'))
+    const comp = fact.meta.competition
+    const compName = comp.name
+    const cid = comp.id
+    if (fact.meta.builtAt) builtAt = fact.meta.builtAt
+    let added = 0
 
-// ── Competition all-time: top scorers / most appearances ────────────────────
-for (const comp of ['GB1', 'ES1', 'IT1', 'L1', 'FR1', 'CL']) {
-  const compName = cap(COMP_NAME[comp])
-  const icon = { type: 'league', value: compName }
-  for (const [stat, unit, noun, floor] of [['goals', 'goals', 'Top Goalscorers', 40], ['apps', 'apps', 'Most Appearances', 250]]) {
-    const rows = []
-    for (const p of R.players.values()) { const v = p.comps[comp]?.[stat] || 0; if (v > 0) rows.push({ id: p.id, value: v }) }
-    const top = topTen(rows, floor)
-    if (top) emit({ id: `gen-comp-${comp}-${stat}`, scope: 'competition', title: `${compName} — All-Time ${noun}`, description: `Name the 10 players with the most ${compName} ${unit} of all time.`, icon, unit, list: top })
-  }
-}
+    for (const { key: stat, unit, noun } of STATS) {
+      const floor = FLOOR[stat]
 
-// ── Club records within a competition ("PL Top Goalscorers for Arsenal") ─────
-for (const comp of ['GB1', 'ES1', 'IT1', 'L1', 'FR1']) {
-  const h = require(`../src/data/football501/history.${comp}.generated.json`)
-  const compName = cap(COMP_NAME[comp])
-  const byClub = new Map()
-  for (const p of h.players) {
-    const cc = p.comps?.[comp]; if (!cc?.clubs) continue
-    for (const [cid, cv] of Object.entries(cc.clubs)) {
-      if (!byClub.has(cid)) byClub.set(cid, [])
-      byClub.get(cid).push({ id: p.id, goals: cv.goals || 0, apps: cv.apps || 0 })
+      // ── Club-scoped: most {stat} for a single club, within this competition.
+      const byClub = new Map() // clubId → [{id,name,value}]
+      for (const p of fact.players) {
+        const clubs = p.comps?.[cid]?.clubs || {}
+        for (const [clubId, rec] of Object.entries(clubs)) {
+          const value = rec[stat] || 0
+          if (value < 1) continue
+          ;(byClub.get(clubId) || byClub.set(clubId, []).get(clubId)).push({ id: p.id, name: p.name, value })
+        }
+      }
+      for (const [clubId, rows] of byClub) {
+        const top = topTen(rows, floor)
+        if (!top) continue
+        const clubName = fact.clubs[clubId]?.name || `#${clubId}`
+        const answers = top.map((p, i) => ({ rank: i + 1, text: p.name, detail: `${p.value} ${unit}` }))
+        questions.push({
+          id: `gen-${cid}-${stat}-club-${clubId}`,
+          type: 'player',
+          scope: 'club',
+          title: `${compName} — ${stat === 'goals' ? 'Top Goalscorers' : 'Most Appearances'} for ${clubName}`,
+          description: `Name the 10 players with the most ${compName} ${noun} for ${clubName}.`,
+          icon: { type: 'club', value: clubName },
+          daily: fameOf(answers) >= DAILY_FAME[stat],
+          answers,
+        })
+        added++
+      }
+
+      // ── Nationality-scoped: most {stat} in this competition by players of one
+      // nationality (whole-competition totals, filtered by nation).
+      const byNat = new Map() // natKey → { display, rows:[] }
+      for (const p of fact.players) {
+        if (!p.natKey) continue
+        const rec = p.comps?.[cid]
+        const value = rec?.[stat] || 0
+        if (value < 1) continue
+        const e = byNat.get(p.natKey) || byNat.set(p.natKey, { display: p.nat, rows: [] }).get(p.natKey)
+        e.rows.push({ id: p.id, name: p.name, value })
+      }
+      for (const [natKey, { display, rows }] of byNat) {
+        const top = topTen(rows, floor)
+        if (!top) continue
+        const dem = demonym(natKey, display)
+        const answers = top.map((p, i) => ({ rank: i + 1, text: p.name, detail: `${p.value} ${unit}` }))
+        questions.push({
+          id: `gen-${cid}-${stat}-nat-${slug(natKey)}`,
+          type: 'player',
+          scope: 'nationality',
+          title: `${compName} — ${stat === 'goals' ? `Top ${dem} Goalscorers` : `${dem} Players — Most Appearances`}`,
+          description: `Name the 10 ${dem} players with the most ${compName} ${noun}.`,
+          icon: { type: 'nationality', value: display },
+          daily: fameOf(answers) >= DAILY_FAME[stat],
+          answers,
+        })
+        added++
+      }
+
+      // ── Competition-wide: the six marquee lists (Phase 2), now data-driven.
+      const cwTitle = COMPETITION_WIDE[cid]?.[stat]
+      if (cwTitle) {
+        const q = buildCompetitionWide(fact, cid, stat, unit, noun, compName, cwTitle)
+        q.daily = fameOf(q.answers) >= DAILY_FAME[stat]
+        questions.push(q)
+        added++
+      }
     }
+    perComp[cid] = added
   }
-  for (const [cid, players] of byClub) {
-    const club = h.clubs?.[cid]?.name; if (!club || !eliteClub(cid)) continue
-    const icon = { type: 'club', value: club }
-    for (const [stat, unit, noun, floor] of [['goals', 'goals', 'Top Goalscorers', 20], ['apps', 'apps', 'Most Appearances', 90]]) {
-      const top = topTen(players.map(p => ({ id: p.id, value: p[stat] })).filter(r => r.value > 0), floor)
-      if (top) emit({ id: `gen-club-${comp}-${cid}-${stat}`, scope: 'club', title: `${compName} — ${noun} for ${club}`, description: `Name the 10 players with the most ${compName} ${unit} for ${club}.`, icon, unit, list: top })
-    }
-  }
+
+  // Deterministic spread so consecutive daily indexes land on different
+  // competitions / scopes rather than a long run of one club's variants.
+  questions.sort((a, b) => hash(a.id) - hash(b.id))
+
+  const dailyCount = questions.filter(q => q.daily).length
+  writeFileSync(OUT, JSON.stringify({
+    meta: { builtAt, count: questions.length, dailyEligible: dailyCount, source: 'football501 fact tables (transfermarkt)', floor: FLOOR, dailyFame: DAILY_FAME },
+    questions,
+  }, null, 1) + '\n')
+
+  console.error(`✓ ${questions.length} generated Tenable questions (${dailyCount} daily-eligible) → ${path.relative(process.cwd(), OUT)}`)
+  console.error(`  ${Object.entries(perComp).map(([k, v]) => `${k}:${v}`).join('  ')}`)
+  console.error(`  e.g. ${questions.slice(0, 5).map(q => `"${q.title}"`).join(', ')}`)
 }
 
-// ── Nationality within a competition ("PL Top Brazilian Goalscorers") ────────
-for (const comp of ['GB1', 'ES1', 'IT1', 'L1', 'FR1']) {
-  const compName = cap(COMP_NAME[comp])
-  const byNat = new Map()
-  for (const p of R.players.values()) {
-    const c = p.comps[comp]; if (!c) continue
-    for (const nat of p.nats) { if (!byNat.has(nat)) byNat.set(nat, []); byNat.get(nat).push({ id: p.id, goals: c.goals, apps: c.apps }) }
-  }
-  for (const [nat, players] of byNat) {
-    if (!majorNation(nat)) continue
-    const icon = { type: 'nationality', value: nat }
-    for (const [stat, unit, noun, floor] of [['goals', 'goals', 'Goalscorers', 25], ['apps', 'apps', 'Appearances', 120]]) {
-      const top = topTen(players.map(p => ({ id: p.id, value: p[stat] })).filter(r => r.value > 0), floor)
-      if (top) emit({ id: `gen-natcomp-${comp}-${slug(nat)}-${stat}`, scope: 'nationality', title: `${compName} — Top ${nat} ${noun}`, description: `Name the 10 top ${nat} ${stat === 'goals' ? 'goalscorers' : 'players by appearances'} in the ${compName}.`, icon, unit, list: top })
-    }
-  }
-}
-
-function cap(s) { return s.replace(/^the /, '') }
-
-// De-dup any accidental id clashes (keep first).
-const byId = new Map(); for (const q of questions) if (!byId.has(q.id)) byId.set(q.id, q)
-const finalQs = [...byId.values()]
-
-const outDir = path.join(__dirname, '..', 'src', 'data')
-writeFileSync(path.join(outDir, 'tenable.generated.json'), JSON.stringify({
-  meta: { generatedAt: new Date().toISOString().slice(0, 10), source: 'transfermarkt (leagues + international), fun-gated recognisable top-10s', floor: FLOOR, count: finalQs.length },
-  questions: finalQs,
-}, null, 2))
-// Empty allowlist ⇒ the runtime falls back to each question's `daily` flag (no
-// hand-maintained text file). Kept as a file so the import in tenable.js resolves.
-writeFileSync(path.join(outDir, 'tenable.daily.generated.json'), JSON.stringify({ meta: { source: 'daily rotation is driven by the per-question `daily` flag' }, titles: [] }, null, 2))
-
-const daily = finalQs.filter(q => q.daily).length
-const byScope = finalQs.reduce((m, q) => (m[q.scope] = (m[q.scope] || 0) + 1, m), {})
-console.log(`Tenable: ${finalQs.length} fun questions (${daily} daily-eligible)`)
-console.log('by scope:', byScope)
+build()
