@@ -1,0 +1,15 @@
+{
+  "_readme": "Per-pair external cross-check results. This is the human-maintained source of truth for QC's external-verification gate (filled in during D6). The QC question is 'are we complete and correct under OUR stated definition (>=1 Big-5 top-flight league or CL appearance for both clubs)?' — NOT 'does our count match every website?'. Record: status (pending|verified), externalCount (under a comparable definition, else null), sources[], checkedAt, missingButQualifying[] (players external sources show who genuinely meet OUR definition but are absent from our registry -> fix the data before publishing), and a coverageNote explaining count differences that arise purely from different competition/level definitions.",
+  "pairs": {
+    "barcelona-and-real-madrid": { "status": "pending", "externalCount": null, "sources": [], "checkedAt": null, "missingButQualifying": [], "coverageNote": "" },
+    "ac-milan-and-inter": { "status": "pending", "externalCount": null, "sources": [], "checkedAt": null, "missingButQualifying": [], "coverageNote": "" },
+    "arsenal-and-chelsea": { "status": "pending", "externalCount": null, "sources": [], "checkedAt": null, "missingButQualifying": [], "coverageNote": "" },
+    "chelsea-and-manchester-city": { "status": "pending", "externalCount": null, "sources": [], "checkedAt": null, "missingButQualifying": [], "coverageNote": "" },
+    "bayern-munich-and-borussia-dortmund": { "status": "pending", "externalCount": null, "sources": [], "checkedAt": null, "missingButQualifying": [], "coverageNote": "" },
+    "chelsea-and-real-madrid": { "status": "pending", "externalCount": null, "sources": [], "checkedAt": null, "missingButQualifying": [], "coverageNote": "" },
+    "manchester-united-and-real-madrid": { "status": "pending", "externalCount": null, "sources": [], "checkedAt": null, "missingButQualifying": [], "coverageNote": "" },
+    "liverpool-and-manchester-united": { "status": "pending", "externalCount": null, "sources": [], "checkedAt": null, "missingButQualifying": [], "coverageNote": "Known historical crossovers exist beyond our set (e.g. Peter Beardsley 1 Man Utd app; Phil Chisnall 1964; early-1900s players). Many fall outside our Big-5-league+CL definition or predate our data; confirm each against the definition in D6." },
+    "manchester-city-and-manchester-united": { "status": "pending", "externalCount": null, "sources": [], "checkedAt": null, "missingButQualifying": [], "coverageNote": "" },
+    "arsenal-and-tottenham": { "status": "pending", "externalCount": null, "sources": [], "checkedAt": null, "missingButQualifying": [], "coverageNote": "Known concern: Pat Jennings (Spurs then Arsenal, 1970s-80s) qualifies under our definition but predates our data coverage — verify and, if genuinely missing, this is a data gap to fix before publishing, not a coverage-note item." }
+  }
+}
