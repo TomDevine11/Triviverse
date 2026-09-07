@@ -49,11 +49,21 @@ export const PAIRS = [
 // v1; curated further during per-pair QC (D6).
 export const PLAYER_ALIASES = {
   // '<canonical id>': ['nickname', 'alt spelling'],
+  // Eto'o — the only apostrophe name in the launch sets; "eto'o" already matches via
+  // surname ("eto o"), but the apostrophe-collapsed "etoo" spelling needs an alias.
+  '4257': ['etoo', 'samuel etoo'],
 }
 
 // Our fixed, honest inclusion definition — surfaced verbatim in the coverage note so
 // the page never implies it covers every competition or level of football.
+// Era-accurate: our English (Premier League) and Champions League data starts in 1992;
+// La Liga/Serie A run from 1929, Ligue 1 from 1932, Bundesliga from 1963. So the honest
+// scope is "the Premier League / Champions League era and the continental top flights",
+// NOT all-time English top-flight history. This wording is what makes pre-1992 First
+// Division players (e.g. Pat Jennings) a transparent scope difference, not a hidden gap.
 export const COVERAGE_NOTE =
-  'Based on top-flight appearances in a Big-5 European league (England, Spain, Italy, ' +
-  'Germany, France) or the Champions League — not every competition or level of football. ' +
-  'A player qualifies with at least one such appearance for each club.'
+  'Counted from top-flight league appearances in the Premier League (from 1992), La Liga, ' +
+  'Serie A, Bundesliga or Ligue 1, or from Champions League appearances (from 1992). A player ' +
+  'qualifies with at least one such appearance for each club. Domestic cups, lower divisions, ' +
+  'non-Big-5 leagues and pre-1992 English First Division / European Cup spells are not counted, ' +
+  'so all-time totals published elsewhere can be higher.'

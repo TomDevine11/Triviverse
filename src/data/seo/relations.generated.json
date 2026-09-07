@@ -3,7 +3,7 @@
     "generatedAt": "2026-09-07",
     "pages": 10,
     "clubs": 12,
-    "definition": "Based on top-flight appearances in a Big-5 European league (England, Spain, Italy, Germany, France) or the Champions League — not every competition or level of football. A player qualifies with at least one such appearance for each club.",
+    "definition": "Counted from top-flight league appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, or from Champions League appearances (from 1992). A player qualifies with at least one such appearance for each club. Domestic cups, lower divisions, non-Big-5 leagues and pre-1992 English First Division / European Cup spells are not counted, so all-time totals published elsewhere can be higher.",
     "inclusion": ">=1 appearance for each club across Big-5 top-flight leagues + Champions League"
   },
   "clubs": [
@@ -192,7 +192,10 @@
             "goals": 0
           },
           "surname": "eto o",
-          "aliases": [],
+          "aliases": [
+            "etoo",
+            "samuel etoo"
+          ],
           "flags": []
         },
         {
@@ -540,7 +543,7 @@
           ]
         }
       ],
-      "coverageNote": "Based on top-flight appearances in a Big-5 European league (England, Spain, Italy, Germany, France) or the Champions League — not every competition or level of football. A player qualifies with at least one such appearance for each club.",
+      "coverageNote": "Counted from top-flight league appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, or from Champions League appearances (from 1992). A player qualifies with at least one such appearance for each club. Domestic cups, lower divisions, non-Big-5 leagues and pre-1992 English First Division / European Cup spells are not counted, so all-time totals published elsewhere can be higher.",
       "externalVerified": false,
       "warnings": [],
       "related": [
@@ -1419,7 +1422,7 @@
           ]
         }
       ],
-      "coverageNote": "Based on top-flight appearances in a Big-5 European league (England, Spain, Italy, Germany, France) or the Champions League — not every competition or level of football. A player qualifies with at least one such appearance for each club.",
+      "coverageNote": "Counted from top-flight league appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, or from Champions League appearances (from 1992). A player qualifies with at least one such appearance for each club. Domestic cups, lower divisions, non-Big-5 leagues and pre-1992 English First Division / European Cup spells are not counted, so all-time totals published elsewhere can be higher.",
       "externalVerified": false,
       "warnings": [],
       "related": []
@@ -1713,7 +1716,7 @@
           "flags": []
         }
       ],
-      "coverageNote": "Based on top-flight appearances in a Big-5 European league (England, Spain, Italy, Germany, France) or the Champions League — not every competition or level of football. A player qualifies with at least one such appearance for each club.",
+      "coverageNote": "Counted from top-flight league appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, or from Champions League appearances (from 1992). A player qualifies with at least one such appearance for each club. Domestic cups, lower divisions, non-Big-5 leagues and pre-1992 English First Division / European Cup spells are not counted, so all-time totals published elsewhere can be higher.",
       "externalVerified": false,
       "warnings": [],
       "related": [
@@ -2057,7 +2060,7 @@
           "flags": []
         }
       ],
-      "coverageNote": "Based on top-flight appearances in a Big-5 European league (England, Spain, Italy, Germany, France) or the Champions League — not every competition or level of football. A player qualifies with at least one such appearance for each club.",
+      "coverageNote": "Counted from top-flight league appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, or from Champions League appearances (from 1992). A player qualifies with at least one such appearance for each club. Domestic cups, lower divisions, non-Big-5 leagues and pre-1992 English First Division / European Cup spells are not counted, so all-time totals published elsewhere can be higher.",
       "externalVerified": false,
       "warnings": [],
       "related": [
@@ -2403,7 +2406,7 @@
           ]
         }
       ],
-      "coverageNote": "Based on top-flight appearances in a Big-5 European league (England, Spain, Italy, Germany, France) or the Champions League — not every competition or level of football. A player qualifies with at least one such appearance for each club.",
+      "coverageNote": "Counted from top-flight league appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, or from Champions League appearances (from 1992). A player qualifies with at least one such appearance for each club. Domestic cups, lower divisions, non-Big-5 leagues and pre-1992 English First Division / European Cup spells are not counted, so all-time totals published elsewhere can be higher.",
       "externalVerified": false,
       "warnings": [],
       "related": []
@@ -2693,11 +2696,14 @@
             "goals": 0
           },
           "surname": "eto o",
-          "aliases": [],
+          "aliases": [
+            "etoo",
+            "samuel etoo"
+          ],
           "flags": []
         }
       ],
-      "coverageNote": "Based on top-flight appearances in a Big-5 European league (England, Spain, Italy, Germany, France) or the Champions League — not every competition or level of football. A player qualifies with at least one such appearance for each club.",
+      "coverageNote": "Counted from top-flight league appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, or from Champions League appearances (from 1992). A player qualifies with at least one such appearance for each club. Domestic cups, lower divisions, non-Big-5 leagues and pre-1992 English First Division / European Cup spells are not counted, so all-time totals published elsewhere can be higher.",
       "externalVerified": false,
       "warnings": [],
       "related": [
@@ -2882,7 +2888,7 @@
           "flags": []
         }
       ],
-      "coverageNote": "Based on top-flight appearances in a Big-5 European league (England, Spain, Italy, Germany, France) or the Champions League — not every competition or level of football. A player qualifies with at least one such appearance for each club.",
+      "coverageNote": "Counted from top-flight league appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, or from Champions League appearances (from 1992). A player qualifies with at least one such appearance for each club. Domestic cups, lower divisions, non-Big-5 leagues and pre-1992 English First Division / European Cup spells are not counted, so all-time totals published elsewhere can be higher.",
       "externalVerified": false,
       "warnings": [],
       "related": [
@@ -2939,7 +2945,7 @@
           "flags": []
         }
       ],
-      "coverageNote": "Based on top-flight appearances in a Big-5 European league (England, Spain, Italy, Germany, France) or the Champions League — not every competition or level of football. A player qualifies with at least one such appearance for each club.",
+      "coverageNote": "Counted from top-flight league appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, or from Champions League appearances (from 1992). A player qualifies with at least one such appearance for each club. Domestic cups, lower divisions, non-Big-5 leagues and pre-1992 English First Division / European Cup spells are not counted, so all-time totals published elsewhere can be higher.",
       "externalVerified": false,
       "warnings": [],
       "related": [
@@ -3044,7 +3050,7 @@
           ]
         }
       ],
-      "coverageNote": "Based on top-flight appearances in a Big-5 European league (England, Spain, Italy, Germany, France) or the Champions League — not every competition or level of football. A player qualifies with at least one such appearance for each club.",
+      "coverageNote": "Counted from top-flight league appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, or from Champions League appearances (from 1992). A player qualifies with at least one such appearance for each club. Domestic cups, lower divisions, non-Big-5 leagues and pre-1992 English First Division / European Cup spells are not counted, so all-time totals published elsewhere can be higher.",
       "externalVerified": false,
       "warnings": [],
       "related": [
@@ -3134,7 +3140,7 @@
           ]
         }
       ],
-      "coverageNote": "Based on top-flight appearances in a Big-5 European league (England, Spain, Italy, Germany, France) or the Champions League — not every competition or level of football. A player qualifies with at least one such appearance for each club.",
+      "coverageNote": "Counted from top-flight league appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, or from Champions League appearances (from 1992). A player qualifies with at least one such appearance for each club. Domestic cups, lower divisions, non-Big-5 leagues and pre-1992 English First Division / European Cup spells are not counted, so all-time totals published elsewhere can be higher.",
       "externalVerified": false,
       "warnings": [],
       "related": [
