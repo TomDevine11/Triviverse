@@ -7,6 +7,7 @@ import { routeByPath } from './seoConfig'
 import { RELATION_BASE, relationBySlug } from './relations.js'
 import { buildMatcher, applyGuess, acceptId } from './pairMatch.js'
 import { accentVars } from '../design/accents'
+import { track } from '../utils/analytics'
 import { useI18n } from '../i18n'
 
 // "Players who played for both X and Y" — the interactive game (D3). You get the two
@@ -23,6 +24,7 @@ export default function RelationPage() {
   const p = relationBySlug(slug)
   const path = `${RELATION_BASE}/${slug}`
   const r = routeByPath(path)
+  const onInternal = (to) => () => track('pair_internal_click', { pair: slug, to })
 
   if (!p) return (
     <div className="tv-scene min-h-dvh text-primary flex flex-col items-center justify-center gap-4 px-4 text-center" style={accentVars('careers')}>
@@ -81,8 +83,8 @@ export default function RelationPage() {
         <div className="bg-card/40 border border-border rounded-2xl px-4 py-4 sm:px-6 mb-8 text-center">
           <p className="text-secondary text-sm mb-3">Love this? Play the full games built from the same football data.</p>
           <div className="flex flex-wrap justify-center gap-2">
-            <Link to={lp('/football-pointless')} className="rounded-xl border border-brand bg-brand/10 text-brand-bright font-bold text-sm px-4 py-2 hover:bg-brand/20 transition-colors">Play Football Pointless →</Link>
-            <Link to={lp('/tenable')} className="rounded-xl border border-border-strong text-secondary font-bold text-sm px-4 py-2 hover:text-primary transition-colors">Football Tenable →</Link>
+            <Link to={lp('/football-pointless')} onClick={onInternal('/football-pointless')} className="rounded-xl border border-brand bg-brand/10 text-brand-bright font-bold text-sm px-4 py-2 hover:bg-brand/20 transition-colors">Play Football Pointless →</Link>
+            <Link to={lp('/tenable')} onClick={onInternal('/tenable')} className="rounded-xl border border-border-strong text-secondary font-bold text-sm px-4 py-2 hover:text-primary transition-colors">Football Tenable →</Link>
           </div>
         </div>
 
@@ -91,15 +93,15 @@ export default function RelationPage() {
             <h2 className="text-lg font-black tracking-tight mb-3">Related football trivia</h2>
             <ul className="flex flex-wrap gap-2">
               {r.relatedLinks.filter((l) => l.path.startsWith(RELATION_BASE + '/')).map((l, i) => (
-                <li key={i}><Link to={lp(l.path)} className="text-sm text-brand-bright hover:text-brand border border-border-strong rounded-lg px-2.5 py-1 transition-colors">{l.label}</Link></li>
+                <li key={i}><Link to={lp(l.path)} onClick={onInternal(l.path)} className="text-sm text-brand-bright hover:text-brand border border-border-strong rounded-lg px-2.5 py-1 transition-colors">{l.label}</Link></li>
               ))}
             </ul>
           </div>
         )}
 
         <footer className="mt-6 pt-6 border-t border-border flex flex-wrap gap-x-5 gap-y-2 text-sm">
-          <Link to={lp(RELATION_BASE)} className="font-bold text-brand-bright hover:text-brand transition-colors">All “played for two clubs” trivia →</Link>
-          <Link to={lp('/')} className="font-bold text-secondary hover:text-primary transition-colors">All games</Link>
+          <Link to={lp(RELATION_BASE)} onClick={onInternal(RELATION_BASE)} className="font-bold text-brand-bright hover:text-brand transition-colors">All “played for two clubs” trivia →</Link>
+          <Link to={lp('/')} onClick={onInternal('/')} className="font-bold text-secondary hover:text-primary transition-colors">All games</Link>
         </footer>
       </div>
     </div>
@@ -117,6 +119,7 @@ function PairGame({ p, path }) {
   const [revealed, setRevealed] = useState(false)
   const [copied, setCopied] = useState(false)
   const inputRef = useRef(null)
+  const startedRef = useRef(false)   // fire pair_game_start once per game
 
   const total = p.total
   const complete = total > 0 && found.length === total
@@ -124,7 +127,11 @@ function PairGame({ p, path }) {
 
   const applyResult = (res) => {
     setFound(res.found)
-    if (res.action === 'add') setMsg({ tone: 'correct', text: `✓ ${byId.get(res.id).n}` })
+    if (res.action === 'add') {
+      setMsg({ tone: 'correct', text: `✓ ${byId.get(res.id).n}` })
+      track('pair_answer_correct', { pair: p.slug, named: res.found.length, total })
+      if (res.found.length === total) track('pair_game_complete', { pair: p.slug, total })
+    }
     else if (res.action === 'dupe') setMsg({ tone: 'dupe', text: `You’ve already named ${byId.get(res.id).n}.` })
     else if (res.action === 'ambiguous') { setDisambig({ candidates: res.candidates, raw: input.trim() }); return }
     else if (res.action === 'miss') { setMsg({ tone: 'miss', text: `“${input.trim()}” isn’t one of the answers — try another.` }); return }
@@ -135,6 +142,7 @@ function PairGame({ p, path }) {
     e.preventDefault()
     const res = applyGuess(found, matcher, input)
     if (res.action === 'empty') return
+    if (!startedRef.current) { startedRef.current = true; track('pair_game_start', { pair: p.slug, total }) }
     applyResult(res)
     if (res.action !== 'ambiguous') { setInput(''); inputRef.current?.focus() }
     else setInput('')
@@ -143,6 +151,7 @@ function PairGame({ p, path }) {
   const chooseDisambig = (id) => { applyResult(acceptId(found, id)); setDisambig(null); inputRef.current?.focus() }
 
   const share = async () => {
+    track('pair_share_click', { pair: p.slug, named: found.length, total, complete })
     const url = typeof window !== 'undefined' ? window.location.href : `https://triviverse.com${path}`
     const line = complete
       ? `⚽ I named all ${total} players who played for both ${p.aName} & ${p.bName}!`
@@ -217,7 +226,7 @@ function PairGame({ p, path }) {
 
         <div className="flex flex-wrap gap-2 mt-3">
           {!over && (
-            <button onClick={() => setRevealed(true)} className="rounded-xl border border-border-strong text-secondary font-bold text-sm px-4 py-2 hover:text-primary transition-colors">Give up</button>
+            <button onClick={() => { setRevealed(true); track('pair_reveal_all', { pair: p.slug, named: found.length, total }) }} className="rounded-xl border border-border-strong text-secondary font-bold text-sm px-4 py-2 hover:text-primary transition-colors">Give up</button>
           )}
           {(over || found.length > 0) && (
             <button onClick={share} className="flex items-center gap-2 rounded-xl border border-brand bg-brand/10 text-brand-bright font-bold text-sm px-4 py-2 hover:bg-brand/20 transition-colors">
