@@ -34,20 +34,34 @@ function routeFor(p) {
   const h1 = `Players Who Played for Both ${both}`
   const title = makeTitle(p.aName, p.bName)
   const appsGoals = (x) => `${p.aName}: ${x.a.apps} app${x.a.apps === 1 ? '' : 's'}, ${x.a.goals} goal${x.a.goals === 1 ? '' : 's'} · ${p.bName}: ${x.b.apps} app${x.b.apps === 1 ? '' : 's'}, ${x.b.goals} goal${x.b.goals === 1 ? '' : 's'}`
+  // Scarcity pairs are all-English, so their small counts are a Premier-League-era
+  // artefact — the headline/heading/meta MUST say so and never imply all-time totals.
+  const scarcity = p.tier === 'scarcity'
+  const eraSuffix = scarcity ? ' in the Premier League era' : ''
+  const tagline = scarcity
+    ? `Can you name the ${p.total} players who played for both ${both}${eraSuffix}?`
+    : `Can you name all ${p.total} players who have played for both ${both}?`
+  const listHeading = scarcity
+    ? `The ${p.total} players who played for both ${both}${eraSuffix}`
+    : `All ${p.total} players who have played for both ${both}`
   return {
     path: `${RELATION_BASE}/${p.slug}`,
     name: `${p.aName} & ${p.bName}`,
     title,
-    description: clip(`${p.total} players have played for both ${both}${lead.length ? ` — including ${lead.slice(0, 3).join(', ')}` : ''}. See the full list and name them all in this free football trivia challenge.`, 160),
+    description: clip(scarcity
+      ? `Can you name the ${p.total} players who played for both ${both}${eraSuffix}? See the full list with clubs, appearances and goals.`
+      : `${p.total} players have played for both ${both}${lead.length ? ` — including ${lead.slice(0, 3).join(', ')}` : ''}. Name them all — see the full list with apps and goals.`, 160),
     keywords: [
       `players who played for ${p.aName.toLowerCase()} and ${p.bName.toLowerCase()}`,
       `${p.aName.toLowerCase()} and ${p.bName.toLowerCase()} players`,
       `footballers who played for ${p.aName.toLowerCase()} and ${p.bName.toLowerCase()}`,
     ],
     h1,
-    tagline: `${p.total} footballers have turned out for both ${both}. How many can you name?`,
-    about: `${p.total} players have appeared for both ${p.aName} and ${p.bName}${lead.length ? `, among them ${lead.join(', ')}` : ''}. It's a classic football trivia question — here is the complete list, with a challenge to see how many you can recall from memory.`,
-    itemList: { heading: `All ${p.total} players who have played for both ${both}`, items: p.players.map(x => ({ text: x.n, detail: appsGoals(x) })) },
+    tagline,
+    about: scarcity
+      ? `Only ${p.total} player${p.total === 1 ? '' : 's'} have turned out for both ${p.aName} and ${p.bName}${eraSuffix}${lead.length ? `: ${lead.join(', ')}` : ''}. Here is the qualifying list — can you name them from memory?`
+      : `${p.total} players have appeared for both ${p.aName} and ${p.bName}${lead.length ? `, among them ${lead.join(', ')}` : ''}. Here is the full list, with a challenge to see how many you can recall from memory.`,
+    itemList: { heading: listHeading, items: p.players.map(x => ({ text: x.n, detail: appsGoals(x) })) },
     coverageNote: p.coverageNote,
     relatedLinks: relatedLinksFor(p),
     schema: 'Relation',

@@ -62,7 +62,7 @@ export default function RelationPage() {
             here for JS users it's collapsed behind <details> so the game keeps its teeth. The
             underlying content is identical and stays in the DOM (indexable) — just toggled. */}
         <section aria-label="Full list of qualifying players" className="mb-8">
-          <h2 className="text-lg font-black tracking-tight mb-1">All {p.total} players who have played for both {p.aName} and {p.bName}</h2>
+          <h2 className="text-lg font-black tracking-tight mb-1">{r.itemList.heading}</h2>
           <p className="text-faint text-xs leading-relaxed mb-3">{p.coverageNote}</p>
           <details>
             <summary className="cursor-pointer select-none inline-flex items-center gap-2 rounded-xl border border-border-strong text-secondary font-bold text-sm px-4 py-2 hover:text-primary transition-colors list-none [&::-webkit-details-marker]:hidden">

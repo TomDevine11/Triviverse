@@ -59,7 +59,8 @@ describe('SEO relation cluster — quality gates', () => {
   it('crawlable list carries apps/goals detail + a coverage note (prerendered content)', () => {
     for (const r of RELATION_ROUTES) {
       if (r.path === RELATION_BASE) continue
-      expect(r.coverageNote, r.path).toMatch(/top-flight/i)
+      expect(r.coverageNote, r.path).toMatch(/Premier League \(from 1992\)/)
+      expect(r.coverageNote, r.path).toMatch(/aren’t included/)
       expect(r.itemList.items.length, r.path).toBe(r.rel.total)
       for (const it of r.itemList.items) {
         expect(it.detail, `${r.path}/${it.text}`).toMatch(/apps?.*goals?/)

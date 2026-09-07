@@ -62,8 +62,6 @@ export const PLAYER_ALIASES = {
 // NOT all-time English top-flight history. This wording is what makes pre-1992 First
 // Division players (e.g. Pat Jennings) a transparent scope difference, not a hidden gap.
 export const COVERAGE_NOTE =
-  'Counted from top-flight league appearances in the Premier League (from 1992), La Liga, ' +
-  'Serie A, Bundesliga or Ligue 1, or from Champions League appearances (from 1992). A player ' +
-  'qualifies with at least one such appearance for each club. Domestic cups, lower divisions, ' +
-  'non-Big-5 leagues and pre-1992 English First Division / European Cup spells are not counted, ' +
-  'so all-time totals published elsewhere can be higher.'
+  'Counted from appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga ' +
+  'or Ligue 1, plus Champions League appearances from 1992. Pre-1992 English First Division ' +
+  'and European Cup appearances aren’t included, so all-time totals published elsewhere can be higher.'
