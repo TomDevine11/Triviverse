@@ -56,19 +56,26 @@ export default function RelationPage() {
         {/* Keyed by slug: switching/reloading pairs remounts the game → guaranteed clean state. */}
         <PairGame key={slug} p={p} path={path} />
 
-        {/* Full qualifying list — always visible, matches the prerendered crawlable HTML. */}
+        {/* Full qualifying list. The prerendered HTML renders this fully visible (crawlable);
+            here for JS users it's collapsed behind <details> so the game keeps its teeth. The
+            underlying content is identical and stays in the DOM (indexable) — just toggled. */}
         <section aria-label="Full list of qualifying players" className="mb-8">
           <h2 className="text-lg font-black tracking-tight mb-1">All {p.total} players who have played for both {p.aName} and {p.bName}</h2>
           <p className="text-faint text-xs leading-relaxed mb-3">{p.coverageNote}</p>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {p.players.map((pl) => (
-              <li key={pl.id} className="rounded-xl px-3 py-2 border border-border bg-card/40">
-                <span className="font-bold text-sm text-primary">{pl.n}</span>
-                <span className="block text-[0.7rem] text-muted leading-tight"><span className="text-secondary">{p.aName}:</span> {pl.a.apps} app{pl.a.apps === 1 ? '' : 's'} · {pl.a.goals} goal{pl.a.goals === 1 ? '' : 's'}</span>
-                <span className="block text-[0.7rem] text-muted leading-tight"><span className="text-secondary">{p.bName}:</span> {pl.b.apps} app{pl.b.apps === 1 ? '' : 's'} · {pl.b.goals} goal{pl.b.goals === 1 ? '' : 's'}</span>
-              </li>
-            ))}
-          </ul>
+          <details>
+            <summary className="cursor-pointer select-none inline-flex items-center gap-2 rounded-xl border border-border-strong text-secondary font-bold text-sm px-4 py-2 hover:text-primary transition-colors list-none [&::-webkit-details-marker]:hidden">
+              Reveal the full list ({p.total}) →
+            </summary>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-3">
+              {p.players.map((pl) => (
+                <li key={pl.id} className="rounded-xl px-3 py-2 border border-border bg-card/40">
+                  <span className="font-bold text-sm text-primary">{pl.n}</span>
+                  <span className="block text-[0.7rem] text-muted leading-tight"><span className="text-secondary">{p.aName}:</span> {pl.a.apps} app{pl.a.apps === 1 ? '' : 's'} · {pl.a.goals} goal{pl.a.goals === 1 ? '' : 's'}</span>
+                  <span className="block text-[0.7rem] text-muted leading-tight"><span className="text-secondary">{p.bName}:</span> {pl.b.apps} app{pl.b.apps === 1 ? '' : 's'} · {pl.b.goals} goal{pl.b.goals === 1 ? '' : 's'}</span>
+                </li>
+              ))}
+            </ul>
+          </details>
         </section>
 
         <div className="bg-card/40 border border-border rounded-2xl px-4 py-4 sm:px-6 mb-8 text-center">
