@@ -23,6 +23,14 @@ const app = express()
 // client-host handling use the real request, not the proxy's.
 app.set('trust proxy', 1)
 
+// ── TikTok domain (URL-prefix) verification ──
+// Serves the signature file TikTok checks to confirm we own triviverse.com, which
+// verifies our Terms/Privacy URLs for the Content Posting API app review. Registered
+// before everything else so nothing intercepts it. Public, non-secret token.
+app.get('/tiktokhmgsxlUzrsvwFQlM52w8rZC5rjCTdoDF.txt', (_req, res) => {
+  res.type('text/plain').send('tiktok-developers-site-verification=hmgsxlUzrsvwFQlM52w8rZC5rjCTdoDF')
+})
+
 // ── Canonical-domain 301 redirect (opt-in) ───────────────────────
 // Sends the old onrender subdomain and the www host to the primary domain so
 // links/SEO consolidate on one URL. OFF by default to avoid any outage while the
