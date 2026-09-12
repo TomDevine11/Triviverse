@@ -23,6 +23,14 @@ const app = express()
 // client-host handling use the real request, not the proxy's.
 app.set('trust proxy', 1)
 
+// ── TikTok domain (URL-prefix) verification ──
+// Serves the signature file TikTok checks to confirm we own triviverse.com, which
+// verifies our Terms/Privacy URLs for the Content Posting API app review. Registered
+// before everything else so nothing intercepts it. Public, non-secret token.
+app.get('/tiktokhmgsxlUzrsvwFQlM52w8rZC5rjCTdoDF.txt', (_req, res) => {
+  res.type('text/plain').send('tiktok-developers-site-verification=hmgsxlUzrsvwFQlM52w8rZC5rjCTdoDF')
+})
+
 // ── Canonical-domain 301 redirect (opt-in) ───────────────────────
 // Sends the old onrender subdomain and the www host to the primary domain so
 // links/SEO consolidate on one URL. OFF by default to avoid any outage while the
@@ -61,6 +69,34 @@ if (fs.existsSync(DIST_DIR)) {
       }
     },
   }))
+
+  // ── Player-pair URL handling: 301 renamed pairs, 410 retired ones ──
+  // The pair family was pruned from ~134 pages to a curated launch set. A pre-launch
+  // URL that unambiguously maps to a launched pair (slug renamed) gets a 301; every
+  // other retired/unknown pair slug returns 410 Gone so it deindexes cleanly instead
+  // of soft-404ing to the SPA shell with a 200. Driven by dist/relations-manifest.json.
+  let relManifest = null
+  try { relManifest = JSON.parse(fs.readFileSync(path.join(DIST_DIR, 'relations-manifest.json'), 'utf8')) } catch { /* not built yet */ }
+  if (relManifest) {
+    const base = relManifest.base
+    const current = new Set(relManifest.current)
+    const redirects = relManifest.redirects || {}
+    const re = new RegExp(`^(/es)?${base}/([^/]+)/?$`)
+    app.get(re, (req, res, next) => {
+      const m = req.path.match(re)
+      const localePrefix = m[1] || ''
+      const slug = decodeURIComponent(m[2])
+      if (redirects[slug]) return res.redirect(301, `${localePrefix}${base}/${redirects[slug]}`)
+      if (current.has(slug)) return next() // launched pair → serve its prerendered file below
+      res.status(410).type('text/html').set('Cache-Control', 'no-cache').send(
+        `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex">`
+        + `<meta name="viewport" content="width=device-width,initial-scale=1"><title>Page removed — Triviverse</title></head>`
+        + `<body style="font-family:system-ui,sans-serif;background:#0b0a14;color:#e5e7eb;text-align:center;padding:4rem 1.5rem">`
+        + `<h1 style="font-size:1.4rem">This trivia page has been retired</h1>`
+        + `<p style="color:#9ca3af">Browse the current “players who played for two clubs” challenges instead.</p>`
+        + `<p><a style="color:#c4b5fd" href="${base}">See all player-pair trivia →</a></p></body></html>`)
+    })
+  }
 
   // SPA fallback — serve the prerendered HTML for the requested route (each route
   // has its own dist/<path>/index.html with unique SEO head + crawlable content),

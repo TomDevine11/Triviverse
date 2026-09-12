@@ -4,6 +4,7 @@ import Hub from './pages/Hub'
 import GamePage from './seo/GamePage'
 import AnswersPage from './seo/AnswersPage'
 import ThemedEnglandPage from './seo/ThemedEnglandPage'
+import { RELATION_BASE } from './seo/relations.js'
 import ScrollToTop from './components/ScrollToTop'
 import Analytics from './components/Analytics'
 import PreviewBanner from './components/PreviewBanner'
@@ -19,6 +20,8 @@ const CareerPath = lazy(() => import('./games/careers/CareerPath'))
 const HigherLower = lazy(() => import('./games/higherlower/HigherLower'))
 const FootballConnections = lazy(() => import('./games/connections/FootballConnections'))
 const FootballPointless = lazy(() => import('./games/pointless/FootballPointless'))
+const RelationPage = lazy(() => import('./seo/RelationPage'))
+const RelationHubPage = lazy(() => import('./seo/RelationHubPage'))
 
 // Dev-only: identity foundation inspector (Phase 0). Not linked from the hub;
 // reads only the generated identity artifacts, touches no game code.
@@ -78,6 +81,9 @@ export default function App() {
           {/* Football Pointless MVP */}
           <Route path="/football-pointless" element={<GamePage path="/football-pointless"><FootballPointless /></GamePage>} />
           <Route path="/es/football-pointless" element={<GamePage path="/football-pointless"><FootballPointless /></GamePage>} />
+          {/* "Players who played for both X and Y" — data-derived SEO trivia cluster (English-only) */}
+          <Route path={RELATION_BASE} element={<RelationHubPage />} />
+          <Route path={`${RELATION_BASE}/:slug`} element={<RelationPage />} />
         </Routes>
       </Suspense>
     </>
