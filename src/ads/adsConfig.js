@@ -13,7 +13,7 @@
 
 export const ADS_ENABLED = false
 
-export const ADSENSE_CLIENT = 'ca-pub-XXXXXXXXXXXXXXXX' // your AdSense publisher id
+export const ADSENSE_CLIENT = 'ca-pub-2277295336282027'
 
 // Named ad placements → AdSense ad-unit slot ids (create these in AdSense).
 export const AD_SLOTS = {
