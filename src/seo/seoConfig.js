@@ -511,6 +511,26 @@ const BASE_ROUTES = [
     changefreq: 'daily',
   },
   {
+    path: '/football-pointless/answers',
+    enOnly: true, // no Spanish translation yet → English-only (no /es duplicate)
+    name: 'Football Pointless Answers',
+    hideFromNav: true,
+    title: 'Football Pointless Answers — Every Past Board | Triviverse',
+    description: 'Every past Football Pointless board with its rarest correct answers, plus today’s. See which answers scored a pointless zero, or play the free daily.',
+    keywords: ['football pointless answers', 'football pointless answers today', 'football pointless answer', 'pointless football answers', 'football pointless solutions'],
+    h1: 'Football Pointless Answers',
+    tagline: 'The rarest correct answers from every past daily board.',
+    about: 'The complete archive of Football Pointless boards — the ten rarest correct answers for every past daily, newest first, with the score each one would have earned. Today’s board is hidden behind a spoiler so the daily stays playable.',
+    faq: [
+      { q: 'What are today’s Football Pointless answers?', a: 'Today’s rarest answers are at the top behind a spoiler tap, or are revealed when your daily board ends.' },
+      { q: 'Where can I see past boards?', a: 'Every previous daily board is listed here, newest first, with its most obscure correct answers.' },
+      { q: 'What does “pointless” mean?', a: 'A pointless answer is a valid answer so obscure that essentially nobody would name it — it scores zero, and zero is the best score you can get.' },
+    ],
+    schema: 'WebPage',
+    priority: '0.7',
+    changefreq: 'daily',
+  },
+  {
     path: '/connections/answers',
     enOnly: true, // no Spanish translation yet → English-only (no /es duplicate)
     name: 'Football Connections Answers',
@@ -568,6 +588,7 @@ const BASE_ROUTES = [
     keywords: ['football pointless', 'pointless football', 'football pointless quiz', 'football pointless game', 'pointless football quiz'],
     h1: 'Football Pointless',
     tagline: 'Name the rarest correct answer — the more obscure, the better.',
+    answersPath: '/football-pointless/answers',
     about: 'Football Pointless is a football quiz in the style of the TV show Pointless: every question has many correct answers, but you are hunting the obscure ones. The more obvious your answer, the more points it scores — and points are bad. Find a valid answer nobody would think of and score a pointless zero.',
     howTo: [
       'Read the question — it has lots of valid answers.',

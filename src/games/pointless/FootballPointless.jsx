@@ -12,7 +12,7 @@ import { todayIndex, recordResult, matchdayNumber } from '../../data/dailyStats'
 import { loadDailyProgress, saveDailyProgress } from '../../data/dailyProgress'
 import { TILE } from '../../utils/shareImage'
 import { RESULT_REVEAL_DELAY_MS } from '../../utils/motion'
-import { POINTLESS_QUESTIONS, matchAnswer } from '../../data/pointless/pointlessGame'
+import { POINTLESS_QUESTIONS, matchAnswer, pointlessIndexForDay } from '../../data/pointless/pointlessGame'
 import PointlessBoard from './PointlessBoard'
 import { useQa } from '../../dev/qa'
 import QaBar from '../../dev/QaBar'
@@ -23,7 +23,7 @@ import QaBar from '../../dev/QaBar'
 const MAX_ANSWERS = 5
 const N = POINTLESS_QUESTIONS.length
 const tone = (p) => (p === 0 ? 'text-success-bright' : p <= 15 ? 'text-success' : p <= 40 ? 'text-warn' : 'text-danger-bright')
-const dailyIdx = () => todayIndex() % N
+const dailyIdx = () => pointlessIndexForDay(todayIndex())
 const randomIdx = () => Math.floor(Math.random() * N)
 const dailyKey = () => POINTLESS_QUESTIONS[dailyIdx()].id // stable per-day id for persistence
 const WIN_MAX = 100 // total under this wins the round (a pointless 0 still wins instantly)

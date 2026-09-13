@@ -8,6 +8,7 @@ import { getTargetForDay as getTeammatesForDay } from '../data/teammates'
 import { getTargetForDay as getCareersForDay } from '../data/careers'
 import { getTenableQuestionForDay } from '../data/tenable'
 import { getConnectionsForDay } from '../data/connections'
+import { getPointlessForDay } from '../data/pointless/pointlessGame'
 import { todayIndex, matchdayNumber } from '../data/dailyStats'
 
 // MATCHDAY_EPOCH is private to dailyStats; derive it (both operands exported).
@@ -40,6 +41,21 @@ export const ANSWER_GAMES = {
   '/tenable': {
     accent: 'tenable', kind: 'list',
     forDay: (d) => { const q = getTenableQuestionForDay(d); return { primary: q.title, list: q.answers.map(a => ({ text: a.text, detail: a.detail })) } },
+  },
+  '/football-pointless': {
+    accent: 'pointless', kind: 'list',
+    forDay: (d) => {
+      const q = getPointlessForDay(d)
+      return {
+        primary: q.title,
+        // Answers are pre-sorted ascending nameability, so the head of the list is
+        // the most "pointless" — the answers almost nobody finds. Show ten.
+        list: (q.answers || []).slice(0, 10).map((a) => ({
+          text: a.d,
+          detail: a.p === 0 ? 'POINTLESS' : `${a.p} pts`,
+        })),
+      }
+    },
   },
   '/connections': {
     accent: 'connections', kind: 'groups',

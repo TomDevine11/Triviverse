@@ -5,6 +5,18 @@ import data from './questions.generated.json'
 
 export const POINTLESS_QUESTIONS = data.questions
 
+// The daily board for a given day index — the same pure selector Daily mode uses,
+// so the answers archive can recompute any past day without storing anything.
+// Negative indices are folded so a day before the epoch still resolves.
+export function pointlessIndexForDay(dayIndex) {
+  const n = POINTLESS_QUESTIONS.length
+  return ((dayIndex % n) + n) % n
+}
+
+export function getPointlessForDay(dayIndex) {
+  return POINTLESS_QUESTIONS[pointlessIndexForDay(dayIndex)]
+}
+
 export const norm = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim()
 
 const cache = new Map()

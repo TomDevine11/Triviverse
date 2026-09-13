@@ -54,6 +54,7 @@ const ANSWER_ROUTES = [
   { path: '/career-path/answers', game: '/career-path' },
   { path: '/tenable/answers', game: '/tenable' },
   { path: '/connections/answers', game: '/connections' },
+  { path: '/football-pointless/answers', game: '/football-pointless' },
 ]
 
 export default function App() {
