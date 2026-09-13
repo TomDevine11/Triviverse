@@ -13,7 +13,7 @@ import { heading, table, num, pct, round, writeReport } from './lib/format.mjs'
 
 const days = config.defaults.days
 const caps = capabilities()
-const snapshot = { lookbackDays: days, capabilities: caps, site: {}, demand: {}, searchConsole: {}, analytics: {} }
+const snapshot = { lookbackDays: days, capabilities: caps, site: {}, demand: {}, searchConsole: {}, bing: { connected: false }, analytics: {} }
 
 console.log(heading('SEO INTELLIGENCE REPORT'))
 console.log(`  Site: ${config.siteUrl}   Lookback: ${days} days`)
@@ -90,6 +90,51 @@ if (caps.searchConsole) {
     console.log(table(lowCtr.map(r => ({ q: r.query, impr: num(r.impressions), ctr: pct(r.ctr), pos: round(r.position) })),
       [{ key: 'q', label: 'Query' }, { key: 'impr', label: 'Impr', align: 'right' }, { key: 'ctr', label: 'CTR', align: 'right' }, { key: 'pos', label: 'Pos', align: 'right' }]))
   } catch (e) { console.log(`  Search Console error: ${e.message}`) }
+}
+
+// ── Bing Webmaster (if configured) ───────────────────────────────────────────
+// Search Console covers Google only, but GA4 shows Bing-powered search (bing +
+// yahoo + ecosia + duckduckgo) delivering roughly as many sessions as Google.
+// Without this block, this report — the one prioritisation decisions are made
+// from — silently describes about half the search traffic as if it were all of it.
+if (caps.bing) {
+  console.log(heading('BING WEBMASTER'))
+  try {
+    const { bing } = await import('./lib/bing.mjs')
+    const [queries, pages] = await Promise.all([
+      bing.queryStats().catch(() => null),
+      bing.pageStats().catch(() => null),
+    ])
+    const val = (row, ...names) => { for (const n of names) if (row?.[n] != null) return row[n]; return 0 }
+    const norm = (rows, labelKeys) => (Array.isArray(rows) ? rows : []).map((r) => {
+      const impr = val(r, 'Impressions', 'impressions')
+      const clicks = val(r, 'Clicks', 'clicks')
+      return { label: String(val(r, ...labelKeys) || '(unknown)'), clicks, impressions: impr, ctr: impr ? clicks / impr : 0, position: val(r, 'AvgImpressionPosition', 'Position', 'position') }
+    }).sort((a, b) => b.clicks - a.clicks)
+
+    const q = norm(queries, 'Query', 'query')
+    const p = norm(pages, 'Query', 'Url', 'url')
+    snapshot.bing = { connected: true, queries: q, pages: p }
+
+    if (q.length) {
+      console.log('\n  Top Bing queries:')
+      console.log(table(q.map(r => ({ q: r.label, clicks: num(r.clicks), impr: num(r.impressions), ctr: pct(r.ctr), pos: round(r.position) })),
+        [{ key: 'q', label: 'Query' }, { key: 'clicks', label: 'Clicks', align: 'right' }, { key: 'impr', label: 'Impr', align: 'right' }, { key: 'ctr', label: 'CTR', align: 'right' }, { key: 'pos', label: 'Pos', align: 'right' }]))
+    }
+    if (p.length) {
+      console.log('\n  Top Bing pages:')
+      console.log(table(p.map(r => ({ page: r.label.replace(config.bing.siteUrl, '') || '/', clicks: num(r.clicks), impr: num(r.impressions), ctr: pct(r.ctr) })),
+        [{ key: 'page', label: 'Page' }, { key: 'clicks', label: 'Clicks', align: 'right' }, { key: 'impr', label: 'Impr', align: 'right' }, { key: 'ctr', label: 'CTR', align: 'right' }]))
+    }
+    if (!q.length && !p.length) console.log('\n  Connected, but no data yet — Bing needs a few days after verification.')
+  } catch (e) { console.log(`  Bing error: ${e.message}`) }
+} else {
+  console.log(heading('BING WEBMASTER — NOT CONNECTED'))
+  console.log('\n  ⚠ Bing-powered search (bing + yahoo + ecosia + duckduckgo) is roughly as')
+  console.log('    large as Google in GA4, and none of it is measured here. Any ranking or')
+  console.log('    demand conclusion drawn from this report covers Google only.')
+  console.log('    Fix: bing.com/webmasters → import from Search Console → Settings → API')
+  console.log('    access → put BING_API_KEY in scripts/seo/.env.seo.local\n')
 }
 
 // ── GA4 (if configured) ──────────────────────────────────────────────────────
