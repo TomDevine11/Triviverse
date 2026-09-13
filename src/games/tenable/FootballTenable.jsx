@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect, useMemo } from 'react'
-import { getDailyTenableQuestion, getRandomTenableQuestion } from '../../data/tenable'
+import { getDailyTenableQuestion, getRandomTenableQuestion, getTenableQuestionForDay } from '../../data/tenable'
+import { useQa } from '../../dev/qa'
+import QaBar from '../../dev/QaBar'
 import QuestionBuilder from '../football501/QuestionBuilder'
 import { refineSuggestions, searchRegistry, resolveNameToId } from '../../data/canonical/resolve.js'
 import { searchClubs } from '../../data/canonical/clubs.js'
@@ -57,11 +59,12 @@ const rungWidth = (rank) => 38 + (rank - 1) * (62 / 9)
 
 export default function FootballTenable() {
   const { t } = useI18n()
+  const qa = useQa('Tenable') // dev-only; inert for normal players
   // Today's daily state, if any: resume it, or lock a finished one to its result.
   const [saved] = useState(() => loadDailyProgress('tenable', getDailyTenableQuestion().id))
   const restoredDone = !!saved?.done
 
-  const [mode, setMode] = useState('daily') // 'daily' | 'unlimited'
+  const [mode, setMode] = useState(qa.active ? 'unlimited' : 'daily') // 'daily' | 'unlimited'
   const [building, setBuilding] = useState(false)
   const [question, setQuestion] = useState(() => getDailyTenableQuestion())
   const [revealed, setRevealed] = useState(() => saved?.revealed ?? {}) // rank -> answer
@@ -118,6 +121,17 @@ export default function FootballTenable() {
   const [showGiveUpConfirm, setShowGiveUpConfirm] = useState(false)
   const inputRef = useRef(null)
   const dropdownRef = useRef(null)
+  /* eslint-disable react-hooks/set-state-in-effect -- intentional dev-only QA loader */
+  // QA mode (dev-only): load the generated question at the cursor index in practice
+  // mode. Runs on mount + on Skip; nothing recorded, daily untouched.
+  useEffect(() => {
+    if (!qa.active) return
+    setBuilding(false); setMode('unlimited'); setQuestion(getTenableQuestionForDay(qa.index))
+    setRevealed({}); setLives(MAX_LIVES); setInput(''); setHistory([])
+    setPhase('playing'); setDailyStats(null); setGaveUp(false); setShowGiveUpConfirm(false)
+    setPendingRank(null); setPendingAnswer(null); setPulseRow(null); setShowResult(false); setResultTab('answers')
+  }, [qa.active, qa.index])
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   // Persist the daily as it's played so a refresh resumes it and a finished
   // round stays locked (no bailing out to reset lives).
@@ -320,6 +334,8 @@ export default function FootballTenable() {
 
   return (
     <div className="tv-scene min-h-dvh text-primary" style={accentVars('tenable')}>
+    {qa.active && <QaBar gameId="Tenable" index={qa.index} onPrev={qa.prev} onNext={qa.next}
+      meta={{ id: question.id, title: question.title, scope: question.scope, top10: question.answers?.length }} />}
     <div className="flex flex-col items-center px-4 pb-8 max-w-3xl mx-auto">
       <div className="w-full"><GameChrome
         motifId="tenable"

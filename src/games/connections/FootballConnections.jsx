@@ -1,5 +1,7 @@
 import { useState, useMemo, useEffect } from 'react'
-import { getDailyConnections, getRandomConnections, shuffleNames } from '../../data/connections'
+import { getDailyConnections, getRandomConnections, getConnectionsForDay, shuffleNames } from '../../data/connections'
+import { useQa } from '../../dev/qa'
+import QaBar from '../../dev/QaBar'
 import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
 import ResultModal from '../../components/ResultModal'
@@ -26,11 +28,12 @@ const keyOf = names => [...names].sort().join('|')
 
 export default function FootballConnections() {
   const { t } = useI18n()
+  const qa = useQa('Connections') // dev-only; inert for normal players
   // Today's daily state, if any: resume it, or lock a finished one to its result.
   const [saved] = useState(() => loadDailyProgress('connections', getDailyConnections().tiles.join('|')))
   const restoredDone = !!saved?.done
 
-  const [mode, setMode] = useState('daily') // 'daily' | 'unlimited'
+  const [mode, setMode] = useState(qa.active ? 'unlimited' : 'daily') // 'daily' | 'unlimited'
   const [puzzle, setPuzzle] = useState(() => getDailyConnections())
   const [solved, setSolved] = useState(() => saved?.solved ?? [])        // [{ groupIndex, label, players }]
   const [selected, setSelected] = useState([])    // names
@@ -80,6 +83,17 @@ export default function FootballConnections() {
   }
   const onModeChange = (m) => (m === 'daily' ? restoreDaily() : startUnlimited())
   const [showResult, setShowResult] = useState(restoredDone)
+  /* eslint-disable react-hooks/set-state-in-effect -- intentional dev-only QA loader */
+  // QA mode (dev-only): load the generated puzzle at the cursor index in practice
+  // mode. Runs on mount + on Skip; nothing recorded, daily untouched.
+  useEffect(() => {
+    if (!qa.active) return
+    const p = getConnectionsForDay(qa.index)
+    setMode('unlimited'); setPuzzle(p); setOrder(p.tiles)
+    setSolved([]); setSelected([]); setLives(MAX_LIVES); setMessage('')
+    setPastGuesses(new Set()); setGuessRows([]); setDailyStats(null); setShowResult(false); setResultTab('groups')
+  }, [qa.active, qa.index])
+  /* eslint-enable react-hooks/set-state-in-effect */
   useEffect(() => {
     if (!over) return
     const t = setTimeout(() => setShowResult(true), RESULT_REVEAL_DELAY_MS) // let the solved groups show first
@@ -134,6 +148,8 @@ export default function FootballConnections() {
 
   return (
     <div className="tv-scene min-h-dvh text-primary" style={accentVars('connections')}>
+      {qa.active && <QaBar gameId="Connections" index={qa.index} onPrev={qa.prev} onNext={qa.next}
+        meta={{ groups: puzzle.groups?.map(g => `${g.label} [${g.players?.length}]`).join(' · ') }} />}
     <div className="flex flex-col items-center px-4 pb-8 max-w-4xl mx-auto">
       <div className="w-full"><GameChrome
         motifId="connections"

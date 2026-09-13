@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { STAT_MODES, poolFor, randomFrom, isCorrect, getDailyRun } from '../../data/higherlower'
+import { useQa } from '../../dev/qa'
+import QaBar from '../../dev/QaBar'
 import { ShareCard } from '../../components/ShareCard'
 import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
@@ -62,7 +64,8 @@ const runSig = (r) => `${r.mode.id}:${r.sequence.length}:${r.sequence[0]?.name ?
 
 export default function HigherLower() {
   const { t } = useI18n()
-  const [dailyMode, setDailyMode] = useState('daily')  // 'daily' | 'unlimited'
+  const qa = useQa('HigherLower') // dev-only; inert for normal players
+  const [dailyMode, setDailyMode] = useState(qa.active ? 'unlimited' : 'daily')  // 'daily' | 'unlimited'
   // Today's daily chain progress, if any (current/challenger derive from seqIdx).
   const [saved] = useState(() => loadDailyProgress('higherlower', runSig(getDailyRun(todayIndex()))))
   const restoredDone = !!saved?.done
@@ -123,6 +126,17 @@ export default function HigherLower() {
     else { setMode(null); setPhase('playing'); setStreak(0); setTrail([]); setLastCorrect(null); setDailyStats(null); setShowResult(false) }
   }
   const [showResult, setShowResult] = useState(restoredDone)
+  /* eslint-disable react-hooks/set-state-in-effect -- intentional dev-only QA loader */
+  // QA mode (dev-only): load the generated daily run at the cursor index in practice
+  // mode (dailyMode 'unlimited' so nothing is recorded). Runs on mount + on Skip.
+  useEffect(() => {
+    if (!qa.active) return
+    const r = getDailyRun(qa.index)
+    setDailyMode('unlimited'); setRun(r); setSeqIdx(1); setMode(r.mode)
+    setCurrent(r.sequence[0]); setChallenger(r.sequence[1])
+    setStreak(0); setTrail([]); setPhase('playing'); setLastCorrect(null); setDailyStats(null); setShowResult(false)
+  }, [qa.active, qa.index])
+  /* eslint-enable react-hooks/set-state-in-effect */
   useEffect(() => {
     if (phase !== 'over') return
     const t = setTimeout(() => setShowResult(true), RESULT_REVEAL_DELAY_MS)
@@ -193,6 +207,8 @@ export default function HigherLower() {
 
   return (
     <div className="tv-scene min-h-dvh text-primary" style={accentVars('higherlower')}>
+      {qa.active && <QaBar gameId="Higher/Lower" index={qa.index} onPrev={qa.prev} onNext={qa.next}
+        meta={{ statMode: mode, chainLength: run.sequence?.length, start: current?.name }} />}
     <div className="flex flex-col items-center px-4 pb-8 max-w-3xl mx-auto">
       {chrome}
       <ModeToggle mode={dailyMode} onChange={switchMode} className="mt-1 mb-4" />
