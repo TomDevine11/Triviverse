@@ -14,6 +14,8 @@ import { TILE } from '../../utils/shareImage'
 import { RESULT_REVEAL_DELAY_MS } from '../../utils/motion'
 import { POINTLESS_QUESTIONS, matchAnswer } from '../../data/pointless/pointlessGame'
 import PointlessBoard from './PointlessBoard'
+import { useQa } from '../../dev/qa'
+import QaBar from '../../dev/QaBar'
 
 // Name 5 valid answers, going as obscure as possible. Each scores "how many of
 // 100 would name this player for THIS question" (from Transfermarkt apps/goals) —
@@ -27,22 +29,23 @@ const dailyKey = () => POINTLESS_QUESTIONS[dailyIdx()].id // stable per-day id f
 const WIN_MAX = 100 // total under this wins the round (a pointless 0 still wins instantly)
 
 export default function FootballPointless() {
-  const [mode, setMode] = useState('daily')            // 'daily' | 'unlimited'
-  const [qIndex, setQIndex] = useState(dailyIdx)
+  const qa = useQa('Pointless', N) // dev-only; inert for normal players
+  const [mode, setMode] = useState(qa.active ? 'unlimited' : 'daily') // 'daily' | 'unlimited'
+  const [qIndex, setQIndex] = useState(() => (qa.active ? qa.index % N : dailyIdx()))
   const question = POINTLESS_QUESTIONS[qIndex]
   const [saved] = useState(() => loadDailyProgress('pointless', dailyKey())) // today's daily, if already played
-  const [answers, setAnswers] = useState(() => saved?.answers ?? [])
+  const [answers, setAnswers] = useState(() => (qa.active ? [] : saved?.answers ?? []))
   const [input, setInput] = useState('')
   const [highlightedIndex, setHighlightedIndex] = useState(-1)
   const [dismissed, setDismissed] = useState(false)
   const [shake, setShake] = useState(false)
   const [toast, setToast] = useState('')
-  const [revealed, setRevealed] = useState(() => !!saved?.done)
+  const [revealed, setRevealed] = useState(() => (qa.active ? false : !!saved?.done))
   const [showAll, setShowAll] = useState(false)
   const [recorded, setRecorded] = useState(false)
   const [reveal, setReveal] = useState(null) // { score, name, key } for the tower
   const [dailyStats, setDailyStats] = useState(null)
-  const [showResult, setShowResult] = useState(() => !!saved?.done) // daily result modal
+  const [showResult, setShowResult] = useState(() => (qa.active ? false : !!saved?.done)) // daily result modal
   const inputRef = useRef(null)
   const dropdownRef = useRef(null)
 
@@ -98,6 +101,10 @@ export default function FootballPointless() {
   const onModeChange = (m) => (m === 'daily' ? restoreDaily() : startUnlimited())
   const nextRandom = () => { let n; do { n = randomIdx() } while (n === qIndex && N > 1); setQIndex(n); resetRound() }
 
+  // QA mode (dev-only): jump to a generated board by index in practice mode, so
+  // nothing is recorded and the daily is untouched. Driven by the Skip bar.
+  const qaGoto = (i) => { const n = ((i % N) + N) % N; qa.goto(n); setMode('unlimited'); setQIndex(n); resetRound() }
+
   const flash = (msg) => { setToast(msg); setShake(true); setTimeout(() => setShake(false), 400); setTimeout(() => setToast(''), 1600) }
   const submit = (text) => {
     if (!active || !text.trim()) return
@@ -145,6 +152,11 @@ export default function FootballPointless() {
 
   return (
     <div className="tv-scene min-h-dvh text-primary" style={accentVars('pointless')}>
+      {qa.active && <QaBar gameId="Pointless" index={qa.index} total={N} onPrev={() => qaGoto(qa.index - 1)} onNext={() => qaGoto(qa.index + 1)}
+        meta={{ id: question.id, family: question.family, qualityScore: question.score, answerCount: question.count,
+          comfortableRecall: question.comfortable, recallFriction: question.friction, effectiveRecall: question.effective,
+          obviousAnswers: fullList.slice(0, 6).map(a => `${a.d} (${a.p})`).join(', '),
+          pointlessAnswers: allPointless.slice(0, 6).map(a => a.d).join(', ') }} />}
       <div className="flex flex-col items-center px-4 pb-10 max-w-lg mx-auto">
         <div className="w-full"><GameChrome motifId="football-pointless" title="FOOTBALL POINTLESS" right={<b className={`tabular-nums ${total <= 40 ? 'text-success-bright' : 'text-secondary'}`}>{total} pts</b>} /></div>
 
