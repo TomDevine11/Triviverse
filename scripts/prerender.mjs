@@ -150,6 +150,17 @@ function crawlable(route, lang) {
   return h
 }
 
+// About / Contact / Privacy / Terms are static files in public/, not app routes, and
+// nothing on the site linked to them — reachable only by typing the URL. Both AdSense
+// review and TikTok's app-review guidelines require those links to be findable on the
+// site, and a crawler reading the prerendered HTML must see them too, so they go in
+// here as well as in the React <SiteFooter>.
+const SITE_LINKS = '<nav style="margin-top:2rem;font-size:.85rem">'
+  + ['/about,About', '/contact,Contact', '/privacy,Privacy', '/terms,Terms']
+      .map((pair) => { const [href, label] = pair.split(','); return `<a href="${href}" style="color:#8c89a3;margin:0 .6rem">${label}</a>` })
+      .join('')
+  + '</nav>'
+
 const SR_ONLY = 'position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0'
 function staticBody(route, lang) {
   // Relation pages: the qualifying answer list IS the SEO content, so render it as
@@ -164,12 +175,14 @@ function staticBody(route, lang) {
       + `<h1 style="color:#fff;font-size:1.75rem;font-weight:800;margin:0 0 .5rem">${esc(route.h1)}</h1>`
       + `<p style="color:#9ca3af;margin:0 0 1rem">${esc(route.tagline)}</p>`
       + crawlable(route, lang)
+      + SITE_LINKS
       + `</main></div>`
   }
   return `<div style="min-height:100vh;background:#0b0a14;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;font-family:system-ui,-apple-system,sans-serif">`
     + `<h1 style="color:#fff;font-size:1.75rem;font-weight:800;margin:0">${esc(route.h1)}</h1>`
     + `<p style="color:#9ca3af;margin:.5rem 0 0;max-width:34rem">${esc(route.tagline)}</p>`
     + `<div style="${SR_ONLY}">${crawlable(route, lang)}</div>`
+    + SITE_LINKS
     + `</div>`
 }
 

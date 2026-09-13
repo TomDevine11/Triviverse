@@ -10,6 +10,7 @@ import { useI18n } from '../i18n'
 import { playedToday, getStats, recordVisit, formGuide, weeklyPoints, dailyPoints, matchdayNumber, todayIndex } from '../data/dailyStats'
 import { inProgressToday } from '../data/dailyProgress'
 import { buildDayShareUrl } from '../utils/shareUrl'
+import SiteFooter from '../components/SiteFooter'
 
 // The lineup. `stats` keys dailyStats (what each game passes to recordResult).
 const GAMES = [
@@ -239,6 +240,7 @@ export default function Hub() {
           </dl>
         </section>
         <AdSlot name="hub-footer" />
+        <SiteFooter />
       </div>
     </div>
   )
