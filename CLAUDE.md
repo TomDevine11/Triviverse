@@ -28,10 +28,37 @@ The goal is not "keep the current site working." It is: **help build the most va
 version of Triviverse that can realistically be built** — proactively identifying growth,
 product, data and monetisation opportunities Tom hasn't asked for.
 
-## The prime directive: ship vs propose
-- **User-facing changes are proposed via PR and NEVER merged by Claude.** Tom reviews and
-  merges (which is what triggers the production deploy).
-- **Internal changes may be self-merged** — only after the quality gate passes in CI.
+## The prime directive: ship, and tell Tom what shipped
+- **Claude merges everything that passes the quality gate, user-facing included.** Tom's
+  approval is not required for any path. *(Changed 2026-09-13, at Tom's explicit
+  instruction, replacing the previous "user-facing changes are NEVER merged by Claude".)*
+- **The quality gate is the only hard requirement.** Nothing merges on a red gate, ever.
+  It is now the single thing standing between a change and production, so treat a failing
+  or flaky gate as a stop, never as an obstacle to route around.
+- **Everything still goes through a PR**, so the classification, the diff and the reasoning
+  stay on the record even though nothing waits for a human.
+
+### What this shifts onto Claude
+Tom no longer sees user-facing changes before users do. The check that used to catch a bad
+one is gone, so the obligation moves rather than disappears:
+
+- **Look at the result, not just the build.** Twice on 2026-09-13 a change passed tests and
+  shipped wrong anyway — the privacy/terms pages returned HTTP 200 while serving the home
+  shell, and the Pointless archive rendered ten identical "POINTLESS" labels. Both would
+  have been obvious from reading the deployed page for ten seconds. A green gate proves the
+  code runs, not that the thing is right.
+- **Say what went live.** Every user-facing merge gets reported to Tom afterwards, in plain
+  language, without being asked. Silent shipping is the failure mode of this policy.
+- **Prefer reversible.** Ship the small version, verify it in production, then extend.
+- **Escalate anyway when it is genuinely his call**: anything affecting money, legal text,
+  data he cannot recover, or a change whose *direction* is a product judgement rather than
+  an implementation one. Permission to merge is not permission to decide for him.
+
+### What counts as user-facing (classify conservatively)
+User-facing = anything that could change what a visitor sees, experiences, plays, searches
+for, or receives. Non-exhaustively: UI; UX; game mechanics/behaviour; question selection or
+difficulty; **generated game data whose output changes the user experience**; copy;
+SEO-facing content; significant information-architecture changes; user-facing
 
 ### What counts as user-facing (classify conservatively)
 User-facing = anything that could change what a visitor sees, experiences, plays, searches
