@@ -67,3 +67,39 @@ obsolete. Never delete rows — this is an audit trail.
 | B-013 | Fix SERP-truncating titles/descriptions + H1↔route-name mismatches (7 flags) | user-facing | CTR + canonical-label consistency across 5 pages | seo-report | S | P2 | todo (unblocked — #25 merged) |
 | B-014 | "Career Path Answers" autocompletes to non-football intent — rename or re-anchor to football | user-facing | ambiguous name wastes an answers page that should capture football intent | seo-report | S | P2 | todo (unblocked — #25 merged) |
 | B-015 | Ship `llms.txt` + a machine-readable game index for AI-assistant discovery | user-facing | AI assistants are already ~25% of sessions — cheap, reversible bet on a proven channel | growth | S | P1 | in-review:#28 |
+
+## Discovered 2026-09-12 (live GA4 + GSC read)
+
+> **Milestone 1 is reached.** 10,437 pageviews in the last 28 days vs 5,479 in the prior 28
+> (+90%; sessions +216%, games completed +138%). The §18 baseline ("~5,500 in the most recent
+> 28 days") is a month stale. This unlocks VISION step 4 (advertising) and relaxes the §20a
+> beachhead gate — though see B-021 for why holding on a third mode is still the better bet.
+
+**Three corrections to earlier reasoning, from this session's data:**
+
+1. **The Tenable cluster's low CTR is a position problem, not a snippet problem.** The site's
+   own position→CTR curve is 5.82% at positions 5–7 and 1.93% at 7–10. The cluster converts at
+   1.8% at average position 8.4 — i.e. exactly its expected rate, on both mobile and desktop.
+   Rewriting titles was the wrong diagnosis; B-002's original top-5 framing was right. The
+   21,387 impressions sitting in the 7–10 band are worth ~+830 clicks/90d if moved to 5–7.
+2. **/501 does not under-rank — it is a Bing success and a Google absence.** 567 of its 801
+   sessions come from Bing, 57 from Google. GSC's "24 clicks / position 22.7" only ever
+   described Google. Total Google impressions for every 501-style query is ~84 in 90 days.
+3. **B-011 was never fully blocked.** GA4 and Search Console both authenticate and produced
+   every figure above. What is genuinely missing is Bing (B-016).
+
+| ID | Title | Class | Value | Source | Effort | Priority | Status |
+|----|-------|-------|-------|--------|--------|----------|--------|
+| B-016 | **Connect Bing Webmaster Tools** — Bing-powered search is 1,116 sessions/90d (33.8%), statistically level with Google (1,127, 34.2%), and entirely unmeasured: no queries, rankings, impressions or CTR | internal | a third of all traffic is currently invisible; every SEO call to date was made on half the picture. Free and quick | ga4 | S | P1 | todo |
+| B-017 | Enable AdSense (footer slots already built + mounted; `ADS_ENABLED=false`, placeholder publisher id) — measure engagement before/after | user-facing | first actionable revenue since the milestone unlocked VISION step 4. Honest expectation ~£20–60/mo at current volume, not £100 | monetisation | S | P1 | blocked-on-tom (needs an AdSense account; Claude must not create accounts or handle the publisher id) |
+| B-018 | Re-run stuck CI, then get #28/#31 merged — the red `eval` on both was a transient GitHub GraphQL 503 on 17 Aug, never retried; `gate` was green all along | internal | two PRs sat blocked ~4 weeks on an infrastructure blip, one of them the Tenable ranking work | bug | S | P1 | done (checks re-run 2026-09-12 — #28 now fully green and mergeable; #31 needs Tom's GitHub approval, his "ship it" was only in chat) |
+| B-019 | Answer the sharper 501 question: why does Bing rank /501 while Google barely serves it? Check indexation, internal links, canonical and content depth against /tenable | user-facing | reframes B-003 into something answerable; 501 has proven engagement (395s, 800 landings) so the product is not the constraint | seo-report | M | P1 | todo |
+| B-020 | Investigate desktop > mobile (1,943 vs 1,325 sessions) with *worse* mobile engagement (61.7% vs 67.7%) — backwards for casual games | user-facing | either mobile UX is weaker than desktop or the traffic mix is unusual; both are worth knowing | ga4 | M | P2 | todo |
+| B-021 | Hold on a third mode until football's levers are harvested — do not treat the milestone as a green light | — | football is compounding ~2×/month with three unharvested levers (position, 501-on-Google, retention). §20a's warning is *more* apposite while the beachhead accelerates, not less. F1 is exempt: already live and ranking | idea | — | — | decision (revisit when football growth flattens) |
+| B-022 | Do not scale the relation-page pattern yet — 134 pages, **0 clicks and 0 impressions** in 90 days; the F1 equivalent earns 10 clicks, so the pattern can work but is unproven on football, and ~149 title/H1 flags are outstanding | user-facing | prevents adding hundreds of pages on an unvalidated pattern | seo-report | S | P2 | todo (verify indexation first) |
+
+**Re-ranking against the above:** B-010 (eslint to zero) should drop from P1 → P3; VISION §19.7
+is explicit that internal work must not consume capacity while growth/revenue items are open,
+and monetisation was absent from this queue entirely until B-017. B-008 (multi-mode
+architecture readiness, P3) is partly overtaken by events — `f1.triviverse.com` is live,
+serving 200s and earning search clicks. B-003 is superseded by B-019.

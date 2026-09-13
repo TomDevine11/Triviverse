@@ -53,9 +53,11 @@ export const config = {
     token: env.CLARITY_API_TOKEN || null,             // project data-export API token
   },
   keywords: {
-    // DataForSEO is the recommended low-cost search-volume source (see SETUP.md).
-    dataForSeoLogin: env.DATAFORSEO_LOGIN || null,
-    dataForSeoPassword: env.DATAFORSEO_PASSWORD || null,
+    // Paid search-volume (DataForSEO) has been REMOVED — this stack is free-only. Demand signal now
+    // comes from Google Autosuggest + Google Trends (free) and Bing Webmaster (free). Kept null so the
+    // legacy paid client stays permanently inert.
+    dataForSeoLogin: null,
+    dataForSeoPassword: null,
   },
   defaults: {
     days: Number(env.SEO_LOOKBACK_DAYS || 90),
@@ -72,7 +74,7 @@ export function capabilities() {
     searchConsole: !!(g.creds && g.gscSiteUrl),
     bing: !!config.bing.apiKey,
     clarity: !!config.clarity.token,
-    keywords: !!(config.keywords.dataForSeoLogin && config.keywords.dataForSeoPassword),
+    trends: true,        // Google Trends — free, no credentials
     autosuggest: true,   // free, no credentials
     siteModel: true,     // reads the repo, always available
   }
@@ -80,6 +82,6 @@ export function capabilities() {
 
 export function capabilitySummary() {
   const caps = capabilities()
-  const label = { ga4: 'Google Analytics 4', searchConsole: 'Search Console', bing: 'Bing Webmaster', clarity: 'Microsoft Clarity', keywords: 'Keyword volume (DataForSEO)', autosuggest: 'Google Autosuggest', siteModel: 'Site model (code)' }
+  const label = { ga4: 'Google Analytics 4', searchConsole: 'Search Console', bing: 'Bing Webmaster (free)', clarity: 'Microsoft Clarity', trends: 'Google Trends (free)', autosuggest: 'Google Autosuggest', siteModel: 'Site model (code)' }
   return Object.entries(caps).map(([k, on]) => `${on ? '✓' : '✗'} ${label[k]}`)
 }

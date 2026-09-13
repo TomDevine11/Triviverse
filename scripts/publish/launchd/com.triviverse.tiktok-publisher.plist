@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Runs the TikTok publisher every 15 minutes. Install (once, when ready to go live):
+       cp scripts/publish/launchd/com.triviverse.tiktok-publisher.plist ~/Library/LaunchAgents/
+       chmod +x scripts/publish/launchd/run-publisher.sh
+       # edit the ProgramArguments path below to your real repo path, then:
+       launchctl load ~/Library/LaunchAgents/com.triviverse.tiktok-publisher.plist
+     Stop it later with:  launchctl unload ~/Library/LaunchAgents/com.triviverse.tiktok-publisher.plist
+     The Mac must stay awake + online (see README). -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.triviverse.tiktok-publisher</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>/Users/thomasdevine/Desktop/football501/scripts/publish/launchd/run-publisher.sh</string>
+  </array>
+  <key>StartInterval</key><integer>900</integer>
+  <key>RunAtLoad</key><true/>
+  <key>StandardOutPath</key><string>/Users/thomasdevine/Desktop/football501/output/shorts/_launchd.out.log</string>
+  <key>StandardErrorPath</key><string>/Users/thomasdevine/Desktop/football501/output/shorts/_launchd.err.log</string>
+</dict>
+</plist>

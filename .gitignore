@@ -33,6 +33,19 @@ data/pl-history/
 # SEO intelligence layer — secrets & generated reports (never commit)
 .env.seo.local
 scripts/seo/.secrets/
+
+# TikTok publisher secrets (never commit)
+.env.publish.local
+scripts/publish/.env.publish.local
+scripts/publish/.env.publish.local.*
 scripts/seo/reports/
 scripts/pie/out/
 scripts/pie/preferences.jsonl
+
+# short-form video factory output (large binaries)
+output/
+
+# Generated/cached shorts assets (regenerable — keep only source sfx)
+assets/shorts/audio/
+assets/shorts/img-cache/
+

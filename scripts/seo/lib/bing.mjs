@@ -23,4 +23,8 @@ export const bing = {
   queryStats: () => call('GetQueryStats'),
   // Top pages by Bing search traffic.
   pageStats: () => call('GetPageStats'),
+  // FREE keyword volume (impression estimate) for a term — Bing's answer to Keyword Planner.
+  keyword: (q) => call('GetKeyword', { q, country: 'gb', language: 'en-GB' }),
+  // Related keyword ideas for a seed term.
+  keywordIdeas: (q) => call('GetRelatedKeywords', { q, country: 'gb', language: 'en-GB' }),
 }
