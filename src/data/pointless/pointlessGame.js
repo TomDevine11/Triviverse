@@ -16,11 +16,12 @@ function lookups(q) {
   const bySurname = new Map()
   const bySorted = new Map()
   for (const a of q.answers) {
-    byName.set(a.n, a)
-    const surname = a.n.split(' ').slice(-1)[0]
+    const n = a.n ?? norm(a.d) // `n` is derived from the display name (not stored in the artefact)
+    byName.set(n, a)
+    const surname = n.split(' ').slice(-1)[0]
     if (!bySurname.has(surname)) bySurname.set(surname, [])
     bySurname.get(surname).push(a)
-    const sk = sortedKey(a.n)
+    const sk = sortedKey(n)
     if (sk.includes(' ')) { if (!bySorted.has(sk)) bySorted.set(sk, []); bySorted.get(sk).push(a) }
   }
   const l = { byName, bySurname, bySorted }
