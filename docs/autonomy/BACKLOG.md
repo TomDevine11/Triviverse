@@ -103,3 +103,49 @@ is explicit that internal work must not consume capacity while growth/revenue it
 and monetisation was absent from this queue entirely until B-017. B-008 (multi-mode
 architecture readiness, P3) is partly overtaken by events — `f1.triviverse.com` is live,
 serving 200s and earning search clicks. B-003 is superseded by B-019.
+
+## Findings 2026-09-13 (acting on the morning's high-value items)
+
+**B-019 (why Google ignores /501) — close it, the premise is wrong.** /501 is not
+thin and not under-linked: it has *more* on-page depth than /football-pointless
+(10 keywords / 3 sections / 6 FAQ / 460-char about vs 5 / 0 / 3 / 303) and the same
+26 internal inbound links, and Google has indexed it. The real constraint is demand.
+The entire 501-plus-darts query pool is ~84 impressions in 90 days, so ranking #1
+for all of it would be worth roughly 30 clicks a quarter. Tenable, Pointless, Wordle
+and Connections all borrow *recognised formats* people already search for; "501" is a
+coinage competing with Levi's 501, darts 501 and 501(c)(3). **There is no meaningful
+Google SEO lever here — stop looking for one.** /501's value is as an engagement asset
+(785 sessions, 395s average, 33% return rate), and 628 of its 801 sessions come from
+Bing. Understanding *those* queries needs B-016.
+
+**B-006 (retention audit) — done, and it produced a testable lever.** Return rate by
+landing page splits cleanly on one feature, whether the game has an answers archive:
+
+| page | return rate | archive |
+|---|---|---|
+| /connections | 67.4% | yes |
+| /career-path | 41.9% | yes |
+| /tenable | 36.5% | yes |
+| /wordle | 33.3% | yes |
+| /501 | 33.2% | no |
+| /tictactoe | 26.3% | no |
+| /football-pointless | 17.8% | no |
+
+Perfect rank separation, mean 44.8% vs 25.8%. n=7 and confounded — archives may have
+been added to games that were already popular — so this is a hypothesis, not a proven
+cause. Shipped as an experiment on the best test case (B-023).
+
+**Also observed:** the homepage retains at 49.0% on 871 sessions, higher than any game
+page. Partly circular (direct traffic *is* returning traffic), so not yet actionable —
+but if it survives a channel-controlled cut, getting organic arrivals to the hub rather
+than a single game becomes a significant retention lever in its own right.
+
+| ID | Title | Class | Value | Source | Effort | Priority | Status |
+|----|-------|-------|-------|--------|--------|----------|--------|
+| B-023 | Football Pointless answers archive — test the archive/retention hypothesis on the worst retainer (17.8%) that is also the 2nd-best acquisition page | user-facing | if the pattern holds, the same treatment applies to /501 and /tictactoe | retention | M | P1 | in-review:#43 |
+| B-024 | Re-validate #41's question quality — 101 Tenable lists reduce to ~6 templates (16 Record Signings, 16 Biggest Sales, 10 Most Capped, 10+10 Top Goalscorers, 9 Most Appearances); 32% are transfer-fee questions, and hand-authored sets (World Cup scorers, Ballon d'Or) were deleted | user-facing | Tenable is 475 of 631 total search clicks — the riskiest surface on the site, and variety got worse even as verifiability improved (VISION §7 puts fun first) | product | M | P1 | **kept** (Tom played it 2026-09-13: "look okay for now") — not reverting. Variety remains the open concern: 32% of lists are transfer-fee questions, so revisit if Tenable's engagement or return rate dips |
+| B-025 | Measure whether the hub's 49.0% return rate survives a channel-controlled cut; if it does, route organic arrivals to the hub | user-facing | would make cross-game discovery a primary retention lever | retention | S | P2 | todo |
+
+**Re-ranked:** B-003/B-019 closed (no lever). B-016 (Bing) rises — it now gates both the
+/501 question and any real read on a third of traffic; the report script shipped in #42,
+only the API key is missing.

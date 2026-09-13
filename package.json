@@ -59,7 +59,8 @@
     "seo-audit": "node scripts/seo/audit.mjs",
     "tiktok-demo": "node scripts/publish/demo.mjs",
     "tiktok-demo-record": "bash scripts/publish/record-demo-staged.sh",
-    "studio": "node scripts/publish/studio.mjs"
+    "studio": "node scripts/publish/studio.mjs",
+    "bing-report": "node scripts/seo/bing.mjs"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
