@@ -120,10 +120,13 @@ manage branches/PRs, and **nothing that can reach production or secrets**:
   }
 }
 ```
-Notes: user-facing PRs are never merged by the runner (no `gh pr merge` on them — internal
-auto-merge is done by GitHub via branch auto-merge, not by the runner pushing to main); secrets
-are unreadable; `main` cannot be pushed or force-pushed; no deploy commands. Exact allow/deny
-finalised with Tom at activation.
+Notes: since 2026-09-13 the runner may merge user-facing PRs too, once the quality gate is
+green (see CLAUDE.md — Tom removed the approval requirement). Merging still happens through
+the PR, never by pushing to main; secrets are unreadable; `main` cannot be pushed or
+force-pushed; no deploy commands. Exact allow/deny finalised with Tom at activation.
+
+Because the gate is now the only thing between a change and production, a red or flaky gate
+is a stop for the runner, not something to retry around.
 
 ## Production safety (what prevents accidental user-facing shipping)
 1. **`main` is protected** (branch protection + no direct push in permissions).
