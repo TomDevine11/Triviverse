@@ -131,6 +131,24 @@ not ready." So hold off — but the wiring is already in place.
 (`src/ads/adsConfig.js` → `ADS_ENABLED = false`). Placements: a footer slot on
 every game page and one on the home page. Zero performance/SEO impact while off.
 
+**Before ads can legally run: a consent platform.**
+
+71% of sessions are UK/EEA (2,338 of 3,271 over 90 days). Google requires a
+**certified Consent Management Platform** to serve ads to those users — without
+one, AdSense restricts serving to them, so you would be monetising only the ~29%
+that isn't the core audience, and serving anyway would breach both Google policy
+and GDPR. Google's own **Privacy & Messaging** is certified and free; it is
+configured in the AdSense console and loaded by `src/ads/adsInit.js`, which
+deliberately injects the consent script *before* the ad script.
+
+The privacy policy must also disclose third-party advertising cookies and how
+consent is obtained (`public/privacy/index.html`) — this is an AdSense approval
+requirement as well as a legal one.
+
+Capture a **pre-ads baseline** first (`docs/baselines/`). Ads trade engagement for
+revenue and that trade cannot be judged after the fact — the state before they
+existed is unrecoverable once the switch flips.
+
 **To turn ads on when ready:**
 1. Get a Google AdSense account → note your publisher id (`ca-pub-…`).
 2. Add the AdSense script to `index.html` `<head>`:
