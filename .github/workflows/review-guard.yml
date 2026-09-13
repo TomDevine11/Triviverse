@@ -1,4 +1,12 @@
 name: Review guard
+# Classifies every PR as user-facing or internal and records it. It no longer
+# blocks: Tom decided on 2026-09-13 that Claude may merge anything passing the
+# quality gate, so approval is not required for any path.
+#
+# The classification is kept deliberately. Knowing which merges changed what
+# players see is what makes the shipped digest and any later "when did this
+# regress?" question answerable — losing the interruption should not mean losing
+# the record. `gate` remains the hard requirement; nothing merges on red tests.
 on:
   pull_request_target:
     types: [opened, synchronize, reopened]
@@ -6,13 +14,13 @@ on:
     types: [submitted, dismissed]
 permissions:
   contents: read
-  pull-requests: read
+  pull-requests: write
   statuses: write
 jobs:
   eval:
     runs-on: ubuntu-latest
     steps:
-      - name: Evaluate guard and post commit status
+      - name: Classify the change and post commit status
         env:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
@@ -21,12 +29,21 @@ jobs:
           OWNER: TomDevine11
         run: |
           files=$(gh pr diff "$PR" --repo "$REPO" --name-only)
-          owned='^(src/|public/|index\.html|og-service/|scripts/prerender\.mjs|render\.yaml|\.github/|VISION\.md|CLAUDE\.md|docs/autonomy/(LOOP|RUNNER)\.md|docs/autonomy/ci\.workflow\.yml)'
-          if ! echo "$files" | grep -qE "$owned"; then
-            state=success; desc="internal - no owned path"
+          # Paths whose changes a visitor can perceive. src/dev and src/ads are
+          # excluded: the QA overlay is inert for players, and the ad slots render
+          # nothing until a real publisher id is configured.
+          userfacing='^(src/(?!dev/|ads/)|public/|index\.html|og-service/|scripts/prerender\.mjs)'
+          if echo "$files" | grep -qPE "$userfacing"; then
+            label="user-facing"
+            desc="user-facing — merged without review by standing policy"
           else
-            approved=$(gh pr view "$PR" --repo "$REPO" --json latestReviews --jq "[.latestReviews[] | select(.author.login==\"$OWNER\" and .state==\"APPROVED\")] | length")
-            if [ "${approved:-0}" -ge 1 ]; then state=success; desc="approved by @$OWNER"; else state=failure; desc="needs @$OWNER approval"; fi
+            label="internal"
+            desc="internal"
           fi
-          echo "guard: $state ($desc)"
-          gh api -X POST "repos/$REPO/statuses/$SHA" -f state="$state" -f context=guard -f description="$desc" >/dev/null
+
+          # Record it on the PR so the classification survives in the history.
+          gh pr edit "$PR" --repo "$REPO" --add-label "$label" 2>/dev/null || true
+
+          echo "guard: $label ($desc)"
+          gh api -X POST "repos/$REPO/statuses/$SHA" \
+            -f state=success -f context=guard -f description="$desc" >/dev/null

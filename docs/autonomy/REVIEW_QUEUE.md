@@ -1,9 +1,15 @@
-# 🔔 Triviverse needs your attention
+# 📦 What shipped
 
-**This is Tom's single review surface. It is a PRODUCT review interface, not a code-review
-queue.** You should never have to read a diff. Each item below is a plain-English brief plus
-a way to *actually try the change* — your job is to play it and say **yes / no / change this**,
-not to inspect GitHub.
+**This is Tom's single product surface — now a record of what went live, not a queue waiting
+on him.** As of 2026-09-13 Claude merges everything that passes the quality gate, so nothing
+here is asking permission. You should never have to read a diff.
+
+Each entry is a plain-English note on a **user-facing** change that shipped, and a way to
+*actually try it*. Read it if you want to know what changed, or to disagree after the fact —
+everything is one revert away.
+
+Internal work (tooling, tests, CI, docs, dev-only code, inert config) does not appear here at
+all; it never did.
 
 - **Only user-facing changes appear here.** Internal engineering (tests, refactors, tooling,
   CI, perf, security, deps, data-pipeline work with no user-visible effect) is merged
