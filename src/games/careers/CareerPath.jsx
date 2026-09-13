@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { getRandomTarget, getDailyTarget, matchesTarget } from '../../data/careers'
+import { getRandomTarget, getDailyTarget, getTargetForDay, matchesTarget } from '../../data/careers'
+import { useQa } from '../../dev/qa'
+import QaBar from '../../dev/QaBar'
 import { usePlayerSuggestions } from '../tictactoe/usePlayerSuggestions'
 import { ShareCard } from '../../components/ShareCard'
 import Crest from '../../components/Crest'
@@ -20,11 +22,12 @@ import { RESULT_REVEAL_DELAY_MS } from '../../utils/motion'
 
 export default function CareerPath() {
   const { t, lp } = useI18n()
+  const qa = useQa('CareerPath') // dev-only; inert for normal players
   // Today's daily state, if any: resume it, or lock a finished one to its result.
   const [saved] = useState(() => loadDailyProgress('careers', getDailyTarget().name))
   const restoredDone = !!saved?.done
 
-  const [mode, setMode] = useState('daily')        // 'daily' | 'unlimited'
+  const [mode, setMode] = useState(qa.active ? 'unlimited' : 'daily')        // 'daily' | 'unlimited'
   const [target, setTarget] = useState(() => getDailyTarget())
   const [revealed, setRevealed] = useState(() => saved?.revealed ?? 1)
   const [guesses, setGuesses] = useState(() => saved?.guesses ?? [])
@@ -136,6 +139,15 @@ export default function CareerPath() {
     setHighlightedIndex(-1); setDailyStats(null); setShowResult(!!s?.done)
   }
   const onModeChange = (m) => (m === 'daily' ? restoreDaily() : startUnlimited())
+  /* eslint-disable react-hooks/set-state-in-effect -- intentional dev-only QA loader */
+  // QA mode (dev-only): load the generated mystery player at the cursor index in
+  // practice mode. Runs on mount + on Skip; nothing recorded, daily untouched.
+  useEffect(() => {
+    if (!qa.active) return
+    setMode('unlimited'); setTarget(getTargetForDay(qa.index))
+    setRevealed(1); setGuesses([]); setInput(''); setPhase('playing'); setHighlightedIndex(-1); setDailyStats(null); setShowResult(false)
+  }, [qa.active, qa.index])
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   const cluesToShow = phase === 'playing' ? revealed : maxClues
   const guessesLeft = maxClues - guesses.length
@@ -144,6 +156,8 @@ export default function CareerPath() {
 
   return (
     <div className="tv-scene min-h-dvh text-primary" style={accentVars('careers')}>
+      {qa.active && <QaBar gameId="Career Path" index={qa.index} onPrev={qa.prev} onNext={qa.next}
+        meta={{ mysteryPlayer: target.name, clubs: target.clubs?.length }} />}
     <div className="flex flex-col items-center px-4 pb-8 max-w-3xl mx-auto">
       <div className="w-full"><GameChrome
         motifId="career-path"

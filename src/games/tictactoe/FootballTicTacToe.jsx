@@ -1,6 +1,8 @@
 import { Fragment, useState, useRef, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { getDailyGrid, getRandomGrid, categoryLabel, resolveGuess, findAssignment, normalizeName } from '../../data/tictactoe'
+import { getDailyGrid, getRandomGrid, getGridForDay, categoryLabel, resolveGuess, findAssignment, normalizeName } from '../../data/tictactoe'
+import { useQa } from '../../dev/qa'
+import QaBar from '../../dev/QaBar'
 import { resolveNameToId } from '../../data/canonical/resolve'
 import { refineSuggestions, searchRegistry } from '../../data/canonical/resolve.js'
 import { ShareCard } from '../../components/ShareCard'
@@ -53,12 +55,13 @@ const gridSig = (g) => [...g.rowCategories, ...g.colCategories].map(c => c.value
 
 export default function FootballTicTacToe({ onBackToModes }) {
   const { t, lp } = useI18n()
+  const qa = useQa('TicTacToe') // dev-only; inert for normal players
   // Today's daily state, if any: a terminal snapshot (done) locks the round to
   // its result screen; a live snapshot resumes it. Read once at mount.
   const [saved] = useState(() => loadDailyProgress('tictactoe', gridSig(getDailyGrid())))
   const restoredDone = !!saved?.done
 
-  const [mode, setMode] = useState('daily') // 'daily' | 'unlimited'
+  const [mode, setMode] = useState(qa.active ? 'unlimited' : 'daily') // 'daily' | 'unlimited'
   const [grid, setGrid] = useState(() => getDailyGrid())
   const [filled, setFilled] = useState(() => saved?.filled ?? {}) // cellIndex -> player name
   const [lives, setLives] = useState(() => saved?.lives ?? MAX_LIVES)
@@ -109,6 +112,16 @@ export default function FootballTicTacToe({ onBackToModes }) {
   const onModeChange = (m) => (m === 'daily' ? restoreDaily() : startUnlimited())
 
   const [showResult, setShowResult] = useState(restoredDone) // a restored finished daily shows its result at once
+  /* eslint-disable react-hooks/set-state-in-effect -- intentional dev-only QA loader */
+  // QA mode (dev-only): load the generated grid at the cursor index in practice
+  // mode. Runs on mount + on Skip; nothing recorded, daily untouched.
+  useEffect(() => {
+    if (!qa.active) return
+    setMode('unlimited'); setGrid(getGridForDay(qa.index))
+    setFilled({}); setLives(MAX_LIVES); setSelectedCell(null); setInput(''); setHistory([])
+    setPhase('playing'); setDailyStats(null); setGaveUp(false); setShowGiveUpConfirm(false); setAnswersCell(null); setShowResult(false); setResultTab('board')
+  }, [qa.active, qa.index])
+  /* eslint-enable react-hooks/set-state-in-effect */
   useEffect(() => {
     if (phase === 'playing') return
     const t = setTimeout(() => setShowResult(true), RESULT_REVEAL_DELAY_MS) // let the revealed grid show first
@@ -258,6 +271,8 @@ export default function FootballTicTacToe({ onBackToModes }) {
 
   return (
     <div className="tv-scene min-h-dvh text-primary" style={accentVars('tictactoe')}>
+    {qa.active && <QaBar gameId="Tic-Tac-Toe" index={qa.index} onPrev={qa.prev} onNext={qa.next}
+      meta={{ rows: grid.rows?.map(c => categoryLabel(c, t)).join(' / '), cols: grid.cols?.map(c => categoryLabel(c, t)).join(' / ') }} />}
     <div className="flex flex-col items-center px-4 pb-8 max-w-4xl mx-auto">
       <div className="w-full"><GameChrome
         motifId="tictactoe"
