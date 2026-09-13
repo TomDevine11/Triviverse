@@ -1,0 +1,3151 @@
+{
+  "meta": {
+    "generatedAt": "2026-09-07",
+    "pages": 10,
+    "clubs": 12,
+    "definition": "Counted from appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, plus Champions League appearances from 1992. Pre-1992 English First Division and European Cup appearances aren’t included, so all-time totals published elsewhere can be higher.",
+    "inclusion": ">=1 appearance for each club across Big-5 top-flight leagues + Champions League"
+  },
+  "clubs": [
+    {
+      "slug": "ac-milan",
+      "name": "AC Milan",
+      "pages": 1
+    },
+    {
+      "slug": "arsenal",
+      "name": "Arsenal",
+      "pages": 2
+    },
+    {
+      "slug": "barcelona",
+      "name": "Barcelona",
+      "pages": 1
+    },
+    {
+      "slug": "bayern-munich",
+      "name": "Bayern Munich",
+      "pages": 1
+    },
+    {
+      "slug": "borussia-dortmund",
+      "name": "Borussia Dortmund",
+      "pages": 1
+    },
+    {
+      "slug": "chelsea",
+      "name": "Chelsea",
+      "pages": 3
+    },
+    {
+      "slug": "inter",
+      "name": "Inter",
+      "pages": 1
+    },
+    {
+      "slug": "liverpool",
+      "name": "Liverpool",
+      "pages": 1
+    },
+    {
+      "slug": "manchester-city",
+      "name": "Manchester City",
+      "pages": 2
+    },
+    {
+      "slug": "manchester-united",
+      "name": "Manchester United",
+      "pages": 3
+    },
+    {
+      "slug": "real-madrid",
+      "name": "Real Madrid",
+      "pages": 3
+    },
+    {
+      "slug": "tottenham",
+      "name": "Tottenham",
+      "pages": 1
+    }
+  ],
+  "pages": [
+    {
+      "slug": "barcelona-and-real-madrid",
+      "aName": "Barcelona",
+      "bName": "Real Madrid",
+      "aSlug": "barcelona",
+      "bSlug": "real-madrid",
+      "aId": "131",
+      "bId": "418",
+      "tier": "rich",
+      "total": 28,
+      "totalQualifying": 28,
+      "famous": 2,
+      "notable": 2,
+      "players": [
+        {
+          "id": "3446",
+          "n": "Luís Figo",
+          "s": false,
+          "a": {
+            "apps": 196,
+            "goals": 37
+          },
+          "b": {
+            "apps": 222,
+            "goals": 54
+          },
+          "surname": "figo",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "7601",
+          "n": "Luis Enrique",
+          "s": false,
+          "a": {
+            "apps": 243,
+            "goals": 92
+          },
+          "b": {
+            "apps": 165,
+            "goals": 15
+          },
+          "surname": "enrique",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "8023",
+          "n": "Michael Laudrup",
+          "s": false,
+          "a": {
+            "apps": 177,
+            "goals": 40
+          },
+          "b": {
+            "apps": 68,
+            "goals": 12
+          },
+          "surname": "laudrup",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "8025",
+          "n": "Bernd Schuster",
+          "s": false,
+          "a": {
+            "apps": 170,
+            "goals": 63
+          },
+          "b": {
+            "apps": 61,
+            "goals": 13
+          },
+          "surname": "schuster",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "147796",
+          "n": "Luis Milla",
+          "s": false,
+          "a": {
+            "apps": 54,
+            "goals": 2
+          },
+          "b": {
+            "apps": 170,
+            "goals": 3
+          },
+          "surname": "milla",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3140",
+          "n": "Ronaldo",
+          "s": false,
+          "a": {
+            "apps": 37,
+            "goals": 34
+          },
+          "b": {
+            "apps": 161,
+            "goals": 96
+          },
+          "surname": "ronaldo",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "4257",
+          "n": "Samuel Eto'o",
+          "s": true,
+          "a": {
+            "apps": 182,
+            "goals": 124
+          },
+          "b": {
+            "apps": 6,
+            "goals": 0
+          },
+          "surname": "eto o",
+          "aliases": [
+            "etoo",
+            "samuel etoo"
+          ],
+          "flags": []
+        },
+        {
+          "id": "193792",
+          "n": "Joaquín Navarro",
+          "s": false,
+          "a": {
+            "apps": 7,
+            "goals": 3
+          },
+          "b": {
+            "apps": 180,
+            "goals": 2
+          },
+          "surname": "navarro",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "245331",
+          "n": "Justo Tejada",
+          "s": false,
+          "a": {
+            "apps": 149,
+            "goals": 74
+          },
+          "b": {
+            "apps": 33,
+            "goals": 10
+          },
+          "surname": "tejada",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "7611",
+          "n": "Javier Saviola",
+          "s": false,
+          "a": {
+            "apps": 147,
+            "goals": 60
+          },
+          "b": {
+            "apps": 23,
+            "goals": 4
+          },
+          "surname": "saviola",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "7521",
+          "n": "Albert Celades",
+          "s": false,
+          "a": {
+            "apps": 80,
+            "goals": 4
+          },
+          "b": {
+            "apps": 83,
+            "goals": 3
+          },
+          "surname": "celades",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "172231",
+          "n": "Lucien Muller",
+          "s": false,
+          "a": {
+            "apps": 68,
+            "goals": 3
+          },
+          "b": {
+            "apps": 77,
+            "goals": 2
+          },
+          "surname": "muller",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "216074",
+          "n": "Chus Pereda",
+          "s": false,
+          "a": {
+            "apps": 134,
+            "goals": 42
+          },
+          "b": {
+            "apps": 2,
+            "goals": 1
+          },
+          "surname": "pereda",
+          "aliases": [],
+          "flags": [
+            "low_apps_b"
+          ]
+        },
+        {
+          "id": "245299",
+          "n": "Evaristo de Macedo",
+          "s": false,
+          "a": {
+            "apps": 114,
+            "goals": 78
+          },
+          "b": {
+            "apps": 17,
+            "goals": 4
+          },
+          "surname": "de macedo",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "7933",
+          "n": "Alfonso",
+          "s": false,
+          "a": {
+            "apps": 26,
+            "goals": 2
+          },
+          "b": {
+            "apps": 89,
+            "goals": 13
+          },
+          "surname": "alfonso",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "173941",
+          "n": "Nando",
+          "s": false,
+          "a": {
+            "apps": 63,
+            "goals": 0
+          },
+          "b": {
+            "apps": 50,
+            "goals": 0
+          },
+          "surname": "nando",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "7939",
+          "n": "Gheorghe Hagi",
+          "s": false,
+          "a": {
+            "apps": 38,
+            "goals": 7
+          },
+          "b": {
+            "apps": 64,
+            "goals": 16
+          },
+          "surname": "hagi",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "7675",
+          "n": "Miquel Soler",
+          "s": false,
+          "a": {
+            "apps": 82,
+            "goals": 2
+          },
+          "b": {
+            "apps": 18,
+            "goals": 1
+          },
+          "surname": "soler",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "7608",
+          "n": "Dani García",
+          "s": false,
+          "a": {
+            "apps": 69,
+            "goals": 16
+          },
+          "b": {
+            "apps": 11,
+            "goals": 0
+          },
+          "surname": "garcia",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "348723",
+          "n": "Hilario Marrero",
+          "s": false,
+          "a": {
+            "apps": 6,
+            "goals": 1
+          },
+          "b": {
+            "apps": 73,
+            "goals": 22
+          },
+          "surname": "marrero",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "8013",
+          "n": "Robert Prosinecki",
+          "s": false,
+          "a": {
+            "apps": 19,
+            "goals": 2
+          },
+          "b": {
+            "apps": 55,
+            "goals": 10
+          },
+          "surname": "prosinecki",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "313717",
+          "n": "Alfonso Navarro",
+          "s": false,
+          "a": {
+            "apps": 56,
+            "goals": 19
+          },
+          "b": {
+            "apps": 5,
+            "goals": 2
+          },
+          "surname": "navarro",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "112515",
+          "n": "Marcos Alonso",
+          "s": true,
+          "a": {
+            "apps": 37,
+            "goals": 2
+          },
+          "b": {
+            "apps": 1,
+            "goals": 0
+          },
+          "surname": "alonso",
+          "aliases": [],
+          "flags": [
+            "low_apps_b"
+          ]
+        },
+        {
+          "id": "313735",
+          "n": "José Canal",
+          "s": false,
+          "a": {
+            "apps": 24,
+            "goals": 10
+          },
+          "b": {
+            "apps": 3,
+            "goals": 0
+          },
+          "surname": "canal",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "172232",
+          "n": "Josep Samitier",
+          "s": false,
+          "a": {
+            "apps": 15,
+            "goals": 14
+          },
+          "b": {
+            "apps": 8,
+            "goals": 4
+          },
+          "surname": "samitier",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "294940",
+          "n": "Fernand Goyvaerts",
+          "s": false,
+          "a": {
+            "apps": 17,
+            "goals": 1
+          },
+          "b": {
+            "apps": 3,
+            "goals": 1
+          },
+          "surname": "goyvaerts",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "214158",
+          "n": "Amador",
+          "s": false,
+          "a": {
+            "apps": 7,
+            "goals": 0
+          },
+          "b": {
+            "apps": 1,
+            "goals": 0
+          },
+          "surname": "amador",
+          "aliases": [],
+          "flags": [
+            "low_apps_b"
+          ]
+        },
+        {
+          "id": "101570",
+          "n": "Julen Lopetegui",
+          "s": false,
+          "a": {
+            "apps": 5,
+            "goals": 0
+          },
+          "b": {
+            "apps": 1,
+            "goals": 0
+          },
+          "surname": "lopetegui",
+          "aliases": [],
+          "flags": [
+            "low_apps_b"
+          ]
+        }
+      ],
+      "coverageNote": "Counted from appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, plus Champions League appearances from 1992. Pre-1992 English First Division and European Cup appearances aren’t included, so all-time totals published elsewhere can be higher.",
+      "externalVerified": false,
+      "warnings": [],
+      "related": [
+        "chelsea-and-real-madrid",
+        "manchester-united-and-real-madrid"
+      ]
+    },
+    {
+      "slug": "ac-milan-and-inter",
+      "aName": "AC Milan",
+      "bName": "Inter",
+      "aSlug": "ac-milan",
+      "bSlug": "inter",
+      "aId": "5",
+      "bId": "46",
+      "tier": "rich",
+      "total": 53,
+      "totalQualifying": 53,
+      "famous": 7,
+      "notable": 7,
+      "players": [
+        {
+          "id": "4168",
+          "n": "Clarence Seedorf",
+          "s": false,
+          "a": {
+            "apps": 389,
+            "goals": 55
+          },
+          "b": {
+            "apps": 64,
+            "goals": 8
+          },
+          "surname": "seedorf",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "5817",
+          "n": "Andrea Pirlo",
+          "s": false,
+          "a": {
+            "apps": 362,
+            "goals": 39
+          },
+          "b": {
+            "apps": 27,
+            "goals": 0
+          },
+          "surname": "pirlo",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "174157",
+          "n": "Lorenzo Buffon",
+          "s": false,
+          "a": {
+            "apps": 275,
+            "goals": 0
+          },
+          "b": {
+            "apps": 80,
+            "goals": 0
+          },
+          "surname": "buffon",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "183779",
+          "n": "Giuseppe Meazza",
+          "s": false,
+          "a": {
+            "apps": 37,
+            "goals": 9
+          },
+          "b": {
+            "apps": 303,
+            "goals": 197
+          },
+          "surname": "meazza",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "126414",
+          "n": "Hakan Çalhanoğlu",
+          "s": true,
+          "a": {
+            "apps": 135,
+            "goals": 22
+          },
+          "b": {
+            "apps": 192,
+            "goals": 44
+          },
+          "surname": "calhanoglu",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "245347",
+          "n": "Giorgio Ghezzi",
+          "s": false,
+          "a": {
+            "apps": 122,
+            "goals": 0
+          },
+          "b": {
+            "apps": 187,
+            "goals": 0
+          },
+          "surname": "ghezzi",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3455",
+          "n": "Zlatan Ibrahimović",
+          "s": true,
+          "a": {
+            "apps": 145,
+            "goals": 85
+          },
+          "b": {
+            "apps": 110,
+            "goals": 63
+          },
+          "surname": "ibrahimovic",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "116697",
+          "n": "Fulvio Collovati",
+          "s": false,
+          "a": {
+            "apps": 123,
+            "goals": 3
+          },
+          "b": {
+            "apps": 109,
+            "goals": 4
+          },
+          "surname": "collovati",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "120391",
+          "n": "Sergio Battistini",
+          "s": false,
+          "a": {
+            "apps": 88,
+            "goals": 13
+          },
+          "b": {
+            "apps": 113,
+            "goals": 10
+          },
+          "surname": "battistini",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "54906",
+          "n": "Matteo Darmian",
+          "s": true,
+          "a": {
+            "apps": 4,
+            "goals": 0
+          },
+          "b": {
+            "apps": 189,
+            "goals": 12
+          },
+          "surname": "darmian",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "5797",
+          "n": "Christian Vieri",
+          "s": false,
+          "a": {
+            "apps": 13,
+            "goals": 1
+          },
+          "b": {
+            "apps": 165,
+            "goals": 109
+          },
+          "surname": "vieri",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "116741",
+          "n": "Aldo Serena",
+          "s": false,
+          "a": {
+            "apps": 9,
+            "goals": 0
+          },
+          "b": {
+            "apps": 165,
+            "goals": 55
+          },
+          "surname": "serena",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "2540",
+          "n": "Dario Simic",
+          "s": false,
+          "a": {
+            "apps": 103,
+            "goals": 1
+          },
+          "b": {
+            "apps": 66,
+            "goals": 3
+          },
+          "surname": "simic",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "17129",
+          "n": "Sulley Muntari",
+          "s": false,
+          "a": {
+            "apps": 78,
+            "goals": 13
+          },
+          "b": {
+            "apps": 85,
+            "goals": 7
+          },
+          "surname": "muntari",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "255302",
+          "n": "Aldo Bet",
+          "s": false,
+          "a": {
+            "apps": 139,
+            "goals": 0
+          },
+          "b": {
+            "apps": 8,
+            "goals": 0
+          },
+          "surname": "bet",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "5802",
+          "n": "Thomas Helveg",
+          "s": false,
+          "a": {
+            "apps": 120,
+            "goals": 1
+          },
+          "b": {
+            "apps": 26,
+            "goals": 0
+          },
+          "surname": "helveg",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "5832",
+          "n": "Giuseppe Favalli",
+          "s": false,
+          "a": {
+            "apps": 86,
+            "goals": 2
+          },
+          "b": {
+            "apps": 58,
+            "goals": 0
+          },
+          "surname": "favalli",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "45146",
+          "n": "Mario Balotelli",
+          "s": true,
+          "a": {
+            "apps": 71,
+            "goals": 29
+          },
+          "b": {
+            "apps": 73,
+            "goals": 22
+          },
+          "surname": "balotelli",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "131075",
+          "n": "Francesco Acerbi",
+          "s": true,
+          "a": {
+            "apps": 8,
+            "goals": 0
+          },
+          "b": {
+            "apps": 133,
+            "goals": 4
+          },
+          "surname": "acerbi",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3410",
+          "n": "Hernán Crespo",
+          "s": false,
+          "a": {
+            "apps": 38,
+            "goals": 16
+          },
+          "b": {
+            "apps": 103,
+            "goals": 38
+          },
+          "surname": "crespo",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "448946",
+          "n": "Enrico Candiani",
+          "s": false,
+          "a": {
+            "apps": 22,
+            "goals": 8
+          },
+          "b": {
+            "apps": 118,
+            "goals": 39
+          },
+          "surname": "candiani",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "5940",
+          "n": "Christian Panucci",
+          "s": false,
+          "a": {
+            "apps": 112,
+            "goals": 12
+          },
+          "b": {
+            "apps": 26,
+            "goals": 1
+          },
+          "surname": "panucci",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "19447",
+          "n": "Giampaolo Pazzini",
+          "s": true,
+          "a": {
+            "apps": 81,
+            "goals": 21
+          },
+          "b": {
+            "apps": 56,
+            "goals": 19
+          },
+          "surname": "pazzini",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "5812",
+          "n": "Cristian Brocchi",
+          "s": false,
+          "a": {
+            "apps": 121,
+            "goals": 4
+          },
+          "b": {
+            "apps": 15,
+            "goals": 1
+          },
+          "surname": "brocchi",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "89669",
+          "n": "Antonio Angelillo",
+          "s": false,
+          "a": {
+            "apps": 14,
+            "goals": 2
+          },
+          "b": {
+            "apps": 113,
+            "goals": 68
+          },
+          "surname": "angelillo",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "44834",
+          "n": "Andrea Poli",
+          "s": false,
+          "a": {
+            "apps": 98,
+            "goals": 3
+          },
+          "b": {
+            "apps": 19,
+            "goals": 0
+          },
+          "surname": "poli",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "15272",
+          "n": "Maurizio Ganz",
+          "s": false,
+          "a": {
+            "apps": 41,
+            "goals": 9
+          },
+          "b": {
+            "apps": 68,
+            "goals": 26
+          },
+          "surname": "ganz",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3508",
+          "n": "Francesco Coco",
+          "s": false,
+          "a": {
+            "apps": 66,
+            "goals": 4
+          },
+          "b": {
+            "apps": 36,
+            "goals": 0
+          },
+          "surname": "coco",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "4153",
+          "n": "Roberto Baggio",
+          "s": false,
+          "a": {
+            "apps": 56,
+            "goals": 13
+          },
+          "b": {
+            "apps": 45,
+            "goals": 12
+          },
+          "surname": "baggio",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "5787",
+          "n": "Andrés Guglielminpietro",
+          "s": false,
+          "a": {
+            "apps": 66,
+            "goals": 6
+          },
+          "b": {
+            "apps": 34,
+            "goals": 0
+          },
+          "surname": "guglielminpietro",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3140",
+          "n": "Ronaldo",
+          "s": false,
+          "a": {
+            "apps": 20,
+            "goals": 9
+          },
+          "b": {
+            "apps": 74,
+            "goals": 50
+          },
+          "surname": "ronaldo",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "244806",
+          "n": "Saul Malatrasi",
+          "s": false,
+          "a": {
+            "apps": 68,
+            "goals": 0
+          },
+          "b": {
+            "apps": 22,
+            "goals": 0
+          },
+          "surname": "malatrasi",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3183",
+          "n": "Patrick Vieira",
+          "s": false,
+          "a": {
+            "apps": 2,
+            "goals": 0
+          },
+          "b": {
+            "apps": 79,
+            "goals": 7
+          },
+          "surname": "vieira",
+          "aliases": [],
+          "flags": [
+            "low_apps_a"
+          ]
+        },
+        {
+          "id": "224024",
+          "n": "Adelio Moro",
+          "s": false,
+          "a": {
+            "apps": 19,
+            "goals": 1
+          },
+          "b": {
+            "apps": 61,
+            "goals": 9
+          },
+          "surname": "moro",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "245263",
+          "n": "Narciso Soldan",
+          "s": false,
+          "a": {
+            "apps": 36,
+            "goals": 0
+          },
+          "b": {
+            "apps": 42,
+            "goals": 1
+          },
+          "surname": "soldan",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "251104",
+          "n": "Nevio Scala",
+          "s": false,
+          "a": {
+            "apps": 34,
+            "goals": 0
+          },
+          "b": {
+            "apps": 36,
+            "goals": 1
+          },
+          "surname": "scala",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "5962",
+          "n": "Antonio Cassano",
+          "s": false,
+          "a": {
+            "apps": 36,
+            "goals": 8
+          },
+          "b": {
+            "apps": 28,
+            "goals": 7
+          },
+          "surname": "cassano",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "1403",
+          "n": "Taribo West",
+          "s": false,
+          "a": {
+            "apps": 4,
+            "goals": 1
+          },
+          "b": {
+            "apps": 47,
+            "goals": 1
+          },
+          "surname": "west",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "373963",
+          "n": "Celso Battaia",
+          "s": false,
+          "a": {
+            "apps": 13,
+            "goals": 0
+          },
+          "b": {
+            "apps": 34,
+            "goals": 0
+          },
+          "surname": "battaia",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "245343",
+          "n": "Víctor Benítes",
+          "s": false,
+          "a": {
+            "apps": 38,
+            "goals": 2
+          },
+          "b": {
+            "apps": 8,
+            "goals": 1
+          },
+          "surname": "benites",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "315681",
+          "n": "Celestino Celio",
+          "s": false,
+          "a": {
+            "apps": 26,
+            "goals": 0
+          },
+          "b": {
+            "apps": 16,
+            "goals": 1
+          },
+          "surname": "celio",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "5758",
+          "n": "Edgar Davids",
+          "s": false,
+          "a": {
+            "apps": 23,
+            "goals": 1
+          },
+          "b": {
+            "apps": 18,
+            "goals": 0
+          },
+          "surname": "davids",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "15291",
+          "n": "Mancini",
+          "s": false,
+          "a": {
+            "apps": 7,
+            "goals": 0
+          },
+          "b": {
+            "apps": 33,
+            "goals": 1
+          },
+          "surname": "mancini",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "5786",
+          "n": "Domenico Morfeo",
+          "s": false,
+          "a": {
+            "apps": 11,
+            "goals": 0
+          },
+          "b": {
+            "apps": 25,
+            "goals": 2
+          },
+          "surname": "morfeo",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "39983",
+          "n": "Leonardo Bonucci",
+          "s": true,
+          "a": {
+            "apps": 35,
+            "goals": 2
+          },
+          "b": {
+            "apps": 1,
+            "goals": 0
+          },
+          "surname": "bonucci",
+          "aliases": [],
+          "flags": [
+            "low_apps_b"
+          ]
+        },
+        {
+          "id": "160215",
+          "n": "Pierluigi Orlandini",
+          "s": false,
+          "a": {
+            "apps": 4,
+            "goals": 1
+          },
+          "b": {
+            "apps": 30,
+            "goals": 4
+          },
+          "surname": "orlandini",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "544518",
+          "n": "Renato De Manzano",
+          "s": false,
+          "a": {
+            "apps": 11,
+            "goals": 0
+          },
+          "b": {
+            "apps": 14,
+            "goals": 2
+          },
+          "surname": "de manzano",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "548557",
+          "n": "Emilio Gattoronchieri",
+          "s": false,
+          "a": {
+            "apps": 7,
+            "goals": 0
+          },
+          "b": {
+            "apps": 15,
+            "goals": 0
+          },
+          "surname": "gattoronchieri",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "548566",
+          "n": "Oliviero Mascheroni",
+          "s": false,
+          "a": {
+            "apps": 6,
+            "goals": 0
+          },
+          "b": {
+            "apps": 13,
+            "goals": 3
+          },
+          "surname": "mascheroni",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "20003",
+          "n": "Matías Silvestre",
+          "s": false,
+          "a": {
+            "apps": 4,
+            "goals": 1
+          },
+          "b": {
+            "apps": 9,
+            "goals": 0
+          },
+          "surname": "silvestre",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "546451",
+          "n": "Elpidio Coppa",
+          "s": false,
+          "a": {
+            "apps": 11,
+            "goals": 2
+          },
+          "b": {
+            "apps": 1,
+            "goals": 0
+          },
+          "surname": "coppa",
+          "aliases": [],
+          "flags": [
+            "low_apps_b"
+          ]
+        },
+        {
+          "id": "399595",
+          "n": "Aquilino Bonfanti",
+          "s": false,
+          "a": {
+            "apps": 3,
+            "goals": 0
+          },
+          "b": {
+            "apps": 6,
+            "goals": 1
+          },
+          "surname": "bonfanti",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "505367",
+          "n": "Lino Grava",
+          "s": false,
+          "a": {
+            "apps": 3,
+            "goals": 0
+          },
+          "b": {
+            "apps": 1,
+            "goals": 0
+          },
+          "surname": "grava",
+          "aliases": [],
+          "flags": [
+            "low_apps_b"
+          ]
+        }
+      ],
+      "coverageNote": "Counted from appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, plus Champions League appearances from 1992. Pre-1992 English First Division and European Cup appearances aren’t included, so all-time totals published elsewhere can be higher.",
+      "externalVerified": false,
+      "warnings": [],
+      "related": []
+    },
+    {
+      "slug": "arsenal-and-chelsea",
+      "aName": "Arsenal",
+      "bName": "Chelsea",
+      "aSlug": "arsenal",
+      "bSlug": "chelsea",
+      "aId": "11",
+      "bId": "631",
+      "tier": "rich",
+      "total": 17,
+      "totalQualifying": 17,
+      "famous": 9,
+      "notable": 11,
+      "players": [
+        {
+          "id": "5658",
+          "n": "Petr Cech",
+          "s": false,
+          "a": {
+            "apps": 115,
+            "goals": 0
+          },
+          "b": {
+            "apps": 427,
+            "goals": 0
+          },
+          "surname": "cech",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3182",
+          "n": "Ashley Cole",
+          "s": false,
+          "a": {
+            "apps": 201,
+            "goals": 9
+          },
+          "b": {
+            "apps": 288,
+            "goals": 7
+          },
+          "surname": "cole",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "8806",
+          "n": "Cesc Fàbregas",
+          "s": true,
+          "a": {
+            "apps": 267,
+            "goals": 48
+          },
+          "b": {
+            "apps": 161,
+            "goals": 19
+          },
+          "surname": "fabregas",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3156",
+          "n": "William Gallas",
+          "s": false,
+          "a": {
+            "apps": 127,
+            "goals": 13
+          },
+          "b": {
+            "apps": 189,
+            "goals": 13
+          },
+          "surname": "gallas",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "52769",
+          "n": "Willian",
+          "s": true,
+          "a": {
+            "apps": 25,
+            "goals": 1
+          },
+          "b": {
+            "apps": 275,
+            "goals": 47
+          },
+          "surname": "willian",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "82442",
+          "n": "Olivier Giroud",
+          "s": true,
+          "a": {
+            "apps": 209,
+            "goals": 85
+          },
+          "b": {
+            "apps": 87,
+            "goals": 23
+          },
+          "surname": "giroud",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "102017",
+          "n": "Jorginho",
+          "s": true,
+          "a": {
+            "apps": 68,
+            "goals": 2
+          },
+          "b": {
+            "apps": 176,
+            "goals": 27
+          },
+          "surname": "jorginho",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "46741",
+          "n": "David Luiz",
+          "s": true,
+          "a": {
+            "apps": 53,
+            "goals": 3
+          },
+          "b": {
+            "apps": 189,
+            "goals": 15
+          },
+          "surname": "luiz",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3226",
+          "n": "Nicolas Anelka",
+          "s": false,
+          "a": {
+            "apps": 70,
+            "goals": 24
+          },
+          "b": {
+            "apps": 162,
+            "goals": 50
+          },
+          "surname": "anelka",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "309400",
+          "n": "Kai Havertz",
+          "s": true,
+          "a": {
+            "apps": 96,
+            "goals": 33
+          },
+          "b": {
+            "apps": 122,
+            "goals": 25
+          },
+          "surname": "havertz",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "58864",
+          "n": "Pierre-Emerick Aubameyang",
+          "s": true,
+          "a": {
+            "apps": 128,
+            "goals": 68
+          },
+          "b": {
+            "apps": 21,
+            "goals": 3
+          },
+          "surname": "emerick aubameyang",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3166",
+          "n": "Emmanuel Petit",
+          "s": false,
+          "a": {
+            "apps": 90,
+            "goals": 9
+          },
+          "b": {
+            "apps": 56,
+            "goals": 2
+          },
+          "surname": "petit",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "192279",
+          "n": "Kepa Arrizabalaga",
+          "s": true,
+          "a": {
+            "apps": 2,
+            "goals": 0
+          },
+          "b": {
+            "apps": 126,
+            "goals": 0
+          },
+          "surname": "arrizabalaga",
+          "aliases": [],
+          "flags": [
+            "low_apps_a"
+          ]
+        },
+        {
+          "id": "503987",
+          "n": "Noni Madueke",
+          "s": false,
+          "a": {
+            "apps": 36,
+            "goals": 6
+          },
+          "b": {
+            "apps": 67,
+            "goals": 13
+          },
+          "surname": "madueke",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "134425",
+          "n": "Raheem Sterling",
+          "s": true,
+          "a": {
+            "apps": 23,
+            "goals": 0
+          },
+          "b": {
+            "apps": 68,
+            "goals": 17
+          },
+          "surname": "sterling",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "7858",
+          "n": "Yossi Benayoun",
+          "s": false,
+          "a": {
+            "apps": 22,
+            "goals": 5
+          },
+          "b": {
+            "apps": 15,
+            "goals": 1
+          },
+          "surname": "benayoun",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "23914",
+          "n": "Lassana Diarra",
+          "s": false,
+          "a": {
+            "apps": 9,
+            "goals": 0
+          },
+          "b": {
+            "apps": 20,
+            "goals": 0
+          },
+          "surname": "diarra",
+          "aliases": [],
+          "flags": []
+        }
+      ],
+      "coverageNote": "Counted from appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, plus Champions League appearances from 1992. Pre-1992 English First Division and European Cup appearances aren’t included, so all-time totals published elsewhere can be higher.",
+      "externalVerified": false,
+      "warnings": [],
+      "related": [
+        "chelsea-and-real-madrid",
+        "chelsea-and-manchester-city",
+        "arsenal-and-tottenham"
+      ]
+    },
+    {
+      "slug": "chelsea-and-manchester-city",
+      "aName": "Chelsea",
+      "bName": "Manchester City",
+      "aSlug": "chelsea",
+      "bSlug": "manchester-city",
+      "aId": "631",
+      "bId": "281",
+      "tier": "rich",
+      "total": 20,
+      "totalQualifying": 20,
+      "famous": 6,
+      "notable": 6,
+      "players": [
+        {
+          "id": "3163",
+          "n": "Frank Lampard",
+          "s": true,
+          "a": {
+            "apps": 531,
+            "goals": 170
+          },
+          "b": {
+            "apps": 35,
+            "goals": 6
+          },
+          "surname": "lampard",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "88755",
+          "n": "Kevin De Bruyne",
+          "s": true,
+          "a": {
+            "apps": 6,
+            "goals": 0
+          },
+          "b": {
+            "apps": 357,
+            "goals": 88
+          },
+          "surname": "de bruyne",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "134425",
+          "n": "Raheem Sterling",
+          "s": true,
+          "a": {
+            "apps": 68,
+            "goals": 17
+          },
+          "b": {
+            "apps": 292,
+            "goals": 115
+          },
+          "surname": "sterling",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3467",
+          "n": "Shaun Wright-Phillips",
+          "s": false,
+          "a": {
+            "apps": 99,
+            "goals": 5
+          },
+          "b": {
+            "apps": 179,
+            "goals": 27
+          },
+          "surname": "wright phillips",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "51471",
+          "n": "Mateo Kovacic",
+          "s": true,
+          "a": {
+            "apps": 174,
+            "goals": 6
+          },
+          "b": {
+            "apps": 80,
+            "goals": 8
+          },
+          "surname": "kovacic",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3226",
+          "n": "Nicolas Anelka",
+          "s": false,
+          "a": {
+            "apps": 162,
+            "goals": 50
+          },
+          "b": {
+            "apps": 89,
+            "goals": 37
+          },
+          "surname": "anelka",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3682",
+          "n": "Wayne Bridge",
+          "s": false,
+          "a": {
+            "apps": 113,
+            "goals": 3
+          },
+          "b": {
+            "apps": 42,
+            "goals": 0
+          },
+          "surname": "bridge",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "177476",
+          "n": "Nathan Aké",
+          "s": true,
+          "a": {
+            "apps": 8,
+            "goals": 0
+          },
+          "b": {
+            "apps": 139,
+            "goals": 7
+          },
+          "surname": "ake",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "568177",
+          "n": "Cole Palmer",
+          "s": true,
+          "a": {
+            "apps": 100,
+            "goals": 48
+          },
+          "b": {
+            "apps": 27,
+            "goals": 1
+          },
+          "surname": "palmer",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "102495",
+          "n": "Terry Phelan",
+          "s": false,
+          "a": {
+            "apps": 15,
+            "goals": 0
+          },
+          "b": {
+            "apps": 103,
+            "goals": 1
+          },
+          "surname": "phelan",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "47082",
+          "n": "Daniel Sturridge",
+          "s": false,
+          "a": {
+            "apps": 79,
+            "goals": 15
+          },
+          "b": {
+            "apps": 21,
+            "goals": 5
+          },
+          "surname": "sturridge",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "175583",
+          "n": "David Rocastle",
+          "s": false,
+          "a": {
+            "apps": 29,
+            "goals": 0
+          },
+          "b": {
+            "apps": 21,
+            "goals": 2
+          },
+          "surname": "rocastle",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "258878",
+          "n": "Tosin Adarabioyo",
+          "s": false,
+          "a": {
+            "apps": 43,
+            "goals": 1
+          },
+          "b": {
+            "apps": 3,
+            "goals": 0
+          },
+          "surname": "adarabioyo",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "19948",
+          "n": "Willy Caballero",
+          "s": false,
+          "a": {
+            "apps": 13,
+            "goals": 0
+          },
+          "b": {
+            "apps": 29,
+            "goals": 0
+          },
+          "surname": "caballero",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "13789",
+          "n": "Danny Granville",
+          "s": false,
+          "a": {
+            "apps": 18,
+            "goals": 0
+          },
+          "b": {
+            "apps": 19,
+            "goals": 0
+          },
+          "surname": "granville",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "610849",
+          "n": "Liam Delap",
+          "s": false,
+          "a": {
+            "apps": 33,
+            "goals": 2
+          },
+          "b": {
+            "apps": 3,
+            "goals": 0
+          },
+          "surname": "delap",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "107083",
+          "n": "Laurent Charvet",
+          "s": false,
+          "a": {
+            "apps": 11,
+            "goals": 2
+          },
+          "b": {
+            "apps": 20,
+            "goals": 0
+          },
+          "surname": "charvet",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "20714",
+          "n": "Tal Ben Haim",
+          "s": false,
+          "a": {
+            "apps": 15,
+            "goals": 0
+          },
+          "b": {
+            "apps": 9,
+            "goals": 0
+          },
+          "surname": "ben haim",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "31552",
+          "n": "Scott Sinclair",
+          "s": false,
+          "a": {
+            "apps": 5,
+            "goals": 0
+          },
+          "b": {
+            "apps": 14,
+            "goals": 0
+          },
+          "surname": "sinclair",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "8542",
+          "n": "George Weah",
+          "s": false,
+          "a": {
+            "apps": 11,
+            "goals": 3
+          },
+          "b": {
+            "apps": 7,
+            "goals": 1
+          },
+          "surname": "weah",
+          "aliases": [],
+          "flags": []
+        }
+      ],
+      "coverageNote": "Counted from appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, plus Champions League appearances from 1992. Pre-1992 English First Division and European Cup appearances aren’t included, so all-time totals published elsewhere can be higher.",
+      "externalVerified": false,
+      "warnings": [],
+      "related": [
+        "chelsea-and-real-madrid",
+        "arsenal-and-chelsea",
+        "manchester-city-and-manchester-united"
+      ]
+    },
+    {
+      "slug": "bayern-munich-and-borussia-dortmund",
+      "aName": "Bayern Munich",
+      "bName": "Borussia Dortmund",
+      "aSlug": "bayern-munich",
+      "bSlug": "borussia-dortmund",
+      "aId": "27",
+      "bId": "16",
+      "tier": "rich",
+      "total": 20,
+      "totalQualifying": 20,
+      "famous": 8,
+      "notable": 8,
+      "players": [
+        {
+          "id": "39728",
+          "n": "Mats Hummels",
+          "s": true,
+          "a": {
+            "apps": 99,
+            "goals": 5
+          },
+          "b": {
+            "apps": 433,
+            "goals": 33
+          },
+          "surname": "hummels",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "38253",
+          "n": "Robert Lewandowski",
+          "s": true,
+          "a": {
+            "apps": 331,
+            "goals": 307
+          },
+          "b": {
+            "apps": 159,
+            "goals": 91
+          },
+          "surname": "lewandowski",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "130",
+          "n": "Stefan Reuter",
+          "s": false,
+          "a": {
+            "apps": 95,
+            "goals": 4
+          },
+          "b": {
+            "apps": 351,
+            "goals": 12
+          },
+          "surname": "reuter",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "12405",
+          "n": "Thomas Helmer",
+          "s": false,
+          "a": {
+            "apps": 207,
+            "goals": 27
+          },
+          "b": {
+            "apps": 190,
+            "goals": 16
+          },
+          "surname": "helmer",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "77015",
+          "n": "Michael Rummenigge",
+          "s": false,
+          "a": {
+            "apps": 152,
+            "goals": 44
+          },
+          "b": {
+            "apps": 157,
+            "goals": 36
+          },
+          "surname": "rummenigge",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "74842",
+          "n": "Mario Götze",
+          "s": true,
+          "a": {
+            "apps": 99,
+            "goals": 31
+          },
+          "b": {
+            "apps": 194,
+            "goals": 38
+          },
+          "surname": "gotze",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "170986",
+          "n": "Raphaël Guerreiro",
+          "s": true,
+          "a": {
+            "apps": 84,
+            "goals": 14
+          },
+          "b": {
+            "apps": 202,
+            "goals": 39
+          },
+          "surname": "guerreiro",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "119",
+          "n": "Jürgen Kohler",
+          "s": false,
+          "a": {
+            "apps": 55,
+            "goals": 6
+          },
+          "b": {
+            "apps": 220,
+            "goals": 16
+          },
+          "surname": "kohler",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "166601",
+          "n": "Niklas Süle",
+          "s": true,
+          "a": {
+            "apps": 149,
+            "goals": 7
+          },
+          "b": {
+            "apps": 98,
+            "goals": 3
+          },
+          "surname": "sule",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "125",
+          "n": "Christian Nerlinger",
+          "s": false,
+          "a": {
+            "apps": 173,
+            "goals": 30
+          },
+          "b": {
+            "apps": 65,
+            "goals": 2
+          },
+          "surname": "nerlinger",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "119296",
+          "n": "Emre Can",
+          "s": true,
+          "a": {
+            "apps": 4,
+            "goals": 1
+          },
+          "b": {
+            "apps": 202,
+            "goals": 20
+          },
+          "surname": "can",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "95073",
+          "n": "Jürgen Wegmann",
+          "s": false,
+          "a": {
+            "apps": 58,
+            "goals": 25
+          },
+          "b": {
+            "apps": 117,
+            "goals": 33
+          },
+          "surname": "wegmann",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "106987",
+          "n": "Marcel Sabitzer",
+          "s": true,
+          "a": {
+            "apps": 51,
+            "goals": 2
+          },
+          "b": {
+            "apps": 106,
+            "goals": 7
+          },
+          "surname": "sabitzer",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "75",
+          "n": "Robert Kovac",
+          "s": false,
+          "a": {
+            "apps": 127,
+            "goals": 0
+          },
+          "b": {
+            "apps": 26,
+            "goals": 0
+          },
+          "surname": "kovac",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "528",
+          "n": "Torsten Frings",
+          "s": false,
+          "a": {
+            "apps": 37,
+            "goals": 4
+          },
+          "b": {
+            "apps": 59,
+            "goals": 12
+          },
+          "surname": "frings",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "42460",
+          "n": "Ivan Perišić",
+          "s": true,
+          "a": {
+            "apps": 32,
+            "goals": 7
+          },
+          "b": {
+            "apps": 53,
+            "goals": 10
+          },
+          "surname": "perisic",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "44466",
+          "n": "Sebastian Rode",
+          "s": false,
+          "a": {
+            "apps": 46,
+            "goals": 4
+          },
+          "b": {
+            "apps": 18,
+            "goals": 1
+          },
+          "surname": "rode",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "95532",
+          "n": "Helmut Nerlinger",
+          "s": false,
+          "a": {
+            "apps": 5,
+            "goals": 0
+          },
+          "b": {
+            "apps": 36,
+            "goals": 1
+          },
+          "surname": "nerlinger",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "1986",
+          "n": "Markus Feulner",
+          "s": false,
+          "a": {
+            "apps": 17,
+            "goals": 1
+          },
+          "b": {
+            "apps": 15,
+            "goals": 0
+          },
+          "surname": "feulner",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "39670",
+          "n": "Toni Schumacher",
+          "s": false,
+          "a": {
+            "apps": 8,
+            "goals": 0
+          },
+          "b": {
+            "apps": 1,
+            "goals": 0
+          },
+          "surname": "schumacher",
+          "aliases": [],
+          "flags": [
+            "low_apps_b"
+          ]
+        }
+      ],
+      "coverageNote": "Counted from appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, plus Champions League appearances from 1992. Pre-1992 English First Division and European Cup appearances aren’t included, so all-time totals published elsewhere can be higher.",
+      "externalVerified": false,
+      "warnings": [],
+      "related": []
+    },
+    {
+      "slug": "chelsea-and-real-madrid",
+      "aName": "Chelsea",
+      "bName": "Real Madrid",
+      "aSlug": "chelsea",
+      "bSlug": "real-madrid",
+      "aId": "631",
+      "bId": "418",
+      "tier": "rich",
+      "total": 17,
+      "totalQualifying": 17,
+      "famous": 10,
+      "notable": 10,
+      "players": [
+        {
+          "id": "108390",
+          "n": "Thibaut Courtois",
+          "s": true,
+          "a": {
+            "apps": 142,
+            "goals": 0
+          },
+          "b": {
+            "apps": 303,
+            "goals": 0
+          },
+          "surname": "courtois",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "50202",
+          "n": "Eden Hazard",
+          "s": true,
+          "a": {
+            "apps": 283,
+            "goals": 93
+          },
+          "b": {
+            "apps": 71,
+            "goals": 6
+          },
+          "surname": "hazard",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "4182",
+          "n": "Claude Makélélé",
+          "s": false,
+          "a": {
+            "apps": 193,
+            "goals": 2
+          },
+          "b": {
+            "apps": 132,
+            "goals": 2
+          },
+          "surname": "makelele",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "86202",
+          "n": "Antonio Rüdiger",
+          "s": true,
+          "a": {
+            "apps": 161,
+            "goals": 10
+          },
+          "b": {
+            "apps": 155,
+            "goals": 6
+          },
+          "surname": "rudiger",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "51471",
+          "n": "Mateo Kovacic",
+          "s": true,
+          "a": {
+            "apps": 174,
+            "goals": 6
+          },
+          "b": {
+            "apps": 94,
+            "goals": 3
+          },
+          "surname": "kovacic",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "39153",
+          "n": "Gonzalo Higuaín",
+          "s": true,
+          "a": {
+            "apps": 14,
+            "goals": 5
+          },
+          "b": {
+            "apps": 238,
+            "goals": 115
+          },
+          "surname": "higuain",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "5588",
+          "n": "Michael Essien",
+          "s": false,
+          "a": {
+            "apps": 217,
+            "goals": 23
+          },
+          "b": {
+            "apps": 28,
+            "goals": 2
+          },
+          "surname": "essien",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "9828",
+          "n": "Ricardo Carvalho",
+          "s": false,
+          "a": {
+            "apps": 182,
+            "goals": 9
+          },
+          "b": {
+            "apps": 62,
+            "goals": 3
+          },
+          "surname": "carvalho",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3226",
+          "n": "Nicolas Anelka",
+          "s": false,
+          "a": {
+            "apps": 162,
+            "goals": 50
+          },
+          "b": {
+            "apps": 29,
+            "goals": 4
+          },
+          "surname": "anelka",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "112515",
+          "n": "Marcos Alonso",
+          "s": true,
+          "a": {
+            "apps": 176,
+            "goals": 25
+          },
+          "b": {
+            "apps": 1,
+            "goals": 0
+          },
+          "surname": "alonso",
+          "aliases": [],
+          "flags": [
+            "low_apps_b"
+          ]
+        },
+        {
+          "id": "3374",
+          "n": "Njitap Geremi",
+          "s": false,
+          "a": {
+            "apps": 88,
+            "goals": 4
+          },
+          "b": {
+            "apps": 66,
+            "goals": 1
+          },
+          "surname": "geremi",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "4360",
+          "n": "Arjen Robben",
+          "s": true,
+          "a": {
+            "apps": 86,
+            "goals": 17
+          },
+          "b": {
+            "apps": 61,
+            "goals": 12
+          },
+          "surname": "robben",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "192279",
+          "n": "Kepa Arrizabalaga",
+          "s": true,
+          "a": {
+            "apps": 126,
+            "goals": 0
+          },
+          "b": {
+            "apps": 18,
+            "goals": 0
+          },
+          "surname": "arrizabalaga",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "128223",
+          "n": "Álvaro Morata",
+          "s": true,
+          "a": {
+            "apps": 54,
+            "goals": 17
+          },
+          "b": {
+            "apps": 78,
+            "goals": 29
+          },
+          "surname": "morata",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "23914",
+          "n": "Lassana Diarra",
+          "s": false,
+          "a": {
+            "apps": 20,
+            "goals": 0
+          },
+          "b": {
+            "apps": 108,
+            "goals": 1
+          },
+          "surname": "diarra",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "5940",
+          "n": "Christian Panucci",
+          "s": false,
+          "a": {
+            "apps": 8,
+            "goals": 0
+          },
+          "b": {
+            "apps": 88,
+            "goals": 6
+          },
+          "surname": "panucci",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "4257",
+          "n": "Samuel Eto'o",
+          "s": true,
+          "a": {
+            "apps": 30,
+            "goals": 12
+          },
+          "b": {
+            "apps": 6,
+            "goals": 0
+          },
+          "surname": "eto o",
+          "aliases": [
+            "etoo",
+            "samuel etoo"
+          ],
+          "flags": []
+        }
+      ],
+      "coverageNote": "Counted from appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, plus Champions League appearances from 1992. Pre-1992 English First Division and European Cup appearances aren’t included, so all-time totals published elsewhere can be higher.",
+      "externalVerified": false,
+      "warnings": [],
+      "related": [
+        "arsenal-and-chelsea",
+        "chelsea-and-manchester-city",
+        "manchester-united-and-real-madrid",
+        "barcelona-and-real-madrid"
+      ]
+    },
+    {
+      "slug": "manchester-united-and-real-madrid",
+      "aName": "Manchester United",
+      "bName": "Real Madrid",
+      "aSlug": "manchester-united",
+      "bSlug": "real-madrid",
+      "aId": "985",
+      "bId": "418",
+      "tier": "medium",
+      "total": 10,
+      "totalQualifying": 10,
+      "famous": 5,
+      "notable": 5,
+      "players": [
+        {
+          "id": "8198",
+          "n": "Cristiano Ronaldo",
+          "s": true,
+          "a": {
+            "apps": 295,
+            "goals": 124
+          },
+          "b": {
+            "apps": 393,
+            "goals": 416
+          },
+          "surname": "ronaldo",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3139",
+          "n": "David Beckham",
+          "s": false,
+          "a": {
+            "apps": 342,
+            "goals": 76
+          },
+          "b": {
+            "apps": 142,
+            "goals": 15
+          },
+          "surname": "beckham",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "16306",
+          "n": "Casemiro",
+          "s": true,
+          "a": {
+            "apps": 113,
+            "goals": 17
+          },
+          "b": {
+            "apps": 295,
+            "goals": 30
+          },
+          "surname": "casemiro",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "164770",
+          "n": "Raphaël Varane",
+          "s": true,
+          "a": {
+            "apps": 77,
+            "goals": 2
+          },
+          "b": {
+            "apps": 319,
+            "goals": 10
+          },
+          "surname": "varane",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3407",
+          "n": "Ruud van Nistelrooy",
+          "s": false,
+          "a": {
+            "apps": 193,
+            "goals": 130
+          },
+          "b": {
+            "apps": 87,
+            "goals": 59
+          },
+          "surname": "van nistelrooy",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "45320",
+          "n": "Ángel Di María",
+          "s": true,
+          "a": {
+            "apps": 27,
+            "goals": 3
+          },
+          "b": {
+            "apps": 163,
+            "goals": 30
+          },
+          "surname": "di maria",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "50935",
+          "n": "Chicharito",
+          "s": true,
+          "a": {
+            "apps": 127,
+            "goals": 44
+          },
+          "b": {
+            "apps": 31,
+            "goals": 8
+          },
+          "surname": "chicharito",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "5555",
+          "n": "Gabriel Heinze",
+          "s": false,
+          "a": {
+            "apps": 68,
+            "goals": 1
+          },
+          "b": {
+            "apps": 55,
+            "goals": 3
+          },
+          "surname": "heinze",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "1397",
+          "n": "Michael Owen",
+          "s": false,
+          "a": {
+            "apps": 40,
+            "goals": 9
+          },
+          "b": {
+            "apps": 41,
+            "goals": 14
+          },
+          "surname": "owen",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "282429",
+          "n": "Sergio Reguilón",
+          "s": false,
+          "a": {
+            "apps": 11,
+            "goals": 0
+          },
+          "b": {
+            "apps": 18,
+            "goals": 0
+          },
+          "surname": "reguilon",
+          "aliases": [],
+          "flags": []
+        }
+      ],
+      "coverageNote": "Counted from appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, plus Champions League appearances from 1992. Pre-1992 English First Division and European Cup appearances aren’t included, so all-time totals published elsewhere can be higher.",
+      "externalVerified": false,
+      "warnings": [],
+      "related": [
+        "chelsea-and-real-madrid",
+        "barcelona-and-real-madrid",
+        "liverpool-and-manchester-united",
+        "manchester-city-and-manchester-united"
+      ]
+    },
+    {
+      "slug": "liverpool-and-manchester-united",
+      "aName": "Liverpool",
+      "bName": "Manchester United",
+      "aSlug": "liverpool",
+      "bSlug": "manchester-united",
+      "aId": "31",
+      "bId": "985",
+      "tier": "scarcity",
+      "total": 2,
+      "totalQualifying": 2,
+      "famous": 0,
+      "notable": 0,
+      "players": [
+        {
+          "id": "1397",
+          "n": "Michael Owen",
+          "s": false,
+          "a": {
+            "apps": 231,
+            "goals": 124
+          },
+          "b": {
+            "apps": 40,
+            "goals": 9
+          },
+          "surname": "owen",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3248",
+          "n": "Paul Ince",
+          "s": false,
+          "a": {
+            "apps": 65,
+            "goals": 14
+          },
+          "b": {
+            "apps": 125,
+            "goals": 19
+          },
+          "surname": "ince",
+          "aliases": [],
+          "flags": []
+        }
+      ],
+      "coverageNote": "Counted from appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, plus Champions League appearances from 1992. Pre-1992 English First Division and European Cup appearances aren’t included, so all-time totals published elsewhere can be higher.",
+      "externalVerified": false,
+      "warnings": [],
+      "related": [
+        "manchester-united-and-real-madrid",
+        "manchester-city-and-manchester-united"
+      ]
+    },
+    {
+      "slug": "manchester-city-and-manchester-united",
+      "aName": "Manchester City",
+      "bName": "Manchester United",
+      "aSlug": "manchester-city",
+      "bSlug": "manchester-united",
+      "aId": "281",
+      "bId": "985",
+      "tier": "scarcity",
+      "total": 5,
+      "totalQualifying": 5,
+      "famous": 0,
+      "notable": 0,
+      "players": [
+        {
+          "id": "3465",
+          "n": "Peter Schmeichel",
+          "s": false,
+          "a": {
+            "apps": 29,
+            "goals": 0
+          },
+          "b": {
+            "apps": 286,
+            "goals": 0
+          },
+          "surname": "schmeichel",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3238",
+          "n": "Andy Cole",
+          "s": false,
+          "a": {
+            "apps": 22,
+            "goals": 9
+          },
+          "b": {
+            "apps": 243,
+            "goals": 111
+          },
+          "surname": "cole",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "4276",
+          "n": "Carlos Tévez",
+          "s": false,
+          "a": {
+            "apps": 119,
+            "goals": 58
+          },
+          "b": {
+            "apps": 84,
+            "goals": 25
+          },
+          "surname": "tevez",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3742",
+          "n": "Andrey Kanchelskis",
+          "s": false,
+          "a": {
+            "apps": 10,
+            "goals": 0
+          },
+          "b": {
+            "apps": 93,
+            "goals": 24
+          },
+          "surname": "kanchelskis",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "201",
+          "n": "Owen Hargreaves",
+          "s": false,
+          "a": {
+            "apps": 1,
+            "goals": 0
+          },
+          "b": {
+            "apps": 36,
+            "goals": 2
+          },
+          "surname": "hargreaves",
+          "aliases": [],
+          "flags": [
+            "low_apps_a"
+          ]
+        }
+      ],
+      "coverageNote": "Counted from appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, plus Champions League appearances from 1992. Pre-1992 English First Division and European Cup appearances aren’t included, so all-time totals published elsewhere can be higher.",
+      "externalVerified": false,
+      "warnings": [],
+      "related": [
+        "chelsea-and-manchester-city",
+        "manchester-united-and-real-madrid",
+        "liverpool-and-manchester-united"
+      ]
+    },
+    {
+      "slug": "arsenal-and-tottenham",
+      "aName": "Arsenal",
+      "bName": "Tottenham",
+      "aSlug": "arsenal",
+      "bSlug": "tottenham",
+      "aId": "11",
+      "bId": "148",
+      "tier": "scarcity",
+      "total": 4,
+      "totalQualifying": 4,
+      "famous": 0,
+      "notable": 1,
+      "players": [
+        {
+          "id": "3198",
+          "n": "Sol Campbell",
+          "s": false,
+          "a": {
+            "apps": 187,
+            "goals": 10
+          },
+          "b": {
+            "apps": 255,
+            "goals": 10
+          },
+          "surname": "campbell",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "8883",
+          "n": "Emmanuel Adebayor",
+          "s": false,
+          "a": {
+            "apps": 125,
+            "goals": 54
+          },
+          "b": {
+            "apps": 92,
+            "goals": 35
+          },
+          "surname": "adebayor",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3156",
+          "n": "William Gallas",
+          "s": false,
+          "a": {
+            "apps": 127,
+            "goals": 13
+          },
+          "b": {
+            "apps": 69,
+            "goals": 1
+          },
+          "surname": "gallas",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "3205",
+          "n": "David Bentley",
+          "s": false,
+          "a": {
+            "apps": 2,
+            "goals": 0
+          },
+          "b": {
+            "apps": 42,
+            "goals": 2
+          },
+          "surname": "bentley",
+          "aliases": [],
+          "flags": [
+            "low_apps_a"
+          ]
+        }
+      ],
+      "coverageNote": "Counted from appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, plus Champions League appearances from 1992. Pre-1992 English First Division and European Cup appearances aren’t included, so all-time totals published elsewhere can be higher.",
+      "externalVerified": false,
+      "warnings": [],
+      "related": [
+        "arsenal-and-chelsea"
+      ]
+    }
+  ]
+}

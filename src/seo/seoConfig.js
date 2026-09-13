@@ -8,6 +8,7 @@
 // ─────────────────────────────────────────────────────────────────────────
 
 import { ES } from './es.js'
+import { RELATION_ROUTES } from './relations.js'
 
 export const SITE_URL = 'https://triviverse.com'
 export const BRAND = 'Triviverse'
@@ -25,6 +26,10 @@ export const absoluteFor = (path, lang) => absolute(localePrefix(path, lang))
 const localize = (route, lang) => (lang === 'es' && ES[route.path] ? { ...route, ...ES[route.path] } : route)
 // hreflang alternates (both locales + x-default → English) for a route path.
 export function alternatesFor(path) {
+  // English-only routes (e.g. the relation cluster) advertise no Spanish alternate.
+  if (ROUTES.find(r => r.path === path)?.enOnly) {
+    return [{ hreflang: 'en', href: absolute(path) }, { hreflang: 'x-default', href: absolute(path) }]
+  }
   return [
     { hreflang: 'en', href: absolute(path) },
     { hreflang: 'es', href: absoluteFor(path, 'es') },
@@ -37,10 +42,11 @@ export function alternatesFor(path) {
 // `sections` adds longer-form, unique on-page copy (rendered visibly by
 // SeoContent and into the prerendered static HTML) so each page is substantial
 // rather than thin — which helps it get crawled AND indexed, not just discovered.
-export const ROUTES = [
+const BASE_ROUTES = [
   {
     path: '/',
     name: 'Home',
+    relatedLinks: [{ path: '/players-who-played-for', label: 'Players who played for two clubs — football trivia' }],
     title: 'Triviverse — Free Daily Football Trivia Games',
     description: 'Triviverse: free daily football trivia games — Football Wordle, footy Tic-Tac-Toe, name the top 10, and guess the player from their teammates. Play solo or 1v1.',
     keywords: ['football trivia games', 'football quiz', 'soccer trivia', 'daily football game', 'football guessing game'],
@@ -279,6 +285,12 @@ export const ROUTES = [
           'Plenty of players know this format as Tenaball, Teneball or footy Tenaball rather than Tenable — it is the same daily top-10 football quiz either way. However you spell it, and whether you searched “football tenable”, “tenable football” or “footy tenaball”, you are in the right place.',
         ],
       },
+      {
+        h2: 'What questions come up in Football Tenable?',
+        body: [
+          'Every round is a real top-10 list from football history — for example the Premier League’s all-time top scorers, the most-capped players for a nation like England or Brazil, a single club’s record appearance-makers, or the countries with the most World Cup wins. A fresh Football Tenable question lands every day, and Unlimited mode serves endless random ones, so no two games feel the same.',
+        ],
+      },
     ],
     faq: [
       { q: 'What is Football Tenable?', a: 'Football Tenable is a daily football trivia game where you try to name all ten answers to a top-10 question — such as a competition’s all-time top scorers — before making three mistakes.' },
@@ -428,6 +440,7 @@ export const ROUTES = [
   // archive (answersPath). Content is rendered by AnswersPage / archiveData.js.
   {
     path: '/wordle/answers',
+    enOnly: true, // no Spanish translation yet → English-only (no /es duplicate)
     name: 'Football Wordle Answers',
     hideFromNav: true,
     title: 'Football Wordle Answers — Every Past Answer | Triviverse',
@@ -445,6 +458,7 @@ export const ROUTES = [
   },
   {
     path: '/teammates/answers',
+    enOnly: true, // no Spanish translation yet → English-only (no /es duplicate)
     name: 'Guess the Footballer Answers',
     hideFromNav: true,
     title: 'Guess the Footballer — Past Answers Archive | Triviverse',
@@ -462,6 +476,7 @@ export const ROUTES = [
   },
   {
     path: '/career-path/answers',
+    enOnly: true, // no Spanish translation yet → English-only (no /es duplicate)
     name: 'Career Path Answers',
     hideFromNav: true,
     title: 'Guess the Footballer by Career Path — Past Answers | Triviverse',
@@ -479,6 +494,7 @@ export const ROUTES = [
   },
   {
     path: '/tenable/answers',
+    enOnly: true, // no Spanish translation yet → English-only (no /es duplicate)
     name: 'Football Tenable Answers',
     hideFromNav: true,
     title: 'Football Tenable Questions & Answers — Archive | Triviverse',
@@ -496,6 +512,7 @@ export const ROUTES = [
   },
   {
     path: '/connections/answers',
+    enOnly: true, // no Spanish translation yet → English-only (no /es duplicate)
     name: 'Football Connections Answers',
     hideFromNav: true,
     title: 'Football Connections Answers — Every Past Puzzle | Triviverse',
@@ -519,6 +536,7 @@ export const ROUTES = [
   // the prerendered HTML (crawlable). Rendered by ThemedEnglandPage.
   {
     path: '/england-football-quiz',
+    enOnly: true, // no Spanish translation yet → English-only (no /es duplicate)
     name: 'England Football Quiz',
     hideFromNav: true,
     themePool: 'england',
@@ -543,6 +561,7 @@ export const ROUTES = [
   // obscurity scored from Transfermarkt apps/goals (scripts/growth/gen-pointless).
   {
     path: '/football-pointless',
+    enOnly: true, // no Spanish translation yet → English-only (no /es duplicate)
     name: 'Football Pointless',
     title: 'Football Pointless — Name the Rarest Answers | Triviverse',
     description: 'Football Pointless: every question has many correct answers, but you want rare ones — the more obscure your pick, the fewer points. Find a pointless answer to win.',
@@ -566,6 +585,11 @@ export const ROUTES = [
     changefreq: 'weekly',
   },
 ]
+
+// The full route set = hand-authored game/landing pages + the programmatic SEO
+// relation pages ("players who played for both X and Y"). Both flow through the
+// same prerender / sitemap / <Seo> machinery.
+export const ROUTES = [...BASE_ROUTES, ...RELATION_ROUTES]
 
 export const routeByPath = (path, lang = 'en') => localize(ROUTES.find(r => r.path === path) || ROUTES[0], lang)
 export const indexableRoutes = () => ROUTES.filter(r => !r.noindex)
@@ -658,6 +682,21 @@ export function jsonLdFor(route, lang = 'en') {
         { '@type': 'ListItem', position: 2, name: route.name, item: url },
       ],
     })
+  } else if (route.schema === 'Relation' || route.schema === 'Collection') {
+    // "Played for both X and Y" pages (+ their hub): an ItemList of the actual
+    // answer set (real, truthful list content — the reason the page exists) plus a
+    // BreadcrumbList (Triviverse → hub → this page).
+    if (route.itemList?.items?.length) {
+      blocks.push({
+        '@context': 'https://schema.org', '@type': 'ItemList',
+        name: route.itemList.heading, numberOfItems: route.itemList.items.length,
+        itemListElement: route.itemList.items.slice(0, 100).map((it, i) => ({ '@type': 'ListItem', position: i + 1, name: it.text })),
+      })
+    }
+    const crumbs = [{ '@type': 'ListItem', position: 1, name: BRAND, item: SITE_URL + '/' }]
+    if (route.schema === 'Relation') crumbs.push({ '@type': 'ListItem', position: 2, name: 'Played For Two Clubs', item: absolute('/players-who-played-for') })
+    crumbs.push({ '@type': 'ListItem', position: crumbs.length + 1, name: route.name, item: url })
+    blocks.push({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: crumbs })
   } else {
     // Content/archive pages (e.g. /wordle/answers): indexable but not a game, so
     // they get a BreadcrumbList (Triviverse → parent game → this page) for
