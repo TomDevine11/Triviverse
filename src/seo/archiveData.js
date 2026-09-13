@@ -46,15 +46,16 @@ export const ANSWER_GAMES = {
     accent: 'pointless', kind: 'list',
     forDay: (d) => {
       const q = getPointlessForDay(d)
-      return {
-        primary: q.title,
-        // Answers are pre-sorted ascending nameability, so the head of the list is
-        // the most "pointless" — the answers almost nobody finds. Show ten.
-        list: (q.answers || []).slice(0, 10).map((a) => ({
-          text: a.d,
-          detail: a.p === 0 ? 'POINTLESS' : `${a.p} pts`,
-        })),
-      }
+      const all = q.answers || []
+      // Answers are pre-sorted ascending nameability, so the head of the list is
+      // always a run of zero-scorers. Taking the first ten therefore rendered ten
+      // identical "POINTLESS" labels against ten names nobody recognises — no
+      // range, and nothing a player would actually want to read. Show both ends:
+      // the rarest few, then the most obvious answers and what they would cost.
+      const rarest = all.slice(0, 5)
+      const obvious = all.slice(-5).reverse().filter((a) => !rarest.includes(a))
+      const row = (a) => ({ text: a.d, detail: a.p === 0 ? 'POINTLESS' : `${a.p} pts` })
+      return { primary: q.title, list: [...rarest.map(row), ...obvious.map(row)] }
     },
   },
   '/connections': {
