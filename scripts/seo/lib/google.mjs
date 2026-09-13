@@ -64,7 +64,11 @@ export const ga4 = {
   countries: (days) => ga4Run({ dimensions: ['country'], metrics: ['sessions', 'engagedSessions'], days, limit: 15, orderBy: DESC('sessions') }),
   devices: (days) => ga4Run({ dimensions: ['deviceCategory'], metrics: ['sessions', 'engagementRate'], days, orderBy: DESC('sessions') }),
   newVsReturning: (days) => ga4Run({ dimensions: ['newVsReturning'], metrics: ['activeUsers', 'sessions'], days, orderBy: DESC('sessions') }),
-  events: (days) => ga4Run({ dimensions: ['eventName'], metrics: ['eventCount'], days, limit: 20, orderBy: DESC('eventCount') }),
+  events: (days) => ga4Run({ dimensions: ['eventName'], metrics: ['eventCount'], days, limit: 30, orderBy: DESC('eventCount') }),
+  // Referral sources — surfaces TikTok/social traffic vs organic search vs direct.
+  sources: (days) => ga4Run({ dimensions: ['sessionSourceMedium'], metrics: ['sessions', 'engagedSessions'], days, limit: 25, orderBy: DESC('sessions') }),
+  // Daily session trend (ascending) — catch fresh cliffs a 90-day total hides.
+  daily: (days) => ga4Run({ dimensions: ['date'], metrics: ['sessions', 'totalUsers', 'engagedSessions'], days, limit: 400, orderBy: { dimension: { dimensionName: 'date' }, desc: false } }),
 }
 
 // ── Search Console API ───────────────────────────────────────────────────────
@@ -100,17 +104,56 @@ export async function gscQuery({ dimensions = ['query'], days = config.defaults.
   })
 }
 
+// Explicit-date-range variant (for period-over-period comparison + daily trends).
+export async function gscQueryRange({ dimensions = ['query'], startDate, endDate, rowLimit = 100, filters = [], type = 'web' } = {}) {
+  const client = await gscClient()
+  const { data } = await client.searchanalytics.query({
+    siteUrl: config.google.gscSiteUrl,
+    requestBody: { startDate, endDate, dimensions, rowLimit, type, dimensionFilterGroups: filters.length ? [{ filters }] : undefined },
+  })
+  return (data.rows || []).map(r => { const o = {}; dimensions.forEach((d, i) => { o[d] = r.keys[i] }); o.clicks = r.clicks; o.impressions = r.impressions; o.ctr = r.ctr; o.position = r.position; return o })
+}
+
+// URL Inspection API — real indexation status per URL (verdict / coverage / canonical / last crawl).
+// Needs the service account added as an OWNER of the property; returns { error } gracefully otherwise.
+export async function urlInspect(url) {
+  const client = await gscClient()
+  try {
+    const { data } = await client.urlInspection.index.inspect({ requestBody: { inspectionUrl: url, siteUrl: config.google.gscSiteUrl } })
+    return data.inspectionResult || {}
+  } catch (e) { return { error: e?.errors?.[0]?.message || e?.message || 'inspection failed' } }
+}
+
+const totals = (arr) => arr.reduce((s, x) => ({ clicks: s.clicks + x.clicks, impressions: s.impressions + x.impressions }), { clicks: 0, impressions: 0 })
+
 export const gsc = {
   topQueries: (days) => gscQuery({ dimensions: ['query'], days, rowLimit: 200 }),
-  topPages: (days) => gscQuery({ dimensions: ['page'], days, rowLimit: 100 }),
-  queriesByPage: (days) => gscQuery({ dimensions: ['page', 'query'], days, rowLimit: 500 }),
+  topPages: (days) => gscQuery({ dimensions: ['page'], days, rowLimit: 200 }),
+  queriesByPage: (days) => gscQuery({ dimensions: ['page', 'query'], days, rowLimit: 2000 }),
   countries: (days) => gscQuery({ dimensions: ['country'], days, rowLimit: 30 }),
+  byDevice: (days) => gscQuery({ dimensions: ['device'], days, rowLimit: 10 }),
+  byAppearance: async (days) => { try { return await gscQuery({ dimensions: ['searchAppearance'], days, rowLimit: 20 }) } catch { return [] } },
+  daily: (days) => gscQuery({ dimensions: ['date'], days, rowLimit: 1000 }),
+  // The exact queries a single URL ranks for (position + impressions) — the raw material for lifting
+  // that URL's average position.
+  pageQueries: (url, days) => gscQuery({ dimensions: ['query'], days, rowLimit: 200, filters: [{ dimension: 'page', operator: 'equals', expression: url }] }),
   // Queries where you rank on page 1-2 but not top 5 — the biggest quick wins.
-  striking: async (days) => (await gscQuery({ dimensions: ['query'], days, rowLimit: 500 }))
-    .filter(r => r.position >= 5 && r.position <= 20 && r.impressions >= 20)
-    .sort((a, b) => b.impressions - a.impressions),
+  striking: async (days) => (await gscQuery({ dimensions: ['query'], days, rowLimit: 1000 }))
+    .filter(r => r.position >= 5 && r.position <= 20 && r.impressions >= 20).sort((a, b) => b.impressions - a.impressions),
+  // Same, but per page → which URL to push and on what query.
+  strikingByPage: async (days) => (await gscQuery({ dimensions: ['page', 'query'], days, rowLimit: 5000 }))
+    .filter(r => r.position >= 5 && r.position <= 20 && r.impressions >= 15).sort((a, b) => b.impressions - a.impressions),
   // High impressions, low CTR — a title/description rewrite opportunity.
-  lowCtr: async (days) => (await gscQuery({ dimensions: ['query'], days, rowLimit: 500 }))
-    .filter(r => r.impressions >= 50 && r.position <= 10 && r.ctr < 0.02)
-    .sort((a, b) => b.impressions - a.impressions),
+  lowCtr: async (days) => (await gscQuery({ dimensions: ['query'], days, rowLimit: 1000 }))
+    .filter(r => r.impressions >= 50 && r.position <= 10 && r.ctr < 0.02).sort((a, b) => b.impressions - a.impressions),
+  // This window vs the window immediately before it (detects fresh regressions/gains).
+  compare: async (days) => {
+    const A = { start: ymd(daysAgo(days + 2)), end: ymd(daysAgo(2)) }
+    const B = { start: ymd(daysAgo(days * 2 + 2)), end: ymd(daysAgo(days + 3)) }
+    const [a, b] = await Promise.all([
+      gscQueryRange({ dimensions: ['query'], startDate: A.start, endDate: A.end, rowLimit: 2000 }),
+      gscQueryRange({ dimensions: ['query'], startDate: B.start, endDate: B.end, rowLimit: 2000 }),
+    ])
+    return { windowDays: days, current: totals(a), previous: totals(b) }
+  },
 }
