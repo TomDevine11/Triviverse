@@ -1,0 +1,454 @@
+{
+  "capturedAt": "2026-09-13T20:56:55.101Z",
+  "why": "Pre-advertising baseline. Ads can only be judged against the state before they existed; once ADS_ENABLED flips this is unrecoverable.",
+  "windowDays": 28,
+  "adsEnabledAtCapture": false,
+  "pages": [
+    {
+      "pagePath": "/",
+      "screenPageViews": 3647,
+      "engagementRate": 0.839943342776204,
+      "userEngagementDuration": 103974,
+      "bounceRate": 0.16005665722379603
+    },
+    {
+      "pagePath": "/tenable",
+      "screenPageViews": 1674,
+      "engagementRate": 0.6971484759095379,
+      "userEngagementDuration": 157296,
+      "bounceRate": 0.3028515240904621
+    },
+    {
+      "pagePath": "/501",
+      "screenPageViews": 1333,
+      "engagementRate": 0.6706521739130434,
+      "userEngagementDuration": 155845,
+      "bounceRate": 0.3293478260869565
+    },
+    {
+      "pagePath": "/football-pointless",
+      "screenPageViews": 726,
+      "engagementRate": 0.8295454545454546,
+      "userEngagementDuration": 66517,
+      "bounceRate": 0.17045454545454544
+    },
+    {
+      "pagePath": "/tictactoe",
+      "screenPageViews": 724,
+      "engagementRate": 0.876750700280112,
+      "userEngagementDuration": 49111,
+      "bounceRate": 0.12324929971988796
+    },
+    {
+      "pagePath": "/wordle",
+      "screenPageViews": 421,
+      "engagementRate": 0.9444444444444444,
+      "userEngagementDuration": 17419,
+      "bounceRate": 0.05555555555555555
+    },
+    {
+      "pagePath": "/career-path",
+      "screenPageViews": 410,
+      "engagementRate": 0.8543689320388349,
+      "userEngagementDuration": 13069,
+      "bounceRate": 0.14563106796116504
+    },
+    {
+      "pagePath": "/teammates",
+      "screenPageViews": 388,
+      "engagementRate": 0.9555555555555556,
+      "userEngagementDuration": 13882,
+      "bounceRate": 0.044444444444444446
+    },
+    {
+      "pagePath": "/connections",
+      "screenPageViews": 383,
+      "engagementRate": 0.9010989010989011,
+      "userEngagementDuration": 16023,
+      "bounceRate": 0.0989010989010989
+    },
+    {
+      "pagePath": "/higher-or-lower",
+      "screenPageViews": 334,
+      "engagementRate": 0.9862068965517241,
+      "userEngagementDuration": 8009,
+      "bounceRate": 0.013793103448275862
+    },
+    {
+      "pagePath": "/es",
+      "screenPageViews": 153,
+      "engagementRate": 1,
+      "userEngagementDuration": 6451,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/es/tictactoe",
+      "screenPageViews": 123,
+      "engagementRate": 0.8571428571428571,
+      "userEngagementDuration": 1644,
+      "bounceRate": 0.14285714285714285
+    },
+    {
+      "pagePath": "/es/tenable",
+      "screenPageViews": 75,
+      "engagementRate": 0.9375,
+      "userEngagementDuration": 4972,
+      "bounceRate": 0.0625
+    },
+    {
+      "pagePath": "/tenable/answers",
+      "screenPageViews": 51,
+      "engagementRate": 0.8695652173913043,
+      "userEngagementDuration": 6557,
+      "bounceRate": 0.13043478260869565
+    },
+    {
+      "pagePath": "/es/teammates",
+      "screenPageViews": 23,
+      "engagementRate": 0.8,
+      "userEngagementDuration": 1207,
+      "bounceRate": 0.2
+    },
+    {
+      "pagePath": "/es/wordle",
+      "screenPageViews": 22,
+      "engagementRate": 1,
+      "userEngagementDuration": 1620,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/es/501",
+      "screenPageViews": 21,
+      "engagementRate": 1,
+      "userEngagementDuration": 1210,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/es/higher-or-lower",
+      "screenPageViews": 18,
+      "engagementRate": 1,
+      "userEngagementDuration": 284,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/es/career-path",
+      "screenPageViews": 17,
+      "engagementRate": 0.8333333333333334,
+      "userEngagementDuration": 946,
+      "bounceRate": 0.16666666666666666
+    },
+    {
+      "pagePath": "/es/football-pointless",
+      "screenPageViews": 16,
+      "engagementRate": 0.8571428571428571,
+      "userEngagementDuration": 434,
+      "bounceRate": 0.14285714285714285
+    },
+    {
+      "pagePath": "/drivers-who-raced-for/ferrari-and-mclaren",
+      "screenPageViews": 9,
+      "engagementRate": 0.625,
+      "userEngagementDuration": 195,
+      "bounceRate": 0.375
+    },
+    {
+      "pagePath": "/es/connections",
+      "screenPageViews": 6,
+      "engagementRate": 1,
+      "userEngagementDuration": 248,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/game/guess-the-f1-driver",
+      "screenPageViews": 5,
+      "engagementRate": 0.5,
+      "userEngagementDuration": 59,
+      "bounceRate": 0.5
+    },
+    {
+      "pagePath": "/games",
+      "screenPageViews": 5,
+      "engagementRate": 0.6666666666666666,
+      "userEngagementDuration": 26,
+      "bounceRate": 0.3333333333333333
+    },
+    {
+      "pagePath": "/game/connections",
+      "screenPageViews": 4,
+      "engagementRate": 0.25,
+      "userEngagementDuration": 76,
+      "bounceRate": 0.75
+    },
+    {
+      "pagePath": "/career-path/answers",
+      "screenPageViews": 3,
+      "engagementRate": 1,
+      "userEngagementDuration": 3,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/drivers-who-raced-for/bmw-sauber-and-williams",
+      "screenPageViews": 3,
+      "engagementRate": 0.5,
+      "userEngagementDuration": 17,
+      "bounceRate": 0.5
+    },
+    {
+      "pagePath": "/drivers-who-raced-for/ferrari-and-mclaren-ford",
+      "screenPageViews": 3,
+      "engagementRate": 0.5,
+      "userEngagementDuration": 14,
+      "bounceRate": 0.5
+    },
+    {
+      "pagePath": "/game/grid",
+      "screenPageViews": 3,
+      "engagementRate": 0.6666666666666666,
+      "userEngagementDuration": 97,
+      "bounceRate": 0.3333333333333333
+    },
+    {
+      "pagePath": "/constructors",
+      "screenPageViews": 2,
+      "engagementRate": 1,
+      "userEngagementDuration": 2,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/drivers-who-raced-for",
+      "screenPageViews": 2,
+      "engagementRate": 1,
+      "userEngagementDuration": 12,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/drivers-who-raced-for/mclaren-and-sauber",
+      "screenPageViews": 2,
+      "engagementRate": 0.5,
+      "userEngagementDuration": 3,
+      "bounceRate": 0.5
+    },
+    {
+      "pagePath": "/game/career-path",
+      "screenPageViews": 2,
+      "engagementRate": 0.5,
+      "userEngagementDuration": 49,
+      "bounceRate": 0.5
+    },
+    {
+      "pagePath": "/game/higher-or-lower",
+      "screenPageViews": 2,
+      "engagementRate": 0,
+      "userEngagementDuration": 0,
+      "bounceRate": 1
+    },
+    {
+      "pagePath": "/game/starting-grid",
+      "screenPageViews": 2,
+      "engagementRate": 0.5,
+      "userEngagementDuration": 38,
+      "bounceRate": 0.5
+    },
+    {
+      "pagePath": "/wordle/answers",
+      "screenPageViews": 2,
+      "engagementRate": 1,
+      "userEngagementDuration": 5,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/constructor/footwork",
+      "screenPageViews": 1,
+      "engagementRate": 1,
+      "userEngagementDuration": 26,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/driver/stefan-johansson",
+      "screenPageViews": 1,
+      "engagementRate": 1,
+      "userEngagementDuration": 7,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/drivers-who-raced-for/arrows-and-williams",
+      "screenPageViews": 1,
+      "engagementRate": 0,
+      "userEngagementDuration": 0,
+      "bounceRate": 1
+    },
+    {
+      "pagePath": "/drivers-who-raced-for/benetton-and-mclaren",
+      "screenPageViews": 1,
+      "engagementRate": 1,
+      "userEngagementDuration": 20,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/drivers-who-raced-for/ferrari-and-sauber",
+      "screenPageViews": 1,
+      "engagementRate": 0,
+      "userEngagementDuration": 0,
+      "bounceRate": 1
+    },
+    {
+      "pagePath": "/drivers-who-raced-for/footwork-and-tyrrell",
+      "screenPageViews": 1,
+      "engagementRate": 1,
+      "userEngagementDuration": 12,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/drivers-who-raced-for/mclaren-and-renault",
+      "screenPageViews": 1,
+      "engagementRate": 0,
+      "userEngagementDuration": 5,
+      "bounceRate": 1
+    },
+    {
+      "pagePath": "/drivers-who-raced-for/mclaren-and-williams",
+      "screenPageViews": 1,
+      "engagementRate": 1,
+      "userEngagementDuration": 19,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/drivers-who-raced-for/sauber-and-williams",
+      "screenPageViews": 1,
+      "engagementRate": 0,
+      "userEngagementDuration": 6,
+      "bounceRate": 1
+    },
+    {
+      "pagePath": "/england-football-quiz",
+      "screenPageViews": 1,
+      "engagementRate": 1,
+      "userEngagementDuration": 22,
+      "bounceRate": 0
+    },
+    {
+      "pagePath": "/players-who-played-for/barcelona-and-real-madrid",
+      "screenPageViews": 1,
+      "engagementRate": 0.5,
+      "userEngagementDuration": 0,
+      "bounceRate": 0.5
+    },
+    {
+      "pagePath": "/players-who-played-for/liverpool-and-manchester-united",
+      "screenPageViews": 1,
+      "engagementRate": 1,
+      "userEngagementDuration": 0,
+      "bounceRate": 0
+    }
+  ],
+  "newVsReturning": [
+    {
+      "newVsReturning": "new",
+      "sessions": 1425,
+      "activeUsers": 1413
+    },
+    {
+      "newVsReturning": "returning",
+      "sessions": 992,
+      "activeUsers": 328
+    },
+    {
+      "newVsReturning": "(not set)",
+      "sessions": 145,
+      "activeUsers": 0
+    },
+    {
+      "newVsReturning": "",
+      "sessions": 23,
+      "activeUsers": 22
+    }
+  ],
+  "events": [
+    {
+      "eventName": "page_view",
+      "eventCount": 10626
+    },
+    {
+      "eventName": "session_start",
+      "eventCount": 2560
+    },
+    {
+      "eventName": "user_engagement",
+      "eventCount": 1928
+    },
+    {
+      "eventName": "game_complete",
+      "eventCount": 1714
+    },
+    {
+      "eventName": "scroll",
+      "eventCount": 1648
+    },
+    {
+      "eventName": "first_visit",
+      "eventCount": 1413
+    },
+    {
+      "eventName": "form_start",
+      "eventCount": 665
+    },
+    {
+      "eventName": "share",
+      "eventCount": 7
+    },
+    {
+      "eventName": "pair_answer_correct",
+      "eventCount": 2
+    },
+    {
+      "eventName": "pair_game_complete",
+      "eventCount": 1
+    },
+    {
+      "eventName": "pair_game_start",
+      "eventCount": 1
+    },
+    {
+      "eventName": "pair_internal_click",
+      "eventCount": 1
+    },
+    {
+      "eventName": "pair_reveal_all",
+      "eventCount": 1
+    },
+    {
+      "eventName": "pair_share_click",
+      "eventCount": 1
+    }
+  ],
+  "channels": [
+    {
+      "sessionDefaultChannelGroup": "Organic Search",
+      "sessions": 1900
+    },
+    {
+      "sessionDefaultChannelGroup": "AI Assistant",
+      "sessions": 288
+    },
+    {
+      "sessionDefaultChannelGroup": "Direct",
+      "sessions": 243
+    },
+    {
+      "sessionDefaultChannelGroup": "Unassigned",
+      "sessions": 93
+    },
+    {
+      "sessionDefaultChannelGroup": "Referral",
+      "sessions": 48
+    },
+    {
+      "sessionDefaultChannelGroup": "Cross-network",
+      "sessions": 12
+    },
+    {
+      "sessionDefaultChannelGroup": "Organic Social",
+      "sessions": 1
+    }
+  ]
+}
