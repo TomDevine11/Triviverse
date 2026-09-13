@@ -9,7 +9,8 @@
 // JSON-LD baked into <head>, plus real crawlable content (h1, how-to, FAQ,
 // internal links) inside #root. The SPA then boots and replaces #root.
 //
-// Also emits dist/sitemap.xml (with hreflang alternates) and dist/robots.txt.
+// Also emits dist/sitemap.xml (with hreflang alternates), dist/robots.txt and
+// dist/llms.txt + dist/llms-full.txt (the AI-assistant read of the site).
 // ─────────────────────────────────────────────────────────────────────────
 
 import { readFileSync, writeFileSync, mkdirSync } from 'fs'
@@ -19,6 +20,7 @@ import {
   ROUTES, SITE_URL, BRAND, absolute, absoluteFor, localePrefix, routeByPath,
   metaTagsFor, jsonLdFor, indexableRoutes, alternatesFor, LOCALES,
 } from '../src/seo/seoConfig.js'
+import { llmsTxt, llmsFullTxt } from './seo/llms.mjs'
 import { strings } from '../src/i18n/strings.js'
 import { RELATION_BASE, RELATION_PAGES, RELATION_REDIRECTS } from '../src/seo/relations.js'
 
@@ -221,6 +223,14 @@ function writeRobots() {
   console.error('  ✓ robots.txt')
 }
 
+// The AI-assistant read of the site — see scripts/seo/llms.mjs for the why.
+function writeLlms() {
+  writeFileSync(path.join(DIST, 'llms.txt'), llmsTxt())
+  console.error('  ✓ llms.txt')
+  writeFileSync(path.join(DIST, 'llms-full.txt'), llmsFullTxt())
+  console.error('  ✓ llms-full.txt')
+}
+
 // Manifest the server uses for player-pair URL handling: 301 old→new for renamed
 // launched pairs, and 410 Gone for any other retired/unknown pair slug (so the ~124
 // removed pages deindex cleanly instead of soft-404ing to the SPA shell).
@@ -237,6 +247,7 @@ console.error(`Prerendering ${BRAND} (${ROUTES.length} routes × ${LOCALES.lengt
 for (const route of ROUTES) writeRoute(route)
 writeSitemap()
 writeRobots()
+writeLlms()
 writeRelationsManifest()
 await vite.close()
 console.error('Done.')
