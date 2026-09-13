@@ -33,7 +33,10 @@ jobs:
           # excluded: the QA overlay is inert for players, and the ad slots render
           # nothing until a real publisher id is configured.
           userfacing='^(src/(?!dev/|ads/)|public/|index\.html|og-service/|scripts/prerender\.mjs)'
-          if echo "$files" | grep -qPE "$userfacing"; then
+          # -P only: GNU grep rejects -P with -E ("conflicting matchers specified"),
+          # and -q hides that, so the combination silently classified everything as
+          # internal. BSD grep on macOS tolerates it, which is why it passed locally.
+          if echo "$files" | grep -qP "$userfacing"; then
             label="user-facing"
             desc="user-facing — merged without review by standing policy"
           else
