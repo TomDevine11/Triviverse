@@ -1,5 +1,10 @@
 import { useEffect } from 'react'
 import { ADSENSE_CLIENT, AD_SLOTS } from './adsConfig'
+
+// A placement whose slot id is still the 0000000000 placeholder would render an
+// <ins> AdSense can never fill. Skip it individually, so one configured placement
+// can go live without waiting for the other.
+const slotReady = (name) => /^\d{10}$/.test(AD_SLOTS[name] || '') && AD_SLOTS[name] !== '0000000000'
 import { adsConfigured } from './adsInit'
 
 // A reserved ad placement. Until ads are configured it renders nothing at all —
@@ -9,11 +14,11 @@ import { adsConfigured } from './adsInit'
 // permanently blank reserved box on every page.
 export default function AdSlot({ name, className = '' }) {
   useEffect(() => {
-    if (!adsConfigured()) return
+    if (!adsConfigured() || !slotReady(name)) return
     try { (window.adsbygoogle = window.adsbygoogle || []).push({}) } catch { /* script not loaded */ }
-  }, [])
+  }, [name])
 
-  if (!adsConfigured()) return null
+  if (!adsConfigured() || !slotReady(name)) return null
 
   return (
     <div className={`w-full max-w-3xl mx-auto my-8 ${className}`}>
