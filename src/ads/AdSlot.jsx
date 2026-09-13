@@ -1,16 +1,19 @@
 import { useEffect } from 'react'
-import { ADS_ENABLED, ADSENSE_CLIENT, AD_SLOTS } from './adsConfig'
+import { ADSENSE_CLIENT, AD_SLOTS } from './adsConfig'
+import { adsConfigured } from './adsInit'
 
-// A reserved ad placement. While ADS_ENABLED is false it renders nothing at all
-// (no DOM, no scripts, no space) — so it's a true no-op drop-in. When enabled,
-// it renders a responsive AdSense unit for the named slot.
+// A reserved ad placement. Until ads are configured it renders nothing at all —
+// no DOM, no scripts, no space — so it's a true no-op drop-in. "Configured"
+// means ADS_ENABLED *and* a real ca-pub-… id: with the placeholder id still in
+// place the AdSense script never loads, so rendering the <ins> would leave a
+// permanently blank reserved box on every page.
 export default function AdSlot({ name, className = '' }) {
   useEffect(() => {
-    if (!ADS_ENABLED) return
+    if (!adsConfigured()) return
     try { (window.adsbygoogle = window.adsbygoogle || []).push({}) } catch { /* script not loaded */ }
   }, [])
 
-  if (!ADS_ENABLED) return null
+  if (!adsConfigured()) return null
 
   return (
     <div className={`w-full max-w-3xl mx-auto my-8 ${className}`}>
