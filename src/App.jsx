@@ -34,6 +34,10 @@ const Loading = () => <div className="min-h-screen bg-canvas" aria-busy="true" /
 // the locale from the URL.
 const GAME_ROUTES = [
   { path: '/501', el: <GamePage path="/501"><Football501 /></GamePage> },
+  // Same game, opened on the builder. Its own URL because "design your own question" is a
+  // distinct promise (and the one thing competitors charge for) — see seoConfig for the
+  // targeting split that keeps it from competing with /501.
+  { path: '/build-your-own-football-darts', el: <GamePage path="/build-your-own-football-darts"><Football501 initialMode="build" /></GamePage> },
   { path: '/tenable', el: <GamePage path="/tenable"><FootballTenable /></GamePage> },
   { path: '/wordle', el: <GamePage path="/wordle"><FootballWordle /></GamePage> },
   { path: '/tictactoe', el: <GamePage path="/tictactoe"><TicTacToeMenu /></GamePage> },

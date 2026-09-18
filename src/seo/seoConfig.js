@@ -431,6 +431,78 @@ const BASE_ROUTES = [
     schema: 'VideoGame',
     priority: '0.9',
     changefreq: 'daily',
+    relatedLinks: [{ path: '/build-your-own-football-darts', label: 'Build your own football darts question' }],
+  },
+
+  // ── Build-your-own: a second door, deliberately not named after the daily ──────
+  // Targeting is split from /501 on purpose. /501 owns "football 501" and its
+  // misspellings — that is its live ranking and nothing here may compete for it.
+  // This page owns the darts-quiz terms plus the builder long tail. It also never
+  // uses the phrase "Football 501", which is a registered UK trademark (classes 9
+  // and 41) held by Generation Football; "501" as a darts score is descriptive and
+  // fine, the branded compound is not. Keep it that way.
+  //
+  // "Football darts quiz" leads the title rather than the higher-volume "football
+  // darts game" because that phrase is retail-contaminated — its completions are
+  // "for sale", "b&m", "hire near me", i.e. the inflatable party product. Every
+  // completion of "football darts quiz" is this intent instead.
+  {
+    path: '/build-your-own-football-darts',
+    enOnly: true, // no Spanish translation yet → English-only (no /es duplicate)
+    name: 'Build Your Own Football Darts',
+    hideFromNav: true, // reached from /501 and search, not the primary game nav
+    title: 'Football Darts Quiz \u2014 Build Your Own Question | Triviverse',
+    description: 'Pick from six stats \u2014 goals, appearances, transfer fees, games two players shared \u2014 then stack filters by club, nationality, era or trophy. Free, no sign-up.',
+    keywords: ['football darts quiz', 'build your own football quiz', 'football darts quiz game', 'make your own football quiz', 'custom football quiz', 'football darts online quiz', 'football darts quiz questions', 'football darts trivia', 'design your own football quiz'],
+    h1: 'Build Your Own Football Darts Question',
+    tagline: 'Choose what to measure, stack the filters, play the question you made.',
+    ogImage: '/og/501.png',
+    about: 'Most football darts games hand you one question a day and that is that. This one hands you the controls. Choose one of six things to measure \u2014 goals, appearances, the two added together or subtracted from each other, transfer fees, or the number of games two named players shared \u2014 then stack as many filters as you like on top. The question assembles itself in a live preview as you go, tells you whether enough players fit to make a real game of it, and is playable immediately. Free, unlimited, no account.',
+    howTo: [
+      'Choose what you are measuring: goals, appearances, appearances + goals, appearances \u2212 goals, transfer fee, or games two players played together.',
+      'Stack filters \u2014 competition, club, nationality, era, position, a trophy they won, or a player they lined up alongside. Or leave it wide open.',
+      'Watch the question build in the preview beside you, which flags whether the pool is deep enough to play.',
+      'Play it. Name footballers who fit, watch their real totals come off 501, and check out between 0 and \u221210.',
+    ],
+    sections: [
+      {
+        h2: 'Six ways to count down',
+        body: [
+          'Goals and appearances are the obvious two, and you can add them together or subtract one from the other for a question that rewards a very different kind of player. Beyond those: count down by transfer fees paid for players at a given club, or by the number of games two named footballers actually played together \u2014 a stat almost nothing else lets you build a game around.',
+        ],
+      },
+      {
+        h2: 'Filters that stack',
+        body: [
+          'Seven of them, in any combination: competition, club, nationality, era, position, a trophy won, or another player they shared a pitch with. Arsenal goalkeepers. Brazilian forwards in Serie A. Champions League winners of the 2000s. Players who lined up alongside a name you choose. Stack two or three and the pool narrows from hundreds to a handful, which is where the countdown gets genuinely hard.',
+        ],
+      },
+      {
+        h2: 'Accurate however obscure you make it',
+        body: [
+          'Every appearance, goal and fee comes from the same Transfermarkt records the daily uses, back to each competition\u2019s founding season. A question you invent is as accurate as one we set \u2014 the preview simply tells you when you have narrowed it so far that there is no game left in it.',
+        ],
+      },
+      {
+        h2: 'Play it against someone',
+        body: [
+          'Any question you build supports two to five players taking turns on one device, closest to a clean checkout wins. Set something obscure and hand the phone round \u2014 a question nobody has seen before makes a better contest than one everybody already played this morning.',
+        ],
+      },
+    ],
+    faq: [
+      { q: 'Is building your own question free?', a: 'Yes \u2014 completely. Build as many as you like and play them as often as you like, with no account, no sign-up and no subscription.' },
+      { q: 'What can I choose?', a: 'Six stats \u2014 goals, appearances, appearances + goals, appearances \u2212 goals, transfer fee, or games two players played together \u2014 plus any combination of seven filters: competition, club, nationality, era, position, trophy won, and played-alongside.' },
+      { q: 'How does a football darts question work?', a: 'You start on 501 and name footballers who fit the question. Each one\u2019s real total for the chosen stat is deducted from your score. Check out by landing between 0 and \u221210, exactly like a darts finish \u2014 go below \u221210 and you bust.' },
+      { q: 'Can I build a question about two specific players?', a: 'Yes. The "games together" stat counts how many matches two named footballers actually played in the same team, and you pick both.' },
+      { q: 'Can I play a question I built with friends?', a: 'Yes \u2014 local multiplayer for two to five players taking turns on one device, with the closest clean checkout winning.' },
+      { q: 'Is there a limit on how many I can play?', a: 'No. Built questions are unlimited \u2014 no daily cap and nothing to unlock.' },
+      { q: 'Where do the numbers come from?', a: 'Every appearance, goal and transfer fee is sourced from Transfermarkt\u2019s competition records, back to each league\u2019s founding season.' },
+    ],
+    relatedLinks: [{ path: '/501', label: 'Play today\u2019s daily football darts challenge' }],
+    schema: 'VideoGame',
+    priority: '0.7',
+    changefreq: 'weekly',
   },
 
   // ── "Past answers" archives ────────────────────────────────────────────────

@@ -344,10 +344,13 @@ function CountPicker({ title, sub, onPick, onBack, embedded = false }) {
 }
 
 // ── Main ──────────────────────────────────────────────────────────
-export default function Football501() {
+// `initialMode` lets a route open on a segment other than the daily. /build-your-own-football-darts
+// mounts this with 'build' so the builder is what loads — the page promises a question you design,
+// and landing on the daily instead would break that promise on arrival.
+export default function Football501({ initialMode = 'daily' }) {
   const { t } = useI18n()
-  const [phase, setPhase] = useState('entry')   // entry | random | build | playing | won
-  const [mode, setMode] = useState('daily')     // which pill segment is live: daily | unlimited | build
+  const [phase, setPhase] = useState(initialMode === 'build' ? 'build' : 'entry') // entry | random | build | playing | won
+  const [mode, setMode] = useState(initialMode) // which pill segment is live: daily | unlimited | build
   const [challenge, setChallenge] = useState(null)
   const [isDaily, setIsDaily] = useState(false)
   const [gaveUp, setGaveUp] = useState(false)
@@ -355,7 +358,7 @@ export default function Football501() {
   // without changing `phase` away from 'won' (which would reopen it / lose the
   // locked daily). Reset on every game entry so a fresh finish shows the card.
   const [resultDismissed, setResultDismissed] = useState(false)
-  const [loading, setLoading] = useState(true) // boots straight into the daily
+  const [loading, setLoading] = useState(initialMode !== 'build') // boots straight into the daily
   const [players, setPlayers] = useState([])
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0)
   const [history, setHistory] = useState([])
@@ -454,7 +457,8 @@ export default function Football501() {
   // Route the entry Daily card: fresh, resume, or locked result.
   const onDailyCard = () => (loadDailyProgress('501', getDailyEntry().id) ? resumeDaily() : playDaily())
   // Open straight on the daily (like Tenable) — the menu is a step back, not a step in.
-  useEffect(() => { onDailyCard() }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  // Unless the route asked for the builder, which is the initial phase already and loads nothing.
+  useEffect(() => { if (initialMode !== 'build') onDailyCard() }, []) // eslint-disable-line react-hooks/exhaustive-deps
   // The top-of-game pill: switch between today's daily, an unlimited random, and the builder.
   const onPill = (m) => {
     // The active pill follows the current screen, not just the play `mode` (build
