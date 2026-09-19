@@ -197,6 +197,29 @@ growth lever.
 "football wordle" sits at 58.7. That is too deep for metadata to move; it needs authority or a
 different angle, not an alias.
 
+
+**B-020 (desktop > mobile with worse mobile engagement) — resolved, and the premise is a
+measurement artefact.** Engagement *rate* is genuinely lower on mobile (57.6% vs 64.3% over 28
+days, and the per-page gaps are wide: /tenable 54% mobile vs 76% desktop, /tictactoe 55% vs 76%).
+But the behavioural events point the other way. Per session:
+
+| event | mobile | desktop | mobile ÷ desktop |
+|---|---|---|---|
+| `page_view` | 4.62 | 3.85 | **1.20** |
+| `game_complete` | 0.78 | 0.64 | **1.21** |
+| `user_engagement` | 0.45 | 0.90 | 0.50 |
+
+**Mobile users complete 21% more games per session and view 20% more pages.** The only metric
+that is worse is `user_engagement`, which GA4 fires when the page is backgrounded — chronically
+under-reported on mobile web, where people lock the screen or switch apps mid-session, and which
+is exactly what `engagementRate` and `averageSessionDuration` are built from. Scroll (0.68) and
+`form_start` (0.65) follow the same shape, consistent with truncated measurement rather than
+truncated play.
+
+Do not "fix" mobile UX on the strength of the engagement-rate gap — on the metric that describes
+whether people actually play the game, mobile is ahead. Worth revisiting only if `game_complete`
+per session drops below desktop.
+
 | ID | Title | Class | Value | Source | Effort | Priority | Status |
 |----|-------|-------|-------|--------|--------|----------|--------|
 | B-026 | Surface recognised format aliases in titles where Bing shows ranked-but-unclicked demand | user-facing | /tictactoe ranked ~8 for "tiki taka toe" on 216 Bing impressions at 0.0% CTR — it ranks because the body uses the alias, but the snippet didn't | bing | S | P1 | done (#58) |
