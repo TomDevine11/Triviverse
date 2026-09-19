@@ -161,6 +161,7 @@ const BASE_ROUTES = [
       { q: 'Is this the same as Tiki-Taka-Toe or a footy grid?', a: 'Yes — Football Tic-Tac-Toe is the same idea as Tiki-Taka-Toe and other footy grid games, and a football take on the Immaculate Grid: name a player who fits both a row and a column category on a 3x3 grid.' },
       { q: 'Is there a Daily and an Unlimited mode?', a: 'Yes. Daily is one shared grid a day that tracks your win streak; Unlimited generates random grids for endless practice without affecting your stats.' },
     ],
+    relatedLinks: [{ path: '/football-bingo', label: 'Football Bingo \u2014 place each player on a square he fits' }],
     schema: 'VideoGame',
     priority: '0.9',
     changefreq: 'daily',
@@ -340,6 +341,7 @@ const BASE_ROUTES = [
       { q: "Where can I see today's answers?", a: 'When a round ends, every group and its four players are revealed, so you always see the full solution to the day’s puzzle. Unlimited mode lets you play more puzzles and check their answers as often as you like.' },
       { q: 'Is there a Daily and an Unlimited mode?', a: 'Yes. Daily is one shared puzzle a day that tracks your win streak; Unlimited generates random puzzles for endless practice without affecting your stats.' },
     ],
+    relatedLinks: [{ path: '/football-bingo', label: 'Football Bingo \u2014 place each player on a square he fits' }],
     schema: 'VideoGame',
     priority: '0.9',
     changefreq: 'daily',
@@ -654,46 +656,82 @@ const BASE_ROUTES = [
   {
     path: '/football-bingo',
     name: 'Football Bingo',
-    title: 'Football Bingo \u2014 Daily Football Card Game | Triviverse',
-    description: 'Free daily Football Bingo: twelve category squares and players dealt one at a time. Place each on a square he qualifies for \u2014 three wrong and the card is gone.',
-    keywords: ['football bingo', 'football bingo game', 'football bingo quiz', 'footy bingo', 'soccer bingo', 'football bingo card', 'daily football bingo', 'football trivia bingo'],
+    // "Footy bingo" is how a good share of the UK search volume phrases it, and its
+    // qualified forms (footy bingo daily / unlimited / online / quiz) are clean of
+    // the party-game noise that contaminates the bare term.
+    alternateName: 'Footy Bingo',
+    title: 'Football Bingo (Footy Bingo) \u2014 Free Daily Game | Triviverse',
+    description: 'Free Football Bingo: twelve category squares, players dealt one at a time. Place each on a square he qualifies for. Daily card plus unlimited practice, no sign-up.',
+    // Deliberately the QUALIFIED terms only. Bare "football bingo" autocompletes
+    // heavily to the physical party game \u2014 ideas, printable cards, card generator,
+    // bingo for kids, bingo games for seniors \u2014 which is a different product and a
+    // different searcher. The "game / online / daily / unlimited / quiz / challenge"
+    // forms are the ones that mean this. Same trap as "football darts", which
+    // autocompletes to inflatable dartboards for hire.
+    keywords: ['football bingo', 'football bingo game', 'football bingo online', 'football bingo daily', 'football bingo unlimited', 'football bingo quiz', 'football bingo challenge', 'footy bingo', 'footy bingo game', 'footy bingo daily', 'footy bingo unlimited', 'daily football bingo', 'soccer bingo online', 'football bingo tic tac toe'],
     h1: 'Football Bingo',
     tagline: 'Place each player on a square he qualifies for \u2014 fill the card to call bingo.',
     ogImage: '/og/501.png',
-    about: 'Football Bingo hands you a card of twelve football categories \u2014 clubs, leagues, nations and trophies \u2014 then deals you one player at a time. Your job is to place each player on a square he genuinely qualifies for. The catch is that most players qualify for several, and each one can only fill a single square, so spending a versatile name on the easy square can strand a harder one. Three wrong placements and the card is gone.',
+    about: 'Football Bingo hands you a card of twelve football categories \u2014 clubs, leagues, nations and trophies \u2014 then deals you one footballer at a time. Your job is to place each player on a square he genuinely qualifies for. The catch is that most players qualify for several, and each one can only fill a single square, so spending a versatile name on the easy square can strand a harder one. Three wrong placements and the card is gone. There is a new card every day, unlimited practice cards whenever you want them, and no sign-up for either.',
     howTo: [
       'Read the card. Twelve squares, each a football category: a club, a league, a nation or a trophy.',
-      'A player is dealt. Work out every square he qualifies for \u2014 usually more than one.',
+      'A footballer is dealt. Work out every square he qualifies for \u2014 usually more than one.',
       'Tap the square you want to spend him on. Choose the one that will be hardest to fill later.',
       'Fill all twelve to call bingo. Three wrong placements ends the card, and you get three skips if you are stuck.',
     ],
     sections: [
       {
+        h2: 'How Football Bingo works',
+        body: [
+          'Football Bingo \u2014 footy bingo, if that is what you call it \u2014 is a bingo card in football form: twelve squares, each one a category rather than a number. Instead of numbers being called, footballers are dealt \u2014 one at a time, in a fixed order \u2014 and each one has to go somewhere he belongs. Place Mohamed Salah on "Played for Liverpool" and the square is daubed. Place him on "Played for Arsenal" and it costs a life. Fill all twelve squares and you call bingo.',
+        ],
+      },
+      {
         h2: 'The opposite of a grid game',
         body: [
-          'Most football grid games give you a square and ask for a player. Bingo reverses it: you are handed the player and must choose the square. That sounds easier and is not, because knowing who someone is barely helps \u2014 what matters is knowing everything he qualifies for, and which of those squares you are least likely to fill another way.',
+          'Most football grid games give you a square and ask for a player. Bingo reverses it: you are handed the player and must choose the square. That sounds easier and is not, because knowing who someone is barely helps \u2014 what matters is knowing everything he qualifies for, and which of those squares you are least likely to fill another way. A player who fits three squares is a gift and a trap at once.',
+        ],
+      },
+      {
+        h2: 'Daily card, or unlimited practice',
+        body: [
+          'The daily card is the same twelve squares and the same deal for everyone, so a score is worth comparing \u2014 it locks once you finish it, records your streak, and resets at midnight. Unlimited generates a fresh card on demand, as many as you like, and never touches your stats. Both are free and neither needs an account.',
         ],
       },
       {
         h2: 'Every card can be completed',
         body: [
-          'The deal is built from the card rather than drawn at random, with two qualifying players for every square, so a perfect game always exists before you make your first placement. Losing is always a decision, never a bad card \u2014 the same guarantee the rest of Triviverse is built on.',
+          'The deal is built from the card rather than drawn at random, with two qualifying players for every square, so a perfect game always exists before you make your first placement. Losing is always a decision, never a bad card \u2014 the same guarantee the rest of Triviverse is built on, and the reason a square can never be left unfillable by bad luck.',
         ],
       },
       {
         h2: 'Real records, not a quiz bank',
         body: [
-          'Squares are satisfied from the same canonical football data the rest of the site uses \u2014 club appearances, league spells, international caps and honours, sourced rather than hand-written. If a player genuinely turned out for a club, the square accepts him, including the loan spells and short stints a quiz bank would forget.',
+          'Squares are satisfied from the same canonical football data the rest of the site uses \u2014 club appearances, league spells, international caps and honours, sourced rather than hand-written. If a player genuinely turned out for a club, the square accepts him, including the loan spells and short stints a quiz bank would forget. Every footballer dealt clears a recognisability threshold too, so you are never asked to place someone nobody has heard of.',
+        ],
+      },
+      {
+        h2: 'How it differs from Tic-Tac-Toe and Tenable',
+        body: [
+          'The three games share a vocabulary of football categories and ask completely different questions of it. Football Tic-Tac-Toe gives you a square defined by two categories at once and asks you to name a player who satisfies both. Football Tenable names a category and asks for the top ten within it. Bingo hands you the player and asks which of twelve categories to spend him on. If you like one you will probably like the others, and they are all free on the same site.',
         ],
       },
     ],
     faq: [
-      { q: 'How do you play Football Bingo?', a: 'You get a card of twelve football categories and players are dealt one at a time. Place each player on a square whose category he qualifies for. Fill all twelve squares to call bingo; three wrong placements ends the card.' },
+      { q: 'How do you play Football Bingo?', a: 'You get a card of twelve football categories and footballers are dealt one at a time. Place each player on a square whose category he qualifies for. Fill all twelve squares to call bingo; three wrong placements ends the card.' },
       { q: 'What counts as a square?', a: 'Each square is a club, a league, a nation or a trophy \u2014 for example "Played for Arsenal", "Played in the Serie A", "Brazil international" or "Won the Ballon d\u2019Or".' },
       { q: 'What if a player fits more than one square?', a: 'Most do, and that is the game. A player can only fill one square, so spending a versatile name on an easy square can leave a harder one unfillable later.' },
+      { q: 'Is there a new Football Bingo every day?', a: 'Yes. A new daily card every day, the same for everyone, which locks to your result once you finish it and counts towards your streak.' },
+      { q: 'Can I play Football Bingo unlimited?', a: 'Yes \u2014 Unlimited mode generates a fresh card whenever you want one, with no daily cap. Unlimited rounds never affect your daily stats or streak.' },
       { q: 'Can I skip a player?', a: 'Yes \u2014 three skips per card, for when you genuinely do not know where someone belongs. Skips cost no lives.' },
       { q: 'Is every card winnable?', a: 'Yes. The deal is built from the card with two qualifying players per square, so a perfect game always exists. Losing is a decision, not bad luck.' },
-      { q: 'Is it free?', a: 'Completely \u2014 no sign-up, no account. A new card every day, plus unlimited practice cards whenever you want one.' },
+      { q: 'How is it different from Football Tic-Tac-Toe?', a: 'Tic-Tac-Toe gives you a square and asks for a player who fits two categories at once. Bingo gives you the player and asks which of twelve squares to spend him on \u2014 the same football knowledge, asked backwards.' },
+      { q: 'Is Football Bingo free?', a: 'Completely \u2014 no sign-up, no account, no subscription. A new card every day plus unlimited practice cards whenever you want one.' },
+    ],
+    relatedLinks: [
+      { path: '/tictactoe', label: 'Football Tic-Tac-Toe \u2014 two categories, one player' },
+      { path: '/tenable', label: 'Football Tenable \u2014 name the top 10' },
+      { path: '/connections', label: 'Football Connections \u2014 find the four groups' },
     ],
     schema: 'VideoGame',
     priority: '0.8',
@@ -812,6 +850,10 @@ export function jsonLdFor(route, lang = 'en') {
       '@context': 'https://schema.org',
       '@type': 'VideoGame',
       name: `${route.name} — ${BRAND}`,
+      // Aliases the format is commonly known by (Footy Bingo, Teneball…). Declared
+      // on the route and surfaced here so the alias attaches to the same entity
+      // rather than looking like a different game. Was inert config until now.
+      ...(route.alternateName ? { alternateName: route.alternateName } : {}),
       url,
       description: route.description,
       applicationCategory: 'GameApplication',
