@@ -149,3 +149,56 @@ than a single game becomes a significant retention lever in its own right.
 **Re-ranked:** B-003/B-019 closed (no lever). B-016 (Bing) rises — it now gates both the
 /501 question and any real read on a third of traffic; the report script shipped in #42,
 only the API key is missing.
+
+## Findings 2026-09-18/19 (first Bing query data + SERP inspection)
+
+**B-016 (connect Bing Webmaster) — done.** Verified 13 Sept; per-query data arrived 19 Sept.
+The premise that motivated it holds: GA4 over 28 days gives google/organic **1,225** sessions
+against bing/organic **1,012**, level since at least 21 Aug. `chatgpt.com / ai-assistant` is a
+steady third (~10/day). Bing Webmaster has no history before verification, but GA4 always did —
+so "Bing started in September" is an artefact of the tooling, not the traffic.
+
+**B-019 (why Bing ranks /501 and Google doesn't) — answered, and the answer closes it.**
+Bing's first query export splits cleanly by game:
+
+| cluster | impressions | clicks | CTR | avg pos |
+|---|---|---|---|---|
+| 501 | 1,989 | 113 | 5.7% | 2.9 |
+| Tenable | 4,824 | 49 | 1.0% | 6.5 |
+| Tic-tac-toe | 1,481 | 9 | 0.6% | 9.1 |
+
+501 takes 24% of Bing impressions and returns 66% of the clicks. Google's UK SERP for
+"football 501" is **not** an intent mismatch — it is entirely on-topic football content, and we
+sit ~33rd behind `generationfootball.co.uk/football-501` (exact-match slug), `topbins.games`,
+an **Apple App Store listing**, a playfootball.games how-to article and @genfball on X (8.9k
+followers). It is an authority gap, not an on-page one. No cannibalisation: every 501 query maps
+to `/501` alone. **Do not spend further effort here** — this now agrees with the 13 Sept finding
+from the opposite direction.
+
+**Tenable's Bing CTR is structural — do not rewrite its title or description.** 1.0% at position
+6.5 looks like a copy failure and isn't. Bing's SERP for "football tenable" opens with a
+full-viewport **sponsored advert for Tenable.com** (the cybersecurity firm) plus six sitelinks;
+every organic result begins below the fold. Verified by inspecting the SERP directly, 18 Sept.
+Meanwhile Google CTR on the same page doubled unaided over September (1.3% → 3.0%, position flat
+~8.5, record 133 clicks/week). There is nothing to win and a working page to lose.
+
+**B-022 (relation pages) — resolved: do not scale, and the page count was wrong.** There are
+**10** pages plus a hub, not 134. All are cleanly indexed — URL Inspection returns "Submitted and
+indexed", crawled 8 Sept, canonical agreed, rich results PASS — and they still draw **0
+impressions in 28 days**. Demand is real: "players who played for …" autocompletes strongly and
+every completion matches the intent. The constraint is the SERP. For "players who played for
+liverpool and everton" page one is **FourFourTwo, Wikipedia (Merseyside derby), liverpoolfc.com
+and FootballFanCast** — national football media and official club sites. A 224-word generated
+page does not compete there. The pattern earns clicks on F1 because that field is thin; it does
+not transfer to football. Leave the ten in place (they cost nothing) and stop treating it as a
+growth lever.
+
+**/wordle is not a title problem.** 781 impressions in 90 days at average position **52.3** —
+"football wordle" sits at 58.7. That is too deep for metadata to move; it needs authority or a
+different angle, not an alias.
+
+| ID | Title | Class | Value | Source | Effort | Priority | Status |
+|----|-------|-------|-------|--------|--------|----------|--------|
+| B-026 | Surface recognised format aliases in titles where Bing shows ranked-but-unclicked demand | user-facing | /tictactoe ranked ~8 for "tiki taka toe" on 216 Bing impressions at 0.0% CTR — it ranks because the body uses the alias, but the snippet didn't | bing | S | P1 | done (#58) |
+| B-027 | "Football 501" is another company's **registered UK trademark** (UK00004247843, classes 9 + 41, filed 12 Aug 2025 — ten months before our first commit). Tom's call 2026-09-18: carry on with the name, do not push 501 on Bing where the holder sits, Google only | user-facing | legal exposure grows in proportion to how well 501 ranks | legal | — | P1 | decision (research-and-propose only per CLAUDE.md; a rename is unscoped) |
+| B-028 | Give the question builder its own non-trademarked URL and SEO entry | user-facing | the one capability competitors charge £4/mo for was buried in a tab, invisible to search and unlinkable | growth | S | P1 | done (#57) |
