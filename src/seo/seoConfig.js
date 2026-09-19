@@ -587,9 +587,9 @@ const BASE_ROUTES = [
     enOnly: true, // no Spanish translation yet → English-only (no /es duplicate)
     name: 'Football Pointless Answers',
     hideFromNav: true,
-    title: 'Football Pointless Answers — Every Past Board | Triviverse',
-    description: 'Every past Football Pointless board with its rarest correct answers, plus today’s. See which answers scored a pointless zero, or play the free daily.',
-    keywords: ['football pointless answers', 'football pointless answers today', 'football pointless answer', 'pointless football answers', 'football pointless solutions'],
+    title: 'Football Pointless Questions & Answers | Triviverse',
+    description: 'Every past Football Pointless question with its answers — the rarest correct picks, and which scored a pointless zero. Plus today’s. Free, no sign-up.',
+    keywords: ['football pointless answers', 'football pointless questions and answers', 'football pointless quiz with answers', 'football pointless questions', 'football pointless answers today', 'pointless football answers', 'football pointless game with answers', 'football pointless solutions'],
     h1: 'Football Pointless Answers',
     tagline: 'The rarest correct answers from every past daily board.',
     about: 'The complete archive of Football Pointless boards — the ten rarest correct answers for every past daily, newest first, with the score each one would have earned. Today’s board is hidden behind a spoiler so the daily stays playable.',
