@@ -225,3 +225,20 @@ per session drops below desktop.
 | B-026 | Surface recognised format aliases in titles where Bing shows ranked-but-unclicked demand | user-facing | /tictactoe ranked ~8 for "tiki taka toe" on 216 Bing impressions at 0.0% CTR — it ranks because the body uses the alias, but the snippet didn't | bing | S | P1 | done (#58) |
 | B-027 | "Football 501" is another company's **registered UK trademark** (UK00004247843, classes 9 + 41, filed 12 Aug 2025 — ten months before our first commit). Tom's call 2026-09-18: carry on with the name, do not push 501 on Bing where the holder sits, Google only | user-facing | legal exposure grows in proportion to how well 501 ranks | legal | — | P1 | decision (research-and-propose only per CLAUDE.md; a rename is unscoped) |
 | B-028 | Give the question builder its own non-trademarked URL and SEO entry | user-facing | the one capability competitors charge £4/mo for was buried in a tab, invisible to search and unlinkable | growth | S | P1 | done (#57) |
+
+**Tenable's misspelling cluster is structurally capped too — B-002 is as done as it can be.**
+"teneball" draws 2,255 Google impressions in 90 days at position 7.0 and converts at **0.7%**;
+live Search Console on the SERP shows 531 impressions and 4 clicks over seven days. Position is
+not the problem. Inspecting the SERP (19 Sept) shows why:
+
+- Google offers **"Did you mean: tenaball"** above the results, diverting the query.
+- An **AI Overview** answers it inline, and states that *"Teneball most commonly refers to Footy
+  TenaBall"* — Google has resolved the term to a **competitor's brand** (playfootball.games).
+- Three competitors rank above us: playfootball.games/football-tenable, lineup-builder.co.uk and
+  futbol-11.com. We are 4th.
+
+Our title already carries "(Teneball)" and the description "also spelled Teneball or Tenaball", so
+the on-page work #25 shipped is done and correct. The remaining gap is an AI Overview crediting
+someone else's brand, which no metadata change reaches. **Do not reopen this as a title/CTR
+problem.** Both of Tenable's big pools are now understood and both are structural: Bing is capped
+by the Tenable.com advert, Google by the AI Overview and the spelling correction.
