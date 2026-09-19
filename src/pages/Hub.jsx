@@ -7,7 +7,7 @@ import LanguageSwitcher from '../components/LanguageSwitcher'
 import AdSlot from '../ads/AdSlot'
 import { routeByPath } from '../seo/seoConfig'
 import { useI18n } from '../i18n'
-import { playedToday, getStats, recordVisit, formGuide, weeklyPoints, dailyPoints, matchdayNumber, todayIndex } from '../data/dailyStats'
+import { playedToday, getStats, recordVisit, formGuide, weeklyPoints, dailyPoints, matchdayNumber, todayIndex, DAILY_GAMES } from '../data/dailyStats'
 import { inProgressToday } from '../data/dailyProgress'
 import { buildDayShareUrl } from '../utils/shareUrl'
 import SiteFooter from '../components/SiteFooter'
@@ -23,6 +23,7 @@ const GAMES = [
   { to: '/higher-or-lower', stats: 'higherlower', color: '#f97316' },
   { to: '/501', stats: '501', color: '#ef4444' },
   { to: '/football-pointless', stats: 'pointless', color: '#0ea5e9' },
+  { to: '/football-bingo', stats: 'bingo', color: '#14b8a6' },
 ]
 
 const FORM_DOT = { W: 'bg-success', L: 'bg-danger/75', '-': 'bg-inert' }
@@ -107,7 +108,7 @@ export default function Hub() {
           <div className="flex items-center gap-2">
             <div className="hidden md:flex gap-2">
               <StatChip value={visit.streak} label={t('hub.dayStreak')} />
-              <StatChip value={`${playedCount}/9`} label={t('hub.played')} />
+              <StatChip value={`${playedCount}/${lineup.length}`} label={t('hub.played')} />
               <StatChip value={daily} label={t('hub.ptsToday')} accent />
               <StatChip value={points} label={t('hub.ptsWeek')} />
               <StatChip value={countdown} label={t('hub.nextDailies')} accent />
@@ -194,10 +195,10 @@ export default function Hub() {
                   className="w-4 sm:w-6 h-1.5 sm:h-2 rounded-[3px] bg-border -skew-x-[14deg]"
                 />
               ))}
-              <span className={`ml-1 text-base sm:text-xl leading-none ${playedCount === 9 ? 'text-warn' : 'text-inert'}`}>★</span>
+              <span className={`ml-1 text-base sm:text-xl leading-none ${playedCount === lineup.length ? 'text-warn' : 'text-inert'}`}>★</span>
             </div>
             <p className="m-0 mt-1 text-[0.5rem] sm:text-[0.66rem] tracking-[0.1em] text-muted">
-              <b className="text-warn">{t('hub.perfectDay')}</b> — {t('hub.perfectDayHint')}
+              <b className="text-warn">{t('hub.perfectDay')}</b> — {t('hub.perfectDayHint', { n: DAILY_GAMES.length })}
             </p>
           </div>
           <button

@@ -14,6 +14,7 @@ export const GAME_ACCENTS = {
   higherlower: { accent: '#f97316', bright: '#fb923c', tint: 'rgb(249 115 22 / 0.12)' },
   501: { accent: '#ef4444', bright: '#f87171', tint: 'rgb(239 68 68 / 0.12)' },
   pointless: { accent: '#0ea5e9', bright: '#38bdf8', tint: 'rgb(14 165 233 / 0.12)' }, // display azure
+  bingo: { accent: '#14b8a6', bright: '#2dd4bf', tint: 'rgb(20 184 166 / 0.12)' }, // teal — clear of careers' cyan and connections' volt
 }
 
 // Style object for the element that roots a game's accent scope.

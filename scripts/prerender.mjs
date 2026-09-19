@@ -17,7 +17,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import {
-  ROUTES, SITE_URL, BRAND, absolute, absoluteFor, localePrefix, routeByPath,
+  ROUTES, SITE_URL, BRAND, GAME_COUNT, absolute, absoluteFor, localePrefix, routeByPath,
   metaTagsFor, jsonLdFor, indexableRoutes, alternatesFor, LOCALES,
 } from '../src/seo/seoConfig.js'
 import { llmsTxt, llmsFullTxt } from './seo/llms.mjs'
@@ -150,6 +150,29 @@ function crawlable(route, lang) {
   return h
 }
 
+// ── Static pages: fill in the live game count ─────────────────────
+// About/Contact/Privacy/Terms are plain files in public/ that Vite copies
+// verbatim, so any "N games" claim in them goes stale the moment a game is
+// added or removed. They carry {{GAME_COUNT}} / {{GAME_COUNT_WORD}} tokens
+// instead, substituted here from seoConfig once the copy has landed in dist.
+const NUMBER_WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty']
+const numberWord = (n) => NUMBER_WORDS[n] ?? String(n)
+
+function fillStaticCounts() {
+  const filled = []
+  for (const page of ['about', 'contact', 'privacy', 'terms']) {
+    const file = path.join(DIST, page, 'index.html')
+    let html
+    try { html = readFileSync(file, 'utf8') } catch { continue }
+    if (!html.includes('{{GAME_COUNT')) continue
+    writeFileSync(file, html
+      .replaceAll('{{GAME_COUNT_WORD}}', numberWord(GAME_COUNT))
+      .replaceAll('{{GAME_COUNT}}', String(GAME_COUNT)))
+    filled.push(page)
+  }
+  if (filled.length) console.log(`  \u2713 game count (${GAME_COUNT}) \u2192 ${filled.join(', ')}`)
+}
+
 // About / Contact / Privacy / Terms are static files in public/, not app routes, and
 // nothing on the site linked to them — reachable only by typing the URL. Both AdSense
 // review and TikTok's app-review guidelines require those links to be findable on the
@@ -262,5 +285,6 @@ writeSitemap()
 writeRobots()
 writeLlms()
 writeRelationsManifest()
+fillStaticCounts()
 await vite.close()
 console.error('Done.')
