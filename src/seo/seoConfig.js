@@ -127,8 +127,8 @@ const BASE_ROUTES = [
   {
     path: '/tictactoe',
     name: 'Football Tic-Tac-Toe',
-    title: 'Football Tic-Tac-Toe — Daily Grid & 1v1 | Triviverse',
-    description: 'Play Football Tic-Tac-Toe free: a 3x3 grid where each row and column is a category. Name a player who fits both to claim a square. Daily solo grid or 1v1.',
+    title: 'Football Tic-Tac-Toe (Tiki Taka Toe) — Daily Grid | Triviverse',
+    description: 'Play Football Tic-Tac-Toe free — also known as Tiki Taka Toe. A 3x3 grid where every row and column is a category; name a player who fits both. Daily or 1v1.',
     keywords: ['football tic tac toe', 'tiki taka toe', 'tiki-taka-toe', 'footy grid', 'football grid', 'immaculate grid football', 'immaculate footy', 'footy tic tac toe', 'soccer tic tac toe'],
     h1: 'Football Tic-Tac-Toe',
     tagline: 'Two football categories meet in every square — name a player who fits both.',
