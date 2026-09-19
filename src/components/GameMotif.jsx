@@ -64,6 +64,19 @@ const MOTIFS = {
       <rect x="7" y="16.8" width="10" height="2.6" rx="1.3" opacity=".28" />
     </>
   ),
+  'football-bingo': ( // a card with one line daubed — the moment you call it
+    <>
+      <rect x="3.5" y="3.5" width="4.5" height="4.5" rx="1.2" />
+      <rect x="9.75" y="3.5" width="4.5" height="4.5" rx="1.2" opacity=".32" />
+      <rect x="16" y="3.5" width="4.5" height="4.5" rx="1.2" opacity=".32" />
+      <rect x="3.5" y="9.75" width="4.5" height="4.5" rx="1.2" opacity=".32" />
+      <rect x="9.75" y="9.75" width="4.5" height="4.5" rx="1.2" />
+      <rect x="16" y="9.75" width="4.5" height="4.5" rx="1.2" opacity=".32" />
+      <rect x="3.5" y="16" width="4.5" height="4.5" rx="1.2" opacity=".32" />
+      <rect x="9.75" y="16" width="4.5" height="4.5" rx="1.2" opacity=".32" />
+      <rect x="16" y="16" width="4.5" height="4.5" rx="1.2" />
+    </>
+  ),
 }
 
 export default function GameMotif({ id, className = 'w-9 h-9' }) {

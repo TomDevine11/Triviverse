@@ -652,6 +652,54 @@ const BASE_ROUTES = [
   // research). hideFromNav while it's an MVP. Rendered by FootballPointless;
   // obscurity scored from Transfermarkt apps/goals (scripts/growth/gen-pointless).
   {
+    path: '/football-bingo',
+    name: 'Football Bingo',
+    title: 'Football Bingo \u2014 Daily Football Card Game | Triviverse',
+    description: 'Free daily Football Bingo: twelve category squares and players dealt one at a time. Place each on a square he qualifies for \u2014 three wrong and the card is gone.',
+    keywords: ['football bingo', 'football bingo game', 'football bingo quiz', 'footy bingo', 'soccer bingo', 'football bingo card', 'daily football bingo', 'football trivia bingo'],
+    h1: 'Football Bingo',
+    tagline: 'Place each player on a square he qualifies for \u2014 fill the card to call bingo.',
+    ogImage: '/og/501.png',
+    about: 'Football Bingo hands you a card of twelve football categories \u2014 clubs, leagues, nations and trophies \u2014 then deals you one player at a time. Your job is to place each player on a square he genuinely qualifies for. The catch is that most players qualify for several, and each one can only fill a single square, so spending a versatile name on the easy square can strand a harder one. Three wrong placements and the card is gone.',
+    howTo: [
+      'Read the card. Twelve squares, each a football category: a club, a league, a nation or a trophy.',
+      'A player is dealt. Work out every square he qualifies for \u2014 usually more than one.',
+      'Tap the square you want to spend him on. Choose the one that will be hardest to fill later.',
+      'Fill all twelve to call bingo. Three wrong placements ends the card, and you get three skips if you are stuck.',
+    ],
+    sections: [
+      {
+        h2: 'The opposite of a grid game',
+        body: [
+          'Most football grid games give you a square and ask for a player. Bingo reverses it: you are handed the player and must choose the square. That sounds easier and is not, because knowing who someone is barely helps \u2014 what matters is knowing everything he qualifies for, and which of those squares you are least likely to fill another way.',
+        ],
+      },
+      {
+        h2: 'Every card can be completed',
+        body: [
+          'The deal is built from the card rather than drawn at random, with two qualifying players for every square, so a perfect game always exists before you make your first placement. Losing is always a decision, never a bad card \u2014 the same guarantee the rest of Triviverse is built on.',
+        ],
+      },
+      {
+        h2: 'Real records, not a quiz bank',
+        body: [
+          'Squares are satisfied from the same canonical football data the rest of the site uses \u2014 club appearances, league spells, international caps and honours, sourced rather than hand-written. If a player genuinely turned out for a club, the square accepts him, including the loan spells and short stints a quiz bank would forget.',
+        ],
+      },
+    ],
+    faq: [
+      { q: 'How do you play Football Bingo?', a: 'You get a card of twelve football categories and players are dealt one at a time. Place each player on a square whose category he qualifies for. Fill all twelve squares to call bingo; three wrong placements ends the card.' },
+      { q: 'What counts as a square?', a: 'Each square is a club, a league, a nation or a trophy \u2014 for example "Played for Arsenal", "Played in the Serie A", "Brazil international" or "Won the Ballon d\u2019Or".' },
+      { q: 'What if a player fits more than one square?', a: 'Most do, and that is the game. A player can only fill one square, so spending a versatile name on an easy square can leave a harder one unfillable later.' },
+      { q: 'Can I skip a player?', a: 'Yes \u2014 three skips per card, for when you genuinely do not know where someone belongs. Skips cost no lives.' },
+      { q: 'Is every card winnable?', a: 'Yes. The deal is built from the card with two qualifying players per square, so a perfect game always exists. Losing is a decision, not bad luck.' },
+      { q: 'Is it free?', a: 'Completely \u2014 no sign-up, no account. A new card every day, plus unlimited practice cards whenever you want one.' },
+    ],
+    schema: 'VideoGame',
+    priority: '0.8',
+    changefreq: 'daily',
+  },
+  {
     path: '/football-pointless',
     enOnly: true, // no Spanish translation yet → English-only (no /es duplicate)
     name: 'Football Pointless',
@@ -685,6 +733,14 @@ const BASE_ROUTES = [
 export const ROUTES = [...BASE_ROUTES, ...RELATION_ROUTES]
 
 export const routeByPath = (path, lang = 'en') => localize(ROUTES.find(r => r.path === path) || ROUTES[0], lang)
+// The playable games, derived rather than counted by hand: anything that is a
+// VideoGame and reachable from the nav. Every "N games" claim on the site reads
+// from this, so adding a game updates the copy instead of leaving it stale —
+// which is exactly what happened when World Cup Squads was removed and "nine
+// games" lingered in the About page for weeks.
+export const gameRoutes = () => ROUTES.filter(r => r.schema === 'VideoGame' && !r.hideFromNav)
+export const GAME_COUNT = gameRoutes().length
+
 export const indexableRoutes = () => ROUTES.filter(r => !r.noindex)
 
 // ── Meta tags (consumed by client <Seo> and the prerender) ──────────────────
