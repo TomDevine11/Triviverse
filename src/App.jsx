@@ -13,6 +13,7 @@ import PreviewBanner from './components/PreviewBanner'
 // route — the hub and lighter games stay fast, which helps Core Web Vitals.
 const Football501 = lazy(() => import('./games/football501/Football501'))
 const FootballBingo = lazy(() => import('./games/bingo/FootballBingo'))
+const FootballContexto = lazy(() => import('./games/contexto/FootballContexto'))
 const FootballTenable = lazy(() => import('./games/tenable/FootballTenable'))
 const FootballWordle = lazy(() => import('./games/wordle/FootballWordle'))
 const TicTacToeMenu = lazy(() => import('./games/tictactoe/TicTacToeMenu'))
@@ -40,6 +41,7 @@ const GAME_ROUTES = [
   // targeting split that keeps it from competing with /501.
   { path: '/build-your-own-football-darts', el: <GamePage path="/build-your-own-football-darts"><Football501 initialMode="build" /></GamePage> },
   { path: '/football-bingo', el: <GamePage path="/football-bingo"><FootballBingo /></GamePage> },
+  { path: '/football-contexto', el: <GamePage path="/football-contexto"><FootballContexto /></GamePage> },
   { path: '/tenable', el: <GamePage path="/tenable"><FootballTenable /></GamePage> },
   { path: '/wordle', el: <GamePage path="/wordle"><FootballWordle /></GamePage> },
   { path: '/tictactoe', el: <GamePage path="/tictactoe"><TicTacToeMenu /></GamePage> },

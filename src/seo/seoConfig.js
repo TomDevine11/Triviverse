@@ -654,6 +654,87 @@ const BASE_ROUTES = [
   // research). hideFromNav while it's an MVP. Rendered by FootballPointless;
   // obscurity scored from Transfermarkt apps/goals (scripts/growth/gen-pointless).
   {
+    path: '/football-contexto',
+    name: 'Football Contexto',
+    // "Goaltexto" is the other name the format travels under. Thinner than the
+    // Contexto spelling but real, and it costs a parenthesis to carry.
+    alternateName: 'Football Goaltexto',
+    title: 'Football Contexto (Goaltexto) \u2014 Daily Game | Triviverse',
+    description: 'Guess the hidden footballer. Every guess returns how close it is \u2014 rank 1 is the answer. Free daily Football Contexto plus unlimited rounds, no sign-up.',
+    // "football contexto" is unusually clean: every completion (game, answer,
+    // answers today, today, unlimited, quiz, play) is this intent. No printable
+    // /party-game contamination of the kind "football bingo" and "football
+    // darts" both carry, so the qualified AND bare forms are worth targeting.
+    keywords: ['football contexto', 'football contexto game', 'football contexto unlimited', 'football contexto today', 'football contexto answer', 'play football contexto', 'contexto football', 'contexto football player', 'football goaltexto', 'goal texto football', 'football semantle', 'guess the footballer game'],
+    h1: 'Football Contexto',
+    tagline: 'Guess the hidden player \u2014 every guess tells you how close you are.',
+    ogImage: '/og/501.png',
+    about: 'Football Contexto \u2014 goaltexto, if that is what you call it \u2014 hides one footballer and ranks every other player by how closely they are associated with him. Name anyone and you get a number back: rank 1 is the player himself, rank 12 is someone from his dressing room, rank 3,000 means you are nowhere near. There are no lives and no timer. The only score is how many guesses it took, and the only way in is to think about who a footballer is actually connected to \u2014 the teams he played in, the era he played in, the countrymen he lined up beside.',
+    howTo: [
+      'Guess any footballer. The first one is a shot in the dark, and that is fine \u2014 it is a reading.',
+      'Read the rank. Lower is closer. Rank 1 is the hidden player; anything inside the top fifty is someone from his immediate circle.',
+      'Use the connection. A low rank usually means a shared club or a shared dressing room, so guess sideways from there.',
+      'Keep narrowing until you hit rank 1. Unlimited guesses \u2014 the only score is how few you needed.',
+    ],
+    sections: [
+      {
+        h2: 'How Football Contexto works',
+        body: [
+          'Every footballer in the game is ranked against the hidden player before you make your first guess. Guess someone from the same team in the same season and you will land in the top ten. Guess someone who played for the club a decade earlier and you might get two hundred. Guess a goalkeeper from another league who simply happened to be playing at the same time and you will get several thousand. The number is the whole game: it never tells you who the player is, only how warm you are.',
+        ],
+      },
+      {
+        h2: 'What "close" actually means',
+        body: [
+          'Closeness is built from real career data rather than a vague notion of similarity. The strongest signal by far is having played in the same team in the same season \u2014 literal teammates, which is what association feels like to a fan. After that comes sharing a club in different eras, then sharing competitions and an era, then nationality and position. The weighting is deliberately steep: one season together outranks any amount of both-were-Brazilian-midfielders.',
+        ],
+      },
+      {
+        h2: 'A worked example',
+        body: [
+          'Say the hidden player is Fernandinho. Guess Manuel Neuer and you are in the hundreds \u2014 a contemporary, nothing more. Guess John Terry and you move up, because you have at least found the right league and era. Guess Sergio Ag\u00fcero and you are at rank 2, because you have found the dressing room. From there the answer is whoever that dressing room belongs to. The players nearest Fernandinho are the Manchester City side he played in \u2014 and, a little further down, Darijo Srna from his Shakhtar years.',
+        ],
+      },
+      {
+        h2: 'Daily player, or unlimited rounds',
+        body: [
+          'The daily hides the same player for everyone, so a guess count is worth comparing, and it locks to your result once you find him. Unlimited picks a new player whenever you want one and never touches your stats. Both are free, neither needs an account, and there is no limit on guesses in either.',
+        ],
+      },
+      {
+        h2: 'Built on real squads, not a similarity guess',
+        body: [
+          'The rankings come from Transfermarkt club-season rosters across the Premier League, La Liga, Serie A, the Bundesliga, Ligue 1 and the Champions League \u2014 who was actually in which squad, in which season. That is why a teammate ranks where you expect and a stranger does not, and why the list around a player reads like his career rather than a list of players with similar statistics.',
+        ],
+      },
+      {
+        h2: 'If you like Contexto and Semantle',
+        body: [
+          'The format will be familiar if you play Contexto or Semantle: one hidden answer, unlimited guesses, and a rank that tells you how near you are without telling you anything else. This is that idea with footballers instead of words, where "near" means a shared dressing room rather than a shared meaning. If you prefer your clues explicit, Career Path reveals a player\u2019s clubs one at a time and Who Are Ya? reveals his teammates.',
+        ],
+      },
+    ],
+    faq: [
+      { q: 'How do you play Football Contexto?', a: 'Guess any footballer and you get back his rank \u2014 how closely he is associated with the hidden player. Rank 1 is the answer. Keep guessing, using the connections you uncover, until you reach it. There is no limit on guesses.' },
+      { q: 'What does the number mean?', a: 'It is the player\u2019s position in a list of every player in the game, ordered by how closely he is associated with the hidden one. Rank 1 is the hidden player, rank 10 is someone from his team, and a few thousand means no meaningful connection.' },
+      { q: 'How is closeness decided?', a: 'From real career data: playing in the same team in the same season counts most, then sharing a club in another era, then sharing competitions and an era, then nationality and position.' },
+      { q: 'Is there a new player every day?', a: 'Yes \u2014 one hidden player a day, the same for everyone, which locks to your result once you find him and counts towards your streak.' },
+      { q: 'Can I play Football Contexto unlimited?', a: 'Yes. Unlimited mode hides a new player whenever you want one, with no daily cap, and never affects your daily stats or streak.' },
+      { q: 'How many guesses do I get?', a: 'As many as you need. The only score is how few it took, so the game is about narrowing efficiently rather than surviving.' },
+      { q: 'What if my guess is not in the list?', a: 'The game ranks a pool of recognisable players from Europe\u2019s top five leagues and the Champions League. If a name is not in it you will be told, and it costs you nothing \u2014 the suggestions only offer players that can be ranked.' },
+      { q: 'Is it the same as Contexto or Semantle?', a: 'Same idea, footballers instead of words. One hidden answer, unlimited guesses, and a rank that tells you how near you are \u2014 except here "near" means a shared club or dressing room rather than a shared meaning.' },
+      { q: 'Is Football Contexto free?', a: 'Completely \u2014 no sign-up, no account, no subscription. A new player daily plus unlimited rounds whenever you want them.' },
+    ],
+    relatedLinks: [
+      { path: '/career-path', label: 'Career Path \u2014 guess the player from his clubs' },
+      { path: '/teammates', label: 'Who Are Ya? \u2014 guess the player from his teammates' },
+      { path: '/football-bingo', label: 'Football Bingo \u2014 place each player on a square he fits' },
+    ],
+    schema: 'VideoGame',
+    priority: '0.8',
+    changefreq: 'daily',
+  },
+  {
     path: '/football-bingo',
     name: 'Football Bingo',
     // "Footy bingo" is how a good share of the UK search volume phrases it, and its

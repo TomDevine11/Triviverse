@@ -39,6 +39,7 @@
     "build:honours": "node scripts/build-honours.mjs",
     "build:signings": "node scripts/build-signings.mjs",
     "build:indexes": "node scripts/build-indexes.mjs",
+    "build:contexto": "node scripts/build-contexto.mjs",
     "build:pointless": "node scripts/growth/gen-pointless.mjs",
     "qgen:report": "node scripts/qgen/report.mjs",
     "build:relations": "node scripts/seo/build-relations.mjs",
