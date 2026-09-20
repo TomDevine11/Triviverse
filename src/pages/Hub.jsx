@@ -24,6 +24,7 @@ const GAMES = [
   { to: '/501', stats: '501', color: '#ef4444' },
   { to: '/football-pointless', stats: 'pointless', color: '#0ea5e9' },
   { to: '/football-bingo', stats: 'bingo', color: '#14b8a6' },
+  { to: '/football-contexto', stats: 'contexto', color: '#d946ef' },
 ]
 
 const FORM_DOT = { W: 'bg-success', L: 'bg-danger/75', '-': 'bg-inert' }

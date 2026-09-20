@@ -77,6 +77,13 @@ const MOTIFS = {
       <rect x="16" y="16" width="4.5" height="4.5" rx="1.2" />
     </>
   ),
+  'football-contexto': ( // closing in on the hidden player
+    <>
+      <circle cx="12" cy="12" r="2.8" />
+      <circle cx="12" cy="12" r="6.3" fill="none" stroke="currentColor" strokeWidth="1.9" opacity=".55" />
+      <circle cx="12" cy="12" r="9.8" fill="none" stroke="currentColor" strokeWidth="1.9" opacity=".26" />
+    </>
+  ),
 }
 
 export default function GameMotif({ id, className = 'w-9 h-9' }) {
