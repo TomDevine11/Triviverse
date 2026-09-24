@@ -100,20 +100,13 @@ if (caps.searchConsole) {
 if (caps.bing) {
   console.log(heading('BING WEBMASTER'))
   try {
-    const { bing } = await import('./lib/bing.mjs')
+    const { bing, normalizeStats } = await import('./lib/bing.mjs')
     const [queries, pages] = await Promise.all([
       bing.queryStats().catch(() => null),
       bing.pageStats().catch(() => null),
     ])
-    const val = (row, ...names) => { for (const n of names) if (row?.[n] != null) return row[n]; return 0 }
-    const norm = (rows, labelKeys) => (Array.isArray(rows) ? rows : []).map((r) => {
-      const impr = val(r, 'Impressions', 'impressions')
-      const clicks = val(r, 'Clicks', 'clicks')
-      return { label: String(val(r, ...labelKeys) || '(unknown)'), clicks, impressions: impr, ctr: impr ? clicks / impr : 0, position: val(r, 'AvgImpressionPosition', 'Position', 'position') }
-    }).sort((a, b) => b.clicks - a.clicks)
-
-    const q = norm(queries, 'Query', 'query')
-    const p = norm(pages, 'Query', 'Url', 'url')
+    const q = normalizeStats(queries, 'Query', 'query')
+    const p = normalizeStats(pages, 'Url', 'url', 'Query')
     snapshot.bing = { connected: true, queries: q, pages: p }
 
     if (q.length) {
