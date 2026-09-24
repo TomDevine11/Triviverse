@@ -1,0 +1,105 @@
+{
+  "_readme": "Dated SERP observations. Each record is what was actually on the page for one query on one engine on one date — not what an API said about it. Captured by hand through Claude in Chrome at strategic volume (tens of queries, not thousands); see .claude/skills/triviverse-serp. Four fields earn their place: who ranks above us, which SERP features are present, what any AI Overview says and who it credits, and which domains are new. Append, never rewrite — the value is the series.",
+  "observations": [
+    {
+      "date": "2026-09-24", "engine": "google", "query": "teneball", "geo": "uk",
+      "triviversePosition": 4, "gscPosition": 6.9, "gscImpressions": 2723, "gscCtr": 0.006,
+      "triviverseUrl": "/tenable",
+      "above": ["playfootball.games/football-tenable", "lineup-builder.co.uk/quizzes/tenable", "futbol-11.com/futbol-top10"],
+      "features": ["did-you-mean:tenaball", "ai-overview", "people-also-search-for"],
+      "aiOverview": { "present": true, "creditsCompetitor": true, "text": "Teneball most commonly refers to Footy TenaBall", "cites": ["tenableapp.com", "playfootball.games"] },
+      "exactMatchDomains": [],
+      "note": "Google diverts the query with 'Did you mean: tenaball' and the AI Overview assigns the term to a competitor's brand. Structural — see BACKLOG B-002."
+    },
+    {
+      "date": "2026-09-24", "engine": "bing", "query": "football tenable", "geo": "gb",
+      "triviversePosition": 6, "gscPosition": 6.0, "gscImpressions": 2567, "gscCtr": 0.014,
+      "triviverseUrl": "/tenable",
+      "above": ["playfootball.games/football-tenable", "lineup-builder.co.uk/quizzes/tenable", "footballtenable.com", "footyquiz.co.uk/ten-a-ball", "scoricquiz.com/tenaball"],
+      "features": ["sponsored-ad:tenable.com", "ad-sitelinks", "deep-dive-related"],
+      "aiOverview": { "present": false },
+      "exactMatchDomains": ["footballtenable.com"],
+      "note": "A full sponsored block for Tenable.com (the cybersecurity firm) with six sitelinks sits above all organic. Three competitors here were not previously recorded."
+    },
+    {
+      "date": "2026-09-24", "engine": "bing", "query": "football tic tac toe", "geo": "gb",
+      "triviversePosition": null, "gscPosition": 9.0, "gscImpressions": 1278, "gscCtr": 0.007,
+      "triviverseUrl": "/tictactoe",
+      "above": ["playfootball.games/footy-tic-tac-toe", "lineup-builder.co.uk/quizzes/tic-tac-toe", "renderfoot.com/games/tic-tac-toe", "playfutbol.app", "footymark.com/football-grid", "futbol11.netlify.app", "footballgenius.app", "futbolle.com", "football-games.fr"],
+      "features": ["large-video-carousel", "site-sitelinks", "deep-dive-related"],
+      "aiOverview": { "present": false },
+      "exactMatchDomains": [],
+      "note": "Hyper-fragmented: nine distinct competitor domains plus a very large video block before organic. Triviverse not visible in the served list despite GSC position 9. Worst-performing large pool on the site."
+    },
+    {
+      "date": "2026-09-24", "engine": "bing", "query": "football 501", "geo": "gb",
+      "triviversePosition": 3, "gscPosition": 3.0, "gscImpressions": 1887, "gscCtr": 0.051,
+      "triviverseUrl": "/501",
+      "above": ["generationfootball.co.uk", "topbins.games/footballdarts"],
+      "features": [],
+      "aiOverview": { "present": false },
+      "exactMatchDomains": ["501fc.com"],
+      "note": "Thin SERP (~3,290 results), no ads or features. generationfootball.co.uk ranks first and holds the UK trademark — see BACKLOG B-027."
+    },
+    {
+      "date": "2026-09-24", "engine": "google", "query": "football connections", "geo": "uk",
+      "triviversePosition": null, "gscPosition": 6.4, "gscImpressions": 300, "gscCtr": 0.047,
+      "triviverseUrl": "/connections",
+      "above": ["lineup-builder.co.uk/quizzes/connections", "playfootball.games/football-connections", "futbol-11.com/futbol11-connections", "futbol11.com", "football-iq.app/football-connections", "play.google.com", "nytimes.com/athletic"],
+      "features": ["top-stories", "people-also-search-for"],
+      "aiOverview": { "present": false },
+      "exactMatchDomains": [],
+      "note": "Rising fast: 7-day GSC shows 300 impressions at position 6.4, clicks +600%, against a 90-day position of 11.4. NYT/The Athletic present with a soccer Connections."
+    },
+    {
+      "date": "2026-09-24", "engine": "google", "query": "football wordle", "geo": "uk",
+      "triviversePosition": null, "gscPosition": 57.1, "gscImpressions": 187, "gscCtr": 0.021,
+      "triviverseUrl": "/wordle",
+      "above": ["playfootball.games/football-wordle", "footballminigames.com/wordle", "futbol-11.com/futbol11-wordle", "lineup-builder.co.uk/quizzes/football-wordle", "footballgenius.app/game/wordle", "footballwordle.com", "wordleunlimited2.io", "wordlecup.today/football"],
+      "features": ["people-also-search-for"],
+      "aiOverview": { "present": false },
+      "exactMatchDomains": ["footballwordle.com", "wordlecup.today", "wordleunlimited2.io"],
+      "note": "Saturated with dedicated single-format sites and three exact-match domains. Position 57 is an authority and domain-match gap, not a metadata one. Do not chase."
+    },
+    {
+      "date": "2026-09-24", "engine": "google", "query": "football pointless", "geo": "uk",
+      "triviversePosition": 3, "gscPosition": 4.8, "gscImpressions": 462, "gscCtr": 0.171,
+      "triviverseUrl": "/football-pointless",
+      "above": ["playfootball.games/goalless", "sporcle.com/games/football-pointless-20"],
+      "features": ["video-block", "people-also-ask", "people-also-search-for"],
+      "aiOverview": { "present": false },
+      "exactMatchDomains": [],
+      "note": "Best-converting page on the site. #1 is brand-named 'Goalless' and cannot match the query; #2 is a static Sporcle quiz. This is the shape of a SERP Triviverse wins."
+    },
+    {
+      "date": "2026-09-24", "engine": "google", "query": "guess the footballer game", "geo": "uk",
+      "triviversePosition": null, "gscPosition": null, "gscImpressions": null, "gscCtr": null,
+      "triviverseUrl": null,
+      "above": ["guess-the-football-player.com", "lineup-builder.co.uk/quizzes/guess-the-player", "guessballer.com", "playfootball.games/contextinho", "footle.club", "transfermarkt.co.uk/whoami", "football-iq.app"],
+      "features": ["top-stories", "people-also-ask", "people-also-search-for"],
+      "aiOverview": { "present": false },
+      "exactMatchDomains": ["guess-the-football-player.com", "guessballer.com"],
+      "note": "Triviverse absent despite owning /teammates and /football-contexto. Transfermarkt — our own data source — ranks with its WHO AM I? game."
+    },
+    {
+      "date": "2026-09-24", "engine": "google", "query": "football career path game", "geo": "uk",
+      "triviversePosition": null, "gscPosition": 7.3, "gscImpressions": 22, "gscCtr": 0.045,
+      "triviverseUrl": "/career-path",
+      "above": ["footballminigames.com/career-path", "playfootball.games/career-path-challenge", "fourfourtwo.com", "lineup-builder.co.uk", "sporcle.com", "football-iq.app", "extratime.world", "jetpunk.com", "copero.net"],
+      "features": ["ai-overview", "people-also-ask", "people-also-search-for"],
+      "aiOverview": { "present": true, "creditsCompetitor": true, "text": "recommends where to play", "cites": ["footballminigames.com", "football-iq.app", "extratime.world"] },
+      "exactMatchDomains": [],
+      "note": "Second observed case of an AI Overview naming competitors and omitting us. FourFourTwo published to this SERP within the last day."
+    },
+    {
+      "date": "2026-09-24", "engine": "google", "query": "football higher or lower", "geo": "uk",
+      "triviversePosition": null, "gscPosition": null, "gscImpressions": null, "gscCtr": null,
+      "triviverseUrl": "/higher-or-lower",
+      "above": ["higherorlowergame.com/football", "footballminigames.com/higherlower", "transfermarkt.co.uk/whatsMyValue", "football-iq.app", "dailyxi.app", "onefootball.com", "11inicialgames.com", "footyiq.games", "playhigherlower.com"],
+      "features": ["people-also-ask", "people-also-search-for"],
+      "aiOverview": { "present": false },
+      "exactMatchDomains": ["higherorlowergame.com", "playhigherlower.com"],
+      "note": "Competitors play on market value (Transfermarkt data we do not hold); ours plays on goal leaderboards. Different game, and two exact-match domains rank."
+    }
+  ]
+}

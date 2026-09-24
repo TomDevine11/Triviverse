@@ -64,7 +64,8 @@
     "bing-report": "node scripts/seo/bing.mjs",
     "test:e2e": "playwright test",
     "seo-trends": "node scripts/seo/trend.mjs",
-    "experiments": "node scripts/seo/experiments.mjs"
+    "experiments": "node scripts/seo/experiments.mjs",
+    "serp-log": "node scripts/seo/serp-log.mjs"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
