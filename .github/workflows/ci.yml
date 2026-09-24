@@ -31,3 +31,10 @@
         # on any hard failure; it simply was never wired in. Local only, no network.
         - name: SEO validation
           run: npm run seo-validate
+        # Render checks against the real server over the real build. Unit tests and
+        # seo-validate never open a page, so a route that returns 200 while serving
+        # the wrong thing, or a game that throws on mount, passes both.
+        - name: Install Playwright browser
+          run: npx playwright install --with-deps chromium
+        - name: End-to-end render tests
+          run: npm run test:e2e

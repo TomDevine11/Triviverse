@@ -12,6 +12,9 @@ export default defineConfig({
   // The canonical data-integrity tests iterate large generated datasets and can exceed
   // vitest's default 5s timeout on slower CI runners — give them headroom so CI isn't flaky.
   test: {
+    // Vitest owns test/**/*.test.js only. Playwright's specs live in e2e/ and use
+    // a different runner — without this include they'd be collected here and fail.
+    include: ['test/**/*.test.js'],
     testTimeout: 30000,
     hookTimeout: 30000,
   },

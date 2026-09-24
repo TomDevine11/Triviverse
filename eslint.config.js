@@ -24,4 +24,10 @@ export default defineConfig([
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
   },
+  {
+    // Playwright's config and specs run under Node, not the browser — without
+    // node globals they trip no-undef on `process`. Linted, not ignored.
+    files: ['playwright.config.js', 'e2e/**/*.js'],
+    languageOptions: { globals: globals.node },
+  },
 ])
