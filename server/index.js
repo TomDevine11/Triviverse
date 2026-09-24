@@ -98,6 +98,16 @@ if (fs.existsSync(DIST_DIR)) {
     })
   }
 
+  // 404 page. Mirrors the 410 above: minimal, noindex, no client JS — a crawler
+  // must be able to read the status and the intent without executing anything.
+  const sendNotFound = (res) => res.status(404).type('text/html').set('Cache-Control', 'no-cache').send(
+    `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex">`
+    + `<meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found — Triviverse</title></head>`
+    + `<body style="font-family:system-ui,sans-serif;background:#0b0a14;color:#e5e7eb;text-align:center;padding:4rem 1.5rem">`
+    + `<h1 style="font-size:1.4rem">Page not found</h1>`
+    + `<p style="color:#9ca3af">This page does not exist in this language.</p>`
+    + `<p><a style="color:#c4b5fd" href="/">Go to Triviverse →</a></p></body></html>`)
+
   // SPA fallback — serve the prerendered HTML for the requested route (each route
   // has its own dist/<path>/index.html with unique SEO head + crawlable content),
   // falling back to the home shell for anything unrecognised. The (?!\/api) guard
@@ -120,6 +130,20 @@ if (fs.existsSync(DIST_DIR)) {
         return res.sendFile(candidate)
       }
     }
+
+    // A Spanish path is valid ONLY if the build prerendered it. prerender.mjs
+    // emits /es for every indexable route that is not `enOnly`, so a missing
+    // file here means the locale/route combination does not exist — an
+    // untranslated game, or a path that was never real.
+    //
+    // Those used to fall through to the English home shell on a 200, which is a
+    // soft 404: an indexable success response serving the wrong page. All 20
+    // /es/<enOnly> routes behaved that way, indistinguishable from
+    // /es/definitely-not-real. The English fallback below is deliberately
+    // unchanged — this narrows only the locale prefix, where "prerendered" is
+    // an exact definition of "exists".
+    if (/^\/es(\/|$)/.test(req.path)) return sendNotFound(res)
+
     res.sendFile(HOME)
   })
 }
