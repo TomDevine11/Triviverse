@@ -24,3 +24,10 @@
           run: npm test
         - name: Build
           run: npm run build
+        # Post-build SEO validation against dist/. Catches the programmatic-SEO
+        # failure modes unit tests cannot see: broken internal links, duplicate
+        # titles/descriptions, sitemap<->canonical mismatch, invalid JSON-LD and
+        # accidental noindex. The script was written to gate CI and exits non-zero
+        # on any hard failure; it simply was never wired in. Local only, no network.
+        - name: SEO validation
+          run: npm run seo-validate
