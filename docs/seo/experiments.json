@@ -1,0 +1,172 @@
+{
+  "_readme": "The experiment ledger. Every deliberate change that is supposed to move a search metric gets an entry BEFORE it ships, with a hypothesis and the metric that would settle it. `npm run experiments` joins each entry to Search Console around its ship date and reports what actually happened. Without this the repo ships and forgets: 70+ merged PRs and no way to attribute a single traffic movement to any of them. Statuses: open (shipped, waiting for data), concluded (we know), abandoned (superseded before it could be judged).",
+  "experiments": [
+    {
+      "id": "EXP-000",
+      "hypothesis": "A Pointless answers archive captures 'answers/questions' demand that the game page itself does not rank for.",
+      "change": "Published /football-pointless/answers — the full archive of past daily boards with the score each answer earned.",
+      "prs": [
+        43,
+        47,
+        60
+      ],
+      "shippedAt": "2026-09-13",
+      "targets": {
+        "pages": [
+          "/football-pointless/answers"
+        ],
+        "queries": [
+          "football pointless questions",
+          "football pointless quiz with answers",
+          "football pointless answers"
+        ]
+      },
+      "metric": "impressions",
+      "expected": "up",
+      "baseline": "New URL — zero impressions before this date.",
+      "status": "open",
+      "conclusion": null
+    },
+    {
+      "id": "EXP-001",
+      "hypothesis": "Putting the recognised alias 'Tiki Taka Toe' into the /tictactoe snippet converts impressions that already rank but never get clicked.",
+      "change": "Added the alias to the meta description so the SERP snippet carries the term the body already ranked for.",
+      "prs": [
+        58
+      ],
+      "shippedAt": "2026-09-19",
+      "targets": {
+        "pages": [
+          "/tictactoe"
+        ],
+        "queries": [
+          "tiki taka toe",
+          "tiki taka toe football",
+          "tiki taka toe game"
+        ]
+      },
+      "metric": "ctr",
+      "expected": "up",
+      "baseline": "216 Bing impressions at position ~8 with 0.0% CTR (2026-09-19).",
+      "status": "open",
+      "conclusion": null
+    },
+    {
+      "id": "EXP-002",
+      "hypothesis": "A descriptively-named Football Bingo page can rank, because the site wins on named-format queries (Pointless, Tenable) where competitors brand their clones instead.",
+      "change": "Shipped Football Bingo as a new game on its own URL.",
+      "prs": [
+        62,
+        63
+      ],
+      "shippedAt": "2026-09-19",
+      "targets": {
+        "pages": [
+          "/football-bingo"
+        ],
+        "queries": [
+          "football bingo",
+          "footy bingo",
+          "football bingo game"
+        ]
+      },
+      "metric": "impressions",
+      "expected": "up",
+      "baseline": "New URL — zero impressions before this date.",
+      "status": "open",
+      "conclusion": null
+    },
+    {
+      "id": "EXP-003",
+      "hypothesis": "Football Contexto captures 'guess the footballer' demand that /teammates and /career-path do not reach.",
+      "change": "Shipped Football Contexto as a new game on its own URL.",
+      "prs": [
+        64
+      ],
+      "shippedAt": "2026-09-20",
+      "targets": {
+        "pages": [
+          "/football-contexto"
+        ],
+        "queries": [
+          "football contexto",
+          "contexto football",
+          "football goaltexto"
+        ]
+      },
+      "metric": "impressions",
+      "expected": "up",
+      "baseline": "New URL — zero impressions before this date.",
+      "status": "open",
+      "conclusion": null
+    },
+    {
+      "id": "EXP-004",
+      "hypothesis": "Giving the question builder its own URL captures 'build your own' demand that was invisible while it sat inside a tab.",
+      "change": "Moved the builder onto /build-your-own-football-darts with its own SEO entry.",
+      "prs": [
+        57
+      ],
+      "shippedAt": "2026-09-18",
+      "targets": {
+        "pages": [
+          "/build-your-own-football-darts"
+        ],
+        "queries": [
+          "build your own football darts",
+          "football darts"
+        ]
+      },
+      "metric": "impressions",
+      "expected": "up",
+      "baseline": "New URL — zero impressions before this date. Also the non-trademarked route into 501 demand (see B-027).",
+      "status": "open",
+      "conclusion": null
+    },
+    {
+      "id": "EXP-005",
+      "hypothesis": "Removing the duplicate H1 on /tictactoe and matching the wordmark to the searched spelling ('Tic-Tac-Toe', not 'TicTacToe') helps a page that is currently position 8-9 on its main Bing pool.",
+      "change": "Demoted the game menu heading to <h2> and renamed the wordmark; hub and Up Next labels follow.",
+      "prs": [
+        69
+      ],
+      "shippedAt": "2026-09-24",
+      "targets": {
+        "pages": [
+          "/tictactoe"
+        ],
+        "queries": [
+          "football tic tac toe",
+          "tic tac toe football",
+          "footy tic tac toe"
+        ]
+      },
+      "metric": "position",
+      "expected": "up",
+      "baseline": "Bing: 1,278 impressions at position 9, 0.7% CTR. Google: position 26.1 on 665 impressions (90d).",
+      "status": "open",
+      "conclusion": null
+    },
+    {
+      "id": "EXP-006",
+      "hypothesis": "Spanish pages for Bingo and Contexto earn impressions, because Spanish converts unusually well here (85.7% CTR on one Bing query, 949s average session on /es).",
+      "change": "Wrote Spanish SEO content for both games, replacing English fallback strings that were duplicating the English pages.",
+      "prs": [
+        67
+      ],
+      "shippedAt": "2026-09-24",
+      "targets": {
+        "pages": [
+          "/es/football-bingo",
+          "/es/football-contexto"
+        ],
+        "queries": []
+      },
+      "metric": "impressions",
+      "expected": "up",
+      "baseline": "Both URLs existed but served duplicate English metadata.",
+      "status": "open",
+      "conclusion": null
+    }
+  ]
+}
