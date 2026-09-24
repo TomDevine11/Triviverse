@@ -122,4 +122,32 @@ export const ES = {
       { q: '¿Puedo jugar con amigos?', a: 'Sí — multijugador local para 2–5 jugadores en un dispositivo, además de un modo personalizado donde eliges la competición, la estadística y los filtros.' },
     ],
   },
+  '/football-bingo': {
+    title: 'Bingo de Fútbol — Juego Diario Gratis | Triviverse',
+    description: 'Bingo de Fútbol gratis: un cartón de doce casillas de categorías y futbolistas que salen de uno en uno. Coloca a cada jugador en una casilla que cumpla. Cartón diario y partidas ilimitadas, sin registro.',
+    keywords: ['bingo de futbol', 'juego bingo de futbol', 'bingo futbolistas', 'bingo de futbol diario', 'bingo de futbol online', 'bingo de futbol gratis', 'futbol bingo'],
+    h1: 'Bingo de Fútbol',
+    tagline: 'Coloca a cada jugador en una casilla que cumpla — completa el cartón y canta bingo.',
+    about: 'El Bingo de Fútbol es un juego diario con un cartón de doce casillas, cada una con una categoría: una liga, un club, una nacionalidad. Los futbolistas van saliendo de uno en uno y debes colocar a cada uno en una casilla que cumpla; una colocación equivocada cuesta una vida. Completar las doce casillas es bingo. Es el mecanismo inverso al tres en raya de fútbol: allí te dan la casilla y buscas al jugador, aquí te dan al jugador y eliges la casilla — lo difícil no es saber quién es, sino saber todo lo que cumple, porque alguien que encaja en tres casillas solo puede ocupar una.',
+    faq: [
+      { q: '¿Cómo se juega al Bingo de Fútbol?', a: 'Recibes un cartón con doce casillas de categorías y los futbolistas aparecen de uno en uno. Coloca a cada uno en una casilla que cumpla — una colocación equivocada cuesta una vida — y completa las doce para cantar bingo.' },
+      { q: '¿Siempre se puede completar el cartón?', a: 'Sí. El reparto se construye a partir del cartón, con dos jugadores válidos por casilla, así que siempre existe una partida perfecta.' },
+      { q: '¿Hay un cartón nuevo cada día?', a: 'Sí. El cartón diario se renueva a medianoche (hora local), y además puedes jugar partidas ilimitadas cuando quieras.' },
+      { q: '¿Es gratis?', a: 'Sí — se juega en el navegador, es completamente gratis y no necesita registro ni descarga.' },
+    ],
+  },
+  '/football-contexto': {
+    title: 'Contexto de Fútbol — Adivina al Jugador Oculto | Triviverse',
+    description: 'Adivina al futbolista oculto: cada intento te dice lo cerca que estás y el puesto 1 es la respuesta. Contexto de Fútbol diario gratis y rondas ilimitadas, sin registro.',
+    keywords: ['contexto de futbol', 'contexto futbolistas', 'adivina el futbolista', 'contexto futbol diario', 'juego contexto futbol', 'semantle de futbol'],
+    h1: 'Contexto de Fútbol',
+    tagline: 'Adivina al jugador oculto — cada intento te dice lo cerca que estás.',
+    about: 'El Contexto de Fútbol es un juego diario en el que hay que adivinar a un futbolista oculto. Cada vez que propones un nombre, el juego te devuelve un puesto que indica lo cerca que estás: cuanto más bajo, mejor, y el puesto 1 es la respuesta. La cercanía no es aleatoria — se calcula a partir de lo que dos futbolistas comparten: clubes, compañeros de equipo, competiciones, época, nacionalidad y posición. No hay límite de intentos, así que cada propuesta va acotando la búsqueda.',
+    faq: [
+      { q: '¿Cómo funciona el Contexto de Fútbol?', a: 'Propones un futbolista y el juego te devuelve un puesto según lo cerca que está del jugador oculto. Cuanto más bajo el puesto, más cerca estás; el puesto 1 es la respuesta.' },
+      { q: '¿Cómo se calcula la cercanía?', a: 'A partir de lo que dos futbolistas tienen en común: clubes, compañeros de equipo, competiciones, época, nacionalidad y posición.' },
+      { q: '¿Cuántos intentos tengo?', a: 'Los que necesites. No hay límite de intentos — cada propuesta te acerca un poco más.' },
+      { q: '¿Hay un jugador nuevo cada día?', a: 'Sí, hay un jugador oculto nuevo cada día, y además puedes jugar rondas ilimitadas.' },
+    ],
+  },
 }
