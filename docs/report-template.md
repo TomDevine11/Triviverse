@@ -22,7 +22,7 @@ Any strategy/priority view I revised this week and the evidence — incl. any re
 adjust the VISION §19 priority stack. (Omit if nothing changed.)
 
 ## ✅ Needs your decision
-The few things waiting on you (link the [review digest](../REVIEW_QUEUE.md)) with the
+The few things genuinely waiting on Tom — direction calls, money, legal — with the
 **minimum action** each needs, e.g. "2 min — play 501 A/B." Nothing here = say so.
 
 ## ▶️ What I recommend next

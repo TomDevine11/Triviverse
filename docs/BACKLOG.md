@@ -1,9 +1,13 @@
-# BACKLOG.md — autonomous work queue
+# BACKLOG.md — work queue and findings record
 
-The prioritised queue the [loop](LOOP.md) pulls from, and its durable memory across cold
-starts. Claude maintains this file: continuously **generating** worthwhile work (not only
-what Tom provides) and ranking it by the [VISION.md](../../VISION.md) §19 priority stack and
-expected impact. Committed so state survives sessions.
+The prioritised queue Claude pulls from, and the durable record of what the traffic data has
+already proven or ruled out. Claude maintains this file: continuously **generating**
+worthwhile work (not only what Tom provides) and ranking it by the [VISION.md](../VISION.md)
+§19 priority stack and expected impact. Committed so state survives sessions.
+
+**Read the findings sections before re-investigating anything.** Several apparent
+opportunities have been diagnosed as structurally capped and deliberately closed; they are
+written up here so they are not reopened on a hunch.
 
 ## Columns
 - **ID** — `B-###`, monotonic, never reused.
@@ -24,7 +28,7 @@ expected impact. Committed so state survives sessions.
    latest GA4/GSC read.
 3. Then **value ÷ effort**.
 4. Then age.
-Skip any item whose likely files overlap an open PR in [REVIEW_QUEUE.md](REVIEW_QUEUE.md).
+Skip any item whose likely files overlap an open PR (`gh pr list`).
 Do not spend large capacity on low-value technical polish while meaningful
 growth/product/revenue items remain.
 
@@ -62,7 +66,7 @@ obsolete. Never delete rows — this is an audit trail.
 
 | ID | Title | Class | Value | Source | Effort | Priority | Status |
 |----|-------|-------|-------|--------|--------|----------|--------|
-| B-011 | **Connect GA4 + Search Console (and Bing Webmaster) to the runner environment** | internal | unblocks all evidence-based prioritisation (VISION §18/§20) | sec | S | P0 | blocked-on-tom (needs credentials; Claude must never handle secrets — see REVIEW_QUEUE) |
+| B-011 | **Connect GA4 + Search Console (and Bing Webmaster) to the runner environment** | internal | unblocks all evidence-based prioritisation (VISION §18/§20) | sec | S | P0 | done (credentials supplied; GA4 + GSC + Bing all connected) |
 | B-012 | Resolve "football guessing game" cannibalisation between `/` and `/teammates` | user-facing | two pages compete for one real query, splitting ranking signal | seo-report | S | P1 | todo (unblocked — #25 merged) |
 | B-013 | Fix SERP-truncating titles/descriptions + H1↔route-name mismatches (7 flags) | user-facing | CTR + canonical-label consistency across 5 pages | seo-report | S | P2 | todo (unblocked — #25 merged) |
 | B-014 | "Career Path Answers" autocompletes to non-football intent — rename or re-anchor to football | user-facing | ambiguous name wastes an answers page that should capture football intent | seo-report | S | P2 | todo (unblocked — #25 merged) |

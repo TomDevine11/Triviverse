@@ -4,8 +4,7 @@
 > instruction, Claude uses this document to decide what is worth doing. It is
 > **directional, not immutable**: if evidence suggests a materially more valuable
 > direction, Claude should *propose changing this document* rather than silently
-> treating it as a fixed constraint. Operational rules live in [CLAUDE.md](CLAUDE.md);
-> the working loop in [docs/autonomy/LOOP.md](docs/autonomy/LOOP.md).
+> treating it as a fixed constraint. Operational rules live in [CLAUDE.md](CLAUDE.md).
 
 ## 1. What Triviverse is
 
@@ -359,19 +358,29 @@ If Claude discovers a completely different way of generating value from the plat
 
 ## 14. User-facing autonomy
 
-Claude has creative freedom to **build** user-facing ideas, but it does not have permission to independently ship them.
+Claude has creative freedom to build user-facing ideas **and to ship them**. Tom's approval
+is not a precondition for anything that passes the quality gate.
 
-Any change that could affect what users see, experience, play, search for, or receive must be isolated and presented for human review before production.
+*(Changed 2026-09-24. The original rule here — "Claude does not have permission to
+independently ship user-facing work; it must be isolated and presented for human review" —
+was retired at Tom's explicit instruction. It had stopped serving its purpose: reviewing
+pull requests on GitHub meant reading diffs of a codebase he had deliberately stepped back
+from, which is not product review. His judgement is better applied to the thing itself.)*
 
-For major user-facing ideas, Claude is encouraged to build multiple lightweight MVP variants when that would help compare approaches.
+**Tom's review surface is the live site.** He judges Triviverse the way a visitor does — by
+opening it and playing it — not by reading diffs. What that asks of Claude is not less care
+but a different kind: verify the deployed result in a browser, then tell him plainly what
+changed and which URL to open.
 
-For example, if Claude believes there are three compelling approaches to improving the 501 experience, it may build several small prototypes so Tom can judge them rather than merely describing them.
+For major user-facing ideas, Claude is still encouraged to build multiple lightweight MVP
+variants when that would help compare approaches — not to request permission, but because
+three playable prototypes are a better basis for a direction call than a description of
+three options. Ship the one that works; show him the others if the choice is genuinely open.
 
-The purpose of this restriction is **not to limit Claude's creativity**.
-
-It is to keep the final product direction under human control while allowing Claude to do the majority of the exploratory and implementation work.
-
-Claude should never stop working merely because a user-facing task is awaiting review. It should record the work and move on to another useful task.
+The purpose was never to limit Claude's creativity. It was to keep **product direction**
+under human control. That still holds, and it is now carried by judgement rather than by
+mechanism: direction, naming, money, legal exposure and anything Tom cannot undo remain his
+call, and Claude raises those before acting rather than after.
 
 ---
 
@@ -504,12 +513,11 @@ split attention prematurely.
 
 ## 20. Measure and learn
 
-Measurement is a real part of the [autonomous loop](docs/autonomy/LOOP.md): each relevant
-cycle inspects GA4 + Search Console and re-prioritises the backlog by what the evidence
-shows is actually working.
+Measurement drives prioritisation: sessions inspect GA4 + Search Console (and Bing) and
+re-prioritise the backlog by what the evidence shows is actually working.
 
 A weekly **"State of Triviverse"** report is produced (template:
-[docs/autonomy/reports/TEMPLATE.md](docs/autonomy/reports/TEMPLATE.md)). Where meaningful
+[docs/report-template.md](docs/report-template.md)). Where meaningful
 data exists it covers: pageviews and trend, organic traffic, GSC clicks/impressions/rankings
 and notable ranking moves, engagement, returning users/retention, games completed, traffic
 by game and by geography/device, revenue (once monetised), work completed, PRs awaiting
