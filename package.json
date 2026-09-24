@@ -63,7 +63,8 @@
     "studio": "node scripts/publish/studio.mjs",
     "bing-report": "node scripts/seo/bing.mjs",
     "test:e2e": "playwright test",
-    "seo-trends": "node scripts/seo/trend.mjs"
+    "seo-trends": "node scripts/seo/trend.mjs",
+    "experiments": "node scripts/seo/experiments.mjs"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
