@@ -34,7 +34,7 @@ export default function TicTacToeMenu() {
             <div className="flex items-center justify-center gap-2 mb-4">
               <Mark mark="X" size={38} /><Mark mark="O" size={38} />
             </div>
-            <h1 className="score-number text-4xl text-primary mb-2">{t('games.tictactoe.title')}</h1>
+            <h2 className="score-number text-4xl text-primary mb-2">{t('games.tictactoe.title')}</h2>
             <p className="text-muted text-sm">{t('tictactoe.menuSubtitle')}</p>
           </div>
 
