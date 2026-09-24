@@ -191,7 +191,47 @@ more evidence-driven while keeping the system cheap, simple and maintainable.
 
 ## Implementation record — the soft-404 fix
 
-*(Filled in from actual repository output; see the PR for the full diff.)*
+**PR #74** — "Return a real 404 for untranslated Spanish routes".
+
+### Files changed
+
+| File | Change |
+|---|---|
+| `server/index.js` | The fix: a `/es` path with no prerendered page returns 404, plus a `sendNotFound` helper mirroring the existing 410 page |
+| `e2e/locale-routes.spec.js` | New — 24 checks per project (48 across desktop + mobile) |
+| `docs/seo/next-review.md` | New — this document |
+
+Nothing else was touched. No SEO config, no route definitions, no game content, no
+translations, no canonical/sitemap strategy.
+
+### Tests added
+
+`e2e/locale-routes.spec.js`, deriving every case from `ROUTES`, `ES` and
+`RELATION_REDIRECTS` rather than a second hand-maintained list:
+
+- every `/es/<enOnly>` route returns 404 and does not serve the English home shell (20 cases)
+- every translated Spanish route still returns 200 with Spanish content (11 cases)
+- every English game route still returns 200 (11 cases)
+- the English SPA fallback still answers 200 for an unknown path (asserted so the fix cannot widen)
+- an unknown Spanish path returns 404
+- a missing hashed asset still returns 404 and not `text/html`
+- retired player-pair URLs keep their 301 (both locales) and 410 handling
+- a guard asserting the `enOnly` filter still matches something, so the suite cannot pass vacuously
+
+### Commands run, and results
+
+```
+npm run lint          33 problems (25 errors, 8 warnings) — unchanged, all pre-existing
+npm test              296 passed (41 files)
+npm run build         clean
+npm run seo-validate  passed — no broken links, duplicates, mismatches or invalid schema
+npm run test:e2e      136 passed (was 40)
+npm run seo-smoke     passed — 19 routes, sitemap 42 URLs, 1 × 301, 3 × 410
+```
+
+Regression verified by removing the fix and re-running with a fresh server
+(`CI=1`): **21 of 48 checks fail**, and pass again once restored.
+
 
 ### Affected routes — all 20, derived from `ROUTES.filter(r => r.enOnly)`
 
