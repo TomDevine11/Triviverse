@@ -23,7 +23,7 @@ Method:
   well-ranked pages, channel shifts (esp. AI-assistant), engagement by game, retention signals.
 - Turn findings into candidate BACKLOG items (with a value hypothesis) ranked by the VISION §19
   priority stack — but do not edit the backlog yourself; hand them back.
-- For the weekly report, follow [reports/TEMPLATE.md](../../docs/autonomy/reports/TEMPLATE.md):
+- For the weekly report, follow [report-template.md](../../docs/report-template.md):
   tag every claim **[fact] / [inference] / [uncertain]**, never assert a change "worked" without
   data, and include the "What changed my mind?" section.
 
