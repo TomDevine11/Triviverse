@@ -61,7 +61,8 @@
     "tiktok-demo": "node scripts/publish/demo.mjs",
     "tiktok-demo-record": "bash scripts/publish/record-demo-staged.sh",
     "studio": "node scripts/publish/studio.mjs",
-    "bing-report": "node scripts/seo/bing.mjs"
+    "bing-report": "node scripts/seo/bing.mjs",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
@@ -74,6 +75,7 @@
     "@eslint/js": "^10.0.1",
     "@google-analytics/data": "^6.1.0",
     "@googleapis/searchconsole": "^6.0.1",
+    "@playwright/test": "^1.63.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
