@@ -112,7 +112,24 @@ discovery sources listed there.
 Inspect GA4 + Search Console where relevant (`npm run analytics-report`,
 `npm run search-console-report`, `npm run seo-report`) and let the evidence re-prioritise.
 **Always check Bing too** (`npm run bing-report`) — it is roughly half the traffic and ranks
-the site nothing like Google. Produce the **State of Triviverse** report when useful
+the site nothing like Google.
+
+**Start with `npm run seo-trends`, not `seo-report`.** The 90-day default averages away the
+only thing worth acting on: "football connections" read 469 impressions at position 11.4 over
+90 days while the last 7 were 300 impressions at position 6.4. `seo-trends` shows rising,
+falling and new, for queries and pages.
+
+**Before shipping anything meant to move a search metric, add it to
+[docs/seo/experiments.json](docs/seo/experiments.json).** `npm run experiments` then reports
+what actually happened either side of the ship date. Without an entry beforehand the outcome
+is a story told afterwards.
+
+**For the external view, use the `triviverse-serp` skill** (`.claude/skills/triviverse-serp`).
+Search Console says where we rank; it never says who is above us, whether an advert owns the
+viewport, or that an AI Overview has credited the term to a competitor — which it has done on
+every AI Overview observed so far. Observations append to
+[docs/seo/serp-observations.json](docs/seo/serp-observations.json); `npm run serp-log`
+summarises them into the competitor register. Produce the **State of Triviverse** report when useful
 (VISION §20; template in `docs/report-template.md`). Tag every claim as observed fact /
 reasonable inference / uncertain. Never claim something "worked" without enough data.
 
