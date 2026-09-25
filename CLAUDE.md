@@ -140,6 +140,13 @@ experiments — not just incremental meta edits. Several apparent gaps have alre
 diagnosed as structural and closed in the backlog; don't reopen them without new evidence.
 
 ## Design work
+**Look at the page before calling UI work done.** Render the affected route in a real
+browser — `npm run test:visual` writes screenshots you can read directly, and Claude in
+Chrome opens the live page — and actually inspect the result. A green gate proves the code
+runs, not that the thing looks right: both 13 Sept failures passed every test and were
+obvious on sight. This applies to any change a visitor could see, including copy and layout,
+and it is not satisfied by passing functional tests.
+
 Follow [docs/design-system.md](docs/design-system.md) and
 [docs/design-tokens.md](docs/design-tokens.md): premium, game-like, token-driven, no generic
 Tailwind, consistency enforced. Use the internal design-review subagent
