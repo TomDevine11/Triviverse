@@ -62,10 +62,11 @@
     "tiktok-demo-record": "bash scripts/publish/record-demo-staged.sh",
     "studio": "node scripts/publish/studio.mjs",
     "bing-report": "node scripts/seo/bing.mjs",
-    "test:e2e": "playwright test",
+    "test:e2e": "playwright test --project=desktop --project=mobile",
     "seo-trends": "node scripts/seo/trend.mjs",
     "experiments": "node scripts/seo/experiments.mjs",
-    "serp-log": "node scripts/seo/serp-log.mjs"
+    "serp-log": "node scripts/seo/serp-log.mjs",
+    "test:visual": "playwright test --project=visual --project=visual-mobile"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

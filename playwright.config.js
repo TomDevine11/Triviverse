@@ -24,8 +24,23 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   projects: [
-    { name: 'desktop', use: { ...devices['Desktop Chrome'] } },
-    { name: 'mobile', use: { ...devices['Pixel 7'] } },
+    // Functional checks — status, headings, routing, accessibility. Run in CI.
+    { name: 'desktop', use: { ...devices['Desktop Chrome'] }, testIgnore: /visual\.spec\.js/ },
+    { name: 'mobile', use: { ...devices['Pixel 7'] }, testIgnore: /visual\.spec\.js/ },
+
+    // Visual regression — LOCAL ONLY, and deliberately not part of the CI gate.
+    //
+    // Playwright screenshots are platform-specific: font rasterisation and
+    // antialiasing differ enough between macOS and the ubuntu runner that a
+    // darwin baseline always fails on linux. Generating linux baselines needs
+    // Docker, which is not available here, and loosening the threshold far
+    // enough to span both would also hide the regressions these exist to catch.
+    //
+    // So they run on the machine that has the baselines — `npm run test:visual`
+    // — and CI keeps gating on the functional suite. Their job is to let Claude
+    // SEE the UI it changed (CLAUDE.md, "Design work"), which works locally.
+    { name: 'visual', testMatch: /visual\.spec\.js/, use: { ...devices['Desktop Chrome'] } },
+    { name: 'visual-mobile', testMatch: /visual\.spec\.js/, use: { ...devices['Pixel 7'] } },
   ],
   webServer: {
     command: 'node server/index.js',
