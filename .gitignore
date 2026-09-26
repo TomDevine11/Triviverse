@@ -53,3 +53,4 @@ assets/shorts/img-cache/
 # Playwright
 test-results/
 playwright-report/
+.wrangler/
