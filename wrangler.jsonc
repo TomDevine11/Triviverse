@@ -1,0 +1,12 @@
+// Cloudflare Workers static-assets hosting. Built by `npm run build:pages`
+// (see scripts/cloudflare-pages.mjs), deployed by `npx wrangler deploy`.
+{
+  "name": "triviverse",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./dist",
+    // Flat route files (tenable.html) serve at /tenable; /tenable/ redirects there.
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
