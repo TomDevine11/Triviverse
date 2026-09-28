@@ -86,11 +86,11 @@ const MOTIFS = {
   ),
 }
 
-export default function GameMotif({ id, className = 'w-9 h-9' }) {
+export default function GameMotif({ id, className = 'w-9 h-9', style }) {
   const motif = MOTIFS[id]
   if (!motif) return null
   return (
-    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
+    <svg viewBox="0 0 24 24" className={className} style={style} fill="currentColor" aria-hidden="true">
       {motif}
     </svg>
   )

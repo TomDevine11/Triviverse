@@ -13,6 +13,7 @@ export const strings = {
       daily: 'Daily',
       unlimited: 'Unlimited',
       playUnlimited: 'Play Unlimited →',
+      unlimitedGame: 'Unlimited {name} →',
       seeResult: '↑ See result & more games',
       comeBackTomorrow: 'Come back tomorrow for a new daily.',
       dailyDone: "Today's daily is done · come back tomorrow",
@@ -22,6 +23,7 @@ export const strings = {
       back: '← Back',
       upNext: 'UP NEXT', allGames2: 'All games →',
     },
+    next: { yourMatchday: 'Your matchday', toPerfect: '{n} more for a perfect day', doublePoints: 'double points', playThisNext: 'Play this next', playNow: 'Play now', allGames: 'All {n} games →' },
     stats: { played: 'Played', winPct: 'Win %', best: 'Best', streak: 'Streak', dayStreak: 'Day streak', max: 'Max' },
     share: {
       copy: 'Copy result', copied: 'Copied!', share: 'Share', shareCard: 'Share card', preparing: 'Preparing…', imageSaved: 'Image saved — share it anywhere', linkCopied: 'Link copied — paste it anywhere', instagram: 'Result copied — paste it into your Instagram story or DM',
@@ -313,6 +315,7 @@ export const strings = {
       daily: 'Diario',
       unlimited: 'Ilimitado',
       playUnlimited: 'Jugar Ilimitado →',
+      unlimitedGame: '{name} ilimitado →',
       seeResult: '↑ Ver resultado y más juegos',
       comeBackTomorrow: 'Vuelve mañana para un nuevo reto diario.',
       dailyDone: 'El reto diario de hoy está completo · vuelve mañana',
@@ -322,6 +325,7 @@ export const strings = {
       back: '← Atrás',
       upNext: 'A CONTINUACIÓN', allGames2: 'Todos los juegos →',
     },
+    next: { yourMatchday: 'Tu jornada', toPerfect: '{n} más para un día perfecto', doublePoints: 'puntos dobles', playThisNext: 'Juega esto ahora', playNow: 'Jugar ya', allGames: 'Los {n} juegos →' },
     stats: { played: 'Jugadas', winPct: '% Victorias', best: 'Mejor', streak: 'Racha', dayStreak: 'Racha diaria', max: 'Máx' },
     share: {
       copy: 'Copiar resultado', copied: '¡Copiado!', share: 'Compartir', shareCard: 'Compartir tarjeta', preparing: 'Preparando…', imageSaved: 'Imagen guardada — compártela donde quieras', linkCopied: 'Enlace copiado — pégalo donde quieras', instagram: 'Resultado copiado: pégalo en tu historia o mensaje de Instagram',

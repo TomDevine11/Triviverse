@@ -2,13 +2,13 @@ import { useState, useEffect, useRef } from 'react'
 import { STAT_MODES, poolFor, randomFrom, isCorrect, getDailyRun } from '../../data/higherlower'
 import { useQa } from '../../dev/qa'
 import QaBar from '../../dev/QaBar'
-import { ShareCard } from '../../components/ShareCard'
+import { ShareCard, RESULT_SECONDARY_BTN } from '../../components/ShareCard'
 import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
 import ResultModal from '../../components/ResultModal'
+import { shortTitle } from '../../components/nextGames'
 import GameChrome from '../../components/GameChrome'
 import GameMotif from '../../components/GameMotif'
-import UpNext from '../../components/UpNext'
 import { accentVars } from '../../design/accents'
 import { recordResult, todayIndex, matchdayNumber } from '../../data/dailyStats'
 import { loadDailyProgress, saveDailyProgress } from '../../data/dailyProgress'
@@ -299,7 +299,7 @@ export default function HigherLower() {
         )}
       </div>
 
-      <ResultModal open={showResult && dailyMode === 'daily'} onClose={() => setShowResult(false)}>
+      <ResultModal game="higherlower" open={showResult && dailyMode === 'daily'} onClose={() => setShowResult(false)}>
         <div className="w-full flex flex-col items-center text-center">
           <GameMotif id="higher-or-lower" className={`w-11 h-11 mb-2 ${dailyCleared ? 'text-accent-bright' : 'text-dim'}`} />
           <h2 className={`score-number text-4xl mb-1 ${dailyCleared ? 'text-success-bright' : 'text-danger-bright'}`}>{dailyCleared ? t('higherlower.chainCleared') : t('higherlower.gameOver')}</h2>
@@ -336,11 +336,10 @@ export default function HigherLower() {
               </div>
             )
             : <>
-                <button onClick={() => switchMode('unlimited')} className="mt-2 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-lg px-6 py-2.5 transition-colors">{t('common.playUnlimited')}</button>
+                <button onClick={() => switchMode('unlimited')} className={RESULT_SECONDARY_BTN}>{t('common.unlimitedGame', { name: shortTitle(t, 'higher-or-lower') })}</button>
                 <p className="text-faint text-xs mt-3">{t('common.comeBackTomorrow')}</p>
               </>}
         </div>
-        <UpNext exclude="higherlower" />
       </ResultModal>
     </div>
     </div>

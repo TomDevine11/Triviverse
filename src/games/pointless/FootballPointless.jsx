@@ -4,10 +4,11 @@ import ModeToggle from '../../components/ModeToggle'
 import { usePlayerSuggestions } from '../tictactoe/usePlayerSuggestions'
 import DailyStats from '../../components/DailyStats'
 import ResultModal from '../../components/ResultModal'
+import { shortTitle } from '../../components/nextGames'
 import GameMotif from '../../components/GameMotif'
-import UpNext from '../../components/UpNext'
-import { ShareCard } from '../../components/ShareCard'
+import { ShareCard, RESULT_SECONDARY_BTN } from '../../components/ShareCard'
 import { accentVars } from '../../design/accents'
+import { useI18n } from '../../i18n'
 import { todayIndex, recordResult, matchdayNumber } from '../../data/dailyStats'
 import { loadDailyProgress, saveDailyProgress } from '../../data/dailyProgress'
 import { TILE } from '../../utils/shareImage'
@@ -29,6 +30,7 @@ const dailyKey = () => POINTLESS_QUESTIONS[dailyIdx()].id // stable per-day id f
 const WIN_MAX = 100 // total under this wins the round (a pointless 0 still wins instantly)
 
 export default function FootballPointless() {
+  const { t } = useI18n()
   const qa = useQa('Pointless', N) // dev-only; inert for normal players
   const [mode, setMode] = useState(qa.active ? 'unlimited' : 'daily') // 'daily' | 'unlimited'
   const [qIndex, setQIndex] = useState(() => (qa.active ? qa.index % N : dailyIdx()))
@@ -220,7 +222,7 @@ export default function FootballPointless() {
         {mode === 'daily' && done && !showResult && (
           <button onClick={() => setShowResult(true)} className="mt-4 text-sm text-brand-bright hover:text-primary font-medium transition-colors">See result</button>
         )}
-        <ResultModal open={showResult && mode === 'daily'} onClose={() => setShowResult(false)}>
+        <ResultModal game="pointless" open={showResult && mode === 'daily'} onClose={() => setShowResult(false)}>
           <div className="w-full flex flex-col items-center text-center">
             <GameMotif id="football-pointless" className={`w-11 h-11 mb-2 ${won ? 'text-accent-bright' : 'text-dim'}`} />
             {resultHeadline}
@@ -235,10 +237,9 @@ export default function FootballPointless() {
             rows: [answers.map(a => (a.p === 0 ? TILE.hit : a.p <= 15 ? TILE.near : TILE.miss))],
             matchday: matchdayNumber(),
           }} />
-          <button onClick={startUnlimited} className="mt-2 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-lg px-6 py-2.5 transition-colors">Play unlimited</button>
+          <button onClick={startUnlimited} className={RESULT_SECONDARY_BTN}>{t('common.unlimitedGame', { name: shortTitle(t, 'football-pointless') })}</button>
           <div className="mt-3 text-[0.62rem] font-black tracking-[0.14em] uppercase text-faint">Come back tomorrow for the next daily</div>
           {testListEl}
-          <UpNext exclude="pointless" />
         </ResultModal>
       </div>
     </div>

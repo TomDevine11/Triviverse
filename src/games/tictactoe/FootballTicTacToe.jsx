@@ -5,14 +5,14 @@ import { useQa } from '../../dev/qa'
 import QaBar from '../../dev/QaBar'
 import { resolveNameToId } from '../../data/canonical/resolve'
 import { refineSuggestions, searchRegistry } from '../../data/canonical/resolve.js'
-import { ShareCard } from '../../components/ShareCard'
+import { ShareCard, RESULT_SECONDARY_BTN } from '../../components/ShareCard'
 import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
 import ResultModal from '../../components/ResultModal'
+import { shortTitle } from '../../components/nextGames'
 import CategoryIcon from '../../components/CategoryIcon'
 import GameChrome from '../../components/GameChrome'
 import GameMotif from '../../components/GameMotif'
-import UpNext from '../../components/UpNext'
 import { accentVars } from '../../design/accents'
 import { recordResult, matchdayNumber } from '../../data/dailyStats'
 import { loadDailyProgress, saveDailyProgress } from '../../data/dailyProgress'
@@ -521,7 +521,7 @@ export default function FootballTicTacToe({ onBackToModes }) {
         <button onClick={() => setShowResult(true)} className="mt-2 mb-6 text-sm text-brand-bright hover:text-primary font-medium transition-colors">{t('common.seeResult')}</button>
       )}
 
-      <ResultModal open={showResult && mode === 'daily'} onClose={() => setShowResult(false)}>
+      <ResultModal game="tictactoe" open={showResult && mode === 'daily'} onClose={() => setShowResult(false)}>
         <div className="w-full flex flex-col items-center text-center">
           <GameMotif id="tictactoe" className={`w-11 h-11 mb-2 ${phase === 'won' ? 'text-accent-bright' : 'text-dim'}`} />
           <h2 className={`score-number text-4xl mb-1 ${phase === 'won' ? 'text-success-bright' : 'text-danger-bright'}`}>
@@ -565,8 +565,7 @@ export default function FootballTicTacToe({ onBackToModes }) {
           rows: [0, 1, 2].map(r => [0, 1, 2].map(c => filled[r * 3 + c] != null ? TILE.hit : TILE.miss)),
           matchday: matchdayNumber(),
         }} />
-        <button onClick={startUnlimited} className="mt-2 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-lg px-6 py-2.5 transition-colors">{mode === 'daily' ? t('common.playUnlimited') : t('tictactoe.newGrid')}</button>
-        <UpNext exclude="tictactoe" />
+        <button onClick={startUnlimited} className={RESULT_SECONDARY_BTN}>{mode === 'daily' ? t('common.unlimitedGame', { name: shortTitle(t, 'tictactoe') }) : t('tictactoe.newGrid')}</button>
       </ResultModal>
 
       {/* Guess history */}

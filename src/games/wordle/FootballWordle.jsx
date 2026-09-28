@@ -1,12 +1,13 @@
 import { useState, useEffect, useMemo } from 'react'
 import { getDailyWordlePlayer, getRandomWordlePlayer } from '../../data/wordle'
 import { SITE_URL } from '../../utils/site'
-import { ShareCard } from '../../components/ShareCard'
+import { ShareCard, RESULT_SECONDARY_BTN } from '../../components/ShareCard'
 import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
 import ResultModal from '../../components/ResultModal'
+import { shortTitle } from '../../components/nextGames'
+import ResultAnswer from '../../components/ResultAnswer'
 import GameChrome from '../../components/GameChrome'
-import UpNext from '../../components/UpNext'
 import GameMotif from '../../components/GameMotif'
 import { accentVars } from '../../design/accents'
 import { recordResult, matchdayNumber } from '../../data/dailyStats'
@@ -304,20 +305,19 @@ export default function FootballWordle() {
         <button onClick={() => setShowResult(true)} className="mb-6 text-sm text-brand-bright hover:text-primary font-medium transition-colors">{t('common.seeResult')}</button>
       )}
 
-      <ResultModal open={showResult && mode === 'daily'} onClose={() => setShowResult(false)}>
+      <ResultModal game="wordle" open={showResult && mode === 'daily'} onClose={() => setShowResult(false)}>
         {phase === 'won' && (
           <div className="w-full flex flex-col items-center text-center">
             <GameMotif id="wordle" className="w-12 h-12 text-accent-bright mb-3" />
             <h2 className="score-number text-4xl text-success-bright mb-2">{t('wordle.correct')}</h2>
-            <p className="text-muted mb-1">{t('wordle.itWas')} <span className="text-primary font-bold">{question.fullName}</span> {question.flag}</p>
-            <p className="text-muted text-sm">{t('wordle.solvedIn')} <span className="text-primary font-bold">{guesses.length}</span>/{MAX_GUESSES}</p>
+            <ResultAnswer label={t('wordle.itWas')} detail={<>{t('wordle.solvedIn')} <span className="text-primary font-bold">{guesses.length}</span>/{MAX_GUESSES}</>}>{question.fullName} {question.flag}</ResultAnswer>
           </div>
         )}
         {phase === 'lost' && (
           <div className="w-full flex flex-col items-center text-center">
             <GameMotif id="wordle" className="w-12 h-12 text-dim mb-3" />
             <h2 className="score-number text-4xl text-danger-bright mb-2">{t('wordle.gameOver')}</h2>
-            <p className="text-muted mb-2">{t('wordle.itWas')} <span className="text-primary font-bold">{question.fullName}</span> {question.flag}</p>
+            <ResultAnswer label={t('wordle.itWas')}>{question.fullName} {question.flag}</ResultAnswer>
           </div>
         )}
         {dailyLocked && <p className="text-[0.62rem] font-black tracking-[0.14em] uppercase text-faint mb-1">{t('common.dailyDone')}</p>}
@@ -330,8 +330,7 @@ export default function FootballWordle() {
           rows: guesses.map(g => evaluateGuess(g, answer).map(s => s === 'green' ? TILE.hit : s === 'yellow' ? TILE.near : TILE.miss)),
           matchday: matchdayNumber(),
         }} />
-        <button onClick={startUnlimited} className="mt-3 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-lg px-6 py-2.5 transition-colors">{t('common.playUnlimited')}</button>
-        <UpNext exclude="wordle" />
+        <button onClick={startUnlimited} className={RESULT_SECONDARY_BTN}>{t('common.unlimitedGame', { name: shortTitle(t, 'wordle') })}</button>
       </ResultModal>
     </div>
     </div>

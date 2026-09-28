@@ -6,7 +6,6 @@ import GridBuilder from './GridBuilder'
 import CategoryIcon from '../../components/CategoryIcon'
 import GameChrome from '../../components/GameChrome'
 import ResultModal from '../../components/ResultModal'
-import UpNext from '../../components/UpNext'
 import Mark from './Mark'
 import { accentVars } from '../../design/accents'
 import { useI18n } from '../../i18n'
@@ -405,7 +404,7 @@ export default function TicTacToeVersus({ onBackToModes }) {
       )}
 
       {/* Finish card — round scoreline instead of daily stats */}
-      <ResultModal open={showResult} onClose={() => setShowResult(false)}>
+      <ResultModal game="tictactoe" open={showResult} onClose={() => setShowResult(false)}>
         <div className="w-full flex flex-col items-center text-center">
           {result === 'draw' ? (
             <div className="flex items-center gap-1.5 mb-2"><Mark mark="X" size={34} /><Mark mark="O" size={34} /></div>
@@ -422,14 +421,13 @@ export default function TicTacToeVersus({ onBackToModes }) {
           </div>
         </div>
         <div className="flex items-center justify-center gap-3 mt-1">
-          <button onClick={playAgain} className="bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-lg px-6 py-2.5 transition-colors">
+          <button onClick={playAgain} className="bg-border/60 hover:bg-border border border-border-strong text-primary text-sm font-bold rounded-lg px-6 py-2.5 transition-colors">
             {t('tictactoe.playAgain')}
           </button>
           <button onClick={toSetup} className="border border-border-strong text-secondary hover:bg-surface text-sm font-medium rounded-lg px-6 py-2.5 transition-colors">
             {t('tictactoe.newGridBtn')}
           </button>
         </div>
-        <UpNext exclude="tictactoe" />
       </ResultModal>
     </div>
     </div>
