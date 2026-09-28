@@ -404,7 +404,7 @@ export default function TicTacToeVersus({ onBackToModes }) {
       )}
 
       {/* Finish card — round scoreline instead of daily stats */}
-      <ResultModal game="tictactoe" open={showResult} onClose={() => setShowResult(false)}>
+      <ResultModal game="tictactoe" practice open={showResult} onClose={() => setShowResult(false)}>
         <div className="w-full flex flex-col items-center text-center">
           {result === 'draw' ? (
             <div className="flex items-center gap-1.5 mb-2"><Mark mark="X" size={34} /><Mark mark="O" size={34} /></div>

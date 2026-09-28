@@ -9,7 +9,9 @@ import { track } from '../utils/analytics'
 // The finish card's right column (desktop) / lower half (mobile): the day's
 // progress toward a perfect day, then ONE commanded next game — the only
 // brand-filled CTA on the card — plus four more unplayed dailies. `exclude` is
-// the current game's dailyStats key. Clicks are tracked as `upnext_click` so the
+// the current game's dailyStats key. `countCurrent` treats that game as played
+// today even before its recordResult effect lands (the card can render first);
+// pass false for practice rounds (501 unlimited/build, Tic-Tac-Toe 1v1). Clicks are tracked as `upnext_click` so the
 // cross-sell's effect on pages/session can be measured.
 
 
@@ -21,9 +23,10 @@ function ArrowIcon() {
   )
 }
 
-export default function NextFixture({ exclude }) {
+export default function NextFixture({ exclude, countCurrent = true }) {
   const { t, lp } = useI18n()
-  const done = DAILY_GAMES.filter(playedToday).length
+  const isDone = g => playedToday(g) || (countCurrent && g === exclude)
+  const done = DAILY_GAMES.filter(isDone).length
   const left = DAILY_GAMES.length - done
   const next = POOL.filter(g => g.stats !== exclude && !playedToday(g.stats))
   const [hero, ...rest] = next
@@ -49,8 +52,8 @@ export default function NextFixture({ exclude }) {
           {DAILY_GAMES.map(g => (
             <span
               key={g}
-              className={`flex-1 h-2 rounded-sm ${playedToday(g) ? '' : 'bg-inert'}`}
-              style={playedToday(g) ? { background: GAME_ACCENTS[g]?.accent } : undefined}
+              className={`flex-1 h-2 rounded-sm ${isDone(g) ? '' : 'bg-inert'}`}
+              style={isDone(g) ? { background: GAME_ACCENTS[g]?.accent } : undefined}
             />
           ))}
         </div>

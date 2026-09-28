@@ -595,7 +595,7 @@ export default function Football501({ initialMode = 'daily' }) {
           onExit={() => setResultDismissed(true)}
         />
         <div className="bg-board border-t md:border-t-0 border-border px-4 py-5 md:px-8 md:py-8 md:flex-1 md:overflow-y-auto">
-          <NextFixture exclude="501" />
+          <NextFixture exclude="501" countCurrent={soloDaily} />
         </div>
       </div>
     </div>
