@@ -16,7 +16,7 @@ import NextFixture from './NextFixture'
 // `game` (the dailyStats key) turns on the cross-sell layout: the result on the
 // left, NextFixture on the right (stacked below on mobile) — the next daily is
 // the card's primary action, so the post-game moment leads into another game.
-export default function ResultModal({ open, onClose, game, children }) {
+export default function ResultModal({ open, onClose, game, practice = false, children }) {
   if (!open) return null
   return (
     <div
@@ -42,7 +42,7 @@ export default function ResultModal({ open, onClose, game, children }) {
             <>
               <div className="px-5 pt-7 pb-5 md:px-7 md:py-8 flex flex-col items-center md:border-r border-border">{children}</div>
               <div className="bg-board border-t md:border-t-0 border-border px-4 py-5 md:px-8 md:py-8">
-                <NextFixture exclude={game} />
+                <NextFixture exclude={game} countCurrent={!practice} />
               </div>
             </>
           ) : children}
