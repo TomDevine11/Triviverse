@@ -8,11 +8,12 @@ import QaBar from '../../dev/QaBar'
 import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
 import ResultModal from '../../components/ResultModal'
+import { shortTitle } from '../../components/nextGames'
+import ResultAnswer from '../../components/ResultAnswer'
 import GameChrome from '../../components/GameChrome'
 import GameMotif from '../../components/GameMotif'
-import UpNext from '../../components/UpNext'
 import { accentVars } from '../../design/accents'
-import { ShareCard } from '../../components/ShareCard'
+import { ShareCard, RESULT_SECONDARY_BTN } from '../../components/ShareCard'
 import { useI18n } from '../../i18n'
 import { RESULT_REVEAL_DELAY_MS } from '../../utils/motion'
 
@@ -264,15 +265,13 @@ export default function FootballContexto() {
           <button onClick={() => setShowResult(true)} className="mt-5 text-sm text-brand-bright hover:text-primary font-medium transition-colors">{t('common.seeResult')}</button>
         )}
 
-        <ResultModal open={showResult && mode === 'daily'} onClose={() => setShowResult(false)}>
+        <ResultModal game="contexto" open={showResult && mode === 'daily'} onClose={() => setShowResult(false)}>
           <div className="w-full flex flex-col items-center text-center">
             <GameMotif id="football-contexto" className={`w-11 h-11 mb-2 ${won ? 'text-accent-bright' : 'text-dim'}`} />
             <h2 className={`score-number text-4xl mb-1 ${won ? 'text-success-bright' : 'text-danger-bright'}`}>
               {won ? t('contexto.solved', { n: guesses.length }) : t('contexto.gaveUp')}
             </h2>
-            <p className="text-muted text-sm mb-1">
-              {t('contexto.theAnswer')} <b className="text-primary">{round.target.n}</b>
-            </p>
+            <ResultAnswer label={t('contexto.theAnswer')}>{round.target.n}</ResultAnswer>
           </div>
           {dailyLocked && <p className="text-[0.62rem] font-black tracking-[0.14em] uppercase text-faint mb-1">{t('common.dailyDone')}</p>}
           {mode === 'daily' && <DailyStats game="contexto" stats={dailyStats} />}
@@ -297,8 +296,7 @@ export default function FootballContexto() {
             rows: shareRows,
             matchday: matchdayNumber(),
           }} />
-          <button onClick={startUnlimited} className="mt-2 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-lg px-6 py-2.5 transition-colors">{t('common.playUnlimited')}</button>
-          <UpNext exclude="contexto" />
+          <button onClick={startUnlimited} className={RESULT_SECONDARY_BTN}>{t('common.unlimitedGame', { name: shortTitle(t, 'football-contexto') })}</button>
         </ResultModal>
       </div>
     </div>

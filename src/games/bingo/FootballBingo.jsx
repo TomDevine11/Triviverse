@@ -7,12 +7,12 @@ import QaBar from '../../dev/QaBar'
 import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
 import ResultModal from '../../components/ResultModal'
+import { shortTitle } from '../../components/nextGames'
 import CategoryIcon from '../../components/CategoryIcon'
 import GameChrome from '../../components/GameChrome'
 import GameMotif from '../../components/GameMotif'
-import UpNext from '../../components/UpNext'
 import { accentVars } from '../../design/accents'
-import { ShareCard } from '../../components/ShareCard'
+import { ShareCard, RESULT_SECONDARY_BTN } from '../../components/ShareCard'
 import { useI18n } from '../../i18n'
 import { RESULT_REVEAL_DELAY_MS } from '../../utils/motion'
 
@@ -228,7 +228,7 @@ export default function FootballBingo() {
           <button onClick={() => setShowResult(true)} className="mt-5 text-sm text-brand-bright hover:text-primary font-medium transition-colors">{t('common.seeResult')}</button>
         )}
 
-        <ResultModal open={showResult && mode === 'daily'} onClose={() => setShowResult(false)}>
+        <ResultModal game="bingo" open={showResult && mode === 'daily'} onClose={() => setShowResult(false)}>
           <div className="w-full flex flex-col items-center text-center">
             <GameMotif id="football-bingo" className={`w-11 h-11 mb-2 ${won ? 'text-accent-bright' : 'text-dim'}`} />
             <h2 className={`score-number text-4xl mb-1 ${won ? 'text-success-bright' : 'text-danger-bright'}`}>
@@ -258,8 +258,7 @@ export default function FootballBingo() {
             rows: shareRows,
             matchday: matchdayNumber(),
           }} />
-          <button onClick={startUnlimited} className="mt-2 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-lg px-6 py-2.5 transition-colors">{t('common.playUnlimited')}</button>
-          <UpNext exclude="bingo" />
+          <button onClick={startUnlimited} className={RESULT_SECONDARY_BTN}>{t('common.unlimitedGame', { name: shortTitle(t, 'football-bingo') })}</button>
         </ResultModal>
       </div>
     </div>

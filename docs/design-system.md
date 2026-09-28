@@ -70,6 +70,14 @@ All localStorage, no backend. Implementation + tunable constants: `src/data/dail
 | **KO / FT** | Card state chips: `KICK OFF` (brand purple) → `FT` (success green) once today's daily is recorded. |
 | **Share** | The kit format: `TRIVIVERSE · MATCHDAY {n}` / game squares / `🔥{streak} · {pts} pts` / url. Clipboard + "Copied!" flash. |
 
+### 7.1 The finish card (daily result)
+
+Every daily ends in `ResultModal game="<key>"`, which has two columns on desktop and stacks them on mobile:
+- **Left:** the verdict. It uses `ResultAnswer` to show the answer at headline size, plus DailyStats. Share and "Unlimited {game} →" use the quiet `RESULT_SECONDARY_BTN` style.
+- **Right:** `NextFixture`. It shows YOUR MATCHDAY n/11 with the perfect-day bar, then one **PLAY THIS NEXT** hero game, then four tiles and a link to all games.
+
+The next game is the card's **only** brand-filled button, and the copy is a command. Suggestions only include dailies not yet played today. Clicks fire `upnext_click {from, to, slot}`. 501's match report and the Tic-Tac-Toe 1v1 scoreline use the same right column.
+
 ## 8. Voice & microcopy
 
 Second person, present tense, football-fluent, brief. Labels are shouted (`PERFECT DAY`, `KICK OFF`); supporting lines are calm muted greys. Buttons are verbs. Every string goes through `useI18n` — EN and ES ship together, no hardcoded UI text.

@@ -1,3 +1,5 @@
+import NextFixture from './NextFixture'
+
 // Completion popup shown when a game ends — holds the result, stats, share,
 // play-again and "try another game" so the post-game actions are front-and-centre
 // instead of hidden below the board. Closable (X or backdrop) to review the board.
@@ -10,7 +12,11 @@
 // wrapper centres the card when it fits but lets it grow and scroll from the top
 // when the content is taller than the viewport (avoids the classic flex-centre
 // top-clipping bug).
-export default function ResultModal({ open, onClose, children }) {
+//
+// `game` (the dailyStats key) turns on the cross-sell layout: the result on the
+// left, NextFixture on the right (stacked below on mobile) — the next daily is
+// the card's primary action, so the post-game moment leads into another game.
+export default function ResultModal({ open, onClose, game, children }) {
   if (!open) return null
   return (
     <div
@@ -21,7 +27,7 @@ export default function ResultModal({ open, onClose, children }) {
     >
       <div className="flex min-h-full items-center justify-center p-4">
         <div
-          className="result-card relative w-full max-w-md bg-surface border border-border-strong rounded-2xl shadow-modal px-5 py-6 flex flex-col items-center"
+          className={`result-card relative w-full bg-surface border border-border-strong rounded-2xl shadow-modal ${game ? 'max-w-md md:max-w-[58rem] overflow-hidden md:grid md:grid-cols-[22.5rem_minmax(0,1fr)]' : 'max-w-md px-5 py-6 flex flex-col items-center'}`}
           onClick={e => e.stopPropagation()}
         >
           <button
@@ -32,7 +38,14 @@ export default function ResultModal({ open, onClose, children }) {
           >
             ✕
           </button>
-          {children}
+          {game ? (
+            <>
+              <div className="px-5 pt-7 pb-5 md:px-7 md:py-8 flex flex-col items-center md:border-r border-border">{children}</div>
+              <div className="bg-board border-t md:border-t-0 border-border px-4 py-5 md:px-8 md:py-8">
+                <NextFixture exclude={game} />
+              </div>
+            </>
+          ) : children}
         </div>
       </div>
     </div>

@@ -2,7 +2,8 @@ import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
 import { ShareCard } from '../../components/ShareCard'
 import GameChrome from '../../components/GameChrome'
 import ModeToggle from '../../components/ModeToggle'
-import UpNext from '../../components/UpNext'
+import NextFixture from '../../components/NextFixture'
+import { shortTitle } from '../../components/nextGames'
 import GameMotif from '../../components/GameMotif'
 import { useI18n } from '../../i18n'
 import { getDailyChallenge, getDailyEntry, getRandomChallenge } from '../../data/football501/game'
@@ -175,15 +176,7 @@ function WinScreen({ history, players, challenge, gaveUp, onPlayAgain, onExit, p
   )
 
   return (
-    <div className="relative w-full max-h-full min-h-0 bg-surface border border-border-strong rounded-2xl px-5 py-5 flex flex-col shadow-modal">
-        <button
-          type="button"
-          onClick={onExit}
-          aria-label="Close"
-          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full text-muted hover:text-primary hover:bg-border transition-colors text-lg leading-none"
-        >
-          ✕
-        </button>
+    <div className="relative w-full shrink-0 md:w-[27rem] min-h-0 px-5 pt-7 pb-5 md:py-6 flex flex-col md:border-r border-border">
         <div className="text-center">
           <GameMotif id="501" className={`w-10 h-10 mx-auto mb-1.5 ${isSolo && gaveUp ? 'text-dim' : 'text-accent-bright'}`} />
           <h2 className={`score-number text-4xl sm:text-5xl ${headlineCls}`}>{headline}</h2>
@@ -207,7 +200,7 @@ function WinScreen({ history, players, challenge, gaveUp, onPlayAgain, onExit, p
                   {perfect.length ? perfect.map(a => a.name).join(', ') : <span className="text-muted font-normal">{t('five01.noExact', { score: finishingScore })}</span>}
                 </span>
               </div>
-              <div className="flex-1 min-h-0 overflow-y-auto border border-border rounded-lg divide-y divide-border/40">
+              <div className="flex-1 min-h-0 max-h-[40dvh] md:max-h-none overflow-y-auto border border-border rounded-lg divide-y divide-border/40">
                 {isSolo ? (
                   valid.length ? valid.map((g, i) => (
                     <div key={i} className="flex items-center gap-2 px-3 py-2 text-sm">
@@ -233,7 +226,7 @@ function WinScreen({ history, players, challenge, gaveUp, onPlayAgain, onExit, p
             </>
           )}
           {tab === 'answers' && (
-            <div className="flex-1 min-h-0 overflow-y-auto border border-border rounded-lg divide-y divide-border/40">
+            <div className="flex-1 min-h-0 max-h-[40dvh] md:max-h-none overflow-y-auto border border-border rounded-lg divide-y divide-border/40">
               {answers.map((a, i) => (
                 <div key={i} className="flex items-center justify-between px-3 py-1.5 text-sm">
                   <span className={usedNames.has(a.name) ? 'text-success-bright font-medium' : 'text-secondary'}>{usedNames.has(a.name) ? '✓ ' : ''}{a.name}</span>
@@ -244,9 +237,9 @@ function WinScreen({ history, players, challenge, gaveUp, onPlayAgain, onExit, p
           )}
         </div>
 
-        <div className="flex gap-2 justify-center mt-3.5">
+        <div className="flex flex-wrap gap-2 justify-center mt-3.5">
           <ShareCard
-            className="px-4 py-2.5 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-lg"
+            className="px-4 py-2.5 bg-border/60 hover:bg-border border border-border-strong text-primary text-sm font-bold rounded-lg whitespace-nowrap"
             card={{
               gameId: '501',
               title: 'Football 501',
@@ -258,10 +251,9 @@ function WinScreen({ history, players, challenge, gaveUp, onPlayAgain, onExit, p
               matchday: matchdayNumber(),
             }}
           />
-          <button onClick={onPlayAgain} className="px-4 py-2.5 bg-surface hover:bg-border border border-border-strong text-primary text-sm font-bold rounded-lg transition-colors">{playAgainLabel || t('five01.playAgain')}</button>
+          <button onClick={onPlayAgain} className="whitespace-nowrap px-4 py-2.5 bg-surface hover:bg-border border border-border-strong text-primary text-sm font-bold rounded-lg transition-colors">{playAgainLabel || t('five01.playAgain')}</button>
           <button onClick={onExit} className="px-4 py-2.5 text-muted hover:text-secondary border border-border text-sm font-bold rounded-lg transition-colors">{t('five01.menuBtn')}</button>
         </div>
-        <UpNext exclude="501" />
     </div>
   )
 }
@@ -587,13 +579,24 @@ export default function Football501({ initialMode = 'daily' }) {
   // floats over a dimmed, still-visible oche (the product's modal contract).
   const overlay = phase === 'won' && !resultDismissed && (
     <div className="fixed inset-0 z-modal bg-black/70 backdrop-blur-sm result-modal-in flex items-center justify-center p-4 sm:p-6">
-      <div className="result-card w-full max-w-2xl max-h-[88dvh] flex">
+      <div className="result-card relative w-full max-w-md md:max-w-[62rem] max-h-[92dvh] md:max-h-[88dvh] overflow-y-auto md:overflow-hidden flex flex-col md:flex-row bg-surface border border-border-strong rounded-2xl shadow-modal">
+        <button
+          type="button"
+          onClick={() => setResultDismissed(true)}
+          aria-label="Close"
+          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full text-muted hover:text-primary hover:bg-border transition-colors text-lg leading-none"
+        >
+          ✕
+        </button>
         <WinScreen
           history={history} players={players} challenge={challenge} gaveUp={gaveUp}
           onPlayAgain={soloDaily ? () => setPhase('random') : playAgain}
-          playAgainLabel={soloDaily ? t('common.playUnlimited') : t('five01.playAgain')}
+          playAgainLabel={soloDaily ? t('common.unlimitedGame', { name: shortTitle(t, '501') }) : t('five01.playAgain')}
           onExit={() => setResultDismissed(true)}
         />
+        <div className="bg-board border-t md:border-t-0 border-border px-4 py-5 md:px-8 md:py-8 md:flex-1 md:overflow-y-auto">
+          <NextFixture exclude="501" />
+        </div>
       </div>
     </div>
   )

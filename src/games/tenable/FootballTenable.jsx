@@ -6,13 +6,13 @@ import QuestionBuilder from '../football501/QuestionBuilder'
 import { refineSuggestions, searchRegistry, resolveNameToId } from '../../data/canonical/resolve.js'
 import { searchClubs } from '../../data/canonical/clubs.js'
 import { normalize, answerMatches } from './match.js'
-import { ShareCard } from '../../components/ShareCard'
+import { ShareCard, RESULT_SECONDARY_BTN } from '../../components/ShareCard'
 import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
 import ResultModal from '../../components/ResultModal'
+import { shortTitle } from '../../components/nextGames'
 import CategoryIcon from '../../components/CategoryIcon'
 import GameChrome from '../../components/GameChrome'
-import UpNext from '../../components/UpNext'
 import GameMotif from '../../components/GameMotif'
 import { accentVars } from '../../design/accents'
 import { recordResult, matchdayNumber } from '../../data/dailyStats'
@@ -507,7 +507,7 @@ export default function FootballTenable() {
         <button onClick={() => setShowResult(true)} className="mt-2 mb-6 text-sm text-brand-bright hover:text-primary font-medium transition-colors">{t('common.seeResult')}</button>
       )}
 
-      <ResultModal open={showResult && mode === 'daily'} onClose={() => setShowResult(false)}>
+      <ResultModal game="tenable" open={showResult && mode === 'daily'} onClose={() => setShowResult(false)}>
         <div className="w-full flex flex-col items-center text-center">
           <GameMotif id="tenable" className={`w-11 h-11 mb-2 ${phase === 'won' ? 'text-accent-bright' : 'text-dim'}`} />
           <h2 className={`score-number text-4xl mb-1 ${phase === 'won' ? 'text-success-bright' : 'text-danger-bright'}`}>
@@ -547,8 +547,7 @@ export default function FootballTenable() {
           rows: [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]].map(r => r.map(rk => revealed[rk] ? TILE.hit : TILE.miss)),
           matchday: matchdayNumber(),
         }} />
-        <button onClick={startUnlimited} className="mt-2 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-lg px-6 py-2.5 transition-colors">{t('common.playUnlimited')}</button>
-        <UpNext exclude="tenable" />
+        <button onClick={startUnlimited} className={RESULT_SECONDARY_BTN}>{t('common.unlimitedGame', { name: shortTitle(t, 'tenable') })}</button>
       </ResultModal>
 
       {/* Guess history */}

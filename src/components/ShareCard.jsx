@@ -3,6 +3,10 @@ import { buildShareUrl } from '../utils/shareUrl'
 import { useI18n } from '../i18n'
 import { track } from '../utils/analytics'
 
+// The finish card's quiet button style (Share, Play Unlimited): the next-game
+// CTA in NextFixture is the card's only brand-filled button.
+export const RESULT_SECONDARY_BTN = 'mt-2 w-full h-11 bg-border/60 hover:bg-border border border-border-strong text-primary text-sm font-bold rounded-lg px-6'
+
 export function ShareIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
@@ -37,7 +41,7 @@ export function ShareCard({ card, className }) {
   return (
     <button
       onClick={handleShare}
-      className={`flex items-center justify-center gap-2 transition-colors ${className || 'mt-2 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-lg px-6 py-2.5'}`}>
+      className={`flex items-center justify-center gap-2 transition-colors ${className || RESULT_SECONDARY_BTN}`}>
       <ShareIcon /> {copied ? t('share.copied') : t('share.share')}
     </button>
   )
