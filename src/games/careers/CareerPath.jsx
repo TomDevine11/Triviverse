@@ -308,6 +308,9 @@ export default function CareerPath() {
           ].join('\n\n')}
           card={{
             gameId: 'careers',
+            daily: mode === 'daily',
+            won: phase === 'won',
+            score: { v: phase === 'won' ? guesses.length : maxClues + 1, of: maxClues, low: true },
             title: t('careers.wordmark'),
             challenge: t('games.career-path.tagline'),
             result: phase === 'won' ? t('teammates.correct') : t('teammates.outOf'),

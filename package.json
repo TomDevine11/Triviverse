@@ -67,7 +67,9 @@
     "seo-trends": "node scripts/seo/trend.mjs",
     "experiments": "node scripts/seo/experiments.mjs",
     "serp-log": "node scripts/seo/serp-log.mjs",
-    "test:visual": "playwright test --project=visual --project=visual-mobile"
+    "test:visual": "playwright test --project=visual --project=visual-mobile",
+    "dev:social": "node scripts/dev-social.mjs",
+    "social-smoke": "node scripts/social-smoke.mjs"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
@@ -78,6 +80,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
+    "@cf-wasm/og": "^0.5.0",
     "@eslint/js": "^10.0.1",
     "@google-analytics/data": "^6.1.0",
     "@googleapis/searchconsole": "^6.0.1",
@@ -98,6 +101,7 @@
     "sharp": "^0.35.1",
     "tailwindcss": "^3.4.19",
     "vite": "^8.0.12",
-    "vitest": "^4.1.8"
+    "vitest": "^4.1.8",
+    "wrangler": "^4.145.0"
   }
 }

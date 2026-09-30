@@ -541,6 +541,9 @@ export default function FootballTenable() {
         )}
         <ShareCard card={{
           gameId: 'tenable',
+          daily: mode === 'daily',
+          won: phase === 'won',
+          score: { v: Array.from({ length: 10 }, (_, i) => i + 1).filter(rk => revealed[rk]).length, of: 10 },
           title: 'Football Tenable',
           challenge: question.title,
           result: phase === 'won' ? t('tenable.pyramidComplete') : gaveUp ? t('tenable.gaveUp') : t('tenable.gameOver'),

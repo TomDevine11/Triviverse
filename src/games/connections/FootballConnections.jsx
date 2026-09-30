@@ -257,6 +257,9 @@ export default function FootballConnections() {
         )}
         <ShareCard card={{
           gameId: 'connections',
+          daily: mode === 'daily',
+          won,
+          score: { v: mistakes, low: true, u: 'mistakes' },
           title: 'Football Connections',
           challenge: t('games.connections.tagline'),
           result: won ? t('connections.solved') : t('connections.outOf'),

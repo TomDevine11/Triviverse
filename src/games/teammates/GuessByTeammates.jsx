@@ -277,6 +277,9 @@ export default function GuessByTeammates() {
             ].join('\n\n')}
             card={{
               gameId: 'teammates',
+              daily: mode === 'daily',
+              won: phase === 'won',
+              score: { v: phase === 'won' ? guesses.length : MAX_CLUES + 1, of: MAX_CLUES, low: true },
               title: t('teammates.wordmark'),
               challenge: t('games.teammates.tagline'),
               result: phase === 'won' ? t('teammates.correct') : t('teammates.outOf'),

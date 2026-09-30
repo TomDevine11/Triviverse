@@ -9,8 +9,13 @@ import { routeByPath } from '../seo/seoConfig'
 import { useI18n } from '../i18n'
 import { playedToday, getStats, recordVisit, formGuide, weeklyPoints, dailyPoints, matchdayNumber, todayIndex, DAILY_GAMES } from '../data/dailyStats'
 import { inProgressToday } from '../data/dailyProgress'
-import { buildDayShareUrl } from '../utils/shareUrl'
 import SiteFooter from '../components/SiteFooter'
+import DayShareSheet from '../components/social/DayShareSheet'
+import { UserIcon, TableIcon, FlameIcon, FreezeIcon, VsIcon } from '../components/social/bits'
+import { useSocialTick, ordinal, fmt } from '../components/social/hooks'
+import { getStreak } from '../social/streak'
+import { useToday, useMyLeagues } from '../social/leagues'
+import { rivalsOn } from '../social/challenge'
 
 // The lineup. `stats` keys dailyStats (what each game passes to recordResult).
 const GAMES = [
@@ -50,13 +55,20 @@ function untilMidnight() {
   return `${String(Math.floor(mins / 60)).padStart(2, '0')}:${String(mins % 60).padStart(2, '0')}`
 }
 
+const HUB_TICK = ['result', 'rivals', 'streak', 'import']
+
 export default function Hub() {
   const { locale, t, lp } = useI18n()
   const home = routeByPath('/', locale)
-  const [visit] = useState(recordVisit)
+  useState(recordVisit) // keeps the visit ledger ("welcome back") current
   const [countdown, setCountdown] = useState(untilMidnight)
-  const [copied, setCopied] = useState(false)
+  const [shareOpen, setShareOpen] = useState(false)
   const matchday = matchdayNumber()
+  useSocialTick(HUB_TICK)
+  const streak = getStreak()
+  const live = useToday()
+  const leagues = useMyLeagues()
+  const topLeague = leagues[0]
 
   // Keep the next-dailies countdown live (minute precision).
   useEffect(() => {
@@ -72,24 +84,22 @@ export default function Hub() {
     won: getStats(g.stats).lastWin === todayIndex(),
     streak: getStats(g.stats).currentStreak,
     form: formGuide(g.stats),
+    rival: rivalsOn(matchday, g.stats).length > 0,
   }))
   const playedCount = lineup.filter(g => g.played).length
-  const wonCount = lineup.filter(g => g.won).length
   const points = weeklyPoints()
   const daily = dailyPoints()
 
-  // Share my day as a link that unfurls into the "matchday" recap image and
-  // opens the hub — same pipeline as the game cards. Desktop copies the link.
-  const canNativeShare = typeof navigator !== 'undefined' && typeof navigator.share === 'function'
-  const shareDay = async () => {
-    const url = buildDayShareUrl({ matchday, dailyPoints: daily, weeklyPoints: points, dayStreak: visit.streak, won: wonCount })
-    if (canNativeShare) { try { await navigator.share({ url }) } catch { /* cancelled */ } return }
-    try {
-      await navigator.clipboard.writeText(url)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch { /* clipboard unavailable */ }
-  }
+  const streakChip = (
+    <span title={streak.atRisk ? t('social.streak.atRisk', { n: streak.streak }) : `${t('social.streak.days', { n: streak.streak })} · ${t('social.streak.freezeHelp')}`}
+      className={`inline-flex items-center gap-1 bg-surface border rounded-lg px-2 py-1 sm:px-2.5 sm:py-1.5 text-[0.5rem] sm:text-[0.62rem] font-bold tracking-[0.1em] text-muted whitespace-nowrap ${streak.atRisk ? 'border-warn/60 risk-pulse' : 'border-border'}`}>
+      <FlameIcon className={`w-3 h-3 sm:w-3.5 sm:h-3.5 ${streak.streak ? 'text-warn' : 'text-dim'}`} />
+      <b className="text-primary text-[0.72rem] sm:text-[0.85rem] tabular-nums">{streak.streak}</b>
+      <span className="lg:hidden">{t('hub.dayStreak')}</span>
+      {streak.freezes > 0 && <span className="text-brand-bright inline-flex items-center gap-0.5 ml-0.5"><FreezeIcon className="w-2.5 h-2.5 sm:w-3 sm:h-3" />{streak.freezes}</span>}
+    </span>
+  )
+  const iconBtn = 'w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg border border-border-strong bg-surface text-secondary hover:text-primary hover:border-brand/50 transition-colors'
 
   return (
     <div className="tv-scene text-primary">
@@ -108,15 +118,20 @@ export default function Hub() {
           </h1>
           <div className="flex items-center gap-2">
             <div className="hidden md:flex gap-2">
-              <StatChip value={visit.streak} label={t('hub.dayStreak')} />
+              {streakChip}
               <StatChip value={`${playedCount}/${lineup.length}`} label={t('hub.played')} />
-              <StatChip value={daily} label={t('hub.ptsToday')} accent />
-              <StatChip value={points} label={t('hub.ptsWeek')} />
+              <span className="bg-surface border border-border rounded-lg px-2.5 py-1.5 text-[0.62rem] font-bold tracking-[0.1em] text-muted whitespace-nowrap">
+                <b className="text-brand-bright text-[0.85rem] mr-1 tabular-nums">{daily}</b>{t('hub.ptsToday')}
+                <span className="text-faint mx-1.5">·</span>
+                <b className="text-primary text-[0.85rem] mr-1 tabular-nums">{points}</b>{t('social.hubWeek')}
+              </span>
               <StatChip value={countdown} label={t('hub.nextDailies')} accent />
             </div>
             <span className="md:hidden text-[0.6rem] font-bold tracking-[0.1em] text-brand-bright">
               {t('hub.next')} {countdown}
             </span>
+            <Link to={lp('/leagues')} aria-label={t('social.nav.leagues')} className={iconBtn}><TableIcon /></Link>
+            <Link to={lp('/me')} aria-label={t('social.nav.you')} className={iconBtn}><UserIcon /></Link>
             <LanguageSwitcher />
           </div>
         </div>
@@ -126,19 +141,35 @@ export default function Hub() {
           <div>
             <p className="text-[0.55rem] sm:text-[0.62rem] font-extrabold tracking-[0.22em] text-brand-bright m-0">
               {t('hub.kick')}
+              {live?.players > 0 && <span className="text-muted"> · <b className="text-primary tabular-nums">{fmt(live.players, locale)}</b> {t('social.global.playingChip')}</span>}
             </p>
             <div className="score-number text-[2rem] sm:text-[2.6rem] leading-none mt-0.5 tv-wordmark">
               {t('hub.matchday')} {matchday}
             </div>
             <div className="md:hidden flex gap-1.5 mt-2">
-              <StatChip value={visit.streak} label={t('hub.streak')} />
+              {streakChip}
               <StatChip value={daily} label={t('hub.ptsToday')} accent />
               <StatChip value={points} label={t('hub.pts')} />
             </div>
           </div>
-          <span className="hidden sm:block text-[0.62rem] tracking-[0.1em] text-faint pb-1">
-            {t('hub.lineupNote')}
-          </span>
+          {topLeague ? (
+            <Link to={lp(`/leagues/${topLeague.code}`)} className="flex items-center gap-2 bg-surface border border-border-strong hover:border-brand/50 rounded-lg px-2.5 py-1.5 mb-0.5 transition-colors max-w-[11rem] sm:max-w-none">
+              <TableIcon className="w-3.5 h-3.5 text-brand-bright shrink-0" />
+              <span className="min-w-0 text-[0.55rem] sm:text-[0.62rem] font-bold tracking-[0.08em] text-muted leading-tight">
+                <b className="block text-primary text-[0.66rem] sm:text-[0.75rem] truncate">{topLeague.name}</b>
+                {ordinal(topLeague.rank, locale)} · {topLeague.rank === 1 ? t('social.leagues.leading') : t('social.leagues.ptsBehind', { n: topLeague.leaderPts - topLeague.pts })}
+              </span>
+            </Link>
+          ) : streak.atRisk ? (
+            <span className="text-[0.55rem] sm:text-[0.66rem] font-bold tracking-[0.06em] text-warn pb-1 text-right">
+              <span className="sm:hidden">{t('social.streak.atRiskShort', { n: streak.streak })}</span>
+              <span className="hidden sm:inline">{t('social.streak.atRisk', { n: streak.streak })}</span>
+            </span>
+          ) : (
+            <span className="hidden sm:block text-[0.62rem] tracking-[0.1em] text-faint pb-1">
+              {t('hub.lineupNote')}
+            </span>
+          )}
         </div>
 
         {/* the pitch — your lineup */}
@@ -162,6 +193,8 @@ export default function Hub() {
                 >
                   {g.played
                     ? 'FT'
+                    : g.rival && !g.inPlay
+                      ? <span className="inline-flex items-center gap-0.5"><VsIcon className="w-2 h-2 sm:w-2.5 sm:h-2.5" />VS</span>
                     : g.inPlay
                       ? <><span className="sm:hidden">▶</span><span className="hidden sm:inline">{t('common.inPlay').toUpperCase()}</span></>
                       : <><span className="sm:hidden">KO</span><span className="hidden sm:inline">{t('hub.kickOff')}</span></>}
@@ -204,13 +237,14 @@ export default function Hub() {
           </div>
           <button
             type="button"
-            onClick={shareDay}
+            onClick={() => setShareOpen(true)}
             className="bg-brand hover:bg-brand-hover text-white font-bold text-[0.68rem] sm:text-[0.8rem] tracking-[0.06em] rounded-lg px-3.5 py-2 sm:px-4 sm:py-2.5 whitespace-nowrap transition-colors"
           >
-            {copied ? t('hub.copied') : t('hub.shareDay')}
+            {t('hub.shareDay')}
           </button>
         </div>
       </div>
+      {shareOpen && <DayShareSheet onClose={() => setShareOpen(false)} />}
 
       {/* ── Below the fold: SEO content, unchanged in substance ── */}
       <div className="max-w-2xl mx-auto px-4 pt-14 pb-16">

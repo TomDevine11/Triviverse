@@ -252,6 +252,9 @@ export default function FootballBingo() {
 
           <ShareCard card={{
             gameId: 'bingo',
+            daily: mode === 'daily',
+            won,
+            score: { v: filled, of: CARD_SIZE },
             title: 'Football Bingo',
             challenge: t('games.football-bingo.tagline'),
             result: won ? t('bingo.bingo') : t('bingo.outOf', { n: filled }),

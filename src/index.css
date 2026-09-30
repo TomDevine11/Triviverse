@@ -175,3 +175,25 @@ body {
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: theme('colors.canvas.DEFAULT'); }
 ::-webkit-scrollbar-thumb { background: theme('colors.border.strong'); border-radius: 3px; }
+
+/* ── Social layer (challenges, badges, streaks) ── */
+@keyframes toast-in {
+  from { opacity: 0; transform: translate(-50%, 12px) scale(0.96); }
+  to { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
+@keyframes banner-in {
+  from { opacity: 0; transform: translate(-50%, -10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+@keyframes risk-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgb(251 191 36 / 0); }
+  50% { box-shadow: 0 0 0 4px rgb(251 191 36 / 0.18); }
+}
+@keyframes bar-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.toast-in { animation: toast-in var(--duration-base) var(--ease-spring) both; }
+.banner-in { animation: banner-in var(--duration-base) var(--ease-spring) both; }
+.risk-pulse { animation: risk-pulse 2.4s ease-in-out infinite; }
+.bar-grow { transform-origin: left; animation: bar-grow var(--duration-slow) var(--ease-out) both; }
+@media (prefers-reduced-motion: reduce) {
+  .toast-in, .banner-in, .risk-pulse, .bar-grow { animation: none; }
+}

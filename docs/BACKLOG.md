@@ -246,3 +246,17 @@ the on-page work #25 shipped is done and correct. The remaining gap is an AI Ove
 someone else's brand, which no metadata change reaches. **Do not reopen this as a title/CTR
 problem.** Both of Tenable's big pools are now understood and both are structural: Bing is capped
 by the Tenable.com advert, Google by the AI Overview and the spelling correction.
+
+## Social layer — 2026-09-30 (built locally, awaiting Tom's review)
+
+**Finding:** every share link since July pointed at `share.triviverse.com`, which has **no DNS
+record** — shared results were dead links. 7 shares in 28 days. The audience is weekday-lunchtime
+UK desktop (GA4), i.e. office groups. Tom asked for everything possible in sharing, leagues,
+leaderboards and come-back-tomorrow stats; all of it is on `feat/social-retention` (see
+`docs/social.md`). He reviews on localhost and picks what ships.
+
+| ID | Title | Class | Value | Source | Effort | Priority | Status |
+|----|-------|-------|-------|--------|--------|----------|--------|
+| B-029 | Social layer: challenges, text share, streak freezes, badges, reminders, leagues, percentiles, device transfer, same-origin share images | user-facing | fixes dead share links; first virality + retention loops | GA4 | L | P0 | built, awaiting review |
+| B-030 | Privacy policy line for device id / nickname / scores (needed before leagues go live) | legal | required | — | S | P0 | Tom's call |
+| B-031 | Create the production D1 database + apply migrations | infra | leagues/percentiles need it | — | S | P0 | blocked on B-029 review |

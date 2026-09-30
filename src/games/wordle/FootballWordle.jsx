@@ -324,6 +324,9 @@ export default function FootballWordle() {
         {mode === 'daily' && <DailyStats game="wordle" stats={dailyStats} />}
         <ShareCard text={shareText} card={{
           gameId: 'wordle',
+          daily: mode === 'daily',
+          won: phase === 'won',
+          score: { v: phase === 'won' ? guesses.length : MAX_GUESSES + 1, of: MAX_GUESSES, low: true },
           title: 'Football Wordle',
           challenge: t('games.wordle.tagline'),
           result: phase === 'won' ? `${t('wordle.solvedIn')} ${guesses.length}/${MAX_GUESSES}` : t('wordle.gameOver'),

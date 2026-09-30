@@ -28,6 +28,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.join(__dirname, '..', 'dist')
 const template = readFileSync(path.join(DIST, 'index.html'), 'utf8')
 
+// Bare SPA shell for app-only screens (/me, /leagues/*) that are never
+// prerendered: the untouched Vite template, marked noindex. Served by the
+// Cloudflare Worker (worker/index.js) and harmless elsewhere.
+writeFileSync(path.join(DIST, 'app-shell.html'), template
+  .replace(/<title>[^<]*<\/title>/i, '<title>Triviverse</title>')
+  .replace('</head>', '<meta name="robots" content="noindex, nofollow">\n</head>'))
+
 // Load the answer-archive builder through Vite's SSR pipeline. archiveData.js
 // imports the game data modules (which import generated JSON) that plain Node
 // ESM can't resolve — Vite transforms them — so this lets the prerender bake the

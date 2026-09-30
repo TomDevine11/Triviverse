@@ -559,6 +559,9 @@ export default function FootballTicTacToe({ onBackToModes }) {
         )}
         <ShareCard card={{
           gameId: 'tictactoe',
+          daily: mode === 'daily',
+          won: phase === 'won',
+          score: { v: filledCount, of: 9 },
           title: t('tictactoe.wordmark'),
           challenge: t('games.tictactoe.tagline'),
           result: phase === 'won' ? t('tictactoe.gridComplete') : gaveUp ? t('tictactoe.gaveUp') : t('tictactoe.gameOver'),

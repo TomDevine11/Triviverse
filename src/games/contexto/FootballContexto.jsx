@@ -290,6 +290,9 @@ export default function FootballContexto() {
 
           <ShareCard card={{
             gameId: 'contexto',
+            daily: mode === 'daily',
+            won,
+            score: { v: guesses.length, low: true, u: 'guesses' },
             title: 'Football Contexto',
             challenge: t('games.football-contexto.tagline'),
             result: won ? t('contexto.solved', { n: guesses.length }) : t('contexto.gaveUp'),

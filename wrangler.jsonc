@@ -1,12 +1,29 @@
-// Cloudflare Workers static-assets hosting. Built by `npm run build:pages`
-// (see scripts/cloudflare-pages.mjs), deployed by `npx wrangler deploy`.
+// Cloudflare Workers: static assets + a small Worker for the social layer.
+// Built by `npm run build:pages` (see scripts/cloudflare-pages.mjs), deployed by
+// `npx wrangler deploy`. Local full stack: `npm run dev:social`.
 {
   "name": "triviverse",
+  "main": "worker/index.js",
   "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     // Flat route files (tenable.html) serve at /tenable; /tenable/ redirects there.
     "html_handling": "auto-trailing-slash",
-    "not_found_handling": "404-page"
-  }
+    "not_found_handling": "404-page",
+    // Everything else is served straight from dist/ without invoking the Worker.
+    "run_worker_first": ["/api/*", "/s/*", "/c/*", "/og/g.png", "/og/d.png", "/og/l/*", "/me", "/me/*", "/leagues", "/leagues/*", "/es/me", "/es/leagues", "/es/leagues/*"]
+  },
+  // Social layer (player state only — game content stays static). Before the
+  // first deploy: `npx wrangler d1 create triviverse-social`, paste the id here,
+  // then `npx wrangler d1 migrations apply triviverse-social --remote`.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "triviverse-social",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "worker/migrations"
+    }
+  ]
 }

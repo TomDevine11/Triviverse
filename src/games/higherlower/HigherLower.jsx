@@ -321,6 +321,9 @@ export default function HigherLower() {
             ].join('\n\n')}
             card={{
               gameId: 'higherlower',
+              daily: dailyMode === 'daily',
+              won: dailyCleared,
+              score: { v: streak, u: 'streak' },
               title: 'Higher or Lower',
               challenge: `${mode.label} · ${t('higherlower.todayChain')}`,
               result: dailyCleared ? t('higherlower.chainCleared') : t('higherlower.gameOver'),

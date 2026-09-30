@@ -231,6 +231,9 @@ export default function FootballPointless() {
           {pointlessListEl}
           <ShareCard card={{
             gameId: 'pointless',
+            daily: mode === 'daily',
+            won,
+            score: { v: total, low: true, u: 'pts' },
             title: 'Football Pointless',
             challenge: question.title,
             result: won ? (foundPointless ? 'Pointless!' : `${total} pts — under 100`) : `${total} pts`,
