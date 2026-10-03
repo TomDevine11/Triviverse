@@ -69,6 +69,7 @@ export const joinLeague = (code) => call(`/leagues/${code}/join`, { method: 'POS
 export const leaveLeague = (code) => call(`/leagues/${code}/leave`, { method: 'POST', body: who() })
 export const getLeague = (code, day) => call(`/leagues/${code}?player=${encodeURIComponent(getMe().id)}&day=${day}`)
 export const peekLeague = (code) => call(`/leagues/${code}/peek`)
+export const worldTable = (period, day) => call(`/world?period=${period}&day=${day}&player=${encodeURIComponent(getMe().id)}`)
 export const worldRank = (day) => call(`/rank?day=${day}&player=${encodeURIComponent(getMe().id)}`)
 export const myLeagues = (day, game) => call(`/me/leagues?player=${encodeURIComponent(getMe().id)}&day=${day}${game ? `&game=${encodeURIComponent(game)}` : ''}`)
 

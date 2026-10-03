@@ -124,7 +124,9 @@ export function LeaguesIndex() {
 }
 
 // ── /leagues/:code ───────────────────────────────────────────────────────────
-function Table({ rows, t, locale, showPerfect = true }) {
+// Shared with /world. Rows: { rank, name, played, wins, perfect, pts, you, tied? }
+// — a null name shows as Anonymous; a { gap: true } row draws a "…" separator.
+export function Table({ rows, t, locale, showPerfect = true }) {
   return (
     <table className="w-full text-sm tabular-nums">
       <thead>
@@ -138,13 +140,15 @@ function Table({ rows, t, locale, showPerfect = true }) {
         </tr>
       </thead>
       <tbody>
-        {rows.map((r, i) => (
-          <tr key={r.pub} className={`border-t border-border ${r.you ? 'bg-brand-tint' : ''}`}>
+        {rows.map((r, i) => r.gap ? (
+          <tr key={`gap-${i}`} className="border-t border-border"><td colSpan={showPerfect ? 6 : 5} className="px-2 py-1 text-center text-faint">…</td></tr>
+        ) : (
+          <tr key={r.pub || `${r.rank}-${i}`} className={`border-t border-border ${r.you ? 'bg-brand-tint' : ''}`}>
             <td className="px-2 py-2.5">
-              <span className={`score-number text-xl leading-none ${i === 0 && r.pts > 0 ? 'text-warn' : 'text-muted'}`}>{r.rank}{r.tied ? '=' : ''}</span>
+              <span className={`score-number text-xl leading-none ${r.rank === 1 && r.pts > 0 ? 'text-warn' : 'text-muted'}`}>{r.rank}{r.tied ? '=' : ''}</span>
             </td>
             <td className="px-2 py-2.5 font-bold text-primary">
-              {r.name}{r.you && <span className="ml-1.5 text-[0.55rem] font-black tracking-[0.12em] uppercase text-brand-bright">{t('social.leagues.you')}</span>}
+              {r.name ?? <span className="text-muted font-semibold">{t('social.world.anonymous')}</span>}{r.you && <span className="ml-1.5 text-[0.55rem] font-black tracking-[0.12em] uppercase text-brand-bright">{t('social.leagues.you')}</span>}
             </td>
             <td className="px-2 py-2.5 text-center text-secondary">{r.played}</td>
             <td className="px-2 py-2.5 text-center text-secondary">{r.wins}</td>

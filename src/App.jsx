@@ -31,6 +31,7 @@ const RelationHubPage = lazy(() => import('./seo/RelationHubPage'))
 const Me = lazy(() => import('./pages/Me'))
 const LeaguesIndex = lazy(() => import('./pages/Leagues').then(m => ({ default: m.LeaguesIndex })))
 const LeagueView = lazy(() => import('./pages/Leagues').then(m => ({ default: m.LeagueView })))
+const World = lazy(() => import('./pages/World'))
 
 // Dev-only: identity foundation inspector (Phase 0). Not linked from the hub;
 // reads only the generated identity artifacts, touches no game code.
@@ -90,6 +91,7 @@ export default function App() {
             <Route key={`${pre}/me`} path={`${pre}/me`} element={<Me />} />,
             <Route key={`${pre}/leagues`} path={`${pre}/leagues`} element={<LeaguesIndex />} />,
             <Route key={`${pre}/leagues/:code`} path={`${pre}/leagues/:code`} element={<LeagueView />} />,
+            <Route key={`${pre}/world`} path={`${pre}/world`} element={<World />} />,
           ])}
           {GAME_ROUTES.flatMap(({ path, el }) => [
             <Route key={path} path={path} element={el} />,

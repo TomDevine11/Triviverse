@@ -27,6 +27,7 @@ two loops search traffic can't provide: **spread the word** and **come back tomo
 | Live "N playing today" | hub overline | yes |
 | **Private leagues** — weekly table, today grid, all-time, champion | `/leagues`, `/leagues/:code` | yes |
 | League standing on the hub and finish card | `pages/Hub`, `ResultSocial` | yes |
+| **World leaderboard** — today / this week / all-time, top 50 + your neighbourhood | `/world`, `pages/World` | yes |
 | Short share links `/c/ABC1234` | `social/shortLinks.js` | yes (falls back to long) |
 | Share images rendered on triviverse.com (`/s/…`, `/og/*.png`) | `worker/og.js` | yes (Worker) |
 
@@ -46,8 +47,13 @@ Everything in the top half is localStorage + URL payloads and works with the API
   Worker's percentile SQL).
 - Identity: a private device id (write credential, never shared) + a public id (in links and
   tables) + a nickname. No accounts. `/api` never returns private ids (smoke-tested).
-- Scores are client-reported. Fine for friends' leagues and percentiles; **don't build a public
-  named leaderboard on this** without server-side validation.
+- Outcomes are client-reported, but **points are server-computed** (`serverPoints` in
+  worker/api.js mirrors the dailyStats economy; the client's `p` is ignored, and the perfect-day
+  bonus is awarded by the server when the 11th daily lands). That caps what a forged request can
+  claim at what a real perfect day earns.
+- The public world table (`worldStandings`) also drops any player-day of 6+ dailies that all
+  landed within two minutes (not humanly playable — a script), and never shows `players.hidden`.
+  Moderate a nickname with `npm run world-hide -- "Name"` (`--unhide`, `--list`, `--local`).
 
 ## Run it locally
 
