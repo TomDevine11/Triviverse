@@ -45,6 +45,7 @@
     "qgen:report": "node scripts/qgen/report.mjs",
     "build:relations": "node scripts/seo/build-relations.mjs",
     "seo-validate": "node scripts/seo/validate.mjs",
+    "world-hide": "node scripts/world-hide.mjs",
     "seo-family-report": "node scripts/seo/family-report.mjs",
     "pairs-qc": "node scripts/seo/pairs-qc.mjs",
     "seo-health": "node scripts/seo/health.mjs",

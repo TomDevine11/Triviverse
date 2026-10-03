@@ -11,7 +11,7 @@ import { playedToday, getStats, recordVisit, dailyPoints, matchdayNumber, todayI
 import { inProgressToday } from '../data/dailyProgress'
 import SiteFooter from '../components/SiteFooter'
 import DayShareSheet from '../components/social/DayShareSheet'
-import { UserIcon, TableIcon, FlameIcon, FreezeIcon, VsIcon } from '../components/social/bits'
+import { UserIcon, TableIcon, FlameIcon, FreezeIcon, VsIcon, GlobeIcon } from '../components/social/bits'
 import { useSocialTick, ordinal, fmt } from '../components/social/hooks'
 import { getStreak } from '../social/streak'
 import { useToday, useMyLeagues, useWorldRank, chaseLeague, chaseLine } from '../social/leagues'
@@ -55,12 +55,6 @@ const StarIcon = ({ className }) => (
     <path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z" />
   </svg>
 )
-const GlobeIcon = ({ className = 'w-3.5 h-3.5' }) => (
-  <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-    <circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" />
-  </svg>
-)
-
 const chip = 'hidden sm:inline-flex absolute top-2.5 right-2.5 text-[0.56rem] font-black tracking-[0.1em] rounded px-1.5 py-0.5 border'
 
 // One game in the lineup: a horizontal tile on phones, a card from sm up.
@@ -214,7 +208,7 @@ function LeagueBlock({ league, compact, t, locale, lp, worldChip }) {
   )
 }
 
-function WorldBlock({ world, live, t, locale }) {
+function WorldBlock({ world, live, t, locale, lp }) {
   if (!world && !live) return null
   let big = null, sub, extra = null
   if (world?.rank) {
@@ -231,7 +225,9 @@ function WorldBlock({ world, live, t, locale }) {
   }
   return (
     <div className="flex flex-col gap-1.5">
-      <Overline><GlobeIcon className="w-3.5 h-3.5 text-brand-bright" />{t('social.race.world')}</Overline>
+      <Overline right={<Link to={lp('/world')} className="text-brand-bright hover:text-brand tracking-[0.08em]">{t('social.world.board')} ›</Link>}>
+        <GlobeIcon className="w-3.5 h-3.5 text-brand-bright" />{t('social.race.world')}
+      </Overline>
       {big ? (
         <div className="flex items-baseline gap-2.5 flex-wrap">
           <span className="score-number text-[2.6rem] leading-[0.9] tv-wordmark">{big}</span>
@@ -401,7 +397,7 @@ export default function Hub() {
           <aside aria-label={t('social.race.title')} className="hidden lg:flex flex-col gap-4 bg-surface border border-border-strong rounded-2xl p-4 shadow-panel">
             <LeagueBlock league={league} t={t} locale={locale} lp={lp} />
             <hr className="border-0 border-t border-border m-0" />
-            <WorldBlock world={world} live={live} t={t} locale={locale} />
+            <WorldBlock world={world} live={live} t={t} locale={locale} lp={lp} />
             {(world || live) && <hr className="border-0 border-t border-border m-0" />}
             <DressingBlock streak={streak} badges={badges} t={t} lp={lp} />
             {playedCount > 0 && (
@@ -416,7 +412,7 @@ export default function Hub() {
           <div className="lg:hidden flex flex-col gap-3">
             {(world || live) && (
               <section className="bg-surface border border-border-strong rounded-xl p-3 shadow-panel">
-                <WorldBlock world={world} live={live} t={t} locale={locale} />
+                <WorldBlock world={world} live={live} t={t} locale={locale} lp={lp} />
               </section>
             )}
             <DressingBlock streak={streak} badges={badges} t={t} lp={lp} compact />

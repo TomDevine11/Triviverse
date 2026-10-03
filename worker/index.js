@@ -5,7 +5,7 @@
 //   /api/*          social API (D1)                     → api.js
 //   /s/*, /c/*      share pages (OG tags + redirect)    → og.js
 //   /og/g.png etc.  share images                        → og.js
-//   /me, /leagues…  app-only routes (not prerendered)   → the SPA shell
+//   /me, /leagues…, /world  app-only routes (not prerendered) → the SPA shell
 //
 // Local: `npm run dev:social` (vite on :5173 proxying to `wrangler dev` on :8787).
 
@@ -14,7 +14,7 @@ import { handleOg, handleShare, handleShortLink } from './og.js'
 
 // App routes that exist only client-side. They are noindex app screens, so
 // they get a bare SPA shell rather than a prerendered page.
-const APP_ROUTE = /^\/(es\/)?(me|leagues)(\/.*)?$/
+const APP_ROUTE = /^\/(es\/)?(me|leagues|world)(\/.*)?$/
 
 async function lookupLeague(env, code) {
   if (!env.DB) return null

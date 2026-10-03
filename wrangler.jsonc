@@ -13,7 +13,7 @@
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page",
     // Everything else is served straight from dist/ without invoking the Worker.
-    "run_worker_first": ["/api/*", "/s/*", "/c/*", "/og/g.png", "/og/d.png", "/og/l/*", "/me", "/me/*", "/leagues", "/leagues/*", "/es/me", "/es/leagues", "/es/leagues/*"]
+    "run_worker_first": ["/api/*", "/s/*", "/c/*", "/og/g.png", "/og/d.png", "/og/l/*", "/me", "/me/*", "/leagues", "/leagues/*", "/es/me", "/es/leagues", "/es/leagues/*", "/world", "/es/world"]
   },
   // Social layer (player state only — game content stays static). Production
   // database created 2026-10-03. Schema changes: add a file to worker/migrations,

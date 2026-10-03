@@ -330,7 +330,7 @@ export default function Me() {
           <p className="text-muted text-sm mt-2 mb-0">{t('social.me.subtitle')}</p>
         </div>
 
-        <div className="grid gap-4">
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-4">
           <Panel>
             <Overline>{t('social.me.nickname')}</Overline>
             <div className="mt-2"><NameField /></div>

@@ -3,7 +3,7 @@
 
 export const social = {
   en: {
-    nav: { you: 'You', leagues: 'Leagues' },
+    nav: { you: 'You', leagues: 'Leagues', world: 'World' },
     hubWeek: 'WEEK',
     share: {
       shareResult: 'Share & challenge',
@@ -123,6 +123,17 @@ export const social = {
       importFailed: 'That code didn’t work — it may have expired',
       reminder: 'Daily reminder',
     },
+    world: {
+      title: 'World', board: 'Leaderboard',
+      subtitle: 'Everyone who plays the dailies, on one table. Today resets at midnight, the week on Monday.',
+      today: 'Today', week: 'This week', allTime: 'All-time',
+      anonymous: 'Anonymous', players: '{n} players',
+      empty: 'Nobody has played yet. Play a daily and take first place.',
+      you: 'You’re {rank} of {n}', notRanked: 'You’re not on this table yet. Play a daily to get on it.',
+      setName: 'You show as Anonymous.', setNameCta: 'Pick a nickname',
+      fair: 'Points are worked out by our server from each result, and impossible results are left out.',
+      offline: 'The leaderboard needs a connection.',
+    },
     card: {
       leagues: 'Your leagues', gained: '+{n} pts', noChange: 'no change',
       startLeague: 'Start a league with your mates', more: '+{n} more',
@@ -187,7 +198,7 @@ export const social = {
     },
   },
   es: {
-    nav: { you: 'Tú', leagues: 'Ligas' },
+    nav: { you: 'Tú', leagues: 'Ligas', world: 'Mundo' },
     hubWeek: 'SEMANA',
     share: {
       shareResult: 'Compartir y retar',
@@ -306,6 +317,17 @@ export const social = {
       imported: '{n} resultados importados',
       importFailed: 'Ese código no funciona: puede haber caducado',
       reminder: 'Recordatorio diario',
+    },
+    world: {
+      title: 'Mundo', board: 'Clasificación',
+      subtitle: 'Todos los que juegan los diarios, en una sola tabla. Hoy se reinicia a medianoche y la semana el lunes.',
+      today: 'Hoy', week: 'Esta semana', allTime: 'Histórico',
+      anonymous: 'Anónimo', players: '{n} jugadores',
+      empty: 'Nadie ha jugado todavía. Juega un diario y ponte primero.',
+      you: 'Eres {rank} de {n}', notRanked: 'Todavía no estás en esta tabla. Juega un diario para entrar.',
+      setName: 'Apareces como Anónimo.', setNameCta: 'Elige un apodo',
+      fair: 'Nuestro servidor calcula los puntos de cada resultado y deja fuera los resultados imposibles.',
+      offline: 'La clasificación necesita conexión.',
     },
     card: {
       leagues: 'Tus ligas', gained: '+{n} pts', noChange: 'sin cambios',
