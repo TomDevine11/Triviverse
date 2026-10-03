@@ -44,15 +44,21 @@ export function useMyLeagues() {
   return leagues
 }
 
-// Live "N playing today" count, polled gently while the page is open.
+// Live "N playing today" count: fetched on load, then every five minutes while
+// the tab is visible (and straight away when it comes back into view). The
+// Worker edge-caches it for a minute, so this is cheap either way.
+const TODAY_POLL_MS = 5 * 60_000
 export function useToday() {
   const [data, setData] = useState(null)
   useEffect(() => {
     let alive = true
     const load = () => apiToday(todayIndex()).then(d => { if (alive && d && !d.error) setData(d) })
+    const visible = () => typeof document === 'undefined' || document.visibilityState === 'visible'
     load()
-    const id = setInterval(load, 60_000)
-    return () => { alive = false; clearInterval(id) }
+    const id = setInterval(() => { if (visible()) load() }, TODAY_POLL_MS)
+    const onVis = () => { if (visible()) load() }
+    document.addEventListener('visibilitychange', onVis)
+    return () => { alive = false; clearInterval(id); document.removeEventListener('visibilitychange', onVis) }
   }, [])
   return data
 }

@@ -27,7 +27,7 @@ two loops search traffic can't provide: **spread the word** and **come back tomo
 | Live "N playing today" | hub overline | yes |
 | **Private leagues** — weekly table, today grid, all-time, champion | `/leagues`, `/leagues/:code` | yes |
 | League standing on the hub and finish card | `pages/Hub`, `ResultSocial` | yes |
-| **World leaderboard** — today / this week / all-time, top 50 + your neighbourhood | `/world`, `pages/World` | yes |
+| **World leaderboard** — today / this week / all-time, top 50 + your own row | `/world`, `pages/World` | yes |
 | Short share links `/c/ABC1234` | `social/shortLinks.js` | yes (falls back to long) |
 | Share images rendered on triviverse.com (`/s/…`, `/og/*.png`) | `worker/og.js` | yes (Worker) |
 
@@ -63,6 +63,29 @@ npm run dev:social -- --fresh   # wipe the local database first
 npm run social-smoke         # API/share/image checks against :8787 (or pass a URL)
 ```
 On `/me`, dev builds show a "load demo history" button (10 weeks of fake play, rivals, badges).
+
+## Free-tier budget
+
+Cloudflare's free plan allows 100k Worker requests, 5M D1 rows read and 100k rows
+written per day; past a limit, requests fail (no charge) and the social features
+go quiet until the daily reset — the games themselves are static and unaffected.
+The API is built so reads stay small as data grows (migration 0004):
+
+- **Running totals.** Every result write updates `daily_totals` (one row per player
+  per day) and `world_all` (one per player); `score_counts` holds how many players got
+  each result per daily. Leagues, ranks, the world table and percentiles read these,
+  never the raw `results` table (except per-player primary-key lookups).
+- **Edge cache.** The sorted points list per period (5 min), the world top 50
+  (2 min) and the "playing today" count (1 min) are shared by every visitor via the
+  Cache API. A hub rank is your own row (1–2 rows) + a binary search of that list.
+- **Polling.** The hub refreshes "playing today" every 5 minutes, only while visible.
+
+Measured on 98k synthetic results (2,000 players × 7 games × 7 days): hub rank went
+from ~14,000 rows read to ~2; all-time table ~98,000 → ~80; percentile per submit
+~2,000 → ~9. The binding limit is now **writes**: a new result costs ~7–9 rows
+written (the row, its totals, their indexes), so the free plan fits roughly
+**11,000 completed dailies a day** (~1,500 players playing 7 each). Beyond that,
+Workers Paid ($5/month) includes 50M rows written and 25B read per month.
 
 ## Production
 
