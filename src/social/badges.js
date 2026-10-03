@@ -93,3 +93,25 @@ export function badgeCabinet() {
   const got = loadBadges()
   return BADGES.map(b => ({ ...b, earned: got[b.id] || null }))
 }
+
+// The unearned badge you're closest to, for the hub's one-line teaser. Only
+// counter-style badges have measurable progress; one-off feats are skipped.
+const PROGRESS = {
+  'hat-trick': ['maxInDay', 3], 'full-squad': ['distinctGames', DAILY_GAMES.length], 'perfect-day': ['perfectDays', 1],
+  treble: ['perfectDays', 3], 'streak-3': ['bestStreak', 3], 'streak-7': ['bestStreak', 7], 'streak-30': ['bestStreak', 30],
+  'streak-100': ['bestStreak', 100], fifty: ['played', 50], century: ['played', 100], messenger: ['shares', 1],
+  recruiter: ['shares', 5], 'derby-win': ['rivalWins', 1], 'derby-king': ['rivalWins', 10], gaffer: ['leaguesCreated', 1],
+  champion: ['leagueTitles', 1],
+}
+export function nextBadge() {
+  const got = loadBadges()
+  const ctx = context()
+  let best = null
+  for (const b of BADGES) {
+    if (got[b.id] || !PROGRESS[b.id]) continue
+    const [k, target] = PROGRESS[b.id]
+    const ratio = Math.min(1, (ctx[k] || 0) / target)
+    if (!best || ratio > best.ratio) best = { ...b, ratio }
+  }
+  return best
+}

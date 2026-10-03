@@ -18,5 +18,6 @@ export const ADSENSE_CLIENT = 'ca-pub-2277295336282027'
 // Named ad placements → AdSense ad-unit slot ids (create these in AdSense).
 export const AD_SLOTS = {
   'hub-footer': '0000000000',
+  'hub-rail': '0000000000', //  below the fold, under the title-race rail (desktop) / after the board (mobile)
   'game-footer': '0000000000',
 }

@@ -6,7 +6,6 @@ import QaBar from '../../dev/QaBar'
 import { resolveNameToId } from '../../data/canonical/resolve'
 import { refineSuggestions, searchRegistry } from '../../data/canonical/resolve.js'
 import { ShareCard, RESULT_SECONDARY_BTN } from '../../components/ShareCard'
-import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
 import ResultModal from '../../components/ResultModal'
 import { shortTitle } from '../../components/nextGames'
@@ -69,10 +68,9 @@ export default function FootballTicTacToe({ onBackToModes }) {
   const [input, setInput] = useState('')
   const [history, setHistory] = useState(() => saved?.history ?? [])
   const [phase, setPhase] = useState(() => saved?.phase ?? 'playing') // 'playing' | 'won' | 'lost'
-  const [dailyStats, setDailyStats] = useState(null)
   useEffect(() => {
     // Only Daily mode records stats/streaks (idempotent per day).
-    if (phase !== 'playing' && mode === 'daily') setDailyStats(recordResult('tictactoe', phase === 'won'))
+    if (phase !== 'playing' && mode === 'daily') recordResult('tictactoe', phase === 'won')
   }, [phase, mode])
   const [shake, setShake] = useState(false)
   const [highlightedIndex, setHighlightedIndex] = useState(-1)
@@ -98,7 +96,7 @@ export default function FootballTicTacToe({ onBackToModes }) {
   const startUnlimited = () => {
     setMode('unlimited'); setGrid(getRandomGrid())
     setFilled({}); setLives(MAX_LIVES); setSelectedCell(null); setInput(''); setHistory([])
-    setPhase('playing'); setDailyStats(null); setGaveUp(false); setShowGiveUpConfirm(false); setAnswersCell(null); setShowResult(false); setResultTab('board')
+    setPhase('playing'); setGaveUp(false); setShowGiveUpConfirm(false); setAnswersCell(null); setShowResult(false); setResultTab('board')
   }
   // Return to the daily: rehydrate today's saved state (locked, resumed, or fresh).
   const restoreDaily = () => {
@@ -107,7 +105,7 @@ export default function FootballTicTacToe({ onBackToModes }) {
     setFilled(s?.filled ?? {}); setLives(s?.lives ?? MAX_LIVES); setHistory(s?.history ?? [])
     setPhase(s?.phase ?? 'playing'); setGaveUp(s?.gaveUp ?? false)
     setSelectedCell(null); setInput(''); setShowGiveUpConfirm(false); setAnswersCell(null)
-    setShowResult(!!s?.done); setResultTab('board'); setDailyStats(null)
+    setShowResult(!!s?.done); setResultTab('board')
   }
   const onModeChange = (m) => (m === 'daily' ? restoreDaily() : startUnlimited())
 
@@ -119,7 +117,7 @@ export default function FootballTicTacToe({ onBackToModes }) {
     if (!qa.active) return
     setMode('unlimited'); setGrid(getGridForDay(qa.index))
     setFilled({}); setLives(MAX_LIVES); setSelectedCell(null); setInput(''); setHistory([])
-    setPhase('playing'); setDailyStats(null); setGaveUp(false); setShowGiveUpConfirm(false); setAnswersCell(null); setShowResult(false); setResultTab('board')
+    setPhase('playing'); setGaveUp(false); setShowGiveUpConfirm(false); setAnswersCell(null); setShowResult(false); setResultTab('board')
   }, [qa.active, qa.index])
   /* eslint-enable react-hooks/set-state-in-effect */
   useEffect(() => {
@@ -532,11 +530,7 @@ export default function FootballTicTacToe({ onBackToModes }) {
               ? (lives === 1 ? t('tictactoe.filledAllLife', { n: lives }) : t('tictactoe.filledAllLives', { n: lives }))
               : gaveUp ? t('tictactoe.filledBeforeGaveUp', { n: filledCount }) : t('tictactoe.filledBeforeLost', { n: filledCount })}
           </p>
-          {dailyLocked && (
-            <p className="text-[0.62rem] font-black tracking-[0.14em] uppercase text-faint mb-1">{t('common.dailyDone')}</p>
-          )}
         </div>
-        {mode === 'daily' && <DailyStats game="tictactoe" stats={dailyStats} />}
 
         {/* Board recap, always shown (share is now a single button below). */}
         {resultTab === 'board' && (
@@ -578,7 +572,7 @@ export default function FootballTicTacToe({ onBackToModes }) {
             {t('tictactoe.guesses', { n: history.length })}
           </div>
           <div className="rounded-xl border border-border overflow-hidden">
-            <div className="divide-y divide-border/40 max-h-56 overflow-y-auto">
+            <div className="divide-y divide-border/40 max-h-44 overflow-y-auto">
               {[...history].reverse().map((g, i) => (
                 <div key={i} className={`flex items-center justify-between px-4 py-2.5 ${g.correct === true ? 'flash-valid' : 'flash-invalid'}`}>
                   <span className="text-sm text-primary truncate">{g.text}</span>

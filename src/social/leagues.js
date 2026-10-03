@@ -4,7 +4,7 @@
 
 import { useEffect, useState } from 'react'
 import { loadJson, saveJson, emit, subscribe } from './store'
-import { myLeagues, today as apiToday } from './api'
+import { myLeagues, today as apiToday, worldRank } from './api'
 import { todayIndex } from '../data/dailyStats'
 import { bump, counters, checkBadges } from './badges'
 
@@ -64,4 +64,50 @@ export function noteChampion(code, weekStart) {
   bump(key)
   bump('leagueTitles')
   checkBadges()
+}
+
+// The league worth showing on the hub: the most winnable chase (smallest gap to
+// the player above you); if you lead every league, the one you lead by least.
+export function chaseLeague(leagues) {
+  if (!leagues?.length) return null
+  const chasing = leagues.filter(l => l.gapToNext > 0).sort((a, b) => a.gapToNext - b.gapToNext)
+  if (chasing.length) return chasing[0]
+  return [...leagues].sort((a, b) => (a.leadOver || 0) - (b.leadOver || 0))[0]
+}
+
+// Your world rank for today (or yesterday's, before you've played). Refreshed
+// after every recorded daily, once the submission has landed.
+export function useWorldRank() {
+  const [data, setData] = useState(null)
+  useEffect(() => {
+    let alive = true
+    const load = () => worldRank(todayIndex()).then(d => { if (alive && d && !d.error) setData(d) })
+    load()
+    const off = subscribe(e => { if (e?.type === 'result') setTimeout(load, 1500) })
+    return () => { alive = false; off() }
+  }, [])
+  return data
+}
+
+// One-line standing for a league from /me/leagues: "20 pts to catch Jo",
+// "22 pts clear of Dave", "Top of the table". Shared by the hub and finish card.
+export function chaseLine(l, t) {
+  if (l.gapToNext > 0) return l.aboveName ? t('social.leagues.nextUp', { n: l.gapToNext, name: l.aboveName }) : t('social.leagues.ptsBehind', { n: l.leaderPts - l.pts })
+  if (l.leadOver > 0 && l.belowName) return t('social.race.clear', { n: l.leadOver, name: l.belowName })
+  return l.rank === 1 ? t('social.leagues.leading') : t('social.leagues.ptsBehind', { n: l.leaderPts - l.pts })
+}
+
+// Your leagues as this daily's result moved them: each carries `gained` (the
+// points it added) and `rankBefore`. Re-fetched once the result submission
+// lands, since the card renders before the API has it.
+export function useLeagueImpact(game) {
+  const [leagues, setLeagues] = useState(null)
+  useEffect(() => {
+    let alive = true
+    const load = () => myLeagues(todayIndex(), game).then(r => { if (alive && r && !r.error) setLeagues(r.leagues) })
+    load()
+    const off = subscribe(e => { if (e?.type === 'result') setTimeout(load, 1200) })
+    return () => { alive = false; off() }
+  }, [game])
+  return leagues
 }

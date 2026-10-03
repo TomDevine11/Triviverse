@@ -2,7 +2,6 @@ import { useState, useRef, useEffect, useMemo } from 'react'
 import { getRandomTarget, getDailyTarget, matchesTarget, MAX_CLUES } from '../../data/teammates'
 import { usePlayerSuggestions } from '../tictactoe/usePlayerSuggestions'
 import { ShareCard, RESULT_SECONDARY_BTN } from '../../components/ShareCard'
-import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
 import ResultModal from '../../components/ResultModal'
 import { shortTitle } from '../../components/nextGames'
@@ -32,14 +31,13 @@ export default function GuessByTeammates() {
   const [dismissed, setDismissed] = useState(false)
   const [phase, setPhase] = useState(() => saved?.phase ?? 'playing')    // 'playing' | 'won' | 'lost'
   const [shake, setShake] = useState(false)
-  const [dailyStats, setDailyStats] = useState(null)
   const inputRef = useRef(null)
   const dropdownRef = useRef(null)
 
   const active = phase === 'playing'
   // Only Daily mode records stats/streaks.
   useEffect(() => {
-    if (phase !== 'playing' && mode === 'daily') setDailyStats(recordResult('teammates', phase === 'won'))
+    if (phase !== 'playing' && mode === 'daily') recordResult('teammates', phase === 'won')
   }, [phase, mode])
   const usedNames = useMemo(() => new Set(), [])
   const { suggestions, isSearching } = usePlayerSuggestions(input, active, usedNames)
@@ -122,14 +120,14 @@ export default function GuessByTeammates() {
   // Leave the daily untouched; start a fresh, replayable Unlimited round.
   const startUnlimited = () => {
     setMode('unlimited'); setTarget(getRandomTarget())
-    setRevealed(1); setGuesses([]); setInput(''); setPhase('playing'); setHighlightedIndex(-1); setDailyStats(null); setShowResult(false)
+    setRevealed(1); setGuesses([]); setInput(''); setPhase('playing'); setHighlightedIndex(-1); setShowResult(false)
   }
   // Return to the daily: rehydrate today's saved state (locked, resumed, or fresh).
   const restoreDaily = () => {
     const s = loadDailyProgress('teammates', getDailyTarget().name)
     setMode('daily'); setTarget(getDailyTarget())
     setRevealed(s?.revealed ?? 1); setGuesses(s?.guesses ?? []); setInput(''); setPhase(s?.phase ?? 'playing')
-    setHighlightedIndex(-1); setDailyStats(null); setShowResult(!!s?.done)
+    setHighlightedIndex(-1); setShowResult(!!s?.done)
   }
   const onModeChange = (m) => (m === 'daily' ? restoreDaily() : startUnlimited())
 
@@ -267,7 +265,6 @@ export default function GuessByTeammates() {
             {phase === 'won' ? t('teammates.correct') : t('teammates.outOf')}
           </h2>
           <ResultAnswer label={t('teammates.mysteryWas')} detail={phase === 'won' && guesses.length > 0 ? t('teammates.inN', { n: guesses.length }) : null}>{target.name}</ResultAnswer>
-          {mode === 'daily' && <DailyStats game="teammates" stats={dailyStats} />}
           <ShareCard
             text={[
               phase === 'won'
@@ -288,7 +285,6 @@ export default function GuessByTeammates() {
             }}
           />
           <button onClick={startUnlimited} className={RESULT_SECONDARY_BTN}>{t('common.unlimitedGame', { name: shortTitle(t, 'teammates') })}</button>
-          {mode === 'daily' && <p className="text-faint text-xs mt-3">{t('common.comeBackTomorrow')}</p>}
         </div>
       </ResultModal>
 

@@ -2,7 +2,6 @@ import { useState, useMemo, useEffect } from 'react'
 import { getDailyConnections, getRandomConnections, getConnectionsForDay, shuffleNames } from '../../data/connections'
 import { useQa } from '../../dev/qa'
 import QaBar from '../../dev/QaBar'
-import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
 import ResultModal from '../../components/ResultModal'
 import { shortTitle } from '../../components/nextGames'
@@ -53,9 +52,8 @@ export default function FootballConnections() {
   // A finished daily is locked to its result and offers Unlimited.
   const dailyLocked = mode === 'daily' && over
 
-  const [dailyStats, setDailyStats] = useState(null)
   // Only Daily mode records stats/streaks (idempotent per day).
-  useEffect(() => { if (over && mode === 'daily') setDailyStats(recordResult('connections', won)) }, [over, won, mode])
+  useEffect(() => { if (over && mode === 'daily') recordResult('connections', won) }, [over, won, mode])
 
   // Persist the daily as it's played so a refresh resumes it and a finished
   // round stays locked (no bailing out to reset lives). Set → array for storage.
@@ -70,7 +68,7 @@ export default function FootballConnections() {
     const p = getRandomConnections()
     setMode('unlimited'); setPuzzle(p); setOrder(p.tiles)
     setSolved([]); setSelected([]); setLives(MAX_LIVES); setMessage('')
-    setPastGuesses(new Set()); setGuessRows([]); setDailyStats(null); setShowResult(false); setResultTab('groups')
+    setPastGuesses(new Set()); setGuessRows([]); setShowResult(false); setResultTab('groups')
   }
   // Return to the daily: rehydrate today's saved state (locked, resumed, or fresh).
   const restoreDaily = () => {
@@ -78,7 +76,7 @@ export default function FootballConnections() {
     const p = getDailyConnections()
     setMode('daily'); setPuzzle(p); setOrder(s?.order ?? p.tiles)
     setSolved(s?.solved ?? []); setSelected([]); setLives(s?.lives ?? MAX_LIVES); setMessage('')
-    setPastGuesses(new Set(s?.pastGuesses ?? [])); setGuessRows(s?.guessRows ?? []); setDailyStats(null)
+    setPastGuesses(new Set(s?.pastGuesses ?? [])); setGuessRows(s?.guessRows ?? [])
     setShowResult(!!s?.done); setResultTab('groups')
   }
   const onModeChange = (m) => (m === 'daily' ? restoreDaily() : startUnlimited())
@@ -91,7 +89,7 @@ export default function FootballConnections() {
     const p = getConnectionsForDay(qa.index)
     setMode('unlimited'); setPuzzle(p); setOrder(p.tiles)
     setSolved([]); setSelected([]); setLives(MAX_LIVES); setMessage('')
-    setPastGuesses(new Set()); setGuessRows([]); setDailyStats(null); setShowResult(false); setResultTab('groups')
+    setPastGuesses(new Set()); setGuessRows([]); setShowResult(false); setResultTab('groups')
   }, [qa.active, qa.index])
   /* eslint-enable react-hooks/set-state-in-effect */
   useEffect(() => {
@@ -241,12 +239,10 @@ export default function FootballConnections() {
               : mode === 'daily' ? t('common.comeBackTomorrow') : t('connections.betterLuck')}
           </p>
         </div>
-        {dailyLocked && <p className="text-[0.62rem] font-black tracking-[0.14em] uppercase text-faint mb-1">{t('common.dailyDone')}</p>}
-        {mode === 'daily' && <DailyStats game="connections" stats={dailyStats} />}
 
         {/* The groups, always shown (share is now a single button below). */}
         {resultTab === 'groups' && (
-          <div className="w-full space-y-1.5 mb-1 max-h-56 overflow-y-auto">
+          <div className="w-full space-y-1.5 mb-1 max-h-44 overflow-y-auto">
             {allGroups.map(g => (
               <div key={g.groupIndex} style={tierStyle(g.groupIndex)} className="rounded-lg border px-3 py-2 text-center">
                 <div className="font-black text-[0.66rem] uppercase tracking-[0.1em]" style={{ color: GROUP_TIERS[g.groupIndex] }}>{g.label}</div>

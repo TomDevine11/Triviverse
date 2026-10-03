@@ -5,7 +5,6 @@ import { todayIndex, recordResult, matchdayNumber } from '../../data/dailyStats'
 import { loadDailyProgress, saveDailyProgress } from '../../data/dailyProgress'
 import { useQa } from '../../dev/qa'
 import QaBar from '../../dev/QaBar'
-import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
 import ResultModal from '../../components/ResultModal'
 import { shortTitle } from '../../components/nextGames'
@@ -46,7 +45,6 @@ export default function FootballContexto() {
   const [shake, setShake] = useState(false)
   const [latestId, setLatestId] = useState(null)
   const [showResult, setShowResult] = useState(restoredDone)
-  const [dailyStats, setDailyStats] = useState(null)
 
   const inputRef = useRef(null)
   const dropdownRef = useRef(null)
@@ -67,7 +65,7 @@ export default function FootballContexto() {
   const ordered = useMemo(() => [...guesses].sort((a, b) => a.rank - b.rank), [guesses])
   const activeIndex = Math.min(highlightedIndex, Math.max(0, visibleSuggestions.length - 1))
 
-  const finish = (didWin) => { if (mode === 'daily') setDailyStats(recordResult('contexto', didWin)) }
+  const finish = (didWin) => { if (mode === 'daily') recordResult('contexto', didWin) }
 
   useEffect(() => {
     if (mode !== 'daily') return
@@ -83,7 +81,7 @@ export default function FootballContexto() {
 
   const resetTo = (next, m) => {
     setMode(m); setRound(next); setGuesses([]); setGaveUp(false); setInput('')
-    setMessage(''); setLatestId(null); setDailyStats(null); setShowResult(false)
+    setMessage(''); setLatestId(null); setShowResult(false)
   }
   const startUnlimited = () => resetTo(getRandomContexto(), 'unlimited')
   const restoreDaily = () => {
@@ -91,7 +89,7 @@ export default function FootballContexto() {
     const s = loadDailyProgress('contexto', r.target.i)
     setMode('daily'); setRound(r)
     setGuesses(s?.guesses ?? []); setGaveUp(s?.gaveUp ?? false)
-    setInput(''); setMessage(''); setLatestId(null); setDailyStats(null); setShowResult(!!s?.done)
+    setInput(''); setMessage(''); setLatestId(null); setShowResult(!!s?.done)
   }
   const onModeChange = (m) => (m === 'daily' ? restoreDaily() : startUnlimited())
 
@@ -273,12 +271,10 @@ export default function FootballContexto() {
             </h2>
             <ResultAnswer label={t('contexto.theAnswer')}>{round.target.n}</ResultAnswer>
           </div>
-          {dailyLocked && <p className="text-[0.62rem] font-black tracking-[0.14em] uppercase text-faint mb-1">{t('common.dailyDone')}</p>}
-          {mode === 'daily' && <DailyStats game="contexto" stats={dailyStats} />}
 
           <div className="w-full mb-1">
             <div className="text-[0.55rem] font-black tracking-[0.16em] text-muted uppercase mb-1.5">{t('contexto.closest')}</div>
-            <div className="space-y-1 max-h-48 overflow-y-auto">
+            <div className="space-y-1 max-h-44 overflow-y-auto">
               {nearest.map(p => (
                 <div key={p.i} className="rounded-lg border border-border bg-surface px-3 py-1.5 flex items-center justify-between gap-2">
                   <span className="text-[0.72rem] text-secondary truncate">{p.n}</span>

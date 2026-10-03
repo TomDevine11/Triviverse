@@ -2,7 +2,6 @@ import { useState, useEffect, useMemo } from 'react'
 import { getDailyWordlePlayer, getRandomWordlePlayer } from '../../data/wordle'
 import { SITE_URL } from '../../utils/site'
 import { ShareCard, RESULT_SECONDARY_BTN } from '../../components/ShareCard'
-import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
 import ResultModal from '../../components/ResultModal'
 import { shortTitle } from '../../components/nextGames'
@@ -10,7 +9,7 @@ import ResultAnswer from '../../components/ResultAnswer'
 import GameChrome from '../../components/GameChrome'
 import GameMotif from '../../components/GameMotif'
 import { accentVars } from '../../design/accents'
-import { recordResult, matchdayNumber } from '../../data/dailyStats'
+import { recordResult, matchdayNumber, getStats } from '../../data/dailyStats'
 import { loadDailyProgress, saveDailyProgress } from '../../data/dailyProgress'
 import { TILE } from '../../utils/shareImage'
 import { useI18n } from '../../i18n'
@@ -68,10 +67,9 @@ export default function FootballWordle() {
   const [guesses, setGuesses] = useState(() => saved?.guesses ?? [])
   const [current, setCurrent] = useState('')
   const [phase, setPhase] = useState(() => saved?.phase ?? 'playing') // 'playing' | 'won' | 'lost'
-  const [dailyStats, setDailyStats] = useState(null)
   useEffect(() => {
     // Only Daily mode records stats/streaks (idempotent per day).
-    if (phase !== 'playing' && mode === 'daily') setDailyStats(recordResult('wordle', phase === 'won'))
+    if (phase !== 'playing' && mode === 'daily') recordResult('wordle', phase === 'won')
   }, [phase, mode])
 
   // A finished daily is locked to its result and offers Unlimited.
@@ -95,14 +93,14 @@ export default function FootballWordle() {
   // Leave the daily untouched; start a fresh, replayable Unlimited round.
   const startUnlimited = () => {
     setMode('unlimited'); setQuestion(getRandomWordlePlayer())
-    setGuesses([]); setCurrent(''); setPhase('playing'); setDailyStats(null); setShowResult(false)
+    setGuesses([]); setCurrent(''); setPhase('playing'); setShowResult(false)
   }
   // Return to the daily: rehydrate today's saved state (locked, resumed, or fresh).
   const restoreDaily = () => {
     const s = loadDailyProgress('wordle', getDailyWordlePlayer().surname)
     setMode('daily'); setQuestion(getDailyWordlePlayer())
     setGuesses(s?.guesses ?? []); setCurrent(''); setPhase(s?.phase ?? 'playing')
-    setDailyStats(null); setShowResult(!!s?.done)
+    setShowResult(!!s?.done)
   }
   const onModeChange = (m) => (m === 'daily' ? restoreDaily() : startUnlimited())
   const [shake, setShake] = useState(false)
@@ -185,7 +183,7 @@ export default function FootballWordle() {
   const shareText = [
     t('share.wordleTitle'),
     phase === 'won' ? t('share.wordleWon', { n: guesses.length, max: MAX_GUESSES }) : t('share.wordleLost', { max: MAX_GUESSES }),
-    ...(phase === 'won' && dailyStats?.currentStreak ? [t('share.dayStreak', { n: dailyStats.currentStreak })] : []),
+    ...(phase === 'won' && mode === 'daily' && getStats('wordle').currentStreak ? [t('share.dayStreak', { n: getStats('wordle').currentStreak })] : []),
     '',
     shareGrid,
     '',
@@ -320,8 +318,6 @@ export default function FootballWordle() {
             <ResultAnswer label={t('wordle.itWas')}>{question.fullName} {question.flag}</ResultAnswer>
           </div>
         )}
-        {dailyLocked && <p className="text-[0.62rem] font-black tracking-[0.14em] uppercase text-faint mb-1">{t('common.dailyDone')}</p>}
-        {mode === 'daily' && <DailyStats game="wordle" stats={dailyStats} />}
         <ShareCard text={shareText} card={{
           gameId: 'wordle',
           daily: mode === 'daily',

@@ -250,16 +250,74 @@ async function myLeagues(url, env) {
   const { results: leagues } = await env.DB.prepare(`SELECT l.code, l.name, (SELECT COUNT(*) FROM members x WHERE x.league = l.code) AS members
     FROM members m JOIN leagues l ON l.code = m.league WHERE m.player = ? ORDER BY m.joined`).bind(player).all()
   const ws = weekStart(day)
+  // Optional `game`: what that daily's result added today (plus the perfect-day
+  // bonus if it was the eleventh), so the finish card can show "6th → 4th".
+  const game = url.searchParams.get('game') || ''
+  let gained = 0
+  if (GAMES.has(game)) {
+    const { results: today } = await env.DB.prepare('SELECT game, pts, created FROM results WHERE player = ? AND day = ?').bind(player, day).all()
+    const mineRow = today.find(r => r.game === game)
+    if (mineRow) {
+      gained = mineRow.pts
+      const perfect = today.find(r => r.game === 'perfect')
+      const lastGame = today.filter(r => r.game !== 'perfect').every(r => r.created <= mineRow.created)
+      if (perfect && lastGame) gained += perfect.pts
+    }
+  }
   const out = []
   for (const l of leagues) {
-    const { results: rows } = await env.DB.prepare(`SELECT m.player, COALESCE(SUM(r.pts), 0) AS pts FROM members m
-      LEFT JOIN results r ON r.player = m.player AND r.day BETWEEN ? AND ? WHERE m.league = ? GROUP BY m.player ORDER BY pts DESC`).bind(ws, ws + 6, l.code).all()
+    const { results: rows } = await env.DB.prepare(`SELECT m.player, p.name, COALESCE(SUM(r.pts), 0) AS pts FROM members m
+      JOIN players p ON p.id = m.player
+      LEFT JOIN results r ON r.player = m.player AND r.day BETWEEN ? AND ? WHERE m.league = ? GROUP BY m.player ORDER BY pts DESC, p.name`).bind(ws, ws + 6, l.code).all()
     const idx = rows.findIndex(r => r.player === player)
     const mine = rows[idx]?.pts || 0
     const leader = rows[0]?.pts || 0
-    out.push({ ...l, rank: rows.filter(r => r.pts > mine).length + 1, pts: mine, leaderPts: leader, gapToNext: idx > 0 ? (rows.slice(0, idx).reverse().find(r => r.pts > mine)?.pts || mine) - mine : 0 })
+    const rankOf = (r) => rows.filter(x => x.pts > r.pts).length + 1
+    const above = idx > 0 ? rows.slice(0, idx).reverse().find(r => r.pts > mine) : null
+    const below = rows.slice(idx + 1).find(r => r.pts < mine) || null
+    // The three rows around you (above · you · below) for the hub's title-race
+    // rail. Public fields only: never a private player id.
+    const from = Math.max(0, Math.min(idx - 1, rows.length - 3))
+    const slice = rows.slice(from, from + 3).map(r => ({ rank: rankOf(r), name: r.name || '—', pts: r.pts, you: r.player === player }))
+    out.push({
+      ...l, rank: rows.filter(r => r.pts > mine).length + 1, pts: mine, leaderPts: leader,
+      gapToNext: above ? above.pts - mine : 0, aboveName: above?.name || null,
+      leadOver: !above && below ? mine - below.pts : 0, belowName: !above ? below?.name || null : null,
+      slice,
+      ...(game ? { gained, rankBefore: rows.filter(r => r.player !== player && r.pts > mine - gained).length + 1 } : {}),
+    })
   }
   return json({ leagues: out })
+}
+
+// ── World rank ──────────────────────────────────────────────────────────────
+// Your position by matchday points among everyone who played `day`. Returns
+// only your own rank and counts — no names — because scores are client-reported
+// (docs/social.md: no public named leaderboard without server-side validation).
+async function rankOn(db, day, player) {
+  const mine = (await db.prepare('SELECT COALESCE(SUM(pts), 0) AS s, COUNT(*) AS n FROM results WHERE day = ? AND player = ?').bind(day, player).first()) || { s: 0, n: 0 }
+  if (!mine.n) return null
+  const [ahead, total, next] = await db.batch([
+    db.prepare('SELECT COUNT(*) AS n FROM (SELECT SUM(pts) AS s FROM results WHERE day = ? GROUP BY player HAVING s > ?)').bind(day, mine.s),
+    db.prepare('SELECT COUNT(DISTINCT player) AS n FROM results WHERE day = ?').bind(day),
+    db.prepare('SELECT MIN(s) AS s FROM (SELECT SUM(pts) AS s FROM results WHERE day = ? GROUP BY player HAVING s > ?)').bind(day, mine.s),
+  ])
+  const rank = (ahead.results[0]?.n || 0) + 1
+  const players = total.results[0]?.n || 1
+  const nextPts = next.results[0]?.s
+  return { rank, players, pts: mine.s, toNext: nextPts != null ? nextPts - mine.s : 0, top: Math.max(1, Math.ceil((rank / players) * 100)) }
+}
+
+async function getRank(url, env) {
+  const player = url.searchParams.get('player') || ''
+  const day = Number(url.searchParams.get('day'))
+  if (!validId(player) || !validDay(day)) return bad('bad_query')
+  const today = await rankOn(env.DB, day, player)
+  if (today) return json({ day, ...today })
+  // Not played yet today: yesterday's finish, so there's something to defend.
+  const prev = await rankOn(env.DB, day - 1, player)
+  const playing = await env.DB.prepare("SELECT COUNT(DISTINCT player) AS n FROM results WHERE day = ? AND game != 'perfect'").bind(day).first()
+  return json({ day, rank: null, playing: playing?.n || 0, yesterday: prev })
 }
 
 // ── Device transfer ─────────────────────────────────────────────────────────
@@ -324,6 +382,7 @@ export async function handleApi(request, env) {
     }
     if (p === '/leagues' && m === 'POST') return await createLeague(request, env)
     if (p === '/me/leagues' && m === 'GET') return await myLeagues(url, env)
+    if (p === '/rank' && m === 'GET') return await getRank(url, env)
     if (p === '/transfer' && m === 'POST') return await putTransfer(request, env)
     if (p === '/links' && m === 'POST') return await postLink(request, env)
     let mm

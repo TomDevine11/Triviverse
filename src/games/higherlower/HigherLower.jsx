@@ -3,7 +3,6 @@ import { STAT_MODES, poolFor, randomFrom, isCorrect, getDailyRun } from '../../d
 import { useQa } from '../../dev/qa'
 import QaBar from '../../dev/QaBar'
 import { ShareCard, RESULT_SECONDARY_BTN } from '../../components/ShareCard'
-import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
 import ResultModal from '../../components/ResultModal'
 import { shortTitle } from '../../components/nextGames'
@@ -79,11 +78,10 @@ export default function HigherLower() {
   const [best, setBest] = useState(() => Number((typeof localStorage !== 'undefined' && localStorage.getItem(BEST_KEY)) || 0))
   const [phase, setPhase] = useState(() => saved?.phase ?? 'playing')        // 'playing' | 'reveal' | 'over'
   const [lastCorrect, setLastCorrect] = useState(() => saved?.lastCorrect ?? null)
-  const [dailyStats, setDailyStats] = useState(null)
 
   // Daily mode records the run's final streak as a score, once it ends.
   useEffect(() => {
-    if (phase === 'over' && dailyMode === 'daily') setDailyStats(recordResult('higherlower', true, streak))
+    if (phase === 'over' && dailyMode === 'daily') recordResult('higherlower', true, streak)
   }, [phase, dailyMode]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // In daily, finishing on a correct answer means the chain was exhausted (a win).
@@ -108,7 +106,7 @@ export default function HigherLower() {
     setRun(r); setSeqIdx(idx); setMode(r.mode)
     setCurrent(r.sequence[idx - 1]); setChallenger(r.sequence[idx])
     setStreak(s?.streak ?? 0); setTrail(s?.trail ?? []); setPhase(s?.phase ?? 'playing')
-    setLastCorrect(s?.lastCorrect ?? null); setDailyStats(null); setShowResult(!!s?.done)
+    setLastCorrect(s?.lastCorrect ?? null); setShowResult(!!s?.done)
   }
 
   const startMode = (m) => {
@@ -117,13 +115,13 @@ export default function HigherLower() {
     setMode(m)
     setCurrent(a)
     setChallenger(randomFrom(pool, new Set([a.name])))
-    setStreak(0); setTrail([]); setPhase('playing'); setLastCorrect(null); setDailyStats(null); setShowResult(false)
+    setStreak(0); setTrail([]); setPhase('playing'); setLastCorrect(null); setShowResult(false)
   }
 
   const switchMode = (dm) => {
     setDailyMode(dm)
     if (dm === 'daily') startDaily()
-    else { setMode(null); setPhase('playing'); setStreak(0); setTrail([]); setLastCorrect(null); setDailyStats(null); setShowResult(false) }
+    else { setMode(null); setPhase('playing'); setStreak(0); setTrail([]); setLastCorrect(null); setShowResult(false) }
   }
   const [showResult, setShowResult] = useState(restoredDone)
   /* eslint-disable react-hooks/set-state-in-effect -- intentional dev-only QA loader */
@@ -134,7 +132,7 @@ export default function HigherLower() {
     const r = getDailyRun(qa.index)
     setDailyMode('unlimited'); setRun(r); setSeqIdx(1); setMode(r.mode)
     setCurrent(r.sequence[0]); setChallenger(r.sequence[1])
-    setStreak(0); setTrail([]); setPhase('playing'); setLastCorrect(null); setDailyStats(null); setShowResult(false)
+    setStreak(0); setTrail([]); setPhase('playing'); setLastCorrect(null); setShowResult(false)
   }, [qa.active, qa.index])
   /* eslint-enable react-hooks/set-state-in-effect */
   useEffect(() => {
@@ -311,7 +309,6 @@ export default function HigherLower() {
           {!dailyCleared && (
             <p className="text-secondary text-sm mb-2">{t('higherlower.scoredLine', { name: challenger.name, value: challenger.value, label: mode.label })}</p>
           )}
-          {dailyMode === 'daily' && <DailyStats game="higherlower" stats={dailyStats} variant="score" />}
           <ShareCard
             text={[
               dailyMode === 'daily'
@@ -338,10 +335,7 @@ export default function HigherLower() {
                 <button onClick={() => setMode(null)} className="border border-border-strong text-secondary hover:bg-surface text-sm font-medium rounded-lg px-6 py-2.5 transition-colors">{t('higherlower.changeStat').replace('← ', '')}</button>
               </div>
             )
-            : <>
-                <button onClick={() => switchMode('unlimited')} className={RESULT_SECONDARY_BTN}>{t('common.unlimitedGame', { name: shortTitle(t, 'higher-or-lower') })}</button>
-                <p className="text-faint text-xs mt-3">{t('common.comeBackTomorrow')}</p>
-              </>}
+            : <button onClick={() => switchMode('unlimited')} className={RESULT_SECONDARY_BTN}>{t('common.unlimitedGame', { name: shortTitle(t, 'higher-or-lower') })}</button>}
         </div>
       </ResultModal>
     </div>

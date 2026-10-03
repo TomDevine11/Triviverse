@@ -60,7 +60,9 @@ export function NameField({ onSaved, compact = false }) {
 }
 
 // `imageCard` → the canvas "Fixture Card" PNG (utils/shareImage.js), optional.
-export default function SharePanel({ text, url, game = 'day', imageCard, primaryLabel, copiedLabel, askName = true, preview = true }) {
+// `inline` → the compact finish-card form: no preview, the primary button
+// full width with a slim row of icon-only WhatsApp / Teams / image / link under it.
+export default function SharePanel({ text, url, game = 'day', imageCard, primaryLabel, copiedLabel, askName = true, preview = true, inline = false }) {
   const { t } = useI18n()
   const [copied, setCopied] = useState(null)
   const [hasName, setHasName] = useState(!!nickname())
@@ -111,21 +113,30 @@ export default function SharePanel({ text, url, game = 'day', imageCard, primary
           <NameField compact onSaved={n => setHasName(!!n)} />
         </div>
       )}
-      {preview && (
+      {preview && !inline && (
         <pre aria-label={t('social.share.preview')}
           className="w-full max-h-32 overflow-hidden whitespace-pre-wrap break-words bg-board border border-border rounded-lg px-3 py-2 text-[0.66rem] leading-snug text-secondary font-sans">
           {body}
         </pre>
       )}
-      <button type="button" onClick={share}
-        className="w-full h-11 flex items-center justify-center gap-2 rounded-lg border border-brand/60 bg-brand-tint hover:bg-brand/25 text-brand-bright hover:text-primary text-sm font-black tracking-[0.04em] transition-colors">
-        <ShareIcon /> {copied === 'text' ? (copiedLabel || t('social.share.copied')) : (primaryLabel || t('social.share.shareResult'))}
-      </button>
-      <div className={`grid gap-1.5 ${imageCard ? 'grid-cols-4' : 'grid-cols-3'}`}>
-        <button type="button" className={btn} onClick={() => open(`https://wa.me/?text=${encodeURIComponent(body)}`, 'whatsapp')}><WhatsAppIcon />{t('social.share.whatsapp')}</button>
-        <button type="button" className={btn} onClick={() => open(`https://teams.microsoft.com/share?href=${encodeURIComponent(url)}&msgText=${encodeURIComponent(body)}`, 'teams')}><TeamsIcon />{t('social.share.teams')}</button>
-        {imageCard && <button type="button" className={btn} onClick={image}><ImageIcon />{t('social.share.image')}</button>}
-        <button type="button" className={btn} onClick={copyLink}><LinkIcon />{copied === 'link' ? '✓' : t('social.share.link')}</button>
+      <div className="contents">
+        <button type="button" onClick={share}
+          className={`w-full h-11 flex items-center justify-center gap-2 rounded-lg border border-brand/60 bg-brand-tint hover:bg-brand/25 text-brand-bright hover:text-primary text-sm font-black tracking-[0.04em] transition-colors whitespace-nowrap`}>
+          <ShareIcon /> {copied === 'text' ? (copiedLabel || t('social.share.copied')) : (primaryLabel || t('social.share.shareResult'))}
+        </button>
+        <div className={`grid gap-1.5 ${imageCard ? 'grid-cols-4' : 'grid-cols-3'}`}>
+          {[
+            ['whatsapp', <WhatsAppIcon key="i" />, t('social.share.whatsapp'), () => open(`https://wa.me/?text=${encodeURIComponent(body)}`, 'whatsapp')],
+            ['teams', <TeamsIcon key="i" />, t('social.share.teams'), () => open(`https://teams.microsoft.com/share?href=${encodeURIComponent(url)}&msgText=${encodeURIComponent(body)}`, 'teams')],
+            imageCard && ['image', <ImageIcon key="i" />, t('social.share.image'), image],
+            ['link', <LinkIcon key="i" />, copied === 'link' ? '✓' : t('social.share.link'), copyLink],
+          ].filter(Boolean).map(([k, icon, label, onClick]) => (
+            <button key={k} type="button" onClick={onClick} className={`${btn} ${inline ? '!h-9' : ''}`}
+              aria-label={inline ? label : undefined} title={inline ? label : undefined}>
+              {inline && k === 'link' && copied === 'link' ? '✓' : icon}{!inline && label}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   )

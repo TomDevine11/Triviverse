@@ -58,15 +58,16 @@ npm run social-smoke         # API/share/image checks against :8787 (or pass a U
 ```
 On `/me`, dev builds show a "load demo history" button (10 weeks of fake play, rivals, badges).
 
-## Before this can go live (Tom)
+## Production
 
-1. `npx wrangler d1 create triviverse-social` → paste the id into `wrangler.jsonc`, then
-   `npx wrangler d1 migrations apply triviverse-social --remote`.
-2. **Privacy policy** needs a line: we store a random device id, an optional nickname and daily
-   scores to run leagues/percentiles; no email, no tracking across sites. (Legal text is Tom's call.)
-3. Old `share.triviverse.com/…` links in the wild stay dead unless that DNS record is restored;
-   new shares no longer use it.
-4. After deploy: `npm run social-smoke -- https://triviverse.com`.
+Live since 2026-10-03. triviverse.com is the `triviverse` Cloudflare Worker (static
+assets + this script), deployed automatically by Cloudflare Workers Builds on every
+push to `main` — Render only redirects to it now. The production D1 database is
+`triviverse-social` (id in `wrangler.jsonc`); schema changes go in `worker/migrations`
+and are applied with `npx wrangler d1 migrations apply triviverse-social --remote`
+*before* merging code that needs them. The privacy policy covers this data (sections
+1, 3, 6, 7). Old `share.triviverse.com/…` links stay dead. After a deploy:
+`npm run social-smoke -- https://triviverse.com`.
 
 ## Measure
 

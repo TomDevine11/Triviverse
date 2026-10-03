@@ -12,10 +12,10 @@
 // The same comparison runs in the Worker (worker/social.js) — keep them in step.
 
 export const UNITS = {
-  pts: { en: 'pts', es: 'pts' },
-  mistakes: { en: 'mistakes', es: 'fallos' },
-  guesses: { en: 'guesses', es: 'intentos' },
-  players: { en: 'players', es: 'jugadores' },
+  pts: { en: 'pts', es: 'pts', one: { en: 'pt', es: 'pt' } },
+  mistakes: { en: 'mistakes', es: 'fallos', one: { en: 'mistake', es: 'fallo' } },
+  guesses: { en: 'guesses', es: 'intentos', one: { en: 'guess', es: 'intento' } },
+  players: { en: 'players', es: 'jugadores', one: { en: 'player', es: 'jugador' } },
   streak: { en: 'in a row', es: 'seguidas' },
 }
 
@@ -38,7 +38,8 @@ export function scoreLabel(r, locale = 'en') {
     return `${Number.isFinite(v) ? v : 0}/${r.of}`
   }
   if (!Number.isFinite(v)) return r.w ? '✓' : '✗'
-  const unit = UNITS[r.u]?.[locale] || UNITS[r.u]?.en || ''
+  const forms = v === 1 && UNITS[r.u]?.one ? UNITS[r.u].one : UNITS[r.u]
+  const unit = forms?.[locale] || forms?.en || ''
   if (r.u === 'mistakes' && r.w && v === 0) return locale === 'es' ? 'Perfecto' : 'Flawless'
   return unit ? `${v} ${unit}` : String(v)
 }
