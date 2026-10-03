@@ -1,6 +1,6 @@
 // /world — the public leaderboard: everyone's matchday points for today, this
-// week or all time (worker/api.js → getWorld). Top 50, plus your own row with
-// the players either side if you're further down. Players without a nickname
+// week or all time (worker/api.js → getWorld). Top 50, plus your own row under
+// a gap if you're further down. Players without a nickname
 // show as Anonymous; points are server-computed and impossible days are left
 // out (see worldStandings), so the table is fair enough to put names on.
 

@@ -57,17 +57,35 @@ async function upsertPlayer(db, { player, pub, name }) {
 }
 
 // ── Results ─────────────────────────────────────────────────────────────────
-async function percentile(db, { day, game, player, w, v, low }) {
-  const hasV = v != null
-  const row = await db.prepare(`
-    SELECT
-      SUM(CASE WHEN w < ?1 OR (w = ?1 AND ?7 = 1 AND v IS NOT NULL AND ((?3 = 1 AND v > ?2) OR (?3 = 0 AND v < ?2))) THEN 1 ELSE 0 END) AS beat,
-      SUM(CASE WHEN w = ?1 AND (?7 = 0 OR v IS NULL OR v = ?2) THEN 1 ELSE 0 END) AS tie,
-      COUNT(*) AS n
-    FROM results WHERE day = ?4 AND game = ?5 AND player != ?6`)
-    .bind(w ? 1 : 0, hasV ? v : 0, low ? 1 : 0, day, game, player, hasV ? 1 : 0).first()
-  const n = row?.n || 0
-  return { pc: n ? Math.round(((row.beat || 0) + (row.tie || 0) / 2) / n * 100) : null, others: n }
+// Percentile from score_counts (one row per distinct result, per daily) rather
+// than every player's row — a few dozen rows read however many play.
+const vkey = (v) => (v == null ? -1 : v)
+
+async function percentile(db, { day, game, w, v, low }) {
+  const { results } = await db.prepare('SELECT w, vkey, n FROM score_counts WHERE day = ? AND game = ?').bind(day, game).all()
+  const mineW = w ? 1 : 0
+  const mineV = v == null ? null : v
+  let beat = 0, tie = 0, total = 0
+  for (const r of results) {
+    total += r.n
+    if (r.w < mineW) beat += r.n
+    else if (r.w === mineW) {
+      if (mineV == null || r.vkey === -1 || r.vkey === mineV) tie += r.n
+      else if (low ? r.vkey > mineV : r.vkey < mineV) beat += r.n
+    }
+  }
+  tie -= 1 // yourself
+  const others = Math.max(0, total - 1)
+  return { pc: others ? Math.round((beat + Math.max(0, tie) / 2) / others * 100) : null, others }
+}
+
+// Move one result between score_counts buckets (from = null for a new result).
+async function bumpScore(db, day, game, from, to) {
+  if (from && from.w === to.w && vkey(from.v) === vkey(to.v)) return
+  const stmts = [db.prepare(`INSERT INTO score_counts (day, game, w, vkey, n) VALUES (?, ?, ?, ?, 1)
+    ON CONFLICT (day, game, w, vkey) DO UPDATE SET n = n + 1`).bind(day, game, to.w ? 1 : 0, vkey(to.v))]
+  if (from) stmts.push(db.prepare('UPDATE score_counts SET n = n - 1 WHERE day = ? AND game = ? AND w = ? AND vkey = ?').bind(day, game, from.w ? 1 : 0, vkey(from.v)))
+  await db.batch(stmts)
 }
 
 // ── Points (server-computed) ────────────────────────────────────────────────
@@ -101,6 +119,33 @@ async function awardPerfect(db, player, day) {
     .bind(player, day, (row.base || 0) * (PERFECT_MULT - 1), Date.now()).run()
 }
 
+// Recompute one player-day in daily_totals from its (at most twelve) results,
+// and carry the change into world_all — only for an eligible (human-paced) day.
+async function refreshTotals(db, player, day) {
+  const now = await db.prepare(`SELECT SUM(pts) AS pts,
+      SUM(CASE WHEN game != 'perfect' THEN 1 ELSE 0 END) AS played,
+      SUM(CASE WHEN game != 'perfect' THEN w ELSE 0 END) AS wins,
+      SUM(CASE WHEN game = 'perfect' THEN 1 ELSE 0 END) AS perfect,
+      MIN(created) AS first, MAX(created) AS last
+    FROM results WHERE player = ? AND day = ?`).bind(player, day).first()
+  const before = await db.prepare('SELECT pts, played, wins, perfect, eligible FROM daily_totals WHERE player = ? AND day = ?').bind(player, day).first()
+  const eligible = !(now.played >= BURST_GAMES && now.last - now.first < BURST_MS)
+  const count = (r, ok) => (ok && r ? [r.pts || 0, r.played || 0, r.wins || 0, r.perfect || 0] : [0, 0, 0, 0])
+  const was = count(before, !!before?.eligible)
+  const is = count(now, eligible)
+  const d = is.map((x, i) => x - was[i])
+  const stmts = [db.prepare(`INSERT INTO daily_totals (player, day, pts, played, wins, perfect, first, last, eligible) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ON CONFLICT (player, day) DO UPDATE SET pts = excluded.pts, played = excluded.played, wins = excluded.wins,
+      perfect = excluded.perfect, first = excluded.first, last = excluded.last, eligible = excluded.eligible`)
+    .bind(player, day, now.pts || 0, now.played || 0, now.wins || 0, now.perfect || 0, now.first, now.last, eligible ? 1 : 0)]
+  if (d.some(x => x !== 0)) {
+    stmts.push(db.prepare(`INSERT INTO world_all (player, pts, played, wins, perfect) VALUES (?, ?, ?, ?, ?)
+      ON CONFLICT (player) DO UPDATE SET pts = pts + excluded.pts, played = played + excluded.played,
+        wins = wins + excluded.wins, perfect = perfect + excluded.perfect`).bind(player, ...d))
+  }
+  await db.batch(stmts)
+}
+
 async function postResult(request, env) {
   const b = await body(request)
   if (!b) return bad('bad_json')
@@ -114,43 +159,63 @@ async function postResult(request, env) {
   const of = b.of == null ? null : Math.max(0, Math.min(100, Math.round(Number(b.of)) || 0))
   const u = UNITS.has(b.u) ? b.u : null
   if (!(await upsertPlayer(env.DB, b))) return bad('bad_player', 403)
-  const pts = await serverPoints(env.DB, b.player, b.day, game, !!b.w)
+  const db = env.DB
+  const prev = await db.prepare('SELECT w, v, low FROM results WHERE player = ? AND day = ? AND game = ?').bind(b.player, b.day, game).first()
 
   // First write wins for the outcome and its points; a later write may only fill
   // in a missing score (the finish card submits after recordResult's bare row).
-  await env.DB.prepare(`
-    INSERT INTO results (player, day, game, w, v, of, low, u, pts, created) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    ON CONFLICT (player, day, game) DO UPDATE SET
-      v = COALESCE(results.v, excluded.v), of = COALESCE(results.of, excluded.of), u = COALESCE(results.u, excluded.u),
-      low = CASE WHEN results.v IS NULL THEN excluded.low ELSE results.low END`)
-    .bind(b.player, b.day, game, b.w ? 1 : 0, v, of, b.low ? 1 : 0, u, pts, Date.now()).run()
-  await awardPerfect(env.DB, b.player, b.day)
-
-  const stored = await env.DB.prepare('SELECT w, v, low FROM results WHERE player = ? AND day = ? AND game = ?').bind(b.player, b.day, game).first()
-  const rank = await percentile(env.DB, { day: b.day, game, player: b.player, w: stored.w, v: stored.v, low: stored.low })
+  if (!prev) {
+    const pts = await serverPoints(db, b.player, b.day, game, !!b.w)
+    await db.prepare('INSERT OR IGNORE INTO results (player, day, game, w, v, of, low, u, pts, created) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
+      .bind(b.player, b.day, game, b.w ? 1 : 0, v, of, b.low ? 1 : 0, u, pts, Date.now()).run()
+    await awardPerfect(db, b.player, b.day)
+    await refreshTotals(db, b.player, b.day)
+  } else if (prev.v == null && v != null) {
+    await db.prepare('UPDATE results SET v = ?, of = COALESCE(of, ?), u = COALESCE(u, ?), low = ? WHERE player = ? AND day = ? AND game = ?')
+      .bind(v, of, u, b.low ? 1 : 0, b.player, b.day, game).run()
+  }
+  const stored = prev ? { w: prev.w, v: prev.v ?? v, low: prev.v == null ? !!b.low : !!prev.low } : { w: b.w ? 1 : 0, v, low: !!b.low }
+  await bumpScore(db, b.day, game, prev, stored)
+  const rank = await percentile(db, { day: b.day, game, w: stored.w, v: stored.v, low: stored.low })
   return json({ ok: true, ...rank })
+}
+
+// Shared answers (the hub's live count, the top of the world table) are cached
+// at the edge for a minute so a thousand visitors cost one set of reads.
+async function cached(origin, key, ttl, fn) {
+  const cache = typeof caches !== 'undefined' ? caches.default : null
+  const req = new Request(`${origin}/__cache/${key}`)
+  if (cache) {
+    const hit = await cache.match(req)
+    if (hit) return hit.json()
+  }
+  const value = await fn()
+  if (cache) await cache.put(req, new Response(JSON.stringify(value), { headers: { 'content-type': 'application/json', 'cache-control': `public, max-age=${ttl}` } }))
+  return value
 }
 
 async function getToday(url, env) {
   const day = Number(url.searchParams.get('day'))
   if (!validDay(day)) return bad('bad_day')
-  const [players, games] = await env.DB.batch([
-    env.DB.prepare("SELECT COUNT(DISTINCT player) AS n FROM results WHERE day = ? AND game != 'perfect'").bind(day),
-    env.DB.prepare("SELECT game, COUNT(*) AS n, SUM(w) AS wins FROM results WHERE day = ? AND game != 'perfect' GROUP BY game").bind(day),
-  ])
-  const byGame = {}
-  for (const r of games.results) byGame[r.game] = { n: r.n, wins: r.wins || 0 }
-  return json({ day, players: players.results[0]?.n || 0, games: byGame }, 200, { 'cache-control': 'public, max-age=30' })
+  const data = await cached(url.origin, `today/${day}`, 60, async () => {
+    const [players, games] = await env.DB.batch([
+      env.DB.prepare('SELECT COUNT(*) AS n FROM daily_totals WHERE day = ? AND played > 0').bind(day),
+      env.DB.prepare('SELECT game, SUM(n) AS n, SUM(CASE WHEN w = 1 THEN n ELSE 0 END) AS wins FROM score_counts WHERE day = ? GROUP BY game').bind(day),
+    ])
+    const byGame = {}
+    for (const r of games.results) byGame[r.game] = { n: r.n, wins: r.wins || 0 }
+    return { day, players: players.results[0]?.n || 0, games: byGame }
+  })
+  return json(data, 200, { 'cache-control': 'public, max-age=60' })
 }
 
 async function getDist(url, env) {
   const day = Number(url.searchParams.get('day'))
   const game = url.searchParams.get('game') || ''
   if (!validDay(day) || !GAMES.has(game)) return bad('bad_query')
-  const { results } = await env.DB.prepare('SELECT w, v, of, low, u, COUNT(*) AS n FROM results WHERE day = ? AND game = ? GROUP BY w, v ORDER BY w DESC, v').bind(day, game).all()
+  const { results } = await env.DB.prepare('SELECT w, vkey, n FROM score_counts WHERE day = ? AND game = ? AND n > 0 ORDER BY w DESC, vkey').bind(day, game).all()
   const total = results.reduce((s, r) => s + r.n, 0)
-  const meta = results[0] ? { of: results[0].of, low: !!results[0].low, u: results[0].u } : null
-  return json({ day, game, total, meta, buckets: results.map(r => ({ w: !!r.w, v: r.v, n: r.n })) }, 200, { 'cache-control': 'public, max-age=30' })
+  return json({ day, game, total, buckets: results.map(r => ({ w: !!r.w, v: r.vkey === -1 ? null : r.vkey, n: r.n })) }, 200, { 'cache-control': 'public, max-age=60' })
 }
 
 // ── Leagues ─────────────────────────────────────────────────────────────────
@@ -219,13 +284,9 @@ async function peekLeague(env, c) {
 // Standings for [from, to]: points, dailies played, wins, perfect days — per member.
 async function standings(env, c, from, to) {
   const { results } = await env.DB.prepare(`
-    SELECT r.player,
-      SUM(r.pts) AS pts,
-      SUM(CASE WHEN r.game != 'perfect' THEN 1 ELSE 0 END) AS played,
-      SUM(CASE WHEN r.game != 'perfect' THEN r.w ELSE 0 END) AS wins,
-      SUM(CASE WHEN r.game = 'perfect' THEN 1 ELSE 0 END) AS perfect
-    FROM results r JOIN members m ON m.player = r.player AND m.league = ?
-    WHERE r.day BETWEEN ? AND ? GROUP BY r.player`).bind(c, from, to).all()
+    SELECT t.player, SUM(t.pts) AS pts, SUM(t.played) AS played, SUM(t.wins) AS wins, SUM(t.perfect) AS perfect
+    FROM daily_totals t JOIN members m ON m.player = t.player AND m.league = ?
+    WHERE t.day BETWEEN ? AND ? GROUP BY t.player`).bind(c, from, to).all()
   return new Map(results.map(r => [r.player, r]))
 }
 
@@ -298,9 +359,9 @@ async function myLeagues(url, env) {
   }
   const out = []
   for (const l of leagues) {
-    const { results: rows } = await env.DB.prepare(`SELECT m.player, p.name, COALESCE(SUM(r.pts), 0) AS pts FROM members m
+    const { results: rows } = await env.DB.prepare(`SELECT m.player, p.name, COALESCE(SUM(t.pts), 0) AS pts FROM members m
       JOIN players p ON p.id = m.player
-      LEFT JOIN results r ON r.player = m.player AND r.day BETWEEN ? AND ? WHERE m.league = ? GROUP BY m.player ORDER BY pts DESC, p.name`).bind(ws, ws + 6, l.code).all()
+      LEFT JOIN daily_totals t ON t.player = m.player AND t.day BETWEEN ? AND ? WHERE m.league = ? GROUP BY m.player ORDER BY pts DESC, p.name`).bind(ws, ws + 6, l.code).all()
     const idx = rows.findIndex(r => r.player === player)
     const mine = rows[idx]?.pts || 0
     const leader = rows[0]?.pts || 0
@@ -323,79 +384,125 @@ async function myLeagues(url, env) {
 }
 
 // ── World table ─────────────────────────────────────────────────────────────
-// Everyone's matchday points over [from, to], best first. Two guards keep the
-// public table honest (scores are client-reported — docs/social.md):
+// Everyone's matchday points for a period, best first. Two guards keep the
+// public table honest (outcomes are client-reported — docs/social.md):
 //   • points are server-computed (postResult), so nobody can claim more than a
 //     real result earns;
 //   • a player-day of 6+ dailies all landing within two minutes isn't humanly
-//     playable, so it's left out of the table (still counts in private leagues).
-// Moderated players (players.hidden) never appear.
+//     playable, so it's left out (daily_totals.eligible = 0; still counts in
+//     private leagues).
+// Moderated players (players.hidden) never appear. Reads come from the running
+// totals (daily_totals / world_all), never raw results, and the shared parts are
+// edge-cached — see docs/social.md "Free-tier budget".
 const BURST_GAMES = 6
 const BURST_MS = 120000
+const TOP = 50
 
-async function worldStandings(db, from, to) {
-  const { results } = await db.prepare(`
-    WITH days AS (
-      SELECT player, day, SUM(pts) AS pts,
-        SUM(CASE WHEN game != 'perfect' THEN 1 ELSE 0 END) AS n,
-        SUM(CASE WHEN game != 'perfect' THEN w ELSE 0 END) AS wins,
-        SUM(CASE WHEN game = 'perfect' THEN 1 ELSE 0 END) AS perfect,
-        MAX(created) - MIN(created) AS span
-      FROM results WHERE day BETWEEN ? AND ? GROUP BY player, day
-    )
-    SELECT d.player, p.name, SUM(d.pts) AS pts, SUM(d.n) AS played, SUM(d.wins) AS wins, SUM(d.perfect) AS perfect
-    FROM days d JOIN players p ON p.id = d.player
-    WHERE p.hidden = 0 AND NOT (d.n >= ? AND d.span < ?)
-    GROUP BY d.player
-    ORDER BY pts DESC, wins DESC, played ASC`).bind(from, to, BURST_GAMES, BURST_MS).all()
-  const counts = new Map()
-  for (const r of results) counts.set(r.pts, (counts.get(r.pts) || 0) + 1)
-  return results.map((r, i, arr) => ({ ...r, rank: arr.findIndex(x => x.pts === r.pts) + 1, tied: counts.get(r.pts) > 1 }))
+// The period as a derived table S(player, name, pts, played, wins, perfect).
+function source(period, day) {
+  const cols = 't.player, p.name, t.pts, t.played, t.wins, t.perfect'
+  if (period === 'today') return { sql: `SELECT ${cols} FROM daily_totals t JOIN players p ON p.id = t.player WHERE t.day = ? AND t.eligible = 1 AND p.hidden = 0`, args: [day] }
+  if (period === 'week') {
+    const ws = weekStart(day)
+    return { sql: `SELECT t.player, p.name, SUM(t.pts) AS pts, SUM(t.played) AS played, SUM(t.wins) AS wins, SUM(t.perfect) AS perfect
+      FROM daily_totals t JOIN players p ON p.id = t.player WHERE t.day BETWEEN ? AND ? AND t.eligible = 1 AND p.hidden = 0 GROUP BY t.player`, args: [ws, ws + 6] }
+  }
+  return { sql: `SELECT ${cols} FROM world_all t JOIN players p ON p.id = t.player WHERE p.hidden = 0 AND t.played > 0`, args: [] }
+}
+const periodKey = (period, day) => (period === 'week' ? `week/${weekStart(day)}` : period === 'today' ? `today/${day}` : `all/${day}`)
+
+// Everyone's points for a period, highest first — just the numbers. Ranks are
+// looked up in this (binary search) instead of counting rows per request; the
+// list is shared by every visitor and rebuilt at most every five minutes.
+async function pointsList(env, origin, period, day) {
+  return cached(origin, `world/pts/${periodKey(period, day)}`, 300, async () => {
+    const S = source(period, day)
+    const { results } = await env.DB.prepare(`SELECT pts FROM (${S.sql}) ORDER BY pts DESC`).bind(...S.args).all()
+    return results.map(r => r.pts)
+  })
+}
+
+// Place of `pts` in a descending list: how many are strictly ahead, how many
+// share it, and the next score up (null at the top).
+function placeIn(list, pts) {
+  let lo = 0, hi = list.length
+  while (lo < hi) { const mid = (lo + hi) >> 1; if (list[mid] > pts) lo = mid + 1; else hi = mid }
+  let same = 0
+  for (let i = lo; i < list.length && list[i] === pts; i++) same++
+  return { ahead: lo, same, next: lo > 0 ? list[lo - 1] : null }
 }
 
 // Public shape: never a private id. No nickname → null (the page shows "Anonymous").
-const publicRow = (r, player) => ({ rank: r.rank, tied: r.tied, name: r.name || null, pts: r.pts, played: r.played, wins: r.wins, perfect: r.perfect, you: r.player === player })
+const publicRow = (r, player) => ({ rank: r.rank, tied: !!r.tied, name: r.name || null, pts: r.pts, played: r.played, wins: r.wins, perfect: r.perfect, you: r.player === player })
+const byStanding = (a, b) => b.pts - a.pts || b.wins - a.wins || a.played - b.played
 
-const TOP = 50
+// The top 50 with names — the same for everyone, so edge-cached for two minutes.
+// Reads only the top of the points index (plus a margin for ties at the cut).
+async function worldTop(env, origin, period, day) {
+  return cached(origin, `world/top/${periodKey(period, day)}`, 120, async () => {
+    const S = source(period, day)
+    const { results } = await env.DB.prepare(`SELECT * FROM (${S.sql}) ORDER BY pts DESC LIMIT ${TOP + 30}`).bind(...S.args).all()
+    return results.sort(byStanding).slice(0, TOP)
+  })
+}
+
+// Your own row for a period (a handful of rows by primary key), or null.
+async function myRow(env, period, day, player) {
+  const S = source(period, day)
+  return env.DB.prepare(`SELECT * FROM (${S.sql}) WHERE player = ?`).bind(...S.args, player).first()
+}
+
+function ranked(row, list) {
+  const at = placeIn(list, row.pts)
+  return { ...row, rank: at.ahead + 1, tied: at.same > 1 }
+}
+
 async function getWorld(url, env) {
   const player = url.searchParams.get('player') || ''
   const day = Number(url.searchParams.get('day'))
   const period = url.searchParams.get('period') || 'today'
   if (!validDay(day) || !['today', 'week', 'all'].includes(period)) return bad('bad_query')
-  const ws = weekStart(day)
-  const [from, to] = period === 'today' ? [day, day] : period === 'week' ? [ws, ws + 6] : [0, day + 1]
-  const all = await worldStandings(env.DB, from, to)
-  const idx = validId(player) ? all.findIndex(r => r.player === player) : -1
-  // Outside the top 50: your row with the players either side of it.
-  const around = idx >= TOP ? all.slice(idx - 1, idx + 2).map(r => publicRow(r, player)) : []
+  const [list, top, mine] = await Promise.all([
+    pointsList(env, url.origin, period, day),
+    worldTop(env, url.origin, period, day),
+    validId(player) ? myRow(env, period, day, player) : null,
+  ])
+  // The cached lists are a few minutes old; your own row is always live, so
+  // merge it in (you may have just played your way onto the table, or up it).
+  const me = mine ? ranked(mine, list.includes(mine.pts) ? list : [...list, mine.pts].sort((a, b) => b - a)) : null
+  let rows = top.filter(r => r.player !== player)
+  if (me && me.rank <= TOP) rows = [...rows, mine].sort(byStanding).slice(0, TOP)
+  rows = rows.map(r => ranked(r, list))
+  if (me) rows = rows.map(r => (r.player === player ? me : r))
   return json({
-    period, players: all.length,
-    rows: all.slice(0, TOP).map(r => publicRow(r, player)),
-    around,
-    me: idx >= 0 ? publicRow(all[idx], player) : null,
+    period, players: Math.max(list.length, me?.rank || 0),
+    rows: rows.map(r => publicRow(r, player)),
+    // Outside the top 50: your own row, under a gap.
+    around: me && me.rank > TOP ? [publicRow(me, player)] : [],
+    me: me ? publicRow(me, player) : null,
   }, 200, { 'cache-control': 'private, max-age=30' })
 }
 
-// Your own position for one day (the hub's World block). Same table as above.
-async function rankOn(db, day, player) {
-  const all = await worldStandings(db, day, day)
-  const idx = all.findIndex(r => r.player === player)
-  if (idx < 0) return null
-  const me = all[idx]
-  const above = all.slice(0, idx).reverse().find(r => r.pts > me.pts)
-  return { rank: me.rank, players: all.length, pts: me.pts, toNext: above ? above.pts - me.pts : 0, top: Math.max(1, Math.ceil((me.rank / all.length) * 100)) }
+// Your own position for one day (the hub's World block). Same numbers as /world.
+async function rankOn(env, origin, day, player) {
+  const mine = await myRow(env, 'today', day, player)
+  if (!mine) return null
+  const list = await pointsList(env, origin, 'today', day)
+  const at = placeIn(list, mine.pts)
+  const players = Math.max(list.length, at.ahead + 1)
+  return { rank: at.ahead + 1, players, pts: mine.pts, toNext: at.next != null ? at.next - mine.pts : 0, top: Math.max(1, Math.ceil(((at.ahead + 1) / players) * 100)) }
 }
 
 async function getRank(url, env) {
   const player = url.searchParams.get('player') || ''
   const day = Number(url.searchParams.get('day'))
   if (!validId(player) || !validDay(day)) return bad('bad_query')
-  const today = await rankOn(env.DB, day, player)
+  const today = await rankOn(env, url.origin, day, player)
   if (today) return json({ day, ...today })
   // Not played yet today: yesterday's finish, so there's something to defend.
-  const prev = await rankOn(env.DB, day - 1, player)
-  const playing = await env.DB.prepare("SELECT COUNT(DISTINCT player) AS n FROM results WHERE day = ? AND game != 'perfect'").bind(day).first()
-  return json({ day, rank: null, playing: playing?.n || 0, yesterday: prev })
+  const prev = await rankOn(env, url.origin, day - 1, player)
+  const list = await pointsList(env, url.origin, 'today', day)
+  return json({ day, rank: null, playing: list.length, yesterday: prev })
 }
 
 // ── Device transfer ─────────────────────────────────────────────────────────
