@@ -8,6 +8,9 @@ import { RELATION_BASE } from './seo/relations.js'
 import ScrollToTop from './components/ScrollToTop'
 import Analytics from './components/Analytics'
 import PreviewBanner from './components/PreviewBanner'
+import ChallengeBanner from './components/social/ChallengeBanner'
+import BadgeToast from './components/social/BadgeToast'
+import SocialBoot from './components/social/SocialBoot'
 
 // Lazy-load each game so its (sometimes heavy) data only downloads on its own
 // route — the hub and lighter games stay fast, which helps Core Web Vitals.
@@ -24,6 +27,10 @@ const FootballConnections = lazy(() => import('./games/connections/FootballConne
 const FootballPointless = lazy(() => import('./games/pointless/FootballPointless'))
 const RelationPage = lazy(() => import('./seo/RelationPage'))
 const RelationHubPage = lazy(() => import('./seo/RelationHubPage'))
+// Social layer — personal, noindex app screens (see docs/social.md).
+const Me = lazy(() => import('./pages/Me'))
+const LeaguesIndex = lazy(() => import('./pages/Leagues').then(m => ({ default: m.LeaguesIndex })))
+const LeagueView = lazy(() => import('./pages/Leagues').then(m => ({ default: m.LeagueView })))
 
 // Dev-only: identity foundation inspector (Phase 0). Not linked from the hub;
 // reads only the generated identity artifacts, touches no game code.
@@ -71,11 +78,19 @@ export default function App() {
       <ScrollToTop />
       <Analytics />
       <PreviewBanner />
+      <SocialBoot />
+      <ChallengeBanner />
+      <BadgeToast />
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Hub />} />
           <Route path="/es" element={<Hub />} />
           <Route path="/dev/identity" element={<IdentityInspector />} />
+          {['', '/es'].flatMap(pre => [
+            <Route key={`${pre}/me`} path={`${pre}/me`} element={<Me />} />,
+            <Route key={`${pre}/leagues`} path={`${pre}/leagues`} element={<LeaguesIndex />} />,
+            <Route key={`${pre}/leagues/:code`} path={`${pre}/leagues/:code`} element={<LeagueView />} />,
+          ])}
           {GAME_ROUTES.flatMap(({ path, el }) => [
             <Route key={path} path={path} element={el} />,
             <Route key={`es${path}`} path={`/es${path}`} element={el} />,

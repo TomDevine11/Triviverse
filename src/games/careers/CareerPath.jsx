@@ -6,7 +6,6 @@ import QaBar from '../../dev/QaBar'
 import { usePlayerSuggestions } from '../tictactoe/usePlayerSuggestions'
 import { ShareCard, RESULT_SECONDARY_BTN } from '../../components/ShareCard'
 import Crest from '../../components/Crest'
-import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
 import ResultModal from '../../components/ResultModal'
 import { shortTitle } from '../../components/nextGames'
@@ -37,7 +36,6 @@ export default function CareerPath() {
   const [dismissed, setDismissed] = useState(false)
   const [phase, setPhase] = useState(() => saved?.phase ?? 'playing') // 'playing' | 'won' | 'lost'
   const [shake, setShake] = useState(false)
-  const [dailyStats, setDailyStats] = useState(null)
   const inputRef = useRef(null)
   const dropdownRef = useRef(null)
 
@@ -47,7 +45,7 @@ export default function CareerPath() {
   const maxClues = target.clues.length
   // Only Daily mode records stats/streaks.
   useEffect(() => {
-    if (phase !== 'playing' && mode === 'daily') setDailyStats(recordResult('careers', phase === 'won'))
+    if (phase !== 'playing' && mode === 'daily') recordResult('careers', phase === 'won')
   }, [phase, mode])
   const usedNames = useMemo(() => new Set(), [])
   const { suggestions, isSearching } = usePlayerSuggestions(input, active, usedNames)
@@ -130,14 +128,14 @@ export default function CareerPath() {
   // Leave the daily untouched; start a fresh, replayable Unlimited round.
   const startUnlimited = () => {
     setMode('unlimited'); setTarget(getRandomTarget())
-    setRevealed(1); setGuesses([]); setInput(''); setPhase('playing'); setHighlightedIndex(-1); setDailyStats(null); setShowResult(false)
+    setRevealed(1); setGuesses([]); setInput(''); setPhase('playing'); setHighlightedIndex(-1); setShowResult(false)
   }
   // Return to the daily: rehydrate today's saved state (locked, resumed, or fresh).
   const restoreDaily = () => {
     const s = loadDailyProgress('careers', getDailyTarget().name)
     setMode('daily'); setTarget(getDailyTarget())
     setRevealed(s?.revealed ?? 1); setGuesses(s?.guesses ?? []); setInput(''); setPhase(s?.phase ?? 'playing')
-    setHighlightedIndex(-1); setDailyStats(null); setShowResult(!!s?.done)
+    setHighlightedIndex(-1); setShowResult(!!s?.done)
   }
   const onModeChange = (m) => (m === 'daily' ? restoreDaily() : startUnlimited())
   /* eslint-disable react-hooks/set-state-in-effect -- intentional dev-only QA loader */
@@ -146,7 +144,7 @@ export default function CareerPath() {
   useEffect(() => {
     if (!qa.active) return
     setMode('unlimited'); setTarget(getTargetForDay(qa.index))
-    setRevealed(1); setGuesses([]); setInput(''); setPhase('playing'); setHighlightedIndex(-1); setDailyStats(null); setShowResult(false)
+    setRevealed(1); setGuesses([]); setInput(''); setPhase('playing'); setHighlightedIndex(-1); setShowResult(false)
   }, [qa.active, qa.index])
   /* eslint-enable react-hooks/set-state-in-effect */
 
@@ -296,9 +294,7 @@ export default function CareerPath() {
             {phase === 'won' ? t('teammates.correct') : t('teammates.outOf')}
           </h2>
           <ResultAnswer label={t('teammates.mysteryWas')} detail={phase === 'won' && guesses.length > 0 ? t('teammates.inN', { n: guesses.length }) : null}>{target.name}</ResultAnswer>
-          {dailyLocked && <p className="text-[0.62rem] font-black tracking-[0.14em] uppercase text-faint mb-1">{t('common.dailyDone')}</p>}
         </div>
-        {mode === 'daily' && <DailyStats game="careers" stats={dailyStats} />}
         <ShareCard
           text={[
             phase === 'won'
@@ -308,6 +304,9 @@ export default function CareerPath() {
           ].join('\n\n')}
           card={{
             gameId: 'careers',
+            daily: mode === 'daily',
+            won: phase === 'won',
+            score: { v: phase === 'won' ? guesses.length : maxClues + 1, of: maxClues, low: true },
             title: t('careers.wordmark'),
             challenge: t('games.career-path.tagline'),
             result: phase === 'won' ? t('teammates.correct') : t('teammates.outOf'),

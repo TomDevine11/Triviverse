@@ -1,3 +1,6 @@
+> **Superseded 2026-09-30** by the Worker in `worker/og.js` (share pages + images on
+> triviverse.com itself — see `docs/social.md`). Kept until the social layer ships; then delete.
+
 # Triviverse OG share service
 
 A tiny, standalone service that turns a game result into an **unfurling link

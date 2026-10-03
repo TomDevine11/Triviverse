@@ -4,7 +4,6 @@ import { todayIndex, recordResult, matchdayNumber } from '../../data/dailyStats'
 import { loadDailyProgress, saveDailyProgress } from '../../data/dailyProgress'
 import { useQa } from '../../dev/qa'
 import QaBar from '../../dev/QaBar'
-import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
 import ResultModal from '../../components/ResultModal'
 import { shortTitle } from '../../components/nextGames'
@@ -49,11 +48,10 @@ export default function FootballBingo() {
   const over = won || lost
   const dailyLocked = mode === 'daily' && over
 
-  const [dailyStats, setDailyStats] = useState(null)
   // Recorded at the moment the card ends rather than from an effect watching
   // `over`: the transition is knowable synchronously from the move that caused
   // it, so this fires exactly once and never on a re-render.
-  const finish = (didWin) => { if (mode === 'daily') setDailyStats(recordResult('bingo', didWin)) }
+  const finish = (didWin) => { if (mode === 'daily') recordResult('bingo', didWin) }
 
   useEffect(() => {
     if (mode !== 'daily') return
@@ -70,7 +68,7 @@ export default function FootballBingo() {
   const resetTo = (next, m) => {
     setMode(m); setCard(next); setPlaced(EMPTY()); setDealIndex(0)
     setLives(MAX_LIVES); setSkips(MAX_SKIPS); setMessage(''); setWrongSquare(-1)
-    setDailyStats(null); setShowResult(false)
+    setShowResult(false)
   }
   const startUnlimited = () => resetTo(getRandomBingo(), 'unlimited')
   const restoreDaily = () => {
@@ -79,7 +77,7 @@ export default function FootballBingo() {
     setMode('daily'); setCard(c)
     setPlaced(s?.placed ?? EMPTY()); setDealIndex(s?.dealIndex ?? 0)
     setLives(s?.lives ?? MAX_LIVES); setSkips(s?.skips ?? MAX_SKIPS)
-    setMessage(''); setWrongSquare(-1); setDailyStats(null); setShowResult(!!s?.done)
+    setMessage(''); setWrongSquare(-1); setShowResult(!!s?.done)
   }
   const onModeChange = (m) => (m === 'daily' ? restoreDaily() : startUnlimited())
 
@@ -238,10 +236,8 @@ export default function FootballBingo() {
               {won ? t('bingo.wonSub', { n: MAX_LIVES - lives }) : t('common.comeBackTomorrow')}
             </p>
           </div>
-          {dailyLocked && <p className="text-[0.62rem] font-black tracking-[0.14em] uppercase text-faint mb-1">{t('common.dailyDone')}</p>}
-          {mode === 'daily' && <DailyStats game="bingo" stats={dailyStats} />}
 
-          <div className="w-full space-y-1 mb-1 max-h-56 overflow-y-auto">
+          <div className="w-full space-y-1 mb-1 max-h-44 overflow-y-auto">
             {card.squares.map((sq, i) => (
               <div key={`${sq.type}:${sq.value}`} className={`rounded-lg border px-3 py-1.5 flex items-center justify-between gap-2 text-left ${placed[i] ? 'border-accent/50 bg-[color-mix(in_srgb,var(--accent)_10%,#16151f)]' : 'border-border bg-surface'}`}>
                 <span className="text-[0.7rem] font-bold text-secondary truncate">{categoryLabel(sq, t)}</span>
@@ -252,6 +248,9 @@ export default function FootballBingo() {
 
           <ShareCard card={{
             gameId: 'bingo',
+            daily: mode === 'daily',
+            won,
+            score: { v: filled, of: CARD_SIZE },
             title: 'Football Bingo',
             challenge: t('games.football-bingo.tagline'),
             result: won ? t('bingo.bingo') : t('bingo.outOf', { n: filled }),

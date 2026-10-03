@@ -1,8 +1,11 @@
 // UI string dictionary. Stage 1 covers the homepage + shared labels; game-screen
 // strings are added in Stage 2. Keys are dot-namespaced; missing es keys fall
 // back to en (see translate() in ./index).
+import { social } from '../social/strings.js'
+
 export const strings = {
   en: {
+    social: social.en,
     common: {
       allGames: '← All games',
       comingSoon: 'Coming soon',
@@ -305,6 +308,7 @@ export const strings = {
     },
   },
   es: {
+    social: social.es,
     common: {
       allGames: '← Todos los juegos',
       comingSoon: 'Próximamente',

@@ -38,6 +38,16 @@ const MATCHDAY_EPOCH = 20455
 export function matchdayNumber() {
   return todayIndex() - MATCHDAY_EPOCH
 }
+export const matchdayOf = (day) => day - MATCHDAY_EPOCH
+
+// Listeners told about every newly recorded daily (the social layer — results
+// log, badges, league submissions — registers here; see src/social/results.js).
+// A registry rather than an import keeps this module free of the social code.
+const recordListeners = []
+export function onRecorded(fn) {
+  recordListeners.push(fn)
+  return () => { const i = recordListeners.indexOf(fn); if (i >= 0) recordListeners.splice(i, 1) }
+}
 
 // Monday that starts the week containing local day `idx` (day 0 = a Thursday).
 export function weekStart(idx = todayIndex()) {
@@ -113,18 +123,22 @@ export function dailyPoints() {
 }
 
 // Called once per game per day from recordResult (which is idempotent).
+// Returns the points this result earned and any perfect-day bonus it triggered.
 function awardPoints(all, won, streak) {
   const p = loadLedger()
   const pts = (won ? PTS_WIN : PTS_PLAY) + Math.min(streak * PTS_STREAK_PER, PTS_STREAK_CAP)
   p.total += pts
   p.dayBase += pts
+  let perfectBonus = 0
   // Perfect day: the moment all eight have recorded today, the day's base doubles.
   const day = todayIndex()
   if (!p.perfect && DAILY_GAMES.every(g => all[g]?.lastPlayed === day)) {
-    p.total += p.dayBase * (PERFECT_MULT - 1)
+    perfectBonus = p.dayBase * (PERFECT_MULT - 1)
+    p.total += perfectBonus
     p.perfect = true
   }
   saveJson(POINTS_KEY, p)
+  return { pts, perfectBonus }
 }
 
 // Record today's result once (idempotent per day). Returns the updated stats.
@@ -148,8 +162,11 @@ export function recordResult(game, won, score = null) {
   s.results = [...(s.results || []), { d: day, w: !!won }].slice(-14)
   all[game] = s
   saveJson(KEY, all)
-  awardPoints(all, won, s.currentStreak)
+  const { pts, perfectBonus } = awardPoints(all, won, s.currentStreak)
   // Fires once per game per day (guarded above) → daily engagement signal.
-  track('game_complete', { game, won: !!won, streak: s.currentStreak })
+  track('game_complete', { game, won: !!won, streak: s.currentStreak, ...(score != null ? { score } : {}) })
+  for (const fn of recordListeners) {
+    try { fn({ game, won: !!won, score, day, stats: s, pts, perfectBonus }) } catch { /* a listener must never break recording */ }
+  }
   return s
 }

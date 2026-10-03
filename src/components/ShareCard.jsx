@@ -1,39 +1,46 @@
 import { useState } from 'react'
-import { buildShareUrl } from '../utils/shareUrl'
 import { useI18n } from '../i18n'
 import { track } from '../utils/analytics'
+import ResultSocial from './social/ResultSocial'
+import { ShareIcon } from './social/SharePanel'
+import { rowsToEmoji } from '../social/shareText'
+import { routeOf } from '../social/games'
 
-// The finish card's quiet button style (Share, Play Unlimited): the next-game
+export { ShareIcon }
+
+// The finish card's quiet button style (Play Unlimited and friends): the next-game
 // CTA in NextFixture is the card's only brand-filled button.
 export const RESULT_SECONDARY_BTN = 'mt-2 w-full h-11 bg-border/60 hover:bg-border border border-border-strong text-primary text-sm font-bold rounded-lg px-6'
 
-export function ShareIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-      <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
-      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
-    </svg>
-  )
+// Every game's result card renders this. Two shapes:
+//
+//   Daily (card.daily)  → the full social block (components/social/ResultSocial):
+//     head-to-head, global percentile, league standing, streak, and a
+//     pasteable challenge. The card must carry `won` and `score` (see
+//     social/scoring.js) so results can be compared across players.
+//
+//   Practice / 1v1      → a single share button: the result text + the game link
+//     (nothing to compare against, so no challenge).
+export function ShareCard({ card, className, text }) {
+  if (card?.daily) return <ResultSocial card={card} />
+  return <PracticeShare card={card} className={className} text={text} />
 }
 
-// A single Share button, styled like the Play-Unlimited CTA. It shares ONE link
-// that unfurls into the result image and opens the game — no emoji-grid text.
-// On desktop (no native share sheet) it copies that link instead. Pass
-// `className` to override the visual style for a specific button row.
-export function ShareCard({ card, className }) {
+function PracticeShare({ card, className, text }) {
   const { t } = useI18n()
   const [copied, setCopied] = useState(false)
-  const canNativeShare = typeof navigator !== 'undefined' && typeof navigator.share === 'function'
+  const url = typeof window !== 'undefined' ? `${window.location.origin}${routeOf(card?.gameId)}` : ''
+  const body = text || [`⚽ ${card?.title || 'Triviverse'}${card?.result ? ` — ${card.result}` : ''}`, rowsToEmoji(card?.rows), url].filter(Boolean).join('\n')
 
   const handleShare = async () => {
-    const shareUrl = buildShareUrl(card)
-    track('share', { game: card?.gameId, method: canNativeShare ? 'native' : 'copy' })
-    if (canNativeShare) {
-      try { await navigator.share({ url: shareUrl }) } catch { /* cancelled */ }
+    const canNative = typeof navigator.share === 'function' && window.matchMedia?.('(pointer: coarse)').matches
+    track('share', { game: card?.gameId, method: canNative ? 'native' : 'copy', practice: true })
+    if (canNative) {
+      try { await navigator.share({ text: body }) } catch { /* cancelled */ }
       return
     }
     try {
-      await navigator.clipboard.writeText(shareUrl)
+      await navigator.clipboard.writeText(body)
       setCopied(true); setTimeout(() => setCopied(false), 2000)
     } catch { /* clipboard blocked */ }
   }

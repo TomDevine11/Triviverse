@@ -140,7 +140,7 @@ function Scoreboard({ players, currentPlayerIndex }) {
 // tabs (route/scores · all answers · share), actions + UP NEXT pills below.
 // Only the answer list scrolls, inside its own panel.
 
-function WinScreen({ history, players, challenge, gaveUp, onPlayAgain, onExit, playAgainLabel }) {
+function WinScreen({ history, players, challenge, gaveUp, onPlayAgain, onExit, playAgainLabel, daily = false }) {
   const { t } = useI18n()
   const [tab, setTab] = useState('route')
   const isSolo = players.length === 1
@@ -242,6 +242,9 @@ function WinScreen({ history, players, challenge, gaveUp, onPlayAgain, onExit, p
             className="px-4 py-2.5 bg-border/60 hover:bg-border border border-border-strong text-primary text-sm font-bold rounded-lg whitespace-nowrap"
             card={{
               gameId: '501',
+              daily,
+              won: !gaveUp,
+              score: { v: valid.length, low: true, u: 'players' },
               title: 'Football 501',
               challenge: `${challenge.title} · ${challenge.statLabel}`,
               result: isSolo
@@ -589,7 +592,7 @@ export default function Football501({ initialMode = 'daily' }) {
           ✕
         </button>
         <WinScreen
-          history={history} players={players} challenge={challenge} gaveUp={gaveUp}
+          history={history} players={players} challenge={challenge} gaveUp={gaveUp} daily={soloDaily}
           onPlayAgain={soloDaily ? () => setPhase('random') : playAgain}
           playAgainLabel={soloDaily ? t('common.unlimitedGame', { name: shortTitle(t, '501') }) : t('five01.playAgain')}
           onExit={() => setResultDismissed(true)}

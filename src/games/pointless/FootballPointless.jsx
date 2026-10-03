@@ -2,7 +2,6 @@ import { useState, useRef, useEffect, useMemo } from 'react'
 import GameChrome from '../../components/GameChrome'
 import ModeToggle from '../../components/ModeToggle'
 import { usePlayerSuggestions } from '../tictactoe/usePlayerSuggestions'
-import DailyStats from '../../components/DailyStats'
 import ResultModal from '../../components/ResultModal'
 import { shortTitle } from '../../components/nextGames'
 import GameMotif from '../../components/GameMotif'
@@ -46,7 +45,6 @@ export default function FootballPointless() {
   const [showAll, setShowAll] = useState(false)
   const [recorded, setRecorded] = useState(false)
   const [reveal, setReveal] = useState(null) // { score, name, key } for the tower
-  const [dailyStats, setDailyStats] = useState(null)
   const [showResult, setShowResult] = useState(() => (qa.active ? false : !!saved?.done)) // daily result modal
   const inputRef = useRef(null)
   const dropdownRef = useRef(null)
@@ -76,7 +74,7 @@ export default function FootballPointless() {
   // Record the daily result once when it finishes (recordResult is idempotent, so
   // this also just re-fetches the stats when a finished daily is restored).
   useEffect(() => {
-    if (done && mode === 'daily' && !recorded) { setDailyStats(recordResult('pointless', won, total)); setRecorded(true) }
+    if (done && mode === 'daily' && !recorded) { recordResult('pointless', won, total); setRecorded(true) }
   }, [done, mode, recorded, won, total])
 
   // Persist the daily as it's played, so a refresh resumes it and a finished one
@@ -91,13 +89,13 @@ export default function FootballPointless() {
     if (done && mode === 'daily') { const t = setTimeout(() => setShowResult(true), RESULT_REVEAL_DELAY_MS); return () => clearTimeout(t) }
   }, [done, mode])
 
-  const resetRound = () => { setAnswers([]); setInput(''); setRevealed(false); setHighlightedIndex(-1); setDismissed(false); setToast(''); setShowAll(false); setRecorded(false); setReveal(null); setDailyStats(null); setShowResult(false) }
+  const resetRound = () => { setAnswers([]); setInput(''); setRevealed(false); setHighlightedIndex(-1); setDismissed(false); setToast(''); setShowAll(false); setRecorded(false); setReveal(null); setShowResult(false) }
   // Return to today's daily — restore its saved state (locked if already played today).
   const restoreDaily = () => {
     const s = loadDailyProgress('pointless', dailyKey())
     setMode('daily'); setQIndex(dailyIdx())
     setAnswers(s?.answers ?? []); setRevealed(!!s?.done)
-    setInput(''); setHighlightedIndex(-1); setDismissed(false); setToast(''); setShowAll(false); setReveal(null); setRecorded(false); setDailyStats(null); setShowResult(!!s?.done)
+    setInput(''); setHighlightedIndex(-1); setDismissed(false); setToast(''); setShowAll(false); setReveal(null); setRecorded(false); setShowResult(!!s?.done)
   }
   const startUnlimited = () => { setMode('unlimited'); setQIndex(randomIdx()); resetRound() }
   const onModeChange = (m) => (m === 'daily' ? restoreDaily() : startUnlimited())
@@ -227,10 +225,12 @@ export default function FootballPointless() {
             <GameMotif id="football-pointless" className={`w-11 h-11 mb-2 ${won ? 'text-accent-bright' : 'text-dim'}`} />
             {resultHeadline}
           </div>
-          {dailyStats && <DailyStats game="pointless" stats={dailyStats} />}
           {pointlessListEl}
           <ShareCard card={{
             gameId: 'pointless',
+            daily: mode === 'daily',
+            won,
+            score: { v: total, low: true, u: 'pts' },
             title: 'Football Pointless',
             challenge: question.title,
             result: won ? (foundPointless ? 'Pointless!' : `${total} pts — under 100`) : `${total} pts`,

@@ -335,6 +335,13 @@ a fallback for hashed chunks from prior deploys. It does **not** compute or fetc
 football data. (Historically this server also ran a StatMuse scraping API; that
 stack was dead once data moved offline and has been removed.)
 
+### Player state (social layer)
+
+Game **content** has no runtime database. Player **state** does, as of the social layer
+(`docs/social.md`): a Cloudflare Worker + D1 behind `/api/*`, `/s/*`, `/c/*` and the generated
+share images. It stores anonymous results, leagues and share links only — never football data —
+and every feature degrades to localStorage when it is unavailable.
+
 ---
 
 ## Historical documents

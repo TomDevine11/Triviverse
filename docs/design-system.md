@@ -70,6 +70,13 @@ All localStorage, no backend. Implementation + tunable constants: `src/data/dail
 | **KO / FT** | Card state chips: `KICK OFF` (brand purple) → `FT` (success green) once today's daily is recorded. |
 | **Share** | The kit format: `TRIVIVERSE · MATCHDAY {n}` / game squares / `🔥{streak} · {pts} pts` / url. Clipboard + "Copied!" flash. |
 
+**Social layer (2026-09-30, `docs/social.md`).** The finish card's left column now carries, in
+order: head-to-head vs rivals, the global percentile, league standing, the matchday streak line,
+and the share block. The share button is an outlined brand-tint button, **not** brand-filled — the
+next-game CTA stays the card's only filled button. The hub streak chip is the *matchday* streak
+(any daily) with freezes; per-game 🔥 streaks on tiles are unchanged. Badge crests use
+`src/design/metals.js`.
+
 ### 7.1 The finish card (daily result)
 
 Every daily ends in `ResultModal game="<key>"`, which has two columns on desktop and stacks them on mobile:

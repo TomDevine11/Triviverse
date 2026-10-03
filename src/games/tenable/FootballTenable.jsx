@@ -7,7 +7,6 @@ import { refineSuggestions, searchRegistry, resolveNameToId } from '../../data/c
 import { searchClubs } from '../../data/canonical/clubs.js'
 import { normalize, answerMatches } from './match.js'
 import { ShareCard, RESULT_SECONDARY_BTN } from '../../components/ShareCard'
-import DailyStats from '../../components/DailyStats'
 import ModeToggle from '../../components/ModeToggle'
 import ResultModal from '../../components/ResultModal'
 import { shortTitle } from '../../components/nextGames'
@@ -72,10 +71,9 @@ export default function FootballTenable() {
   const [input, setInput] = useState('')
   const [history, setHistory] = useState(() => saved?.history ?? [])
   const [phase, setPhase] = useState(() => saved?.phase ?? 'playing') // 'playing' | 'won' | 'lost'
-  const [dailyStats, setDailyStats] = useState(null)
   useEffect(() => {
     // Only Daily mode records stats/streaks (idempotent per day).
-    if (phase !== 'playing' && mode === 'daily') setDailyStats(recordResult('tenable', phase === 'won'))
+    if (phase !== 'playing' && mode === 'daily') recordResult('tenable', phase === 'won')
   }, [phase, mode])
 
   // A finished daily is locked to its result and offers Unlimited.
@@ -85,7 +83,7 @@ export default function FootballTenable() {
   const startUnlimited = () => {
     setBuilding(false); setMode('unlimited'); setQuestion(getRandomTenableQuestion())
     setRevealed({}); setLives(MAX_LIVES); setInput(''); setHistory([])
-    setPhase('playing'); setDailyStats(null); setGaveUp(false); setShowGiveUpConfirm(false)
+    setPhase('playing'); setGaveUp(false); setShowGiveUpConfirm(false)
     setPendingRank(null); setPendingAnswer(null); setPulseRow(null); setShowResult(false); setResultTab('answers')
   }
   // Build-your-own: play a custom top-10 built in the shared facet builder.
@@ -93,7 +91,7 @@ export default function FootballTenable() {
     setBuilding(false); setMode('build')
     setQuestion({ id: `byo-${Date.now()}`, type: 'player', scope: 'custom', title: p.title, description: p.description, icon: null, answers: p.answers, tiePool: p.tiePool || [] })
     setRevealed({}); setLives(MAX_LIVES); setInput(''); setHistory([])
-    setPhase('playing'); setDailyStats(null); setGaveUp(false); setShowGiveUpConfirm(false)
+    setPhase('playing'); setGaveUp(false); setShowGiveUpConfirm(false)
     setPendingRank(null); setPendingAnswer(null); setPulseRow(null); setShowResult(false); setResultTab('answers')
   }
   // Return to the daily: rehydrate today's saved state (locked, resumed, or fresh).
@@ -101,7 +99,7 @@ export default function FootballTenable() {
     const s = loadDailyProgress('tenable', getDailyTenableQuestion().id)
     setBuilding(false); setMode('daily'); setQuestion(getDailyTenableQuestion())
     setRevealed(s?.revealed ?? {}); setLives(s?.lives ?? MAX_LIVES); setInput(''); setHistory(s?.history ?? [])
-    setPhase(s?.phase ?? 'playing'); setDailyStats(null); setGaveUp(s?.gaveUp ?? false); setShowGiveUpConfirm(false)
+    setPhase(s?.phase ?? 'playing'); setGaveUp(s?.gaveUp ?? false); setShowGiveUpConfirm(false)
     setPendingRank(null); setPendingAnswer(null); setPulseRow(null); setShowResult(!!s?.done); setResultTab('answers')
   }
   const onModeChange = (m) => (m === 'daily' ? restoreDaily() : m === 'build' ? setBuilding(true) : startUnlimited())
@@ -128,7 +126,7 @@ export default function FootballTenable() {
     if (!qa.active) return
     setBuilding(false); setMode('unlimited'); setQuestion(getTenableQuestionForDay(qa.index))
     setRevealed({}); setLives(MAX_LIVES); setInput(''); setHistory([])
-    setPhase('playing'); setDailyStats(null); setGaveUp(false); setShowGiveUpConfirm(false)
+    setPhase('playing'); setGaveUp(false); setShowGiveUpConfirm(false)
     setPendingRank(null); setPendingAnswer(null); setPulseRow(null); setShowResult(false); setResultTab('answers')
   }, [qa.active, qa.index])
   /* eslint-enable react-hooks/set-state-in-effect */
@@ -519,13 +517,11 @@ export default function FootballTenable() {
               : gaveUp ? t('tenable.foundBeforeGaveUp', { n: correctCount }) : t('tenable.foundBeforeLost', { n: correctCount })}
           </p>
         </div>
-        {dailyLocked && <p className="text-[0.62rem] font-black tracking-[0.14em] uppercase text-faint mb-1">{t('common.dailyDone')}</p>}
-        {mode === 'daily' && <DailyStats game="tenable" stats={dailyStats} />}
 
         {/* Full answer list, always shown (share is now a single button below). */}
         {resultTab === 'answers' && (
           <div className="w-full rounded-xl border border-border overflow-hidden mb-1">
-            <div className="divide-y divide-border/50 max-h-56 overflow-y-auto">
+            <div className="divide-y divide-border/50 max-h-44 overflow-y-auto">
               {question.answers.map(a => (
                 <div key={a.rank} className="flex items-center justify-between px-4 py-2">
                   <div className="flex items-center gap-3 min-w-0">
@@ -541,6 +537,9 @@ export default function FootballTenable() {
         )}
         <ShareCard card={{
           gameId: 'tenable',
+          daily: mode === 'daily',
+          won: phase === 'won',
+          score: { v: Array.from({ length: 10 }, (_, i) => i + 1).filter(rk => revealed[rk]).length, of: 10 },
           title: 'Football Tenable',
           challenge: question.title,
           result: phase === 'won' ? t('tenable.pyramidComplete') : gaveUp ? t('tenable.gaveUp') : t('tenable.gameOver'),
@@ -557,7 +556,7 @@ export default function FootballTenable() {
             {t('tenable.guesses', { n: history.length })}
           </div>
           <div className="rounded-xl border border-border overflow-hidden">
-            <div className="divide-y divide-border/40 max-h-56 overflow-y-auto">
+            <div className="divide-y divide-border/40 max-h-44 overflow-y-auto">
               {[...history].reverse().map((g, i) => (
                 <div key={i} className={`flex items-center justify-between px-4 py-2.5 ${g.correct === true ? 'flash-valid' : g.correct === false ? 'flash-invalid' : ''}`}>
                   <span className="text-sm text-primary truncate">{g.text}</span>
