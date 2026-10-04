@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { getBingoForDay, getRandomBingo, qualifies, categoryLabel, pruneQueue, strandedSquares, CARD_SIZE, TIME_LIMIT_S, WRONG_PENALTY_S } from '../src/data/bingo.js'
+import { getBingoForDay, getRandomBingo, qualifies, categoryLabel, pruneQueue, moveOn, strandedSquares, CARD_SIZE, TIME_LIMIT_S, WRONG_PENALTY_S } from '../src/data/bingo.js'
 import { getPlayer } from '../src/data/canonical/facts.js'
 
 // A card that cannot be completed is worse than no card at all — the player
@@ -54,6 +54,7 @@ describe('Football Bingo card generation', () => {
     for (const d of days.slice(0, 20)) {
       const c = getBingoForDay(d)
       for (const p of c.deal) {
+        if (p.decoy) { expect(c.squares.some(sq => qualifies(p.id, sq)), `decoy ${p.name} day ${d}`).toBe(false); continue }
         expect(p.fits.length, `${p.name} day ${d}`).toBeGreaterThan(0)
         for (const i of p.fits) expect(qualifies(p.id, c.squares[i]), `${p.name} → ${c.squares[i].value}`).toBe(true)
       }
@@ -99,13 +100,34 @@ describe('Football Bingo card generation', () => {
 })
 
 describe('Football Bingo — timed play with unlimited skips', () => {
-  it('is a three-minute card with a time penalty, not lives', () => {
-    expect(TIME_LIMIT_S).toBe(180)
+  it('is a two-minute card with a time penalty, not lives', () => {
+    expect(TIME_LIMIT_S).toBe(120)
     expect(WRONG_PENALTY_S).toBeGreaterThan(0)
   })
 
   it('deals several candidates per square so a cycling queue stays deep', () => {
-    for (let d = 1; d <= 30; d++) expect(getBingoForDay(d).deal.length).toBeGreaterThanOrEqual(CARD_SIZE * 3)
+    for (let d = 1; d <= 30; d++) expect(getBingoForDay(d).deal.filter(p => !p.decoy).length).toBeGreaterThanOrEqual(CARD_SIZE * 3)
+  })
+
+  it('mixes in famous decoys who fit no square', () => {
+    for (let d = 1; d <= 30; d++) {
+      const { deal, squares } = getBingoForDay(d)
+      const decoys = deal.filter(p => p.decoy)
+      expect(decoys.length, `day ${d}`).toBe(20)
+      for (const p of decoys) {
+        expect(p.fits).toEqual([])
+        expect(squares.some(sq => qualifies(p.id, sq))).toBe(false)
+        expect(getPlayer(p.id).fame).toBeGreaterThanOrEqual(70)
+      }
+    }
+  })
+
+  it('moving on sends a real player to the back and discards a decoy', () => {
+    const { deal } = getBingoForDay(9)
+    const placed = new Array(CARD_SIZE).fill(null)
+    const real = deal.findIndex(p => !p.decoy), decoy = deal.findIndex(p => p.decoy)
+    expect(moveOn([real, decoy], deal, placed)).toEqual([decoy, real])
+    expect(moveOn([decoy, real], deal, placed)).toEqual([real])
   })
 
   it('prunes players who can no longer fill any open square', () => {
@@ -114,13 +136,13 @@ describe('Football Bingo — timed play with unlimited skips', () => {
     const q = deal.map((_, i) => i)
     expect(pruneQueue(q, deal, placed)).toEqual(q) // nothing filled → everyone useful
     const full = new Array(CARD_SIZE).fill({ id: 'x' })
-    expect(pruneQueue(q, deal, full)).toEqual([])  // card full → nobody left to place
+    expect(pruneQueue(q, deal, full).every(i => deal[i].decoy)).toBe(true) // card full → only undealt decoys remain
     expect(strandedSquares([], deal, placed)).toHaveLength(CARD_SIZE)
   })
 
   // The complaint this mode answers: one bad placement must not make the card
-  // impossible. A careless player — random valid squares, random skips — never
-  // strands a square.
+  // impossible. A careless player — random valid squares, random skips, wrong
+  // squares that move them on — never strands a square.
   it('never strands a square under careless play', () => {
     let stuck = 0
     for (let d = 1; d <= 60; d++) {
@@ -132,9 +154,8 @@ describe('Football Bingo — timed play with unlimited skips', () => {
         while (placed.some(p => !p) && steps++ < 2000) {
           if (strandedSquares(queue, deal, placed).length) { stuck++; break }
           const cur = queue[0], open = deal[cur].fits.filter(sq => !placed[sq])
-          if (open.length && rnd() < 0.8) { placed = placed.map((p, i) => (i === open[Math.floor(rnd() * open.length)] ? { id: cur } : p)); queue = queue.slice(1) }
-          else queue = [...queue.slice(1), cur]
-          queue = pruneQueue(queue, deal, placed)
+          if (open.length && rnd() < 0.8) { placed = placed.map((p, i) => (i === open[Math.floor(rnd() * open.length)] ? { id: cur } : p)); queue = pruneQueue(queue.slice(1), deal, placed) }
+          else queue = moveOn(queue, deal, placed) // skip, decoy, or a wrong square — all move on
         }
         expect(placed.every(Boolean), `day ${d} run ${run}`).toBe(true)
       }

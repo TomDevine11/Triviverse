@@ -742,7 +742,7 @@ const BASE_ROUTES = [
     // the party-game noise that contaminates the bare term.
     alternateName: 'Footy Bingo',
     title: 'Football Bingo (Footy Bingo) \u2014 Free Daily Game | Triviverse',
-    description: 'Free Football Bingo: twelve category squares, three minutes, unlimited skips. Place each footballer on a square he qualifies for. Daily card plus unlimited practice.',
+    description: 'Free Football Bingo: twelve category squares, two minutes, unlimited skips. Place each footballer on a square he fits — and skip the ones who fit nowhere.',
     // Deliberately the QUALIFIED terms only. Bare "football bingo" autocompletes
     // heavily to the physical party game \u2014 ideas, printable cards, card generator,
     // bingo for kids, bingo games for seniors \u2014 which is a different product and a
@@ -753,12 +753,12 @@ const BASE_ROUTES = [
     h1: 'Football Bingo',
     tagline: 'Place each player on a square he qualifies for \u2014 fill the card to call bingo.',
     ogImage: '/og/501.png',
-    about: 'Football Bingo hands you a card of twelve football categories \u2014 clubs, leagues, nations and trophies \u2014 then deals you one footballer at a time. Your job is to place each player on a square he genuinely qualifies for. The catch is that most players qualify for several, and each one can only fill a single square, so spending a versatile name on the easy square can make a harder one tougher to fill. You have three minutes on the clock: skip anyone you are unsure of and he comes back round later, but a wrong placement costs ten seconds. There is a new card every day, unlimited practice cards whenever you want them, and no sign-up for either.',
+    about: 'Football Bingo hands you a card of twelve football categories \u2014 clubs, leagues, nations and trophies \u2014 then deals you one footballer at a time. Your job is to place each player on a square he genuinely qualifies for. The catch is that most players qualify for several, and each one can only fill a single square, so spending a versatile name on the easy square can make a harder one tougher to fill. You have two minutes on the clock, and some of the players dealt fit none of the squares at all. Skip anyone you are unsure of and he comes back round later; a wrong placement costs ten seconds and moves you on. There is a new card every day, unlimited practice cards whenever you want them, and no sign-up for either.',
     howTo: [
       'Read the card. Twelve squares, each a football category: a club, a league, a nation or a trophy.',
       'A footballer is dealt. Work out every square he qualifies for \u2014 usually more than one.',
       'Tap the square you want to spend him on. Choose the one that will be hardest to fill later.',
-      'Fill all twelve before the three-minute clock runs out to call bingo. Skips are unlimited — a skipped player comes back round — and a wrong square costs ten seconds.',
+      'Fill all twelve before the two-minute clock runs out to call bingo. Some players fit nowhere — skip them. Skips are unlimited, and a wrong square costs ten seconds.',
     ],
     sections: [
       {

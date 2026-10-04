@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
-import { getBingoForDay, getRandomBingo, categoryLabel, pruneQueue, strandedSquares, COLS, ROWS, CARD_SIZE, TIME_LIMIT_S, WRONG_PENALTY_S } from '../../data/bingo'
+import { getBingoForDay, getRandomBingo, categoryLabel, pruneQueue, moveOn, strandedSquares, COLS, ROWS, CARD_SIZE, TIME_LIMIT_S, WRONG_PENALTY_S } from '../../data/bingo'
 import { todayIndex, recordResult, matchdayNumber } from '../../data/dailyStats'
 import { loadDailyProgress, saveDailyProgress } from '../../data/dailyProgress'
 import { useQa } from '../../dev/qa'
@@ -19,8 +19,8 @@ const getDailyBingo = () => getBingoForDay(todayIndex())
 // Signature that identifies today's card in storage — if the generator changes,
 // the saved game no longer matches and the player gets the new card rather than
 // a half-filled ghost of the old one.
-// v2 = the timed game; a saved lives-era game is discarded rather than restored.
-const signature = (card) => 'v2|' + card.squares.map(s => `${s.type}:${s.value}`).join('|')
+// v3 = timed with decoys (the deal changed shape); older saves are discarded.
+const signature = (card) => 'v3|' + card.squares.map(s => `${s.type}:${s.value}`).join('|')
 
 const EMPTY = () => new Array(CARD_SIZE).fill(null)
 const fullQueue = (card) => card.deal.map((_, i) => i)
@@ -122,10 +122,12 @@ export default function FootballBingo() {
     if (!current || placed[i]) return
     setMessage('')
     if (!current.fits.includes(i)) {
-      // Wrong square: the player stays in hand, the clock pays.
+      // Wrong square: the clock pays and play moves on to the next player (a real
+      // one comes back round later; a decoy is gone).
       setPenalty(p => p + WRONG_PENALTY_S)
       setWrongSquare(i)
-      setMessage(t('bingo.wrong', { name: current.name, category: categoryLabel(card.squares[i], t), pen: WRONG_PENALTY_S }))
+      setMessage(t(current.decoy ? 'bingo.wrongDecoy' : 'bingo.wrong', { name: current.name, category: categoryLabel(card.squares[i], t), pen: WRONG_PENALTY_S }))
+      setQueue(moveOn(queue, card.deal, placed))
       setTimeout(() => setWrongSquare(-1), 600)
       return
     }
@@ -136,11 +138,12 @@ export default function FootballBingo() {
     if (nextPlaced.every(Boolean)) { setEndedAt(nowMs()); finish(true) }
   }
 
-  // Unlimited skips: the player goes to the back of the queue and comes round again.
+  // Unlimited skips: a real player goes to the back of the queue and comes round
+  // again; a decoy is discarded — and spotting one gets a nod.
   const skip = () => {
     if (!current) return
-    setQueue(q => pruneQueue([...q.slice(1), q[0]], card.deal, placed))
-    setMessage(''); setWrongSquare(-1)
+    setMessage(current.decoy ? t('bingo.goodSkip', { name: current.name }) : '')
+    setQueue(moveOn(queue, card.deal, placed)); setWrongSquare(-1)
   }
 
   const shareRows = useMemo(() => {
@@ -231,7 +234,7 @@ export default function FootballBingo() {
             })}
           </div>
 
-          {message && <div className="text-center text-sm text-warn font-semibold">{message}</div>}
+          {message && <div className={`text-center text-sm font-semibold ${message.startsWith('✓') ? 'text-success-bright' : 'text-warn'}`}>{message}</div>}
 
           {running && (
             <div className="flex gap-3 pt-1">
