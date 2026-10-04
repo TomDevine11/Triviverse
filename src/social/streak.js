@@ -6,14 +6,14 @@
 
 import { loadJson, saveJson, emit } from './store'
 import { playedDays } from './log'
+import { matchdayIndex } from '../utils/matchday.js'
 
 const KEY = 'ftg-streak-v1'
 export const FREEZE_EVERY = 7
 export const FREEZE_CAP = 2
 
 const today = () => {
-  const now = new Date()
-  return Math.floor((now.getTime() - now.getTimezoneOffset() * 60000) / 86400000)
+  return matchdayIndex() // UK-time matchday, the same for every visitor
 }
 
 function loadState() {

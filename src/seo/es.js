@@ -12,7 +12,7 @@ export const ES = {
     faq: [
       { q: '¿Qué es Triviverse?', a: 'Triviverse es una colección gratuita de juegos diarios de trivia de fútbol — incluyendo el Wordle de futbolistas, tres en raya de fútbol, Tenable y adivina al jugador — jugables en tu navegador sin registro.' },
       { q: '¿Los juegos son gratis?', a: 'Sí. Todos los juegos son completamente gratis, funcionan en tu navegador y no necesitan cuenta ni descarga.' },
-      { q: '¿Hay retos nuevos cada día?', a: 'Sí. Los juegos diarios se renuevan a medianoche (hora local), y los modos ilimitados se pueden jugar tantas veces como quieras.' },
+      { q: '¿Hay retos nuevos cada día?', a: 'Sí. Los juegos diarios se renuevan a medianoche, hora del Reino Unido (la misma jornada para todos), y los modos ilimitados se pueden jugar tantas veces como quieras.' },
       { q: '¿Puedo jugar en el móvil?', a: 'Sí. Todos los juegos funcionan en cualquier navegador de móvil o escritorio, sin necesidad de instalar nada.' },
     ],
   },
@@ -132,7 +132,7 @@ export const ES = {
     faq: [
       { q: '¿Cómo se juega al Bingo de Fútbol?', a: 'Recibes un cartón con doce casillas de categorías y los futbolistas aparecen de uno en uno. Coloca a cada uno en una casilla que cumpla y completa las doce antes de que acaben los dos minutos para cantar bingo. Algunos no encajan en ninguna: sáltalos. Una casilla equivocada cuesta diez segundos.' },
       { q: '¿Siempre se puede completar el cartón?', a: 'Sí. El reparto se construye a partir del cartón, con dos jugadores válidos por casilla, así que siempre existe una partida perfecta.' },
-      { q: '¿Hay un cartón nuevo cada día?', a: 'Sí. El cartón diario se renueva a medianoche (hora local), y además puedes jugar partidas ilimitadas cuando quieras.' },
+      { q: '¿Hay un cartón nuevo cada día?', a: 'Sí. El cartón diario se renueva a medianoche, hora del Reino Unido, y además puedes jugar partidas ilimitadas cuando quieras.' },
       { q: '¿Es gratis?', a: 'Sí — se juega en el navegador, es completamente gratis y no necesita registro ni descarga.' },
     ],
   },

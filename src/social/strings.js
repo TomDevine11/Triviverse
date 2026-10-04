@@ -125,7 +125,7 @@ export const social = {
     },
     world: {
       title: 'World', board: 'Leaderboard',
-      subtitle: 'Everyone who plays the dailies, on one table. Today resets at midnight, the week on Monday.',
+      subtitle: 'Everyone who plays the dailies, on one table. Today resets at midnight UK time, the week on Monday.',
       today: 'Today', week: 'This week', allTime: 'All-time',
       anonymous: 'Anonymous', players: '{n} players',
       empty: 'Nobody has played yet. Play a daily and take first place.',
@@ -320,7 +320,7 @@ export const social = {
     },
     world: {
       title: 'Mundo', board: 'Clasificación',
-      subtitle: 'Todos los que juegan los diarios, en una sola tabla. Hoy se reinicia a medianoche y la semana el lunes.',
+      subtitle: 'Todos los que juegan los diarios, en una sola tabla. Hoy se reinicia a medianoche (hora del Reino Unido) y la semana el lunes.',
       today: 'Hoy', week: 'Esta semana', allTime: 'Histórico',
       anonymous: 'Anónimo', players: '{n} jugadores',
       empty: 'Nadie ha jugado todavía. Juega un diario y ponte primero.',

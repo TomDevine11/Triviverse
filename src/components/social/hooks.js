@@ -2,12 +2,12 @@
 // file exports components only — keeps React fast refresh working).
 import { useEffect, useState } from 'react'
 import { subscribe } from '../../social/store'
+import { msUntilNextMatchday } from '../../utils/matchday.js'
 
-// hh:mm:ss until local midnight (the next matchday), ticking every second.
+// hh:mm:ss until the next matchday (midnight UK time), ticking every second.
 export function useCountdown() {
   const calc = () => {
-    const now = new Date()
-    const s = Math.max(0, 86400 - (now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds()))
+    const s = Math.max(0, Math.ceil(msUntilNextMatchday() / 1000))
     const p = (n) => String(n).padStart(2, '0')
     return `${p(Math.floor(s / 3600))}:${p(Math.floor(s / 60) % 60)}:${p(s % 60)}`
   }

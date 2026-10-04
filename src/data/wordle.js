@@ -1,5 +1,6 @@
 import { famousPlayers } from './famousPlayers'
 import { getFlagFromNationality } from '../utils/flags'
+import { matchdayIndex } from '../utils/matchday.js'
 
 // The daily answer is drawn from a curated, self-contained pool — no runtime
 // lookup. AS_OF records when the pool was last reviewed.
@@ -42,10 +43,9 @@ export function getWordlePlayerForDay(dayIndex) {
   return POOL[((dayIndex % POOL.length) + POOL.length) % POOL.length]
 }
 
-// Same daily-rotation pattern used by Football Tenable: changes at local midnight.
+// Same daily-rotation pattern used by Football Tenable: changes at midnight UK time.
 export function getDailyWordlePlayer() {
-  const now = new Date()
-  const dayIndex = Math.floor((now.getTime() - now.getTimezoneOffset() * 60000) / 86400000)
+  const dayIndex = matchdayIndex() // UK-time matchday, the same for every visitor
   return getWordlePlayerForDay(dayIndex)
 }
 

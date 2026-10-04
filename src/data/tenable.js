@@ -9,6 +9,7 @@
 
 import generated from './tenable.generated.json'
 import dailyAllow from './tenable.daily.generated.json'
+import { matchdayIndex } from '../utils/matchday.js'
 
 export const TENABLE_AS_OF = '2026-06-30'
 
@@ -40,11 +41,10 @@ export function getTenableQuestionForDay(dayIndex) {
   return TENABLE_DAILY_QUESTIONS[((dayIndex % n) + n) % n]
 }
 
-// Deterministic "question of the day" — changes at local midnight,
+// Deterministic "question of the day" — changes at midnight UK time (the shared matchday),
 // cycles through the daily-eligible list (repeats once exhausted).
 export function getDailyTenableQuestion() {
-  const now = new Date()
-  const dayIndex = Math.floor((now.getTime() - now.getTimezoneOffset() * 60000) / 86400000)
+  const dayIndex = matchdayIndex() // UK-time matchday, the same for every visitor
   return getTenableQuestionForDay(dayIndex)
 }
 

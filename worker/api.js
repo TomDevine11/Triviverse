@@ -7,6 +7,9 @@
 // trusted only as far as a friends' league needs — see the validation below and
 // the note on public leaderboards in docs/social.md.
 
+// The shared matchday (midnight UK time) — the same function the browser uses.
+import { matchdayIndex } from '../src/utils/matchday.js'
+
 const GAMES = new Set(['tenable', 'wordle', 'tictactoe', 'teammates', 'careers', 'connections', 'higherlower', '501', 'pointless', 'bingo', 'contexto'])
 const UNITS = new Set(['pts', 'mistakes', 'guesses', 'players', 'streak'])
 const CODE_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'
@@ -21,13 +24,19 @@ const json = (data, status = 200, extra = {}) => new Response(JSON.stringify(dat
 })
 const bad = (error, status = 400) => json({ error }, status)
 
-const utcDay = () => Math.floor(Date.now() / 86400000)
 export const weekStart = (d) => d - ((d + 3) % 7) // Monday — same formula as src/data/dailyStats.js
 
 const cleanName = (s) => String(s || '').replace(/[<>"'`\\{}]/g, '').replace(/\s+/g, ' ').trim().slice(0, 20)
 const cleanLeagueName = (s) => String(s || '').replace(/[<>"'`\\{}]/g, '').replace(/\s+/g, ' ').trim().slice(0, 32)
 const validId = (s) => typeof s === 'string' && /^[a-z0-9]{8,40}$/i.test(s)
-const validDay = (d) => Number.isInteger(d) && Math.abs(d - utcDay()) <= 1
+// A result may be for today's matchday, or yesterday's for a few minutes after
+// midnight (a game finished just as the day turned). Never a future day — with
+// one shared clock there is no time zone that is legitimately ahead.
+const GRACE_MS = 15 * 60000
+const validDay = (d) => Number.isInteger(d) && (d === matchdayIndex() || d === matchdayIndex(Date.now() - GRACE_MS))
+// Reads are looser: a tab opened before the switch to the shared clock may still
+// ask for its local day. Showing it a table is harmless; only writes are strict.
+const validViewDay = (d) => Number.isInteger(d) && Math.abs(d - matchdayIndex()) <= 1
 
 function code(n = 6) {
   const bytes = crypto.getRandomValues(new Uint8Array(n))
@@ -196,7 +205,7 @@ async function cached(origin, key, ttl, fn) {
 
 async function getToday(url, env) {
   const day = Number(url.searchParams.get('day'))
-  if (!validDay(day)) return bad('bad_day')
+  if (!validViewDay(day)) return bad('bad_day')
   const data = await cached(url.origin, `today/${day}`, 60, async () => {
     const [players, games] = await env.DB.batch([
       env.DB.prepare('SELECT COUNT(*) AS n FROM daily_totals WHERE day = ? AND played > 0').bind(day),
@@ -212,7 +221,7 @@ async function getToday(url, env) {
 async function getDist(url, env) {
   const day = Number(url.searchParams.get('day'))
   const game = url.searchParams.get('game') || ''
-  if (!validDay(day) || !GAMES.has(game)) return bad('bad_query')
+  if (!validViewDay(day) || !GAMES.has(game)) return bad('bad_query')
   const { results } = await env.DB.prepare('SELECT w, vkey, n FROM score_counts WHERE day = ? AND game = ? AND n > 0 ORDER BY w DESC, vkey').bind(day, game).all()
   const total = results.reduce((s, r) => s + r.n, 0)
   return json({ day, game, total, buckets: results.map(r => ({ w: !!r.w, v: r.vkey === -1 ? null : r.vkey, n: r.n })) }, 200, { 'cache-control': 'public, max-age=60' })
@@ -301,7 +310,7 @@ function table(members, stats, youId) {
 async function getLeague(url, env, c) {
   const player = url.searchParams.get('player') || ''
   const day = Number(url.searchParams.get('day'))
-  if (!validDay(day)) return bad('bad_day')
+  if (!validViewDay(day)) return bad('bad_day')
   const league = await env.DB.prepare('SELECT code, name, owner, created FROM leagues WHERE code = ?').bind(c).first()
   if (!league) return bad('not_found', 404)
   const { results: members } = await env.DB.prepare(`SELECT p.id, p.pub, p.name, m.joined FROM members m JOIN players p ON p.id = m.player WHERE m.league = ? ORDER BY m.joined`).bind(c).all()
@@ -309,7 +318,7 @@ async function getLeague(url, env, c) {
   if (!isMember) return json({ code: league.code, name: league.name, member: false, members: members.length })
 
   const ws = weekStart(day)
-  const createdDay = Math.floor(league.created / 86400000) - 1
+  const createdDay = matchdayIndex(league.created)
   const [week, lastWeek, allTime, todayRows] = await Promise.all([
     standings(env, c, ws, ws + 6),
     standings(env, c, ws - 7, ws - 1),
@@ -339,7 +348,7 @@ async function getLeague(url, env, c) {
 async function myLeagues(url, env) {
   const player = url.searchParams.get('player') || ''
   const day = Number(url.searchParams.get('day'))
-  if (!validId(player) || !validDay(day)) return bad('bad_query')
+  if (!validId(player) || !validViewDay(day)) return bad('bad_query')
   const { results: leagues } = await env.DB.prepare(`SELECT l.code, l.name, (SELECT COUNT(*) FROM members x WHERE x.league = l.code) AS members
     FROM members m JOIN leagues l ON l.code = m.league WHERE m.player = ? ORDER BY m.joined`).bind(player).all()
   const ws = weekStart(day)
@@ -461,7 +470,7 @@ async function getWorld(url, env) {
   const player = url.searchParams.get('player') || ''
   const day = Number(url.searchParams.get('day'))
   const period = url.searchParams.get('period') || 'today'
-  if (!validDay(day) || !['today', 'week', 'all'].includes(period)) return bad('bad_query')
+  if (!validViewDay(day) || !['today', 'week', 'all'].includes(period)) return bad('bad_query')
   const [list, top, mine] = await Promise.all([
     pointsList(env, url.origin, period, day),
     worldTop(env, url.origin, period, day),
@@ -496,7 +505,7 @@ async function rankOn(env, origin, day, player) {
 async function getRank(url, env) {
   const player = url.searchParams.get('player') || ''
   const day = Number(url.searchParams.get('day'))
-  if (!validId(player) || !validDay(day)) return bad('bad_query')
+  if (!validId(player) || !validViewDay(day)) return bad('bad_query')
   const today = await rankOn(env, url.origin, day, player)
   if (today) return json({ day, ...today })
   // Not played yet today: yesterday's finish, so there's something to defend.
