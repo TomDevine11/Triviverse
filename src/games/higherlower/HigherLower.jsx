@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { STAT_MODES, poolFor, randomFrom, isCorrect, getDailyRun } from '../../data/higherlower'
+import { STAT_MODES, poolFor, pickChallenger, pickStarter, isCorrect, getDailyRun } from '../../data/higherlower'
 import { useQa } from '../../dev/qa'
 import QaBar from '../../dev/QaBar'
 import { ShareCard, RESULT_SECONDARY_BTN } from '../../components/ShareCard'
@@ -57,22 +57,36 @@ function PlayerCard({ player, statLabel, showValue, mystery, revealTone }) {
   )
 }
 
-// Signature of a daily run — mode + pool size + first player — so saved progress
-// is discarded if the day's run changes (e.g. the stat pool was refreshed).
-const runSig = (r) => `${r.mode.id}:${r.sequence.length}:${r.sequence[0]?.name ?? ''}`
+// Signature of a daily run — its length plus the first and last pairings — so
+// saved progress is discarded if the day's run changes (e.g. pools refreshed).
+const runSig = (r) => {
+  const q = r.questions, pair = (x) => (x ? `${x.stat.id}:${x.a.id}-${x.b.id}` : '')
+  return `v2:${q.length}:${pair(q[0])}:${pair(q[q.length - 1])}`
+}
+
+// The stat being compared, in the reader's language ("Premier League appearances").
+const statName = (t, m) => (m ? t(`higherlower.stats.${m.id}`) : '')
+
+// Stat picker rows: one per competition, goals beside appearances/caps.
+const COMP_ORDER = ['Premier League', 'Champions League', 'International', 'La Liga', 'Serie A', 'Bundesliga', 'Ligue 1']
+const STAT_GROUPS = COMP_ORDER
+  .map(c => ({ competition: c, modes: STAT_MODES.filter(m => m.competition === c) }))
+  .filter(g => g.modes.length)
 
 export default function HigherLower() {
   const { t } = useI18n()
   const qa = useQa('HigherLower') // dev-only; inert for normal players
   const [dailyMode, setDailyMode] = useState(qa.active ? 'unlimited' : 'daily')  // 'daily' | 'unlimited'
-  // Today's daily chain progress, if any (current/challenger derive from seqIdx).
+  // Today's daily progress, if any (current/challenger derive from qIdx).
   const [saved] = useState(() => loadDailyProgress('higherlower', runSig(getDailyRun(todayIndex()))))
   const restoredDone = !!saved?.done
-  const [run, setRun] = useState(() => getDailyRun(todayIndex())) // daily chain
-  const [seqIdx, setSeqIdx] = useState(() => saved?.seqIdx ?? 1)              // position in the daily chain
-  const [mode, setMode] = useState(run.mode)           // chosen STAT_MODE (daily auto / unlimited picked)
-  const [current, setCurrent] = useState(() => run.sequence[(saved?.seqIdx ?? 1) - 1])
-  const [challenger, setChallenger] = useState(() => run.sequence[saved?.seqIdx ?? 1])
+  const [run, setRun] = useState(() => getDailyRun(todayIndex())) // today's 15 questions
+  const startQ = Math.min(saved?.qIdx ?? 0, run.questions.length - 1)
+  const [qIdx, setQIdx] = useState(startQ)                                    // daily question index
+  const [mode, setMode] = useState(run.questions[startQ].stat) // stat in play (daily: per question; unlimited: picked)
+  const [current, setCurrent] = useState(() => run.questions[startQ].a)
+  const [challenger, setChallenger] = useState(() => run.questions[startQ].b)
+  const recent = useRef([])                                                   // unlimited: ids seen, for repeat avoidance
   const [streak, setStreak] = useState(() => saved?.streak ?? 0)
   const [trail, setTrail] = useState(() => saved?.trail ?? [])               // players you've moved past (the chain)
   const [best, setBest] = useState(() => Number((typeof localStorage !== 'undefined' && localStorage.getItem(BEST_KEY)) || 0))
@@ -95,26 +109,31 @@ export default function HigherLower() {
   useEffect(() => {
     if (dailyMode !== 'daily' || phase === 'reveal') return
     if (streak === 0 && phase !== 'over') return
-    saveDailyProgress('higherlower', { seqIdx, streak, trail, phase, lastCorrect }, phase === 'over', runSig(run))
-  }, [dailyMode, seqIdx, streak, trail, phase, lastCorrect])
+    saveDailyProgress('higherlower', { qIdx, streak, trail, phase, lastCorrect }, phase === 'over', runSig(run))
+  }, [dailyMode, qIdx, streak, trail, phase, lastCorrect, run])
 
-  // Return to the daily: rehydrate today's chain (locked, resumed, or fresh).
+  const showQuestion = (r, idx) => {
+    const q = r.questions[idx]
+    setQIdx(idx); setMode(q.stat); setCurrent(q.a); setChallenger(q.b)
+  }
+
+  // Return to the daily: rehydrate today's run (locked, resumed, or fresh).
   const startDaily = () => {
     const r = getDailyRun(todayIndex())
-    const s = loadDailyProgress('higherlower', runSig(getDailyRun(todayIndex())))
-    const idx = s?.seqIdx ?? 1
-    setRun(r); setSeqIdx(idx); setMode(r.mode)
-    setCurrent(r.sequence[idx - 1]); setChallenger(r.sequence[idx])
+    const s = loadDailyProgress('higherlower', runSig(r))
+    setRun(r); showQuestion(r, Math.min(s?.qIdx ?? 0, r.questions.length - 1))
     setStreak(s?.streak ?? 0); setTrail(s?.trail ?? []); setPhase(s?.phase ?? 'playing')
     setLastCorrect(s?.lastCorrect ?? null); setShowResult(!!s?.done)
   }
 
   const startMode = (m) => {
     const pool = poolFor(m.id)
-    const a = randomFrom(pool)
+    const a = pickStarter(pool)
+    const b = pickChallenger(pool, a, recent.current)
+    recent.current = [...recent.current, a.id, b.id].slice(-40)
     setMode(m)
     setCurrent(a)
-    setChallenger(randomFrom(pool, new Set([a.name])))
+    setChallenger(b)
     setStreak(0); setTrail([]); setPhase('playing'); setLastCorrect(null); setShowResult(false)
   }
 
@@ -130,8 +149,7 @@ export default function HigherLower() {
   useEffect(() => {
     if (!qa.active) return
     const r = getDailyRun(qa.index)
-    setDailyMode('unlimited'); setRun(r); setSeqIdx(1); setMode(r.mode)
-    setCurrent(r.sequence[0]); setChallenger(r.sequence[1])
+    setDailyMode('unlimited'); setRun(r); showQuestion(r, 0)
     setStreak(0); setTrail([]); setPhase('playing'); setLastCorrect(null); setShowResult(false)
   }, [qa.active, qa.index])
   /* eslint-enable react-hooks/set-state-in-effect */
@@ -153,14 +171,17 @@ export default function HigherLower() {
       setTrail(tr => [...tr, current])
       if (dailyMode === 'unlimited' && newStreak > best) { setBest(newStreak); localStorage.setItem(BEST_KEY, String(newStreak)) }
 
-      if (dailyMode === 'daily') {
-        const nextIdx = seqIdx + 1
-        if (nextIdx >= run.sequence.length) { setPhase('over'); return } // chain cleared
-        setCurrent(challenger); setChallenger(run.sequence[nextIdx]); setSeqIdx(nextIdx); setPhase('playing')
+      // QA previews a daily run in practice mode, so it follows the daily path too.
+      if (dailyMode === 'daily' || qa.active) {
+        const nextIdx = qIdx + 1
+        if (nextIdx >= run.questions.length) { setPhase('over'); return } // all questions cleared
+        showQuestion(run, nextIdx); setPhase('playing')
       } else {
-        const pool = poolFor(mode.id)
+        // Endless chain: the revealed player becomes the one to beat.
+        const next = pickChallenger(poolFor(mode.id), challenger, recent.current)
+        recent.current = [...recent.current, next.id].slice(-40)
         setCurrent(challenger)
-        setChallenger(randomFrom(pool, new Set([challenger.name, current.name])))
+        setChallenger(next)
         setPhase('playing')
       }
     }, 1100)
@@ -185,13 +206,20 @@ export default function HigherLower() {
           <h1 className="score-number text-3xl tv-wordmark mb-1">{t('higherlower.title').toUpperCase()}</h1>
           <p className="text-muted text-sm">{t('higherlower.pickStat')}</p>
         </div>
-        <div className="w-full max-w-lg grid grid-cols-1 gap-3">
-          {STAT_MODES.map(m => (
-            <button key={m.id} onClick={() => startMode(m)}
-              className="bg-card border border-border-strong hover:border-[color-mix(in_srgb,var(--accent)_55%,transparent)] rounded-xl px-5 py-4 text-left transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-bright">
-              <div className="text-primary font-bold capitalize">{m.label}</div>
-              <div className="text-muted text-xs mt-0.5">{t('higherlower.allTime', { competition: m.competition })}</div>
-            </button>
+        <div className="w-full max-w-lg grid grid-cols-1 gap-2.5">
+          {STAT_GROUPS.map(g => (
+            <div key={g.competition} className="bg-card border border-border-strong rounded-xl px-3 py-2.5 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+              <div className="sm:w-36 shrink-0 pl-1 text-primary font-bold text-sm leading-tight">{t(`higherlower.comps.${g.competition}`)}</div>
+              <div className="flex-1 grid grid-cols-2 gap-2">
+                {g.modes.map(m => (
+                  <button key={m.id} onClick={() => startMode(m)} aria-label={statName(t, m)}
+                    className="bg-surface border border-border-strong hover:border-[color-mix(in_srgb,var(--accent)_55%,transparent)] rounded-lg px-3 py-2 text-left transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-bright">
+                    <div className="text-primary font-bold text-sm">{t(`higherlower.${m.id === 'intl-caps' ? 'caps' : m.kind}`)}</div>
+                    <div className="text-faint text-[0.65rem] tabular-nums">{t('higherlower.players', { n: m.size })}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
@@ -200,56 +228,81 @@ export default function HigherLower() {
   }
 
   // ── Game screen ───────────────────────────────────────────────────
-  const facedown = dailyMode === 'daily' ? Math.max(0, run.sequence.length - seqIdx - 1) : 2
+  const inDaily = dailyMode === 'daily' || qa.active // QA previews a daily run
+  const total = run.questions.length
+  const label = statName(t, mode)
   const shownTrail = trail.slice(-4)
 
   return (
     <div className="tv-scene min-h-dvh text-primary" style={accentVars('higherlower')}>
       {qa.active && <QaBar gameId="Higher/Lower" index={qa.index} onPrev={qa.prev} onNext={qa.next}
-        meta={{ statMode: mode, chainLength: run.sequence?.length, start: current?.name }} />}
+        meta={{ stat: mode?.id, question: `${qIdx + 1}/${total}`, a: current?.name, b: challenger?.name }} />}
     <div className="flex flex-col items-center px-4 pb-8 max-w-3xl mx-auto">
       {chrome}
       <ModeToggle mode={dailyMode} onChange={switchMode} className="mt-1 mb-4" />
 
       <div className="w-full max-w-2xl space-y-3">
+        {/* What's being compared. In the daily the stat changes every question,
+            so it is the headline, re-animated on each change. */}
         <div className="bg-card border border-border-strong border-l-4 border-l-accent rounded-xl px-4 py-3">
-          <div className="text-[0.55rem] font-black tracking-[0.18em] text-accent-bright">{(dailyMode === 'daily' ? t('common.daily') : t('common.unlimited')).toUpperCase()} · <span className="capitalize">{mode.label}</span>{dailyLocked ? ` · ${t('common.complete')}` : ''}</div>
-          <div className="text-primary font-bold text-sm mt-0.5">{dailyLocked ? t('common.dailyDone') : t('higherlower.moreOrFewer')}</div>
-          <div className="text-muted text-xs mt-0.5">{dailyLocked ? t('common.comeBackTomorrow') : dailyMode === 'daily' ? t('higherlower.todayChain') : t('higherlower.allTime', { competition: mode.competition })}</div>
+          <div className="text-[0.55rem] font-black tracking-[0.18em] text-accent-bright uppercase">
+            {inDaily ? `${t('common.daily')} · ${t('higherlower.question', { n: qIdx + 1, total })}` : `${t('common.unlimited')} · ${t('higherlower.players', { n: mode.size })}`}
+            {dailyLocked ? ` · ${t('common.complete')}` : ''}
+          </div>
+          <div key={mode.id} className={`text-primary font-black text-xl leading-tight mt-1 ${inDaily ? 'clue-reveal' : ''}`} aria-live={inDaily ? 'polite' : undefined}>
+            {label}
+          </div>
+          <div className="text-muted text-xs mt-0.5">
+            {dailyLocked ? t('common.dailyDone') : t('higherlower.moreOrFewerThan', { name: current.name })}
+          </div>
         </div>
 
-        {/* The chain — your streak as objects */}
-        <div className="flex items-center justify-center gap-1.5 bg-board border border-border rounded-xl px-3 py-2.5 overflow-x-auto" aria-label={`${t('higherlower.streak')} ${streak}`}>
-          {shownTrail.length === 0 && trail.length === 0 && (
-            <span className="text-[0.6rem] font-black tracking-[0.12em] text-faint">{t('higherlower.streak').toUpperCase().replace(':', '')} 0</span>
-          )}
-          {trail.length > shownTrail.length && <span className="text-[0.6rem] text-faint font-bold shrink-0">+{trail.length - shownTrail.length}</span>}
-          {shownTrail.map((p, i) => (
-            <span key={i} className="flex items-center gap-1.5 shrink-0">
-              <span className="text-center text-[0.6rem] font-bold text-secondary bg-surface border border-success/40 rounded-lg px-2 py-1 leading-tight">
-                {p.name.split(' ').pop()}<br /><i className="not-italic text-success-bright font-mono">{p.value}</i>
+        {inDaily ? (
+          /* Daily progress — one pip per question */
+          <div className="flex items-center gap-3 bg-board border border-border rounded-xl px-3 py-2.5" aria-label={`${t('higherlower.streak')} ${streak} / ${total}`}>
+            <div className="flex-1 grid gap-1" style={{ gridTemplateColumns: `repeat(${total}, minmax(0, 1fr))` }}>
+              {run.questions.map((_, i) => {
+                const missed = phase === 'over' && lastCorrect === false && i === qIdx
+                const tone = i < streak ? 'bg-success' : missed ? 'bg-danger' : i === qIdx && phase !== 'over' ? 'bg-accent' : 'bg-inert'
+                return <span key={i} className={`h-2 rounded-full ${tone}`} />
+              })}
+            </div>
+            <span className="shrink-0 text-[0.6rem] font-black tracking-[0.1em] text-accent-bright tabular-nums">🔥 {streak}</span>
+          </div>
+        ) : (
+          /* The chain — your streak as objects */
+          <div className="flex items-center justify-center gap-1.5 bg-board border border-border rounded-xl px-3 py-2.5 overflow-x-auto" aria-label={`${t('higherlower.streak')} ${streak}`}>
+            {shownTrail.length === 0 && trail.length === 0 && (
+              <span className="text-[0.6rem] font-black tracking-[0.12em] text-faint">{t('higherlower.streak').toUpperCase().replace(':', '')} 0</span>
+            )}
+            {trail.length > shownTrail.length && <span className="text-[0.6rem] text-faint font-bold shrink-0">+{trail.length - shownTrail.length}</span>}
+            {shownTrail.map((p, i) => (
+              <span key={i} className="flex items-center gap-1.5 shrink-0">
+                <span className="text-center text-[0.6rem] font-bold text-secondary bg-surface border border-success/40 rounded-lg px-2 py-1 leading-tight">
+                  {p.name.split(' ').pop()}<br /><i className="not-italic text-success-bright font-mono">{p.value}</i>
+                </span>
+                <i className="w-3 h-0.5 bg-success/50 shrink-0" aria-hidden="true" />
               </span>
-              <i className="w-3 h-0.5 bg-success/50 shrink-0" aria-hidden="true" />
+            ))}
+            <span className="shrink-0 text-[0.52rem] font-black tracking-[0.1em] text-accent-bright border border-dashed border-[color-mix(in_srgb,var(--accent)_55%,transparent)] rounded-lg px-2 py-2">
+              🔥 {streak}
             </span>
-          ))}
-          <span className="shrink-0 text-[0.52rem] font-black tracking-[0.1em] text-accent-bright border border-dashed border-[color-mix(in_srgb,var(--accent)_55%,transparent)] rounded-lg px-2 py-2">
-            🔥 {streak}
-          </span>
-          {Array.from({ length: Math.min(2, facedown) }).map((_, i) => (
-            <span key={i} className="flex items-center gap-1.5 shrink-0">
-              <i className="w-3 h-0.5 bg-inert shrink-0" aria-hidden="true" />
-              <span className="w-7 h-9 flex items-center justify-center text-faint font-black bg-surface border border-border-strong rounded-lg">?</span>
-            </span>
-          ))}
-        </div>
+            {Array.from({ length: 2 }).map((_, i) => (
+              <span key={i} className="flex items-center gap-1.5 shrink-0">
+                <i className="w-3 h-0.5 bg-inert shrink-0" aria-hidden="true" />
+                <span className="w-7 h-9 flex items-center justify-center text-faint font-black bg-surface border border-border-strong rounded-lg">?</span>
+              </span>
+            ))}
+          </div>
+        )}
 
         {/* The duel */}
         <div className="flex gap-3 items-stretch">
-          <PlayerCard player={current} statLabel={mode.label} showValue />
+          <PlayerCard player={current} statLabel={label} showValue />
           <div className="flex items-center text-faint font-black text-sm" aria-hidden="true">VS</div>
           <PlayerCard
             player={challenger}
-            statLabel={phase === 'playing' ? t('higherlower.moreOrFewer') : mode.label}
+            statLabel={phase === 'playing' ? t('higherlower.moreOrFewer') : label}
             showValue={phase !== 'playing'}
             mystery
             revealTone={phase !== 'playing' ? (lastCorrect ? 'text-success-bright' : 'text-danger-bright') : null}
@@ -281,7 +334,7 @@ export default function HigherLower() {
           <div className="flex flex-col items-center gap-3 text-center pt-1">
             <div>
               <p className="text-danger-bright font-black tracking-[0.06em]">{t('higherlower.gameOver')} · 🔥 {streak}</p>
-              <p className="text-secondary text-sm mt-1">{t('higherlower.scoredLine', { name: challenger.name, value: challenger.value, label: mode.label })}</p>
+              <p className="text-secondary text-sm mt-1">{t('higherlower.scoredLine', { name: challenger.name, value: challenger.value, label })}</p>
             </div>
             <div className="flex gap-3">
               <button onClick={() => startMode(mode)} className="bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-xl px-6 py-3 transition-colors">{t('higherlower.playAgain')}</button>
@@ -300,20 +353,20 @@ export default function HigherLower() {
       <ResultModal game="higherlower" open={showResult && dailyMode === 'daily'} onClose={() => setShowResult(false)}>
         <div className="w-full flex flex-col items-center text-center">
           <GameMotif id="higher-or-lower" className={`w-11 h-11 mb-2 ${dailyCleared ? 'text-accent-bright' : 'text-dim'}`} />
-          <h2 className={`score-number text-4xl mb-1 ${dailyCleared ? 'text-success-bright' : 'text-danger-bright'}`}>{dailyCleared ? t('higherlower.chainCleared') : t('higherlower.gameOver')}</h2>
-          <div className="score-number text-6xl tv-wordmark tabular-nums leading-none my-1">{streak}</div>
+          <h2 className={`score-number text-4xl mb-1 ${dailyCleared ? 'text-success-bright' : 'text-danger-bright'}`}>{dailyCleared ? t('higherlower.chainCleared', { total }) : t('higherlower.gameOver')}</h2>
+          <div className="score-number text-6xl tv-wordmark tabular-nums leading-none my-1">{streak}<span className="text-2xl text-muted">/{total}</span></div>
           <p className="text-muted text-xs font-black tracking-[0.2em] uppercase mb-2">
             {t('higherlower.streak').replace(':', '')}
             {dailyMode === 'unlimited' && streak >= best && streak > 0 && <span className="text-warn normal-case tracking-normal">{t('higherlower.newBest')}</span>}
           </p>
           {!dailyCleared && (
-            <p className="text-secondary text-sm mb-2">{t('higherlower.scoredLine', { name: challenger.name, value: challenger.value, label: mode.label })}</p>
+            <p className="text-secondary text-sm mb-2">{t('higherlower.scoredLine', { name: challenger.name, value: challenger.value, label })}</p>
           )}
           <ShareCard
             text={[
               dailyMode === 'daily'
-                ? t('share.hlDaily', { label: mode.label, streak })
-                : t('share.hlUnlimited', { label: mode.label, streak, best }),
+                ? t('share.hlDaily', { label: t('higherlower.dailyChallenge'), streak, total })
+                : t('share.hlUnlimited', { label, streak, best }),
               SITE_URL,
             ].join('\n\n')}
             card={{
@@ -322,9 +375,9 @@ export default function HigherLower() {
               won: dailyCleared,
               score: { v: streak, u: 'streak' },
               title: 'Higher or Lower',
-              challenge: `${mode.label} · ${t('higherlower.todayChain')}`,
-              result: dailyCleared ? t('higherlower.chainCleared') : t('higherlower.gameOver'),
-              rows: [Array.from({ length: Math.min(streak, 12) }, () => TILE.hit).concat(dailyCleared ? [] : [TILE.miss])],
+              challenge: `${t('higherlower.dailyChallenge')} · ${streak}/${total}`,
+              result: dailyCleared ? t('higherlower.chainCleared', { total }) : t('higherlower.gameOver'),
+              rows: [Array.from({ length: Math.min(streak, total) }, () => TILE.hit).concat(dailyCleared ? [] : [TILE.miss])],
               matchday: matchdayNumber(),
             }}
           />

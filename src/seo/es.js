@@ -96,15 +96,15 @@ export const ES = {
   },
   '/higher-or-lower': {
     title: 'Fútbol Mayor o Menor | Triviverse',
-    description: 'Fútbol Mayor o Menor: elige qué futbolista marcó más — goles en la Premier, LaLiga, Champions o con su selección — y consigue la racha más larga.',
+    description: 'Fútbol Mayor o Menor: ¿el siguiente futbolista tiene más o menos? Goles y partidos en la Premier, LaLiga, Serie A, Bundesliga, Ligue 1, Champions y con su selección. Consigue la racha más larga.',
     keywords: ['futbol mayor o menor', 'mayor o menor futbol', 'juego de rachas futbol', 'quiz goles futbol'],
     h1: 'Fútbol Mayor o Menor',
-    tagline: 'Elige qué jugador marcó más y haz tu racha.',
-    about: 'Fútbol Mayor o Menor es un juego de rachas infinito. Elige una estadística — máximos goleadores de la Premier, LaLiga, Bundesliga, la Champions o con su selección — y decide si cada nuevo jugador marcó más o menos que el anterior. Un fallo termina la racha.',
+    tagline: '¿Más o menos? Acierta y haz tu racha.',
+    about: 'Fútbol Mayor o Menor es un juego de rachas con cifras reales de carrera. Compara a dos futbolistas en goles o partidos en la Premier League, LaLiga, la Serie A, la Bundesliga, la Ligue 1 o la Champions — o en goles y partidos con su selección — y decide si el segundo tiene más o menos que el primero. Un fallo termina la racha.',
     faq: [
-      { q: '¿Cómo funciona?', a: 'Eliges una estadística de goles y comparas a dos futbolistas eligiendo quién marcó más. Los aciertos hacen racha; un fallo la termina.' },
-      { q: '¿Qué estadísticas puedo jugar?', a: 'Máximos goleadores históricos de la Premier, LaLiga, Bundesliga, la Champions y goles con su selección.' },
-      { q: '¿El juego termina alguna vez?', a: 'Solo cuando fallas — siguen apareciendo jugadores, así que el único límite es tu racha.' },
+      { q: '¿Cómo funciona?', a: 'Aparecen dos futbolistas y una estadística. Ves la cifra del primero y decides si el segundo tiene más o menos. Los aciertos hacen racha; un fallo la termina.' },
+      { q: '¿Qué estadísticas puedo jugar?', a: 'Goles y partidos en la Premier League, LaLiga, la Serie A, la Bundesliga, la Ligue 1 y la Champions, además de goles y partidos con su selección: catorce en total.' },
+      { q: '¿El juego termina alguna vez?', a: 'En Ilimitado, solo cuando fallas. El reto diario tiene 15 preguntas: acierta todas para completarlo.' },
     ],
   },
   '/501': {
