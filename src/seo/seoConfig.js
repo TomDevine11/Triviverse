@@ -742,7 +742,7 @@ const BASE_ROUTES = [
     // the party-game noise that contaminates the bare term.
     alternateName: 'Footy Bingo',
     title: 'Football Bingo (Footy Bingo) \u2014 Free Daily Game | Triviverse',
-    description: 'Free Football Bingo: twelve category squares, players dealt one at a time. Place each on a square he qualifies for. Daily card plus unlimited practice, no sign-up.',
+    description: 'Free Football Bingo: twelve category squares, three minutes, unlimited skips. Place each footballer on a square he qualifies for. Daily card plus unlimited practice.',
     // Deliberately the QUALIFIED terms only. Bare "football bingo" autocompletes
     // heavily to the physical party game \u2014 ideas, printable cards, card generator,
     // bingo for kids, bingo games for seniors \u2014 which is a different product and a
@@ -753,18 +753,18 @@ const BASE_ROUTES = [
     h1: 'Football Bingo',
     tagline: 'Place each player on a square he qualifies for \u2014 fill the card to call bingo.',
     ogImage: '/og/501.png',
-    about: 'Football Bingo hands you a card of twelve football categories \u2014 clubs, leagues, nations and trophies \u2014 then deals you one footballer at a time. Your job is to place each player on a square he genuinely qualifies for. The catch is that most players qualify for several, and each one can only fill a single square, so spending a versatile name on the easy square can strand a harder one. Three wrong placements and the card is gone. There is a new card every day, unlimited practice cards whenever you want them, and no sign-up for either.',
+    about: 'Football Bingo hands you a card of twelve football categories \u2014 clubs, leagues, nations and trophies \u2014 then deals you one footballer at a time. Your job is to place each player on a square he genuinely qualifies for. The catch is that most players qualify for several, and each one can only fill a single square, so spending a versatile name on the easy square can make a harder one tougher to fill. You have three minutes on the clock: skip anyone you are unsure of and he comes back round later, but a wrong placement costs ten seconds. There is a new card every day, unlimited practice cards whenever you want them, and no sign-up for either.',
     howTo: [
       'Read the card. Twelve squares, each a football category: a club, a league, a nation or a trophy.',
       'A footballer is dealt. Work out every square he qualifies for \u2014 usually more than one.',
       'Tap the square you want to spend him on. Choose the one that will be hardest to fill later.',
-      'Fill all twelve to call bingo. Three wrong placements ends the card, and you get three skips if you are stuck.',
+      'Fill all twelve before the three-minute clock runs out to call bingo. Skips are unlimited — a skipped player comes back round — and a wrong square costs ten seconds.',
     ],
     sections: [
       {
         h2: 'How Football Bingo works',
         body: [
-          'Football Bingo \u2014 footy bingo, if that is what you call it \u2014 is a bingo card in football form: twelve squares, each one a category rather than a number. Instead of numbers being called, footballers are dealt \u2014 one at a time, in a fixed order \u2014 and each one has to go somewhere he belongs. Place Mohamed Salah on "Played for Liverpool" and the square is daubed. Place him on "Played for Arsenal" and it costs a life. Fill all twelve squares and you call bingo.',
+          'Football Bingo \u2014 footy bingo, if that is what you call it \u2014 is a bingo card in football form: twelve squares, each one a category rather than a number. Instead of numbers being called, footballers are dealt \u2014 one at a time, in a fixed order \u2014 and each one has to go somewhere he belongs. Place Mohamed Salah on "Played for Liverpool" and the square is daubed. Place him on "Played for Arsenal" and it costs you ten seconds. Fill all twelve squares before the clock hits zero and you call bingo.',
         ],
       },
       {
@@ -782,7 +782,7 @@ const BASE_ROUTES = [
       {
         h2: 'Every card can be completed',
         body: [
-          'The deal is built from the card rather than drawn at random, with two qualifying players for every square, so a perfect game always exists before you make your first placement. Losing is always a decision, never a bad card \u2014 the same guarantee the rest of Triviverse is built on, and the reason a square can never be left unfillable by bad luck.',
+          'The deal is built from the card rather than drawn at random, with several qualifying players for every square, and skipped players come back round, so one hasty placement never makes the card impossible. Losing is always the clock, never a bad card \u2014 the same guarantee the rest of Triviverse is built on, and the reason a square can never be left unfillable by bad luck.',
         ],
       },
       {

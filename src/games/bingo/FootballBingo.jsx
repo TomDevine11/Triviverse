@@ -1,5 +1,5 @@
-import { useState, useEffect, useMemo } from 'react'
-import { getBingoForDay, getRandomBingo, categoryLabel, COLS, ROWS, CARD_SIZE, MAX_LIVES, MAX_SKIPS } from '../../data/bingo'
+import { useState, useEffect, useMemo, useRef } from 'react'
+import { getBingoForDay, getRandomBingo, categoryLabel, pruneQueue, strandedSquares, COLS, ROWS, CARD_SIZE, TIME_LIMIT_S, WRONG_PENALTY_S } from '../../data/bingo'
 import { todayIndex, recordResult, matchdayNumber } from '../../data/dailyStats'
 import { loadDailyProgress, saveDailyProgress } from '../../data/dailyProgress'
 import { useQa } from '../../dev/qa'
@@ -19,9 +19,13 @@ const getDailyBingo = () => getBingoForDay(todayIndex())
 // Signature that identifies today's card in storage — if the generator changes,
 // the saved game no longer matches and the player gets the new card rather than
 // a half-filled ghost of the old one.
-const signature = (card) => card.squares.map(s => `${s.type}:${s.value}`).join('|')
+// v2 = the timed game; a saved lives-era game is discarded rather than restored.
+const signature = (card) => 'v2|' + card.squares.map(s => `${s.type}:${s.value}`).join('|')
 
 const EMPTY = () => new Array(CARD_SIZE).fill(null)
+const fullQueue = (card) => card.deal.map((_, i) => i)
+const nowMs = () => Date.now() // read in event handlers/effects only
+const clock = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`
 
 export default function FootballBingo() {
   const { t } = useI18n()
@@ -33,31 +37,55 @@ export default function FootballBingo() {
   const [mode, setMode] = useState(qa.active ? 'unlimited' : 'daily')
   const [card, setCard] = useState(() => getDailyBingo())
   const [placed, setPlaced] = useState(() => saved?.placed ?? EMPTY())   // per square: { id, name } | null
-  const [dealIndex, setDealIndex] = useState(() => saved?.dealIndex ?? 0)
-  const [lives, setLives] = useState(() => saved?.lives ?? MAX_LIVES)
-  const [skips, setSkips] = useState(() => saved?.skips ?? MAX_SKIPS)
+  const [queue, setQueue] = useState(() => saved?.queue ?? fullQueue(getDailyBingo())) // deal indices still to come; [0] is in hand
+  // The clock is wall time, so a refresh or a closed tab never pauses it.
+  const [startedAt, setStartedAt] = useState(() => saved?.startedAt ?? null)
+  const [penalty, setPenalty] = useState(() => saved?.penalty ?? 0)     // seconds lost to wrong squares
+  const [endedAt, setEndedAt] = useState(() => saved?.endedAt ?? null)
+  const [now, setNow] = useState(() => Date.now())
   const [message, setMessage] = useState('')
   const [wrongSquare, setWrongSquare] = useState(-1)
   const [showResult, setShowResult] = useState(restoredDone)
+  const finished = useRef(restoredDone)
 
   const filled = placed.filter(Boolean).length
-  const current = card.deal[dealIndex] ?? null
-  const outOfPlayers = !current
   const won = filled === CARD_SIZE
-  const lost = !won && (lives <= 0 || outOfPlayers)
-  const over = won || lost
+  const elapsed = startedAt ? ((endedAt ?? now) - startedAt) / 1000 + penalty : 0
+  const remaining = Math.max(0, TIME_LIMIT_S - elapsed)
+  // Unreachable by construction (several candidates per square, see bingo.js),
+  // but if the queue can no longer fill an open square the card is over.
+  const stranded = !won && startedAt != null && strandedSquares(queue, card.deal, placed).length > 0
+  const timeUp = !won && startedAt != null && remaining <= 0
+  const over = won || timeUp || stranded
+  const running = startedAt != null && !over
+  const current = running ? card.deal[queue[0]] ?? null : null
   const dailyLocked = mode === 'daily' && over
 
-  // Recorded at the moment the card ends rather than from an effect watching
-  // `over`: the transition is knowable synchronously from the move that caused
-  // it, so this fires exactly once and never on a re-render.
-  const finish = (didWin) => { if (mode === 'daily') recordResult('bingo', didWin) }
+  // Recorded exactly once per card, from whichever path ends it.
+  const finish = (didWin) => {
+    if (finished.current) return
+    finished.current = true
+    if (mode === 'daily') recordResult('bingo', didWin)
+  }
+
+  // Tick while the clock runs; when it hits zero (or the card strands), end it.
+  useEffect(() => {
+    if (!running) return
+    const id = setInterval(() => setNow(Date.now()), 250)
+    return () => clearInterval(id)
+  }, [running])
+  /* eslint-disable react-hooks/set-state-in-effect -- the clock running out is an external event */
+  useEffect(() => {
+    if (!(timeUp || stranded) || endedAt != null) return
+    setEndedAt(timeUp ? startedAt + (TIME_LIMIT_S - penalty) * 1000 : Date.now())
+    finish(false)
+  }, [timeUp, stranded]) // eslint-disable-line react-hooks/exhaustive-deps
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   useEffect(() => {
-    if (mode !== 'daily') return
-    if (filled === 0 && dealIndex === 0 && !over) return
-    saveDailyProgress('bingo', { placed, dealIndex, lives, skips }, over, signature(card))
-  }, [mode, placed, dealIndex, lives, skips, over, card, filled])
+    if (mode !== 'daily' || startedAt == null) return
+    saveDailyProgress('bingo', { placed, queue, startedAt, penalty, endedAt }, over, signature(card))
+  }, [mode, placed, queue, startedAt, penalty, endedAt, over, card])
 
   useEffect(() => {
     if (!over) return
@@ -66,18 +94,18 @@ export default function FootballBingo() {
   }, [over])
 
   const resetTo = (next, m) => {
-    setMode(m); setCard(next); setPlaced(EMPTY()); setDealIndex(0)
-    setLives(MAX_LIVES); setSkips(MAX_SKIPS); setMessage(''); setWrongSquare(-1)
-    setShowResult(false)
+    setMode(m); setCard(next); setPlaced(EMPTY()); setQueue(fullQueue(next))
+    setStartedAt(null); setPenalty(0); setEndedAt(null); setMessage(''); setWrongSquare(-1)
+    setShowResult(false); finished.current = false
   }
   const startUnlimited = () => resetTo(getRandomBingo(), 'unlimited')
   const restoreDaily = () => {
     const c = getDailyBingo()
     const s = loadDailyProgress('bingo', signature(c))
     setMode('daily'); setCard(c)
-    setPlaced(s?.placed ?? EMPTY()); setDealIndex(s?.dealIndex ?? 0)
-    setLives(s?.lives ?? MAX_LIVES); setSkips(s?.skips ?? MAX_SKIPS)
-    setMessage(''); setWrongSquare(-1); setShowResult(!!s?.done)
+    setPlaced(s?.placed ?? EMPTY()); setQueue(s?.queue ?? fullQueue(c))
+    setStartedAt(s?.startedAt ?? null); setPenalty(s?.penalty ?? 0); setEndedAt(s?.endedAt ?? null); setNow(Date.now())
+    setMessage(''); setWrongSquare(-1); setShowResult(!!s?.done); finished.current = !!s?.done
   }
   const onModeChange = (m) => (m === 'daily' ? restoreDaily() : startUnlimited())
 
@@ -88,36 +116,31 @@ export default function FootballBingo() {
   }, [qa.active, qa.index])
   /* eslint-enable react-hooks/set-state-in-effect */
 
+  const start = () => { const t0 = Date.now(); setStartedAt(t0); setNow(t0) }
+
   const place = (i) => {
-    if (over || !current || placed[i]) return
+    if (!current || placed[i]) return
     setMessage('')
-    const correct = current.fits.includes(i)
-    const nextPlaced = correct ? placed.map((v, j) => (j === i ? { id: current.id, name: current.name } : v)) : placed
-    const nextLives = correct ? lives : lives - 1
-    const nextIndex = dealIndex + 1
-
-    if (correct) {
-      setPlaced(nextPlaced)
-      setWrongSquare(-1)
-    } else {
-      setLives(nextLives)
+    if (!current.fits.includes(i)) {
+      // Wrong square: the player stays in hand, the clock pays.
+      setPenalty(p => p + WRONG_PENALTY_S)
       setWrongSquare(i)
-      setMessage(t('bingo.wrong', { name: current.name, category: categoryLabel(card.squares[i], t) }))
+      setMessage(t('bingo.wrong', { name: current.name, category: categoryLabel(card.squares[i], t), pen: WRONG_PENALTY_S }))
       setTimeout(() => setWrongSquare(-1), 600)
+      return
     }
-    setDealIndex(nextIndex)
-
-    const nextFilled = nextPlaced.filter(Boolean).length
-    const didWin = nextFilled === CARD_SIZE
-    if (didWin || nextLives <= 0 || nextIndex >= card.deal.length) finish(didWin)
+    const nextPlaced = placed.map((v, j) => (j === i ? { id: current.id, name: current.name } : v))
+    setPlaced(nextPlaced)
+    setQueue(pruneQueue(queue.slice(1), card.deal, nextPlaced))
+    setWrongSquare(-1)
+    if (nextPlaced.every(Boolean)) { setEndedAt(nowMs()); finish(true) }
   }
 
+  // Unlimited skips: the player goes to the back of the queue and comes round again.
   const skip = () => {
-    if (over || !current || skips <= 0) return
-    const nextIndex = dealIndex + 1
-    setSkips(n => n - 1); setDealIndex(nextIndex); setMessage(''); setWrongSquare(-1)
-    // Skipping can exhaust the deal, which ends the card just as surely as lives.
-    if (nextIndex >= card.deal.length) finish(false)
+    if (!current) return
+    setQueue(q => pruneQueue([...q.slice(1), q[0]], card.deal, placed))
+    setMessage(''); setWrongSquare(-1)
   }
 
   const shareRows = useMemo(() => {
@@ -137,11 +160,12 @@ export default function FootballBingo() {
           motifId="football-bingo"
           title={t('bingo.wordmark')}
           right={
-            <span className="inline-flex items-center gap-1.5" aria-label={t('bingo.livesLabel', { n: lives })}>
-              {Array.from({ length: MAX_LIVES }, (_, i) => (
-                <i key={i} className={`w-2.5 h-2.5 rounded-full ${i < lives ? 'bg-accent' : 'bg-inert'}`} aria-hidden="true" />
-              ))}
-              <b className="ml-1 text-secondary tabular-nums">{filled}/{CARD_SIZE}</b>
+            <span className="inline-flex items-center gap-2.5">
+              <b className={`tabular-nums font-black ${running && remaining <= 30 ? 'text-danger-bright animate-pulse' : 'text-primary'}`}
+                role="timer" aria-label={t('bingo.timerLabel', { time: clock(remaining) })}>
+                ⏱ {clock(Math.ceil(remaining))}
+              </b>
+              <b className="text-secondary tabular-nums">{filled}/{CARD_SIZE}</b>
             </span>
           }
         /></div>
@@ -159,13 +183,16 @@ export default function FootballBingo() {
 
           {/* The dealt player — the question. Kept above the card so the eye goes
               player → squares, which is the order the decision is actually made in. */}
-          {!over && current && (
+          {startedAt == null && (
+            <div className="bg-surface border border-border-strong rounded-xl px-4 py-4 text-center">
+              <p className="text-secondary text-sm mb-3">{t('bingo.startSub', { time: clock(TIME_LIMIT_S), pen: WRONG_PENALTY_S })}</p>
+              <button onClick={start} className="bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-xl px-8 py-3 transition-colors">{t('bingo.start')}</button>
+            </div>
+          )}
+          {current && (
             <div className="bg-surface border border-border-strong rounded-xl px-4 py-4 text-center" aria-live="polite">
               <div className="text-[0.55rem] font-black tracking-[0.18em] text-muted uppercase">{t('bingo.placeThis')}</div>
               <div className="score-number text-[clamp(1.6rem,6vw,2.4rem)] leading-none mt-1.5 text-primary">{current.name}</div>
-              <div className="text-faint text-[0.7rem] mt-1.5 tabular-nums">
-                {t('bingo.remaining', { n: Math.max(0, card.deal.length - dealIndex - 1) })}
-              </div>
             </div>
           )}
 
@@ -174,7 +201,7 @@ export default function FootballBingo() {
             {card.squares.map((sq, i) => {
               const p = placed[i]
               const isWrong = wrongSquare === i
-              const clickable = !over && current && !p
+              const clickable = !!current && !p
               return (
                 <button
                   key={`${sq.type}:${sq.value}`}
@@ -206,14 +233,13 @@ export default function FootballBingo() {
 
           {message && <div className="text-center text-sm text-warn font-semibold">{message}</div>}
 
-          {!over && (
+          {running && (
             <div className="flex gap-3 pt-1">
               <button
                 onClick={skip}
-                disabled={skips <= 0}
-                className="flex-1 border border-border-strong text-secondary hover:bg-surface disabled:opacity-40 text-sm font-medium rounded-xl py-3 transition-colors"
+                className="flex-1 border border-border-strong text-secondary hover:bg-surface text-sm font-medium rounded-xl py-3 transition-colors"
               >
-                {t('bingo.skip', { n: skips })}
+                {t('bingo.skip')}
               </button>
             </div>
           )}
@@ -233,7 +259,7 @@ export default function FootballBingo() {
               {won ? t('bingo.bingo') : t('bingo.outOf', { n: filled })}
             </h2>
             <p className="text-muted text-sm mb-1">
-              {won ? t('bingo.wonSub', { n: MAX_LIVES - lives }) : t('common.comeBackTomorrow')}
+              {won ? t('bingo.wonSub', { time: clock(Math.floor(remaining)) }) : t('bingo.timeUp')}
             </p>
           </div>
 
@@ -253,7 +279,7 @@ export default function FootballBingo() {
             score: { v: filled, of: CARD_SIZE },
             title: 'Football Bingo',
             challenge: t('games.football-bingo.tagline'),
-            result: won ? t('bingo.bingo') : t('bingo.outOf', { n: filled }),
+            result: won ? `${t('bingo.bingo')} · ${t('bingo.spare', { time: clock(Math.floor(remaining)) })}` : t('bingo.outOf', { n: filled }),
             rows: shareRows,
             matchday: matchdayNumber(),
           }} />
