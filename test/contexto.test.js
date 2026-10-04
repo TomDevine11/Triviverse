@@ -44,7 +44,7 @@ describe('Football Contexto — the association ranking', () => {
     const board = createBoard(target)
     const rank = (n) => board.rankOf(byName(n)?.i)
 
-    const cityMates = ['Sergio Aguero', 'Kevin De Bruyne', 'David Silva'].map(rank)
+    const cityMates = ['Sergio Agüero', 'Kevin De Bruyne', 'David Silva'].map(rank)
     for (const r of cityMates) expect(r).toBeLessThanOrEqual(12)
 
     // A contemporary with no club connection must be far away.

@@ -27,6 +27,18 @@ import path from 'node:path'
 import { normalize } from '../src/data/canonical/normalize.js'
 import { fixName } from '../src/data/canonical/nameFixes.js'
 
+// Accented letters a spelling carries (é, ü, ß, ø…). Letters only, so an
+// invisible mark in the source (TM's "Nemanja Vidic" carries a U+200E) never
+// counts as "more correct".
+const diacritics = (s) => [...s].filter(ch => ch.charCodeAt(0) > 127 && /\p{L}/u.test(ch)).length
+
+// Curated spellings that stay as they are even though Transfermarkt accents
+// them: the TM form is a quirk English-speaking fans would read as a typo
+// ("Cafú", "Laurén"), or changes the familiar casing ("Alfredo di Stéfano").
+const KEEP_DISPLAY = new Set([
+  'Cafu', 'Edu', 'Edu Dracena', 'Lauren', 'Ike Ugbo', 'Robson Ponte', 'Ibrahim Ba', 'Abedi Pele', 'Alfredo Di Stefano',
+])
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.join(__dirname, '..')
 const CANON = path.join(ROOT, 'src/data/canonical')
@@ -83,6 +95,7 @@ export function buildIdentity({ sources = [], tmIndex = {}, tmPositions = {}, pr
     sourcePlayerRows: 0,
     distinctInputNames: new Set(),
     minted: 0,
+    accentUpgrades: 0,             // ASCII display names upgraded to the TM spelling
     reusedFromPrior: 0,
     tmAttached: 0,
     tmSkippedAmbiguous: new Set(),   // name -> multiple TM ids
@@ -215,6 +228,18 @@ export function buildIdentity({ sources = [], tmIndex = {}, tmPositions = {}, pr
     for (const [k, v] of Object.entries(entry.refs || {})) {
       if (v == null) continue
       if (rec.refs[k] == null) { rec.refs[k] = v; byRefLocal.set(`${k}:${v}`, rec.id) }
+    }
+    // Accents: curated lists spell names in ASCII ("Gerd Muller", "Mesut Ozil")
+    // and own the display name, so the Transfermarkt spelling was folded away
+    // (same normalized key → never even kept as an alias). When a history row
+    // carries the SAME name with its diacritics, it is strictly more correct —
+    // upgrade the display name. The id/slug never changes; the ASCII spelling
+    // stays an alias for typed input.
+    if (entry.source === 'history' && entry.displayName !== rec.displayName && !KEEP_DISPLAY.has(rec.displayName) &&
+        normalize(entry.displayName) === normalize(rec.displayName) && diacritics(entry.displayName) > diacritics(rec.displayName)) {
+      if (!rec.aliases.includes(rec.displayName)) rec.aliases.push(rec.displayName)
+      rec.displayName = entry.displayName
+      report.accentUpgrades++
     }
     addAlias(rec, entry.displayName)
     for (const a of entry.aliases || []) addAlias(rec, a)
@@ -672,7 +697,8 @@ async function main() {
   process.stderr.write(
     `identity: ${registry.length} identities  (${report.minted} minted, ` +
     `${registry.filter(r => r.refs.tm != null).length} with TM ref, ` +
-    `${withPos} with a position, ${report.duplicateCandidates.length} duplicate-candidate groups)\n`,
+    `${withPos} with a position, ${report.duplicateCandidates.length} duplicate-candidate groups, ` +
+    `${report.accentUpgrades} display names given their accents)\n`,
   )
 }
 
