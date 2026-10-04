@@ -120,7 +120,11 @@ function addCurated(members, type, valueMap = x => x) {
     for (const nm of names) {
       const id = playerId(canonPlayer(nm)); if (!id) continue
       const r = ensureById(id, nm)
-      r.displayName = fixName(canonPlayer(nm)) // curated owns the display name (ASCII/known spelling)
+      // Curated owns the display name when it is a different spelling ("Ronaldo
+      // Nazario"), but its lists are typed in ASCII: when it is merely the
+      // registry name without accents ("Kylian Mbappe"), keep the registry's form.
+      const curatedName = fixName(canonPlayer(nm))
+      if (normalizeName(curatedName) !== normalizeName(r.displayName)) r.displayName = curatedName
       r.curated = true
       curatedMembers.get(key).add(id)
       recordFact(id, `curated_${type}`, cat, 'curated')

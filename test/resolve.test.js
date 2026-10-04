@@ -15,8 +15,8 @@ describe('entity resolution — named cases from the review', () => {
   })
 
   it('accent-insensitive: Joao Felix === João Félix', () => {
-    expect(resolve('Joao Felix')).toEqual({ status: OK, displayName: 'Joao Felix' })
-    expect(resolve('João Félix')).toEqual({ status: OK, displayName: 'Joao Felix' })
+    expect(resolve('Joao Felix')).toEqual({ status: OK, displayName: 'João Félix' })
+    expect(resolve('João Félix')).toEqual({ status: OK, displayName: 'João Félix' })
   })
 
   it('"Ronaldo" is ambiguous and is surfaced, not guessed', () => {
@@ -27,7 +27,7 @@ describe('entity resolution — named cases from the review', () => {
 
   it('unique surname resolves', () => {
     expect(resolve('Lewandowski').status).toBe(OK)
-    expect(resolve('Iniesta')).toEqual({ status: OK, displayName: 'Andres Iniesta' })
+    expect(resolve('Iniesta')).toEqual({ status: OK, displayName: 'Andrés Iniesta' })
   })
 
   it('a surname that is genuinely shared is surfaced as ambiguous', () => {
