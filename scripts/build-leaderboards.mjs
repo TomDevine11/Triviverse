@@ -253,7 +253,8 @@ function buildHigherLower() {
     const m = values[src] = new Map()
     const h = JSON.parse(readFileSync(HISTORY(src), 'utf8'))
     for (const p of h.players) {
-      if (!names.has(p.id)) names.set(p.id, p.name)
+      // Strip invisible format characters (TM's "Nemanja Vidic" carries a U+200E).
+      if (!names.has(p.id)) names.set(p.id, p.name.replace(/\p{Cf}/gu, '').trim())
       const c = p.comps?.[src]
       if (c) m.set(p.id, { goals: c.goals || 0, apps: c.apps || 0, clubs: c.clubs || {} })
     }
