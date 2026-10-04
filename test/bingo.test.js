@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { getBingoForDay, getRandomBingo, qualifies, categoryLabel, CARD_SIZE, MAX_LIVES } from '../src/data/bingo.js'
+import { getBingoForDay, getRandomBingo, qualifies, categoryLabel, pruneQueue, strandedSquares, CARD_SIZE, TIME_LIMIT_S, WRONG_PENALTY_S } from '../src/data/bingo.js'
 import { getPlayer } from '../src/data/canonical/facts.js'
 
 // A card that cannot be completed is worse than no card at all — the player
@@ -95,6 +95,50 @@ describe('Football Bingo card generation', () => {
       expect(categoryLabel(s)).toBeTruthy()
       expect(categoryLabel(s)).not.toBe(s.value === undefined ? '' : '')
     }
-    expect(MAX_LIVES).toBe(3)
+  })
+})
+
+describe('Football Bingo — timed play with unlimited skips', () => {
+  it('is a three-minute card with a time penalty, not lives', () => {
+    expect(TIME_LIMIT_S).toBe(180)
+    expect(WRONG_PENALTY_S).toBeGreaterThan(0)
+  })
+
+  it('deals several candidates per square so a cycling queue stays deep', () => {
+    for (let d = 1; d <= 30; d++) expect(getBingoForDay(d).deal.length).toBeGreaterThanOrEqual(CARD_SIZE * 3)
+  })
+
+  it('prunes players who can no longer fill any open square', () => {
+    const { deal } = getBingoForDay(5)
+    const placed = new Array(CARD_SIZE).fill(null)
+    const q = deal.map((_, i) => i)
+    expect(pruneQueue(q, deal, placed)).toEqual(q) // nothing filled → everyone useful
+    const full = new Array(CARD_SIZE).fill({ id: 'x' })
+    expect(pruneQueue(q, deal, full)).toEqual([])  // card full → nobody left to place
+    expect(strandedSquares([], deal, placed)).toHaveLength(CARD_SIZE)
+  })
+
+  // The complaint this mode answers: one bad placement must not make the card
+  // impossible. A careless player — random valid squares, random skips — never
+  // strands a square.
+  it('never strands a square under careless play', () => {
+    let stuck = 0
+    for (let d = 1; d <= 60; d++) {
+      const { deal } = getBingoForDay(d)
+      for (let run = 0; run < 20; run++) {
+        let s = d * 1000 + run + 1
+        const rnd = () => ((s = (s * 16807) % 2147483647) / 2147483647)
+        let placed = new Array(CARD_SIZE).fill(null), queue = deal.map((_, i) => i), steps = 0
+        while (placed.some(p => !p) && steps++ < 2000) {
+          if (strandedSquares(queue, deal, placed).length) { stuck++; break }
+          const cur = queue[0], open = deal[cur].fits.filter(sq => !placed[sq])
+          if (open.length && rnd() < 0.8) { placed = placed.map((p, i) => (i === open[Math.floor(rnd() * open.length)] ? { id: cur } : p)); queue = queue.slice(1) }
+          else queue = [...queue.slice(1), cur]
+          queue = pruneQueue(queue, deal, placed)
+        }
+        expect(placed.every(Boolean), `day ${d} run ${run}`).toBe(true)
+      }
+    }
+    expect(stuck).toBe(0)
   })
 })

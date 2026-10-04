@@ -1,6 +1,9 @@
 // Football Bingo — a 3x4 card of category squares. Players are dealt one at a
-// time and you place each into a square whose category they satisfy. A wrong
-// placement costs a life; filling all twelve squares is a bingo.
+// time and you place each into a square whose category they satisfy. It is
+// played against the clock: TIME_LIMIT_S to fill all twelve, unlimited skips (a
+// skipped player goes to the back of the queue), and a wrong placement costs
+// WRONG_PENALTY_S seconds rather than a life — so one mistake can never make the
+// card impossible, it just makes it harder.
 //
 // The mechanic is the INVERSE of TicTacToe: there you are given a square and
 // must supply a player, here you are given a player and must choose the square.
@@ -18,25 +21,27 @@
 //     the player genuinely qualifies, even via a spell the star set ignores.
 //
 // Solvability is guaranteed by construction: the deal is built FROM the card,
-// two qualifying players per square, so a perfect game always exists. The slack
-// (the second candidate) is deliberate — it means one greedy mistake does not
-// necessarily kill the card, but three do.
+// several qualifying players per square, so a perfect game always exists — and
+// because skipped players come back round, a square only becomes unfillable if
+// every one of its candidates has been spent elsewhere.
 
 import { membersOf, getPlayer, CATEGORY_KEYS } from './canonical/facts.js'
 
 export const COLS = 3
 export const ROWS = 4
 export const CARD_SIZE = COLS * ROWS   // 12
-export const MAX_LIVES = 3
-export const MAX_SKIPS = 3
+export const TIME_LIMIT_S = 180   // three minutes to fill the card
+export const WRONG_PENALTY_S = 10 // a wrong square costs time, not a life
 
 // Same threshold Connections uses for "genuinely well-known".
 const STAR_FAME = 48
 // A square is only usable if it has this many stars to draw on, so the deal is
 // never forced onto the obscure tail of a thin category.
 const MIN_STARS = 6
-// Candidates dealt per square. Two gives the card slack without doubling length.
-const PER_SQUARE = 2
+// Candidates dealt per square. With unlimited skips the deal is a queue that
+// cycles, so a deeper deal costs nothing in length — it is what keeps every
+// square fillable after a greedy placement spends a player elsewhere.
+const PER_SQUARE = 5
 // Leagues are enormous (Premier League alone has ~944 recognisable members), so
 // almost any player satisfies one. More than a single league square and the card
 // stops asking a real question.
@@ -148,6 +153,20 @@ export function getBingoForDay(dayIndex) {
     }
   }
   throw new Error('Could not generate a Football Bingo card')
+}
+
+// The live queue: skipped players go to the back; players who can no longer
+// fill any open square drop out (they would only ever be skipped). `queue` is a
+// list of deal indices, `placed` the per-square fill state.
+export function pruneQueue(queue, deal, placed) {
+  return queue.filter(i => deal[i].fits.some(sq => !placed[sq]))
+}
+
+// Squares that nobody left in the queue can fill — non-empty means the card
+// can no longer be completed, however much time remains.
+export function strandedSquares(queue, deal, placed) {
+  const reachable = new Set(queue.flatMap(i => deal[i].fits))
+  return placed.map((p, sq) => (p || reachable.has(sq) ? -1 : sq)).filter(sq => sq >= 0)
 }
 
 export function getRandomBingo() {
