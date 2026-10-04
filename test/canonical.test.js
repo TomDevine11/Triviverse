@@ -59,7 +59,7 @@ describe('derived league membership (Saliba/Álvarez class)', () => {
     const pl = membersOf({ type: 'league', value: 'Premier League' })
     const wc = membersOf({ type: 'trophy', value: 'FIFA World Cup' })
     const both = [...pl].filter(id => wc.has(id)).map(id => getPlayer(id).displayName)
-    expect(both).toContain('Julian Alvarez')
+    expect(both).toContain('Julián Alvarez')
   })
 })
 
@@ -76,14 +76,18 @@ describe('Wikidata club-roster merge (Option A)', () => {
     expect(sources.has('canonical')).toBe(true)
   })
 
-  it('curated ASCII display name wins over Wikidata diacritic form (same id)', () => {
-    // "Julian Alvarez" (curated) and "Julián Alvarez" (Wikidata) unify to one id;
-    // the curated spelling is kept for display.
-    // Phase 2: ids are the stable crosswalk slugs (no legacy 'p:' prefix).
-    const p = allPlayers().find(x => x.displayName === 'Julian Alvarez')
-    expect(p).not.toBeNull()
-    expect(p.displayName).toBe('Julian Alvarez')
+  it('a curated ASCII spelling of the same name keeps the registry accents (same id)', () => {
+    // "Julian Alvarez" (curated, typed in ASCII) and "Julián Alvarez" (registry /
+    // Transfermarkt) are one id; the accented form is shown.
+    const p = allPlayers().find(x => x.displayName === 'Julián Alvarez')
+    expect(p).toBeTruthy()
+    expect(allPlayers().some(x => x.displayName === 'Julian Alvarez')).toBe(false)
     expect(p.clubs).toContain('Manchester City')
+  })
+
+  it('a curated spelling that is a different name still owns the display name', () => {
+    // Registry "Ronaldo" (tm:3140); curated lists call him "Ronaldo Nazario".
+    expect(allPlayers().some(x => x.displayName === 'Ronaldo Nazario')).toBe(true)
   })
 
   it('no duplicate facts after merging the two sources', () => {
