@@ -1,10 +1,15 @@
-// "Higher or Lower" — compare two footballers on a real career stat: goals or
-// appearances in the Premier League, La Liga, Serie A, the Bundesliga, Ligue 1
-// and the Champions League, or international goals and caps.
+// "Higher or Lower" — compare two footballers on a real stat:
+//   • career goals / appearances in the Premier League, La Liga, Serie A, the
+//     Bundesliga, Ligue 1 and the Champions League, international goals / caps
+//   • club totals ("Premier League goals for Arsenal")
+//   • single-season bests ("most Premier League goals in a season")
+//   • record transfer fee, inflated to today's money
 //
 // Pools come from src/data/higherlower.generated.json (scripts/build-leaderboards.mjs):
 // per stat, every player who clears that stat's floor AND is either recognisable
-// (fame ≥ 55) or a record-holder (top 30). The client only sees { name, value, fame }.
+// (fame ≥ 55), a record-holder or a major-honour winner. The client only sees
+// { name, value, fame } plus an optional `extra` (the season of a season best;
+// [nominal fee €m, year] for a transfer fee).
 //
 // Two ways to play:
 //   • Unlimited — pick one stat; an endless chain where each revealed player
@@ -19,7 +24,7 @@ import data from './higherlower.generated.json'
 const POOLS = {}
 for (const [id, s] of Object.entries(data.stats)) {
   POOLS[id] = s.rows
-    .map(([i, value], rank) => ({ id: i, name: data.players[i]?.[0], fame: data.players[i]?.[1] || 0, value, rank: rank + 1 }))
+    .map(([i, value, extra], rank) => ({ id: i, name: data.players[i]?.[0], fame: data.players[i]?.[1] || 0, value, rank: rank + 1, extra }))
     .filter(p => p.name && Number.isInteger(p.value) && p.value > 0) // the build guarantees this; never trust it blindly
 }
 
@@ -29,7 +34,7 @@ export const MIN_POOL = 40
 
 export const STAT_MODES = Object.entries(data.stats)
   .filter(([id]) => POOLS[id].length >= MIN_POOL)
-  .map(([id, s]) => ({ id, label: s.label, competition: s.competition, kind: s.kind, size: POOLS[id].length }))
+  .map(([id, s]) => ({ id, label: s.label, competition: s.competition, kind: s.kind, group: s.group, club: s.club, base: s.base, size: POOLS[id].length }))
 
 const BY_ID = Object.fromEntries(STAT_MODES.map(m => [m.id, m]))
 export const statById = (id) => BY_ID[id] || null
@@ -48,13 +53,14 @@ const ratioOf = (a, b) => Math.max(a, b) / Math.min(a, b)
 // ── Unlimited ─────────────────────────────────────────────────────────────
 // The next challenger: never the current player, never an equal value, ideally
 // not one of the last RECENT players and within RATIO_MAX of the current value.
-// Constraints relax in order — shorter memory, then any value — so a small or
-// lopsided pool (Messi's 474 has few neighbours) can always produce a question.
+// Constraints relax in order — a wider band, then shorter memory, then any
+// value — so a small (club) or lopsided pool (Messi's 474 has few neighbours)
+// can always produce a question, and repeats are the last thing to give way.
 export const RATIO_MAX = 2.5
 export const RECENT = 20
 
 export function pickChallenger(pool, current, recent = [], rng = Math.random) {
-  const steps = [[RECENT, RATIO_MAX], [5, RATIO_MAX], [5, Infinity], [0, Infinity]]
+  const steps = [[RECENT, RATIO_MAX], [RECENT, 4], [5, 4], [5, Infinity], [0, Infinity]]
   for (const [memory, ratio] of steps) {
     const avoid = new Set(memory ? recent.slice(-memory) : [])
     const c = pool.filter(p => p.id !== current.id && p.value !== current.value && !avoid.has(p.id) && ratioOf(p.value, current.value) <= ratio)
@@ -94,17 +100,27 @@ function shuffle(arr, rng) {
   return a
 }
 
-// Stat cards. The most-followed stats get two cards each; every other stat one.
-// Days are dealt in order from an endless stream of shuffled decks, so across
-// consecutive days each stat comes round at a steady rate and no combination
-// repeats on a short cycle (unlike a fixed `day % n` rotation).
+// Stat cards. The most-followed career stats get two cards each, every other
+// career stat one; club and season stats share two wildcard cards each (a club
+// card becomes one of the clubs, seeded by its position), and transfer fees get
+// one. Days are dealt in order from an endless stream of shuffled decks, so
+// across consecutive days each stat comes round at a steady rate and no
+// combination repeats on a short cycle (unlike a fixed `day % n` rotation).
 const DOUBLED = new Set(['prem-goals', 'prem-apps', 'ucl-goals', 'intl-goals', 'intl-caps'])
-const DECK = STAT_MODES.flatMap(m => (DOUBLED.has(m.id) ? [m.id, m.id] : [m.id]))
+const ofGroup = (g) => STAT_MODES.filter(m => m.group === g).map(m => m.id)
+const WILD = { '@club': ofGroup('club'), '@season': ofGroup('season') }
+const DECK = [
+  ...STAT_MODES.filter(m => m.group === 'career').flatMap(m => (DOUBLED.has(m.id) ? [m.id, m.id] : [m.id])),
+  ...Object.entries(WILD).flatMap(([card, ids]) => (ids.length ? [card, card] : [])),
+  ...ofGroup('transfer'),
+]
 const MAX_PER_STAT = 2
 
 function cardAt(pos) {
   const k = Math.floor(pos / DECK.length)
-  return shuffle(DECK, rngFor(0xdec4, k))[pos % DECK.length]
+  const card = shuffle(DECK, rngFor(0xdec4, k))[pos % DECK.length]
+  const wild = WILD[card]
+  return wild ? wild[Math.floor(rngFor(0x317d, pos)() * wild.length)] : card
 }
 
 // The day's 15 stats: dealt from the stream (a stat already used twice today is
@@ -118,16 +134,18 @@ export function dailyStats(dayIndex) {
     dealt.push(id)
   }
   // Order: at each step take the competition with the most cards still to place
-  // (excluding the one just used) — the standard way to keep repeats apart.
+  // (excluding the one just used) — the standard way to keep repeats apart. The
+  // opening questions prefer plain career stats; club, season and fee questions
+  // ask more of the player, so they come once the run is under way.
   const out = []
   while (dealt.length) {
     const last = out.length ? BY_ID[out[out.length - 1]].competition : null
     const left = {}
     for (const id of dealt) left[BY_ID[id].competition] = (left[BY_ID[id].competition] || 0) + 1
+    const rank = (id) => (out.length < EASY && BY_ID[id].group === 'career' ? 1000 : 0) + left[BY_ID[id].competition]
     let best = -1
     for (const [i, id] of dealt.entries()) {
-      const c = BY_ID[id].competition
-      if (c !== last && (best < 0 || left[c] > left[BY_ID[dealt[best]].competition])) best = i
+      if (BY_ID[id].competition !== last && (best < 0 || rank(id) > rank(dealt[best]))) best = i
     }
     out.push(dealt.splice(Math.max(0, best), 1)[0])
   }
@@ -137,21 +155,29 @@ export function dailyStats(dayIndex) {
 // A gentle ramp: the opening questions use household names and clearly
 // different numbers; later ones allow closer calls and less obvious players.
 // None of it is meant to be brutal — a "hard" pair is still 1.08–1.6× apart.
+// Record-holders count as known (Zarra, Onnis) — but only near the very top of a
+// club or season list, where the all-time names are often pre-war (Aldo Boffi).
+const EASY = 4
 const TIERS = [
-  { until: 4,  famous: (p) => p.fame >= 90 || p.rank <= 10, ratio: [1.5, 3] },
-  { until: 10, famous: (p) => p.fame >= 75 || p.rank <= 20, ratio: [1.2, 2.2] },
-  { until: Infinity, famous: (p) => p.fame >= 60 || p.rank <= 30, ratio: [1.08, 1.6] },
+  { until: EASY, fame: 90, rank: 10, ratio: [1.5, 3] },
+  { until: 10, fame: 75, rank: 20, ratio: [1.2, 2.2] },
+  { until: Infinity, fame: 60, rank: 30, ratio: [1.08, 1.6] },
 ]
+const knownFor = (tier, stat) => {
+  const rank = stat.group === 'career' ? tier.rank : Math.ceil(tier.rank / 10)
+  return (p) => p.fame >= tier.fame || p.rank <= rank
+}
 // Small tallies make coin flips (7 vs 9 Champions League goals), so a daily pair
 // is always at least this many apart.
 const MIN_GAP = 3
 const tierFor = (q) => TIERS.find(t => q < t.until)
 
-function dailyPair(pool, tier, used, rng) {
+function dailyPair(pool, tier, stat, used, rng) {
   const fresh = (p) => !used.has(p.id)
+  const famous = knownFor(tier, stat)
   const attempts = [
-    { who: (p) => fresh(p) && tier.famous(p), ratio: tier.ratio, gap: MIN_GAP },
-    { who: (p) => fresh(p) && tier.famous(p), ratio: [1, RATIO_MAX], gap: MIN_GAP },
+    { who: (p) => fresh(p) && famous(p), ratio: tier.ratio, gap: MIN_GAP },
+    { who: (p) => fresh(p) && famous(p), ratio: [1, RATIO_MAX], gap: MIN_GAP },
     { who: fresh, ratio: [1, RATIO_MAX], gap: 1 },
     { who: fresh, ratio: [1, Infinity], gap: 1 },
     { who: () => true, ratio: [1, Infinity], gap: 1 }, // gap 1 = never a tie
@@ -174,7 +200,7 @@ export function getDailyRun(dayIndex) {
   const used = new Set()
   const questions = []
   for (const [q, statId] of dailyStats(dayIndex).entries()) {
-    const pair = dailyPair(POOLS[statId], tierFor(q), used, rng)
+    const pair = dailyPair(POOLS[statId], tierFor(q), BY_ID[statId], used, rng)
     if (!pair) continue
     used.add(pair.a.id); used.add(pair.b.id)
     questions.push({ stat: BY_ID[statId], a: pair.a, b: pair.b })

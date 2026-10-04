@@ -100,10 +100,10 @@ export const ES = {
     keywords: ['futbol mayor o menor', 'mayor o menor futbol', 'juego de rachas futbol', 'quiz goles futbol'],
     h1: 'Fútbol Mayor o Menor',
     tagline: '¿Más o menos? Acierta y haz tu racha.',
-    about: 'Fútbol Mayor o Menor es un juego de rachas con cifras reales de carrera. Compara a dos futbolistas en goles o partidos en la Premier League, LaLiga, la Serie A, la Bundesliga, la Ligue 1 o la Champions — o en goles y partidos con su selección — y decide si el segundo tiene más o menos que el primero. Un fallo termina la racha.',
+    about: 'Fútbol Mayor o Menor es un juego de rachas con cifras reales de carrera. Compara a dos futbolistas en goles o partidos en las grandes ligas y la Champions, con su selección, en su mejor temporada, con un club concreto o por su traspaso récord — y decide si el segundo tiene más o menos que el primero. Un fallo termina la racha.',
     faq: [
       { q: '¿Cómo funciona?', a: 'Aparecen dos futbolistas y una estadística. Ves la cifra del primero y decides si el segundo tiene más o menos. Los aciertos hacen racha; un fallo la termina.' },
-      { q: '¿Qué estadísticas puedo jugar?', a: 'Goles y partidos en la Premier League, LaLiga, la Serie A, la Bundesliga, la Ligue 1 y la Champions, además de goles y partidos con su selección: catorce en total.' },
+      { q: '¿Qué estadísticas puedo jugar?', a: 'Goles y partidos en la Premier League, LaLiga, la Serie A, la Bundesliga, la Ligue 1 y la Champions; goles y partidos con su selección; mejores temporadas; totales con los grandes clubes de Europa; y traspasos récord en euros de hoy.' },
       { q: '¿El juego termina alguna vez?', a: 'En Ilimitado, solo cuando fallas. El reto diario tiene 15 preguntas: acierta todas para completarlo.' },
     ],
   },

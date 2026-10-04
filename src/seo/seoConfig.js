@@ -355,7 +355,7 @@ const BASE_ROUTES = [
     h1: 'Football Higher or Lower',
     tagline: 'More or fewer? Call it right and build your streak.',
     ogImage: '/og/higher-or-lower.png',
-    about: 'Football Higher or Lower is a streak game built on real career numbers. Compare two footballers on goals or appearances in the Premier League, La Liga, Serie A, the Bundesliga, Ligue 1 or the Champions League — or on international goals and caps — and decide whether the second has more or fewer than the first. Keep calling it right to build your streak; one wrong answer ends the run.',
+    about: 'Football Higher or Lower is a streak game built on real career numbers. Compare two footballers on career goals or appearances in Europe’s top leagues and the Champions League, international goals and caps, best single seasons, club-by-club totals or record transfer fees — and decide whether the second has more or fewer than the first. Keep calling it right to build your streak; one wrong answer ends the run.',
     howTo: [
       'Play the Daily — 15 questions, a different stat each time — or pick a stat in Unlimited.',
       'Two players appear, with the first player’s number revealed.',
@@ -372,13 +372,13 @@ const BASE_ROUTES = [
       {
         h2: 'The stats you compare',
         body: [
-          'Fourteen stats: career goals and appearances in the Premier League, La Liga, Serie A, the Bundesliga, Ligue 1 and the UEFA Champions League, plus international goals and caps. Players are chosen to be recognisable to a football fan — plus the all-time record-holders of each list — so there are well over a thousand players to meet.',
+          'Career goals and appearances in the Premier League, La Liga, Serie A, the Bundesliga, Ligue 1 and the UEFA Champions League; international goals and caps; the most goals each player scored in a single season; league goals and appearances for more than twenty of Europe’s biggest clubs; and record transfer fees, converted to today’s money. Players are chosen to be recognisable to a football fan — plus the all-time record-holders of each list — so there are well over two thousand players to meet.',
         ],
       },
     ],
     faq: [
       { q: 'How does Football Higher or Lower work?', a: 'Two footballers appear with one stat — say, Premier League appearances. The first player’s number is shown; you decide whether the second has more or fewer. Correct guesses build a streak; one mistake ends it.' },
-      { q: 'Which stats can I play?', a: 'Goals and appearances in the Premier League, La Liga, Serie A, the Bundesliga, Ligue 1 and the Champions League, plus international goals and caps — fourteen in all.' },
+      { q: 'Which stats can I play?', a: 'Career goals and appearances in the Premier League, La Liga, Serie A, the Bundesliga, Ligue 1 and the Champions League; international goals and caps; best single seasons; club-by-club totals for Europe’s biggest clubs; and record transfer fees in today’s money.' },
       { q: 'Does the game ever end?', a: 'In Unlimited, only when you guess wrong — new players keep coming. The Daily is 15 questions; get them all right to clear it.' },
       { q: 'Is there a Daily and an Unlimited mode?', a: 'Yes. The Daily gives everyone the same 15 questions each day, each on a different stat, and tracks your best score and day streak; Unlimited lets you pick one stat and play endless rounds without affecting your stats.' },
     ],

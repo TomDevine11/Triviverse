@@ -12,10 +12,39 @@ const ratio = (a, b) => Math.max(a, b) / Math.min(a, b)
 
 describe('Higher or Lower catalogue + generated pools', () => {
   it('ships goals and appearances for six competitions plus international goals and caps', () => {
-    expect(STAT_MODES.map(m => m.id).sort()).toEqual([
+    expect(STAT_MODES.filter(m => m.group === 'career').map(m => m.id).sort()).toEqual([
       'bundesliga-apps', 'bundesliga-goals', 'intl-caps', 'intl-goals', 'laliga-apps', 'laliga-goals',
       'ligue1-apps', 'ligue1-goals', 'prem-apps', 'prem-goals', 'seriea-apps', 'seriea-goals', 'ucl-apps', 'ucl-goals',
     ])
+  })
+
+  it('adds single-season bests, a transfer-fee stat and paired club stats', () => {
+    expect(STAT_MODES.filter(m => m.group === 'season').map(m => m.id).sort()).toEqual([
+      'bundesliga-season', 'laliga-season', 'ligue1-season', 'prem-season', 'seriea-season', 'ucl-season',
+    ])
+    expect(statById('transfer-fee')).toMatchObject({ group: 'transfer', kind: 'fee' })
+    const clubs = STAT_MODES.filter(m => m.group === 'club')
+    expect(clubs.length).toBeGreaterThanOrEqual(30)
+    for (const m of clubs) {
+      expect(m.club && m.base && statById(m.base), m.id).toBeTruthy()
+      expect(m.competition).toBe(statById(m.base).competition)
+      const twin = m.id.replace(/-(goals|apps)$/, m.kind === 'goals' ? '-apps' : '-goals')
+      expect(statById(twin), `${m.id} has its pair`).toBeTruthy()
+    }
+  })
+
+  it('season bests carry their season and fees their nominal price and year', () => {
+    for (const m of STAT_MODES.filter(m => m.group === 'season')) {
+      for (const p of poolFor(m.id)) expect(p.extra >= 1929 && p.extra <= 2030, `${m.id} ${p.name}`).toBe(true)
+    }
+    expect(poolFor('prem-season')[0]).toMatchObject({ name: 'Erling Haaland', value: 36 })
+    expect(poolFor('laliga-season')[0]).toMatchObject({ name: 'Lionel Messi', value: 50 })
+    const fees = poolFor('transfer-fee')
+    for (const p of fees) {
+      const [nominal, year] = p.extra
+      expect(year >= 1996 && nominal > 0 && p.value >= Math.round(nominal) - 1, p.name).toBe(true) // inflation only ever raises a fee
+    }
+    expect(fees[0]).toMatchObject({ name: 'Neymar', extra: [222, 2017] })
   })
 
   it('every generated stat is playable — nothing is silently dropped client-side', () => {
@@ -88,13 +117,17 @@ describe('Unlimited — pickChallenger', () => {
       const pool = poolFor(m.id), rng = seeded(7)
       let cur = pickStarter(pool, rng)
       const seen = [cur.id]
+      let repeats = 0
       for (let i = 0; i < 400; i++) {
         const next = pickChallenger(pool, cur, seen, rng)
         expect(next.value, m.id).not.toBe(cur.value)
         expect(next.id).not.toBe(cur.id)
-        expect(seen.slice(-RECENT).includes(next.id), `${m.id} repeat`).toBe(false)
+        if (seen.slice(-RECENT).includes(next.id)) repeats++
         seen.push(next.id); cur = next
       }
+      // Big pools never repeat inside 20; a ~50-player club pool may very rarely
+      // have to (the band widens first, memory relaxes last).
+      expect(repeats, `${m.id} repeats`).toBeLessThanOrEqual(pool.length >= 150 ? 0 : 3)
     }
   })
 
@@ -159,6 +192,7 @@ describe('Daily', () => {
   it('opens gently: early questions use well-known players and clearly different numbers', () => {
     for (const d of DAYS.slice(0, 100)) {
       for (const q of getDailyRun(d).questions.slice(0, 4)) {
+        expect(q.stat.group, `${d} q${q.stat.id}`).toBe("career")
         for (const p of [q.a, q.b]) expect(p.fame >= 90 || p.rank <= 10, `${d} ${p.name}`).toBe(true)
         expect(ratio(q.a.value, q.b.value)).toBeGreaterThanOrEqual(1.5)
       }

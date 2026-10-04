@@ -22,7 +22,7 @@ const BEST_KEY = 'ftg-higherlower-best'
 // verdict lands. Renders the value instantly under prefers-reduced-motion.
 const reducedMotion = () => typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches
 
-function CountUp({ value, duration = 650 }) {
+function CountUp({ value, duration = 650, format = String }) {
   const [shown, setShown] = useState(0)
   const raf = useRef(null)
   useEffect(() => {
@@ -36,10 +36,10 @@ function CountUp({ value, duration = 650 }) {
     raf.current = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(raf.current)
   }, [value, duration])
-  return <>{reducedMotion() ? value : shown}</>
+  return <>{format(reducedMotion() ? value : shown)}</>
 }
 
-function PlayerCard({ player, statLabel, showValue, mystery, revealTone }) {
+function PlayerCard({ player, statLabel, showValue, mystery, revealTone, format = String, note }) {
   return (
     <div className={`flex-1 rounded-2xl border px-4 py-6 text-center flex flex-col items-center justify-center min-h-[150px] gap-1 ${
       mystery
@@ -49,10 +49,11 @@ function PlayerCard({ player, statLabel, showValue, mystery, revealTone }) {
       <div className="text-primary font-bold text-lg leading-tight">{player.name}</div>
       <div className="mt-2 h-11 flex items-center justify-center">
         {showValue
-          ? <div className={`score-number text-4xl tabular-nums ${revealTone || 'text-success-bright'}`}>{mystery ? <CountUp value={player.value} /> : player.value}</div>
+          ? <div className={`score-number text-4xl tabular-nums ${revealTone || 'text-success-bright'}`}>{mystery ? <CountUp value={player.value} format={format} /> : format(player.value)}</div>
           : <div className="text-accent-bright text-4xl font-black" aria-label="hidden">?</div>}
       </div>
       <div className="text-faint text-[0.6rem] font-black uppercase tracking-[0.16em]">{statLabel}</div>
+      {showValue && note && <div className="text-muted text-[0.7rem]">{note}</div>}
     </div>
   )
 }
@@ -64,14 +65,39 @@ const runSig = (r) => {
   return `v2:${q.length}:${pair(q[0])}:${pair(q[q.length - 1])}`
 }
 
-// The stat being compared, in the reader's language ("Premier League appearances").
-const statName = (t, m) => (m ? t(`higherlower.stats.${m.id}`) : '')
+// The stat being compared, in the reader's language ("Premier League appearances",
+// "Premier League goals for Arsenal").
+const statName = (t, m) => {
+  if (!m) return ''
+  if (m.group === 'club') return t('higherlower.clubStat', { stat: t(`higherlower.stats.${m.base}`), club: m.club })
+  return t(`higherlower.stats.${m.id}`)
+}
 
-// Stat picker rows: one per competition, goals beside appearances/caps.
+// How a number reads: fees are € millions, everything else a plain count.
+const formatter = (t, m) => (m?.kind === 'fee' ? (v) => t('higherlower.fee', { v }) : String)
+
+// The small print under a revealed number: when a season best happened, what
+// a fee actually was before inflation.
+function noteFor(t, m, p) {
+  if (!m || p?.extra == null) return null
+  if (m.kind === 'season') return t('higherlower.inSeason', { season: `${p.extra}/${String(p.extra + 1).slice(2)}` })
+  if (m.kind === 'fee') return t('higherlower.paid', { fee: t('higherlower.fee', { v: p.extra[0] }), year: p.extra[1] })
+  return null
+}
+
+// Stat picker rows: one per competition — career goals, appearances/caps, then
+// the single-season best — followed by transfer fees and the clubs.
 const COMP_ORDER = ['Premier League', 'Champions League', 'International', 'La Liga', 'Serie A', 'Bundesliga', 'Ligue 1']
+const KIND_ORDER = { goals: 0, apps: 1, season: 2 }
 const STAT_GROUPS = COMP_ORDER
-  .map(c => ({ competition: c, modes: STAT_MODES.filter(m => m.competition === c) }))
+  .map(c => ({ competition: c, modes: STAT_MODES.filter(m => m.competition === c && (m.group === 'career' || m.group === 'season')).sort((a, b) => KIND_ORDER[a.kind] - KIND_ORDER[b.kind]) }))
   .filter(g => g.modes.length)
+const TRANSFER_MODES = STAT_MODES.filter(m => m.group === 'transfer')
+const CLUBS = COMP_ORDER.flatMap(c => {
+  const goals = STAT_MODES.filter(m => m.group === 'club' && m.competition === c && m.kind === 'goals')
+  return goals.map(g => ({ club: g.club, competition: c, modes: [g, STAT_MODES.find(m => m.id === g.id.replace(/-goals$/, '-apps'))].filter(Boolean) }))
+})
+const COLS = { 1: 'grid-cols-1', 2: 'grid-cols-2', 3: 'grid-cols-3' }
 
 export default function HigherLower() {
   const { t } = useI18n()
@@ -87,6 +113,7 @@ export default function HigherLower() {
   const [current, setCurrent] = useState(() => run.questions[startQ].a)
   const [challenger, setChallenger] = useState(() => run.questions[startQ].b)
   const recent = useRef([])                                                   // unlimited: ids seen, for repeat avoidance
+  const [pickClub, setPickClub] = useState(null)                              // stat picker: expanded club
   const [streak, setStreak] = useState(() => saved?.streak ?? 0)
   const [trail, setTrail] = useState(() => saved?.trail ?? [])               // players you've moved past (the chain)
   const [best, setBest] = useState(() => Number((typeof localStorage !== 'undefined' && localStorage.getItem(BEST_KEY)) || 0))
@@ -195,6 +222,21 @@ export default function HigherLower() {
     /></div>
   )
 
+  const pickedClub = CLUBS.find(c => c.club === pickClub)
+  const btnLabel = (m) => {
+    if (m.id === 'intl-caps') return t('higherlower.caps')
+    if (m.kind === 'fee') return t('higherlower.recordFee')
+    if (m.kind === 'apps') return <><span className="sm:hidden">{t('higherlower.appsShort')}</span><span className="hidden sm:inline">{t('higherlower.apps')}</span></>
+    return t(`higherlower.${m.kind}`)
+  }
+  const statBtn = (m) => (
+    <button key={m.id} onClick={() => startMode(m)} aria-label={statName(t, m)}
+      className="bg-surface border border-border-strong hover:border-[color-mix(in_srgb,var(--accent)_55%,transparent)] rounded-lg px-2.5 sm:px-3 py-2 text-left transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-bright">
+      <div className="text-primary font-bold text-[0.8rem] sm:text-sm leading-tight">{btnLabel(m)}</div>
+      <div className="text-faint text-[0.65rem] tabular-nums">{t('higherlower.players', { n: m.size })}</div>
+    </button>
+  )
+
   // ── Stat-selection screen (Unlimited only) ────────────────────────
   if (!mode) {
     return (
@@ -209,18 +251,37 @@ export default function HigherLower() {
         <div className="w-full max-w-lg grid grid-cols-1 gap-2.5">
           {STAT_GROUPS.map(g => (
             <div key={g.competition} className="bg-card border border-border-strong rounded-xl px-3 py-2.5 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-              <div className="sm:w-36 shrink-0 pl-1 text-primary font-bold text-sm leading-tight">{t(`higherlower.comps.${g.competition}`)}</div>
-              <div className="flex-1 grid grid-cols-2 gap-2">
-                {g.modes.map(m => (
-                  <button key={m.id} onClick={() => startMode(m)} aria-label={statName(t, m)}
-                    className="bg-surface border border-border-strong hover:border-[color-mix(in_srgb,var(--accent)_55%,transparent)] rounded-lg px-3 py-2 text-left transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-bright">
-                    <div className="text-primary font-bold text-sm">{t(`higherlower.${m.id === 'intl-caps' ? 'caps' : m.kind}`)}</div>
-                    <div className="text-faint text-[0.65rem] tabular-nums">{t('higherlower.players', { n: m.size })}</div>
+              <div className="sm:w-32 shrink-0 pl-1 text-primary font-bold text-sm leading-tight">{t(`higherlower.comps.${g.competition}`)}</div>
+              <div className={`flex-1 grid ${COLS[g.modes.length]} gap-2`}>{g.modes.map(statBtn)}</div>
+            </div>
+          ))}
+          {TRANSFER_MODES.length > 0 && (
+            <div className="bg-card border border-border-strong rounded-xl px-3 py-2.5 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+              <div className="sm:w-32 shrink-0 pl-1 text-primary font-bold text-sm leading-tight">{t('higherlower.transfers')}</div>
+              <div className="flex-1 grid grid-cols-1 gap-2">{TRANSFER_MODES.map(statBtn)}</div>
+            </div>
+          )}
+          {CLUBS.length > 0 && (
+            <div className="bg-card border border-border-strong rounded-xl px-3 py-3">
+              <div className="pl-1 text-primary font-bold text-sm">{t('higherlower.clubs')}</div>
+              <div className="text-faint text-[0.65rem] pl-1 mb-2">{t('higherlower.clubsHint')}</div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
+                {CLUBS.map(c => (
+                  <button key={c.club} onClick={() => setPickClub(pickClub === c.club ? null : c.club)} aria-expanded={pickClub === c.club}
+                    className={`rounded-lg px-2.5 py-1.5 text-left text-[0.8rem] font-bold leading-tight border transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-bright ${
+                      pickClub === c.club ? 'border-[color-mix(in_srgb,var(--accent)_60%,transparent)] bg-surface text-primary' : 'border-border-strong bg-board text-secondary hover:text-primary'}`}>
+                    {c.club}
                   </button>
                 ))}
               </div>
+              {pickedClub && (
+                <div className="mt-2.5 clue-reveal">
+                  <div className="pl-1 text-faint text-[0.6rem] font-black uppercase tracking-[0.14em] mb-1.5">{pickedClub.club} · {t(`higherlower.comps.${pickedClub.competition}`)}</div>
+                  <div className="grid grid-cols-2 gap-2">{pickedClub.modes.map(statBtn)}</div>
+                </div>
+              )}
             </div>
-          ))}
+          )}
         </div>
       </div>
       </div>
@@ -231,6 +292,7 @@ export default function HigherLower() {
   const inDaily = dailyMode === 'daily' || qa.active // QA previews a daily run
   const total = run.questions.length
   const label = statName(t, mode)
+  const fmt = formatter(t, mode)
   const shownTrail = trail.slice(-4)
 
   return (
@@ -279,7 +341,7 @@ export default function HigherLower() {
             {shownTrail.map((p, i) => (
               <span key={i} className="flex items-center gap-1.5 shrink-0">
                 <span className="text-center text-[0.6rem] font-bold text-secondary bg-surface border border-success/40 rounded-lg px-2 py-1 leading-tight">
-                  {p.name.split(' ').pop()}<br /><i className="not-italic text-success-bright font-mono">{p.value}</i>
+                  {p.name.split(' ').pop()}<br /><i className="not-italic text-success-bright font-mono">{fmt(p.value)}</i>
                 </span>
                 <i className="w-3 h-0.5 bg-success/50 shrink-0" aria-hidden="true" />
               </span>
@@ -298,11 +360,13 @@ export default function HigherLower() {
 
         {/* The duel */}
         <div className="flex gap-3 items-stretch">
-          <PlayerCard player={current} statLabel={label} showValue />
+          <PlayerCard player={current} statLabel={label} showValue format={fmt} note={noteFor(t, mode, current)} />
           <div className="flex items-center text-faint font-black text-sm" aria-hidden="true">VS</div>
           <PlayerCard
             player={challenger}
             statLabel={phase === 'playing' ? t('higherlower.moreOrFewer') : label}
+            format={fmt}
+            note={noteFor(t, mode, challenger)}
             showValue={phase !== 'playing'}
             mystery
             revealTone={phase !== 'playing' ? (lastCorrect ? 'text-success-bright' : 'text-danger-bright') : null}
@@ -334,7 +398,7 @@ export default function HigherLower() {
           <div className="flex flex-col items-center gap-3 text-center pt-1">
             <div>
               <p className="text-danger-bright font-black tracking-[0.06em]">{t('higherlower.gameOver')} · 🔥 {streak}</p>
-              <p className="text-secondary text-sm mt-1">{t('higherlower.scoredLine', { name: challenger.name, value: challenger.value, label })}</p>
+              <p className="text-secondary text-sm mt-1">{t('higherlower.scoredLine', { name: challenger.name, value: fmt(challenger.value), label })}</p>
             </div>
             <div className="flex gap-3">
               <button onClick={() => startMode(mode)} className="bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-xl px-6 py-3 transition-colors">{t('higherlower.playAgain')}</button>
@@ -360,7 +424,7 @@ export default function HigherLower() {
             {dailyMode === 'unlimited' && streak >= best && streak > 0 && <span className="text-warn normal-case tracking-normal">{t('higherlower.newBest')}</span>}
           </p>
           {!dailyCleared && (
-            <p className="text-secondary text-sm mb-2">{t('higherlower.scoredLine', { name: challenger.name, value: challenger.value, label })}</p>
+            <p className="text-secondary text-sm mb-2">{t('higherlower.scoredLine', { name: challenger.name, value: fmt(challenger.value), label })}</p>
           )}
           <ShareCard
             text={[
