@@ -13,6 +13,7 @@
 
 import { membersOf, notableMembersOf, getPlayer, CATEGORY_KEYS } from './canonical/facts.js'
 import { resolveAgainst, normalize } from './canonical/resolve.js'
+import { matchdayIndex } from '../utils/matchday.js'
 
 export { CLUB_LEAGUE } from './canonical/facts.js'
 
@@ -134,8 +135,7 @@ export function getGridForDay(dayIndex) {
 }
 
 export function getDailyGrid() {
-  const now = new Date()
-  const dayIndex = Math.floor((now.getTime() - now.getTimezoneOffset() * 60000) / 86400000)
+  const dayIndex = matchdayIndex() // UK-time matchday, the same for every visitor
   return getGridForDay(dayIndex)
 }
 

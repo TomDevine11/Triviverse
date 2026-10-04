@@ -18,6 +18,7 @@ import { resolveRoster, statLabel, titleFor } from './spec.js'
 import { checkoutCombos, maxDisjoint, SOLO_MIN_COMBOS } from './checkout.js'
 import { normalize, surnameKeys } from '../canonical/normalize.js'
 import curatedDaily from './daily.curated.generated.json'
+import { matchdayIndex } from '../../utils/matchday.js'
 
 // Internal player id → Transfermarkt id (the key 501 rosters use). Since the
 // canonical id IS tm:<tmId> (RFC-001 Phase A), the tm id is a pure prefix strip —
@@ -212,8 +213,7 @@ const DAILY_SEQUENCE = CURATED_SEQUENCE.length
   : (DAILY_POOL.length ? spreadByShape(DAILY_POOL) : CATALOG)
 
 export function getDailyEntry() {
-  const now = new Date()
-  const day = Math.floor((now.getTime() - now.getTimezoneOffset() * 60000) / 86400000)
+  const day = matchdayIndex() // UK-time matchday, the same for every visitor
   return DAILY_SEQUENCE[((day % DAILY_SEQUENCE.length) + DAILY_SEQUENCE.length) % DAILY_SEQUENCE.length]
 }
 export const getDailyChallenge = () => makeChallenge(getDailyEntry())

@@ -9,6 +9,7 @@ import { getFlagFromNationality } from '../utils/flags.js'
 import { isSeniorTeam } from './teamFilter.js'
 import { resolveNameToId } from './canonical/resolve.js'
 import { fixName } from './canonical/nameFixes.js'
+import { matchdayIndex } from '../utils/matchday.js'
 
 export { matchesTarget } from './guessMatch.js'
 
@@ -77,7 +78,6 @@ export function getTargetForDay(dayIndex) {
 }
 
 export function getDailyTarget() {
-  const now = new Date()
-  const dayIndex = Math.floor((now.getTime() - now.getTimezoneOffset() * 60000) / 86400000)
+  const dayIndex = matchdayIndex() // UK-time matchday, the same for every visitor
   return getTargetForDay(dayIndex)
 }

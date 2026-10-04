@@ -8,6 +8,7 @@
 // TicTacToe lesson: guarantee solvability, never ship an ambiguous board).
 
 import { membersOf, getPlayer, CATEGORY_KEYS } from './canonical/facts.js'
+import { matchdayIndex } from '../utils/matchday.js'
 
 // Only use genuinely well-known players (canonical recognisability score 0-100,
 // recency-first contemporary recognisability — RFC-001, replaced Wikipedia count).
@@ -83,8 +84,7 @@ export function shuffleNames(arr) {
 }
 
 export function getDailyConnections() {
-  const now = new Date()
-  const dayIndex = Math.floor((now.getTime() - now.getTimezoneOffset() * 60000) / 86400000)
+  const dayIndex = matchdayIndex() // UK-time matchday, the same for every visitor
   return getConnectionsForDay(dayIndex)
 }
 

@@ -13,6 +13,7 @@
 //   • matchday points — see the tunable economy constants below
 
 import { track } from '../utils/analytics'
+import { matchdayIndex } from '../utils/matchday.js'
 
 const KEY = 'ftg-stats-v1'
 const VISIT_KEY = 'ftg-visits-v1'
@@ -29,8 +30,7 @@ export const PTS_STREAK_CAP = 25 //    …capped here
 export const PERFECT_MULT = 2 //       clearing all eight doubles the whole day
 
 export function todayIndex() {
-  const now = new Date()
-  return Math.floor((now.getTime() - now.getTimezoneOffset() * 60000) / 86400000)
+  return matchdayIndex() // UK-time matchday, the same for every visitor
 }
 
 // Matchday 1 = site launch day. Every visitor worldwide shares today's number.

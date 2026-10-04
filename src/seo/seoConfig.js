@@ -72,7 +72,7 @@ const BASE_ROUTES = [
     faq: [
       { q: 'What is Triviverse?', a: 'Triviverse is a free collection of daily football quiz games — including Football Wordle, Football Tic-Tac-Toe, Football Tenable and Guess the Player — playable in your browser with no sign-up.' },
       { q: 'Are the games free to play?', a: 'Yes. Every game is completely free, runs in your browser, and needs no account or download.' },
-      { q: 'Do new puzzles appear every day?', a: 'Yes. The daily games refresh at local midnight, and the guessing and 1v1 modes can be replayed as often as you like.' },
+      { q: 'Do new puzzles appear every day?', a: 'Yes. The daily games refresh at midnight UK time — the same new matchday for everyone, wherever they are — and the guessing and 1v1 modes can be replayed as often as you like.' },
       { q: 'Can I play more than once a day?', a: 'Yes — most games have an Unlimited mode for endless practice alongside the once-a-day Daily challenge, and the 1v1 and guessing modes can be replayed any time.' },
       { q: 'Can I play on my phone?', a: 'Yes. Every game works in any mobile or desktop browser, with no app to install.' },
     ],
@@ -115,7 +115,7 @@ const BASE_ROUTES = [
     faq: [
       { q: 'What is Football Wordle?', a: "Football Wordle is a daily word game where you guess a famous footballer's surname in six tries, using green and yellow colour clues just like Wordle." },
       { q: 'How many guesses do I get?', a: 'You get six guesses to find the footballer’s surname.' },
-      { q: 'Does the footballer change every day?', a: 'Yes — a new footballer is selected each day and refreshes at local midnight.' },
+      { q: 'Does the footballer change every day?', a: 'Yes — a new footballer is selected each day and refreshes at midnight UK time.' },
       { q: 'Is Football Wordle the same as Footdle?', a: "Yes — Football Wordle is a footballer Wordle, sometimes searched as Footdle or soccer Wordle: guess the mystery footballer's surname in six tries using green and yellow letter clues." },
       { q: "How do I see today's Football Wordle answer?", a: "Today's answer is revealed the moment you finish the daily game — whether you solve it or use all six guesses. If you would rather not wait, Unlimited mode gives you a new footballer to guess instantly." },
       { q: 'Is there a Daily and an Unlimited mode?', a: 'Yes. Daily gives everyone the same footballer each day and tracks your win streak; Unlimited serves random players for endless practice without affecting your stats.' },
@@ -776,7 +776,7 @@ const BASE_ROUTES = [
       {
         h2: 'Daily card, or unlimited practice',
         body: [
-          'The daily card is the same twelve squares and the same deal for everyone, so a score is worth comparing \u2014 it locks once you finish it, records your streak, and resets at midnight. Unlimited generates a fresh card on demand, as many as you like, and never touches your stats. Both are free and neither needs an account.',
+          'The daily card is the same twelve squares and the same deal for everyone, so a score is worth comparing \u2014 it locks once you finish it, records your streak, and resets at midnight UK time. Unlimited generates a fresh card on demand, as many as you like, and never touches your stats. Both are free and neither needs an account.',
         ],
       },
       {

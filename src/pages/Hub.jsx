@@ -19,6 +19,7 @@ import { rivalsOn } from '../social/challenge'
 import { resultFor, playedDays } from '../social/log'
 import { scoreLabel } from '../social/scoring'
 import { BADGES, loadBadges, nextBadge } from '../social/badges'
+import { msUntilNextMatchday } from '../utils/matchday.js'
 
 // "The Title Race" hub (2026-10): the eleven dailies on the left, the
 // competition — your league chase, world rank, dressing room — in a rail on
@@ -41,10 +42,9 @@ const GAMES = [
 
 const shortName = (t, id) => t(`games.${id}.title`).replace(/^Football /, '').replace(/ de Fútbol$/, '')
 
-// hh:mm until local midnight, when the dailies refresh.
+// hh:mm until the next matchday (midnight UK time), when the dailies refresh.
 function untilMidnight() {
-  const now = new Date()
-  const mins = 24 * 60 - (now.getHours() * 60 + now.getMinutes())
+  const mins = Math.ceil(msUntilNextMatchday() / 60000)
   return `${String(Math.floor(mins / 60)).padStart(2, '0')}:${String(mins % 60).padStart(2, '0')}`
 }
 
