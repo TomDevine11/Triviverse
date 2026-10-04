@@ -59,6 +59,7 @@ export const DERIVED_INTERNAL = [
 // DERIVED: reshaped projections of the canonical model — what games consume.
 export const DERIVED = [
   'canonical/stats.generated.json',
+  'higherlower.generated.json', // slim fame-gated Higher or Lower pools (build-leaderboards)
   'tenable.generated.json',
   'tenable.daily.generated.json',
   'football501/catalog.generated.json',
