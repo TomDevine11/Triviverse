@@ -2,8 +2,12 @@
 // time and you place each into a square whose category they satisfy. It is
 // played against the clock: TIME_LIMIT_S to fill all twelve, unlimited skips (a
 // skipped player goes to the back of the queue), and a wrong placement costs
-// WRONG_PENALTY_S seconds rather than a life — so one mistake can never make the
-// card impossible, it just makes it harder.
+// WRONG_PENALTY_S seconds and moves you on to the next player — so one mistake
+// can never make the card impossible, it just costs time.
+//
+// DECOYS are dealt among the real candidates: well-known players who fit none of
+// the twelve squares. Spotting one and skipping it is the skill; a skipped decoy
+// is discarded (it never comes round again), a placed one costs time.
 //
 // The mechanic is the INVERSE of TicTacToe: there you are given a square and
 // must supply a player, here you are given a player and must choose the square.
@@ -25,12 +29,12 @@
 // because skipped players come back round, a square only becomes unfillable if
 // every one of its candidates has been spent elsewhere.
 
-import { membersOf, getPlayer, CATEGORY_KEYS } from './canonical/facts.js'
+import { membersOf, getPlayer, allPlayers, CATEGORY_KEYS } from './canonical/facts.js'
 
 export const COLS = 3
 export const ROWS = 4
 export const CARD_SIZE = COLS * ROWS   // 12
-export const TIME_LIMIT_S = 180   // three minutes to fill the card
+export const TIME_LIMIT_S = 120   // two minutes to fill the card
 export const WRONG_PENALTY_S = 10 // a wrong square costs time, not a life
 
 // Same threshold Connections uses for "genuinely well-known".
@@ -42,6 +46,12 @@ const MIN_STARS = 6
 // cycles, so a deeper deal costs nothing in length — it is what keeps every
 // square fillable after a greedy placement spends a player elsewhere.
 const PER_SQUARE = 5
+// Decoys per card. ~60 real candidates are dealt but a card is usually won after
+// seeing 15–25 of them, so 20 decoys means roughly one player in four is a trap.
+const DECOYS = 20
+// Decoys must be easy to recognise as fitting nothing — a household name, so
+// skipping one is knowledge rather than a guess about someone obscure.
+const DECOY_FAME = 70
 // Leagues are enormous (Premier League alone has ~944 recognisable members), so
 // almost any player satisfies one. More than a single league square and the card
 // stops asking a real question.
@@ -126,12 +136,23 @@ function buildDeal(squares, rng) {
       deal.push(candidate)
     }
   }
+  // Decoys: famous players who qualify for none of the twelve squares (broad
+  // membership, so a decoy can never be a square the player could argue for).
+  const decoyPool = shuffle(allPlayers().filter(p => p.fame >= DECOY_FAME && !seen.has(p.id)), rng)
+  let decoys = 0
+  for (const p of decoyPool) {
+    if (decoys >= DECOYS) break
+    if (squares.some(sq => qualifies(p.id, sq))) continue
+    deal.push({ ...p, decoy: true })
+    decoys++
+  }
   return shuffle(deal, rng).map(p => ({
     id: p.id,
     name: p.displayName,
     // Every square this player can legally fill — computed once so the UI never
-    // has to touch the fact tables mid-game.
-    fits: squares.reduce((acc, sq, i) => (qualifies(p.id, sq) ? [...acc, i] : acc), []),
+    // has to touch the fact tables mid-game. Empty for a decoy.
+    fits: p.decoy ? [] : squares.reduce((acc, sq, i) => (qualifies(p.id, sq) ? [...acc, i] : acc), []),
+    ...(p.decoy ? { decoy: true } : {}),
   }))
 }
 
@@ -155,11 +176,19 @@ export function getBingoForDay(dayIndex) {
   throw new Error('Could not generate a Football Bingo card')
 }
 
-// The live queue: skipped players go to the back; players who can no longer
-// fill any open square drop out (they would only ever be skipped). `queue` is a
-// list of deal indices, `placed` the per-square fill state.
+// The live queue: skipped players go to the back; real players who can no
+// longer fill any open square drop out (they would only ever be skipped).
+// Decoys stay until they are dealt with. `queue` is a list of deal indices,
+// `placed` the per-square fill state.
 export function pruneQueue(queue, deal, placed) {
-  return queue.filter(i => deal[i].fits.some(sq => !placed[sq]))
+  return queue.filter(i => deal[i].decoy || deal[i].fits.some(sq => !placed[sq]))
+}
+
+// Moving on from the player in hand (queue[0]) — after a skip or a wrong square.
+// A real player goes to the back to come round again; a decoy is discarded.
+export function moveOn(queue, deal, placed) {
+  const [head, ...rest] = queue
+  return pruneQueue(deal[head]?.decoy ? rest : [...rest, head], deal, placed)
 }
 
 // Squares that nobody left in the queue can fill — non-empty means the card
