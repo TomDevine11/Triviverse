@@ -127,6 +127,7 @@ export function LeaguesIndex() {
 // Shared with /world. Rows: { rank, name, played, wins, perfect, pts, you, tied? }
 // — a null name shows as Anonymous; a { gap: true } row draws a "…" separator.
 export function Table({ rows, t, locale, showPerfect = true }) {
+  const { lp } = useI18n()
   return (
     <table className="w-full text-sm tabular-nums">
       <thead>
@@ -149,6 +150,12 @@ export function Table({ rows, t, locale, showPerfect = true }) {
             </td>
             <td className="px-2 py-2.5 font-bold text-primary">
               {r.name ?? <span className="text-muted font-semibold">{t('social.world.anonymous')}</span>}{r.you && <span className="ml-1.5 text-[0.55rem] font-black tracking-[0.12em] uppercase text-brand-bright">{t('social.leagues.you')}</span>}
+              {/* Only on your own row, only while you're Anonymous: the shortest path to a name. */}
+              {r.you && !r.name && (
+                <Link to={lp('/me?name=1')} className="block sm:inline sm:ml-1.5 text-[0.66rem] font-semibold text-brand-bright hover:text-brand underline-offset-2 hover:underline whitespace-nowrap">
+                  ({t('social.world.setNick')})
+                </Link>
+              )}
             </td>
             <td className="px-2 py-2.5 text-center text-secondary">{r.played}</td>
             <td className="px-2 py-2.5 text-center text-secondary">{r.wins}</td>
