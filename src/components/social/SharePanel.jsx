@@ -37,7 +37,7 @@ export function ShareIcon({ className = 'w-4 h-4' }) {
   )
 }
 
-export function NameField({ onSaved, compact = false }) {
+export function NameField({ onSaved, compact = false, autoFocus = false }) {
   const { t } = useI18n()
   const [name, setName] = useState(nickname())
   const [saved, setSaved] = useState(false)
@@ -51,7 +51,7 @@ export function NameField({ onSaved, compact = false }) {
   }
   return (
     <form className="w-full flex gap-2" onSubmit={e => { e.preventDefault(); save() }}>
-      <input value={name} onChange={e => setName(e.target.value)} maxLength={20}
+      <input value={name} onChange={e => setName(e.target.value)} maxLength={20} autoFocus={autoFocus}
         placeholder={t('social.me.nicknamePh')} aria-label={t('social.me.nickname')}
         className={`flex-1 min-w-0 bg-board border border-border-strong rounded-lg px-3 text-body-lg sm:text-sm text-primary placeholder:text-faint focus:outline-none focus:border-brand ${compact ? 'h-9' : 'h-11'}`} />
       <button type="submit" className={`${btn} px-4 ${compact ? 'h-9' : 'h-11'}`}>{saved ? t('social.me.saved') : t('social.me.save')}</button>

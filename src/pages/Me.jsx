@@ -311,6 +311,7 @@ function DemoSeed() {
 export default function Me() {
   const { t, lp, locale } = useI18n()
   const { search } = useLocation()
+  const askName = new URLSearchParams(search).get('name') === '1'
   useSocialTick(TICK)
   useAppMeta(t('social.me.title'))
   const log = loadLog()
@@ -331,9 +332,10 @@ export default function Me() {
         </div>
 
         <div className="grid grid-cols-[minmax(0,1fr)] gap-4">
-          <Panel>
+          {/* /me?name=1 — arrived from "(set a nickname)" on a leaderboard: focus the field. */}
+          <Panel className={askName ? 'ring-1 ring-brand/60' : ''}>
             <Overline>{t('social.me.nickname')}</Overline>
-            <div className="mt-2"><NameField /></div>
+            <div className="mt-2"><NameField autoFocus={askName} /></div>
             <p className="text-[0.7rem] text-muted mt-2 mb-0">{t('social.me.nicknameHelp')}</p>
           </Panel>
 
