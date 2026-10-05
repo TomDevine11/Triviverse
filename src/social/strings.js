@@ -142,6 +142,7 @@ export const social = {
     },
     race: {
       title: 'Title race', dugout: 'Dugout', fullTable: 'Full table',
+      nameRank: 'You’re {rank} of {n} on today’s world table — add a name so it shows.', nameSaved: '✓ You’re on the table as {name}',
       kickNew: 'Football trivia · 11 new games every day', kickDefault: 'Football trivia · new games in {t}', kickDone: 'Matchday complete · next in {t}',
       complete: 'COMPLETE', ptsToday: '{n} pts today', winPts: 'Win = 25 pts · streaks add more', firstPts: 'Every daily scores points',
       next: 'NEXT UP', resume: 'RESUME', play: 'Play', resumeCta: 'Resume',
@@ -337,6 +338,7 @@ export const social = {
     },
     race: {
       title: 'La carrera por el título', dugout: 'Vestuario', fullTable: 'Clasificación',
+      nameRank: 'Vas {rank} de {n} en la clasificación mundial de hoy — ponte un nombre para que se vea.', nameSaved: '✓ Ya apareces en la tabla como {name}',
       kickNew: 'Trivia de fútbol · 11 juegos nuevos cada día', kickDefault: 'Trivia de fútbol · nuevos juegos en {t}', kickDone: 'Jornada completa · la próxima en {t}',
       complete: 'COMPLETA', ptsToday: '{n} pts hoy', winPts: 'Victoria = 25 pts · las rachas suman', firstPts: 'Cada diario suma puntos',
       next: 'SIGUIENTE', resume: 'CONTINUAR', play: 'Jugar', resumeCta: 'Continuar',
