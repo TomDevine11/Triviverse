@@ -1,5 +1,7 @@
 // The social half of a daily finish card (left column, under the verdict):
 //
+//   0. Name        — only while you're Anonymous and ranked: your world rank
+//                    with a name field ("3rd of 29 today — add a name")
 //   1. Streak      — matchday streak, countdown, Remind me (StreakReminder)
 //   2. Leagues     — every league, with how this result moved you ("6th → 4th")
 //   3. Head-to-head — the rival whose result you're answering (one line)
@@ -9,7 +11,7 @@
 // H2H; streak and share always work. finalizeResult (on mount) submits the
 // result, which is what moves the league rows.
 
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useI18n } from '../../i18n'
 import { finalizeResult } from '../../social/results'
@@ -20,10 +22,11 @@ import { compareResults, scoreLabel } from '../../social/scoring'
 import { getStreak } from '../../social/streak'
 import { VsIcon, TableIcon } from './bits'
 import StreakReminder from './StreakReminder'
-import { useLeagueImpact, chaseLine } from '../../social/leagues'
+import { useLeagueImpact, useWorldRank, chaseLine } from '../../social/leagues'
 import { apiDown } from '../../social/api'
 import { useSocialTick, ordinal } from './hooks'
-import SharePanel from './SharePanel'
+import SharePanel, { NameField } from './SharePanel'
+import { nickname } from '../../social/identity'
 
 function HeadToHead({ mine, rivals, t }) {
   if (!rivals.length) return null
@@ -96,12 +99,33 @@ function LeagueImpact({ leagues, t, lp, locale }) {
 
 const TICK = ['identity', 'result']
 
+// The moment a name matters most: you've just landed on the world table and
+// it shows you as Anonymous. Rendered only while that's true; after saving it
+// confirms once and the share panel's own (fallback) name field stays hidden.
+function NameForRank({ world, t, locale, onSaved }) {
+  const [saved, setSaved] = useState(null)
+  if (saved) return <p className="w-full m-0 text-center text-[0.78rem] font-bold text-success-bright">{t('social.race.nameSaved', { name: saved })}</p>
+  return (
+    <div className="w-full rounded-xl border border-brand/50 bg-brand-tint px-3 py-2.5">
+      <p className="m-0 mb-2 text-[0.8rem] text-primary leading-snug">
+        {t('social.race.nameRank', { rank: ordinal(world.rank, locale), n: world.players })}
+      </p>
+      <NameField compact onSaved={n => { if (n) { setSaved(n); onSaved?.() } }} />
+    </div>
+  )
+}
+
 export default function ResultSocial({ card }) {
   const { t, lp, locale } = useI18n()
   useSocialTick(TICK) // re-read the log when the submission lands; a typed name re-signs the link
   const mine = useMemo(() => ({ w: !!card.won, ...(card.score || {}) }), [card.won, card.score])
   const rivals = rivalsOn(card.matchday, card.gameId)
   const leagues = useLeagueImpact(card.gameId)
+  const world = useWorldRank()
+  // Decided when the card opens (not live), so the prompt survives the save and
+  // can confirm it rather than vanishing mid-click.
+  const [anonymous] = useState(() => !nickname())
+  const askForName = anonymous && world?.rank > 0
 
   useEffect(() => {
     finalizeResult(card)
@@ -121,10 +145,11 @@ export default function ResultSocial({ card }) {
 
   return (
     <div className="w-full flex flex-col items-center gap-2.5 mb-1">
+      {askForName && <NameForRank world={world} t={t} locale={locale} />}
       <StreakReminder />
       <LeagueImpact leagues={leagues} t={t} lp={lp} locale={locale} />
       <HeadToHead mine={mine} rivals={reply ? [reply] : rivals} t={t} />
-      <SharePanel game={card.gameId} url={url} imageCard={card} inline
+      <SharePanel game={card.gameId} url={url} imageCard={card} inline askName={!askForName}
         text={() => resultText({ title: card.title, matchday: card.matchday, result: mine, rows: card.rows, streak: getStreak().streak, url, locale, rival: rivalForText })} />
     </div>
   )
