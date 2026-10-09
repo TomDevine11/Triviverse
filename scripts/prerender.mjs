@@ -84,13 +84,13 @@ function crawlable(route, lang) {
     for (const it of route.itemList.items) h += `<li>${esc(it.text)}${it.detail ? ` — ${esc(it.detail)}` : ''}</li>`
     h += `</ul>`
   }
-  if (route.sections?.length) {
-    for (const s of route.sections) { h += `<h2>${esc(s.h2)}</h2>`; for (const p of s.body) h += `<p>${esc(p)}</p>` }
-  }
   if (route.howTo?.length) {
     h += `<h2>${esc(t('common.howToPlay', lang, { name: route.name }))}</h2><ol>`
     for (const s of route.howTo) h += `<li>${esc(s)}</li>`
     h += `</ol>`
+  }
+  if (route.sections?.length) {
+    for (const s of route.sections) { h += `<h2>${esc(s.h2)}</h2>`; for (const p of s.body) h += `<p>${esc(p)}</p>` }
   }
   if (route.faq?.length) {
     h += `<h2>${esc(t('common.faq', lang))}</h2><dl>`
