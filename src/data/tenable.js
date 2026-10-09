@@ -23,6 +23,17 @@ export const TENABLE_AS_OF = '2026-06-30'
 // `npm run build:tenable` whenever the fact tables refresh — no JSON by hand.
 export const TENABLE_QUESTIONS = generated.questions
 
+// All-time national record-holders who predate our league data (Shilton, Moore,
+// Eusébio…), so the guess box can suggest them. See scripts/build-tenable.mjs.
+const fold = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+const EXTRA = (generated.extraNames || []).map(name => ({ name, norm: fold(name) }))
+export function searchExtraNames(query, limit = 6) {
+  const q = fold(query.trim())
+  if (q.length < 2) return []
+  return EXTRA.filter(e => e.norm.split(' ').some(w => w.startsWith(q)) || e.norm.startsWith(q))
+    .slice(0, limit).map(e => ({ name: e.name }))
+}
+
 // Daily rotation only serves recognisable questions: every curated classic plus
 // the generated lists that cleared the build-time recognisability gate
 // (`daily`). This keeps Daily fair — no "name the exact top 10 obscure players"

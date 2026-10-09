@@ -16,6 +16,7 @@
     "growth-discover": "node scripts/seo/growth/discover.mjs",
     "scrape:pl-history": "node scripts/pl-history/scrape.mjs",
     "scrape:intl": "node scripts/pl-history/scrape-intl.mjs",
+    "scrape:intl-records": "node scripts/pl-history/scrape-intl-records.mjs",
     "build:intl": "node scripts/pl-history/build-intl.mjs",
     "scrape:transfers": "node scripts/pl-history/scrape-transfers.mjs",
     "build:transfers": "node scripts/build-transfers.mjs",

@@ -183,7 +183,7 @@ export const GUIDES = {
       'A well-travelled footballer is hidden. The first club of his career is shown, with the years he was there.',
       'Guess who he is. A wrong guess reveals the next club in his career, in order.',
       'Every mystery player has at least five senior clubs, and the whole career is shown by the end.',
-      'Name him within five guesses to win.',
+      'You get one guess per club in his career, so a ten-club journeyman gives you ten chances. Name him before the clubs run out.',
     ],
     sections: [
       {

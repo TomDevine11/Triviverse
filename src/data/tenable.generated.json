@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-23",
+    "generatedAt": "2026-10-09",
     "source": "transfermarkt (leagues + international), fun-gated recognisable top-10s",
     "floor": {
       "goals": 10,
@@ -67,15 +67,15 @@
         },
         {
           "rank": 8,
-          "text": "Patrick Vieira",
+          "text": "Kylian Mbappé",
           "detail": "107 caps",
           "value": 107
         },
         {
           "rank": 9,
-          "text": "Kylian Mbappé",
-          "detail": "106 caps",
-          "value": 106
+          "text": "Patrick Vieira",
+          "detail": "107 caps",
+          "value": 107
         },
         {
           "rank": 10,
@@ -100,8 +100,8 @@
         {
           "rank": 1,
           "text": "Kylian Mbappé",
-          "detail": "66 goals",
-          "value": 66
+          "detail": "67 goals",
+          "value": 67
         },
         {
           "rank": 2,
@@ -210,8 +210,8 @@
         {
           "rank": 7,
           "text": "Joshua Kimmich",
-          "detail": "114 caps",
-          "value": 114
+          "detail": "116 caps",
+          "value": 116
         },
         {
           "rank": 8,
@@ -228,8 +228,8 @@
         {
           "rank": 10,
           "text": "Jürgen Klinsmann",
-          "detail": "108 caps",
-          "value": 108
+          "detail": "107 caps",
+          "value": 107
         }
       ]
     },
@@ -248,68 +248,62 @@
         {
           "rank": 1,
           "text": "Harry Kane",
-          "detail": "121 caps",
-          "value": 121
+          "detail": "125 caps",
+          "value": 125
         },
         {
           "rank": 2,
+          "text": "Peter Shilton",
+          "detail": "125 caps",
+          "value": 125
+        },
+        {
+          "rank": 3,
           "text": "Wayne Rooney",
           "detail": "120 caps",
           "value": 120
         },
         {
-          "rank": 3,
+          "rank": 4,
           "text": "David Beckham",
           "detail": "115 caps",
           "value": 115
         },
         {
-          "rank": 4,
+          "rank": 5,
           "text": "Steven Gerrard",
           "detail": "114 caps",
           "value": 114
         },
         {
-          "rank": 5,
+          "rank": 6,
+          "text": "Bobby Moore",
+          "detail": "108 caps",
+          "value": 108
+        },
+        {
+          "rank": 7,
           "text": "Ashley Cole",
           "detail": "107 caps",
           "value": 107
         },
         {
-          "rank": 6,
-          "text": "Frank Lampard",
+          "rank": 8,
+          "text": "Billy Wright",
           "detail": "106 caps",
           "value": 106
         },
         {
-          "rank": 7,
-          "text": "Kyle Walker",
-          "detail": "96 caps",
-          "value": 96
-        },
-        {
-          "rank": 8,
-          "text": "John Stones",
-          "detail": "94 caps",
-          "value": 94
-        },
-        {
           "rank": 9,
-          "text": "Jordan Pickford",
-          "detail": "91 caps",
-          "value": 91
+          "text": "Bobby Charlton",
+          "detail": "106 caps",
+          "value": 106
         },
         {
           "rank": 10,
-          "text": "Bryan Robson",
-          "detail": "90 caps",
-          "value": 90
-        }
-      ],
-      "tieValue": 90,
-      "tiePool": [
-        {
-          "text": "Jordan Henderson"
+          "text": "Frank Lampard",
+          "detail": "106 caps",
+          "value": 106
         }
       ]
     },
@@ -328,8 +322,8 @@
         {
           "rank": 1,
           "text": "Harry Kane",
-          "detail": "85 goals",
-          "value": 85
+          "detail": "91 goals",
+          "value": 91
         },
         {
           "rank": 2,
@@ -339,51 +333,51 @@
         },
         {
           "rank": 3,
+          "text": "Bobby Charlton",
+          "detail": "49 goals",
+          "value": 49
+        },
+        {
+          "rank": 4,
           "text": "Gary Lineker",
           "detail": "48 goals",
           "value": 48
         },
         {
-          "rank": 4,
+          "rank": 5,
           "text": "Jimmy Greaves",
           "detail": "44 goals",
           "value": 44
         },
         {
-          "rank": 5,
+          "rank": 6,
           "text": "Michael Owen",
           "detail": "40 goals",
           "value": 40
         },
         {
-          "rank": 6,
+          "rank": 7,
+          "text": "Vivian Woodward",
+          "detail": "38 goals",
+          "value": 38
+        },
+        {
+          "rank": 8,
           "text": "Alan Shearer",
           "detail": "30 goals",
           "value": 30
         },
         {
-          "rank": 7,
-          "text": "Frank Lampard",
-          "detail": "29 goals",
-          "value": 29
-        },
-        {
-          "rank": 8,
-          "text": "David Platt",
-          "detail": "27 goals",
-          "value": 27
-        },
-        {
           "rank": 9,
-          "text": "Bryan Robson",
-          "detail": "26 goals",
-          "value": 26
+          "text": "Nat Lofthouse",
+          "detail": "30 goals",
+          "value": 30
         },
         {
           "rank": 10,
-          "text": "Peter Crouch",
-          "detail": "22 goals",
-          "value": 22
+          "text": "Tom Finney",
+          "detail": "30 goals",
+          "value": 30
         }
       ]
     },
@@ -414,26 +408,26 @@
         {
           "rank": 3,
           "text": "Romelu Lukaku",
-          "detail": "132 caps",
-          "value": 132
+          "detail": "135 caps",
+          "value": 135
         },
         {
           "rank": 4,
-          "text": "Toby Alderweireld",
+          "text": "Kevin De Bruyne",
           "detail": "127 caps",
           "value": 127
         },
         {
           "rank": 5,
-          "text": "Eden Hazard",
-          "detail": "126 caps",
-          "value": 126
+          "text": "Toby Alderweireld",
+          "detail": "127 caps",
+          "value": 127
         },
         {
           "rank": 6,
-          "text": "Kevin De Bruyne",
-          "detail": "124 caps",
-          "value": 124
+          "text": "Eden Hazard",
+          "detail": "126 caps",
+          "value": 126
         },
         {
           "rank": 7,
@@ -449,15 +443,15 @@
         },
         {
           "rank": 9,
-          "text": "Timmy Simons",
-          "detail": "94 caps",
-          "value": 94
+          "text": "Jan Ceulemans",
+          "detail": "96 caps",
+          "value": 96
         },
         {
           "rank": 10,
-          "text": "Youri Tielemans",
-          "detail": "90 caps",
-          "value": 90
+          "text": "Timmy Simons",
+          "detail": "94 caps",
+          "value": 94
         }
       ]
     },
@@ -476,14 +470,14 @@
         {
           "rank": 1,
           "text": "Romelu Lukaku",
-          "detail": "93 goals",
-          "value": 93
+          "detail": "94 goals",
+          "value": 94
         },
         {
           "rank": 2,
           "text": "Kevin De Bruyne",
-          "detail": "38 goals",
-          "value": 38
+          "detail": "40 goals",
+          "value": 40
         },
         {
           "rank": 3,
@@ -493,45 +487,45 @@
         },
         {
           "rank": 4,
+          "text": "Bernard Voorhoof",
+          "detail": "30 goals",
+          "value": 30
+        },
+        {
+          "rank": 5,
+          "text": "Paul Van Himst",
+          "detail": "30 goals",
+          "value": 30
+        },
+        {
+          "rank": 6,
           "text": "Marc Wilmots",
           "detail": "29 goals",
           "value": 29
         },
         {
-          "rank": 5,
+          "rank": 7,
+          "text": "Jef Mermans",
+          "detail": "28 goals",
+          "value": 28
+        },
+        {
+          "rank": 8,
           "text": "Michy Batshuayi",
           "detail": "27 goals",
           "value": 27
         },
         {
-          "rank": 6,
-          "text": "Wesley Sonck",
-          "detail": "24 goals",
-          "value": 24
-        },
-        {
-          "rank": 7,
-          "text": "Marc Degryse",
-          "detail": "23 goals",
-          "value": 23
-        },
-        {
-          "rank": 8,
-          "text": "Dries Mertens",
-          "detail": "21 goals",
-          "value": 21
-        },
-        {
           "rank": 9,
-          "text": "Erwin Vandenbergh",
-          "detail": "20 goals",
-          "value": 20
+          "text": "Raymond Braine",
+          "detail": "26 goals",
+          "value": 26
         },
         {
           "rank": 10,
-          "text": "Emile Mpenza",
-          "detail": "19 goals",
-          "value": 19
+          "text": "Robert De Veen",
+          "detail": "26 goals",
+          "value": 26
         }
       ]
     },
@@ -597,15 +591,15 @@
         },
         {
           "rank": 9,
-          "text": "Johan Cruyff",
+          "text": "Abe Lenstra",
           "detail": "33 goals",
           "value": 33
         },
         {
           "rank": 10,
-          "text": "Wesley Sneijder",
-          "detail": "31 goals",
-          "value": 31
+          "text": "Johan Cruyff",
+          "detail": "33 goals",
+          "value": 33
         }
       ]
     },
@@ -624,8 +618,8 @@
         {
           "rank": 1,
           "text": "Cristiano Ronaldo",
-          "detail": "233 caps",
-          "value": 233
+          "detail": "234 caps",
+          "value": 234
         },
         {
           "rank": 2,
@@ -648,8 +642,8 @@
         {
           "rank": 5,
           "text": "Bernardo Silva",
-          "detail": "113 caps",
-          "value": 113
+          "detail": "115 caps",
+          "value": 115
         },
         {
           "rank": 6,
@@ -671,21 +665,15 @@
         },
         {
           "rank": 9,
-          "text": "Bruno Alves",
-          "detail": "96 caps",
-          "value": 96
+          "text": "Bruno Fernandes",
+          "detail": "97 caps",
+          "value": 97
         },
         {
           "rank": 10,
-          "text": "Bruno Fernandes",
-          "detail": "94 caps",
-          "value": 94
-        }
-      ],
-      "tieValue": 94,
-      "tiePool": [
-        {
-          "text": "Rui Costa"
+          "text": "Bruno Alves",
+          "detail": "95 caps",
+          "value": 95
         }
       ]
     },
@@ -710,8 +698,8 @@
         {
           "rank": 2,
           "text": "Ricardo Rodríguez",
-          "detail": "144 caps",
-          "value": 144
+          "detail": "148 caps",
+          "value": 148
         },
         {
           "rank": 3,
@@ -745,13 +733,13 @@
         },
         {
           "rank": 8,
-          "text": "Johann Vogel",
-          "detail": "94 caps",
-          "value": 94
+          "text": "Remo Freuler",
+          "detail": "98 caps",
+          "value": 98
         },
         {
           "rank": 9,
-          "text": "Remo Freuler",
+          "text": "Johann Vogel",
           "detail": "94 caps",
           "value": 94
         },
@@ -778,8 +766,8 @@
         {
           "rank": 1,
           "text": "Lionel Messi",
-          "detail": "207 caps",
-          "value": 207
+          "detail": "208 caps",
+          "value": 208
         },
         {
           "rank": 2,
@@ -802,14 +790,14 @@
         {
           "rank": 5,
           "text": "Nicolás Otamendi",
-          "detail": "139 caps",
-          "value": 139
+          "detail": "140 caps",
+          "value": 140
         },
         {
           "rank": 6,
           "text": "Roberto Ayala",
-          "detail": "115 caps",
-          "value": 115
+          "detail": "114 caps",
+          "value": 114
         },
         {
           "rank": 7,
@@ -852,26 +840,26 @@
         {
           "rank": 1,
           "text": "Lionel Messi",
-          "detail": "125 goals",
-          "value": 125
+          "detail": "126 goals",
+          "value": 126
         },
         {
           "rank": 2,
           "text": "Gabriel Batistuta",
-          "detail": "55 goals",
-          "value": 55
+          "detail": "56 goals",
+          "value": 56
         },
         {
           "rank": 3,
-          "text": "Sergio Agüero",
-          "detail": "41 goals",
-          "value": 41
+          "text": "Lautaro Martínez",
+          "detail": "42 goals",
+          "value": 42
         },
         {
           "rank": 4,
-          "text": "Lautaro Martínez",
-          "detail": "40 goals",
-          "value": 40
+          "text": "Sergio Agüero",
+          "detail": "42 goals",
+          "value": 42
         },
         {
           "rank": 5,
@@ -900,14 +888,14 @@
         {
           "rank": 9,
           "text": "Daniel Passarella",
-          "detail": "22 goals",
-          "value": 22
+          "detail": "21 goals",
+          "value": 21
         },
         {
           "rank": 10,
-          "text": "Mario Kempes",
-          "detail": "20 goals",
-          "value": 20
+          "text": "Leopoldo Luque",
+          "detail": "21 goals",
+          "value": 21
         }
       ]
     },
@@ -1030,8 +1018,8 @@
         {
           "rank": 6,
           "text": "Mikel Oyarzabal",
-          "detail": "30 goals",
-          "value": 30
+          "detail": "31 goals",
+          "value": 31
         },
         {
           "rank": 7,
@@ -1178,8 +1166,8 @@
         {
           "rank": 6,
           "text": "Marquinhos",
-          "detail": "110 caps",
-          "value": 110
+          "detail": "112 caps",
+          "value": 112
         },
         {
           "rank": 7,
@@ -7539,5 +7527,85 @@
         }
       ]
     }
+  ],
+  "extraNames": [
+    "Abe Lenstra",
+    "Ademir",
+    "Alfred Bickel",
+    "Beat Sutter",
+    "Bernard Voorhoof",
+    "Billy Wright",
+    "Bobby Charlton",
+    "Bobby Moore",
+    "Charles Antenen",
+    "Claudio Sulser",
+    "Djalma Santos",
+    "Domingo Tarasconi",
+    "Edmund Conen",
+    "Ernst Lehner",
+    "Eugène Maës",
+    "Eusébio",
+    "Franjo Wölfl",
+    "Fritz Künzli",
+    "Fritz Walter",
+    "Geoff Hurst",
+    "Georges Aeby",
+    "Gilmar",
+    "Giorgian de Arrascaeta",
+    "Herminio Masantonio",
+    "Héctor Castro",
+    "Jair",
+    "Jan Ceulemans",
+    "Javier Ambrois",
+    "Jean Capelle",
+    "Jef Mermans",
+    "Josef Hügi",
+    "José Manuel Moreno",
+    "José Pedro Cea",
+    "José Sanfilippo",
+    "José Torres",
+    "Kick Smit",
+    "Lauro Amadò",
+    "Leen Vente",
+    "Leopoldo Luque",
+    "Leônidas",
+    "Martin Peters",
+    "Matateu",
+    "Max Abegglen",
+    "Mick Channon",
+    "Nat Lofthouse",
+    "Nené",
+    "Nicolás Falero",
+    "Norberto Méndez",
+    "Omar Oreste Corbatta",
+    "Oscar Míguez",
+    "Paul Nicolas",
+    "Paul Van Den Berg",
+    "Paul Van Himst",
+    "Pedro Rocha",
+    "Pelé",
+    "Peter Shilton",
+    "Peyroteo",
+    "Pol Anoul",
+    "Raoul Lambert",
+    "Raymond Braine",
+    "Richard Hofmann",
+    "Rik Coppens",
+    "Rivellino",
+    "Robert Ballamann",
+    "Robert De Veen",
+    "Severino Minelli",
+    "Severino Varela",
+    "Stan Mortensen",
+    "Steve Bloomer",
+    "Tom Finney",
+    "Tommy Lawton",
+    "Tonny van der Linden",
+    "Tostão",
+    "Vivian Woodward",
+    "Wim Tap",
+    "Zizinho",
+    "Ángel Labruna",
+    "Ángel Romano"
   ]
 }
