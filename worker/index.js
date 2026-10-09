@@ -14,7 +14,7 @@ import { handleOg, handleShare, handleShortLink } from './og.js'
 
 // App routes that exist only client-side. They are noindex app screens, so
 // they get a bare SPA shell rather than a prerendered page.
-const APP_ROUTE = /^\/(es\/)?(me|leagues|world)(\/.*)?$/
+const APP_ROUTE = /^\/(me|leagues|world)(\/.*)?$/
 
 async function lookupLeague(env, code) {
   if (!env.DB) return null

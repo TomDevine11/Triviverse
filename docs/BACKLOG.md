@@ -260,3 +260,19 @@ leaderboards and come-back-tomorrow stats; all of it is on `feat/social-retentio
 | B-029 | Social layer: challenges, text share, streak freezes, badges, reminders, leagues, percentiles, device transfer, same-origin share images | user-facing | fixes dead share links; first virality + retention loops | GA4 | L | P0 | built, awaiting review |
 | B-030 | Privacy policy line for device id / nickname / scores (needed before leagues go live) | legal | required | — | S | P0 | Tom's call |
 | B-031 | Create the production D1 database + apply migrations | infra | leagues/percentiles need it | — | S | P0 | blocked on B-029 review |
+
+## AdSense "low-value content" — 2026-10-09
+
+**Finding:** AdSense rejected the site on 2026-10-06 ("Needs attention: Low-value content").
+The crawl had about 42 sitemap URLs, but only 11 were real product. The rest were thin or
+duplicate pages: /es translations, six /answers archives that were just name lists,
+programmatic "players who played for X and Y" pairs (0 clicks in 90 days, B-022),
+/england-football-quiz and a second 501 entry at /build-your-own-football-darts. The games
+themselves carried 265–730 words each, mostly templated how-to and FAQ text. Tom's scope:
+keep the 11 games, the hub, the leaderboards, leagues and the dugout; everything else can go.
+
+| ID | Title | Class | Value | Source | Effort | Priority | Status |
+|----|-------|-------|-------|--------|--------|----------|--------|
+| B-032 | Retire thin/duplicate pages: 301 every /es, /answers, pair, themed and build-your-own URL to the nearest game (`_redirects` from scripts/cloudflare-pages.mjs); English-only sitemap of 12 pages + 4 trust pages | user-facing | removes ~30 low-value URLs from the review surface | adsense | S | P0 | in-progress |
+| B-033 | Rewrite every game page and the hub with substantial, original, game-specific guides (worked example, scoring detail, strategy, where the data comes from); deepen About and Contact | user-facing | the actual "value" AdSense measures | adsense | M | P0 | todo |
+| B-034 | Tom: after both ship and Google has recrawled (~1–2 weeks), click "Request review" in AdSense. Ads stay OFF until approval | monetisation | approval | adsense | S | P0 | blocked-on-tom |

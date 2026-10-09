@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import Seo from '../seo/Seo'
 import BrandMark from '../components/BrandMark'
 import GameMotif from '../components/GameMotif'
-import LanguageSwitcher from '../components/LanguageSwitcher'
 import AdSlot from '../ads/AdSlot'
 import { routeByPath } from '../seo/seoConfig'
 import { useI18n } from '../i18n'
@@ -350,7 +349,6 @@ export default function Hub() {
               {streak.streak > 0 && <b className="inline-flex items-center gap-0.5 text-warn text-[0.8rem] tracking-normal"><FlameIcon className="w-3 h-3" />{streak.streak}</b>}
               <span className="hidden sm:inline">{t('social.race.dugout')}</span>
             </Link>
-            <LanguageSwitcher />
           </div>
         </div>
 
