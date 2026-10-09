@@ -274,5 +274,10 @@ keep the 11 games, the hub, the leaderboards, leagues and the dugout; everything
 | ID | Title | Class | Value | Source | Effort | Priority | Status |
 |----|-------|-------|-------|--------|--------|----------|--------|
 | B-032 | Retire thin/duplicate pages: 301 every /es, /answers, pair, themed and build-your-own URL to the nearest game (`_redirects` from scripts/cloudflare-pages.mjs); English-only sitemap of 12 pages + 4 trust pages | user-facing | removes ~30 low-value URLs from the review surface | adsense | S | P0 | in-progress |
-| B-033 | Rewrite every game page and the hub with substantial, original, game-specific guides (worked example, scoring detail, strategy, where the data comes from); deepen About and Contact | user-facing | the actual "value" AdSense measures | adsense | M | P0 | todo |
+| B-033 | Rewrite every game page and the hub with substantial, original, game-specific guides (worked example, scoring detail, strategy, where the data comes from); deepen About and Contact | user-facing | the actual "value" AdSense measures | adsense | M | P0 | in-progress |
 | B-034 | Tom: after both ship and Google has recrawled (~1–2 weeks), click "Request review" in AdSense. Ads stay OFF until approval | monetisation | approval | adsense | S | P0 | blocked-on-tom |
+
+**Found while writing B-033, not yet fixed:**
+- **B-035 (data):** Tenable "England — Most Capped Players" leaves out Peter Shilton (125), Bobby Moore, Bobby Charlton and Billy Wright, and lists Walker, Stones, Pickford and Bryan Robson in their place. Caps coverage appears to start around the 1980s and 90s. Other all-time international lists probably have the same gap, so check them all.
+- **B-036 (trust):** triviverse.com has **no MX records**, so hello@ and privacy@ on /contact cannot receive mail. Fix it with Cloudflare Email Routing to Tom's inbox (Tom's dashboard action). This matters for AdSense review and for the privacy policy.
+- **B-037 (data):** Career Path shows youth sides that the senior filter misses, such as "Malmö ABI", "FBK Balkan" (Ibrahimović) and "RM Castilla" (Morata).

@@ -427,7 +427,7 @@ export default function Hub() {
       </div>
       {shareOpen && <DayShareSheet onClose={() => setShareOpen(false)} />}
 
-      {/* ── Below the fold: SEO content, unchanged in substance ── */}
+      {/* ── Below the fold: what Triviverse is, the games, FAQ (seo/guides.js) ── */}
       <div className="max-w-2xl mx-auto px-4 pt-10 pb-16">
         <section className="text-left">
           <h2 className="text-primary font-semibold text-lg mb-3">{t('home.aboutHeading')}</h2>
@@ -445,6 +445,15 @@ export default function Hub() {
               })}
             </ul>
           </nav>
+
+          {home.sections?.map((s, i) => (
+            <div key={i} className="mb-8">
+              <h2 className="text-primary font-semibold text-lg mb-3">{s.h2}</h2>
+              {s.body.map((p, j) => (
+                <p key={j} className="text-muted text-sm leading-relaxed mb-3 last:mb-0">{p}</p>
+              ))}
+            </div>
+          ))}
 
           <h2 className="text-primary font-semibold text-lg mb-3">{t('home.faqHeading')}</h2>
           <dl className="space-y-4">

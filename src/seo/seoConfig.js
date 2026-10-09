@@ -8,6 +8,7 @@
 // ─────────────────────────────────────────────────────────────────────────
 
 import { ES } from './es.js'
+import { GUIDES } from './guides.js'
 
 export const SITE_URL = 'https://triviverse.com'
 export const BRAND = 'Triviverse'
@@ -424,7 +425,7 @@ const BASE_ROUTES = [
   // Retired 2026-10-09 for the AdSense "low-value content" rejection: the
   // build-your-own landing page, the six /answers archives, /england-football-quiz,
   // the players-who-played-for cluster and every /es mirror. They 301 to the
-  // nearest game in worker/redirects.js — see docs/BACKLOG.md B-032.
+  // nearest game via _redirects (scripts/cloudflare-pages.mjs) — docs/BACKLOG.md B-032.
 
   // ── Football Pointless (MVP) ───────────────────────────────────────────────
   // Targets the underserved "football pointless" show-name term (see growth
@@ -622,10 +623,17 @@ const BASE_ROUTES = [
   },
 ]
 
-// The full route set = hand-authored game/landing pages + the programmatic SEO
-// relation pages ("players who played for both X and Y"). Both flow through the
-// same prerender / sitemap / <Seo> machinery.
-export const ROUTES = BASE_ROUTES
+// The full route set: each hand-authored route with its long-form guide merged
+// in (guides.js — howTo/sections replace, faq replaces, faqExtra appends).
+const withGuide = (r) => {
+  const g = GUIDES[r.path]
+  if (!g) return r
+  const { faqExtra, ...rest } = g
+  const merged = { ...r, ...rest }
+  if (faqExtra) merged.faq = [...(merged.faq || []), ...faqExtra]
+  return merged
+}
+export const ROUTES = BASE_ROUTES.map(withGuide)
 
 export const routeByPath = (path, lang = 'en') => localize(ROUTES.find(r => r.path === path) || ROUTES[0], lang)
 // The playable games, derived rather than counted by hand: anything that is a
