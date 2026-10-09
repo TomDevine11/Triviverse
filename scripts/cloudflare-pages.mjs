@@ -10,7 +10,7 @@
 //     /tenable/, which contradicts our canonical URLs. A flat file is served
 //     at /tenable itself.
 //   - 404.html for anything not prerendered.
-//   - _redirects: 301s for the pages retired on 2026-10-09 (see RETIRED below).
+//   - _redirects: 301s for the pages retired on 2026-10-09 (src/seo/retired.js).
 //   - _headers so hashed assets are cached as immutable.
 //   - The TikTok domain-verification file.
 //
@@ -21,6 +21,7 @@
 import { readFileSync, writeFileSync, readdirSync, renameSync, rmdirSync, statSync } from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { RETIRED } from '../src/seo/retired.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.join(__dirname, '..', 'dist')
@@ -50,24 +51,7 @@ writeFileSync(path.join(DIST, '404.html'),
   + `<p style="color:#9ca3af">This page does not exist.</p>`
   + `<p><a style="color:#c4b5fd" href="/">Go to Triviverse →</a></p></body></html>`)
 
-// ── Retired pages → 301 to the nearest live game ──
-// Cut 2026-10-09 after AdSense rejected the site for "low-value content": thin
-// programmatic pages and duplicate translations, not the games, were the bulk of
-// the URL count. Each goes to the page a visitor following an old link most
-// likely wanted. Specific rules first — Cloudflare applies the first match.
-const RETIRED = [
-  ['/build-your-own-football-darts', '/501'],
-  ['/england-football-quiz', '/career-path'],
-  ['/players-who-played-for', '/tictactoe'],
-  ['/players-who-played-for/*', '/tictactoe'],
-  ...['wordle', 'teammates', 'career-path', 'tenable', 'connections', 'football-pointless']
-    .map(g => [`/${g}/answers`, `/${g}`]),
-  ['/es', '/'],
-  ['/es/build-your-own-football-darts', '/501'],
-  ['/es/england-football-quiz', '/career-path'],
-  ['/es/players-who-played-for/*', '/tictactoe'],
-  ['/es/*', '/:splat'],
-]
+// ── Retired pages → 301 to the nearest live game (src/seo/retired.js) ──
 writeFileSync(path.join(DIST, '_redirects'), RETIRED.map(([from, to]) => `${from} ${to} 301`).join('\n') + '\n')
 
 // ── Cache headers — hashed build assets never change ──

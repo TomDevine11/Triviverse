@@ -186,8 +186,6 @@ function writeSitemap() {
   const today = new Date().toISOString().slice(0, 10)
   const entry = (loc, freq, priority) => `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`
   const urls = indexableRoutes().map(r => entry(absolute(r.path), r.changefreq || 'weekly', r.priority || '0.7'))
-  // The static trust pages in public/ — part of what a reviewer reads, so list them.
-  for (const p of ['/about', '/contact', '/privacy', '/terms']) urls.push(entry(absolute(p), 'monthly', '0.3'))
   writeFileSync(path.join(DIST, 'sitemap.xml'),
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`)
   console.error('  ✓ sitemap.xml')

@@ -9,7 +9,6 @@ const ROUTES = [
   { path: '/tenable', name: 'tenable — a standard game' },
   { path: '/tictactoe', name: 'tictactoe — the grid' },
   { path: '/connections', name: 'connections — the tiles' },
-  { path: '/football-pointless/answers', name: 'pointless archive — generated content' },
 ]
 
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']
@@ -55,15 +54,20 @@ test('the accessibility baseline is not silently over-broad', async ({ page }) =
   // removed from the list rather than left as permanent cover for a future
   // regression. This fails when the baseline becomes stale in the good
   // direction — i.e. when someone fixes the palette and forgets to tighten it.
-  await page.goto('/', { waitUntil: 'domcontentloaded' })
-  await page.locator('h1').first().waitFor({ state: 'visible' })
-  const { violations } = await new AxeBuilder({ page }).withTags(TAGS).analyze()
-  const stillFailing = new Set(violations.map(v => v.id))
+  // Checked across every audited route, not just home: a rule only leaves the
+  // baseline when it fails nowhere.
+  const stillFailing = new Set()
+  for (const route of ROUTES) {
+    await page.goto(route.path, { waitUntil: 'domcontentloaded' })
+    await page.locator('h1').first().waitFor({ state: 'visible' })
+    const { violations } = await new AxeBuilder({ page }).withTags(TAGS).analyze()
+    for (const v of violations) stillFailing.add(v.id)
+  }
 
   for (const rule of KNOWN_FAILING_RULES) {
     expect(
       stillFailing.has(rule),
-      `"${rule}" is in KNOWN_FAILING_RULES but no longer fails on the home page — remove it from the baseline`,
+      `"${rule}" is in KNOWN_FAILING_RULES but no longer fails on any audited route — remove it from the baseline`,
     ).toBe(true)
   }
 })
