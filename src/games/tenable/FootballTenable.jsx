@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useMemo } from 'react'
-import { getDailyTenableQuestion, getRandomTenableQuestion, getTenableQuestionForDay } from '../../data/tenable'
+import { getDailyTenableQuestion, getRandomTenableQuestion, getTenableQuestionForDay, searchExtraNames } from '../../data/tenable'
 import { useQa } from '../../dev/qa'
 import QaBar from '../../dev/QaBar'
 import QuestionBuilder from '../football501/QuestionBuilder'
@@ -207,7 +207,7 @@ export default function FootballTenable() {
 
     if (question.type === 'club') return searchClubs(input, 8)
 
-    const merged = refineSuggestions(searchRegistry(input))
+    const merged = refineSuggestions([...searchRegistry(input), ...searchExtraNames(input)])
 
     const rank = (name) => {
       const n = normalize(name)

@@ -26,6 +26,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const R = loadRegistry()
 const reco = (id) => R.players.get(id)?.reco || 0
 const nm = (id) => R.players.get(id)?.name
+// Our display name when we hold the player (accents fixed); otherwise the name the
+// source row carried — the national record tables include players from before our
+// league coverage starts (B-035).
+const label = (r) => nm(r.id) || r.name
 
 // The real driver of "is this fun?" is ENTITY PROMINENCE — is this a nation/club the
 // audience actually follows? A general fan can name Germany's or Arsenal's top-10 but
@@ -68,45 +72,69 @@ const slug = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().rep
 function topTen(rows, floor) {
   if (rows.length < 10) return null
   // de-dup by display name (guards the "unique names" invariant)
-  const seen = new Set(); rows = rows.filter(r => { const n = nm(r.id); if (!n || seen.has(n)) return false; seen.add(n); return true })
-  rows.sort((a, b) => b.value - a.value || nm(a.id).localeCompare(nm(b.id)))
+  const seen = new Set(); rows = rows.filter(r => { const n = label(r); if (!n || seen.has(n)) return false; seen.add(n); return true })
+  rows.sort((a, b) => b.value - a.value || label(a).localeCompare(label(b)))
   const top = rows.slice(0, 10)
   if (top.length < 10 || top[9].value < floor) return null
   // A tie on the 10th value is NOT a reason to drop a good list (England's most
   // capped ties at 90). The extra tied record-holders join a tiePool so any of them
   // counts for the joint slot — same pattern as the marquee competition lists.
   const tied = rows.slice(10).filter(r => r.value === top[9].value)
-  return { top, tieValue: tied.length ? top[9].value : undefined, tiePool: tied.length ? tied.map(r => ({ text: nm(r.id) })) : undefined }
+  return { top, tieValue: tied.length ? top[9].value : undefined, tiePool: tied.length ? tied.map(r => ({ text: label(r) })) : undefined }
 }
+
+const PREV_DAILY = new Map()
+try { for (const q of require('../src/data/tenable.generated.json').questions) PREV_DAILY.set(q.title, q.daily !== false) } catch { /* first build */ }
 
 const questions = []
 function emit({ id, scope, title, description, icon, unit, list, detail }) {
   if (!list) return
   const { top, tieValue, tiePool } = list
   const recogN = top.filter(r => notable(r.id)).length
+  // A national record-holder from before our league coverage (Moore, Charlton,
+  // Pelé) has no recognisability score, so correcting a list can push it under
+  // FUN_MIN. A question that already ships keeps shipping (with the corrected
+  // answers) by counting those legends; it never admits a NEW list, which would let
+  // in tables of 1930s names nobody can recall (Switzerland's top scorers).
+  const legends = PREV_DAILY.has(title) ? top.filter(r => r.name && !R.players.has(r.id)).length : 0
   const anchored = top.slice(0, ANCHOR_IN).some(r => marquee(r.id))
-  if (recogN < FUN_MIN || !anchored) return
+  if (recogN + legends < FUN_MIN || !anchored) return
   const fmt = detail || ((v) => `${v} ${unit}`)
-  const answers = top.map((r, i) => ({ rank: i + 1, text: nm(r.id), detail: fmt(r.value), value: r.value }))
-  const q = { id, type: 'player', scope, title, description, icon, daily: recogN >= FUN_DAILY, answers }
+  const answers = top.map((r, i) => ({ rank: i + 1, text: label(r), detail: fmt(r.value), value: r.value }))
+  // Rotation stability: the daily is picked by POSITION in the daily-eligible list,
+  // so flipping one existing question's flag reshuffles every future daily (and
+  // today's). A question that already exists keeps the flag it shipped with; only
+  // brand-new questions are classified fresh.
+  const daily = PREV_DAILY.has(title) ? PREV_DAILY.get(title) : recogN >= FUN_DAILY
+  const q = { id, type: 'player', scope, title, description, icon, daily, answers }
   if (tieValue) { q.tieValue = tieValue; q.tiePool = tiePool }
   questions.push(q)
 }
 
 // ── International: most caps / top scorers per nation ────────────────────────
+// Ranked from Transfermarkt's all-time national record tables
+// (scripts/pl-history/scrape-intl-records.mjs), NOT from the caps of players in our
+// league data: that universe starts in 1992 for England, so "England — Most Capped
+// Players" had no Shilton, Moore, Charlton or Wright (B-035). A nation without a
+// record table falls back to the old registry-derived list.
+const RECORDS = require('../src/data/football501/intl-records.generated.json').nations
 const nations = new Map()
 for (const p of R.players.values()) for (const [tid, v] of p.caps) {
   if (!nations.has(tid)) nations.set(tid, [])
   nations.get(tid).push({ id: p.id, caps: v.caps, goals: v.goals })
 }
+for (const tid of Object.keys(RECORDS)) if (!nations.has(tid)) nations.set(tid, [])
 for (const [tid, players] of nations) {
-  const nation = R.nationName.get(tid)
+  const nation = R.nationName.get(tid) || RECORDS[tid]?.name
   if (!nation || / U-?\d| B$| C$| [Ww]omen| Olympic/.test(nation)) continue // seniors only
   if (!majorNation(nation)) continue // only nations the audience actually follows
   const icon = { type: 'nationality', value: nation }
-  const caps = topTen(players.map(p => ({ id: p.id, value: p.caps })), FLOOR.caps)
+  const rec = RECORDS[tid]
+  const capRows = rec ? rec.caps.map(r => ({ id: r.id, name: r.name, value: r.caps })) : players.map(p => ({ id: p.id, value: p.caps }))
+  const goalRows = rec ? rec.goals.map(r => ({ id: r.id, name: r.name, value: r.goals })) : players.map(p => ({ id: p.id, value: p.goals }))
+  const caps = topTen(capRows, FLOOR.caps)
   if (caps) emit({ id: `gen-nat-${slug(nation)}-caps`, scope: 'nationality', title: `${nation} — Most Capped Players`, description: `Name the 10 players with the most caps for ${nation}.`, icon, unit: 'caps', list: caps })
-  const goals = topTen(players.map(p => ({ id: p.id, value: p.goals })).filter(r => r.value > 0), 12)
+  const goals = topTen(goalRows.filter(r => r.value > 0), 12)
   if (goals) emit({ id: `gen-nat-${slug(nation)}-goals`, scope: 'nationality', title: `${nation} — All-Time Top Goalscorers`, description: `Name the 10 all-time top goalscorers for ${nation}.`, icon, unit: 'goals', list: goals })
 }
 
@@ -204,9 +232,19 @@ const byId = new Map(); for (const q of questions) if (!byId.has(q.id)) byId.set
 const finalQs = [...byId.values()]
 
 const outDir = path.join(__dirname, '..', 'src', 'data')
+// Players from the national record tables who are not in our registry (Shilton,
+// Moore, Greaves, Eusébio…). The guess autocomplete searches the registry only, so
+// without these an all-time answer could be typed but never suggested. Every name
+// in the top 25s goes in, answers or not, so the list gives nothing away.
+const extraNames = [...new Set(Object.values(RECORDS)
+  .flatMap(n => [...n.caps, ...n.goals])
+  .filter(r => !R.players.has(r.id))
+  .map(r => r.name))].sort()
+
 writeFileSync(path.join(outDir, 'tenable.generated.json'), JSON.stringify({
   meta: { generatedAt: new Date().toISOString().slice(0, 10), source: 'transfermarkt (leagues + international), fun-gated recognisable top-10s', floor: FLOOR, count: finalQs.length },
   questions: finalQs,
+  extraNames,
 }, null, 2))
 // Empty allowlist ⇒ the runtime falls back to each question's `daily` flag (no
 // hand-maintained text file). Kept as a file so the import in tenable.js resolves.

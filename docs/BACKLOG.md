@@ -273,11 +273,16 @@ keep the 11 games, the hub, the leaderboards, leagues and the dugout; everything
 
 | ID | Title | Class | Value | Source | Effort | Priority | Status |
 |----|-------|-------|-------|--------|--------|----------|--------|
-| B-032 | Retire thin/duplicate pages: 301 every /es, /answers, pair, themed and build-your-own URL to the nearest game (`_redirects` from scripts/cloudflare-pages.mjs); English-only sitemap of 12 pages + 4 trust pages | user-facing | removes ~30 low-value URLs from the review surface | adsense | S | P0 | in-progress |
-| B-033 | Rewrite every game page and the hub with substantial, original, game-specific guides (worked example, scoring detail, strategy, where the data comes from); deepen About and Contact | user-facing | the actual "value" AdSense measures | adsense | M | P0 | in-progress |
+| B-032 | Retire thin/duplicate pages: 301 every /es, /answers, pair, themed and build-your-own URL to the nearest game (`_redirects` from scripts/cloudflare-pages.mjs); English-only sitemap of 12 pages + 4 trust pages | user-facing | removes ~30 low-value URLs from the review surface | adsense | S | P0 | done (#94) |
+| B-033 | Rewrite every game page and the hub with substantial, original, game-specific guides (worked example, scoring detail, strategy, where the data comes from); deepen About and Contact | user-facing | the actual "value" AdSense measures | adsense | M | P0 | done (#95) |
 | B-034 | Tom: after both ship and Google has recrawled (~1–2 weeks), click "Request review" in AdSense. Ads stay OFF until approval | monetisation | approval | adsense | S | P0 | blocked-on-tom |
 
 **Found while writing B-033, not yet fixed:**
 - **B-035 (data):** Tenable "England — Most Capped Players" leaves out Peter Shilton (125), Bobby Moore, Bobby Charlton and Billy Wright, and lists Walker, Stones, Pickford and Bryan Robson in their place. Caps coverage appears to start around the 1980s and 90s. Other all-time international lists probably have the same gap, so check them all.
 - **B-036 (trust):** triviverse.com has **no MX records**, so hello@ and privacy@ on /contact cannot receive mail. Fix it with Cloudflare Email Routing to Tom's inbox (Tom's dashboard action). This matters for AdSense review and for the privacy policy.
 - **B-037 (data):** Career Path shows youth sides that the senior filter misses, such as "Malmö ABI", "FBK Balkan" (Ibrahimović) and "RM Castilla" (Morata).
+
+**Fixed 2026-10-09 (data-quality PR):**
+- **B-035 done.** National caps and goals lists now come from Transfermarkt's all-time record tables (`npm run scrape:intl-records` → intl-records.generated.json), so England's list has Shilton, Moore, Charlton and Wright. Nine questions changed answers. Players from before our coverage are offered in the guess autocomplete through `extraNames`. Existing questions keep their `daily` flag, so the rotation does not move.
+- **B-037 done, and wider than first logged.** Careers now drop age-group sides and everything before them (Jgd., You/Yout, Y., Aca, U17/U19…), plus reserve and third teams (Castilla, Mestalla, Madrileño, " C", "Res.", "Sevilla Atl."). They are also matched to the right person by Transfermarkt id: the shipped pool had namesakes under famous names, such as "Koke" showing a journeyman's clubs and three different "Rodri"s. 113 of 811 slots were replaced in place by the most recognisable newly qualifying players, so the daily rotation is unchanged except on those slots. Stars with fewer than five real clubs (Messi, Van Dijk, Hakimi) left the pool. `REFRESH_POOL=1` re-selects the pool from scratch, about 1,195 candidates now.
+- Career Path copy said "five guesses". You actually get one guess per club; corrected.

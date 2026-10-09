@@ -203,17 +203,17 @@ const BASE_ROUTES = [
     path: '/career-path',
     name: 'Guess the Footballer by Career Path',
     title: 'Guess the Footballer by Career Path | Triviverse',
-    description: 'Guess the footballer by career path — his clubs revealed one at a time. Name the player who played for them all, in five guesses. Free daily, no sign-up.',
+    description: 'Guess the footballer by career path — his clubs revealed one at a time. Name the player who played for them all before the clubs run out. Free daily, no sign-up.',
     keywords: ['guess the footballer by clubs', 'guess the footballer by career', 'football career path game', 'career path football quiz', 'guess the football player by clubs', 'football transfer game'],
     h1: 'Guess the Footballer by Career Path',
     tagline: 'Name the player from the clubs he played for.',
     ogImage: '/og/career-path.png',
-    about: 'Career Path is a football guessing game built around players’ club histories. You are shown one club from a mystery footballer’s career, and each wrong guess reveals the next club in their path. Work out who moved between all of them within five guesses.',
+    about: 'Career Path is a football guessing game built around players’ club histories. You are shown one club from a mystery footballer’s career, and each wrong guess reveals the next club in their path. Work out who moved between all of them before his clubs run out.',
     howTo: [
       'A well-travelled footballer is chosen at random.',
       'The first club from their career is revealed.',
       'Guess who the player is — a wrong guess reveals the next club they played for.',
-      'Identify the player who played for every club shown, within five guesses.',
+      'Identify the player who played for every club shown, before his clubs run out.',
     ],
     sections: [
       {
@@ -230,8 +230,8 @@ const BASE_ROUTES = [
       },
     ],
     faq: [
-      { q: 'How do I play Career Path?', a: 'You are shown one club from a mystery footballer’s career. Guess who it is; each wrong guess reveals another club they played for, up to five clubs.' },
-      { q: 'How many guesses do I get?', a: 'You get five guesses, with a new club revealed after each wrong answer.' },
+      { q: 'How do I play Career Path?', a: 'You are shown one club from a mystery footballer’s career. Guess who it is; each wrong guess reveals another club they played for, until his whole career is shown.' },
+      { q: 'How many guesses do I get?', a: 'One per club in his career, at least five. Each wrong answer reveals the next club, and the round ends when the whole career is showing.' },
       { q: 'Are the career paths accurate?', a: 'Yes — the clubs come from each player’s real senior career, shown in the order they played for them.' },
       { q: 'Is there a Daily and an Unlimited mode?', a: 'Yes. Daily sets one career path a day and tracks your win streak; Unlimited gives you random players to practise with, without affecting your stats.' },
     ],
