@@ -3,7 +3,6 @@
 
 import { Link, NavLink } from 'react-router-dom'
 import BrandMark from '../BrandMark'
-import LanguageSwitcher from '../LanguageSwitcher'
 import { useI18n } from '../../i18n'
 import { UserIcon, TableIcon, GlobeIcon } from './bits'
 
@@ -23,7 +22,6 @@ export default function SocialChrome() {
         <NavLink to={lp('/leagues')} className={tab} aria-label={t('social.nav.leagues')}><TableIcon className="w-3.5 h-3.5" /><span className="hidden sm:inline">{t('social.nav.leagues')}</span></NavLink>
         <NavLink to={lp('/world')} className={tab} aria-label={t('social.nav.world')}><GlobeIcon className="w-3.5 h-3.5" /><span className="hidden sm:inline">{t('social.nav.world')}</span></NavLink>
       </nav>
-      <LanguageSwitcher />
     </header>
   )
 }

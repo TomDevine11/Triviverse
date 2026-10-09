@@ -29,11 +29,11 @@ describe('llms.txt — the AI-assistant read of the site', () => {
     expect(llmsTxt(withExtra)).toContain(`- [New Game](${SITE_URL}/new-game): A brand new game.`)
   })
 
-  it('separates playable games from answer archives', () => {
+  it('lists the games, and nothing retired', () => {
     const groups = Object.fromEntries(llmsSections().map(([h, rs]) => [h, rs.map(r => r.path)]))
     expect(groups['Games']).toContain('/tenable')
-    expect(groups['Games']).not.toContain('/tenable/answers')
-    expect(groups['Past answers and archives']).toContain('/tenable/answers')
+    expect(txt).not.toContain('/answers')
+    expect(txt).not.toContain('/es/')
   })
 
   it('names the home page after the brand, not "Home"', () => {

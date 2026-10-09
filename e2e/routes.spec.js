@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { gameRoutes, ROUTES } from '../src/seo/seoConfig.js'
+import { gameRoutes } from '../src/seo/seoConfig.js'
 
 // Every game route, derived from seoConfig — a new game is covered the moment
 // it's declared, with no edit here.
@@ -72,36 +72,3 @@ test('every game page has exactly one H1', async ({ page }) => {
   }
 })
 
-// The six generated answer archives. These pages are produced from data rather
-// than written, which is exactly how #43 shipped an archive rendering ten
-// identical "POINTLESS" labels through a green build.
-const ARCHIVES = ROUTES.filter(r => r.path.endsWith('/answers') && !r.noindex)
-
-test.describe('answer archives render varied generated content', () => {
-  for (const route of ARCHIVES) {
-    // Asserted against the SERVED DOCUMENT, not the hydrated DOM. These pages
-    // exist to be crawled — the prerendered HTML is the product, and it is what
-    // carried the #43 regression. (In the browser the scores sit behind a
-    // spoiler toggle, which is correct for readers and useless for this check.)
-    test(`${route.path} does not repeat a single label`, async ({ request }) => {
-      const res = await request.get(route.path)
-      expect(res.status(), `${route.path} should return 200`).toBe(200)
-
-      const html = (await res.text()).replace(/<script[\s\S]*?<\/script>/g, '')
-      const text = html
-        .replace(/<[^>]+>/g, ' ')
-        .replace(/&amp;/g, '&').replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"')
-        .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&nbsp;/g, ' ')
-
-      expect(text, `${route.path} should prerender its H1`).toContain(route.h1)
-      // Score labels render inline as "(POINTLESS)", "(100 pts)", "(3 pts)".
-      const labels = [...text.matchAll(/\(([^)]{1,24})\)/g)].map((m) => m[1].trim())
-      expect(labels.length, `${route.path} prerendered no inline score labels`).toBeGreaterThan(4)
-
-      expect(
-        new Set(labels).size,
-        `${route.path} prerendered ${labels.length} labels with one distinct value — the #43 regression`,
-      ).toBeGreaterThan(1)
-    })
-  }
-})

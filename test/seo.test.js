@@ -79,16 +79,10 @@ describe('structured data (JSON-LD)', () => {
     }
   })
 
-  it('content pages expose BreadcrumbList (+ FAQPage where defined), never VideoGame', () => {
-    const content = indexableRoutes().filter(r => r.path !== '/' && r.schema !== 'VideoGame')
-    expect(content.length).toBeGreaterThan(0)
-    for (const r of content) {
-      const t = types(jsonLdFor(r))
-      expect(t, r.path).toContain('BreadcrumbList')
-      expect(t, r.path).not.toContain('VideoGame')
-      // FAQPage only where the route actually defines FAQs (relation pages use ItemList instead)
-      if (r.faq?.length) expect(t, r.path).toContain('FAQPage')
-    }
+  // Since 2026-10-09 every indexable page is the hub or a game: the thin archive,
+  // pair and themed pages were retired for AdSense (see scripts/cloudflare-pages.mjs).
+  it('every indexable page is the hub or a playable game', () => {
+    for (const r of indexableRoutes().filter(r => r.path !== '/')) expect(r.schema, r.path).toBe('VideoGame')
   })
 
   it('all JSON-LD blocks carry a schema.org context and type', () => {

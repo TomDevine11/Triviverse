@@ -2,9 +2,6 @@ import { Routes, Route } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 import Hub from './pages/Hub'
 import GamePage from './seo/GamePage'
-import AnswersPage from './seo/AnswersPage'
-import ThemedEnglandPage from './seo/ThemedEnglandPage'
-import { RELATION_BASE } from './seo/relations.js'
 import ScrollToTop from './components/ScrollToTop'
 import Analytics from './components/Analytics'
 import PreviewBanner from './components/PreviewBanner'
@@ -25,8 +22,6 @@ const CareerPath = lazy(() => import('./games/careers/CareerPath'))
 const HigherLower = lazy(() => import('./games/higherlower/HigherLower'))
 const FootballConnections = lazy(() => import('./games/connections/FootballConnections'))
 const FootballPointless = lazy(() => import('./games/pointless/FootballPointless'))
-const RelationPage = lazy(() => import('./seo/RelationPage'))
-const RelationHubPage = lazy(() => import('./seo/RelationHubPage'))
 // Social layer — personal, noindex app screens (see docs/social.md).
 const Me = lazy(() => import('./pages/Me'))
 const LeaguesIndex = lazy(() => import('./pages/Leagues').then(m => ({ default: m.LeaguesIndex })))
@@ -39,15 +34,10 @@ const IdentityInspector = lazy(() => import('./dev/IdentityInspector'))
 
 const Loading = () => <div className="min-h-screen bg-canvas" aria-busy="true" />
 
-// Each game route is mounted twice: at the root (English) and under /es
-// (Spanish). GamePage always gets the locale-free path; Seo/SeoContent derive
-// the locale from the URL.
+// English only: the /es mirrors were retired 2026-10-09 and 301 to these paths
+// (worker/redirects.js), as do the archive, pair and themed pages listed there.
 const GAME_ROUTES = [
   { path: '/501', el: <GamePage path="/501"><Football501 /></GamePage> },
-  // Same game, opened on the builder. Its own URL because "design your own question" is a
-  // distinct promise (and the one thing competitors charge for) — see seoConfig for the
-  // targeting split that keeps it from competing with /501.
-  { path: '/build-your-own-football-darts', el: <GamePage path="/build-your-own-football-darts"><Football501 initialMode="build" /></GamePage> },
   { path: '/football-bingo', el: <GamePage path="/football-bingo"><FootballBingo /></GamePage> },
   { path: '/football-contexto', el: <GamePage path="/football-contexto"><FootballContexto /></GamePage> },
   { path: '/tenable', el: <GamePage path="/tenable"><FootballTenable /></GamePage> },
@@ -57,20 +47,6 @@ const GAME_ROUTES = [
   { path: '/career-path', el: <GamePage path="/career-path"><CareerPath /></GamePage> },
   { path: '/connections', el: <GamePage path="/connections"><FootballConnections /></GamePage> },
   { path: '/higher-or-lower', el: <GamePage path="/higher-or-lower"><HigherLower /></GamePage> },
-]
-
-// Crawlable "past answers" archives (link magnet + "answers/today" capture).
-// Each reconstructs its game's daily answers deterministically — see
-// seo/archiveData.js. Kept separate from GAME_ROUTES so they stay out of the
-// primary game nav (their SEO routes carry hideFromNav), but each game page
-// links to its own archive contextually (see SeoContent).
-const ANSWER_ROUTES = [
-  { path: '/wordle/answers', game: '/wordle' },
-  { path: '/teammates/answers', game: '/teammates' },
-  { path: '/career-path/answers', game: '/career-path' },
-  { path: '/tenable/answers', game: '/tenable' },
-  { path: '/connections/answers', game: '/connections' },
-  { path: '/football-pointless/answers', game: '/football-pointless' },
 ]
 
 export default function App() {
@@ -85,31 +61,14 @@ export default function App() {
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Hub />} />
-          <Route path="/es" element={<Hub />} />
-          <Route path="/dev/identity" element={<IdentityInspector />} />
-          {['', '/es'].flatMap(pre => [
-            <Route key={`${pre}/me`} path={`${pre}/me`} element={<Me />} />,
-            <Route key={`${pre}/leagues`} path={`${pre}/leagues`} element={<LeaguesIndex />} />,
-            <Route key={`${pre}/leagues/:code`} path={`${pre}/leagues/:code`} element={<LeagueView />} />,
-            <Route key={`${pre}/world`} path={`${pre}/world`} element={<World />} />,
-          ])}
-          {GAME_ROUTES.flatMap(({ path, el }) => [
-            <Route key={path} path={path} element={el} />,
-            <Route key={`es${path}`} path={`/es${path}`} element={el} />,
-          ])}
-          {ANSWER_ROUTES.flatMap(({ path, game }) => [
-            <Route key={path} path={path} element={<AnswersPage path={path} gamePath={game} />} />,
-            <Route key={`es${path}`} path={`/es${path}`} element={<AnswersPage path={path} gamePath={game} />} />,
-          ])}
-          {/* Generated data-derived landing page that is itself playable (growth PoC). */}
-          <Route path="/england-football-quiz" element={<ThemedEnglandPage path="/england-football-quiz" />} />
-          <Route path="/es/england-football-quiz" element={<ThemedEnglandPage path="/england-football-quiz" />} />
+          {import.meta.env.DEV && <Route path="/dev/identity" element={<IdentityInspector />} />}
+          <Route path="/me" element={<Me />} />
+          <Route path="/leagues" element={<LeaguesIndex />} />
+          <Route path="/leagues/:code" element={<LeagueView />} />
+          <Route path="/world" element={<World />} />
+          {GAME_ROUTES.map(({ path, el }) => <Route key={path} path={path} element={el} />)}
           {/* Football Pointless MVP */}
           <Route path="/football-pointless" element={<GamePage path="/football-pointless"><FootballPointless /></GamePage>} />
-          <Route path="/es/football-pointless" element={<GamePage path="/football-pointless"><FootballPointless /></GamePage>} />
-          {/* "Players who played for both X and Y" — data-derived SEO trivia cluster (English-only) */}
-          <Route path={RELATION_BASE} element={<RelationHubPage />} />
-          <Route path={`${RELATION_BASE}/:slug`} element={<RelationPage />} />
         </Routes>
       </Suspense>
     </>

@@ -73,12 +73,4 @@ test.describe('visual', () => {
     await ready(page, '/connections')
     await expect(page).toHaveScreenshot('connections.png', SHOT)
   })
-
-  test('pointless archive — a generated content page', async ({ page }) => {
-    await ready(page, '/football-pointless/answers')
-    // Viewport only, not fullPage: the archive grows by a row every day, so a
-    // full-page baseline would be enormous and would churn constantly. The top
-    // of the page is where its structure lives and where a regression shows.
-    await expect(page).toHaveScreenshot('pointless-answers.png', { ...SHOT, fullPage: false })
-  })
 })

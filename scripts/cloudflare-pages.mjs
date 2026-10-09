@@ -9,9 +9,8 @@
 //     directory index only at the trailing-slash URL and 308s /tenable →
 //     /tenable/, which contradicts our canonical URLs. A flat file is served
 //     at /tenable itself.
-//   - 404.html for anything not prerendered (also covers retired player-pair
-//     slugs, which get a 410 on Render; a 404 deindexes them the same way).
-//   - _redirects for renamed player-pair slugs (from relations-manifest.json).
+//   - 404.html for anything not prerendered.
+//   - _redirects: 301s for the pages retired on 2026-10-09 (src/seo/retired.js).
 //   - _headers so hashed assets are cached as immutable.
 //   - The TikTok domain-verification file.
 //
@@ -22,6 +21,7 @@
 import { readFileSync, writeFileSync, readdirSync, renameSync, rmdirSync, statSync } from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { RETIRED } from '../src/seo/retired.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.join(__dirname, '..', 'dist')
@@ -51,11 +51,8 @@ writeFileSync(path.join(DIST, '404.html'),
   + `<p style="color:#9ca3af">This page does not exist.</p>`
   + `<p><a style="color:#c4b5fd" href="/">Go to Triviverse →</a></p></body></html>`)
 
-// ── Renamed player-pair slugs → 301 ──
-const manifest = JSON.parse(readFileSync(path.join(DIST, 'relations-manifest.json'), 'utf8'))
-const redirects = Object.entries(manifest.redirects || {}).flatMap(([from, to]) =>
-  ['', '/es'].map(prefix => `${prefix}${manifest.base}/${from} ${prefix}${manifest.base}/${to} 301`))
-writeFileSync(path.join(DIST, '_redirects'), redirects.join('\n') + '\n')
+// ── Retired pages → 301 to the nearest live game (src/seo/retired.js) ──
+writeFileSync(path.join(DIST, '_redirects'), RETIRED.map(([from, to]) => `${from} ${to} 301`).join('\n') + '\n')
 
 // ── Cache headers — hashed build assets never change ──
 writeFileSync(path.join(DIST, '_headers'),
@@ -65,4 +62,4 @@ writeFileSync(path.join(DIST, '_headers'),
 writeFileSync(path.join(DIST, 'tiktokhmgsxlUzrsvwFQlM52w8rZC5rjCTdoDF.txt'),
   'tiktok-developers-site-verification=hmgsxlUzrsvwFQlM52w8rZC5rjCTdoDF')
 
-console.log(`Cloudflare Pages: flattened ${flattened} routes, ${redirects.length} redirects, 404.html, _headers`)
+console.log(`Cloudflare Pages: flattened ${flattened} routes, ${RETIRED.length} redirects, 404.html, _headers`)

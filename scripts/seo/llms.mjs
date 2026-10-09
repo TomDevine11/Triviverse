@@ -24,16 +24,11 @@ export const SITE_SUMMARY =
 export const SITE_PROSE = [
   `${BRAND} is a trivia platform currently focused on football. Most games offer a Daily mode — one shared puzzle per day, with a win streak to protect — alongside an Unlimited mode for endless practice that does not affect your stats.`,
   'Every game is built on real historical football data: squads, transfers, appearances, honours and market values, modelled so that answers can be validated properly rather than guessed at.',
-  `Every page is also published in Spanish under /es (for example ${SITE_URL}/es/wordle).`,
 ]
 
-const isArchive = route => route.path.endsWith('/answers')
-
-// Grouped so an assistant can tell a playable game from an answers archive.
 export function llmsSections(routes = indexableRoutes()) {
   return [
-    ['Games', routes.filter(r => r.path !== '/' && !isArchive(r))],
-    ['Past answers and archives', routes.filter(isArchive)],
+    ['Games', routes.filter(r => r.path !== '/')],
     // The home page is listed last and under its brand name, not "Home" — an
     // assistant quoting this should say "Triviverse", not "Home".
     ['The site', routes.filter(r => r.path === '/').map(r => ({ ...r, name: BRAND }))],

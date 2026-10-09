@@ -67,16 +67,12 @@ for (const url of urls) {
   }
 }
 
-// Player-pair family inventory: exactly the hub + 10 canonical pairs, no more, no fewer.
+// Retired 2026-10-09 (AdSense): the pair cluster, answer archives, themed quiz,
+// build-your-own and /es mirrors must never come back into the sitemap.
 const smPaths = new Set(urls.map(u => u.replace(SITE, '') || '/'))
-const expectedPairs = [RELATION_BASE, ...RELATION_PAGES.map(p => `${RELATION_BASE}/${p.slug}`)]
-const missingPairs = expectedPairs.filter(p => !smPaths.has(p))
-const relInSitemap = [...smPaths].filter(p => p.startsWith(RELATION_BASE))
-const unexpectedPairs = relInSitemap.filter(p => !expectedPairs.includes(p))
-if (RELATION_PAGES.length !== 10) errors.push(`PAIR INVENTORY: expected 10 pairs, config has ${RELATION_PAGES.length}`)
-if (missingPairs.length) errors.push(`PAIR INVENTORY: missing from sitemap: ${missingPairs.join(', ')}`)
-if (unexpectedPairs.length) errors.push(`PAIR INVENTORY: unexpected/retired relation URLs in sitemap: ${unexpectedPairs.join(', ')}`)
-console.log(`  player-pair inventory: ${relInSitemap.length}/11 in sitemap (hub + ${RELATION_PAGES.length} pairs)`)
+const RETIRED = /^\/(players-who-played-for|england-football-quiz|build-your-own-football-darts|es)(\/|$)|\/answers$/
+const retiredInSitemap = [...smPaths].filter(p => RETIRED.test(p))
+if (retiredInSitemap.length) errors.push(`RETIRED URLS in sitemap: ${retiredInSitemap.join(', ')}`)
 
 console.log(`  relation pages: ${relationPages} | JSON-LD blocks: ${jsonLdBlocks} | unique titles: ${titles.size}`)
 if (warns.length) { console.log(`\n⚠ ${warns.length} warnings`); warns.slice(0, 5).forEach(w => console.log('  ' + w)) }
