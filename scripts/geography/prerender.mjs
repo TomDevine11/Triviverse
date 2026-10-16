@@ -10,8 +10,12 @@ import { fileURLToPath } from 'node:url'
 import { GEO_ROUTES, metaTags, jsonLd, absolute } from '../../src/geography/seo.js'
 
 const DIST = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'dist')
+// The shell carries the football site's default description and Open Graph tags;
+// strip them (as scripts/prerender.mjs does) so each page's own tags are the only ones.
 const shell = readFileSync(path.join(DIST, 'app-shell.html'), 'utf8')
-  .replace(/\n?\s*<meta name="robots" content="noindex, nofollow">/, '')
+  .replace(/\n?\s*<meta\s+name="(description|keywords|robots)"[^>]*>/gi, '')
+  .replace(/\n?\s*<meta\s+(property="og:|name="twitter:)[^>]*>/gi, '')
+  .replace(/\n?\s*<link\s+rel="canonical"[^>]*>/gi, '')
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
 function head(route) {
