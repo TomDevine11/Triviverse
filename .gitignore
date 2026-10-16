@@ -54,3 +54,6 @@ assets/shorts/img-cache/
 test-results/
 playwright-report/
 .wrangler/
+
+# Postcard photo downloads (build-time cache only)
+.cache/

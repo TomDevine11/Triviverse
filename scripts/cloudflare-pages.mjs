@@ -56,7 +56,7 @@ writeFileSync(path.join(DIST, '_redirects'), RETIRED.map(([from, to]) => `${from
 
 // ── Cache headers — hashed build assets never change ──
 writeFileSync(path.join(DIST, '_headers'),
-  `/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n`)
+  `/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n/geography/postcards/*\n  Cache-Control: public, max-age=31536000, immutable\n/geography/voices/*\n  Cache-Control: public, max-age=31536000, immutable\n`)
 
 // ── TikTok domain verification (served inline by server/index.js) ──
 writeFileSync(path.join(DIST, 'tiktokhmgsxlUzrsvwFQlM52w8rZC5rjCTdoDF.txt'),

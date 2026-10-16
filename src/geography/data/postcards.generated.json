@@ -1,0 +1,2671 @@
+{
+ "meta": {
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-11",
+  "source": "Photos: Wikimedia Commons (licence per entry). Coordinates and summaries: English Wikipedia (CC BY-SA 4.0).",
+  "count": 133,
+  "totalKb": 18257
+ },
+ "postcards": [
+  {
+   "id": "eiffel-tower",
+   "img": "/geography/postcards/bf3bb7e98e36.webp",
+   "w": 615,
+   "h": 1024,
+   "tone": "#162839",
+   "name": "Eiffel Tower",
+   "place": "Paris, France",
+   "lat": 48.85822,
+   "lon": 2.2945,
+   "blurb": "The Eiffel Tower is a lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889.",
+   "wiki": "https://en.wikipedia.org/wiki/Eiffel_Tower",
+   "credit": {
+    "artist": "Benh LIEU SONG",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons_(cropped).jpg",
+    "file": "Tour_Eiffel_Wikimedia_Commons_(cropped).jpg"
+   }
+  },
+  {
+   "id": "colosseum",
+   "img": "/geography/postcards/7366686a1f9f.webp",
+   "w": 1280,
+   "h": 897,
+   "tone": "#778088",
+   "name": "Colosseum",
+   "place": "Rome, Italy",
+   "lat": 41.8903,
+   "lon": 12.4922,
+   "blurb": "The Colosseum is an elliptical amphitheatre in the centre of the city of Rome, Italy, just east of the Roman Forum. It is the largest ancient amphitheatre ever built, and is the largest standing amphitheatre in the world.",
+   "wiki": "https://en.wikipedia.org/wiki/Colosseum",
+   "credit": {
+    "artist": "FeaturedPics",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Colosseo_2020.jpg",
+    "file": "Colosseo_2020.jpg"
+   }
+  },
+  {
+   "id": "sagrada-familia",
+   "img": "/geography/postcards/724334cdd46b.webp",
+   "w": 703,
+   "h": 1024,
+   "tone": "#808088",
+   "name": "Sagrada Família",
+   "place": "Barcelona, Spain",
+   "lat": 41.40369,
+   "lon": 2.17433,
+   "blurb": "Basílica i Temple Expiatori de la Sagrada Família, or simply Sagrada Família, is a Catholic church in the Eixample district of Barcelona, Catalonia, Spain.",
+   "wiki": "https://en.wikipedia.org/wiki/Sagrada_Fam%C3%ADlia",
+   "credit": {
+    "artist": "Canaan",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:SF_maig_2_cropped.jpg",
+    "file": "SF_maig_2_cropped.jpg"
+   }
+  },
+  {
+   "id": "neuschwanstein-castle",
+   "img": "/geography/postcards/960d07e68106.webp",
+   "w": 1126,
+   "h": 842,
+   "tone": "#285477",
+   "name": "Neuschwanstein Castle",
+   "place": "Bavaria, Germany",
+   "lat": 47.5575,
+   "lon": 10.74944,
+   "blurb": "Neuschwanstein Castle is a 19th-century historicist palace on a rugged hill of the foothills of the Alps in the very south of Germany, near the border with Austria.",
+   "wiki": "https://en.wikipedia.org/wiki/Neuschwanstein_Castle",
+   "credit": {
+    "artist": "Thomas Wolf , www.foto-tw.de",
+    "licence": "CC BY-SA 3.0 de",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Schloss_Neuschwanstein_2013.jpg",
+    "file": "Schloss_Neuschwanstein_2013.jpg"
+   }
+  },
+  {
+   "id": "matterhorn",
+   "img": "/geography/postcards/1e8283f22d38.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#305480",
+   "name": "Matterhorn",
+   "place": "Swiss–Italian Alps",
+   "lat": 45.97639,
+   "lon": 7.65861,
+   "blurb": "The Matterhorn is a mountain of the Alps, straddling the main watershed and border between Switzerland and Italy.",
+   "wiki": "https://en.wikipedia.org/wiki/Matterhorn",
+   "credit": {
+    "artist": "Photo: chil, on Camptocamp.org Derivative work: Zacharie Grossen",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Matterhorn_from_Domh%C3%BCtte_-_2.jpg",
+    "file": "Matterhorn_from_Domhütte_-_2.jpg"
+   }
+  },
+  {
+   "id": "oia",
+   "img": "/geography/postcards/b482e7919342.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#656565",
+   "name": "Oia",
+   "place": "Santorini, Greece",
+   "lat": 36.46667,
+   "lon": 25.36667,
+   "blurb": "Oia or Ia is a small village and former community in the South Aegean on the islands of Thira and Therasia, in the Cyclades, Greece.",
+   "wiki": "https://en.wikipedia.org/wiki/Oia,_Greece",
+   "credit": {
+    "artist": "TomasEE",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Oia_sunset_-_panoramio_(2).jpg",
+    "file": "Oia_sunset_-_panoramio_(2).jpg"
+   }
+  },
+  {
+   "id": "dubrovnik-old-town",
+   "img": "/geography/postcards/f53efa041c5c.webp",
+   "w": 1280,
+   "h": 794,
+   "tone": "#041f39",
+   "name": "Dubrovnik Old Town",
+   "place": "Dubrovnik, Croatia",
+   "lat": 42.64028,
+   "lon": 18.10833,
+   "blurb": "Dubrovnik, historically also known as Ragusa, is a city in southern Dalmatia, Croatia, by the Adriatic Sea.",
+   "wiki": "https://en.wikipedia.org/wiki/Dubrovnik",
+   "credit": {
+    "artist": "Zysko serhii",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_walls_of_the_fortress_and_View_of_the_old_city._panorama.jpg",
+    "file": "The_walls_of_the_fortress_and_View_of_the_old_city._panorama.jpg"
+   }
+  },
+  {
+   "id": "hallstatt",
+   "img": "/geography/postcards/43d573a15958.webp",
+   "w": 1126,
+   "h": 777,
+   "tone": "#425c80",
+   "name": "Hallstatt",
+   "place": "Upper Austria, Austria",
+   "lat": 47.562,
+   "lon": 13.649,
+   "blurb": "Hallstatt is a small town in the Gmunden District of the Austrian state of Upper Austria.",
+   "wiki": "https://en.wikipedia.org/wiki/Hallstatt",
+   "credit": {
+    "artist": "C.Stadler/Bwag",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hallstatt_-_Zentrum_.JPG",
+    "file": "Hallstatt_-_Zentrum_.JPG"
+   }
+  },
+  {
+   "id": "stonehenge",
+   "img": "/geography/postcards/bdab50930b23.webp",
+   "w": 1280,
+   "h": 960,
+   "tone": "#4b5c80",
+   "name": "Stonehenge",
+   "place": "Wiltshire, England",
+   "lat": 51.17889,
+   "lon": -1.82611,
+   "blurb": "Stonehenge is a prehistoric megalithic structure on Salisbury Plain in Wiltshire, England, two miles west of Amesbury.",
+   "wiki": "https://en.wikipedia.org/wiki/Stonehenge",
+   "credit": {
+    "artist": "garethwiscombe",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Stonehenge2007_07_30.jpg",
+    "file": "Stonehenge2007_07_30.jpg"
+   }
+  },
+  {
+   "id": "giant-s-causeway",
+   "img": "/geography/postcards/0445eb70d3c4.webp",
+   "w": 1280,
+   "h": 960,
+   "tone": "#423939",
+   "name": "Giant's Causeway",
+   "place": "County Antrim, Northern Ireland",
+   "lat": 55.24083,
+   "lon": -6.51167,
+   "blurb": "The Giant's Causeway is an area of approximately 40,000 interlocking basalt columns, the result of an ancient volcanic fissure eruption, part of the North Atlantic Igneous Province active in the region during the Paleogene period.",
+   "wiki": "https://en.wikipedia.org/wiki/Giant%27s_Causeway",
+   "credit": {
+    "artist": "code poet on flickr.",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Causeway-code_poet-4.jpg",
+    "file": "Causeway-code_poet-4.jpg"
+   }
+  },
+  {
+   "id": "kirkjufell",
+   "img": "/geography/postcards/6eac5c4ca041.webp",
+   "w": 1280,
+   "h": 854,
+   "tone": "#6e7780",
+   "name": "Kirkjufell",
+   "place": "Snæfellsnes, Iceland",
+   "lat": 64.94104,
+   "lon": -23.30569,
+   "blurb": "Kirkjufell is a 463 m high hill on the north coast of Iceland's Snæfellsnes peninsula, near the town of Grundarfjörður. It is claimed to be the most photographed mountain in the country.",
+   "wiki": "https://en.wikipedia.org/wiki/Kirkjufell",
+   "credit": {
+    "artist": "Anjali Kiggal",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kirkjufell_in_Iceland.jpg",
+    "file": "Kirkjufell_in_Iceland.jpg"
+   }
+  },
+  {
+   "id": "mont-saint-michel",
+   "img": "/geography/postcards/0ef4097374b4.webp",
+   "w": 1280,
+   "h": 720,
+   "tone": "#393930",
+   "name": "Mont-Saint-Michel",
+   "place": "Normandy, France",
+   "lat": 48.636,
+   "lon": -1.511,
+   "blurb": "Mont-Saint-Michel is a tidal island and mainland commune in Normandy, France. The island lies approximately one kilometre off France's north-western coast, at the mouth of the Couesnon River near Avranches and is 7 hectares in area.",
+   "wiki": "https://en.wikipedia.org/wiki/Mont-Saint-Michel",
+   "credit": {
+    "artist": "Amaustan",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mont-Saint-Michel_vu_du_ciel.jpg",
+    "file": "Mont-Saint-Michel_vu_du_ciel.jpg"
+   }
+  },
+  {
+   "id": "seljalandsfoss",
+   "img": "/geography/postcards/10682e672efb.webp",
+   "w": 1280,
+   "h": 775,
+   "tone": "#040404",
+   "name": "Seljalandsfoss",
+   "place": "South Iceland",
+   "lat": 63.61583,
+   "lon": -19.99278,
+   "blurb": "Seljalandsfoss is a waterfall in Iceland. Seljalandsfoss is located in the South Region in Iceland right by Route 1 and the road that leads to Þórsmörk Road 249.",
+   "wiki": "https://en.wikipedia.org/wiki/Seljalandsfoss",
+   "credit": {
+    "artist": "Robert Lukeman robertlukeman",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Idyllic_landscape_with_a_waterfall_(Unsplash).jpg",
+    "file": "Idyllic_landscape_with_a_waterfall_(Unsplash).jpg"
+   }
+  },
+  {
+   "id": "preikestolen",
+   "img": "/geography/postcards/73d41dbb81a9.webp",
+   "w": 1280,
+   "h": 691,
+   "tone": "#6e6e6e",
+   "name": "Preikestolen",
+   "place": "Rogaland, Norway",
+   "lat": 58.98666,
+   "lon": 6.18748,
+   "blurb": "Preikestolen or Prekestolen is a tourist attraction in Strand Municipality in Rogaland county, Norway. Preikestolen is a steep cliff which rises 604 metres above Lysefjorden.",
+   "wiki": "https://en.wikipedia.org/wiki/Preikestolen",
+   "credit": {
+    "artist": "Clementp.fr",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lyse_Fjord_et_Preikestolen.jpg",
+    "file": "Lyse_Fjord_et_Preikestolen.jpg"
+   }
+  },
+  {
+   "id": "saint-basil-s-cathedral",
+   "img": "/geography/postcards/55025032431e.webp",
+   "w": 923,
+   "h": 1024,
+   "tone": "#6e7780",
+   "name": "Saint Basil's Cathedral",
+   "place": "Moscow, Russia",
+   "lat": 55.7525,
+   "lon": 37.62306,
+   "blurb": "The Cathedral of Vasily the Blessed, commonly known as Saint Basil's Cathedral, is a Russian Orthodox church on Red Square in the historic centre of Moscow. It is one of the most popular cultural symbols of Russia.",
+   "wiki": "https://en.wikipedia.org/wiki/Saint_Basil%27s_Cathedral",
+   "credit": {
+    "artist": "Tsy1980",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Saint_Basil%27s_Cathedral_in_Moscow.jpg",
+    "file": "Saint_Basil's_Cathedral_in_Moscow.jpg"
+   }
+  },
+  {
+   "id": "alhambra",
+   "img": "/geography/postcards/d7da18a86cc2.webp",
+   "w": 1280,
+   "h": 852,
+   "tone": "#808080",
+   "name": "Alhambra",
+   "place": "Granada, Spain",
+   "lat": 37.1775,
+   "lon": -3.59,
+   "blurb": "The Alhambra is a palace and fortress complex located in Granada, Spain. It is one of the most famous monuments of Islamic architecture and the only well-preserved palace from the medieval Islamic world.",
+   "wiki": "https://en.wikipedia.org/wiki/Alhambra",
+   "credit": {
+    "artist": "Jebulon",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg",
+    "file": "Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg"
+   }
+  },
+  {
+   "id": "cliffs-of-moher",
+   "img": "/geography/postcards/0935888e2625.webp",
+   "w": 1126,
+   "h": 845,
+   "tone": "#657788",
+   "name": "Cliffs of Moher",
+   "place": "County Clare, Ireland",
+   "lat": 52.97175,
+   "lon": -9.42633,
+   "blurb": "The Cliffs of Moher are sea cliffs located at the southwestern edge of the Burren region in County Clare, Ireland. They run for about 14 kilometres.",
+   "wiki": "https://en.wikipedia.org/wiki/Cliffs_of_Moher",
+   "credit": {
+    "artist": "Bjørn Christian Tørrissen",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cliffs-Of-Moher-OBriens-From-South.JPG",
+    "file": "Cliffs-Of-Moher-OBriens-From-South.JPG"
+   }
+  },
+  {
+   "id": "meteora",
+   "img": "/geography/postcards/d2a6fcb83935.webp",
+   "w": 1280,
+   "h": 854,
+   "tone": "#040404",
+   "name": "Meteora",
+   "place": "Thessaly, Greece",
+   "lat": 39.71417,
+   "lon": 21.63111,
+   "blurb": "Meteora is a rock formation in the regional unit of Trikala, in Thessaly, in northwestern Greece, hosting one of the most prominent complexes of Eastern Orthodox monasteries, viewed locally as second in importance only to Mount Athos.",
+   "wiki": "https://en.wikipedia.org/wiki/Meteora",
+   "credit": {
+    "artist": "Stathis floros",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Meteora%27s_monastery_2.jpg",
+    "file": "Meteora's_monastery_2.jpg"
+   }
+  },
+  {
+   "id": "lake-bled",
+   "img": "/geography/postcards/bd0a8e1a4a26.webp",
+   "w": 1280,
+   "h": 960,
+   "tone": "#306588",
+   "name": "Lake Bled",
+   "place": "Bled, Slovenia",
+   "lat": 46.36444,
+   "lon": 14.09472,
+   "blurb": "Lake Bled is a lake in the Julian Alps of the Upper Carniolan region of northwestern Slovenia, where it adjoins the town of Bled. The area is a tourist destination.",
+   "wiki": "https://en.wikipedia.org/wiki/Lake_Bled",
+   "credit": {
+    "artist": "Canadianhockey91",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lake_Bled_from_the_Mountain.jpg",
+    "file": "Lake_Bled_from_the_Mountain.jpg"
+   }
+  },
+  {
+   "id": "tower-bridge",
+   "img": "/geography/postcards/16fca067b664.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#0d0d0d",
+   "name": "Tower Bridge",
+   "place": "London, England",
+   "lat": 51.5056,
+   "lon": -0.0753,
+   "blurb": "Tower Bridge is a Grade I listed combined bascule, suspension, and, until 1960, cantilever bridge in London, built between 1886 and 1894, designed by Horace Jones and engineered by John Wolfe Barry with the help of Henry Marc Brunel.",
+   "wiki": "https://en.wikipedia.org/wiki/Tower_Bridge",
+   "credit": {
+    "artist": "Fuzzypiggy",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tower_Bridge_at_Dawn.jpg",
+    "file": "Tower_Bridge_at_Dawn.jpg"
+   }
+  },
+  {
+   "id": "hagia-sophia",
+   "img": "/geography/postcards/d3a1417c7c65.webp",
+   "w": 1280,
+   "h": 774,
+   "tone": "#425465",
+   "name": "Hagia Sophia",
+   "place": "Istanbul, Turkey",
+   "lat": 41.00833,
+   "lon": 28.98,
+   "blurb": "Hagia Sophia, officially the Hagia Sophia Grand Mosque, is a mosque and a major cultural and historical site in Istanbul, Turkey. It was formerly a church and a museum.",
+   "wiki": "https://en.wikipedia.org/wiki/Hagia_Sophia",
+   "credit": {
+    "artist": "Adli Wahid",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hagia_Sophia_(228968325).jpeg",
+    "file": "Hagia_Sophia_(228968325).jpeg"
+   }
+  },
+  {
+   "id": "goreme",
+   "img": "/geography/postcards/4d38a4c6e2e8.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#546e88",
+   "name": "Göreme",
+   "place": "Cappadocia, Turkey",
+   "lat": 38.64306,
+   "lon": 34.82889,
+   "blurb": "Göreme is a town in the Nevşehir District, Nevşehir Province in Central Anatolia, Turkey. Its population is 2,034.",
+   "wiki": "https://en.wikipedia.org/wiki/G%C3%B6reme",
+   "credit": {
+    "artist": "MusikAnimal",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:G%C3%B6reme_town_and_valley_2015.JPG",
+    "file": "Göreme_town_and_valley_2015.JPG"
+   }
+  },
+  {
+   "id": "pamukkale",
+   "img": "/geography/postcards/ba3a7c9ec494.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#54545c",
+   "name": "Pamukkale",
+   "place": "Denizli, Turkey",
+   "lat": 37.92389,
+   "lon": 29.12333,
+   "blurb": "Pamukkale, meaning \"cotton castle\" in Turkish, is a natural site in Denizli Province in southwestern Turkey. The area is famous for a carbonate mineral left by the flowing of thermal spring water.",
+   "wiki": "https://en.wikipedia.org/wiki/Pamukkale",
+   "credit": {
+    "artist": "Biologg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pamukkale,_Denizli_2026_68.jpg",
+    "file": "Pamukkale,_Denizli_2026_68.jpg"
+   }
+  },
+  {
+   "id": "plitvice-lakes",
+   "img": "/geography/postcards/897e282b1ff3.webp",
+   "w": 635,
+   "h": 901,
+   "tone": "#040d04",
+   "name": "Plitvice Lakes",
+   "place": "Lika-Senj, Croatia",
+   "lat": 44.88056,
+   "lon": 15.61611,
+   "blurb": "Plitvice Lakes National Park is one of the oldest and largest national parks in Croatia.",
+   "wiki": "https://en.wikipedia.org/wiki/Plitvice_Lakes_National_Park",
+   "credit": {
+    "artist": "Zysko serhii",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:View_in_Plitvice_Lakes_National_Park.jpg",
+    "file": "View_in_Plitvice_Lakes_National_Park.jpg"
+   }
+  },
+  {
+   "id": "brandenburg-gate",
+   "img": "/geography/postcards/3cfa575fbdef.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#044277",
+   "name": "Brandenburg Gate",
+   "place": "Berlin, Germany",
+   "lat": 52.5163,
+   "lon": 13.3777,
+   "blurb": "The Brandenburg Gate is an 18th-century neoclassical monument in Berlin, Germany.",
+   "wiki": "https://en.wikipedia.org/wiki/Brandenburg_Gate",
+   "credit": {
+    "artist": "Thomas Wolf , www.foto-tw.de",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Brandenburger_Tor_abends.jpg",
+    "file": "Brandenburger_Tor_abends.jpg"
+   }
+  },
+  {
+   "id": "belem-tower",
+   "img": "/geography/postcards/26b29b43c75e.webp",
+   "w": 1073,
+   "h": 1024,
+   "tone": "#657788",
+   "name": "Belém Tower",
+   "place": "Lisbon, Portugal",
+   "lat": 38.69167,
+   "lon": -9.21611,
+   "blurb": "Belém Tower, officially the Tower of Saint Vincent, is a 16th-century fortification located in Lisbon, Portugal, which served as a point of embarkation and disembarkation for Portuguese explorers and as a ceremonial gateway to Lisbon.",
+   "wiki": "https://en.wikipedia.org/wiki/Bel%C3%A9m_Tower",
+   "credit": {
+    "artist": "Alvesgaspar",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Torre_Bel%C3%A9m_April_2009-4a.jpg",
+    "file": "Torre_Belém_April_2009-4a.jpg"
+   }
+  },
+  {
+   "id": "old-man-of-storr",
+   "img": "/geography/postcards/1b365dcc0b3f.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#5c6e80",
+   "name": "Old Man of Storr",
+   "place": "Isle of Skye, Scotland",
+   "lat": 57.50669,
+   "lon": -6.18368,
+   "blurb": "The Storr is a mountain on the Trotternish peninsula of the Isle of Skye in Scotland. The hill presents a steep rocky eastern face overlooking the Sound of Raasay, contrasting with gentler grassy slopes to the west.",
+   "wiki": "https://en.wikipedia.org/wiki/The_Storr",
+   "credit": {
+    "artist": "Grinner",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Storr_by_Grinner.jpg",
+    "file": "The_Storr_by_Grinner.jpg"
+   }
+  },
+  {
+   "id": "rila-monastery",
+   "img": "/geography/postcards/946aa45d1c58.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#040404",
+   "name": "Rila Monastery",
+   "place": "Rila Mountains, Bulgaria",
+   "lat": 42.13333,
+   "lon": 23.34028,
+   "blurb": "The Monastery of Saint John of Rila, also known as Rila Monastery (\"Sveti Ivan Rilski\", is the largest and most famous Eastern Orthodox monastery in Bulgaria.",
+   "wiki": "https://en.wikipedia.org/wiki/Rila_Monastery",
+   "credit": {
+    "artist": "Raggatt2000",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rila_Monastery,_August_2013.jpg",
+    "file": "Rila_Monastery,_August_2013.jpg"
+   }
+  },
+  {
+   "id": "bran-castle",
+   "img": "/geography/postcards/6d793d312c19.webp",
+   "w": 1280,
+   "h": 849,
+   "tone": "#040404",
+   "name": "Bran Castle",
+   "place": "Brașov County, Romania",
+   "lat": 45.515,
+   "lon": 25.36722,
+   "blurb": "Bran Castle is a castle in Bran, 25 kilometres southwest of Brașov. The castle was built by Saxons in 1377 who were given the privilege by Louis I of Hungary. It is a national monument and landmark in Transylvania.",
+   "wiki": "https://en.wikipedia.org/wiki/Bran_Castle",
+   "credit": {
+    "artist": "Dobre Cezar",
+    "licence": "CC BY-SA 3.0 ro",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/ro/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Castelul_Bran2.jpg",
+    "file": "Castelul_Bran2.jpg"
+   }
+  },
+  {
+   "id": "hallgrimskirkja",
+   "img": "/geography/postcards/6f878b7ac800.webp",
+   "w": 1166,
+   "h": 1024,
+   "tone": "#888888",
+   "name": "Hallgrímskirkja",
+   "place": "Reykjavík, Iceland",
+   "lat": 64.1417,
+   "lon": -21.9266,
+   "blurb": "Hallgrímskirkja is a Protestant Lutheran parish church in Reykjavík, Iceland. 5 metres tall, it is the largest church in Iceland and second tallest building in the country.",
+   "wiki": "https://en.wikipedia.org/wiki/Hallgr%C3%ADmskirkja",
+   "credit": {
+    "artist": "Steinninn",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hallgrimskirkja_mai_2026.jpg",
+    "file": "Hallgrimskirkja_mai_2026.jpg"
+   }
+  },
+  {
+   "id": "leaning-tower-of-pisa",
+   "img": "/geography/postcards/e14347b3befa.webp",
+   "w": 734,
+   "h": 1024,
+   "tone": "#424242",
+   "name": "Leaning Tower of Pisa",
+   "place": "Pisa, Italy",
+   "lat": 43.72306,
+   "lon": 10.39639,
+   "blurb": "The Leaning Tower of Pisa, or simply the Tower of Pisa, is the campanile, or freestanding bell tower, of Pisa Cathedral. It is known for its nearly four-degree lean, the result of an unstable foundation.",
+   "wiki": "https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa",
+   "credit": {
+    "artist": "Arne Müseler",
+    "licence": "CC BY-SA 3.0 de",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Italy_-_Pisa_-_Leaning_Tower.jpg",
+    "file": "Italy_-_Pisa_-_Leaning_Tower.jpg"
+   }
+  },
+  {
+   "id": "acropolis-of-athens",
+   "img": "/geography/postcards/a8e137fd655b.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#303954",
+   "name": "Acropolis of Athens",
+   "place": "Athens, Greece",
+   "lat": 37.97167,
+   "lon": 23.72611,
+   "blurb": "The Acropolis of Athens is an ancient citadel located on a rocky outcrop above the city of Athens, Greece, and contains the remains of several ancient buildings of great architectural and historical significance, the most famous being the Parthenon.",
+   "wiki": "https://en.wikipedia.org/wiki/Acropolis_of_Athens",
+   "credit": {
+    "artist": "Giles Laurent",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:1029_Acropolis_of_Athens_in_Greece_at_night_Photo_by_Giles_Laurent.jpg",
+    "file": "1029_Acropolis_of_Athens_in_Greece_at_night_Photo_by_Giles_Laurent.jpg"
+   }
+  },
+  {
+   "id": "tre-cime-di-lavaredo",
+   "img": "/geography/postcards/c44db21a46ea.webp",
+   "w": 1280,
+   "h": 733,
+   "tone": "#888888",
+   "name": "Tre Cime di Lavaredo",
+   "place": "Dolomites, Italy",
+   "lat": 46.61667,
+   "lon": 12.3,
+   "blurb": "The Tre Cime di Lavaredo, also called the Drei Zinnen, are three distinctive battlement-like peaks, in the Sexten Dolomites of northeastern Italy. They are one of the best-known mountain groups in the Alps.",
+   "wiki": "https://en.wikipedia.org/wiki/Tre_Cime_di_Lavaredo",
+   "credit": {
+    "artist": "Tiia Monto",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2019_Tre_Cime.jpg",
+    "file": "2019_Tre_Cime.jpg"
+   }
+  },
+  {
+   "id": "geirangerfjord",
+   "img": "/geography/postcards/f4bd9c37b143.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#888888",
+   "name": "Geirangerfjord",
+   "place": "Møre og Romsdal, Norway",
+   "lat": 62.121,
+   "lon": 7.129,
+   "blurb": "Geirangerfjorden or Geiranger Fjord is a fjord in the Sunnmøre region of Møre og Romsdal county, Norway. It is located entirely in Stranda Municipality.",
+   "wiki": "https://en.wikipedia.org/wiki/Geirangerfjord",
+   "credit": {
+    "artist": "Andreas Trepte",
+    "licence": "CC BY-SA 2.5",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Geirangerfjord_.jpg",
+    "file": "Geirangerfjord_.jpg"
+   }
+  },
+  {
+   "id": "durdle-door",
+   "img": "/geography/postcards/424775120fe1.webp",
+   "w": 1126,
+   "h": 737,
+   "tone": "#656e80",
+   "name": "Durdle Door",
+   "place": "Dorset, England",
+   "lat": 50.62114,
+   "lon": -2.27699,
+   "blurb": "Durdle Door is a natural limestone arch on the Jurassic Coast near Lulworth in Dorset, England. It is privately owned by the Weld family, who own the Lulworth Estate, but it is also open to the public.",
+   "wiki": "https://en.wikipedia.org/wiki/Durdle_Door",
+   "credit": {
+    "artist": "Saffron Blaze",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Durdle_Door_Overview.jpg",
+    "file": "Durdle_Door_Overview.jpg"
+   }
+  },
+  {
+   "id": "manarola",
+   "img": "/geography/postcards/0e61d3634379.webp",
+   "w": 1280,
+   "h": 720,
+   "tone": "#6e6e77",
+   "name": "Manarola",
+   "place": "Cinque Terre, Italy",
+   "lat": 44.1,
+   "lon": 9.75,
+   "blurb": "Manarola is a small town, a frazione of the comune of Riomaggiore, in the province of La Spezia, Liguria, Northern Italy. It is the second-smallest of the famous Cinque Terre towns frequented by tourists, with a population of 353.",
+   "wiki": "https://en.wikipedia.org/wiki/Manarola",
+   "credit": {
+    "artist": "This Photo was taken by Timothy A. Gonsalves . Feel free to use my photos, but please ment",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Manarola_NW_Cinque_Terre_Sep23_A7C_07233.jpg",
+    "file": "Manarola_NW_Cinque_Terre_Sep23_A7C_07233.jpg"
+   }
+  },
+  {
+   "id": "ponte-vecchio",
+   "img": "/geography/postcards/65fbeb978c51.webp",
+   "w": 1280,
+   "h": 713,
+   "tone": "#546577",
+   "name": "Ponte Vecchio",
+   "place": "Florence, Italy",
+   "lat": 43.76799,
+   "lon": 11.25316,
+   "blurb": "The Ponte Vecchio is a medieval stone closed-spandrel segmental arch bridge over the Arno, in Florence, Italy.",
+   "wiki": "https://en.wikipedia.org/wiki/Ponte_Vecchio",
+   "credit": {
+    "artist": "Ingo Mehling",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ponte_Vecchio_from_Ponte_alle_Grazie.jpg",
+    "file": "Ponte_Vecchio_from_Ponte_alle_Grazie.jpg"
+   }
+  },
+  {
+   "id": "hungarian-parliament-building",
+   "img": "/geography/postcards/5594c08177ec.webp",
+   "w": 1280,
+   "h": 717,
+   "tone": "#546e80",
+   "name": "Hungarian Parliament Building",
+   "place": "Budapest, Hungary",
+   "lat": 47.50694,
+   "lon": 19.04556,
+   "blurb": "The Hungarian Parliament Building, also known as the Parliament of Budapest after its location, is the seat of the National Assembly of Hungary, a notable landmark of Hungary, and a popular tourist destination in Budapest.",
+   "wiki": "https://en.wikipedia.org/wiki/Hungarian_Parliament_Building",
+   "credit": {
+    "artist": "Kilyann Le Hen",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hungarian_Parliament_Building_from_across_the_Danube,_2025-01-11.jpg",
+    "file": "Hungarian_Parliament_Building_from_across_the_Danube,_2025-01-11.jpg"
+   }
+  },
+  {
+   "id": "sveti-stefan",
+   "img": "/geography/postcards/f6e33708c162.webp",
+   "w": 1280,
+   "h": 720,
+   "tone": "#394b65",
+   "name": "Sveti Stefan",
+   "place": "Budva, Montenegro",
+   "lat": 42.25583,
+   "lon": 18.89111,
+   "blurb": "Sveti Stefan is a town in Budva Municipality, on the Adriatic coast of Montenegro, approximately 6 kilometres southeast of Budva.",
+   "wiki": "https://en.wikipedia.org/wiki/Sveti_Stefan",
+   "credit": {
+    "artist": "Marcin Konsek",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sveti_Stefan_(06).jpg",
+    "file": "Sveti_Stefan_(06).jpg"
+   }
+  },
+  {
+   "id": "pyramids-of-giza",
+   "img": "/geography/postcards/3bd581db20da.webp",
+   "w": 1280,
+   "h": 720,
+   "tone": "#395c77",
+   "name": "Pyramids of Giza",
+   "place": "Giza, Egypt",
+   "lat": 29.97917,
+   "lon": 31.13417,
+   "blurb": "The Great Pyramid of Giza is the largest of the Egyptian pyramids and the most famous landmark of the Giza pyramid complex in Giza, Egypt.",
+   "wiki": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza",
+   "credit": {
+    "artist": "Douwe C. van der Zee",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Great_Pyramid_of_Giza_-_Pyramid_of_Khufu.jpg",
+    "file": "Great_Pyramid_of_Giza_-_Pyramid_of_Khufu.jpg"
+   }
+  },
+  {
+   "id": "abu-simbel",
+   "img": "/geography/postcards/3598c0f42104.webp",
+   "w": 1126,
+   "h": 845,
+   "tone": "#776e65",
+   "name": "Abu Simbel",
+   "place": "Aswan Governorate, Egypt",
+   "lat": 22.33694,
+   "lon": 31.62556,
+   "blurb": "Abu Simbel is a historic site comprising two massive rock-cut temples in the village of Abu Simbel, Aswan Governorate, Upper Egypt, near the border with Sudan.",
+   "wiki": "https://en.wikipedia.org/wiki/Abu_Simbel",
+   "credit": {
+    "artist": "youssef_alam",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ramsis,_Aswan_Governorate,_Egypt_-_panoramio.jpg",
+    "file": "Ramsis,_Aswan_Governorate,_Egypt_-_panoramio.jpg"
+   }
+  },
+  {
+   "id": "table-mountain",
+   "img": "/geography/postcards/e9cf6a4918fe.webp",
+   "w": 1280,
+   "h": 837,
+   "tone": "#1f4b77",
+   "name": "Table Mountain",
+   "place": "Cape Town, South Africa",
+   "lat": -33.96218,
+   "lon": 18.40988,
+   "blurb": "Table Mountain is a flat-topped mountain forming a prominent landmark overlooking the city of Cape Town in South Africa. It is a significant tourist attraction, with many visitors either using the cableway or hiking to the top.",
+   "wiki": "https://en.wikipedia.org/wiki/Table_Mountain",
+   "credit": {
+    "artist": "Danie van der Merwe from Cape Town, South Africa",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Table_Mountain_DanieVDM.jpg",
+    "file": "Table_Mountain_DanieVDM.jpg"
+   }
+  },
+  {
+   "id": "victoria-falls",
+   "img": "/geography/postcards/dec29223ba08.webp",
+   "w": 659,
+   "h": 1024,
+   "tone": "#162830",
+   "name": "Victoria Falls",
+   "place": "Zambia–Zimbabwe border",
+   "lat": -17.92444,
+   "lon": 25.85667,
+   "blurb": "Victoria Falls is a waterfall on the Zambezi River, located on the border between Zambia and Zimbabwe. It is one of the world's largest waterfalls, with a width of 1,708 m.",
+   "wiki": "https://en.wikipedia.org/wiki/Victoria_Falls",
+   "credit": {
+    "artist": "Diego Delso",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cataratas_Victoria,_Zambia-Zimbabue,_2018-07-27,_DD_04.jpg",
+    "file": "Cataratas_Victoria,_Zambia-Zimbabue,_2018-07-27,_DD_04.jpg"
+   }
+  },
+  {
+   "id": "avenue-of-the-baobabs",
+   "img": "/geography/postcards/3fc58794754e.webp",
+   "w": 1280,
+   "h": 605,
+   "tone": "#777777",
+   "name": "Avenue of the Baobabs",
+   "place": "Menabe, Madagascar",
+   "lat": -20.25,
+   "lon": 44.41944,
+   "blurb": "8 between Morondava and Belon'i Tsiribihina in the Menabe region of western Madagascar. Its striking landscape draws travelers from around the world, making it one of the most visited locations in the region.",
+   "wiki": "https://en.wikipedia.org/wiki/Avenue_of_the_Baobabs",
+   "credit": {
+    "artist": "Pat Hooper from Chicago, IL, USA",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Adansonia_grandidieri_Pat_Hooper.jpg",
+    "file": "Adansonia_grandidieri_Pat_Hooper.jpg"
+   }
+  },
+  {
+   "id": "great-mosque-of-djenne",
+   "img": "/geography/postcards/66d7d336d6d3.webp",
+   "w": 1280,
+   "h": 851,
+   "tone": "#65656e",
+   "name": "Great Mosque of Djenné",
+   "place": "Djenné, Mali",
+   "lat": 13.90528,
+   "lon": -4.55556,
+   "blurb": "The Great Mosque of Djenné in the Sudano-Sahelian architectural style is the largest adobe brick building in the world. The mosque is located in the city of Djenné, Mali, on the flood plain of the Bani River.",
+   "wiki": "https://en.wikipedia.org/wiki/Great_Mosque_of_Djenn%C3%A9",
+   "credit": {
+    "artist": "Ruud Zwart",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Djenne_great_mud_mosque.jpg",
+    "file": "Djenne_great_mud_mosque.jpg"
+   }
+  },
+  {
+   "id": "chefchaouen",
+   "img": "/geography/postcards/58d4e35d282d.webp",
+   "w": 973,
+   "h": 647,
+   "tone": "#046580",
+   "name": "Chefchaouen",
+   "place": "Rif Mountains, Morocco",
+   "lat": 35.17139,
+   "lon": -5.26972,
+   "blurb": "Chefchaouen is a city in northwest Morocco. It is the chief town of the province of the same name and is noted for its buildings in shades of blue, for which it is nicknamed the \"Blue City\".",
+   "wiki": "https://en.wikipedia.org/wiki/Chefchaouen",
+   "credit": {
+    "artist": "Badr Rachadi",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chefchaouen-the-blue-city-of-morocco-with-palm-trees-and-the-mountain-view-in-the-backrgound.jpg",
+    "file": "Chefchaouen-the-blue-city-of-morocco-with-palm-trees-and-the-mountain-view-in-the-backrgound.jpg"
+   }
+  },
+  {
+   "id": "ait-benhaddou",
+   "img": "/geography/postcards/eb8e5afc2735.webp",
+   "w": 1126,
+   "h": 697,
+   "tone": "#394b6e",
+   "name": "Aït Benhaddou",
+   "place": "Ouarzazate Province, Morocco",
+   "lat": 31.04722,
+   "lon": -7.12889,
+   "blurb": "Aït Benhaddou is a historic ighrem or ksar along the former caravan route between the Sahara and Marrakesh in Morocco.",
+   "wiki": "https://en.wikipedia.org/wiki/A%C3%AFt_Benhaddou",
+   "credit": {
+    "artist": "Petar Milošević",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ksar_A%C3%AFt_Benhaddou,_Marocco_(%D8%A3%D9%8A%D8%AA_%D8%A8%D9%86_%D8%AD%D8%AF%D9%88%D8%8C_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8,_%E2%B4%B0%E2%B5%A2%E2%B5%9C_%E2%B5%83%E2%B4%B0%E2%B4%B7%E2%B4%B7%E2%B5%93).jpg",
+    "file": "Ksar_Aït_Benhaddou,_Marocco_(أيت_بن_حدو،_المغرب,_ⴰⵢⵜ_ⵃⴰⴷⴷⵓ).jpg"
+   }
+  },
+  {
+   "id": "church-of-saint-george",
+   "img": "/geography/postcards/3c583cd1a0cf.webp",
+   "w": 1182,
+   "h": 1024,
+   "tone": "#040404",
+   "name": "Church of Saint George",
+   "place": "Lalibela, Ethiopia",
+   "lat": 12.03174,
+   "lon": 39.04113,
+   "blurb": "The Church of Saint George is one of eleven rock-hewn monolithic churches in Lalibela, a town in the Amhara Region of Ethiopia.",
+   "wiki": "https://en.wikipedia.org/wiki/Church_of_Saint_George,_Lalibela",
+   "credit": {
+    "artist": "Sailko",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lalibela,_san_giorgio,_esterno_24.jpg",
+    "file": "Lalibela,_san_giorgio,_esterno_24.jpg"
+   }
+  },
+  {
+   "id": "kolmanskop",
+   "img": "/geography/postcards/fe2a46103db5.webp",
+   "w": 1280,
+   "h": 720,
+   "tone": "#6e5c42",
+   "name": "Kolmanskop",
+   "place": "Lüderitz, Namibia",
+   "lat": -26.70406,
+   "lon": 15.23236,
+   "blurb": "Kolmanskop is a ghost town in the Namib in southern Namibia, 10 kilometres inland from the port town of Lüderitz.",
+   "wiki": "https://en.wikipedia.org/wiki/Kolmanskop",
+   "credit": {
+    "artist": "SkyPixels",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kolmanskop_Ghost_Town.jpg",
+    "file": "Kolmanskop_Ghost_Town.jpg"
+   }
+  },
+  {
+   "id": "erg-chebbi",
+   "img": "/geography/postcards/e6b7d73abd43.webp",
+   "w": 1280,
+   "h": 805,
+   "tone": "#808080",
+   "name": "Erg Chebbi",
+   "place": "Merzouga, Morocco",
+   "lat": 31.16667,
+   "lon": -3.98333,
+   "blurb": "Erg Chebbi is one of Morocco's several ergs – large seas of dunes formed by wind-blown sand. It is located on the far western edge of the Sahara Desert. Other ergs in Morocco include Erg Chigaga near M'hamid.",
+   "wiki": "https://en.wikipedia.org/wiki/Erg_Chebbi",
+   "credit": {
+    "artist": "Bjørn Christian Tørrissen",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Merzouga_Dunes_2011.jpg",
+    "file": "Merzouga_Dunes_2011.jpg"
+   }
+  },
+  {
+   "id": "great-zimbabwe",
+   "img": "/geography/postcards/86974ad73b1e.webp",
+   "w": 973,
+   "h": 649,
+   "tone": "#040404",
+   "name": "Great Zimbabwe",
+   "place": "Masvingo, Zimbabwe",
+   "lat": -20.26667,
+   "lon": 30.93333,
+   "blurb": "Great Zimbabwe was a city in the south-eastern hills of the modern country of Zimbabwe, near Masvingo. It was settled from around 1000 AD, and served as the capital of the Kingdom of Great Zimbabwe from the 13th century.",
+   "wiki": "https://en.wikipedia.org/wiki/Great_Zimbabwe",
+   "credit": {
+    "artist": "Andrew Moore from Johannesburg, South Africa",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Conical_Tower_-_Great_Enclosure_III_(33736918448).jpg",
+    "file": "Conical_Tower_-_Great_Enclosure_III_(33736918448).jpg"
+   }
+  },
+  {
+   "id": "sidi-bou-said",
+   "img": "/geography/postcards/2575a7cb3f08.webp",
+   "w": 1280,
+   "h": 828,
+   "tone": "#040404",
+   "name": "Sidi Bou Said",
+   "place": "Tunis, Tunisia",
+   "lat": 36.87167,
+   "lon": 10.34722,
+   "blurb": "Sidi Bou Saïd is a town in northern Tunisia, located about 20 km northeast of the capital, Tunis. Named after the religious figure Abu Said al-Baji, it was formerly known as Jbel el-Menar.",
+   "wiki": "https://en.wikipedia.org/wiki/Sidi_Bou_Said",
+   "credit": {
+    "artist": "Mohamed Moslem Mosbah",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sidi_Chebaan.jpg",
+    "file": "Sidi_Chebaan.jpg"
+   }
+  },
+  {
+   "id": "amphitheatre-of-el-jem",
+   "img": "/geography/postcards/f5ef418b6a17.webp",
+   "w": 1280,
+   "h": 960,
+   "tone": "#545454",
+   "name": "Amphitheatre of El Jem",
+   "place": "El Djem, Tunisia",
+   "lat": 35.29639,
+   "lon": 10.70694,
+   "blurb": "The Amphitheatre of El Jem is an oval amphitheatre in the modern-day city of El Djem, Tunisia, formerly Thysdrus in the Roman province of Africa. It has been listed by UNESCO since 1979 as a World Heritage Site.",
+   "wiki": "https://en.wikipedia.org/wiki/Amphitheatre_of_El_Jem",
+   "credit": {
+    "artist": "Carole Raddato",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Amphitheatre_of_El_Jem,_built_around_AD_238_in_Thysdrus_in_Africa_Proconsularis,_the_estimated_capacity_is_35,000,_Tunisia_-_52717762494.jpg",
+    "file": "The_Amphitheatre_of_El_Jem,_built_around_AD_238_in_Thysdrus_in_Africa_Proconsularis,_the_estimated_capacity_is_35,000,_Tunisia_-_52717762494.jpg"
+   }
+  },
+  {
+   "id": "fish-river-canyon",
+   "img": "/geography/postcards/bdc18880dc8e.webp",
+   "w": 1280,
+   "h": 425,
+   "tone": "#5c5442",
+   "name": "Fish River Canyon",
+   "place": "ǁKaras Region, Namibia",
+   "lat": -27.58929,
+   "lon": 17.59759,
+   "blurb": "The Fish River Canyon is located in the south of Namibia. It is the largest canyon in Africa, and the second most visited tourist attraction in Namibia.",
+   "wiki": "https://en.wikipedia.org/wiki/Fish_River_Canyon",
+   "credit": {
+    "artist": "RudiBosbouer",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fish_River_Canyon_from_Main_View_Point.jpg",
+    "file": "Fish_River_Canyon_from_Main_View_Point.jpg"
+   }
+  },
+  {
+   "id": "cape-of-good-hope",
+   "img": "/geography/postcards/533d89d50b4b.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#808088",
+   "name": "Cape of Good Hope",
+   "place": "Cape Peninsula, South Africa",
+   "lat": -34.35806,
+   "lon": 18.47556,
+   "blurb": "The Cape of Good Hope is a rocky headland on the Atlantic coast of the Cape Peninsula in South Africa.",
+   "wiki": "https://en.wikipedia.org/wiki/Cape_of_Good_Hope",
+   "credit": {
+    "artist": "Diego Delso",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Playa_Dias,_Cape_Point,_Sud%C3%A1frica,_2018-07-23,_DD_103.jpg",
+    "file": "Playa_Dias,_Cape_Point,_Sudáfrica,_2018-07-23,_DD_103.jpg"
+   }
+  },
+  {
+   "id": "lake-retba",
+   "img": "/geography/postcards/7b177e04b13b.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#6e7788",
+   "name": "Lake Retba",
+   "place": "Cap-Vert, Senegal",
+   "lat": 14.83834,
+   "lon": -17.24482,
+   "blurb": "Lake Retba, also known as Lac Rose, lies north of the Cape Verde peninsula in Senegal, some 35 km north-east of the capital, Dakar.",
+   "wiki": "https://en.wikipedia.org/wiki/Lake_Retba",
+   "credit": {
+    "artist": "Jjm2311",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:RetbaLakeShore.jpg",
+    "file": "RetbaLakeShore.jpg"
+   }
+  },
+  {
+   "id": "karnak-temple",
+   "img": "/geography/postcards/65f66bfe3829.webp",
+   "w": 1280,
+   "h": 960,
+   "tone": "#284265",
+   "name": "Karnak Temple",
+   "place": "Luxor, Egypt",
+   "lat": 25.7183,
+   "lon": 32.6583,
+   "blurb": "The Karnak Temple Complex, commonly known as Karnak, comprises a vast mix of temples, pylons, chapels, and other buildings near Luxor, Egypt.",
+   "wiki": "https://en.wikipedia.org/wiki/Karnak",
+   "credit": {
+    "artist": "René Hourdry",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Temple_de_Louxor_68.jpg",
+    "file": "Temple_de_Louxor_68.jpg"
+   }
+  },
+  {
+   "id": "taj-mahal",
+   "img": "/geography/postcards/10a6c54f56f8.webp",
+   "w": 1280,
+   "h": 841,
+   "tone": "#42546e",
+   "name": "Taj Mahal",
+   "place": "Agra, India",
+   "lat": 27.175,
+   "lon": 78.0419,
+   "blurb": "The Taj Mahal is an ivory-white marble mausoleum on the right bank of the river Yamuna in Agra, Uttar Pradesh, India.",
+   "wiki": "https://en.wikipedia.org/wiki/Taj_Mahal",
+   "credit": {
+    "artist": "Yann ; edited by Jim Carter",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Taj_Mahal_(Edited).jpeg",
+    "file": "Taj_Mahal_(Edited).jpeg"
+   }
+  },
+  {
+   "id": "great-wall-at-mutianyu",
+   "img": "/geography/postcards/482069c6cad9.webp",
+   "w": 1280,
+   "h": 958,
+   "tone": "#546588",
+   "name": "Great Wall at Mutianyu",
+   "place": "Beijing, China",
+   "lat": 40.43802,
+   "lon": 116.5619,
+   "blurb": "Mutianyu is a section of the Great Wall of China located in Huairou District within the city limits of Beijing 70 kilometers northeast of the center of the city.",
+   "wiki": "https://en.wikipedia.org/wiki/Mutianyu",
+   "credit": {
+    "artist": "Velatrix",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Great_Wall_of_China_July_2006.JPG",
+    "file": "Great_Wall_of_China_July_2006.JPG"
+   }
+  },
+  {
+   "id": "angkor-wat",
+   "img": "/geography/postcards/0eb3ef4a0dac.webp",
+   "w": 1280,
+   "h": 870,
+   "tone": "#547788",
+   "name": "Angkor Wat",
+   "place": "Siem Reap, Cambodia",
+   "lat": 13.4125,
+   "lon": 103.86667,
+   "blurb": "Angkor Wat is a Theravada Buddhist temple complex, originally built as a Vaishnava Hindu temple, in Siem Reap, Cambodia. It is the largest religious complex in the world.",
+   "wiki": "https://en.wikipedia.org/wiki/Angkor_Wat",
+   "credit": {
+    "artist": "Bjørn Christian Tørrissen",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Angkor_Wat.jpg",
+    "file": "Angkor_Wat.jpg"
+   }
+  },
+  {
+   "id": "mount-fuji",
+   "img": "/geography/postcards/b07194e129a9.webp",
+   "w": 1280,
+   "h": 625,
+   "tone": "#305c80",
+   "name": "Mount Fuji",
+   "place": "Honshu, Japan",
+   "lat": 35.36083,
+   "lon": 138.7275,
+   "blurb": "24 m. It is the highest mountain in Japan, the second-highest volcano on any Asian island, and the seventh-highest peak of an island on Earth. Mount Fuji last erupted from 1707 to 1708.",
+   "wiki": "https://en.wikipedia.org/wiki/Mount_Fuji",
+   "credit": {
+    "artist": "Suicasmo",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:View_of_Mount_Fuji_from_%C5%8Cwakudani_20211202.jpg",
+    "file": "View_of_Mount_Fuji_from_Ōwakudani_20211202.jpg"
+   }
+  },
+  {
+   "id": "fushimi-inari-taisha",
+   "img": "/geography/postcards/30618726abd0.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#040404",
+   "name": "Fushimi Inari-taisha",
+   "place": "Kyoto, Japan",
+   "lat": 34.96722,
+   "lon": 135.77278,
+   "blurb": "Fushimi Inari-taisha is the head shrine of the kami Inari, located in Fushimi-ku, Kyoto, Japan.",
+   "wiki": "https://en.wikipedia.org/wiki/Fushimi_Inari-taisha",
+   "credit": {
+    "artist": "Basile Morin",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg",
+    "file": "Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg"
+   }
+  },
+  {
+   "id": "al-khazneh-petra",
+   "img": "/geography/postcards/67f7b1bb815e.webp",
+   "w": 1280,
+   "h": 854,
+   "tone": "#0d0404",
+   "name": "Al-Khazneh, Petra",
+   "place": "Ma'an Governorate, Jordan",
+   "lat": 30.32208,
+   "lon": 35.45154,
+   "blurb": "Al-Khazneh, also known as Khaznat el-Far'oun, is one of the most elaborate rock-cut tombs in Petra, a city of the Nabatean Kingdom inhabited by the Arabs in ancient times.",
+   "wiki": "https://en.wikipedia.org/wiki/Al-Khazneh",
+   "credit": {
+    "artist": "Susanahajer",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Al_khazneh.jpg",
+    "file": "Al_khazneh.jpg"
+   }
+  },
+  {
+   "id": "marina-bay-sands",
+   "img": "/geography/postcards/8229b8ee9af2.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#5c6e77",
+   "name": "Marina Bay Sands",
+   "place": "Singapore",
+   "lat": 1.2825,
+   "lon": 103.86,
+   "blurb": "Marina Bay Sands is an integrated resort fronting Marina Bay in Singapore and a landmark of the city. At its opening in 2010, it was deemed the world's most expensive standalone casino property at S$8 billion.",
+   "wiki": "https://en.wikipedia.org/wiki/Marina_Bay_Sands",
+   "credit": {
+    "artist": "This Photo was taken by Supanut Arunoprayote . Feel free to use any of my images, but plea",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Marina_Bay_Sands_(I).jpg",
+    "file": "Marina_Bay_Sands_(I).jpg"
+   }
+  },
+  {
+   "id": "ha-long-bay",
+   "img": "/geography/postcards/0acfac597678.webp",
+   "w": 1280,
+   "h": 898,
+   "tone": "#6e6e77",
+   "name": "Ha Long Bay",
+   "place": "Quảng Ninh, Vietnam",
+   "lat": 20.9,
+   "lon": 107.2,
+   "blurb": "Hạ Long Bay or Halong Bay is a bay located in Northeastern Vietnam, administered by the city of Quảng Ninh. The name Hạ Long means \"descending dragon\".",
+   "wiki": "https://en.wikipedia.org/wiki/H%E1%BA%A1_Long_Bay",
+   "credit": {
+    "artist": "Taewangkorea",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ha_Long_Bay_in_2019.jpg",
+    "file": "Ha_Long_Bay_in_2019.jpg"
+   }
+  },
+  {
+   "id": "shwedagon-pagoda",
+   "img": "/geography/postcards/764dd583555b.webp",
+   "w": 1280,
+   "h": 822,
+   "tone": "#425c6e",
+   "name": "Shwedagon Pagoda",
+   "place": "Yangon, Myanmar",
+   "lat": 16.79835,
+   "lon": 96.1497,
+   "blurb": "The Shwedagon Pagoda, officially named Shwedagon Zedi Daw, and also known as the Great Dagon Pagoda and the Golden Pagoda, Kyaik Dagon is a gilded stupa located in Yangon, Myanmar.",
+   "wiki": "https://en.wikipedia.org/wiki/Shwedagon_Pagoda",
+   "credit": {
+    "artist": "Bjørn Christian Tørrissen",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Shwedagon_Pagoda_2017.jpg",
+    "file": "Shwedagon_Pagoda_2017.jpg"
+   }
+  },
+  {
+   "id": "bagan",
+   "img": "/geography/postcards/91ebb6055231.webp",
+   "w": 1280,
+   "h": 837,
+   "tone": "#5c5c5c",
+   "name": "Bagan",
+   "place": "Mandalay Region, Myanmar",
+   "lat": 21.1725,
+   "lon": 94.86,
+   "blurb": "Bagan is a medieval city and a UNESCO World Heritage Site in the Mandalay Region of Myanmar.",
+   "wiki": "https://en.wikipedia.org/wiki/Bagan",
+   "credit": {
+    "artist": "Corto Maltese 1999",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bagan,_Burma.jpg",
+    "file": "Bagan,_Burma.jpg"
+   }
+  },
+  {
+   "id": "borobudur",
+   "img": "/geography/postcards/6393db434c73.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#6e6e6e",
+   "name": "Borobudur",
+   "place": "Central Java, Indonesia",
+   "lat": -7.608,
+   "lon": 110.204,
+   "blurb": "Borobudur, also transcribed Barabudur, is a 9th-century Mahayana Buddhist temple in Magelang Regency, near the town of Muntilan, northwest of the city of Yogyakarta, in Central Java, Indonesia.",
+   "wiki": "https://en.wikipedia.org/wiki/Borobudur",
+   "credit": {
+    "artist": "Heri nugroho",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pradaksina.jpg",
+    "file": "Pradaksina.jpg"
+   }
+  },
+  {
+   "id": "tanah-lot",
+   "img": "/geography/postcards/1c1afe728e9f.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#656e77",
+   "name": "Tanah Lot",
+   "place": "Bali, Indonesia",
+   "lat": -8.62107,
+   "lon": 115.08716,
+   "blurb": "Tanah Lot is a rock formation off the Indonesian island of Bali. It is home to the ancient Hindu pilgrimage temple Pura Tanah Lot, a popular tourist and cultural icon for photography.",
+   "wiki": "https://en.wikipedia.org/wiki/Tanah_Lot",
+   "credit": {
+    "artist": "Grayswoodsurrey",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:TanahLot_2014.JPG",
+    "file": "TanahLot_2014.JPG"
+   }
+  },
+  {
+   "id": "potala-palace",
+   "img": "/geography/postcards/73e655bb3c30.webp",
+   "w": 1280,
+   "h": 720,
+   "tone": "#888888",
+   "name": "Potala Palace",
+   "place": "Lhasa, Tibet, China",
+   "lat": 29.65778,
+   "lon": 91.11694,
+   "blurb": "Potala Palace is a museum complex in Lhasa, the capital of the Tibet Autonomous Region of China. It was formerly the winter palace of the Dalai Lamas, and from 1649 until 1959 served as the Dalai Lamas' residence.",
+   "wiki": "https://en.wikipedia.org/wiki/Potala_Palace",
+   "credit": {
+    "artist": "Lhasa Government",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Potala_Palace_HQ.jpg",
+    "file": "Potala_Palace_HQ.jpg"
+   }
+  },
+  {
+   "id": "zhangjiajie",
+   "img": "/geography/postcards/12e10216186e.webp",
+   "w": 1280,
+   "h": 639,
+   "tone": "#777777",
+   "name": "Zhangjiajie",
+   "place": "Hunan, China",
+   "lat": 29.34992,
+   "lon": 110.43515,
+   "blurb": "Zhangjiajie National Forest Park is a national forest park located in Zhangjiajie, Hunan Province, China. It is one of several national parks within the Wulingyuan Scenic Area.",
+   "wiki": "https://en.wikipedia.org/wiki/Zhangjiajie_National_Forest_Park",
+   "credit": {
+    "artist": "chensiyuan",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:1_tianzishan_wulingyuan_zhangjiajie_2012.jpg",
+    "file": "1_tianzishan_wulingyuan_zhangjiajie_2012.jpg"
+   }
+  },
+  {
+   "id": "registan",
+   "img": "/geography/postcards/942bcf1e1241.webp",
+   "w": 1280,
+   "h": 960,
+   "tone": "#39546e",
+   "name": "Registan",
+   "place": "Samarkand, Uzbekistan",
+   "lat": 39.65472,
+   "lon": 66.97556,
+   "blurb": "Registan, officially the Registan Square is a historic public square in the city of Samarkand, Uzbekistan. It served as the heart of the Timurid Empire and later as the city's commercial, educational, and ceremonial center.",
+   "wiki": "https://en.wikipedia.org/wiki/Registan",
+   "credit": {
+    "artist": "Registan_-_Gusjer.jpg : Gustavo Jeronimo from Aranjuez, Spain derivative work: MrPanyGoff",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:RegistanSquare_Samarkand.jpg",
+    "file": "RegistanSquare_Samarkand.jpg"
+   }
+  },
+  {
+   "id": "nasir-al-mulk-mosque",
+   "img": "/geography/postcards/32bccc023089.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#546577",
+   "name": "Nasir al-Mulk Mosque",
+   "place": "Shiraz, Iran",
+   "lat": 29.60861,
+   "lon": 52.54833,
+   "blurb": "The Nasir-ol-Molk Mosque, also known as the Pink Mosque, is a mosque located in Shiraz, in the province of Fars, Iran.",
+   "wiki": "https://en.wikipedia.org/wiki/Nasir-ol-Molk_Mosque",
+   "credit": {
+    "artist": "Matt Biddulph from UK",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Nasir_ol_Molk_Mosque_(31233739431).jpg",
+    "file": "Nasir_ol_Molk_Mosque_(31233739431).jpg"
+   }
+  },
+  {
+   "id": "persepolis",
+   "img": "/geography/postcards/622483d4fcae.webp",
+   "w": 1280,
+   "h": 848,
+   "tone": "#5c656e",
+   "name": "Persepolis",
+   "place": "Fars, Iran",
+   "lat": 29.935,
+   "lon": 52.89,
+   "blurb": "Persepolis or Parseh, also known in modern Persian as Takht-e Jamshid, was the ceremonial capital of the Achaemenid Empire. It is situated in the plains of Marvdasht, encircled by the southern Zagros Mountains, in Fars province of Iran.",
+   "wiki": "https://en.wikipedia.org/wiki/Persepolis",
+   "credit": {
+    "artist": "Laurens R. Krol",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2018-09-21_Iran,_Persepolis,_Tachara_(from_the_southeast).jpg",
+    "file": "2018-09-21_Iran,_Persepolis,_Tachara_(from_the_southeast).jpg"
+   }
+  },
+  {
+   "id": "chocolate-hills",
+   "img": "/geography/postcards/4ca76e34826e.webp",
+   "w": 1280,
+   "h": 973,
+   "tone": "#4b545c",
+   "name": "Chocolate Hills",
+   "place": "Bohol, Philippines",
+   "lat": 9.91667,
+   "lon": 124.16667,
+   "blurb": "The Chocolate Hills are a geological formation in the Philippine province of Bohol. A minimum of 1,260 hills, and possibly over 1,776, spread over an area of more than 50 square kilometers.",
+   "wiki": "https://en.wikipedia.org/wiki/Chocolate_Hills",
+   "credit": {
+    "artist": "P199",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chocolate_Hills_Bohol.JPG",
+    "file": "Chocolate_Hills_Bohol.JPG"
+   }
+  },
+  {
+   "id": "banaue-rice-terraces",
+   "img": "/geography/postcards/738cc82e22bb.webp",
+   "w": 1126,
+   "h": 751,
+   "tone": "#1f2816",
+   "name": "Banaue Rice Terraces",
+   "place": "Ifugao, Philippines",
+   "lat": 16.9,
+   "lon": 121.05,
+   "blurb": "The Banaue Rice Terraces [bɐˈnawe] are terraces that were carved into the mountains of Banaue, Ifugao, in the Philippines, by the ancestors of the Igorot people. The terraces were built with minimal equipment, largely by hand.",
+   "wiki": "https://en.wikipedia.org/wiki/Banaue_Rice_Terraces",
+   "credit": {
+    "artist": "User: (WT-shared) Roundtheworld at wts wikivoyage",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Banaue-terrace.JPG",
+    "file": "Banaue-terrace.JPG"
+   }
+  },
+  {
+   "id": "golden-temple",
+   "img": "/geography/postcards/e4dfeaa0ff89.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#777780",
+   "name": "Golden Temple",
+   "place": "Amritsar, India",
+   "lat": 31.62,
+   "lon": 74.87639,
+   "blurb": "The Golden Temple is a gurdwara located in Amritsar, Punjab, India. It is the pre-eminent spiritual site of Sikhism and its holiest site.",
+   "wiki": "https://en.wikipedia.org/wiki/Golden_Temple",
+   "credit": {
+    "artist": "Shagil Kannur",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Golden_Temple_of_Amrithsar_7.jpg",
+    "file": "The_Golden_Temple_of_Amrithsar_7.jpg"
+   }
+  },
+  {
+   "id": "sigiriya",
+   "img": "/geography/postcards/4272ea1b436a.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#657788",
+   "name": "Sigiriya",
+   "place": "Central Province, Sri Lanka",
+   "lat": 7.95694,
+   "lon": 80.75972,
+   "blurb": "Sigiriya or Sinhagiri is an ancient rock fortress located in the northern Matale District near the town of Dambulla in the Central Province, Sri Lanka.",
+   "wiki": "https://en.wikipedia.org/wiki/Sigiriya",
+   "credit": {
+    "artist": "Wrobell",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sigiriya_(141688197).jpeg",
+    "file": "Sigiriya_(141688197).jpeg"
+   }
+  },
+  {
+   "id": "wat-arun",
+   "img": "/geography/postcards/2751e81b19dd.webp",
+   "w": 1280,
+   "h": 854,
+   "tone": "#30425c",
+   "name": "Wat Arun",
+   "place": "Bangkok, Thailand",
+   "lat": 13.74361,
+   "lon": 100.48889,
+   "blurb": "Wat Arun Ratchawararam Ratchawaramahawihan or Wat Arun is a Buddhist temple in the Bangkok Yai district of Bangkok, Thailand. It is situated in Thonburi on the west bank of the Chao Phraya River.",
+   "wiki": "https://en.wikipedia.org/wiki/Wat_Arun",
+   "credit": {
+    "artist": "Mastertongapollo",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%E0%B9%80%E0%B8%88%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B9%8C%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B8%84%E0%B9%8C%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AD%E0%B8%A3%E0%B8%B8%E0%B8%932.jpg",
+    "file": "เจดีย์ประธานทรงปรางค์วัดอรุณ2.jpg"
+   }
+  },
+  {
+   "id": "mount-everest",
+   "img": "/geography/postcards/3afed3ae80c7.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#1f4265",
+   "name": "Mount Everest",
+   "place": "Nepal–China border",
+   "lat": 27.98833,
+   "lon": 86.92528,
+   "blurb": "Mount Everest (known in Nepali as Sagarmāthā, in Sherpa as Chamolangma, and in Tibetan as Jomolangma/Čhomolangma is the highest mountain on Earth above sea level.",
+   "wiki": "https://en.wikipedia.org/wiki/Mount_Everest",
+   "credit": {
+    "artist": "Rdevany",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mt._Everest_from_Gokyo_Ri_November_5,_2012.jpg",
+    "file": "Mt._Everest_from_Gokyo_Ri_November_5,_2012.jpg"
+   }
+  },
+  {
+   "id": "himeji-castle",
+   "img": "/geography/postcards/1b4b3265d595.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#5c7788",
+   "name": "Himeji Castle",
+   "place": "Hyōgo, Japan",
+   "lat": 34.83944,
+   "lon": 134.69389,
+   "blurb": "Himeji Castle is a hilltop Japanese castle complex situated in Himeji, a city in Hyōgo Prefecture, Japan.",
+   "wiki": "https://en.wikipedia.org/wiki/Himeji_Castle",
+   "credit": {
+    "artist": "Nikos Kitsakis",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Himeji_castle_in_may_2015.jpg",
+    "file": "Himeji_castle_in_may_2015.jpg"
+   }
+  },
+  {
+   "id": "wadi-rum",
+   "img": "/geography/postcards/53c4f1deb479.webp",
+   "w": 1280,
+   "h": 851,
+   "tone": "#6e280d",
+   "name": "Wadi Rum",
+   "place": "Aqaba Governorate, Jordan",
+   "lat": 29.59306,
+   "lon": 35.42,
+   "blurb": "Wadi Rum (Arabic: وادي رم Wādī Ramm, also Wādī al-Ramm, known also as the Valley of the Moon or Red mountains, is a valley cut into the sandstone and granite rock in southern Jordan, near the border with Saudi Arabia and about 60 km to the east of the city of Aqaba.",
+   "wiki": "https://en.wikipedia.org/wiki/Wadi_Rum",
+   "credit": {
+    "artist": "Daniel Case",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mountain_in_Wadi_Rum,_Jordan.jpg",
+    "file": "Mountain_in_Wadi_Rum,_Jordan.jpg"
+   }
+  },
+  {
+   "id": "seongsan-ilchulbong",
+   "img": "/geography/postcards/bad4b6b68aeb.webp",
+   "w": 1280,
+   "h": 834,
+   "tone": "#0d1f30",
+   "name": "Seongsan Ilchulbong",
+   "place": "Jeju Island, South Korea",
+   "lat": 33.4585,
+   "lon": 126.942,
+   "blurb": "Seongsan Ilchulbong, also called Sunrise Peak, is a volcano on eastern Jeju Island, in Seongsan-ri, Seogwipo, Jeju Province, South Korea. It is 182 meters high and has a volcanic crater at the top.",
+   "wiki": "https://en.wikipedia.org/wiki/Seongsan_Ilchulbong",
+   "credit": {
+    "artist": "Korea.net / Korean Culture and Information Service",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Seongsan_Ilchulbong_from_the_air.jpg",
+    "file": "Seongsan_Ilchulbong_from_the_air.jpg"
+   }
+  },
+  {
+   "id": "darvaza-gas-crater",
+   "img": "/geography/postcards/b7ed6e6aaf7f.webp",
+   "w": 1280,
+   "h": 544,
+   "tone": "#301f16",
+   "name": "Darvaza gas crater",
+   "place": "Karakum Desert, Turkmenistan",
+   "lat": 40.2525,
+   "lon": 58.4396,
+   "blurb": "The Darvaza gas crater, also known as the Door to Hell or Gates of Hell, officially the Shining of Karakum, is a burning natural gas field collapsed into a cavern near Darvaza, Turkmenistan.",
+   "wiki": "https://en.wikipedia.org/wiki/Darvaza_gas_crater",
+   "credit": {
+    "artist": "Tormod Sandtorv",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Darvasa_gas_crater_panorama.jpg",
+    "file": "Darvasa_gas_crater_panorama.jpg"
+   }
+  },
+  {
+   "id": "tiger-s-nest-paro-taktsang",
+   "img": "/geography/postcards/bbbd4cc4f949.webp",
+   "w": 973,
+   "h": 637,
+   "tone": "#040404",
+   "name": "Tiger's Nest (Paro Taktsang)",
+   "place": "Paro, Bhutan",
+   "lat": 27.49191,
+   "lon": 89.36349,
+   "blurb": "Paro Taktsang is a sacred Vajrayana Himalayan Buddhist site located in the cliffside of the upper Paro valley in Bhutan. It is one of thirteen Tiger's Nest caves in historical Tibet in which Padmasambhava practiced and taught Vajrayana.",
+   "wiki": "https://en.wikipedia.org/wiki/Paro_Taktsang",
+   "credit": {
+    "artist": "Original: Nina R from Africa Derivative work: UnpetitproleX",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Paro_Taktsang,_Bhutan_(edited).jpg",
+    "file": "Paro_Taktsang,_Bhutan_(edited).jpg"
+   }
+  },
+  {
+   "id": "hawa-mahal",
+   "img": "/geography/postcards/b54917ab5680.webp",
+   "w": 973,
+   "h": 730,
+   "tone": "#304b65",
+   "name": "Hawa Mahal",
+   "place": "Jaipur, India",
+   "lat": 26.9239,
+   "lon": 75.8267,
+   "blurb": "The Hawa Mahal is a palace in the city of Jaipur, Rajasthan, India. Built from red and pink sandstone, it is on the edge of the City Palace, Jaipur, and extends to the Zenana, or women's chambers.",
+   "wiki": "https://en.wikipedia.org/wiki/Hawa_Mahal",
+   "credit": {
+    "artist": "Chainwit.",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:East_facade_Hawa_Mahal_Jaipur_from_ground_level_(July_2022)_-_img_01.jpg",
+    "file": "East_facade_Hawa_Mahal_Jaipur_from_ground_level_(July_2022)_-_img_01.jpg"
+   }
+  },
+  {
+   "id": "batu-caves",
+   "img": "/geography/postcards/7a7183a93ce9.webp",
+   "w": 819,
+   "h": 614,
+   "tone": "#040404",
+   "name": "Batu Caves",
+   "place": "Selangor, Malaysia",
+   "lat": 3.2374,
+   "lon": 101.6839,
+   "blurb": "Batu Caves are a series of limestone caves in Gombak, Selangor, Malaysia. It is located on a 325 m–tall mogote, about 13 km north of the Malaysian capital of Kuala Lumpur.",
+   "wiki": "https://en.wikipedia.org/wiki/Batu_Caves",
+   "credit": {
+    "artist": "Chainwit.",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Batu_Caves_stairs_2022-05.jpg",
+    "file": "Batu_Caves_stairs_2022-05.jpg"
+   }
+  },
+  {
+   "id": "mount-ararat",
+   "img": "/geography/postcards/07f11afc25b9.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#16426e",
+   "name": "Mount Ararat",
+   "place": "Iğdır, Turkey",
+   "lat": 39.7019,
+   "lon": 44.2983,
+   "blurb": "Mount Ararat, officially Mount Ağrı, also known as Masis, is a snow-capped and dormant compound volcano and a stratovolcano in easternmost Turkey. It consists of two major volcanic cones: Greater Ararat and Little Ararat.",
+   "wiki": "https://en.wikipedia.org/wiki/Mount_Ararat",
+   "credit": {
+    "artist": "Սէրուժ Ուրիշեան (Serouj Ourishian)",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mount_Ararat_and_the_Yerevan_skyline_in_spring_(50mm).jpg",
+    "file": "Mount_Ararat_and_the_Yerevan_skyline_in_spring_(50mm).jpg"
+   }
+  },
+  {
+   "id": "kalan-minaret-bukhara",
+   "img": "/geography/postcards/e5cd3598fbb7.webp",
+   "w": 1280,
+   "h": 613,
+   "tone": "#888888",
+   "name": "Kalan Minaret, Bukhara",
+   "place": "Bukhara, Uzbekistan",
+   "lat": 39.76667,
+   "lon": 64.42306,
+   "blurb": "Bukhara is the seventh-largest city in Uzbekistan by population, with 305,500 residents as of 2026. It is the capital of Bukhara Region.",
+   "wiki": "https://en.wikipedia.org/wiki/Bukhara",
+   "credit": {
+    "artist": "Euyasik",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kalon-Ensemble_Buchara.jpg",
+    "file": "Kalon-Ensemble_Buchara.jpg"
+   }
+  },
+  {
+   "id": "phi-phi-islands",
+   "img": "/geography/postcards/1bb5a4012724.webp",
+   "w": 1126,
+   "h": 746,
+   "tone": "#304239",
+   "name": "Phi Phi Islands",
+   "place": "Krabi, Thailand",
+   "lat": 7.73333,
+   "lon": 98.76667,
+   "blurb": "The Phi Phi Islands are an island group in Thailand located in the Strait of Malacca between the large island of Phuket and the Straitscoast in the Krabi Province The islands are administratively part of Krabi Province.",
+   "wiki": "https://en.wikipedia.org/wiki/Phi_Phi_Islands",
+   "credit": {
+    "artist": "Luxure",
+    "licence": "CC BY 3.0 au",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0/au/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:KohPhiPhi.JPG",
+    "file": "KohPhiPhi.JPG"
+   }
+  },
+  {
+   "id": "kawah-ijen",
+   "img": "/geography/postcards/2828ca45b95c.webp",
+   "w": 1280,
+   "h": 464,
+   "tone": "#6e776e",
+   "name": "Kawah Ijen",
+   "place": "East Java, Indonesia",
+   "lat": -8.06278,
+   "lon": 114.26194,
+   "blurb": "The Ijen volcano complex is a group of composite volcanoes located on the border between Banyuwangi Regency and Bondowoso Regency of East Java, Indonesia.",
+   "wiki": "https://en.wikipedia.org/wiki/Ijen",
+   "credit": {
+    "artist": "Sémhur ( talk )",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sulfur_mining_in_Kawah_Ijen_-_Indonesia_-_20110608.jpg",
+    "file": "Sulfur_mining_in_Kawah_Ijen_-_Indonesia_-_20110608.jpg"
+   }
+  },
+  {
+   "id": "mount-kinabalu",
+   "img": "/geography/postcards/3769f07f5719.webp",
+   "w": 1280,
+   "h": 497,
+   "tone": "#656e80",
+   "name": "Mount Kinabalu",
+   "place": "Sabah, Malaysia",
+   "lat": 6.075,
+   "lon": 116.55861,
+   "blurb": "Mount Kinabalu is the highest mountain in Malaysia and Maritime Southeast Asia, located on the island of Borneo in Sabah.",
+   "wiki": "https://en.wikipedia.org/wiki/Mount_Kinabalu",
+   "credit": {
+    "artist": "kallerna",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kinabalu_Sabah_Borneo_Kampong_Kundasang_panorama_2.jpg",
+    "file": "Kinabalu_Sabah_Borneo_Kampong_Kundasang_panorama_2.jpg"
+   }
+  },
+  {
+   "id": "machu-picchu",
+   "img": "/geography/postcards/01f3afd2cb5a.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#30425c",
+   "name": "Machu Picchu",
+   "place": "Cusco Region, Peru",
+   "lat": -13.16333,
+   "lon": -72.54556,
+   "blurb": "Machu Picchu is a 15th-century Inca citadel located in the Eastern Cordillera of southern Peru on a mountain ridge at 2,430 meters.",
+   "wiki": "https://en.wikipedia.org/wiki/Machu_Picchu",
+   "credit": {
+    "artist": "Draceane",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Machu_Picchu,_2023_(012).jpg",
+    "file": "Machu_Picchu,_2023_(012).jpg"
+   }
+  },
+  {
+   "id": "christ-the-redeemer",
+   "img": "/geography/postcards/85250399a4c9.webp",
+   "w": 683,
+   "h": 1024,
+   "tone": "#161f28",
+   "name": "Christ the Redeemer",
+   "place": "Rio de Janeiro, Brazil",
+   "lat": -22.95194,
+   "lon": -43.21056,
+   "blurb": "Christ the Redeemer is an Art Deco statue of Jesus in Rio de Janeiro, Brazil, created by French-Polish sculptor Paul Landowski and built by Brazilian engineer Heitor da Silva Costa, in collaboration with French engineer Albert Caquot and Romanian sculptor Gheorghe Leonida who sculpted the face.",
+   "wiki": "https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)",
+   "credit": {
+    "artist": "Arne Müseler",
+    "licence": "CC BY-SA 3.0 de",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Christ_the_Redeemer_-_Cristo_Redentor.jpg",
+    "file": "Christ_the_Redeemer_-_Cristo_Redentor.jpg"
+   }
+  },
+  {
+   "id": "statue-of-liberty",
+   "img": "/geography/postcards/a77905c1f270.webp",
+   "w": 668,
+   "h": 1024,
+   "tone": "#6e7780",
+   "name": "Statue of Liberty",
+   "place": "New York City, United States",
+   "lat": 40.68917,
+   "lon": -74.04444,
+   "blurb": "The Statue of Liberty is a colossal neoclassical sculpture of a robed and crowned woman on Liberty Island, part of New York City, in New York Harbor.",
+   "wiki": "https://en.wikipedia.org/wiki/Statue_of_Liberty",
+   "credit": {
+    "artist": "AskALotl",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Front_view_of_Statue_of_Liberty_(cropped).jpg",
+    "file": "Front_view_of_Statue_of_Liberty_(cropped).jpg"
+   }
+  },
+  {
+   "id": "golden-gate-bridge",
+   "img": "/geography/postcards/be74042dc99c.webp",
+   "w": 1280,
+   "h": 800,
+   "tone": "#546577",
+   "name": "Golden Gate Bridge",
+   "place": "San Francisco, United States",
+   "lat": 37.81972,
+   "lon": -122.47861,
+   "blurb": "The Golden Gate Bridge is a suspension bridge spanning the Golden Gate, the one-mile-wide strait connecting San Francisco Bay and the Pacific Ocean in California, United States. S. Route 101 and California State Route 1 across the strait.",
+   "wiki": "https://en.wikipedia.org/wiki/Golden_Gate_Bridge",
+   "credit": {
+    "artist": "Frank Schulenburg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge_as_seen_from_Battery_East.jpg",
+    "file": "Golden_Gate_Bridge_as_seen_from_Battery_East.jpg"
+   }
+  },
+  {
+   "id": "horseshoe-bend",
+   "img": "/geography/postcards/28b866eee3fd.webp",
+   "w": 1280,
+   "h": 681,
+   "tone": "#88654b",
+   "name": "Horseshoe Bend",
+   "place": "Arizona, United States",
+   "lat": 36.87944,
+   "lon": -111.51389,
+   "blurb": "Horseshoe Bend is a horseshoe-shaped incised meander of the Colorado River located near the town of Page, Arizona, United States.",
+   "wiki": "https://en.wikipedia.org/wiki/Horseshoe_Bend_(Arizona)",
+   "credit": {
+    "artist": "Thomas Wolf , www.foto-tw.de",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Grand_Canyon_Horseshoe_Bend.jpg",
+    "file": "Grand_Canyon_Horseshoe_Bend.jpg"
+   }
+  },
+  {
+   "id": "chichen-itza",
+   "img": "/geography/postcards/3efdc28acf98.webp",
+   "w": 1280,
+   "h": 681,
+   "tone": "#656e77",
+   "name": "Chichén Itzá",
+   "place": "Yucatán, Mexico",
+   "lat": 20.68306,
+   "lon": -88.56861,
+   "blurb": "Chichen Itza was a large pre-Columbian city built by the Maya people of the Terminal Classic period. The archeological site is located in Tinúm Municipality, Yucatán, Mexico, between the cities of Valladolid and Mérida.",
+   "wiki": "https://en.wikipedia.org/wiki/Chichen_Itza",
+   "credit": {
+    "artist": "Daniel Schwen",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chichen_Itza_3.jpg",
+    "file": "Chichen_Itza_3.jpg"
+   }
+  },
+  {
+   "id": "iguazu-falls",
+   "img": "/geography/postcards/a23b30cfe3be.webp",
+   "w": 1280,
+   "h": 789,
+   "tone": "#5c6565",
+   "name": "Iguazu Falls",
+   "place": "Argentina–Brazil border",
+   "lat": -25.68667,
+   "lon": -54.44472,
+   "blurb": "Iguazú Falls or Iguaçu Falls are waterfalls of the Iguazu River on the border of the Argentine province of Misiones and the Brazilian state of Paraná. Together, they make up the largest waterfall system in the world.",
+   "wiki": "https://en.wikipedia.org/wiki/Iguazu_Falls",
+   "credit": {
+    "artist": "Mariordo (Mario Roberto Durán Ortiz)",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Aerial_Foz_de_Igua%C3%A7u_26_Nov_2005.jpg",
+    "file": "Aerial_Foz_de_Iguaçu_26_Nov_2005.jpg"
+   }
+  },
+  {
+   "id": "perito-moreno-glacier",
+   "img": "/geography/postcards/38873bc0214f.webp",
+   "w": 1280,
+   "h": 549,
+   "tone": "#1f5477",
+   "name": "Perito Moreno Glacier",
+   "place": "Santa Cruz, Argentina",
+   "lat": -50.5,
+   "lon": -73.13333,
+   "blurb": "The Perito Moreno, Francisco Gormaz or Bismarck Glacier is a glacier located in Los Glaciares National Park in southwest Santa Cruz Province, Argentina, and originated in the Magallanes Region in Chile, being also part of the Bernardo O'Higgins National Park.",
+   "wiki": "https://en.wikipedia.org/wiki/Perito_Moreno_Glacier",
+   "credit": {
+    "artist": "Fernando",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Perito_Moreno_Glacier_2023.jpg",
+    "file": "Perito_Moreno_Glacier_2023.jpg"
+   }
+  },
+  {
+   "id": "ahu-tongariki",
+   "img": "/geography/postcards/f4c3624b7867.webp",
+   "w": 1280,
+   "h": 960,
+   "tone": "#5c5c65",
+   "name": "Ahu Tongariki",
+   "place": "Easter Island, Chile",
+   "lat": -27.12583,
+   "lon": -109.27694,
+   "blurb": "Ahu Tongariki is the largest ahu on Easter Island. Its moais were toppled during the island's civil wars, and in the twentieth century the ahu was swept inland by a tsunami.",
+   "wiki": "https://en.wikipedia.org/wiki/Ahu_Tongariki",
+   "credit": {
+    "artist": "Bjørn Christian Tørrissen",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ahu-Tongariki-from-south-west-2013.jpg",
+    "file": "Ahu-Tongariki-from-south-west-2013.jpg"
+   }
+  },
+  {
+   "id": "niagara-falls",
+   "img": "/geography/postcards/b0dd951e067c.webp",
+   "w": 1280,
+   "h": 851,
+   "tone": "#040404",
+   "name": "Niagara Falls",
+   "place": "Canada–United States border",
+   "lat": 43.0799,
+   "lon": -79.0747,
+   "blurb": "S. state of New York. The largest of the three is Horseshoe Falls, which straddles the international border of the two countries. It is also known as the Canadian Falls.",
+   "wiki": "https://en.wikipedia.org/wiki/Niagara_Falls",
+   "credit": {
+    "artist": "Saffron Blaze",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:3Falls_Niagara.jpg",
+    "file": "3Falls_Niagara.jpg"
+   }
+  },
+  {
+   "id": "moraine-lake",
+   "img": "/geography/postcards/54dfeeba72b6.webp",
+   "w": 1280,
+   "h": 960,
+   "tone": "#546e88",
+   "name": "Moraine Lake",
+   "place": "Banff National Park, Canada",
+   "lat": 51.3225,
+   "lon": -116.18556,
+   "blurb": "Moraine Lake is a snow and glacially fed alpine lake in Banff National Park, 14 kilometres outside the village of Lake Louise, Alberta, Canada. It is situated in the Valley of the Ten Peaks, at an elevation of approximately 1,884 metres.",
+   "wiki": "https://en.wikipedia.org/wiki/Moraine_Lake",
+   "credit": {
+    "artist": "Gorgo",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Moraine_Lake_17092005.jpg",
+    "file": "Moraine_Lake_17092005.jpg"
+   }
+  },
+  {
+   "id": "antelope-canyon",
+   "img": "/geography/postcards/61308b9e9a23.webp",
+   "w": 768,
+   "h": 1024,
+   "tone": "#541604",
+   "name": "Antelope Canyon",
+   "place": "Arizona, United States",
+   "lat": 36.86196,
+   "lon": -111.37434,
+   "blurb": "Navajo Upper Antelope Canyon is a slot canyon in the American Southwest, on Navajo land east of Lechee, Arizona.",
+   "wiki": "https://en.wikipedia.org/wiki/Antelope_Canyon",
+   "credit": {
+    "artist": "Lucas Löffler",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:USA_Antelope-Canyon.jpg",
+    "file": "USA_Antelope-Canyon.jpg"
+   }
+  },
+  {
+   "id": "monument-valley",
+   "img": "/geography/postcards/0da5e18dac18.webp",
+   "w": 1126,
+   "h": 751,
+   "tone": "#4b6e88",
+   "name": "Monument Valley",
+   "place": "Arizona–Utah, United States",
+   "lat": 36.98333,
+   "lon": -110.1,
+   "blurb": "Monument Valley is a region of the Colorado Plateau characterized by a cluster of sandstone buttes, with the largest reaching 1,000 ft above the valley floor.",
+   "wiki": "https://en.wikipedia.org/wiki/Monument_Valley",
+   "credit": {
+    "artist": "Domenico Convertini",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Monument_Valley,_Utah,_USA_(23611451292).jpg",
+    "file": "Monument_Valley,_Utah,_USA_(23611451292).jpg"
+   }
+  },
+  {
+   "id": "grand-prismatic-spring",
+   "img": "/geography/postcards/7e8b360cec38.webp",
+   "w": 1280,
+   "h": 907,
+   "tone": "#778080",
+   "name": "Grand Prismatic Spring",
+   "place": "Yellowstone, United States",
+   "lat": 44.525,
+   "lon": -110.8381,
+   "blurb": "The Grand Prismatic Spring is the largest hot spring in the Yellowstone National Park, and the third largest in the world, after Frying Pan Lake in New Zealand and Boiling Lake in Dominica. It is located in the Midway Geyser Basin.",
+   "wiki": "https://en.wikipedia.org/wiki/Grand_Prismatic_Spring",
+   "credit": {
+    "artist": "Carsten Steger",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Aerial_image_of_Grand_Prismatic_Spring_(view_from_the_south).jpg",
+    "file": "Aerial_image_of_Grand_Prismatic_Spring_(view_from_the_south).jpg"
+   }
+  },
+  {
+   "id": "mount-rushmore",
+   "img": "/geography/postcards/3f246d176b5d.webp",
+   "w": 1126,
+   "h": 765,
+   "tone": "#041f4b",
+   "name": "Mount Rushmore",
+   "place": "South Dakota, United States",
+   "lat": 43.87889,
+   "lon": -103.45917,
+   "blurb": "The Mount Rushmore National Memorial is a national memorial featuring a colossal sculpture carved into the granite face of Mount Rushmore in the Black Hills, about 2 mi southwest of Keystone, South Dakota, United States.",
+   "wiki": "https://en.wikipedia.org/wiki/Mount_Rushmore",
+   "credit": {
+    "artist": "Thomas Wolf , www.foto-tw.de",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mount_Rushmore_detail_view_(100MP).jpg",
+    "file": "Mount_Rushmore_detail_view_(100MP).jpg"
+   }
+  },
+  {
+   "id": "el-capitolio",
+   "img": "/geography/postcards/23ae9a48f1fa.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#395c88",
+   "name": "El Capitolio",
+   "place": "Havana, Cuba",
+   "lat": 23.13528,
+   "lon": -82.35944,
+   "blurb": "The National Capitol of Cuba, also known as Capitolio Nacional de La Habana, and often simply referred to as El Capitolio, is a public edifice in Havana, the capital of Cuba.",
+   "wiki": "https://en.wikipedia.org/wiki/National_Capitol_of_Cuba",
+   "credit": {
+    "artist": "Nigel Pacquette",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:El_Capitolio_Havana_Cuba.jpg",
+    "file": "El_Capitolio_Havana_Cuba.jpg"
+   }
+  },
+  {
+   "id": "tikal",
+   "img": "/geography/postcards/faa1776194e3.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#808080",
+   "name": "Tikal",
+   "place": "Petén, Guatemala",
+   "lat": 17.22194,
+   "lon": -89.62361,
+   "blurb": "Tikal is the ruin of an ancient city, which was likely to have been called Yax Mutal, found in a rainforest in Guatemala.",
+   "wiki": "https://en.wikipedia.org/wiki/Tikal",
+   "credit": {
+    "artist": "Mundo Maya",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tikal_3.jpg",
+    "file": "Tikal_3.jpg"
+   }
+  },
+  {
+   "id": "kaieteur-falls",
+   "img": "/geography/postcards/a0bf50072deb.webp",
+   "w": 821,
+   "h": 1024,
+   "tone": "#040404",
+   "name": "Kaieteur Falls",
+   "place": "Potaro-Siparuni, Guyana",
+   "lat": 5.175,
+   "lon": -59.4805,
+   "blurb": "Kaieteur Falls is one of the most powerful single-drop waterfalls in the world. It is located on the Potaro River in Kaieteur National Park, central Essequibo Territory, Guyana.",
+   "wiki": "https://en.wikipedia.org/wiki/Kaieteur_Falls",
+   "credit": {
+    "artist": "Sorenriise at English Wikipedia",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:GuyanaKaieteurFalls2004.jpg",
+    "file": "GuyanaKaieteurFalls2004.jpg"
+   }
+  },
+  {
+   "id": "vinicunca-rainbow-mountain",
+   "img": "/geography/postcards/78fc862eaebc.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#655c65",
+   "name": "Vinicunca (Rainbow Mountain)",
+   "place": "Cusco Region, Peru",
+   "lat": -13.87023,
+   "lon": -71.30295,
+   "blurb": "Vinicunca, or Winikunka, also called Montaña de Siete Colores, Montaña de Colores, or Montaña Arcoíris, is a mountain in the Andes of Peru with an altitude of 5,036 metres above sea level.",
+   "wiki": "https://en.wikipedia.org/wiki/Vinicunca",
+   "credit": {
+    "artist": "Diego Aldrin Abanto Ricce",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Monta%C3%B1aarcoirisperuabanto.jpg",
+    "file": "Montañaarcoirisperuabanto.jpg"
+   }
+  },
+  {
+   "id": "teotihuacan",
+   "img": "/geography/postcards/4b337363bf1e.webp",
+   "w": 1280,
+   "h": 851,
+   "tone": "#040404",
+   "name": "Teotihuacan",
+   "place": "State of Mexico, Mexico",
+   "lat": 19.6925,
+   "lon": -98.84389,
+   "blurb": "Teotihuacan is an ancient Mesoamerican city located in a sub-valley of the Valley of Mexico, which is located in the State of Mexico, 40 kilometers northeast of modern-day Mexico City.",
+   "wiki": "https://en.wikipedia.org/wiki/Teotihuacan",
+   "credit": {
+    "artist": "Hdlrosa",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:ZA77_Teotihuac%C3%A1n_edo_de_mex_Herberto_de_la_rosa.jpg",
+    "file": "ZA77_Teotihuacán_edo_de_mex_Herberto_de_la_rosa.jpg"
+   }
+  },
+  {
+   "id": "space-needle",
+   "img": "/geography/postcards/ac9797c25bce.webp",
+   "w": 520,
+   "h": 1024,
+   "tone": "#546577",
+   "name": "Space Needle",
+   "place": "Seattle, United States",
+   "lat": 47.6204,
+   "lon": -122.3491,
+   "blurb": "The Space Needle is an observation tower in Seattle, Washington, United States. Considered to be an icon of the city, it has been designated a Seattle landmark. 3 million visitors.",
+   "wiki": "https://en.wikipedia.org/wiki/Space_Needle",
+   "credit": {
+    "artist": "Jordon Kalilich",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Space_Needle_2011-07-04.jpg",
+    "file": "Space_Needle_2011-07-04.jpg"
+   }
+  },
+  {
+   "id": "times-square",
+   "img": "/geography/postcards/a86f5dc5f3c7.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#040404",
+   "name": "Times Square",
+   "place": "New York City, United States",
+   "lat": 40.7575,
+   "lon": -73.9858,
+   "blurb": "Times Square is one of the world's busiest pedestrian intersections, tourist destinations, and entertainment hubs. It is formed by the junction of Broadway, Seventh Avenue, and 42nd Street in Midtown Manhattan, New York City.",
+   "wiki": "https://en.wikipedia.org/wiki/Times_Square",
+   "credit": {
+    "artist": "Terabass",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:New_york_times_square-terabass.jpg",
+    "file": "New_york_times_square-terabass.jpg"
+   }
+  },
+  {
+   "id": "lencois-maranhenses",
+   "img": "/geography/postcards/fa97c48cdc48.webp",
+   "w": 771,
+   "h": 1024,
+   "tone": "#888077",
+   "name": "Lençóis Maranhenses",
+   "place": "Maranhão, Brazil",
+   "lat": -2.53333,
+   "lon": -43.11667,
+   "blurb": "Lençóis Maranhenses National Park is a national park in Maranhão state in northeastern Brazil, just east of the Baía de São José.",
+   "wiki": "https://en.wikipedia.org/wiki/Len%C3%A7%C3%B3is_Maranhenses_National_Park",
+   "credit": {
+    "artist": "Julius Dadalti",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Len%C3%A7%C3%B3is_Maranhenses_2018.jpg",
+    "file": "Lençóis_Maranhenses_2018.jpg"
+   }
+  },
+  {
+   "id": "cano-cristales",
+   "img": "/geography/postcards/fb50a5e4bdb6.webp",
+   "w": 681,
+   "h": 1024,
+   "tone": "#28425c",
+   "name": "Caño Cristales",
+   "place": "Meta, Colombia",
+   "lat": 2.26417,
+   "lon": -73.79444,
+   "blurb": "The Caño Cristales is a river located in the Serranía de la Macarena, an isolated mountain range in Meta Department, Colombia. It is a tributary of the Guayabero River, itself a part of the Orinoco basin.",
+   "wiki": "https://en.wikipedia.org/wiki/Ca%C3%B1o_Cristales",
+   "credit": {
+    "artist": "Astromario",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ca%C3%B1o_Cristales_01.jpg",
+    "file": "Caño_Cristales_01.jpg"
+   }
+  },
+  {
+   "id": "cocora-valley",
+   "img": "/geography/postcards/be07c9f98365.webp",
+   "w": 769,
+   "h": 1024,
+   "tone": "#0d1616",
+   "name": "Cocora Valley",
+   "place": "Quindío, Colombia",
+   "lat": 4.63333,
+   "lon": -75.48333,
+   "blurb": "The Cocora Valley is a valley in the Quindío Department of Colombia. It is located in the Central Cordillera of the Andean mountains.",
+   "wiki": "https://en.wikipedia.org/wiki/Cocora_Valley",
+   "credit": {
+    "artist": "Angela Calle and Daniel Di Palma",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Valle_del_cocora_-_general_view.jpg",
+    "file": "Valle_del_cocora_-_general_view.jpg"
+   }
+  },
+  {
+   "id": "chateau-frontenac",
+   "img": "/geography/postcards/8d9dd5686617.webp",
+   "w": 1280,
+   "h": 833,
+   "tone": "#5c6e77",
+   "name": "Château Frontenac",
+   "place": "Quebec City, Canada",
+   "lat": 46.81194,
+   "lon": -71.205,
+   "blurb": "The Fairmont Le Château Frontenac, commonly referred to as the Château Frontenac, is a historic hotel in Quebec City, Quebec, Canada.",
+   "wiki": "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Frontenac",
+   "credit": {
+    "artist": "Bernard Gagnon",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_Frontenac_02.jpg",
+    "file": "Château_Frontenac_02.jpg"
+   }
+  },
+  {
+   "id": "arenal-volcano",
+   "img": "/geography/postcards/5df24cdd132f.webp",
+   "w": 1280,
+   "h": 707,
+   "tone": "#6e7780",
+   "name": "Arenal Volcano",
+   "place": "Alajuela, Costa Rica",
+   "lat": 10.4625,
+   "lon": -84.70333,
+   "blurb": "Arenal Volcano is a recently active andesitic stratovolcano in north-western Costa Rica around 90 km northwest of San José, in the province of Alajuela, canton of San Carlos, and district of La Fortuna.",
+   "wiki": "https://en.wikipedia.org/wiki/Arenal_Volcano",
+   "credit": {
+    "artist": "Rhododendrites",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Arenal_volcano_(70785p)_(cropped).jpg",
+    "file": "Arenal_volcano_(70785p)_(cropped).jpg"
+   }
+  },
+  {
+   "id": "half-dome",
+   "img": "/geography/postcards/c6ea79edb8ec.webp",
+   "w": 956,
+   "h": 901,
+   "tone": "#285477",
+   "name": "Half Dome",
+   "place": "Yosemite, United States",
+   "lat": 37.74604,
+   "lon": -119.53294,
+   "blurb": "Half Dome is a quartz monzonite batholith at the eastern end of Yosemite Valley in Yosemite National Park, California. It is a well-known rock formation in the park, named for its distinct shape.",
+   "wiki": "https://en.wikipedia.org/wiki/Half_Dome",
+   "credit": {
+    "artist": "Thomas Wolf , www.foto-tw.de",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Half_Dome_with_Eastern_Yosemite_Valley_(Zuschnitt).jpg",
+    "file": "Half_Dome_with_Eastern_Yosemite_Valley_(Zuschnitt).jpg"
+   }
+  },
+  {
+   "id": "delicate-arch",
+   "img": "/geography/postcards/031436e91646.webp",
+   "w": 1280,
+   "h": 960,
+   "tone": "#281616",
+   "name": "Delicate Arch",
+   "place": "Utah, United States",
+   "lat": 38.74352,
+   "lon": -109.49934,
+   "blurb": "Delicate Arch is a 52-foot-tall freestanding natural arch located in Arches National Park, near Moab in Grand County, Utah, United States.",
+   "wiki": "https://en.wikipedia.org/wiki/Delicate_Arch",
+   "credit": {
+    "artist": "Palacemusic",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Delicate_arch_sunset.jpg",
+    "file": "Delicate_arch_sunset.jpg"
+   }
+  },
+  {
+   "id": "peyto-lake",
+   "img": "/geography/postcards/8638d8ce9743.webp",
+   "w": 1280,
+   "h": 430,
+   "tone": "#6e6e77",
+   "name": "Peyto Lake",
+   "place": "Banff National Park, Canada",
+   "lat": 51.72694,
+   "lon": -116.52194,
+   "blurb": "Peyto Lake is a glacier-fed lake in Banff National Park in the Canadian Rockies. The lake is near the Icefields Parkway in Alberta, Canada. It was named for Bill Peyto, an early trail guide and trapper in the Banff area.",
+   "wiki": "https://en.wikipedia.org/wiki/Peyto_Lake",
+   "credit": {
+    "artist": "Ethan Sahagun",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Panorama_of_Peyto_Lake,_Banff_National_Park,_Alberta,_Canada.jpg",
+    "file": "Panorama_of_Peyto_Lake,_Banff_National_Park,_Alberta,_Canada.jpg"
+   }
+  },
+  {
+   "id": "sugarloaf-mountain",
+   "img": "/geography/postcards/912e1a58ec33.webp",
+   "w": 1280,
+   "h": 720,
+   "tone": "#546577",
+   "name": "Sugarloaf Mountain",
+   "place": "Rio de Janeiro, Brazil",
+   "lat": -22.9494,
+   "lon": -43.1567,
+   "blurb": "Sugarloaf Mountain is a peak situated in Rio de Janeiro, Brazil, on a peninsula at the mouth of Guanabara Bay. Rising 396 m above the harbor, the peak is named for its resemblance to the traditional shape of concentrated refined sugarloaf.",
+   "wiki": "https://en.wikipedia.org/wiki/Sugarloaf_Mountain",
+   "credit": {
+    "artist": "Arne Müseler",
+    "licence": "CC BY-SA 3.0 de",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:P%C3%A3o_de_A%C3%A7ucar_-_Sugarloaf_Mountain_-_Zuckerhut_-_2022.jpg",
+    "file": "Pão_de_Açucar_-_Sugarloaf_Mountain_-_Zuckerhut_-_2022.jpg"
+   }
+  },
+  {
+   "id": "sydney-opera-house",
+   "img": "/geography/postcards/1d7a19885fce.webp",
+   "w": 1280,
+   "h": 786,
+   "tone": "#39546e",
+   "name": "Sydney Opera House",
+   "place": "Sydney, Australia",
+   "lat": -33.85681,
+   "lon": 151.21514,
+   "blurb": "The Sydney Opera House is a multi-venue performing arts centre in Sydney, New South Wales, Australia.",
+   "wiki": "https://en.wikipedia.org/wiki/Sydney_Opera_House",
+   "credit": {
+    "artist": "Bernard Spragg. NZ from Christchurch, New Zealand",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Sydney_Australia._(21339175489).jpg",
+    "file": "Sydney_Australia._(21339175489).jpg"
+   }
+  },
+  {
+   "id": "uluru",
+   "img": "/geography/postcards/9d80a12b454b.webp",
+   "w": 1280,
+   "h": 960,
+   "tone": "#304254",
+   "name": "Uluru",
+   "place": "Northern Territory, Australia",
+   "lat": -25.345,
+   "lon": 131.03611,
+   "blurb": "Uluru, also known as Ayers Rock and officially gazetted as Uluru / Ayers Rock, is a large sandstone monolith. It crops out near the centre of Australia in the southern part of the Northern Territory, 335 km south-west of Alice Springs.",
+   "wiki": "https://en.wikipedia.org/wiki/Uluru",
+   "credit": {
+    "artist": "Ek2030372672",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:ULURU.jpg",
+    "file": "ULURU.jpg"
+   }
+  },
+  {
+   "id": "milford-sound",
+   "img": "/geography/postcards/041a45246e57.webp",
+   "w": 1280,
+   "h": 463,
+   "tone": "#0d0d0d",
+   "name": "Milford Sound",
+   "place": "Fiordland, New Zealand",
+   "lat": -44.64806,
+   "lon": 167.90556,
+   "blurb": "Milford Sound is a fiord in the south west of New Zealand's South Island within Fiordland National Park, Piopiotahi Marine Reserve, and the Te Wahipounamu World Heritage site.",
+   "wiki": "https://en.wikipedia.org/wiki/Milford_Sound",
+   "credit": {
+    "artist": "Maros M r a z ( Maros )",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Milford_Sound_(New_Zealand).JPG",
+    "file": "Milford_Sound_(New_Zealand).JPG"
+   }
+  },
+  {
+   "id": "aoraki-mount-cook",
+   "img": "/geography/postcards/e69b590dfb82.webp",
+   "w": 1024,
+   "h": 1024,
+   "tone": "#304b65",
+   "name": "Aoraki / Mount Cook",
+   "place": "Canterbury, New Zealand",
+   "lat": -43.595,
+   "lon": 170.14194,
+   "blurb": "Aoraki / Mount Cook is the highest mountain in New Zealand. Its height, as of 2014, is listed as 3,724 metres. It is situated in the Southern Alps, the mountain range that runs the length of the South Island.",
+   "wiki": "https://en.wikipedia.org/wiki/Aoraki_/_Mount_Cook",
+   "credit": {
+    "artist": "Jörg Hempel",
+    "licence": "CC BY-SA 3.0 de",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Mt_Cook_LC0247.jpg",
+    "file": "Mt_Cook_LC0247.jpg"
+   }
+  },
+  {
+   "id": "bora-bora",
+   "img": "/geography/postcards/ea04670baf06.webp",
+   "w": 1280,
+   "h": 1024,
+   "tone": "#04040d",
+   "name": "Bora Bora",
+   "place": "French Polynesia",
+   "lat": -16.501,
+   "lon": -151.74,
+   "blurb": "Bora Bora is a French island group in the Leeward Islands, comprising the western part of the Society Islands of French Polynesia, an overseas collectivity of the French Republic in the South Pacific. 55 km2.",
+   "wiki": "https://en.wikipedia.org/wiki/Bora_Bora",
+   "credit": {
+    "artist": "NASA Johnson Space Center",
+    "licence": "Public domain",
+    "licenceUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Bora_Bora_ISS006.jpg",
+    "file": "Bora_Bora_ISS006.jpg"
+   }
+  },
+  {
+   "id": "the-pinnacles-nambung",
+   "img": "/geography/postcards/54d41ecb99be.webp",
+   "w": 1280,
+   "h": 851,
+   "tone": "#391604",
+   "name": "The Pinnacles, Nambung",
+   "place": "Western Australia, Australia",
+   "lat": -30.57611,
+   "lon": 115.17,
+   "blurb": "Nambung National Park is a national park in the Wheatbelt region of Western Australia, 200 kilometres northwest of the state capital Perth, and 17 kilometres south of the small coastal town of Cervantes.",
+   "wiki": "https://en.wikipedia.org/wiki/Nambung_National_Park",
+   "credit": {
+    "artist": "User:Gnangarra",
+    "licence": "CC BY 2.5 au",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.5/au/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Pinnacles_gnangarra-62.jpg",
+    "file": "Pinnacles_gnangarra-62.jpg"
+   }
+  },
+  {
+   "id": "champagne-pool",
+   "img": "/geography/postcards/b2a274178610.webp",
+   "w": 1280,
+   "h": 828,
+   "tone": "#5c6565",
+   "name": "Champagne Pool",
+   "place": "Waiotapu, New Zealand",
+   "lat": -38.35909,
+   "lon": 176.3689,
+   "blurb": "Champagne Pool is a prominent geothermal feature within the Waiotapu geothermal area in the North Island of New Zealand. The terrestrial hot spring is located about 30 km southeast of Rotorua and about 50 km northeast of Taupō.",
+   "wiki": "https://en.wikipedia.org/wiki/Champagne_Pool",
+   "credit": {
+    "artist": "Christian Mehlführer, User:Chmehl",
+    "licence": "CC BY 2.5",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:ChampagnePool-Wai-O-Tapu_rotated_MC.jpg",
+    "file": "ChampagnePool-Wai-O-Tapu_rotated_MC.jpg"
+   }
+  },
+  {
+   "id": "moeraki-boulders",
+   "img": "/geography/postcards/7d7667b6b956.webp",
+   "w": 1280,
+   "h": 960,
+   "tone": "#5c5c54",
+   "name": "Moeraki Boulders",
+   "place": "Otago, New Zealand",
+   "lat": -45.34528,
+   "lon": 170.82606,
+   "blurb": "The Moeraki Boulders are unusually large spherical boulders lying along a stretch of Koekohe Beach on the wave-cut Otago coast of New Zealand between Moeraki and Hampden.",
+   "wiki": "https://en.wikipedia.org/wiki/Moeraki_Boulders",
+   "credit": {
+    "artist": "Beast from the Bush",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Moeraki_Boulders.jpg",
+    "file": "Moeraki_Boulders.jpg"
+   }
+  },
+  {
+   "id": "rock-islands",
+   "img": "/geography/postcards/a3e08fa73324.webp",
+   "w": 1280,
+   "h": 853,
+   "tone": "#043954",
+   "name": "Rock Islands",
+   "place": "Koror, Palau",
+   "lat": 7.25,
+   "lon": 134.35,
+   "blurb": "The Rock Islands of Palau, also called Chelbacheb, are a collection of several hundred small limestone or coral uprises in the Southern Lagoon of Palau between Koror and Peleliu, now an incorporated part of Koror State.",
+   "wiki": "https://en.wikipedia.org/wiki/Rock_Islands",
+   "credit": {
+    "artist": "Luka Peternel",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ngerukewid-2016-aerial-view-Luka-Peternel.jpg",
+    "file": "Ngerukewid-2016-aerial-view-Luka-Peternel.jpg"
+   }
+  },
+  {
+   "id": "mount-yasur",
+   "img": "/geography/postcards/daaa1adbae1c.webp",
+   "w": 1280,
+   "h": 851,
+   "tone": "#888888",
+   "name": "Mount Yasur",
+   "place": "Tanna, Vanuatu",
+   "lat": -19.52833,
+   "lon": 169.44833,
+   "blurb": "Mount Yasur is an active volcano on Tanna Island, Vanuatu, 361 m high above sea level, on the coast near Sulphur Bay, northeast of the taller Mount Tukosmera, which was active in the Pleistocene.",
+   "wiki": "https://en.wikipedia.org/wiki/Mount_Yasur",
+   "credit": {
+    "artist": "Rolf Cosar",
+    "licence": "CC BY 2.5",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Mount_Yasur_eruption_2006,_Tanna_Island,_Vanuatu,_VAN_0516.jpg",
+    "file": "Mount_Yasur_eruption_2006,_Tanna_Island,_Vanuatu,_VAN_0516.jpg"
+   }
+  }
+ ]
+}

@@ -1,0 +1,3837 @@
+{
+ "meta": {
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-11",
+  "source": "Curated questions; answer coordinates from the English Wikipedia article for each site.",
+  "count": 172
+ },
+ "questions": [
+  {
+   "id": "penicillin",
+   "cat": "science",
+   "year": 1928,
+   "q": "Alexander Fleming noticed mould killing bacteria in a Petri dish — the discovery of penicillin. Where was his laboratory?",
+   "a": "St Mary's Hospital",
+   "place": "Paddington, London, UK",
+   "lat": 51.5172,
+   "lon": -0.1731,
+   "view": [
+    48,
+    4,
+    6.5
+   ],
+   "r": 12,
+   "d": 1,
+   "why": "Fleming worked in a small laboratory at St Mary’s Hospital Medical School in Paddington. The room is preserved today as the Alexander Fleming Laboratory Museum.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Alexander_Fleming_Laboratory_Museum",
+    "https://en.wikipedia.org/wiki/Penicillin",
+    "https://en.wikipedia.org/wiki/Alexander_Fleming"
+   ]
+  },
+  {
+   "id": "double-helix",
+   "cat": "science",
+   "year": 1953,
+   "q": "Francis Crick and James Watson built their model of the DNA double helix at which university laboratory?",
+   "a": "Cavendish Laboratory, University of Cambridge",
+   "place": "Cambridge, UK",
+   "lat": 52.2092,
+   "lon": 0.0925,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 12,
+   "d": 1,
+   "why": "Watson and Crick worked at the Cavendish Laboratory in Cambridge, drawing on X-ray data from Rosalind Franklin and Maurice Wilkins at King’s College London. The model was published in Nature in April 1953.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Cavendish_Laboratory",
+    "https://en.wikipedia.org/wiki/Molecular_structure_of_Nucleic_Acids",
+    "https://en.wikipedia.org/wiki/Rosalind_Franklin"
+   ]
+  },
+  {
+   "id": "x-rays",
+   "cat": "science",
+   "year": 1895,
+   "q": "Wilhelm Röntgen discovered X-rays while experimenting with cathode-ray tubes. In which university city was his laboratory?",
+   "a": "University of Würzburg",
+   "place": "Würzburg, Germany",
+   "lat": 49.7833,
+   "lon": 9.9333,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Röntgen made the discovery in November 1895 at the University of Würzburg’s physics institute, and won the first Nobel Prize in Physics for it in 1901.",
+   "src": [
+    "https://en.wikipedia.org/wiki/W%C3%BCrzburg",
+    "https://en.wikipedia.org/wiki/X-ray",
+    "https://en.wikipedia.org/wiki/Wilhelm_R%C3%B6ntgen"
+   ]
+  },
+  {
+   "id": "radium",
+   "cat": "science",
+   "year": 1898,
+   "q": "Marie and Pierre Curie discovered polonium and radium working in a converted shed at which school?",
+   "a": "ESPCI (School of Industrial Physics and Chemistry)",
+   "place": "Paris, France",
+   "lat": 48.8414,
+   "lon": 2.3469,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 12,
+   "d": 1,
+   "why": "The Curies worked in a draughty shed at the École municipale de physique et de chimie industrielles (today ESPCI Paris), where they announced polonium and then radium in 1898.",
+   "src": [
+    "https://en.wikipedia.org/wiki/ESPCI_Paris",
+    "https://en.wikipedia.org/wiki/Radium",
+    "https://en.wikipedia.org/wiki/Marie_Curie"
+   ]
+  },
+  {
+   "id": "jupiter-moons",
+   "cat": "science",
+   "year": 1610,
+   "q": "Galileo first saw four moons orbiting Jupiter through his telescope while he was a professor in which city?",
+   "a": "Padua",
+   "place": "Veneto, Italy",
+   "lat": 45.4067,
+   "lon": 11.8775,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Galileo taught at the University of Padua from 1592 to 1610, and observed the Galilean moons there in January 1610 before publishing them in Sidereus Nuncius.",
+   "src": [
+    "https://en.wikipedia.org/wiki/University_of_Padua",
+    "https://en.wikipedia.org/wiki/Galilean_moons",
+    "https://en.wikipedia.org/wiki/Sidereus_Nuncius"
+   ]
+  },
+  {
+   "id": "smallpox-vaccine",
+   "cat": "science",
+   "year": 1796,
+   "q": "Edward Jenner performed the first smallpox vaccination, using cowpox, on eight-year-old James Phipps. In which village did he practise?",
+   "a": "Berkeley",
+   "place": "Gloucestershire, UK",
+   "lat": 51.691,
+   "lon": -2.459,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Jenner was a country doctor in Berkeley, Gloucestershire. His home there, The Chantry, is now Dr Jenner’s House museum.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Berkeley%2C_Gloucestershire",
+    "https://en.wikipedia.org/wiki/Edward_Jenner",
+    "https://en.wikipedia.org/wiki/Smallpox_vaccine"
+   ]
+  },
+  {
+   "id": "insulin",
+   "cat": "science",
+   "year": 1921,
+   "q": "Frederick Banting and Charles Best first isolated insulin, transforming the treatment of diabetes. At which university?",
+   "a": "University of Toronto",
+   "place": "Toronto, Canada",
+   "lat": 43.6617,
+   "lon": -79.395,
+   "view": [
+    44,
+    -98,
+    2.4
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Banting and Best did the work in J.J.R. Macleod’s laboratory at the University of Toronto in 1921; Banting and Macleod shared the 1923 Nobel Prize.",
+   "src": [
+    "https://en.wikipedia.org/wiki/University_of_Toronto",
+    "https://en.wikipedia.org/wiki/Insulin",
+    "https://en.wikipedia.org/wiki/Frederick_Banting"
+   ]
+  },
+  {
+   "id": "heart-transplant",
+   "cat": "science",
+   "year": 1967,
+   "q": "Christiaan Barnard led the team that carried out the world’s first human-to-human heart transplant. In which city?",
+   "a": "Groote Schuur Hospital",
+   "place": "Cape Town, South Africa",
+   "lat": -33.9414,
+   "lon": 18.4628,
+   "view": [
+    2,
+    20,
+    2.4
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "The operation on Louis Washkansky took place at Groote Schuur Hospital in Cape Town on 3 December 1967.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Groote_Schuur_Hospital",
+    "https://en.wikipedia.org/wiki/Heart_transplantation",
+    "https://en.wikipedia.org/wiki/Christiaan_Barnard"
+   ]
+  },
+  {
+   "id": "ivf",
+   "cat": "science",
+   "year": 1978,
+   "q": "Louise Brown, the world’s first baby conceived by IVF, was born at which hospital?",
+   "a": "Oldham General Hospital",
+   "place": "Oldham, Greater Manchester, UK",
+   "lat": 53.5528,
+   "lon": -2.1227,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 15,
+   "d": 3,
+   "why": "Louise Brown was born at Oldham General Hospital (now the Royal Oldham Hospital) on 25 July 1978, after pioneering work by Robert Edwards and Patrick Steptoe.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Royal_Oldham_Hospital",
+    "https://en.wikipedia.org/wiki/Louise_Brown",
+    "https://en.wikipedia.org/wiki/In_vitro_fertilisation"
+   ]
+  },
+  {
+   "id": "dolly",
+   "cat": "science",
+   "year": 1996,
+   "q": "Dolly the sheep, the first mammal cloned from an adult cell, was created at which research institute?",
+   "a": "Roslin Institute",
+   "place": "near Edinburgh, Scotland",
+   "lat": 55.8656,
+   "lon": -3.1983,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Dolly was born on 5 July 1996 at the Roslin Institute, just south of Edinburgh. She is now on display at the National Museum of Scotland.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Roslin_Institute",
+    "https://en.wikipedia.org/wiki/Dolly_(sheep)"
+   ]
+  },
+  {
+   "id": "nucleus",
+   "cat": "science",
+   "year": 1911,
+   "q": "Ernest Rutherford announced the discovery of the atomic nucleus after the gold-foil experiment. At which university did he do it?",
+   "a": "University of Manchester",
+   "place": "Manchester, UK",
+   "lat": 53.4661,
+   "lon": -2.2319,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 12,
+   "d": 2,
+   "why": "Rutherford interpreted Geiger and Marsden’s gold-foil results at the Victoria University of Manchester, publishing the nuclear model of the atom in 1911.",
+   "src": [
+    "https://en.wikipedia.org/wiki/University_of_Manchester",
+    "https://en.wikipedia.org/wiki/Rutherford_model",
+    "https://en.wikipedia.org/wiki/Geiger%E2%80%93Marsden_experiments"
+   ]
+  },
+  {
+   "id": "mendel",
+   "cat": "science",
+   "year": 1856,
+   "q": "Gregor Mendel worked out the laws of inheritance by breeding pea plants in the garden of his monastery. Where?",
+   "a": "St Thomas's Abbey",
+   "place": "Brno, Czechia",
+   "lat": 49.1908,
+   "lon": 16.5931,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Mendel’s experiments (1856–1863) took place at the Augustinian St Thomas’s Abbey in Brno, then in the Austrian Empire; he presented the results in 1865.",
+   "src": [
+    "https://en.wikipedia.org/wiki/St_Thomas's_Abbey%2C_Brno",
+    "https://en.wikipedia.org/wiki/Gregor_Mendel",
+    "https://en.wikipedia.org/wiki/Mendelian_inheritance"
+   ]
+  },
+  {
+   "id": "expanding-universe",
+   "cat": "science",
+   "year": 1929,
+   "q": "Edwin Hubble’s observations showing the universe is expanding were made with the 100-inch Hooker telescope at which observatory?",
+   "a": "Mount Wilson Observatory",
+   "place": "California, USA",
+   "lat": 34.225,
+   "lon": -118.0572,
+   "view": [
+    39,
+    -97,
+    3.6
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "The Hooker telescope on Mount Wilson, above Pasadena, was the world’s largest from 1917 to 1949. Hubble published his velocity–distance relation in 1929.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Mount_Wilson_Observatory",
+    "https://en.wikipedia.org/wiki/Hubble's_law",
+    "https://en.wikipedia.org/wiki/Hooker_Telescope"
+   ]
+  },
+  {
+   "id": "uranus",
+   "cat": "science",
+   "year": 1781,
+   "q": "William Herschel discovered the planet Uranus with a homemade telescope in the garden of his house. In which city?",
+   "a": "Bath",
+   "place": "Somerset, UK",
+   "lat": 51.3825,
+   "lon": -2.3669,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 12,
+   "d": 2,
+   "why": "Herschel spotted Uranus from 19 New King Street, Bath, on 13 March 1781 — the first planet discovered with a telescope. The house is now the Herschel Museum of Astronomy.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Herschel_Museum_of_Astronomy",
+    "https://en.wikipedia.org/wiki/Uranus",
+    "https://en.wikipedia.org/wiki/William_Herschel"
+   ]
+  },
+  {
+   "id": "prime-meridian",
+   "cat": "science",
+   "year": 1884,
+   "q": "The 1884 International Meridian Conference chose the line through which observatory as the world’s prime meridian, 0° longitude?",
+   "a": "Royal Observatory, Greenwich",
+   "place": "London, UK",
+   "lat": 51.477,
+   "lon": -0.0147,
+   "view": [
+    22,
+    11,
+    1
+   ],
+   "r": 12,
+   "d": 1,
+   "why": "Delegates from 25 nations meeting in Washington, D.C., chose the meridian through the Airy transit circle at the Royal Observatory, Greenwich.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Royal_Observatory%2C_Greenwich",
+    "https://en.wikipedia.org/wiki/International_Meridian_Conference",
+    "https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)"
+   ]
+  },
+  {
+   "id": "uraniborg",
+   "cat": "science",
+   "year": 1576,
+   "q": "Tycho Brahe built Uraniborg, the most precise naked-eye observatory of its age, on an island in the strait between Denmark and Sweden. Which island?",
+   "a": "Ven",
+   "place": "Øresund, Sweden (then Denmark)",
+   "lat": 55.9079,
+   "lon": 12.6966,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 15,
+   "d": 3,
+   "why": "King Frederick II granted Tycho the island of Hven (Ven) in 1576. His measurements there underpinned Kepler’s laws of planetary motion.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Uraniborg",
+    "https://en.wikipedia.org/wiki/Tycho_Brahe",
+    "https://en.wikipedia.org/wiki/Ven_(Sweden)"
+   ]
+  },
+  {
+   "id": "ulugh-beg",
+   "cat": "science",
+   "year": 1420,
+   "q": "The astronomer-sultan Ulugh Beg built a vast observatory in the 1420s whose star catalogue was the best for two centuries. In which city?",
+   "a": "Samarkand",
+   "place": "Uzbekistan",
+   "lat": 39.675,
+   "lon": 67.005,
+   "view": [
+    41,
+    64,
+    5
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Ulugh Beg’s observatory on a hill outside Samarkand housed an enormous meridian arc; its remains were rediscovered in 1908.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Ulugh_Beg_Observatory",
+    "https://en.wikipedia.org/wiki/Ulugh_Beg"
+   ]
+  },
+  {
+   "id": "aspirin",
+   "cat": "science",
+   "year": 1897,
+   "q": "Felix Hoffmann synthesised a stable form of acetylsalicylic acid — aspirin — at the Bayer company’s laboratories. In which city were they?",
+   "a": "Elberfeld (now Wuppertal)",
+   "place": "North Rhine-Westphalia, Germany",
+   "lat": 51.2667,
+   "lon": 7.1833,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "Bayer’s laboratories were then in Elberfeld, today part of Wuppertal. Aspirin was registered as a trademark in 1899.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Wuppertal",
+    "https://en.wikipedia.org/wiki/Aspirin",
+    "https://en.wikipedia.org/wiki/Felix_Hoffmann"
+   ]
+  },
+  {
+   "id": "last-smallpox",
+   "cat": "science",
+   "year": 1977,
+   "q": "The last naturally occurring case of smallpox in the world was recorded in a hospital cook named Ali Maow Maalin. In which town?",
+   "a": "Merca",
+   "place": "Somalia",
+   "lat": 1.7133,
+   "lon": 44.7656,
+   "view": [
+    2,
+    20,
+    2.4
+   ],
+   "r": 25,
+   "d": 3,
+   "why": "Ali Maow Maalin fell ill in Merca, Somalia, in October 1977. The WHO declared smallpox eradicated in 1980.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Merca",
+    "https://en.wikipedia.org/wiki/Smallpox",
+    "https://en.wikipedia.org/wiki/Ali_Maow_Maalin"
+   ]
+  },
+  {
+   "id": "printing-press",
+   "cat": "invention",
+   "year": 1450,
+   "q": "Johannes Gutenberg developed printing with movable metal type and printed his famous Bible in his home city. Which city?",
+   "a": "Mainz",
+   "place": "Rhineland-Palatinate, Germany",
+   "lat": 49.9994,
+   "lon": 8.2736,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 20,
+   "d": 1,
+   "why": "Gutenberg developed his press in Strasbourg and Mainz, and printed the Gutenberg Bible in Mainz around 1455. The Gutenberg Museum is there today.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Mainz",
+    "https://en.wikipedia.org/wiki/Johannes_Gutenberg",
+    "https://en.wikipedia.org/wiki/Printing_press"
+   ]
+  },
+  {
+   "id": "telephone",
+   "cat": "invention",
+   "year": 1876,
+   "q": "“Mr. Watson — come here — I want to see you.” Alexander Graham Bell made the first successful telephone call to his assistant in which city?",
+   "a": "Boston",
+   "place": "Massachusetts, USA",
+   "lat": 42.3603,
+   "lon": -71.0578,
+   "view": [
+    39,
+    -97,
+    3.6
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "Bell made the call on 10 March 1876 from his workshop at 5 Exeter Place, Boston, three days after his telephone patent was granted.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Boston",
+    "https://en.wikipedia.org/wiki/Invention_of_the_telephone",
+    "https://en.wikipedia.org/wiki/Alexander_Graham_Bell"
+   ]
+  },
+  {
+   "id": "light-bulb",
+   "cat": "invention",
+   "year": 1879,
+   "q": "Thomas Edison’s team demonstrated a long-lasting carbon-filament light bulb at his “invention factory”. Where was it?",
+   "a": "Menlo Park",
+   "place": "New Jersey, USA",
+   "lat": 40.5631,
+   "lon": -74.3394,
+   "view": [
+    40,
+    -77,
+    7.5
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Edison’s Menlo Park laboratory in Raritan Township (today Edison, New Jersey) gave him the nickname “the Wizard of Menlo Park”; the lamp was shown publicly on New Year’s Eve 1879.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Thomas_Alva_Edison_Memorial_Tower_and_Museum",
+    "https://en.wikipedia.org/wiki/Incandescent_light_bulb",
+    "https://en.wikipedia.org/wiki/Menlo_Park%2C_New_Jersey"
+   ]
+  },
+  {
+   "id": "transistor",
+   "cat": "invention",
+   "year": 1947,
+   "q": "John Bardeen, Walter Brattain and William Shockley built the first working transistor at which research laboratory?",
+   "a": "Bell Labs",
+   "place": "Murray Hill, New Jersey, USA",
+   "lat": 40.6953,
+   "lon": -74.4011,
+   "view": [
+    39,
+    -97,
+    3.6
+   ],
+   "r": 25,
+   "d": 2,
+   "why": "The point-contact transistor was demonstrated at Bell Telephone Laboratories in Murray Hill, New Jersey, in December 1947; the trio shared the 1956 Nobel Prize.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Murray_Hill%2C_New_Jersey",
+    "https://en.wikipedia.org/wiki/History_of_the_transistor",
+    "https://en.wikipedia.org/wiki/Bell_Labs"
+   ]
+  },
+  {
+   "id": "world-wide-web",
+   "cat": "invention",
+   "year": 1989,
+   "q": "Tim Berners-Lee proposed — and then built — the World Wide Web while working at which research centre?",
+   "a": "CERN",
+   "place": "Meyrin, near Geneva, Switzerland",
+   "lat": 46.233,
+   "lon": 6.0556,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "Berners-Lee wrote his proposal at CERN in March 1989 and had the first web server running there by the end of 1990.",
+   "src": [
+    "https://en.wikipedia.org/wiki/CERN",
+    "https://en.wikipedia.org/wiki/World_Wide_Web",
+    "https://en.wikipedia.org/wiki/Tim_Berners-Lee"
+   ]
+  },
+  {
+   "id": "arpanet",
+   "cat": "invention",
+   "year": 1969,
+   "q": "The first message ever sent over ARPANET, the forerunner of the internet, left a computer on which university campus?",
+   "a": "UCLA",
+   "place": "Los Angeles, USA",
+   "lat": 34.0722,
+   "lon": -118.4427,
+   "view": [
+    39,
+    -97,
+    3.6
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "On 29 October 1969, Charley Kline at UCLA tried to type “LOGIN” to the Stanford Research Institute; the system crashed after “LO”.",
+   "src": [
+    "https://en.wikipedia.org/wiki/University_of_California%2C_Los_Angeles",
+    "https://en.wikipedia.org/wiki/ARPANET"
+   ]
+  },
+  {
+   "id": "colossus",
+   "cat": "invention",
+   "year": 1944,
+   "q": "Colossus, the world’s first programmable electronic digital computer, was put to work breaking German codes at which wartime site?",
+   "a": "Bletchley Park",
+   "place": "Buckinghamshire, UK",
+   "lat": 51.9981,
+   "lon": -0.7411,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 12,
+   "d": 1,
+   "why": "Colossus, designed by Tommy Flowers, began work at Bletchley Park in early 1944 against the Lorenz cipher.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Bletchley_Park",
+    "https://en.wikipedia.org/wiki/Colossus_computer"
+   ]
+  },
+  {
+   "id": "first-photograph",
+   "cat": "invention",
+   "year": 1826,
+   "q": "The oldest surviving camera photograph, “View from the Window at Le Gras”, was taken by Nicéphore Niépce at his country estate. Near which village?",
+   "a": "Saint-Loup-de-Varennes",
+   "place": "Burgundy, France",
+   "lat": 46.7286,
+   "lon": 4.8614,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "Niépce made the image from an upstairs window of his estate, Le Gras, at Saint-Loup-de-Varennes near Chalon-sur-Saône, around 1826–27.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Saint-Loup-de-Varennes",
+    "https://en.wikipedia.org/wiki/View_from_the_Window_at_Le_Gras",
+    "https://en.wikipedia.org/wiki/Nic%C3%A9phore_Ni%C3%A9pce"
+   ]
+  },
+  {
+   "id": "motorwagen",
+   "cat": "invention",
+   "year": 1885,
+   "q": "Carl Benz built the Patent-Motorwagen, generally regarded as the first practical petrol-powered car, in his workshop in which city?",
+   "a": "Mannheim",
+   "place": "Baden-Württemberg, Germany",
+   "lat": 49.4878,
+   "lon": 8.4661,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "Benz built the car in Mannheim in 1885 and patented it in January 1886. In 1888 Bertha Benz drove it from Mannheim to Pforzheim — the first long-distance car journey.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Mannheim",
+    "https://en.wikipedia.org/wiki/Benz_Patent-Motorwagen",
+    "https://en.wikipedia.org/wiki/Bertha_Benz"
+   ]
+  },
+  {
+   "id": "telescope-patent",
+   "cat": "invention",
+   "year": 1608,
+   "q": "The earliest known patent application for a telescope was filed in 1608 by spectacle-maker Hans Lipperhey. In which city did he work?",
+   "a": "Middelburg",
+   "place": "Zeeland, Netherlands",
+   "lat": 51.5,
+   "lon": 3.6167,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "Lipperhey, a lens-maker in Middelburg, applied to the States General for a patent in October 1608. It was refused — others claimed the idea too.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Middelburg%2C_Zeeland",
+    "https://en.wikipedia.org/wiki/Hans_Lipperhey",
+    "https://en.wikipedia.org/wiki/History_of_the_telescope"
+   ]
+  },
+  {
+   "id": "telegraph",
+   "cat": "invention",
+   "year": 1844,
+   "q": "“What hath God wrought” — Samuel Morse sent the first long-distance telegraph message on the Washington–Baltimore line. From which building?",
+   "a": "United States Capitol",
+   "place": "Washington, D.C., USA",
+   "lat": 38.8897,
+   "lon": -77.0089,
+   "view": [
+    39,
+    -97,
+    3.6
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Morse sent the message on 24 May 1844 from the Supreme Court chamber in the Capitol to Alfred Vail in Baltimore.",
+   "src": [
+    "https://en.wikipedia.org/wiki/United_States_Capitol",
+    "https://en.wikipedia.org/wiki/Electrical_telegraph",
+    "https://en.wikipedia.org/wiki/Samuel_Morse"
+   ]
+  },
+  {
+   "id": "transatlantic-radio",
+   "cat": "invention",
+   "year": 1901,
+   "q": "Guglielmo Marconi received the first transatlantic radio signal — the letter “S” in Morse — on a hill above which harbour city?",
+   "a": "Signal Hill, St. John’s",
+   "place": "Newfoundland, Canada",
+   "lat": 47.5736,
+   "lon": -52.6836,
+   "view": [
+    46,
+    -38,
+    3.4
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "On 12 December 1901 Marconi heard the signal from Poldhu, Cornwall, using a kite-borne aerial at Signal Hill, St. John’s.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Signal_Hill%2C_St._John's",
+    "https://en.wikipedia.org/wiki/Guglielmo_Marconi"
+   ]
+  },
+  {
+   "id": "cromford-mill",
+   "cat": "invention",
+   "year": 1771,
+   "q": "Richard Arkwright built the world’s first water-powered cotton-spinning mill, a blueprint for the factory system. In which Derbyshire village?",
+   "a": "Cromford",
+   "place": "Derbyshire, UK",
+   "lat": 53.109,
+   "lon": -1.556,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 15,
+   "d": 3,
+   "why": "Arkwright’s Cromford Mill opened in 1771 on the River Derwent and is part of the Derwent Valley Mills World Heritage Site.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Cromford_Mill",
+    "https://en.wikipedia.org/wiki/Richard_Arkwright",
+    "https://en.wikipedia.org/wiki/Derwent_Valley_Mills"
+   ]
+  },
+  {
+   "id": "assembly-line",
+   "cat": "invention",
+   "year": 1913,
+   "q": "Henry Ford introduced the first moving assembly line for whole cars, building the Model T, at which plant?",
+   "a": "Highland Park Ford Plant",
+   "place": "Michigan, USA",
+   "lat": 42.4105,
+   "lon": -83.0996,
+   "view": [
+    39,
+    -97,
+    3.6
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "The moving line began at Highland Park, just north of Detroit, in 1913, cutting Model T assembly from about 12 hours to about 90 minutes.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Highland_Park_Ford_Plant",
+    "https://en.wikipedia.org/wiki/Assembly_line",
+    "https://en.wikipedia.org/wiki/Ford_Model_T"
+   ]
+  },
+  {
+   "id": "balloon",
+   "cat": "invention",
+   "year": 1783,
+   "q": "The Montgolfier brothers gave the first public demonstration of a hot-air balloon in the square of their home town. Which town?",
+   "a": "Annonay",
+   "place": "Ardèche, France",
+   "lat": 45.2408,
+   "lon": 4.6714,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "On 4 June 1783 an unmanned Montgolfier balloon rose from Annonay’s market square; crewed flights followed in Paris later that year.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Annonay",
+    "https://en.wikipedia.org/wiki/Montgolfier_brothers"
+   ]
+  },
+  {
+   "id": "instant-noodles",
+   "cat": "invention",
+   "year": 1958,
+   "q": "Momofuku Ando invented instant ramen — Chikin Ramen — in a shed behind his house. In which city?",
+   "a": "Ikeda",
+   "place": "Osaka Prefecture, Japan",
+   "lat": 34.8217,
+   "lon": 135.4286,
+   "view": [
+    36.5,
+    137.5,
+    9
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "Ando perfected flash-fried noodles in Ikeda, Osaka, in 1958. The Cupnoodles Museum Osaka Ikeda stands there today.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Ikeda%2C_Osaka",
+    "https://en.wikipedia.org/wiki/Instant_noodle",
+    "https://en.wikipedia.org/wiki/Momofuku_Ando"
+   ]
+  },
+  {
+   "id": "mobile-call",
+   "cat": "invention",
+   "year": 1973,
+   "q": "Motorola’s Martin Cooper made the first public call from a handheld mobile phone while walking down a street in which city?",
+   "a": "New York City",
+   "place": "New York, USA",
+   "lat": 40.7547,
+   "lon": -73.9842,
+   "view": [
+    39,
+    -97,
+    3.6
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "Cooper called a rival at Bell Labs from Sixth Avenue in Manhattan on 3 April 1973, using a prototype DynaTAC.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Midtown_Manhattan",
+    "https://en.wikipedia.org/wiki/Martin_Cooper_(inventor)",
+    "https://en.wikipedia.org/wiki/Motorola_DynaTAC"
+   ]
+  },
+  {
+   "id": "wright-flight",
+   "cat": "firsts",
+   "year": 1903,
+   "q": "Orville and Wilbur Wright made the first powered, controlled aeroplane flights on 17 December 1903. Where?",
+   "a": "Kill Devil Hills, near Kitty Hawk",
+   "place": "North Carolina, USA",
+   "lat": 36.0143,
+   "lon": -75.6679,
+   "view": [
+    39,
+    -97,
+    3.6
+   ],
+   "r": 20,
+   "d": 1,
+   "why": "The Wrights chose the windy dunes of Kill Devil Hills on the Outer Banks, near the village of Kitty Hawk. The first flight lasted 12 seconds.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Wright_Brothers_National_Memorial",
+    "https://en.wikipedia.org/wiki/Wright_Flyer",
+    "https://en.wikipedia.org/wiki/Wright_brothers"
+   ]
+  },
+  {
+   "id": "apollo-11",
+   "cat": "firsts",
+   "year": 1969,
+   "q": "Apollo 11, the mission that put the first people on the Moon, lifted off from Launch Complex 39A. Where is it?",
+   "a": "Kennedy Space Center",
+   "place": "Florida, USA",
+   "lat": 28.6083,
+   "lon": -80.6044,
+   "view": [
+    39,
+    -97,
+    3.6
+   ],
+   "r": 20,
+   "d": 1,
+   "why": "Apollo 11 launched from Pad 39A at Kennedy Space Center on Merritt Island, Florida, on 16 July 1969.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Kennedy_Space_Center_Launch_Complex_39A",
+    "https://en.wikipedia.org/wiki/Apollo_11"
+   ]
+  },
+  {
+   "id": "sputnik",
+   "cat": "firsts",
+   "year": 1957,
+   "q": "Sputnik 1, the first artificial satellite, was launched from which cosmodrome?",
+   "a": "Baikonur Cosmodrome",
+   "place": "Kazakhstan",
+   "lat": 45.965,
+   "lon": 63.305,
+   "view": [
+    57,
+    75,
+    2.6
+   ],
+   "r": 40,
+   "d": 2,
+   "why": "Sputnik 1 launched on 4 October 1957 from the Soviet test range at Tyuratam — now Baikonur, leased by Russia from Kazakhstan. Gagarin flew from the same pad in 1961.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Baikonur_Cosmodrome",
+    "https://en.wikipedia.org/wiki/Sputnik_1"
+   ]
+  },
+  {
+   "id": "alcock-brown",
+   "cat": "firsts",
+   "year": 1919,
+   "q": "Alcock and Brown completed the first non-stop transatlantic flight in 1919, crash-landing nose-first in a bog. Near which town?",
+   "a": "Clifden",
+   "place": "County Galway, Ireland",
+   "lat": 53.489,
+   "lon": -10.021,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "After 16 hours from St John’s, Newfoundland, their Vickers Vimy landed in Derrygimlagh bog near Clifden, mistaking it for a field.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Clifden",
+    "https://en.wikipedia.org/wiki/Transatlantic_flight_of_Alcock_and_Brown"
+   ]
+  },
+  {
+   "id": "shenzhou-5",
+   "cat": "firsts",
+   "year": 2003,
+   "q": "Yang Liwei became China’s first astronaut when Shenzhou 5 launched from which launch centre?",
+   "a": "Jiuquan Satellite Launch Center",
+   "place": "Gobi Desert, Inner Mongolia, China",
+   "lat": 40.9581,
+   "lon": 100.2911,
+   "view": [
+    34,
+    106,
+    4
+   ],
+   "r": 40,
+   "d": 3,
+   "why": "Shenzhou 5 launched on 15 October 2003 from Jiuquan, in the Gobi Desert, making China the third country to fly a person into space on its own rocket.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Jiuquan_Satellite_Launch_Center",
+    "https://en.wikipedia.org/wiki/Shenzhou_5",
+    "https://en.wikipedia.org/wiki/Yang_Liwei"
+   ]
+  },
+  {
+   "id": "chandrayaan-3",
+   "cat": "firsts",
+   "year": 2023,
+   "q": "Chandrayaan-3, the first mission to land near the Moon’s south pole, launched from which space centre?",
+   "a": "Satish Dhawan Space Centre",
+   "place": "Sriharikota, Andhra Pradesh, India",
+   "lat": 13.72,
+   "lon": 80.23,
+   "view": [
+    22,
+    79,
+    5.5
+   ],
+   "r": 25,
+   "d": 2,
+   "why": "ISRO launched Chandrayaan-3 from Sriharikota island on 14 July 2023; its Vikram lander touched down on 23 August.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Satish_Dhawan_Space_Centre",
+    "https://en.wikipedia.org/wiki/Chandrayaan-3"
+   ]
+  },
+  {
+   "id": "concorde",
+   "cat": "firsts",
+   "year": 1969,
+   "q": "Concorde, the supersonic airliner, made its very first flight on 2 March 1969 from which city’s airport?",
+   "a": "Toulouse",
+   "place": "Occitanie, France",
+   "lat": 43.635,
+   "lon": 1.3678,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "Prototype 001 took off from Toulouse–Blagnac with André Turcat at the controls; the British prototype first flew from Filton a month later.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Toulouse%E2%80%93Blagnac_Airport",
+    "https://en.wikipedia.org/wiki/Concorde"
+   ]
+  },
+  {
+   "id": "trinity",
+   "cat": "firsts",
+   "year": 1945,
+   "q": "The first nuclear weapon test, codenamed Trinity, took place on 16 July 1945. In which US state?",
+   "a": "Trinity site, Jornada del Muerto desert",
+   "place": "New Mexico, USA",
+   "lat": 33.6772,
+   "lon": -106.4753,
+   "view": [
+    39,
+    -97,
+    3.6
+   ],
+   "r": 30,
+   "d": 1,
+   "why": "The test was carried out in the Jornada del Muerto desert on what is now the White Sands Missile Range, south of the Manhattan Project’s Los Alamos laboratory.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Trinity_(nuclear_test)",
+    "https://en.wikipedia.org/wiki/Manhattan_Project"
+   ]
+  },
+  {
+   "id": "chicago-pile",
+   "cat": "firsts",
+   "year": 1942,
+   "q": "Enrico Fermi’s team achieved the first man-made self-sustaining nuclear chain reaction in a squash court beneath a stadium. Where?",
+   "a": "University of Chicago",
+   "place": "Chicago, USA",
+   "lat": 41.7925,
+   "lon": -87.6011,
+   "view": [
+    39,
+    -97,
+    3.6
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Chicago Pile-1 went critical on 2 December 1942 under the stands of Stagg Field at the University of Chicago.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Chicago_Pile-1",
+    "https://en.wikipedia.org/wiki/Enrico_Fermi"
+   ]
+  },
+  {
+   "id": "nuclear-power",
+   "cat": "firsts",
+   "year": 1954,
+   "q": "The world’s first nuclear power station to supply electricity to a public grid opened in 1954. In which Soviet science town?",
+   "a": "Obninsk",
+   "place": "Kaluga Oblast, Russia",
+   "lat": 55.0839,
+   "lon": 36.5714,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "The 5 MW Obninsk plant, south-west of Moscow, was connected to the grid on 26 June 1954.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Obninsk_Nuclear_Power_Plant",
+    "https://en.wikipedia.org/wiki/Nuclear_power"
+   ]
+  },
+  {
+   "id": "skyscraper",
+   "cat": "firsts",
+   "year": 1885,
+   "q": "The Home Insurance Building, often called the first skyscraper for its load-bearing steel frame, was completed in 1885 in which city?",
+   "a": "Chicago",
+   "place": "Illinois, USA",
+   "lat": 41.8796,
+   "lon": -87.632,
+   "view": [
+    39,
+    -97,
+    3.6
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "William Le Baron Jenney’s ten-storey building stood at LaSalle and Adams streets in Chicago until 1931.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Home_Insurance_Building",
+    "https://en.wikipedia.org/wiki/Skyscraper"
+   ]
+  },
+  {
+   "id": "iron-bridge",
+   "cat": "firsts",
+   "year": 1779,
+   "q": "The world’s first major bridge made of cast iron was erected in 1779 across the River Severn. In which county?",
+   "a": "Ironbridge Gorge",
+   "place": "Shropshire, UK",
+   "lat": 52.6274,
+   "lon": -2.4854,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Abraham Darby III built the Iron Bridge near Coalbrookdale, where his grandfather had pioneered smelting iron with coke.",
+   "src": [
+    "https://en.wikipedia.org/wiki/The_Iron_Bridge",
+    "https://en.wikipedia.org/wiki/Ironbridge_Gorge"
+   ]
+  },
+  {
+   "id": "rainhill",
+   "cat": "firsts",
+   "year": 1829,
+   "q": "Stephenson’s Rocket won the trials held to choose locomotives for the Liverpool and Manchester Railway. Where were they held?",
+   "a": "Rainhill",
+   "place": "Merseyside, UK",
+   "lat": 53.4157,
+   "lon": -2.7625,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 15,
+   "d": 3,
+   "why": "The Rainhill Trials ran in October 1829 on a level stretch of the new line at Rainhill, east of Liverpool.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Rainhill",
+    "https://en.wikipedia.org/wiki/Rainhill_trials",
+    "https://en.wikipedia.org/wiki/Stephenson's_Rocket"
+   ]
+  },
+  {
+   "id": "althing",
+   "cat": "firsts",
+   "year": 930,
+   "q": "The Althing, often called the world’s oldest surviving parliament, first met in the open air in 930 CE. Where?",
+   "a": "Þingvellir",
+   "place": "Iceland",
+   "lat": 64.2538,
+   "lon": -21.0373,
+   "view": [
+    57,
+    -4,
+    4
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "Iceland’s chieftains met at Þingvellir, in a rift valley where the North American and Eurasian plates pull apart, until 1798.",
+   "src": [
+    "https://en.wikipedia.org/wiki/%C3%9Eingvellir",
+    "https://en.wikipedia.org/wiki/Althing"
+   ]
+  },
+  {
+   "id": "al-qarawiyyin",
+   "cat": "firsts",
+   "year": 859,
+   "q": "Founded by Fatima al-Fihri in 859, it is recognised by UNESCO and Guinness as the oldest continually operating university. In which city?",
+   "a": "University of al-Qarawiyyin",
+   "place": "Fez, Morocco",
+   "lat": 34.0644,
+   "lon": -4.9733,
+   "view": [
+    37,
+    20,
+    4.6
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Al-Qarawiyyin began as a mosque in the medina of Fez and grew into a centre of learning; it became part of Morocco’s state university system in 1963.",
+   "src": [
+    "https://en.wikipedia.org/wiki/University_of_al-Qarawiyyin",
+    "https://en.wikipedia.org/wiki/Fatima_al-Fihri"
+   ]
+  },
+  {
+   "id": "diamond-sutra",
+   "cat": "firsts",
+   "year": 1900,
+   "q": "The Diamond Sutra, the world’s oldest dated printed book (868 CE), was found sealed in a “library cave” in 1900. Near which oasis town?",
+   "a": "Mogao Caves, Dunhuang",
+   "place": "Gansu, China",
+   "lat": 40.0372,
+   "lon": 94.8042,
+   "view": [
+    34,
+    106,
+    4
+   ],
+   "r": 25,
+   "d": 3,
+   "why": "The Taoist monk Wang Yuanlu found the sealed Library Cave at the Mogao Caves outside Dunhuang, on the Silk Road.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Mogao_Caves",
+    "https://en.wikipedia.org/wiki/Diamond_Sutra",
+    "https://en.wikipedia.org/wiki/Library_Cave"
+   ]
+  },
+  {
+   "id": "magna-carta",
+   "cat": "history",
+   "year": 1215,
+   "q": "King John agreed to Magna Carta in June 1215 at a water-meadow beside the Thames. Where?",
+   "a": "Runnymede",
+   "place": "Surrey, UK",
+   "lat": 51.4444,
+   "lon": -0.5653,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 12,
+   "d": 2,
+   "why": "The charter was agreed at Runnymede, between Windsor and Staines, on 15 June 1215.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Runnymede",
+    "https://en.wikipedia.org/wiki/Magna_Carta"
+   ]
+  },
+  {
+   "id": "declaration",
+   "cat": "history",
+   "year": 1776,
+   "q": "The US Declaration of Independence was adopted and signed in the Pennsylvania State House. In which city?",
+   "a": "Independence Hall",
+   "place": "Philadelphia, USA",
+   "lat": 39.9489,
+   "lon": -75.15,
+   "view": [
+    39,
+    -97,
+    3.6
+   ],
+   "r": 12,
+   "d": 1,
+   "why": "The Second Continental Congress adopted the Declaration in the State House, now Independence Hall, on 4 July 1776.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Independence_Hall",
+    "https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence"
+   ]
+  },
+  {
+   "id": "waterloo",
+   "cat": "history",
+   "year": 1815,
+   "q": "Napoleon’s final defeat came at the Battle of Waterloo in June 1815. In which present-day country was it fought?",
+   "a": "Waterloo battlefield",
+   "place": "Wallonia, Belgium",
+   "lat": 50.6781,
+   "lon": 4.4122,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "The battle was fought south of the town of Waterloo, then in the United Kingdom of the Netherlands and now in Belgium.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Battle_of_Waterloo",
+    "https://en.wikipedia.org/wiki/Napoleon"
+   ]
+  },
+  {
+   "id": "sarajevo-1914",
+   "cat": "history",
+   "year": 1914,
+   "q": "Archduke Franz Ferdinand was assassinated beside the Latin Bridge, the spark for the First World War. In which city?",
+   "a": "Sarajevo",
+   "place": "Bosnia and Herzegovina",
+   "lat": 43.858,
+   "lon": 18.429,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "Gavrilo Princip shot the Archduke and his wife Sophie on 28 June 1914 at the corner beside Sarajevo’s Latin Bridge.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Latin_Bridge",
+    "https://en.wikipedia.org/wiki/Assassination_of_Archduke_Franz_Ferdinand"
+   ]
+  },
+  {
+   "id": "armistice",
+   "cat": "history",
+   "year": 1918,
+   "q": "The armistice ending the fighting of the First World War was signed in a railway carriage in a forest. Near which French town?",
+   "a": "Glade of the Armistice, Compiègne",
+   "place": "Oise, France",
+   "lat": 49.427,
+   "lon": 2.906,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "The armistice was signed in Marshal Foch’s carriage in the Forest of Compiègne at 5 a.m. on 11 November 1918.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Glade_of_the_Armistice",
+    "https://en.wikipedia.org/wiki/Armistice_of_11_November_1918"
+   ]
+  },
+  {
+   "id": "versailles",
+   "cat": "history",
+   "year": 1919,
+   "q": "The treaty formally ending the First World War with Germany was signed in the Hall of Mirrors. In which palace?",
+   "a": "Palace of Versailles",
+   "place": "Versailles, France",
+   "lat": 48.8047,
+   "lon": 2.1203,
+   "view": [
+    22,
+    11,
+    1
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "The Treaty of Versailles was signed on 28 June 1919, five years to the day after the Sarajevo assassination.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Palace_of_Versailles",
+    "https://en.wikipedia.org/wiki/Treaty_of_Versailles"
+   ]
+  },
+  {
+   "id": "un-charter",
+   "cat": "history",
+   "year": 1945,
+   "q": "The United Nations Charter was signed by 50 nations on 26 June 1945. In which city?",
+   "a": "San Francisco",
+   "place": "California, USA",
+   "lat": 37.7786,
+   "lon": -122.4208,
+   "view": [
+    22,
+    11,
+    1
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "The charter was drawn up at the San Francisco Conference and signed at the Veterans War Memorial Building next to the Opera House.",
+   "src": [
+    "https://en.wikipedia.org/wiki/War_Memorial_Opera_House",
+    "https://en.wikipedia.org/wiki/Charter_of_the_United_Nations"
+   ]
+  },
+  {
+   "id": "potsdam",
+   "cat": "history",
+   "year": 1945,
+   "q": "Truman, Stalin and Churchill (then Attlee) decided the shape of post-war Europe in the summer of 1945 at a palace in which city?",
+   "a": "Cecilienhof, Potsdam",
+   "place": "Brandenburg, Germany",
+   "lat": 52.4192,
+   "lon": 13.0708,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "The Potsdam Conference met at Cecilienhof Palace from 17 July to 2 August 1945.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Cecilienhof",
+    "https://en.wikipedia.org/wiki/Potsdam_Conference"
+   ]
+  },
+  {
+   "id": "yalta",
+   "cat": "history",
+   "year": 1945,
+   "q": "Roosevelt, Churchill and Stalin met at a former tsar’s summer palace in February 1945 to plan the end of the Second World War. Where?",
+   "a": "Livadia Palace, Yalta",
+   "place": "Crimea",
+   "lat": 44.4678,
+   "lon": 34.1433,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "The Yalta Conference took place at Livadia Palace on the Black Sea coast of Crimea, 4–11 February 1945.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Livadia_Palace",
+    "https://en.wikipedia.org/wiki/Yalta_Conference"
+   ]
+  },
+  {
+   "id": "winter-palace",
+   "cat": "history",
+   "year": 1917,
+   "q": "In October 1917 the Bolsheviks stormed the Winter Palace, seat of Russia’s Provisional Government. In which city?",
+   "a": "Petrograd (St Petersburg)",
+   "place": "Russia",
+   "lat": 59.9404,
+   "lon": 30.3139,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "The palace, now part of the Hermitage Museum, was taken on the night of 25–26 October 1917 (Old Style).",
+   "src": [
+    "https://en.wikipedia.org/wiki/Winter_Palace",
+    "https://en.wikipedia.org/wiki/October_Revolution"
+   ]
+  },
+  {
+   "id": "chernobyl",
+   "cat": "history",
+   "year": 1986,
+   "q": "The world’s worst nuclear power accident happened at Reactor No. 4 on 26 April 1986. Where?",
+   "a": "Chernobyl Nuclear Power Plant",
+   "place": "near Pripyat, Ukraine",
+   "lat": 51.3892,
+   "lon": 30.0994,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 20,
+   "d": 1,
+   "why": "The plant lies beside the abandoned city of Pripyat in northern Ukraine, close to the border with Belarus.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Chernobyl_Nuclear_Power_Plant",
+    "https://en.wikipedia.org/wiki/Chernobyl_disaster"
+   ]
+  },
+  {
+   "id": "salt-march",
+   "cat": "history",
+   "year": 1930,
+   "q": "Gandhi’s Salt March ended when he picked up a lump of natural salt on the shore, defying British law. At which coastal village?",
+   "a": "Dandi",
+   "place": "Gujarat, India",
+   "lat": 20.8865,
+   "lon": 72.8009,
+   "view": [
+    22,
+    79,
+    5.5
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "Gandhi walked about 385 km from Sabarmati Ashram to Dandi on the Arabian Sea, arriving on 6 April 1930.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Dandi%2C_Gujarat",
+    "https://en.wikipedia.org/wiki/Salt_March"
+   ]
+  },
+  {
+   "id": "robben-island",
+   "cat": "history",
+   "year": 1964,
+   "q": "Nelson Mandela spent 18 of his 27 years in prison on an island off which city?",
+   "a": "Robben Island",
+   "place": "Table Bay, Cape Town, South Africa",
+   "lat": -33.805,
+   "lon": 18.37,
+   "view": [
+    2,
+    20,
+    2.4
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "Mandela was held on Robben Island from 1964 to 1982. The island is now a museum and World Heritage Site.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Robben_Island",
+    "https://en.wikipedia.org/wiki/Nelson_Mandela"
+   ]
+  },
+  {
+   "id": "soweto",
+   "cat": "history",
+   "year": 1976,
+   "q": "On 16 June 1976 students protesting against compulsory Afrikaans lessons were shot by police, starting an uprising. In which township?",
+   "a": "Soweto",
+   "place": "Johannesburg, South Africa",
+   "lat": -26.2678,
+   "lon": 27.8585,
+   "view": [
+    -26,
+    25,
+    6
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "The Soweto uprising is commemorated each year on 16 June as Youth Day in South Africa.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Soweto",
+    "https://en.wikipedia.org/wiki/Soweto_uprising"
+   ]
+  },
+  {
+   "id": "bandung",
+   "cat": "history",
+   "year": 1955,
+   "q": "Leaders of 29 newly independent Asian and African nations met in 1955 in a conference that founded the Non-Aligned Movement. In which city?",
+   "a": "Bandung",
+   "place": "West Java, Indonesia",
+   "lat": -6.9211,
+   "lon": 107.6092,
+   "view": [
+    6,
+    112,
+    4
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "The Asian–African Conference met at the Gedung Merdeka in Bandung in April 1955.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Gedung_Merdeka",
+    "https://en.wikipedia.org/wiki/Asian%E2%80%93African_Conference"
+   ]
+  },
+  {
+   "id": "oau",
+   "cat": "history",
+   "year": 1963,
+   "q": "The Organisation of African Unity, forerunner of the African Union, was founded in 1963 in which capital?",
+   "a": "Addis Ababa",
+   "place": "Ethiopia",
+   "lat": 9.0358,
+   "lon": 38.7525,
+   "view": [
+    2,
+    20,
+    2.4
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "Thirty-two states signed the OAU Charter in Addis Ababa on 25 May 1963, now celebrated as Africa Day. The African Union is still headquartered there.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Addis_Ababa",
+    "https://en.wikipedia.org/wiki/Organisation_of_African_Unity"
+   ]
+  },
+  {
+   "id": "ghana-independence",
+   "cat": "history",
+   "year": 1957,
+   "q": "Kwame Nkrumah declared the first independence of a sub-Saharan African colony from European rule at midnight on 6 March 1957. In which city?",
+   "a": "Accra",
+   "place": "Ghana",
+   "lat": 5.55,
+   "lon": -0.2,
+   "view": [
+    2,
+    20,
+    2.4
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "Nkrumah announced Ghana’s independence at the Old Polo Grounds in Accra: “Ghana, your beloved country, is free for ever.”",
+   "src": [
+    "https://en.wikipedia.org/wiki/Accra",
+    "https://en.wikipedia.org/wiki/Kwame_Nkrumah"
+   ]
+  },
+  {
+   "id": "adwa",
+   "cat": "history",
+   "year": 1896,
+   "q": "Emperor Menelik II’s army defeated an Italian invasion force in 1896, securing Ethiopia’s independence. Near which town?",
+   "a": "Adwa",
+   "place": "Tigray, Ethiopia",
+   "lat": 14.1667,
+   "lon": 38.9,
+   "view": [
+    2,
+    20,
+    2.4
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "The Battle of Adwa (1 March 1896) made Ethiopia one of only two African countries never colonised.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Adwa",
+    "https://en.wikipedia.org/wiki/Battle_of_Adwa"
+   ]
+  },
+  {
+   "id": "isandlwana",
+   "cat": "history",
+   "year": 1879,
+   "q": "At the opening battle of the Anglo-Zulu War, a Zulu army inflicted a crushing defeat on British forces beneath a distinctive rocky hill. Which?",
+   "a": "Isandlwana",
+   "place": "KwaZulu-Natal, South Africa",
+   "lat": -28.3564,
+   "lon": 30.6525,
+   "view": [
+    -26,
+    25,
+    6
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "On 22 January 1879 about 20,000 Zulu warriors overran the British camp at Isandlwana.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Battle_of_Isandlwana",
+    "https://en.wikipedia.org/wiki/Anglo-Zulu_War"
+   ]
+  },
+  {
+   "id": "haiti-independence",
+   "cat": "history",
+   "year": 1804,
+   "q": "Jean-Jacques Dessalines proclaimed Haiti’s independence — the only nation born of a successful slave revolt — on 1 January 1804. In which town?",
+   "a": "Gonaïves",
+   "place": "Haiti",
+   "lat": 19.4456,
+   "lon": -72.6883,
+   "view": [
+    18.5,
+    -73,
+    7
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "The Act of Independence was read in Gonaïves, known as the “City of Independence”.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Gona%C3%AFves",
+    "https://en.wikipedia.org/wiki/Haitian_Revolution"
+   ]
+  },
+  {
+   "id": "grito-dolores",
+   "cat": "history",
+   "year": 1810,
+   "q": "Father Miguel Hidalgo rang his church bell and issued the “Grito”, the cry that began Mexico’s War of Independence. In which town?",
+   "a": "Dolores (now Dolores Hidalgo)",
+   "place": "Guanajuato, Mexico",
+   "lat": 21.1516,
+   "lon": -100.9369,
+   "view": [
+    21,
+    -96,
+    6.5
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "Hidalgo’s Grito de Dolores on 16 September 1810 is re-enacted every year on the eve of Mexico’s Independence Day.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Dolores_Hidalgo",
+    "https://en.wikipedia.org/wiki/Grito_de_Dolores"
+   ]
+  },
+  {
+   "id": "boyaca",
+   "cat": "history",
+   "year": 1819,
+   "q": "Simón Bolívar’s victory at a bridge in the Andes in August 1819 secured the independence of New Granada (today Colombia). Where?",
+   "a": "Puente de Boyacá",
+   "place": "Boyacá, Colombia",
+   "lat": 5.45,
+   "lon": -73.4292,
+   "view": [
+    -20,
+    -60,
+    2.8
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "The Battle of Boyacá was fought on 7 August 1819 at a bridge over the Teatinos River south of Tunja.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Battle_of_Boyac%C3%A1",
+    "https://en.wikipedia.org/wiki/Sim%C3%B3n_Bol%C3%ADvar"
+   ]
+  },
+  {
+   "id": "camp-david",
+   "cat": "history",
+   "year": 1978,
+   "q": "Egypt’s Anwar Sadat and Israel’s Menachem Begin agreed a framework for peace in 1978 at the US president’s country retreat. Where is it?",
+   "a": "Camp David",
+   "place": "Maryland, USA",
+   "lat": 39.6483,
+   "lon": -77.465,
+   "view": [
+    39,
+    -97,
+    3.6
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Jimmy Carter hosted 13 days of talks at Camp David in the Catoctin Mountains in September 1978.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Camp_David",
+    "https://en.wikipedia.org/wiki/Camp_David_Accords"
+   ]
+  },
+  {
+   "id": "panmunjom",
+   "cat": "history",
+   "year": 1953,
+   "q": "The armistice that halted the Korean War was signed in 1953 in a village on the line between the two armies. Which?",
+   "a": "Panmunjom",
+   "place": "Korean Demilitarized Zone",
+   "lat": 37.96,
+   "lon": 126.665,
+   "view": [
+    34,
+    125,
+    4.5
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "The armistice was signed at Panmunjom on 27 July 1953; the Joint Security Area there is still where the two Koreas meet.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Panmunjom",
+    "https://en.wikipedia.org/wiki/Korean_Armistice_Agreement"
+   ]
+  },
+  {
+   "id": "missouri-surrender",
+   "cat": "history",
+   "year": 1945,
+   "q": "Japan formally surrendered, ending the Second World War, aboard the battleship USS Missouri on 2 September 1945. Where was the ship anchored?",
+   "a": "Tokyo Bay",
+   "place": "Japan",
+   "lat": 35.5225,
+   "lon": 139.91,
+   "view": [
+    22,
+    11,
+    1
+   ],
+   "r": 25,
+   "d": 2,
+   "why": "The ceremony took place on the Missouri’s deck in Tokyo Bay, with General MacArthur accepting the surrender for the Allies.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Tokyo_Bay",
+    "https://en.wikipedia.org/wiki/Surrender_of_Japan"
+   ]
+  },
+  {
+   "id": "dien-bien-phu",
+   "cat": "history",
+   "year": 1954,
+   "q": "The siege that ended French colonial rule in Indochina in 1954 took place in a remote valley. Where?",
+   "a": "Điện Biên Phủ",
+   "place": "north-west Vietnam",
+   "lat": 21.3869,
+   "lon": 103.0156,
+   "view": [
+    6,
+    112,
+    4
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "General Võ Nguyên Giáp’s Viet Minh forces captured the French garrison at Điện Biên Phủ on 7 May 1954, leading to the Geneva Accords.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Battle_of_Dien_Bien_Phu",
+    "https://en.wikipedia.org/wiki/First_Indochina_War"
+   ]
+  },
+  {
+   "id": "plassey",
+   "cat": "history",
+   "year": 1757,
+   "q": "Robert Clive’s victory over the Nawab of Bengal in 1757 began British rule in India. Near which village was the battle fought?",
+   "a": "Palashi (Plassey)",
+   "place": "West Bengal, India",
+   "lat": 23.8,
+   "lon": 88.25,
+   "view": [
+    22,
+    79,
+    5.5
+   ],
+   "r": 25,
+   "d": 3,
+   "why": "The Battle of Plassey on 23 June 1757 was fought beside the Bhagirathi River, north of Calcutta.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Palashi",
+    "https://en.wikipedia.org/wiki/Battle_of_Plassey"
+   ]
+  },
+  {
+   "id": "nanking-treaty",
+   "cat": "history",
+   "year": 1842,
+   "q": "The treaty ending the First Opium War, which ceded Hong Kong Island to Britain, was signed aboard HMS Cornwallis off which city?",
+   "a": "Nanjing (Nanking)",
+   "place": "Jiangsu, China",
+   "lat": 32.0608,
+   "lon": 118.7789,
+   "view": [
+    34,
+    106,
+    4
+   ],
+   "r": 25,
+   "d": 3,
+   "why": "The Treaty of Nanking was signed on 29 August 1842 on the Yangtze at Nanjing.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Nanjing",
+    "https://en.wikipedia.org/wiki/Treaty_of_Nanking"
+   ]
+  },
+  {
+   "id": "tordesillas",
+   "cat": "history",
+   "year": 1494,
+   "q": "Spain and Portugal divided the newly explored lands outside Europe between them with a treaty signed in 1494. In which Spanish town?",
+   "a": "Tordesillas",
+   "place": "Castile and León, Spain",
+   "lat": 41.5,
+   "lon": -5,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "The Treaty of Tordesillas drew a line 370 leagues west of the Cape Verde islands; it was signed on 7 June 1494.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Tordesillas",
+    "https://en.wikipedia.org/wiki/Treaty_of_Tordesillas"
+   ]
+  },
+  {
+   "id": "waitangi",
+   "cat": "history",
+   "year": 1840,
+   "q": "The Treaty of Waitangi, New Zealand’s founding document, was first signed by British officials and Māori chiefs in February 1840. Where?",
+   "a": "Waitangi Treaty Grounds",
+   "place": "Bay of Islands, New Zealand",
+   "lat": -35.2661,
+   "lon": 174.08,
+   "view": [
+    -41,
+    173,
+    9
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "The first signatures were made on 6 February 1840 at Waitangi in the Bay of Islands; the day is now New Zealand’s national holiday.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Waitangi_Treaty_Grounds",
+    "https://en.wikipedia.org/wiki/Treaty_of_Waitangi"
+   ]
+  },
+  {
+   "id": "first-fleet",
+   "cat": "history",
+   "year": 1788,
+   "q": "The First Fleet established Britain’s first colony in Australia on 26 January 1788. At which cove?",
+   "a": "Sydney Cove",
+   "place": "Sydney, Australia",
+   "lat": -33.8586,
+   "lon": 151.2117,
+   "view": [
+    -27,
+    134,
+    4.6
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "Arthur Phillip moved the fleet from Botany Bay to Sydney Cove in Port Jackson, which offered fresh water and deep anchorage.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Sydney_Cove",
+    "https://en.wikipedia.org/wiki/First_Fleet"
+   ]
+  },
+  {
+   "id": "eureka",
+   "cat": "history",
+   "year": 1854,
+   "q": "Gold miners built a stockade and rebelled against colonial authorities in 1854 — the Eureka Rebellion. In which goldfields town?",
+   "a": "Ballarat",
+   "place": "Victoria, Australia",
+   "lat": -37.5608,
+   "lon": 143.8475,
+   "view": [
+    -27,
+    134,
+    4.6
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "Troops overran the Eureka Stockade at Ballarat on 3 December 1854; the miners’ demands later helped bring democratic reform to Victoria.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Ballarat",
+    "https://en.wikipedia.org/wiki/Eureka_Rebellion"
+   ]
+  },
+  {
+   "id": "hastings",
+   "cat": "history",
+   "year": 1066,
+   "q": "William of Normandy defeated King Harold II in 1066 near a town now named after the battle. Where?",
+   "a": "Battle Abbey, Battle",
+   "place": "East Sussex, UK",
+   "lat": 50.915,
+   "lon": 0.4858,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "The Battle of Hastings was fought about 10 km north-west of Hastings; William built Battle Abbey on the site.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Battle_Abbey",
+    "https://en.wikipedia.org/wiki/Battle_of_Hastings"
+   ]
+  },
+  {
+   "id": "columbus-palos",
+   "cat": "history",
+   "year": 1492,
+   "q": "Columbus set sail on his first voyage across the Atlantic on 3 August 1492 from which Andalusian port?",
+   "a": "Palos de la Frontera",
+   "place": "Huelva, Spain",
+   "lat": 37.2283,
+   "lon": -6.8944,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "The Niña, Pinta and Santa María left Palos on the Río Tinto, near the monastery of La Rábida where Columbus had won support.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Palos_de_la_Frontera",
+    "https://en.wikipedia.org/wiki/Voyages_of_Christopher_Columbus"
+   ]
+  },
+  {
+   "id": "galapagos",
+   "cat": "exploration",
+   "year": 1835,
+   "q": "Charles Darwin’s observations of finches, tortoises and mockingbirds on HMS Beagle’s voyage were made on which islands?",
+   "a": "Galápagos Islands",
+   "place": "Ecuador",
+   "lat": -0.5,
+   "lon": -90.5,
+   "view": [
+    -20,
+    -60,
+    2.8
+   ],
+   "r": 80,
+   "d": 1,
+   "why": "The Beagle spent five weeks in the Galápagos in 1835; the islands’ variation between species helped shape Darwin’s theory of evolution.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands",
+    "https://en.wikipedia.org/wiki/Second_voyage_of_HMS_Beagle"
+   ]
+  },
+  {
+   "id": "everest",
+   "cat": "exploration",
+   "year": 1953,
+   "q": "Tenzing Norgay and Edmund Hillary stood on top of the world on 29 May 1953. Drop your pin on the summit.",
+   "a": "Summit of Mount Everest",
+   "place": "Nepal–China border",
+   "lat": 27.9883,
+   "lon": 86.9253,
+   "view": [
+    22,
+    79,
+    5.5
+   ],
+   "r": 20,
+   "d": 1,
+   "why": "The pair climbed via the South Col route from Nepal. Everest’s summit, 8,849 m, lies on the border between Nepal and Tibet.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Mount_Everest",
+    "https://en.wikipedia.org/wiki/1953_British_Mount_Everest_expedition"
+   ]
+  },
+  {
+   "id": "magellan-death",
+   "cat": "exploration",
+   "year": 1521,
+   "q": "Ferdinand Magellan was killed in battle against the warriors of Lapulapu during the first circumnavigation. On which island?",
+   "a": "Mactan",
+   "place": "Cebu, Philippines",
+   "lat": 10.3106,
+   "lon": 124.0151,
+   "view": [
+    6,
+    112,
+    4
+   ],
+   "r": 25,
+   "d": 2,
+   "why": "Magellan died at Mactan on 27 April 1521. Juan Sebastián Elcano completed the voyage back to Spain in 1522.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Battle_of_Mactan",
+    "https://en.wikipedia.org/wiki/Ferdinand_Magellan",
+    "https://en.wikipedia.org/wiki/Lapulapu"
+   ]
+  },
+  {
+   "id": "da-gama",
+   "cat": "exploration",
+   "year": 1498,
+   "q": "Vasco da Gama completed the first sea voyage from Europe to India in May 1498, landing near which city?",
+   "a": "Calicut (Kozhikode)",
+   "place": "Kerala, India",
+   "lat": 11.2489,
+   "lon": 75.7839,
+   "view": [
+    22,
+    79,
+    5.5
+   ],
+   "r": 25,
+   "d": 2,
+   "why": "Da Gama’s ships anchored off Kappad, near Calicut on the Malabar Coast, on 20 May 1498.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Kozhikode",
+    "https://en.wikipedia.org/wiki/Vasco_da_Gama"
+   ]
+  },
+  {
+   "id": "cook-death",
+   "cat": "exploration",
+   "year": 1779,
+   "q": "Captain James Cook was killed in a confrontation on the shore of a bay during his third Pacific voyage. Where?",
+   "a": "Kealakekua Bay",
+   "place": "Hawaiʻi Island, USA",
+   "lat": 19.476,
+   "lon": -155.927,
+   "view": [
+    0,
+    -150,
+    2
+   ],
+   "r": 25,
+   "d": 2,
+   "why": "Cook died at Kealakekua Bay on 14 February 1779; a white obelisk marks the spot.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Kealakekua_Bay",
+    "https://en.wikipedia.org/wiki/James_Cook"
+   ]
+  },
+  {
+   "id": "livingstone",
+   "cat": "exploration",
+   "year": 1871,
+   "q": "“Dr. Livingstone, I presume?” Henry Morton Stanley found the missing explorer in 1871 in a town on Lake Tanganyika. Which?",
+   "a": "Ujiji",
+   "place": "Kigoma, Tanzania",
+   "lat": -4.9111,
+   "lon": 29.675,
+   "view": [
+    2,
+    20,
+    2.4
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "Stanley reached Ujiji, on the eastern shore of Lake Tanganyika, on 10 November 1871.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Ujiji",
+    "https://en.wikipedia.org/wiki/David_Livingstone",
+    "https://en.wikipedia.org/wiki/Henry_Morton_Stanley"
+   ]
+  },
+  {
+   "id": "titanic",
+   "cat": "exploration",
+   "year": 1985,
+   "q": "Robert Ballard’s expedition found the wreck of the Titanic in 1985, 73 years after she sank. Drop your pin on the wreck.",
+   "a": "Titanic wreck site",
+   "place": "North Atlantic, south-east of Newfoundland",
+   "lat": 41.7256,
+   "lon": -49.9469,
+   "view": [
+    46,
+    -38,
+    3.4
+   ],
+   "r": 50,
+   "d": 2,
+   "why": "The wreck lies about 3,800 m down, roughly 600 km south-east of Newfoundland.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Wreck_of_the_Titanic",
+    "https://en.wikipedia.org/wiki/Titanic"
+   ]
+  },
+  {
+   "id": "mayflower",
+   "cat": "exploration",
+   "year": 1620,
+   "q": "The Mayflower’s Pilgrims founded their colony in December 1620 at a harbour they named after their English port of departure. Where?",
+   "a": "Plymouth",
+   "place": "Massachusetts, USA",
+   "lat": 41.9583,
+   "lon": -70.6678,
+   "view": [
+    40,
+    -77,
+    7.5
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "After first anchoring off Cape Cod, the Pilgrims settled at Plymouth, named after Plymouth in Devon.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Plymouth%2C_Massachusetts",
+    "https://en.wikipedia.org/wiki/Mayflower",
+    "https://en.wikipedia.org/wiki/Plymouth_Colony"
+   ]
+  },
+  {
+   "id": "jamestown",
+   "cat": "exploration",
+   "year": 1607,
+   "q": "The first permanent English settlement in the Americas was founded in May 1607 on a river island in which future state?",
+   "a": "Jamestown",
+   "place": "Virginia, USA",
+   "lat": 37.2092,
+   "lon": -76.7775,
+   "view": [
+    40,
+    -77,
+    7.5
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "The Virginia Company’s colonists built James Fort on Jamestown Island on the James River.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Jamestown%2C_Virginia",
+    "https://en.wikipedia.org/wiki/Jamestown_Settlement"
+   ]
+  },
+  {
+   "id": "lanse-aux-meadows",
+   "cat": "exploration",
+   "year": 1000,
+   "q": "The only confirmed Norse settlement in North America, from around 1000 CE, was found in 1960. Where?",
+   "a": "L'Anse aux Meadows",
+   "place": "Newfoundland, Canada",
+   "lat": 51.5964,
+   "lon": -55.5333,
+   "view": [
+    46,
+    -38,
+    3.4
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "Helge and Anne Stine Ingstad identified the site at the northern tip of Newfoundland; tree rings date Norse wood-cutting there to 1021 CE.",
+   "src": [
+    "https://en.wikipedia.org/wiki/L'Anse_aux_Meadows",
+    "https://en.wikipedia.org/wiki/Norse_colonization_of_North_America"
+   ]
+  },
+  {
+   "id": "kon-tiki",
+   "cat": "exploration",
+   "year": 1947,
+   "q": "Thor Heyerdahl’s balsa raft Kon-Tiki ended its 101-day drift from Peru by crashing onto a reef. Which atoll?",
+   "a": "Raroia",
+   "place": "Tuamotus, French Polynesia",
+   "lat": -16.0167,
+   "lon": -142.4333,
+   "view": [
+    0,
+    -150,
+    2
+   ],
+   "r": 40,
+   "d": 3,
+   "why": "The raft wrecked on the reef of Raroia on 7 August 1947, after about 6,900 km at sea.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Raroia",
+    "https://en.wikipedia.org/wiki/Kon-Tiki_expedition"
+   ]
+  },
+  {
+   "id": "earhart",
+   "cat": "exploration",
+   "year": 1937,
+   "q": "Amelia Earhart and Fred Noonan were last seen alive taking off on 2 July 1937 from which airfield?",
+   "a": "Lae",
+   "place": "Papua New Guinea",
+   "lat": -6.7303,
+   "lon": 147.0008,
+   "view": [
+    -15,
+    160,
+    2.2
+   ],
+   "r": 25,
+   "d": 2,
+   "why": "They left Lae for Howland Island, 4,100 km away, and disappeared over the central Pacific.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Lae",
+    "https://en.wikipedia.org/wiki/Amelia_Earhart"
+   ]
+  },
+  {
+   "id": "machu-picchu-1911",
+   "cat": "exploration",
+   "year": 1911,
+   "q": "Hiram Bingham brought this 15th-century Inca citadel to international attention in 1911 — though local farmers already knew it well. Where is it?",
+   "a": "Machu Picchu",
+   "place": "Cusco Region, Peru",
+   "lat": -13.1633,
+   "lon": -72.5456,
+   "view": [
+    -20,
+    -60,
+    2.8
+   ],
+   "r": 20,
+   "d": 1,
+   "why": "Machu Picchu sits on a ridge above the Urubamba valley; local guide Melchor Arteaga led Bingham there.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Machu_Picchu",
+    "https://en.wikipedia.org/wiki/Hiram_Bingham_III"
+   ]
+  },
+  {
+   "id": "last-spike",
+   "cat": "exploration",
+   "year": 1885,
+   "q": "The last spike of the Canadian Pacific Railway, linking Canada coast to coast, was driven in 1885 in which mountain province?",
+   "a": "Craigellachie",
+   "place": "British Columbia, Canada",
+   "lat": 50.9753,
+   "lon": -118.7236,
+   "view": [
+    55,
+    -100,
+    2.8
+   ],
+   "r": 30,
+   "d": 3,
+   "why": "Donald Smith drove the last spike at Craigellachie in Eagle Pass on 7 November 1885.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Craigellachie%2C_British_Columbia",
+    "https://en.wikipedia.org/wiki/Canadian_Pacific_Railway"
+   ]
+  },
+  {
+   "id": "rosetta-stone",
+   "cat": "archaeology",
+   "year": 1799,
+   "q": "French soldiers found the Rosetta Stone — the key to deciphering hieroglyphs — in 1799. Near which town in the Nile Delta?",
+   "a": "Rashid (Rosetta)",
+   "place": "Beheira, Egypt",
+   "lat": 31.4044,
+   "lon": 30.4164,
+   "view": [
+    37,
+    20,
+    4.6
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "The stone was found while rebuilding Fort Julien near Rashid (Rosetta). Champollion announced his decipherment in 1822.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Rosetta",
+    "https://en.wikipedia.org/wiki/Rosetta_Stone"
+   ]
+  },
+  {
+   "id": "tutankhamun",
+   "cat": "archaeology",
+   "year": 1922,
+   "q": "Howard Carter found the almost intact tomb of Tutankhamun in November 1922. Where?",
+   "a": "Valley of the Kings",
+   "place": "Luxor, Egypt",
+   "lat": 25.7408,
+   "lon": 32.6022,
+   "view": [
+    29,
+    44,
+    5
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "Tomb KV62 lies in the Valley of the Kings on the west bank of the Nile, opposite Luxor.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Valley_of_the_Kings",
+    "https://en.wikipedia.org/wiki/KV62",
+    "https://en.wikipedia.org/wiki/Howard_Carter"
+   ]
+  },
+  {
+   "id": "terracotta-army",
+   "cat": "archaeology",
+   "year": 1974,
+   "q": "Farmers digging a well in 1974 found the first figures of the Terracotta Army. Near which city?",
+   "a": "Xi'an",
+   "place": "Shaanxi, China",
+   "lat": 34.385,
+   "lon": 109.2731,
+   "view": [
+    34,
+    106,
+    4
+   ],
+   "r": 25,
+   "d": 1,
+   "why": "The army guards the tomb of Qin Shi Huang, the first emperor of China, at Lintong, about 35 km east of Xi’an.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Terracotta_Army",
+    "https://en.wikipedia.org/wiki/Qin_Shi_Huang"
+   ]
+  },
+  {
+   "id": "dead-sea-scrolls",
+   "cat": "archaeology",
+   "year": 1947,
+   "q": "A Bedouin shepherd found the first Dead Sea Scrolls in a cave in 1947. Where?",
+   "a": "Qumran Caves",
+   "place": "West Bank, near the Dead Sea",
+   "lat": 31.7419,
+   "lon": 35.4586,
+   "view": [
+    29,
+    44,
+    5
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "Over the following decade fragments of about 900 manuscripts were found in eleven caves around Khirbet Qumran.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Qumran_Caves",
+    "https://en.wikipedia.org/wiki/Dead_Sea_Scrolls"
+   ]
+  },
+  {
+   "id": "lucy",
+   "cat": "archaeology",
+   "year": 1974,
+   "q": "Donald Johanson and Tom Gray found “Lucy”, a 3.2-million-year-old Australopithecus skeleton, in 1974. In which country?",
+   "a": "Hadar",
+   "place": "Afar Region, Ethiopia",
+   "lat": 11.167,
+   "lon": 40.633,
+   "view": [
+    2,
+    20,
+    2.4
+   ],
+   "r": 40,
+   "d": 2,
+   "why": "Lucy was found at Hadar in the Awash valley of Ethiopia’s Afar Triangle; she is kept at the National Museum in Addis Ababa.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Hadar%2C_Ethiopia",
+    "https://en.wikipedia.org/wiki/Lucy_(Australopithecus)"
+   ]
+  },
+  {
+   "id": "olduvai",
+   "cat": "archaeology",
+   "year": 1959,
+   "q": "Mary and Louis Leakey’s finds of early human fossils and stone tools made which gorge famous as a “cradle of humankind”?",
+   "a": "Olduvai Gorge",
+   "place": "Arusha Region, Tanzania",
+   "lat": -2.9936,
+   "lon": 35.3511,
+   "view": [
+    2,
+    20,
+    2.4
+   ],
+   "r": 25,
+   "d": 2,
+   "why": "Olduvai Gorge, in the Great Rift Valley, has yielded fossils and tools spanning about two million years.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Olduvai_Gorge",
+    "https://en.wikipedia.org/wiki/Mary_Leakey"
+   ]
+  },
+  {
+   "id": "pompeii",
+   "cat": "archaeology",
+   "year": 79,
+   "q": "A Roman town buried by the eruption of Mount Vesuvius in 79 CE has been excavated since 1748. Where?",
+   "a": "Pompeii",
+   "place": "Campania, Italy",
+   "lat": 40.75,
+   "lon": 14.4861,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "Pompeii lies about 10 km south-east of Vesuvius, near Naples; ash preserved the town in remarkable detail.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Pompeii",
+    "https://en.wikipedia.org/wiki/Eruption_of_Mount_Vesuvius_in_79_AD"
+   ]
+  },
+  {
+   "id": "lascaux",
+   "cat": "archaeology",
+   "year": 1940,
+   "q": "Four teenagers following their dog discovered caves full of 17,000-year-old paintings of horses and bulls in 1940. Where?",
+   "a": "Lascaux",
+   "place": "Dordogne, France",
+   "lat": 45.0536,
+   "lon": 1.17,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "The cave near Montignac was closed to the public in 1963 to protect the paintings; replicas are shown nearby.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Lascaux",
+    "https://en.wikipedia.org/wiki/Cave_painting"
+   ]
+  },
+  {
+   "id": "altamira",
+   "cat": "archaeology",
+   "year": 1879,
+   "q": "Eight-year-old María Sanz de Sautuola looked up and saw painted bison on a cave ceiling in 1879 — the first prehistoric cave art to be recognised. Where?",
+   "a": "Cave of Altamira",
+   "place": "Cantabria, Spain",
+   "lat": 43.3825,
+   "lon": -4.1203,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Altamira, near Santillana del Mar, was at first dismissed as a forgery; it was accepted only in 1902.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Cave_of_Altamira",
+    "https://en.wikipedia.org/wiki/Marcelino_Sanz_de_Sautuola"
+   ]
+  },
+  {
+   "id": "otzi",
+   "cat": "archaeology",
+   "year": 1991,
+   "q": "Hikers found Ötzi, a 5,300-year-old natural mummy, melting out of a glacier in 1991. In which mountain range?",
+   "a": "Ötztal Alps",
+   "place": "Italy–Austria border",
+   "lat": 46.779,
+   "lon": 10.84,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "Ötzi was found at 3,210 m on the Similaun, just on the Italian side of the border; he is displayed in Bolzano.",
+   "src": [
+    "https://en.wikipedia.org/wiki/%C3%96tzi",
+    "https://en.wikipedia.org/wiki/%C3%96tztal_Alps"
+   ]
+  },
+  {
+   "id": "sutton-hoo",
+   "cat": "archaeology",
+   "year": 1939,
+   "q": "An Anglo-Saxon ship burial packed with treasure, including a famous helmet, was excavated in 1939. Where?",
+   "a": "Sutton Hoo",
+   "place": "Suffolk, UK",
+   "lat": 52.0897,
+   "lon": 1.3389,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Basil Brown excavated the burial for landowner Edith Pretty; it is thought to be the grave of King Rædwald of East Anglia.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Sutton_Hoo",
+    "https://en.wikipedia.org/wiki/Sutton_Hoo_helmet"
+   ]
+  },
+  {
+   "id": "gobekli-tepe",
+   "cat": "archaeology",
+   "year": 1995,
+   "q": "Excavations from 1995 revealed carved stone pillars about 11,000 years old — the world’s oldest known megaliths. Where?",
+   "a": "Göbekli Tepe",
+   "place": "Şanlıurfa, Turkey",
+   "lat": 37.2236,
+   "lon": 38.9217,
+   "view": [
+    29,
+    44,
+    5
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Klaus Schmidt led excavations at Göbekli Tepe in south-eastern Turkey; it predates Stonehenge by about 6,000 years.",
+   "src": [
+    "https://en.wikipedia.org/wiki/G%C3%B6bekli_Tepe",
+    "https://en.wikipedia.org/wiki/Klaus_Schmidt_(archaeologist)"
+   ]
+  },
+  {
+   "id": "ur",
+   "cat": "archaeology",
+   "year": 1927,
+   "q": "Leonard Woolley excavated the Royal Cemetery with its golden treasures and the Standard of Ur. In which modern country?",
+   "a": "Ur",
+   "place": "Dhi Qar, Iraq",
+   "lat": 30.9617,
+   "lon": 46.1051,
+   "view": [
+    29,
+    44,
+    5
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "Ur was a great Sumerian city near the old course of the Euphrates in southern Iraq; Woolley dug there from 1922 to 1934.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Ur",
+    "https://en.wikipedia.org/wiki/Royal_Cemetery_at_Ur"
+   ]
+  },
+  {
+   "id": "hammurabi",
+   "cat": "archaeology",
+   "year": 1901,
+   "q": "The stele carrying the Code of Hammurabi, one of the oldest written law codes, was found in 1901 far from Babylon. At which ancient city?",
+   "a": "Susa",
+   "place": "Khuzestan, Iran",
+   "lat": 32.1906,
+   "lon": 48.2578,
+   "view": [
+    29,
+    44,
+    5
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "An Elamite king had carried the stele off to Susa as plunder in the 12th century BCE; Jacques de Morgan’s team found it there. It is now in the Louvre.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Susa",
+    "https://en.wikipedia.org/wiki/Code_of_Hammurabi"
+   ]
+  },
+  {
+   "id": "uruk",
+   "cat": "archaeology",
+   "year": -3300,
+   "q": "Some of the earliest known writing — proto-cuneiform tablets from around 3300 BCE — comes from the Mesopotamian city of Uruk. Where was it?",
+   "a": "Uruk",
+   "place": "Al-Muthanna, Iraq",
+   "lat": 31.3242,
+   "lon": 45.6372,
+   "view": [
+    29,
+    44,
+    5
+   ],
+   "r": 25,
+   "d": 2,
+   "why": "Uruk, in southern Iraq, was perhaps the largest city in the world around 3000 BCE, and the home of the legendary king Gilgamesh.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Uruk",
+    "https://en.wikipedia.org/wiki/Cuneiform"
+   ]
+  },
+  {
+   "id": "mohenjo-daro",
+   "cat": "archaeology",
+   "year": 1922,
+   "q": "One of the largest cities of the Indus Valley Civilisation, with a famous Great Bath, was excavated from the 1920s. Where?",
+   "a": "Mohenjo-daro",
+   "place": "Sindh, Pakistan",
+   "lat": 27.3292,
+   "lon": 68.1389,
+   "view": [
+    22,
+    79,
+    5.5
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "Mohenjo-daro, beside the Indus in Sindh, was built around 2500 BCE and is a UNESCO World Heritage Site.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Mohenjo-daro",
+    "https://en.wikipedia.org/wiki/Indus_Valley_Civilisation"
+   ]
+  },
+  {
+   "id": "antikythera",
+   "cat": "archaeology",
+   "year": 1901,
+   "q": "Sponge divers recovered a corroded lump of bronze gears from a Roman-era shipwreck in 1901 — an ancient Greek astronomical calculator. Off which island?",
+   "a": "Antikythera",
+   "place": "Greece",
+   "lat": 35.8667,
+   "lon": 23.3,
+   "view": [
+    37,
+    20,
+    4.6
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "The wreck lies off Antikythera, between Kythera and Crete. The mechanism, about 2,100 years old, is in the National Archaeological Museum in Athens.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Antikythera",
+    "https://en.wikipedia.org/wiki/Antikythera_mechanism"
+   ]
+  },
+  {
+   "id": "ife-heads",
+   "cat": "archaeology",
+   "year": 1938,
+   "q": "Builders digging foundations in 1938 uncovered superb naturalistic brass heads made by the Yoruba centuries earlier. In which city?",
+   "a": "Ile-Ife",
+   "place": "Osun State, Nigeria",
+   "lat": 7.4833,
+   "lon": 4.5592,
+   "view": [
+    2,
+    20,
+    2.4
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "The Ife heads, from the 12th–15th centuries, were found in Ile-Ife, the sacred city of Yoruba tradition.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Ife",
+    "https://en.wikipedia.org/wiki/Ife_Head"
+   ]
+  },
+  {
+   "id": "mungo-man",
+   "cat": "archaeology",
+   "year": 1974,
+   "q": "The 42,000-year-old remains of “Mungo Man”, among the oldest human remains in Australia, were found in 1974 beside a dry lake. In which state?",
+   "a": "Lake Mungo",
+   "place": "New South Wales, Australia",
+   "lat": -33.73,
+   "lon": 143.03,
+   "view": [
+    -27,
+    134,
+    4.6
+   ],
+   "r": 30,
+   "d": 3,
+   "why": "Jim Bowler found the remains at Lake Mungo in the Willandra Lakes region; they were returned to Country in 2017.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Lake_Mungo_remains",
+    "https://en.wikipedia.org/wiki/Mungo_National_Park"
+   ]
+  },
+  {
+   "id": "clovis",
+   "cat": "archaeology",
+   "year": 1929,
+   "q": "Distinctive stone spear points found among mammoth bones gave their name to the Clovis culture of the first Americans. In which US state?",
+   "a": "Blackwater Draw, near Clovis",
+   "place": "New Mexico, USA",
+   "lat": 34.2779,
+   "lon": -103.3246,
+   "view": [
+    39,
+    -97,
+    3.6
+   ],
+   "r": 30,
+   "d": 3,
+   "why": "The type site at Blackwater Draw, near Clovis and Portales, was excavated from the 1930s.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Blackwater_Draw",
+    "https://en.wikipedia.org/wiki/Clovis_culture"
+   ]
+  },
+  {
+   "id": "sanxingdui",
+   "cat": "archaeology",
+   "year": 1986,
+   "q": "Two pits full of giant bronze masks from a lost Bronze Age culture were discovered in 1986. In which Chinese province?",
+   "a": "Sanxingdui",
+   "place": "Sichuan, China",
+   "lat": 30.993,
+   "lon": 104.2,
+   "view": [
+    34,
+    106,
+    4
+   ],
+   "r": 30,
+   "d": 3,
+   "why": "Sanxingdui, near Guanghan, belonged to the ancient kingdom of Shu; its bronzes look like nothing else from early China.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Sanxingdui",
+    "https://en.wikipedia.org/wiki/Shu_(state)"
+   ]
+  },
+  {
+   "id": "gwalior-zero",
+   "cat": "archaeology",
+   "year": 876,
+   "q": "A small temple carved into a fortress hill holds one of the earliest dated inscriptions using a round symbol for zero (876 CE). In which city?",
+   "a": "Gwalior Fort",
+   "place": "Madhya Pradesh, India",
+   "lat": 26.2303,
+   "lon": 78.1689,
+   "view": [
+    22,
+    79,
+    5.5
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "The Chaturbhuj Temple at Gwalior Fort records a garden 270 hastas long and a gift of 50 garlands, both written with a zero.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Gwalior_Fort",
+    "https://en.wikipedia.org/wiki/0"
+   ]
+  },
+  {
+   "id": "library-alexandria",
+   "cat": "archaeology",
+   "year": -285,
+   "q": "The greatest library of the ancient world was founded under the Ptolemies around 285 BCE. In which city?",
+   "a": "Alexandria",
+   "place": "Egypt",
+   "lat": 31.1975,
+   "lon": 29.8925,
+   "view": [
+    37,
+    20,
+    4.6
+   ],
+   "r": 20,
+   "d": 1,
+   "why": "The Library of Alexandria stood in the royal quarter of the city founded by Alexander the Great on the Mediterranean coast.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Alexandria",
+    "https://en.wikipedia.org/wiki/Library_of_Alexandria"
+   ]
+  },
+  {
+   "id": "cusco",
+   "cat": "archaeology",
+   "year": 1438,
+   "q": "Which city in the Andes was the capital of the Inca Empire?",
+   "a": "Cusco",
+   "place": "Peru",
+   "lat": -13.5169,
+   "lon": -71.9786,
+   "view": [
+    -20,
+    -60,
+    2.8
+   ],
+   "r": 20,
+   "d": 1,
+   "why": "Cusco was the Inca capital until the Spanish conquest; Inca stonework still forms the base of many colonial buildings.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Cusco",
+    "https://en.wikipedia.org/wiki/Inca_Empire"
+   ]
+  },
+  {
+   "id": "tenochtitlan",
+   "cat": "archaeology",
+   "year": 1325,
+   "q": "The Aztec capital Tenochtitlan was built on an island in Lake Texcoco. Which modern city stands on its ruins?",
+   "a": "Mexico City (Templo Mayor)",
+   "place": "Mexico",
+   "lat": 19.4333,
+   "lon": -99.1328,
+   "view": [
+    44,
+    -98,
+    2.4
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "The ruins of the Templo Mayor, the Aztecs’ great temple, were uncovered beside Mexico City’s Zócalo from 1978.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Templo_Mayor",
+    "https://en.wikipedia.org/wiki/Tenochtitlan"
+   ]
+  },
+  {
+   "id": "potosi",
+   "cat": "archaeology",
+   "year": 1545,
+   "q": "A “rich mountain” of silver found in 1545 made one of the largest cities in the world in the 1600s. Where?",
+   "a": "Cerro Rico, Potosí",
+   "place": "Bolivia",
+   "lat": -19.6189,
+   "lon": -65.7497,
+   "view": [
+    -20,
+    -60,
+    2.8
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "Silver from Cerro Rico in Potosí funded the Spanish Empire for two centuries, at a terrible cost to the forced labourers who mined it.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Cerro_Rico",
+    "https://en.wikipedia.org/wiki/Potos%C3%AD"
+   ]
+  },
+  {
+   "id": "hoover-dam",
+   "cat": "engineering",
+   "year": 1936,
+   "q": "Completed in 1936, this dam on the Colorado River created Lake Mead. Where is it?",
+   "a": "Hoover Dam",
+   "place": "Nevada–Arizona border, USA",
+   "lat": 36.0156,
+   "lon": -114.7378,
+   "view": [
+    39,
+    -97,
+    3.6
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "Hoover Dam stands in Black Canyon on the Nevada–Arizona border, about 50 km south-east of Las Vegas.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Hoover_Dam",
+    "https://en.wikipedia.org/wiki/Lake_Mead"
+   ]
+  },
+  {
+   "id": "three-gorges",
+   "cat": "engineering",
+   "year": 2006,
+   "q": "The world’s largest power station by installed capacity is a dam across the Yangtze. Where is it?",
+   "a": "Three Gorges Dam",
+   "place": "Hubei, China",
+   "lat": 30.823,
+   "lon": 111.003,
+   "view": [
+    34,
+    106,
+    4
+   ],
+   "r": 25,
+   "d": 2,
+   "why": "The dam at Sandouping, near Yichang, was structurally complete in 2006 and fully operational in 2012.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Three_Gorges_Dam",
+    "https://en.wikipedia.org/wiki/Yangtze"
+   ]
+  },
+  {
+   "id": "itaipu",
+   "cat": "engineering",
+   "year": 1984,
+   "q": "For decades the world’s most productive hydroelectric plant, this dam on the Paraná was built jointly by two countries. Where?",
+   "a": "Itaipu Dam",
+   "place": "Brazil–Paraguay border",
+   "lat": -25.408,
+   "lon": -54.589,
+   "view": [
+    -20,
+    -60,
+    2.8
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "Itaipu began generating in 1984 on the Paraná River, a few kilometres north of the Iguazu–Paraná confluence.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Itaipu_Dam",
+    "https://en.wikipedia.org/wiki/Paran%C3%A1_River"
+   ]
+  },
+  {
+   "id": "aswan",
+   "cat": "engineering",
+   "year": 1970,
+   "q": "A high dam completed in 1970 tamed the Nile’s annual floods and created Lake Nasser. Where is it?",
+   "a": "Aswan High Dam (Lake Nasser)",
+   "place": "Aswan, Egypt",
+   "lat": 23.9706,
+   "lon": 32.8778,
+   "view": [
+    25,
+    14,
+    4.4
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "The dam just south of Aswan created Lake Nasser; the Abu Simbel temples were moved to escape its waters.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Aswan_Dam",
+    "https://en.wikipedia.org/wiki/Lake_Nasser"
+   ]
+  },
+  {
+   "id": "kariba",
+   "cat": "engineering",
+   "year": 1959,
+   "q": "Completed in 1959, this dam on the Zambezi created what is still the world’s largest artificial reservoir by volume. Where?",
+   "a": "Kariba Dam",
+   "place": "Zambia–Zimbabwe border",
+   "lat": -16.5222,
+   "lon": 28.7617,
+   "view": [
+    2,
+    20,
+    2.4
+   ],
+   "r": 25,
+   "d": 3,
+   "why": "Kariba Dam spans the Kariba Gorge on the Zambezi, forming Lake Kariba.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Kariba_Dam",
+    "https://en.wikipedia.org/wiki/Lake_Kariba"
+   ]
+  },
+  {
+   "id": "burj-khalifa",
+   "cat": "engineering",
+   "year": 2010,
+   "q": "The world’s tallest building, 828 m high, opened in 2010. Where is it?",
+   "a": "Burj Khalifa",
+   "place": "Dubai, United Arab Emirates",
+   "lat": 25.1972,
+   "lon": 55.2742,
+   "view": [
+    22,
+    11,
+    1
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "Burj Khalifa stands in Downtown Dubai and has held the title of world’s tallest building since its completion.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Burj_Khalifa",
+    "https://en.wikipedia.org/wiki/List_of_tallest_buildings"
+   ]
+  },
+  {
+   "id": "petronas",
+   "cat": "engineering",
+   "year": 1998,
+   "q": "Twin 88-storey towers that were the world’s tallest buildings from 1998 to 2004 stand in which city?",
+   "a": "Petronas Towers",
+   "place": "Kuala Lumpur, Malaysia",
+   "lat": 3.1578,
+   "lon": 101.7117,
+   "view": [
+    6,
+    112,
+    4
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "Designed by César Pelli, the towers are joined by a skybridge on the 41st and 42nd floors.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Petronas_Towers",
+    "https://en.wikipedia.org/wiki/C%C3%A9sar_Pelli"
+   ]
+  },
+  {
+   "id": "brasilia",
+   "cat": "engineering",
+   "year": 1960,
+   "q": "Designed from scratch by Lúcio Costa and Oscar Niemeyer, this city became a national capital in 1960. Where?",
+   "a": "Brasília",
+   "place": "Brazil",
+   "lat": -15.7939,
+   "lon": -47.8828,
+   "view": [
+    -20,
+    -60,
+    2.8
+   ],
+   "r": 20,
+   "d": 1,
+   "why": "Brasília replaced Rio de Janeiro as Brazil’s capital to draw development into the interior; its plan resembles an aeroplane.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Bras%C3%ADlia",
+    "https://en.wikipedia.org/wiki/Oscar_Niemeyer"
+   ]
+  },
+  {
+   "id": "canberra",
+   "cat": "engineering",
+   "year": 1913,
+   "q": "A purpose-built capital designed by Walter Burley Griffin and Marion Mahony Griffin was founded in 1913. Where?",
+   "a": "Canberra",
+   "place": "Australia",
+   "lat": -35.2931,
+   "lon": 149.1269,
+   "view": [
+    -27,
+    134,
+    4.6
+   ],
+   "r": 20,
+   "d": 1,
+   "why": "Canberra was chosen as a compromise between rivals Sydney and Melbourne; Parliament moved there in 1927.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Canberra",
+    "https://en.wikipedia.org/wiki/Walter_Burley_Griffin"
+   ]
+  },
+  {
+   "id": "eiffel",
+   "cat": "engineering",
+   "year": 1889,
+   "q": "The tallest structure in the world from 1889 to 1930 was built as the entrance arch to a World’s Fair. Where?",
+   "a": "Eiffel Tower",
+   "place": "Paris, France",
+   "lat": 48.8582,
+   "lon": 2.2945,
+   "view": [
+    22,
+    11,
+    1
+   ],
+   "r": 12,
+   "d": 1,
+   "why": "Gustave Eiffel’s company built the tower on the Champ de Mars for the 1889 Exposition Universelle.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Eiffel_Tower",
+    "https://en.wikipedia.org/wiki/Exposition_Universelle_(1889)"
+   ]
+  },
+  {
+   "id": "sistine",
+   "cat": "culture",
+   "year": 1512,
+   "q": "Michelangelo painted the ceiling of which chapel between 1508 and 1512?",
+   "a": "Sistine Chapel",
+   "place": "Vatican City",
+   "lat": 41.9031,
+   "lon": 12.4544,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 12,
+   "d": 1,
+   "why": "The Sistine Chapel is in the Apostolic Palace in Vatican City; papal conclaves still meet beneath Michelangelo’s ceiling.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Sistine_Chapel",
+    "https://en.wikipedia.org/wiki/Sistine_Chapel_ceiling"
+   ]
+  },
+  {
+   "id": "krakatoa",
+   "cat": "nature",
+   "year": 1883,
+   "q": "A volcanic eruption in August 1883 was heard nearly 5,000 km away and its tsunamis killed more than 36,000 people. Where was the volcano?",
+   "a": "Krakatoa",
+   "place": "Sunda Strait, Indonesia",
+   "lat": -6.102,
+   "lon": 105.423,
+   "view": [
+    6,
+    112,
+    4
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "Krakatoa lies in the Sunda Strait between Java and Sumatra. Anak Krakatau, “child of Krakatoa”, rose from the caldera in 1927.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Krakatoa",
+    "https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa"
+   ]
+  },
+  {
+   "id": "tambora",
+   "cat": "nature",
+   "year": 1815,
+   "q": "The largest volcanic eruption in recorded history, in 1815, caused the “Year Without a Summer” in 1816. Which volcano?",
+   "a": "Mount Tambora",
+   "place": "Sumbawa, Indonesia",
+   "lat": -8.25,
+   "lon": 118,
+   "view": [
+    6,
+    112,
+    4
+   ],
+   "r": 25,
+   "d": 3,
+   "why": "Tambora, on Sumbawa island, threw so much ash and sulphur into the stratosphere that harvests failed across the Northern Hemisphere.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Mount_Tambora",
+    "https://en.wikipedia.org/wiki/1815_eruption_of_Mount_Tambora",
+    "https://en.wikipedia.org/wiki/Year_Without_a_Summer"
+   ]
+  },
+  {
+   "id": "lisbon-1755",
+   "cat": "nature",
+   "year": 1755,
+   "q": "On All Saints’ Day 1755 an earthquake, tsunami and fires destroyed much of a European capital. Which?",
+   "a": "Lisbon",
+   "place": "Portugal",
+   "lat": 38.7253,
+   "lon": -9.15,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 20,
+   "d": 1,
+   "why": "The Great Lisbon Earthquake of 1 November 1755 killed tens of thousands and shook Enlightenment thinkers, including Voltaire.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Lisbon",
+    "https://en.wikipedia.org/wiki/1755_Lisbon_earthquake"
+   ]
+  },
+  {
+   "id": "valdivia-1960",
+   "cat": "nature",
+   "year": 1960,
+   "q": "The most powerful earthquake ever recorded — magnitude 9.5 — struck on 22 May 1960 near which city?",
+   "a": "Valdivia",
+   "place": "Los Ríos, Chile",
+   "lat": -39.8139,
+   "lon": -73.2458,
+   "view": [
+    -20,
+    -60,
+    2.8
+   ],
+   "r": 40,
+   "d": 2,
+   "why": "The Great Chilean Earthquake was centred near Valdivia; its tsunami reached Hawaii and Japan.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Valdivia",
+    "https://en.wikipedia.org/wiki/1960_Valdivia_earthquake"
+   ]
+  },
+  {
+   "id": "port-royal",
+   "cat": "nature",
+   "year": 1692,
+   "q": "Known as the “wickedest city on Earth”, this pirate haven largely slid into the sea in an earthquake in 1692. Where?",
+   "a": "Port Royal",
+   "place": "Kingston Harbour, Jamaica",
+   "lat": 17.9375,
+   "lon": -76.8411,
+   "view": [
+    18.5,
+    -73,
+    7
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Port Royal sat at the tip of the Palisadoes spit; about two-thirds of the town sank on 7 June 1692.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Port_Royal",
+    "https://en.wikipedia.org/wiki/1692_Jamaica_earthquake"
+   ]
+  },
+  {
+   "id": "tunguska",
+   "cat": "nature",
+   "year": 1908,
+   "q": "In 1908 an exploding space rock flattened about 80 million trees across 2,000 km² of forest. In which region?",
+   "a": "Tunguska",
+   "place": "Krasnoyarsk Krai, Siberia, Russia",
+   "lat": 60.9031,
+   "lon": 101.9097,
+   "view": [
+    57,
+    75,
+    2.6
+   ],
+   "r": 50,
+   "d": 2,
+   "why": "The air burst over the Podkamennaya Tunguska River on 30 June 1908 is the largest impact event in recorded history.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Tunguska_event",
+    "https://en.wikipedia.org/wiki/Impact_event"
+   ]
+  },
+  {
+   "id": "chicxulub",
+   "cat": "nature",
+   "year": 1991,
+   "q": "The buried impact crater linked to the extinction of the dinosaurs 66 million years ago was confirmed in 1991. Where is its centre?",
+   "a": "Chicxulub crater",
+   "place": "Yucatán Peninsula, Mexico",
+   "lat": 21.4,
+   "lon": -89.5,
+   "view": [
+    44,
+    -98,
+    2.4
+   ],
+   "r": 40,
+   "d": 2,
+   "why": "The 180 km crater lies under the Yucatán Peninsula and the Gulf of Mexico, centred near the town of Chicxulub.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Chicxulub_crater",
+    "https://en.wikipedia.org/wiki/Cretaceous%E2%80%93Paleogene_extinction_event"
+   ]
+  },
+  {
+   "id": "archaeopteryx",
+   "cat": "nature",
+   "year": 1861,
+   "q": "The first skeleton of Archaeopteryx, the famous feathered “missing link” between dinosaurs and birds, was found in fine limestone quarries in 1861. Where?",
+   "a": "Solnhofen",
+   "place": "Bavaria, Germany",
+   "lat": 48.8833,
+   "lon": 11,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "The Solnhofen limestone preserves fossils in exceptional detail; the London specimen arrived just two years after On the Origin of Species.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Solnhofen",
+    "https://en.wikipedia.org/wiki/Archaeopteryx",
+    "https://en.wikipedia.org/wiki/Solnhofen_Limestone"
+   ]
+  },
+  {
+   "id": "lyme-regis",
+   "cat": "nature",
+   "year": 1811,
+   "q": "Mary Anning found the first ichthyosaur skeleton to be correctly identified, and the first plesiosaurs, on the cliffs of her home town. Which?",
+   "a": "Lyme Regis",
+   "place": "Dorset, UK",
+   "lat": 50.725,
+   "lon": -2.9353,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Anning collected fossils along the Jurassic Coast at Lyme Regis; her discoveries helped found the science of palaeontology.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Lyme_Regis",
+    "https://en.wikipedia.org/wiki/Mary_Anning"
+   ]
+  },
+  {
+   "id": "burgess-shale",
+   "cat": "nature",
+   "year": 1909,
+   "q": "Charles Walcott discovered a fossil bed packed with bizarre 508-million-year-old sea creatures, high on a mountain ridge. Where?",
+   "a": "Burgess Shale, Yoho National Park",
+   "place": "British Columbia, Canada",
+   "lat": 51.433,
+   "lon": -116.467,
+   "view": [
+    44,
+    -98,
+    2.4
+   ],
+   "r": 25,
+   "d": 3,
+   "why": "The Burgess Shale lies in the Canadian Rockies of Yoho National Park, British Columbia.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Burgess_Shale",
+    "https://en.wikipedia.org/wiki/Charles_Doolittle_Walcott"
+   ]
+  },
+  {
+   "id": "coelacanth",
+   "cat": "nature",
+   "year": 1938,
+   "q": "A coelacanth — a fish thought extinct for 66 million years — was found in a trawler’s catch in 1938. Near which port?",
+   "a": "East London",
+   "place": "Eastern Cape, South Africa",
+   "lat": -33.0175,
+   "lon": 27.9047,
+   "view": [
+    2,
+    20,
+    2.4
+   ],
+   "r": 30,
+   "d": 3,
+   "why": "Museum curator Marjorie Courtenay-Latimer spotted the fish at East London; it was caught off the Chalumna River mouth.",
+   "src": [
+    "https://en.wikipedia.org/wiki/East_London%2C_Eastern_Cape",
+    "https://en.wikipedia.org/wiki/Coelacanth",
+    "https://en.wikipedia.org/wiki/Marjorie_Courtenay-Latimer"
+   ]
+  },
+  {
+   "id": "olympics-1896",
+   "cat": "sport",
+   "year": 1896,
+   "q": "The first modern Olympic Games opened on 6 April 1896 in a restored ancient marble stadium. Where?",
+   "a": "Panathenaic Stadium",
+   "place": "Athens, Greece",
+   "lat": 37.9683,
+   "lon": 23.7411,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "The Panathenaic Stadium, rebuilt in marble, hosted the 1896 Games; it is still where the Olympic flame is handed over to each host city.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Panathenaic_Stadium",
+    "https://en.wikipedia.org/wiki/1896_Summer_Olympics"
+   ]
+  },
+  {
+   "id": "world-cup-1930",
+   "cat": "sport",
+   "year": 1930,
+   "q": "The first FIFA World Cup final was played in 1930, with the hosts beating Argentina 4–2. In which stadium?",
+   "a": "Estadio Centenario",
+   "place": "Montevideo, Uruguay",
+   "lat": -34.894,
+   "lon": -56.153,
+   "view": [
+    -20,
+    -60,
+    2.8
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "Uruguay built the Estadio Centenario for the tournament, marking 100 years since its first constitution.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Estadio_Centenario",
+    "https://en.wikipedia.org/wiki/1930_FIFA_World_Cup"
+   ]
+  },
+  {
+   "id": "four-minute-mile",
+   "cat": "sport",
+   "year": 1954,
+   "q": "Roger Bannister ran the first sub-four-minute mile on 6 May 1954. On which track?",
+   "a": "Iffley Road",
+   "place": "Oxford, UK",
+   "lat": 51.747,
+   "lon": -1.242,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 12,
+   "d": 2,
+   "why": "Bannister ran 3:59.4 at the Iffley Road track in Oxford, paced by Chris Brasher and Chris Chataway.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Iffley_Road",
+    "https://en.wikipedia.org/wiki/Roger_Bannister"
+   ]
+  },
+  {
+   "id": "first-international",
+   "cat": "sport",
+   "year": 1872,
+   "q": "The first official international football match, Scotland v England, ended 0–0 on 30 November 1872. In which city?",
+   "a": "Hamilton Crescent, Partick",
+   "place": "Glasgow, Scotland",
+   "lat": 55.8725,
+   "lon": -4.3089,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "The match was played at the West of Scotland Cricket Club ground, Hamilton Crescent, in Partick.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Hamilton_Crescent",
+    "https://en.wikipedia.org/wiki/1872_Scotland_v_England_football_match"
+   ]
+  },
+  {
+   "id": "first-test",
+   "cat": "sport",
+   "year": 1877,
+   "q": "The first Test cricket match, Australia v England, was played in March 1877 at which ground?",
+   "a": "Melbourne Cricket Ground",
+   "place": "Melbourne, Australia",
+   "lat": -37.82,
+   "lon": 144.9833,
+   "view": [
+    -27,
+    134,
+    4.6
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "Australia won by 45 runs at the MCG. The Centenary Test was played there in 1977 — with the same result.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Melbourne_Cricket_Ground",
+    "https://en.wikipedia.org/wiki/Test_cricket"
+   ]
+  },
+  {
+   "id": "basketball",
+   "cat": "sport",
+   "year": 1891,
+   "q": "James Naismith invented basketball, nailing peach baskets to a gym balcony, at a YMCA training school in which city?",
+   "a": "Springfield",
+   "place": "Massachusetts, USA",
+   "lat": 42.1014,
+   "lon": -72.5903,
+   "view": [
+    39,
+    -97,
+    3.6
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Naismith devised the game in December 1891 at the International YMCA Training School (now Springfield College). The Basketball Hall of Fame is in the city.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Springfield%2C_Massachusetts",
+    "https://en.wikipedia.org/wiki/James_Naismith"
+   ]
+  },
+  {
+   "id": "chamonix-1924",
+   "cat": "sport",
+   "year": 1924,
+   "q": "The first Winter Olympics were held in 1924 at a resort beneath Mont Blanc. Which?",
+   "a": "Chamonix",
+   "place": "Haute-Savoie, France",
+   "lat": 45.9231,
+   "lon": 6.8697,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "The “International Winter Sports Week” at Chamonix was retroactively named the first Winter Olympics.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Chamonix",
+    "https://en.wikipedia.org/wiki/1924_Winter_Olympics"
+   ]
+  },
+  {
+   "id": "bolt-958",
+   "cat": "sport",
+   "year": 2009,
+   "q": "Usain Bolt set the 100 m world record of 9.58 seconds at the 2009 World Championships. In which stadium?",
+   "a": "Olympiastadion",
+   "place": "Berlin, Germany",
+   "lat": 52.5147,
+   "lon": 13.2394,
+   "view": [
+    22,
+    11,
+    1
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Bolt ran 9.58 on 16 August 2009 in Berlin’s Olympiastadion, built for the 1936 Olympics.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Olympiastadion_(Berlin)",
+    "https://en.wikipedia.org/wiki/Usain_Bolt"
+   ]
+  },
+  {
+   "id": "hand-of-god",
+   "cat": "sport",
+   "year": 1986,
+   "q": "Diego Maradona scored both the “Hand of God” goal and the “Goal of the Century” against England at the 1986 World Cup. In which stadium?",
+   "a": "Estadio Azteca",
+   "place": "Mexico City, Mexico",
+   "lat": 19.303,
+   "lon": -99.1505,
+   "view": [
+    44,
+    -98,
+    2.4
+   ],
+   "r": 15,
+   "d": 1,
+   "why": "The quarter-final was played at the Estadio Azteca on 22 June 1986; Argentina won 2–1 and went on to lift the trophy.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Estadio_Azteca",
+    "https://en.wikipedia.org/wiki/Argentina_v_England_(1986_FIFA_World_Cup)"
+   ]
+  },
+  {
+   "id": "pele-1000",
+   "cat": "sport",
+   "year": 1969,
+   "q": "Pelé scored his 1,000th goal, a penalty against Vasco da Gama, on 19 November 1969. In which stadium?",
+   "a": "Maracanã",
+   "place": "Rio de Janeiro, Brazil",
+   "lat": -22.9122,
+   "lon": -43.2303,
+   "view": [
+    -20,
+    -60,
+    2.8
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Pelé’s “Milésimo” came for Santos at the Maracanã; the ball was carried around the pitch in celebration.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Maracan%C3%A3_Stadium",
+    "https://en.wikipedia.org/wiki/Pel%C3%A9"
+   ]
+  },
+  {
+   "id": "rumble-jungle",
+   "cat": "sport",
+   "year": 1974,
+   "q": "Muhammad Ali regained the world heavyweight title from George Foreman in the “Rumble in the Jungle” in 1974. In which city?",
+   "a": "Kinshasa",
+   "place": "Democratic Republic of the Congo (then Zaire)",
+   "lat": -4.3219,
+   "lon": 15.3119,
+   "view": [
+    2,
+    20,
+    2.4
+   ],
+   "r": 20,
+   "d": 1,
+   "why": "The fight took place before dawn on 30 October 1974 at the Stade du 20 Mai in Kinshasa; Ali won by knockout in the eighth round.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Kinshasa",
+    "https://en.wikipedia.org/wiki/The_Rumble_in_the_Jungle"
+   ]
+  },
+  {
+   "id": "miracle-on-ice",
+   "cat": "sport",
+   "year": 1980,
+   "q": "A team of US college players beat the Soviet Union at ice hockey in the “Miracle on Ice” at the 1980 Winter Olympics. Where?",
+   "a": "Lake Placid",
+   "place": "New York, USA",
+   "lat": 44.2856,
+   "lon": -73.9853,
+   "view": [
+    39,
+    -97,
+    3.6
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "The game was played on 22 February 1980 at Lake Placid in the Adirondack Mountains, which also hosted the 1932 Winter Games.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Lake_Placid%2C_New_York",
+    "https://en.wikipedia.org/wiki/Miracle_on_Ice"
+   ]
+  },
+  {
+   "id": "rugby-world-cup-1987",
+   "cat": "sport",
+   "year": 1987,
+   "q": "New Zealand beat France in the final of the first Rugby World Cup in 1987. In which stadium?",
+   "a": "Eden Park",
+   "place": "Auckland, New Zealand",
+   "lat": -36.875,
+   "lon": 174.7447,
+   "view": [
+    -15,
+    160,
+    2.2
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "The All Blacks won 29–9 at Eden Park; New Zealand co-hosted the tournament with Australia.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Eden_Park",
+    "https://en.wikipedia.org/wiki/1987_Rugby_World_Cup"
+   ]
+  },
+  {
+   "id": "silverstone-1950",
+   "cat": "sport",
+   "year": 1950,
+   "q": "The first ever Formula One World Championship race was held on 13 May 1950 at a former RAF airfield. Which circuit?",
+   "a": "Silverstone Circuit",
+   "place": "Northamptonshire, UK",
+   "lat": 52.071,
+   "lon": -1.016,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Giuseppe Farina won the 1950 British Grand Prix at Silverstone in an Alfa Romeo, and went on to become the first world champion.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Silverstone_Circuit",
+    "https://en.wikipedia.org/wiki/1950_British_Grand_Prix"
+   ]
+  },
+  {
+   "id": "kipchoge-sub2",
+   "cat": "sport",
+   "year": 2019,
+   "q": "Eliud Kipchoge became the first person to run a marathon distance in under two hours, in a special event in 2019. In which city?",
+   "a": "Vienna (the Prater)",
+   "place": "Austria",
+   "lat": 48.2161,
+   "lon": 16.3956,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Kipchoge ran 1:59:40 on laps of the Hauptallee in Vienna’s Prater park on 12 October 2019; it was not record-eligible because of the pacing.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Prater",
+    "https://en.wikipedia.org/wiki/Ineos_1%3A59_Challenge"
+   ]
+  },
+  {
+   "id": "stoke-mandeville",
+   "cat": "sport",
+   "year": 1948,
+   "q": "Ludwig Guttmann organised an archery contest for injured war veterans in 1948 — the forerunner of the Paralympic Games. At which hospital?",
+   "a": "Stoke Mandeville Hospital",
+   "place": "Aylesbury, Buckinghamshire, UK",
+   "lat": 51.799,
+   "lon": -0.806,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 15,
+   "d": 3,
+   "why": "The first Stoke Mandeville Games began on 29 July 1948, the same day as the London Olympics opened.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Stoke_Mandeville_Hospital",
+    "https://en.wikipedia.org/wiki/Stoke_Mandeville_Games",
+    "https://en.wikipedia.org/wiki/Ludwig_Guttmann"
+   ]
+  },
+  {
+   "id": "afcon-1957",
+   "cat": "sport",
+   "year": 1957,
+   "q": "The first Africa Cup of Nations, contested by just three teams and won by Egypt, was held in 1957. In which city?",
+   "a": "Khartoum",
+   "place": "Sudan",
+   "lat": 15.6,
+   "lon": 32.5,
+   "view": [
+    2,
+    20,
+    2.4
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "Egypt beat Ethiopia 4–0 in the final in Khartoum; South Africa had been expelled for refusing to field a multiracial team.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Khartoum",
+    "https://en.wikipedia.org/wiki/1957_African_Cup_of_Nations"
+   ]
+  },
+  {
+   "id": "cavern-club",
+   "cat": "culture",
+   "year": 1961,
+   "q": "The Beatles played nearly 300 times at a cellar club, where Brian Epstein first saw them in 1961. In which city?",
+   "a": "The Cavern Club",
+   "place": "Liverpool, UK",
+   "lat": 53.4061,
+   "lon": -2.9872,
+   "view": [
+    54.3,
+    -3.5,
+    10
+   ],
+   "r": 12,
+   "d": 1,
+   "why": "The Cavern Club on Mathew Street in Liverpool was where Epstein watched them on 9 November 1961 and soon became their manager.",
+   "src": [
+    "https://en.wikipedia.org/wiki/The_Cavern_Club",
+    "https://en.wikipedia.org/wiki/The_Beatles"
+   ]
+  },
+  {
+   "id": "woodstock",
+   "cat": "culture",
+   "year": 1969,
+   "q": "The 1969 Woodstock festival was not actually held in the town of Woodstock. On whose dairy farm did it take place?",
+   "a": "Max Yasgur's farm, Bethel",
+   "place": "New York, USA",
+   "lat": 41.6972,
+   "lon": -74.8778,
+   "view": [
+    40,
+    -77,
+    7.5
+   ],
+   "r": 20,
+   "d": 3,
+   "why": "About 400,000 people gathered on Max Yasgur’s farm in Bethel, some 70 km from Woodstock itself.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Bethel_Woods_Center_for_the_Arts",
+    "https://en.wikipedia.org/wiki/Woodstock"
+   ]
+  },
+  {
+   "id": "nobel-peace-1901",
+   "cat": "culture",
+   "year": 1901,
+   "q": "Alfred Nobel’s will asked for the Peace Prize to be awarded by a Norwegian committee. In which city was the first one presented, in 1901?",
+   "a": "Kristiania (Oslo)",
+   "place": "Norway",
+   "lat": 59.9133,
+   "lon": 10.7389,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "The other prizes were presented in Stockholm; the Peace Prize was awarded in Kristiania (Oslo) — it still is, every 10 December.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Oslo",
+    "https://en.wikipedia.org/wiki/Nobel_Peace_Prize"
+   ]
+  },
+  {
+   "id": "eurovision-1956",
+   "cat": "culture",
+   "year": 1956,
+   "q": "The first Eurovision Song Contest, with seven countries, was held in 1956 in which lakeside city?",
+   "a": "Lugano",
+   "place": "Ticino, Switzerland",
+   "lat": 46.005,
+   "lon": 8.9525,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "Lys Assia won for the host nation, Switzerland, at the Teatro Kursaal in Lugano.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Lugano",
+    "https://en.wikipedia.org/wiki/Eurovision_Song_Contest_1956"
+   ]
+  },
+  {
+   "id": "venice-film",
+   "cat": "culture",
+   "year": 1932,
+   "q": "The world’s oldest film festival was first held in 1932 on the terrace of the Hotel Excelsior. In which city?",
+   "a": "Venice (the Lido)",
+   "place": "Italy",
+   "lat": 45.4006,
+   "lon": 12.3606,
+   "view": [
+    50,
+    14,
+    4.2
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "The Venice Film Festival began as part of the Venice Biennale on the Lido, where it is still held each year.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Lido_di_Venezia",
+    "https://en.wikipedia.org/wiki/Venice_Film_Festival"
+   ]
+  },
+  {
+   "id": "raja-harishchandra",
+   "cat": "culture",
+   "year": 1913,
+   "q": "Raja Harishchandra, the first full-length Indian feature film, by Dadasaheb Phalke, premiered in 1913 in which city?",
+   "a": "Bombay (Mumbai)",
+   "place": "Maharashtra, India",
+   "lat": 19.0761,
+   "lon": 72.8775,
+   "view": [
+    22,
+    79,
+    5.5
+   ],
+   "r": 20,
+   "d": 2,
+   "why": "Phalke’s silent film was shown at the Coronation Cinema in Bombay in May 1913 — the start of what became Bollywood.",
+   "src": [
+    "https://en.wikipedia.org/wiki/Mumbai",
+    "https://en.wikipedia.org/wiki/Raja_Harishchandra",
+    "https://en.wikipedia.org/wiki/Dadasaheb_Phalke"
+   ]
+  },
+  {
+   "id": "hip-hop",
+   "cat": "culture",
+   "year": 1973,
+   "q": "DJ Kool Herc’s “Back to School Jam” at 1520 Sedgwick Avenue in August 1973 is celebrated as the birth of hip hop. In which borough?",
+   "a": "The Bronx",
+   "place": "New York City, USA",
+   "lat": 40.8472,
+   "lon": -73.9244,
+   "view": [
+    40,
+    -77,
+    7.5
+   ],
+   "r": 15,
+   "d": 2,
+   "why": "Herc extended the instrumental breaks of funk records at a party in his building’s recreation room in the West Bronx.",
+   "src": [
+    "https://en.wikipedia.org/wiki/1520_Sedgwick_Avenue",
+    "https://en.wikipedia.org/wiki/DJ_Kool_Herc"
+   ]
+  }
+ ]
+}

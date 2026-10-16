@@ -1,0 +1,2589 @@
+{
+ "meta": {
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-11",
+  "source": "Speech: Wikitongues via Wikimedia Commons (CC BY-SA 4.0 / CC BY 3.0 / CC0, per clip) and Google FLEURS (CC BY 4.0). Excerpts trimmed, loudness-normalised and re-encoded; adapted CC BY-SA clips are shared under CC BY-SA 4.0.",
+  "count": 83,
+  "languages": 81,
+  "totalKb": 9067
+ },
+ "clips": [
+  {
+   "id": "b5fe0d3f",
+   "lang": "english",
+   "src": "/geography/voices/1306c1a1594d.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "szjgjiekjegnegnejgiierlbbpmfejngohnqpkkoeplbwrnhrtklldthilkhdbqksqjjcbwa",
+   "kind": "conversation",
+   "credit": {
+    "title": "Mckensie speaking English",
+    "author": "Bogreudell",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Mckensie_speaking_English.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "50.8–70.8 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.986,
+    "speech": 0.96
+   }
+  },
+  {
+   "id": "fb100e3e",
+   "lang": "spanish",
+   "src": "/geography/voices/f931003d0b61.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "mqomvvscdhljoqplkzmqbnvuvpppldsqetvowtxpmqomhmmhrklsytkjlrtujlnpquwkcdaf",
+   "kind": "conversation",
+   "credit": {
+    "title": "David speaking Spanish",
+    "author": "Bogreudell",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_David_speaking_Spanish.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "21.7–41.7 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.975,
+    "speech": 0.88
+   }
+  },
+  {
+   "id": "a1a1d14d",
+   "lang": "french",
+   "src": "/geography/voices/5af3a1dfa167.mp3",
+   "dur": 15.36,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    15.36
+   ],
+   "peaks": "8pnqzulriphrdk4avwq9mqqgimlepb3jobswdrtnmof2nrmnesnelhoaehns74xntilhln40",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS fr_fr · 10231054783949933111",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.0–15.4 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.996,
+    "speech": 1
+   }
+  },
+  {
+   "id": "908d3c06",
+   "lang": "french",
+   "variety": "Québec French",
+   "src": "/geography/voices/204583b9b08e.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "rib939ze3opqiat8mvqrkioqbh313ivmqtsrljlolopnpmmnfnmlp4npopqmvqtpoii9a5ba",
+   "kind": "conversation",
+   "credit": {
+    "title": "Maxime speaking Québecois French",
+    "author": "Wikitongues , Maxime Rioux",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Maxime_speaking_Qu%C3%A9becois_French.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "168.6–188.6 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.975,
+    "speech": 0.88
+   }
+  },
+  {
+   "id": "8621dc55",
+   "lang": "german",
+   "src": "/geography/voices/5e826a8e63c6.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "gpk977klcprnprhihhlg9kfd755557ilzpdcbdwebitkihhgldb9hgf6gc666nuikk7oiefa",
+   "kind": "conversation",
+   "credit": {
+    "title": "Gereon speaking German",
+    "author": "Bogreudell",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Gereon_speaking_German.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "40.6–60.6 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.992,
+    "speech": 0.84
+   }
+  },
+  {
+   "id": "09bede08",
+   "lang": "italian",
+   "src": "/geography/voices/bf60c3d0902b.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "iypkgtqgf841kvglhcmkcdkrpgnqrhlhe2pquhi82apummpa9fhebef1he9ok6gdc8czbki2",
+   "kind": "read",
+   "credit": {
+    "title": "Itwiki-Albena Denkova",
+    "author": "Unknown",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Itwiki-Albena_Denkova.ogg",
+    "collection": "Spoken Wikipedia via Wikimedia Commons",
+    "excerpt": "174.3–194.3 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.999,
+    "speech": 0.93
+   }
+  },
+  {
+   "id": "ca021041",
+   "lang": "portuguese",
+   "src": "/geography/voices/96ff5e41608d.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "jimwhq87kgo7gmoh3fsfij3eyk74idihkmp234zwfjlojdnie3txr9cia3qrkie5gccgbei2",
+   "kind": "conversation",
+   "credit": {
+    "title": "Sara speaking Portuguese",
+    "author": "Wikitongues, Guillem Belmar",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Sara_speaking_Portuguese.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "18.7–38.7 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.992,
+    "speech": 0.93
+   }
+  },
+  {
+   "id": "7230eacb",
+   "lang": "russian",
+   "src": "/geography/voices/a9d897c6d302.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "hkgpd8zi8d9a928tzhalfahg76k65pub5gm8b543jqrcee42tfdhadb66bbicisa9cd7bbd3",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS ru_ru · 10506159478104812570",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "1.6–21.6 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.999,
+    "speech": 1
+   }
+  },
+  {
+   "id": "7c91c896",
+   "lang": "dutch",
+   "src": "/geography/voices/21e869569767.mp3",
+   "dur": 14.07,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    14.07
+   ],
+   "peaks": "luhsjq8qmnkjvre22rkwlvkjivhskd6211iznsdqsjuqqnqukopoo44klsvstnphthlnl820",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS nl_nl · 11973708134627605110",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.6–14.7 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.94,
+    "speech": 0.9
+   }
+  },
+  {
+   "id": "f7242446",
+   "lang": "polish",
+   "src": "/geography/voices/5599f824c4be.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "mtssqnusrtpzaatxi8qovcvpp866pmqrprscwixcdqypdukviwdqotmnonqlvumquvomchte",
+   "kind": "conversation",
+   "credit": {
+    "title": "Marta Speaking Polish",
+    "author": "Wikitongues",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Marta_Speaking_Polish.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "93.5–113.5 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.998,
+    "speech": 0.9
+   }
+  },
+  {
+   "id": "cb442594",
+   "lang": "ukrainian",
+   "src": "/geography/voices/77d4e668483d.mp3",
+   "dur": 18.71,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    18.71
+   ],
+   "peaks": "nuhoerlikroser633jszovvklglg8s33ruoppkjpore4shn75nvmskfdb62lojtogoncdc51",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS uk_ua · 10549747991265548535",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "1.0–19.8 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.963,
+    "speech": 0.92
+   }
+  },
+  {
+   "id": "de3078bd",
+   "lang": "romanian",
+   "src": "/geography/voices/545d1c514580.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "gppuqokskrptpnjdhmbbcclrzrmpktmopgbctmsnllkcgrvlnneupunncglmaimurqnmkpj8",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS ro_ro · 10129819525242469551",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.8–20.8 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.998,
+    "speech": 0.88
+   }
+  },
+  {
+   "id": "3cb04df0",
+   "lang": "greek",
+   "src": "/geography/voices/03d6b14d658c.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "orpvplokg644muqiigfgob56ixjh96766665cnokjsqilgklekeekfbfc4454gztvvnlkjp9",
+   "kind": "conversation",
+   "credit": {
+    "title": "Kostas speaking Greek",
+    "author": "Wikitongues",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Kostas_speaking_Greek.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "31.2–51.2 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.993,
+    "speech": 0.76
+   }
+  },
+  {
+   "id": "83e8a038",
+   "lang": "swedish",
+   "src": "/geography/voices/1b1b165ce2fd.mp3",
+   "dur": 15.06,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    15.06
+   ],
+   "peaks": "tsmqlvrmplhtjpld5llbs422nywhmnzhpjj6mkxoipd322szogn4boifslmnohokflkhk951",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS sv_se · 10265664148994425275",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "1.1–16.1 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.968,
+    "speech": 0.92
+   }
+  },
+  {
+   "id": "d11eb473",
+   "lang": "norwegian",
+   "src": "/geography/voices/5076f54af903.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "ad9ba9zmgeeadbhh44mdkjchhfbccag44nph4e9xtldbdnekijkfgi5e745d744fpeupldie",
+   "kind": "conversation",
+   "credit": {
+    "title": "Emily speaking Norwegian",
+    "author": "Wikitongues",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Emily_speaking_Norwegian.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "101.0–121.0 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.979,
+    "speech": 0.87
+   }
+  },
+  {
+   "id": "0191a710",
+   "lang": "danish",
+   "src": "/geography/voices/f28448c3645b.mp3",
+   "dur": 15.38,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    15.38
+   ],
+   "peaks": "hnpuzwkoaob2uso5fuksrirekym8kcxihwo37m523pmiurewpfsmmfc2jpgwjjkfnoej9j41",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS da_dk · 1082526890319744810",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "1.0–16.4 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.996,
+    "speech": 0.92
+   }
+  },
+  {
+   "id": "c9559e1c",
+   "lang": "finnish",
+   "src": "/geography/voices/f9df8dd3a610.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "tk5gvwjhk2cshdmffdlchkgdj3anmjniheiqlnhhd6jc2olfe9ig22lzsmj6tljhj33juyhe",
+   "kind": "conversation",
+   "credit": {
+    "title": "Jenni speaking Finnish",
+    "author": "Wikitongues",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Jenni_speaking_Finnish.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "156.8–176.8 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.996,
+    "speech": 0.88
+   }
+  },
+  {
+   "id": "2ecaf7cd",
+   "lang": "hungarian",
+   "src": "/geography/voices/3f24f844194b.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "lrluizmggckaagjdgailf765tsutwi55ohputa5slqlnnmpjmy54qlokfed978fpha55img9",
+   "kind": "conversation",
+   "credit": {
+    "title": "Orsolya speaking Hungarian",
+    "author": "Wikitongues",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Orsolya_speaking_Hungarian.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "63.5–83.5 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.997,
+    "speech": 0.88
+   }
+  },
+  {
+   "id": "71dcd996",
+   "lang": "czech",
+   "src": "/geography/voices/40720af5de1f.mp3",
+   "dur": 14.74,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    14.74
+   ],
+   "peaks": "iudopnktjpilf9d7h334hmlqroogka22222fnjoghomoo8ggl43gnnu422ozjig9fomchj20",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS cs_cz · 10567413040573386981",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "2.4–17.2 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.954,
+    "speech": 0.82
+   }
+  },
+  {
+   "id": "9d63d5d7",
+   "lang": "slovak",
+   "src": "/geography/voices/78043e003b5e.mp3",
+   "dur": 18.55,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    18.55
+   ],
+   "peaks": "kqpoqjlg2gzrflfkpmojchhk3mptmmkmjgjjlr2mfidrl8tiicc26thgrfhhrnjuqlfcd960",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS sk_sk · 10447712674803734650",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "1.7–20.2 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.974,
+    "speech": 0.96
+   }
+  },
+  {
+   "id": "99291681",
+   "lang": "turkish",
+   "src": "/geography/voices/8d3ae1a1006c.mp3",
+   "dur": 14.64,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    14.64
+   ],
+   "peaks": "ozrrptkonkgjvmckeolq5mqjhktkogpvkog5romvowvohnrogdnlclhiko4sonillkefif10",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS tr_tr · 13112273879309658180",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "2.4–17.0 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.998,
+    "speech": 0.97
+   }
+  },
+  {
+   "id": "30a8a960",
+   "lang": "catalan",
+   "src": "/geography/voices/3366a1f12322.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "fjgiugmmgbllghduqbdehcfnfc86ddmc4jlehyhbgjgbxzcmsjblr63kp9hdmlofggfhis87",
+   "kind": "conversation",
+   "credit": {
+    "title": "Guillem speaking Catalan",
+    "author": "Wikitongues, Guillem Belmar",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Guillem_speaking_Catalan.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "72.4–92.4 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.961,
+    "speech": 1
+   }
+  },
+  {
+   "id": "3cec2bd8",
+   "lang": "basque",
+   "src": "/geography/voices/bc44bd533993.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "hpoligkfju93gytlfga35vteefnc2hzh22fid622mon9koicl62rxuomm22adrw55lhf78b4",
+   "kind": "conversation",
+   "credit": {
+    "title": "Jon speaking Basque",
+    "author": "Wikitongues",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Jon_speaking_Basque.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "39.7–59.7 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.991,
+    "speech": 0.86
+   }
+  },
+  {
+   "id": "84bc12a2",
+   "lang": "galician",
+   "src": "/geography/voices/e05e70c9cc92.mp3",
+   "dur": 18.68,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    18.68
+   ],
+   "peaks": "hzun79mqmpmksponhsdhptppu4kuoksse3lrqmr7mtlmpohlp836rrsqqpsjtpnp7ojnic60",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS gl_es · 10311233456086191702",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.8–19.5 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.984,
+    "speech": 0.98
+   }
+  },
+  {
+   "id": "84e709d8",
+   "lang": "welsh",
+   "src": "/geography/voices/65c5ac39c728.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "empflpbalhkdgglhj8gjdbc72dziodojd1ffl72hlfcffi5ijiii23rp43eec1kk9hi5bsf2",
+   "kind": "conversation",
+   "credit": {
+    "title": "Sandra speaking Welsh",
+    "author": "Wikitongues",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Sandra_speaking_Welsh.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "94.2–114.2 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.993,
+    "speech": 0.92
+   }
+  },
+  {
+   "id": "fb22bcfd",
+   "lang": "icelandic",
+   "src": "/geography/voices/c2679a7638cb.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "iosvwfihl7pa222iojgi5bcijkjlp943942373zvrwsnqnht698tmpjh2icgbghdfdhfgk21",
+   "kind": "conversation",
+   "credit": {
+    "title": "Ljóni speaking Icelandic",
+    "author": "Wikitongues",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Lj%C3%B3ni_speaking_Icelandic.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "16.9–36.9 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.975,
+    "speech": 0.84
+   }
+  },
+  {
+   "id": "b871e849",
+   "lang": "luxembourgish",
+   "src": "/geography/voices/bd64177ea0e4.mp3",
+   "dur": 18.09,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    18.09
+   ],
+   "peaks": "kuzh8opgkmkifnfmek7khgck47ommgiofligkef223pmgmirhkilhof222gui46chcmmcg71",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS lb_lu · 10122273994971617840",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.6–18.7 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "label",
+    "p": 0.003,
+    "speech": 0.88
+   }
+  },
+  {
+   "id": "94cf7a91",
+   "lang": "maltese",
+   "src": "/geography/voices/48cefb71f4af.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "nsoljzitlqsftadqtnnnccha9qrxoopzdba96xltozkksnxvbaeslqnjlsrvbexiymn888h5",
+   "kind": "conversation",
+   "credit": {
+    "title": "Keith speaking Maltese",
+    "author": "Wikitongues, Irena Dahl",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Keith_speaking_Maltese.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "8.1–28.1 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "family",
+    "p": 0.185,
+    "speech": 0.82
+   }
+  },
+  {
+   "id": "52f3f03f",
+   "lang": "estonian",
+   "src": "/geography/voices/3d7cfb486bb2.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "jhecmvnijhghtslcdlvgcrcdieeigoqxswqimlznkdsuzhkpqnjddurgggkpldmekelg88ci",
+   "kind": "conversation",
+   "credit": {
+    "title": "Liisi speaking Estonian",
+    "author": "Wikitongues",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Liisi_speaking_Estonian.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "34.8–54.8 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.988,
+    "speech": 0.95
+   }
+  },
+  {
+   "id": "cc8480eb",
+   "lang": "latvian",
+   "src": "/geography/voices/84612c0ad505.mp3",
+   "dur": 18.68,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    18.68
+   ],
+   "peaks": "hzmrpgqighgdpd2fiolsigmjfiplprkmdij711mvku7r7lk22imrfpqrkpcuk23qomogcc21",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS lv_lv · 10574614749415062975",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.8–19.5 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.992,
+    "speech": 0.93
+   }
+  },
+  {
+   "id": "de483fce",
+   "lang": "lithuanian",
+   "src": "/geography/voices/62d118fc88fa.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "kurnos8mopoyq32shhqoujiqot72tsqwcnre22nzpiqqmoqutiq3lqle4rweormpjp2lvue1",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS lt_lt · 10653822806475106736",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.6–20.6 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.966,
+    "speech": 0.94
+   }
+  },
+  {
+   "id": "d88463c1",
+   "lang": "bulgarian",
+   "src": "/geography/voices/dc7e0fbdbf57.mp3",
+   "dur": 18.2,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    18.2
+   ],
+   "peaks": "ovqwmmuhtlnmmeqltlltmurllji4ok4zwnkjrsnmjurjooppl3vunrqvsknpmjjr522ubg30",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS bg_bg · 11451792516835486834",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.3–18.5 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.996,
+    "speech": 0.96
+   }
+  },
+  {
+   "id": "a42cea33",
+   "lang": "serbian",
+   "src": "/geography/voices/3fa8ec8127cb.mp3",
+   "dur": 15.25,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    15.25
+   ],
+   "peaks": "kwvohztbomgmmanre9dna6pjltoenllsgrgepmtgmbh93loqvmrqvqghogej7sswmopff820",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS sr_rs · 10863419775888008996",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "1.0–16.2 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "label",
+    "p": 0.016,
+    "speech": 0.98
+   }
+  },
+  {
+   "id": "970c14d0",
+   "lang": "croatian",
+   "src": "/geography/voices/414dfa350271.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "ooihgbikamzomqkiekodlh0qpkfjukcmchjjhcstrmjjiqghjdrikei0vqkmjjllddjohne6",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS hr_hr · 1077747449153106603",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "1.7–21.7 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.954,
+    "speech": 0.98
+   }
+  },
+  {
+   "id": "5ea77223",
+   "lang": "bosnian",
+   "src": "/geography/voices/0c3f5ff7f126.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "fd5dzkifjbd975haqfge98dl6nhdfb6ba9ki9kcoeoaddek4dqkersqjicd9gfehlujcdmaj",
+   "kind": "conversation",
+   "credit": {
+    "title": "Mirela speaking Bosnian",
+    "author": "Wikitongues",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Mirela_speaking_Bosnian.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "82.9–102.9 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.722,
+    "speech": 0.97
+   }
+  },
+  {
+   "id": "e21789a6",
+   "lang": "slovenian",
+   "src": "/geography/voices/39e6c411d58b.mp3",
+   "dur": 14.84,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    14.84
+   ],
+   "peaks": "deqqmlkp6gc6oa9jd9eb8ibd7anpgceh3ddp2fz5cgdpofk9hkhacfa95oidfgcgmbcc7510",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS sl_si · 11228616055163414087",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.2–15.1 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.986,
+    "speech": 0.97
+   }
+  },
+  {
+   "id": "da010738",
+   "lang": "macedonian",
+   "src": "/geography/voices/75983504cb05.mp3",
+   "dur": 17.72,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    17.72
+   ],
+   "peaks": "qtszppjnowl1fymoqospgpoqqkkuof2uotecmuqmmpciidkog2hvxr8gftkel6ssfvtes850",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS mk_mk · 10360233840913077984",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "1.0–18.7 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "label",
+    "p": 0.323,
+    "speech": 0.98
+   }
+  },
+  {
+   "id": "8a7d4b54",
+   "lang": "afrikaans",
+   "src": "/geography/voices/262f9945b6f8.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "uuropzjlb0mrofkixklz9dlu40e8lsn5mjfftou0honkglgq08q00pooi0lpo2dikntoj121",
+   "kind": "conversation",
+   "credit": {
+    "title": "Alaric speaking Afrikaans",
+    "author": "Wikitongues , Alaric Naudé",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Alaric_speaking_Afrikaans.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "435.0–455.0 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.993,
+    "speech": 0.83
+   }
+  },
+  {
+   "id": "428457cc",
+   "lang": "arabic",
+   "variety": "Iraqi Arabic",
+   "src": "/geography/voices/8d54299ac2c8.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "oqqmnqonhlosllwnheqjfksgmliwjhwkhsjigtrrmefgohkkjngkkphecpileieijmkjzpka",
+   "kind": "conversation",
+   "credit": {
+    "title": "Mahmoud speaking Iraqi Arabic",
+    "author": "Bogreudell",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Mahmoud_speaking_Iraqi_Arabic.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "23.5–43.5 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.988,
+    "speech": 0.98
+   }
+  },
+  {
+   "id": "d28153cd",
+   "lang": "arabic",
+   "variety": "Modern Standard Arabic",
+   "src": "/geography/voices/634f53ce7c04.mp3",
+   "dur": 17.75,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    17.75
+   ],
+   "peaks": "orjin9tiljgqghni2isggqiqmlkl4gspnxjlkkfpigo49itkpltifc4kc3kzmrrojkeml941",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS ar_eg · 1169715995831709235",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.9–18.6 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.998,
+    "speech": 0.98
+   }
+  },
+  {
+   "id": "8b007131",
+   "lang": "hebrew",
+   "src": "/geography/voices/1c48fd9e03d9.mp3",
+   "dur": 18.04,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    18.04
+   ],
+   "peaks": "aynpqmgvujmoslolkmvvqihmhff6pqegdpohkrij45rnpkjzoqsl5doonc4knnmmghjjk9h1",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS he_il · 11816505664411611127",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "1.1–19.2 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.876,
+    "speech": 0.98
+   }
+  },
+  {
+   "id": "53202600",
+   "lang": "persian",
+   "src": "/geography/voices/2f6f082ed0af.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "gttwsktmmirlqpjqfpm3kt4ysqnvprqkkoijf3rryr83tzun3sptjjoiqtuon3rxirup5pk9",
+   "kind": "read",
+   "credit": {
+    "title": "Seke bahare azadi",
+    "author": "The original uploader was Mehdi at Persian Wikipedia .",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Seke_bahare_azadi.ogg",
+    "collection": "Spoken Wikipedia via Wikimedia Commons",
+    "excerpt": "353.6–373.6 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.927,
+    "speech": 0.94
+   }
+  },
+  {
+   "id": "d5923eec",
+   "lang": "pashto",
+   "src": "/geography/voices/132692f3c5a3.mp3",
+   "dur": 17.78,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    17.78
+   ],
+   "peaks": "5zohpbnllipgjl6opmhwjdzjlkkniofsien3jvjpohpflonre822guuilljmadtjklbofg91",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS ps_af · 14188304846733134274",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "1.2–19.0 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.868,
+    "speech": 0.96
+   }
+  },
+  {
+   "id": "b208b7f1",
+   "lang": "kurdish",
+   "variety": "Sorani Kurdish",
+   "src": "/geography/voices/eccd8f5b7e85.mp3",
+   "dur": 15.22,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    15.22
+   ],
+   "peaks": "dnmurgmcfdcjch6bcm7ieebfeneh8peia8ge118rvziigh9ejjmjfcgaidl211vliggea810",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS ckb_iq · 17629596639057731239",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "2.0–17.2 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "label",
+    "p": null,
+    "speech": 0.92
+   }
+  },
+  {
+   "id": "01b6ba48",
+   "lang": "armenian",
+   "src": "/geography/voices/71de3f0a9b6e.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "hyquqxtr9fvqqg7otuu8wjqr8iousuplq8gtsaewzmanppyhrsmswq9mur9mzobooq9uy8hh",
+   "kind": "conversation",
+   "credit": {
+    "title": "John speaking Armenian",
+    "author": "Wikitongues, John Kazaklis",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_John_speaking_Armenian.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "113.8–133.8 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.959,
+    "speech": 0.9
+   }
+  },
+  {
+   "id": "20cafdbd",
+   "lang": "georgian",
+   "src": "/geography/voices/2d9c1f1c50e9.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "jvlnpijsjfc9k7zwmkfciigegfbcc798idafl72enxrtkbe4cjfl7csgbpfc9aic8db2dfb6",
+   "kind": "conversation",
+   "credit": {
+    "title": "Mariam speaking Georgian",
+    "author": "https://m.youtube.com/user/WikiTongues",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Mariam_speaking_Georgian.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "20.3–40.3 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.925,
+    "speech": 0.96
+   }
+  },
+  {
+   "id": "01ea3561",
+   "lang": "azerbaijani",
+   "src": "/geography/voices/a432d3b2fef0.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "txxecbekfkqpinlnkmikbgqvycddjheqrlegwpwxlvzggimulplojceumisprsmkfhlpnmn8",
+   "kind": "conversation",
+   "credit": {
+    "title": "Two Azerbaijani users speaking Azerbaijani",
+    "author": "Wikitongues, Anass Sedrati",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Two_Azerbaijani_users_speaking_Azerbaijani.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "129.4–149.4 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.907,
+    "speech": 0.82
+   }
+  },
+  {
+   "id": "5cc37b0f",
+   "lang": "uzbek",
+   "src": "/geography/voices/d0c95535586e.mp3",
+   "dur": 18,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    18
+   ],
+   "peaks": "fz6jcmkdpececihj4kc2fih7hjipma219iehgndbidcjha2ks3krnhff1iime96eicchdb50",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS uz_uz · 10085397880080377835",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "5.2–23.2 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "label",
+    "p": 0.079,
+    "speech": 0.95
+   }
+  },
+  {
+   "id": "bc2d860b",
+   "lang": "kyrgyz",
+   "src": "/geography/voices/bd3a42407cec.mp3",
+   "dur": 16.31,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    16.31
+   ],
+   "peaks": "upjiopjqrrnwufmmtqllgl3ondxnqpqkwrol3gqzwomlqplsnjrrrknnru5pkuplksmmgf20",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS ky_kg · 1021494209812558554",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.5–16.8 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "label",
+    "p": null,
+    "speech": 0.96
+   }
+  },
+  {
+   "id": "cb446124",
+   "lang": "tajik",
+   "src": "/geography/voices/afcf1a8a9ba5.mp3",
+   "dur": 18.84,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    18.84
+   ],
+   "peaks": "lrrwikojiooki6atrcqkloeng6vrkjnmqo5mksq7lzrswuhsirolisudcrqgfzirnilhtsc1",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS tg_tj · 1190959588133931515",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "2.0–20.9 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "label",
+    "p": 0.04,
+    "speech": 0.98
+   }
+  },
+  {
+   "id": "231c3fd6",
+   "lang": "mongolian",
+   "src": "/geography/voices/e85e912a2084.mp3",
+   "dur": 15.35,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    15.35
+   ],
+   "peaks": "htqnfgdgeqaescfcgihf9inhe558mpfmlko544444lmtoiznlqge89q6bjowk9k89cacbe31",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS mn_mn · 10965673393485205771",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "1.4–16.8 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.977,
+    "speech": 0.88
+   }
+  },
+  {
+   "id": "060fd162",
+   "lang": "hindi",
+   "src": "/geography/voices/123d4582d21e.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "7olnjimf11ogldhfi412rdhg8kl33zrxa2dlfk71111riijajg2ehifcg9g6111i9gceaed5",
+   "kind": "conversation",
+   "credit": {
+    "title": "Kavyanjali speaking Hindi",
+    "author": "Wikitongues",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES_Kavyanjali_speaking_Hindi.ogg",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "48.6–68.6 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.984,
+    "speech": 0.83
+   }
+  },
+  {
+   "id": "235cc8bb",
+   "lang": "urdu",
+   "src": "/geography/voices/931ade7dfae3.mp3",
+   "dur": 19,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    19
+   ],
+   "peaks": "lzojnpkkmrmglrajtldlgnhjfh78bplnctosjirnjfliijomookisj8qspoowqrmoojlrha3",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS ur_pk · 11798929122613241760",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.5–19.5 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.845,
+    "speech": 0.95
+   }
+  },
+  {
+   "id": "b27bb57c",
+   "lang": "bengali",
+   "src": "/geography/voices/26695ba4b6de.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "nxgjede33d9cdyrhkoldb763a63zu99882bm937c532qmqldd3hpc411isgifd9224msod77",
+   "kind": "conversation",
+   "credit": {
+    "title": "Sanjoy speaking Bengali",
+    "author": "Wikitongues",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Sanjoy_speaking_Bengali.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "41.7–61.7 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.987,
+    "speech": 0.81
+   }
+  },
+  {
+   "id": "9a062253",
+   "lang": "punjabi",
+   "src": "/geography/voices/fb89ffc66e92.mp3",
+   "dur": 18.42,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    18.42
+   ],
+   "peaks": "ikqetvnoolmnilkosh92jtqgqqt20pxpcrqh8oqplknhpkjkllohorj7gwtopielqzvnrj80",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS pa_in · 10652863023970204355",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.7–19.1 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.967,
+    "speech": 0.98
+   }
+  },
+  {
+   "id": "fbf0792c",
+   "lang": "gujarati",
+   "src": "/geography/voices/bc79cc27436d.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "qsmfjmhhh1fsljiooiohjnilhm4ljkgoj21lrieglgnkifmk4mqkmkbeqmc2lzl9mymkqnlc",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS gu_in · 11537347276296047113",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.0–20.0 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "label",
+    "p": 0.053,
+    "speech": 0.94
+   }
+  },
+  {
+   "id": "bdcbf61e",
+   "lang": "nepali",
+   "src": "/geography/voices/ce5295440951.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "nc2223nqpekjsfbufabsccpuaerdcglddccq5ossipolec4uzpleektmj5pmjlgnjfecvrh7",
+   "kind": "conversation",
+   "credit": {
+    "title": "Safal speaking Nepali",
+    "author": "Wikitongues, Safal Aryal",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wikitongues-_Safal_speaking_Nepali.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "4.6–24.6 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.979,
+    "speech": 0.94
+   }
+  },
+  {
+   "id": "9e707313",
+   "lang": "tamil",
+   "src": "/geography/voices/975b388436f3.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "nkgcizoblsspcnnnpjulneevqckrtkccjtpcmsmqjcgqsospliindkvqgfpqpllfooneghoc",
+   "kind": "conversation",
+   "credit": {
+    "title": "Marapun speaking Tamil",
+    "author": "Wikitongues , Kristen Tcherneshoff",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Marapun_speaking_Tamil.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "71.9–91.9 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.99,
+    "speech": 0.87
+   }
+  },
+  {
+   "id": "753a9b16",
+   "lang": "telugu",
+   "src": "/geography/voices/f29bb7397e52.mp3",
+   "dur": 17.88,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    17.88
+   ],
+   "peaks": "kyuaqqrmjoaelppprii6byjmlijtjrpohog7tvehpin7ktrql7fordrttqohvahsrgzprn53",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS te_in · 4216007152394413397",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.5–18.4 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.964,
+    "speech": 0.97
+   }
+  },
+  {
+   "id": "2c204b36",
+   "lang": "kannada",
+   "src": "/geography/voices/f0c1532eaf31.mp3",
+   "dur": 17.08,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    17.08
+   ],
+   "peaks": "7pxmfxoofkrk3gmi628spqnnilnia2khvkvqieffc2jh3ihk6fjuqklmdjzzpsmme3mmqf30",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS kn_in · 1028289630786851265",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "1.3–18.3 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.966,
+    "speech": 0.95
+   }
+  },
+  {
+   "id": "13be50d0",
+   "lang": "malayalam",
+   "src": "/geography/voices/8a2d51de9acf.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "eqlipibgtgntlkmlmleinkinhgkvqlgftwiknntcphnhijgpmfglihbfmkpjgeoiaetzphc5",
+   "kind": "conversation",
+   "credit": {
+    "title": "Netha speaking Malayalam",
+    "author": "Bogreudell",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Netha_speaking_Malayalam.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "115.9–135.9 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.978,
+    "speech": 1
+   }
+  },
+  {
+   "id": "b429b425",
+   "lang": "mandarin",
+   "src": "/geography/voices/d2f569d7977b.mp3",
+   "dur": 19.25,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    19.25
+   ],
+   "peaks": "tq7ngjerggfkb23zprhifbeafa242nqraf3112m5oomm6ioajffc23226vmlvh7423ljqle1",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS cmn_hans_cn · 11595834040520631107",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "4.0–23.3 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.995,
+    "speech": 0.78
+   }
+  },
+  {
+   "id": "9dac77c6",
+   "lang": "cantonese",
+   "src": "/geography/voices/ac8966f5a4c2.mp3",
+   "dur": 14.48,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    14.48
+   ],
+   "peaks": "lzpnkmmjvh6liqmlbpjnnojhjrmo1lhkljo254zmolv54spjnllqc2pmi5zgs631jwpabi30",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS yue_hant_hk · 10343823703592916276",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "1.0–15.5 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "label",
+    "p": 0,
+    "speech": 0.95
+   }
+  },
+  {
+   "id": "5eaaad51",
+   "lang": "japanese",
+   "src": "/geography/voices/006f55d8dfb3.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "dmzfmypij2opknkkjlojm64qsknikln6vkkkpj33qrjmokkrmmlkosid3psmnnm4rqlnhgfb",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS ja_jp · 1062963029061341657",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "3.1–23.1 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.996,
+    "speech": 1
+   }
+  },
+  {
+   "id": "e6cc68e0",
+   "lang": "korean",
+   "src": "/geography/voices/9f929930ddc7.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "op7hutwbcyoj877bmsvf7ehxm7exmpl8998sziqvrk79tuurg8tjsnsc8ddziitgmnjgnnf6",
+   "kind": "conversation",
+   "credit": {
+    "title": "Hanbid speaking Korean",
+    "author": "Wikitongues, Teddy Nee",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Hanbid_speaking_Korean.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "29.0–49.0 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.985,
+    "speech": 0.79
+   }
+  },
+  {
+   "id": "76a1ed21",
+   "lang": "vietnamese",
+   "src": "/geography/voices/7159de726dd7.mp3",
+   "dur": 13.78,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    13.78
+   ],
+   "peaks": "jhwshqknewyzxhoqorsefeeqtluqkwrfkojmookolklfgffpswoginnmggghgwwpgkmrqib5",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS vi_vn · 10056093347220194289",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.7–14.5 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.987,
+    "speech": 0.82
+   }
+  },
+  {
+   "id": "45045a67",
+   "lang": "thai",
+   "src": "/geography/voices/f1dcb3621f42.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "pwvseia9goljcojigjlpneijaaykklslnhbazbjgymlmika9anwsklqphivpbaaqxmf9lg94",
+   "kind": "conversation",
+   "credit": {
+    "title": "Tao speaking Thai",
+    "author": "Wikitongues, Teddy Nee",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Tao_speaking_Thai.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "50.7–70.7 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.979,
+    "speech": 0.81
+   }
+  },
+  {
+   "id": "270a8c9a",
+   "lang": "lao",
+   "src": "/geography/voices/8b84db4a8a5e.mp3",
+   "dur": 17.14,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    17.14
+   ],
+   "peaks": "mstlinkihjffjehijjifehgke545fdg9fdedfcdib655efrtzoqrtmstepm5iqi48onnli61",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS lo_la · 10141832205632175762",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.3–17.4 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "label",
+    "p": 0.009,
+    "speech": 0.88
+   }
+  },
+  {
+   "id": "fa18c10d",
+   "lang": "khmer",
+   "src": "/geography/voices/19698a201935.mp3",
+   "dur": 15.51,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    15.51
+   ],
+   "peaks": "csmoimfipkujhov83eoye33lrdhjwokmi323rqpkfofllvaahfnljpnmj83wg9zqutnhin40",
+   "kind": "conversation",
+   "credit": {
+    "title": "Chantara speaking Central Khmer",
+    "author": "Wikitongues, Inc",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Chantara_speaking_Central_Khmer.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "51.2–66.7 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.998,
+    "speech": 0.91
+   }
+  },
+  {
+   "id": "151c14ed",
+   "lang": "indonesian",
+   "src": "/geography/voices/0f793cdb6e2e.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "noopm11plie4pklhhf3mpfmoprpjdjnqbqrmtihlmmhj6fmkbiflbidjoipfjnh51186ssz4",
+   "kind": "conversation",
+   "credit": {
+    "title": "Nila speaking Indonesian",
+    "author": "Wikitongues",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Nila_speaking_Indonesian.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "79.0–99.0 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.997,
+    "speech": 0.89
+   }
+  },
+  {
+   "id": "1e6ad192",
+   "lang": "malay",
+   "src": "/geography/voices/abb2ad673278.mp3",
+   "dur": 17.46,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    17.46
+   ],
+   "peaks": "3uvzdnipmpmhfefjmmbjihkilcflflg943jkjiikj7holohjmmmlhfg3mphkpqlitffkff71",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS ms_my · 4780506254814710913",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "2.0–19.5 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.999,
+    "speech": 0.95
+   }
+  },
+  {
+   "id": "1efa960b",
+   "lang": "javanese",
+   "src": "/geography/voices/1c67b387b24d.mp3",
+   "dur": 18.07,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    18.07
+   ],
+   "peaks": "tsjomduqznolnjjxeaqrnomjfitihekhk898jomeili99plsm9lllnilmnhngmikgfjkhma3",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS jv_id · 1074164459193746195",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "1.6–19.7 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.906,
+    "speech": 0.92
+   }
+  },
+  {
+   "id": "3d007011",
+   "lang": "filipino",
+   "src": "/geography/voices/197bffb9e4e7.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "n69unm8myqg5jkpmhlpnioqdiofmh6crf55655pvylrotmb66677jzh76nznlgqrlmc6nmd3",
+   "kind": "conversation",
+   "credit": {
+    "title": "Josh speaking Tagalog",
+    "author": "Bogreudell",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Josh_speaking_Tagalog.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "112.3–132.3 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.992,
+    "speech": 0.76
+   }
+  },
+  {
+   "id": "97501288",
+   "lang": "cebuano",
+   "src": "/geography/voices/1a550eeff842.mp3",
+   "dur": 18.07,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    18.07
+   ],
+   "peaks": "okmnlmpruommbalrnmnrlmmlpaanqqwsquplnsifibcvzveedtbcsuguwrnfa9mon9mnrm94",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS ceb_ph · 11024139271704438119",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "1.3–19.3 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "label",
+    "p": null,
+    "speech": 0.85
+   }
+  },
+  {
+   "id": "e0f2e299",
+   "lang": "swahili",
+   "src": "/geography/voices/be2b6bca7a89.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "iqlplgeidfcfeffeecbeecbgfcdddef8eziljcgfdche97difffafhf8djdmcdhfkjj8fje5",
+   "kind": "conversation",
+   "credit": {
+    "title": "Iddy speaking Swahili",
+    "author": "Bogreudell",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Iddy_speaking_Swahili.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "176.1–196.1 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.914,
+    "speech": 0.98
+   }
+  },
+  {
+   "id": "8bc9034d",
+   "lang": "amharic",
+   "src": "/geography/voices/85187b36352b.mp3",
+   "dur": 14.26,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    14.26
+   ],
+   "peaks": "fx5qltrqgesqpgmjthmlpul42ppi2hkoualqhqinrtfgksgknqpk2kxzsjgcwnjhkkikti10",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS am_et · 13435547275115311957",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.5–14.7 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "label",
+    "p": 0.246,
+    "speech": 0.97
+   }
+  },
+  {
+   "id": "ae48d5bb",
+   "lang": "oromo",
+   "src": "/geography/voices/4ba658131c4d.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "pnzqmk3elikfcii1kllnkjjhhhkcqkfki712nomomcpenioqoljokk3eh5lpsi421jlnski8",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS om_et · 3396891438901209126",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "0.9–20.9 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "label",
+    "p": null,
+    "speech": 0.91
+   }
+  },
+  {
+   "id": "243f1c5b",
+   "lang": "yoruba",
+   "src": "/geography/voices/9b95c16f61c1.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "pinikgceleha66hqiab7676zr8drof7hpkcn8dsxndtdepm766psgs8jn9ke966akgb9ba95",
+   "kind": "conversation",
+   "credit": {
+    "title": "Olaniyan speaking Yoruba",
+    "author": "Bogreudell",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Olaniyan_speaking_Yoruba.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "48.0–68.0 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.97,
+    "speech": 0.81
+   }
+  },
+  {
+   "id": "7e90140b",
+   "lang": "igbo",
+   "src": "/geography/voices/36b6b4a672cd.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "hzloib8hjl97g96lorid76mqm6436ah9cta555vnkgpjjdcg956cdb665twn58tkjaiii764",
+   "kind": "conversation",
+   "credit": {
+    "title": "Valentine speaking Igbo",
+    "author": "Wikitongues",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Valentine_speaking_Igbo.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "11.3–31.3 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "label",
+    "p": null,
+    "speech": 0.72
+   }
+  },
+  {
+   "id": "aad57b9d",
+   "lang": "twi",
+   "src": "/geography/voices/a9a02533e08d.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "bsub7emif77hkbbd6oztlemktkj777vo666ptp8ahupgcf967acihilosfilka8deb889ac6",
+   "kind": "conversation",
+   "credit": {
+    "title": "Raphael speaking Twi",
+    "author": "Wikitongues",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Raphael_speaking_Twi.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "81.4–101.4 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "label",
+    "p": null,
+    "speech": 0.85
+   }
+  },
+  {
+   "id": "3b6dfd9b",
+   "lang": "wolof",
+   "src": "/geography/voices/6129ab6e0c5e.mp3",
+   "dur": 17.08,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    17.08
+   ],
+   "peaks": "h2yozhmf2222222bq3opp5qqojp64qkbqm7kfekqqf8lqcfoufb22212ooeq72kc1fmlfg21",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS wo_sn · 10114812511384845207",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "8.4–25.4 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "label",
+    "p": null,
+    "speech": 0.77
+   }
+  },
+  {
+   "id": "1dd7b3a9",
+   "lang": "lingala",
+   "src": "/geography/voices/7949114d666c.mp3",
+   "dur": 15.25,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    15.25
+   ],
+   "peaks": "arxsvzsr53336cnlqbmslc94bpgccaksmidikc44dcmn4435ivseih3jhrfpempigdfci943",
+   "kind": "read",
+   "credit": {
+    "title": "FLEURS ln_cd · 10075547217854967812",
+    "author": "Google FLEURS contributors",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://huggingface.co/datasets/google/fleurs",
+    "collection": "Google FLEURS",
+    "excerpt": "1.0–16.3 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "label",
+    "p": 0.034,
+    "speech": 0.84
+   }
+  },
+  {
+   "id": "464ba05f",
+   "lang": "haitian-creole",
+   "src": "/geography/voices/0f67f2182fb1.mp3",
+   "dur": 20,
+   "stages": [
+    1.5,
+    3,
+    5,
+    8,
+    13,
+    20
+   ],
+   "peaks": "bukxg7cpnr73ikfzlhvidlmongmpm415dcl5orii7mhg42souc6rsqa1emrotijcdkdf4110",
+   "kind": "conversation",
+   "credit": {
+    "title": "Castelline speaking Haitian Creole",
+    "author": "Wikitongues , Casteline Titus",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Castelline_speaking_Haitian_Creole.webm",
+    "collection": "Wikitongues via Wikimedia Commons",
+    "excerpt": "169.8–189.8 s"
+   },
+   "check": {
+    "model": "whisper-medium",
+    "rule": "whisper",
+    "p": 0.91,
+    "speech": 0.88
+   }
+  }
+ ]
+}
