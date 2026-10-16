@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 import Hub from './pages/Hub'
 import GamePage from './seo/GamePage'
@@ -22,6 +22,8 @@ const CareerPath = lazy(() => import('./games/careers/CareerPath'))
 const HigherLower = lazy(() => import('./games/higherlower/HigherLower'))
 const FootballConnections = lazy(() => import('./games/connections/FootballConnections'))
 const FootballPointless = lazy(() => import('./games/pointless/FootballPointless'))
+// Triviverse Geography: a separate section with its own data layer (src/geography).
+const GeographyApp = lazy(() => import('./geography/GeographyApp'))
 // Social layer — personal, noindex app screens (see docs/social.md).
 const Me = lazy(() => import('./pages/Me'))
 const LeaguesIndex = lazy(() => import('./pages/Leagues').then(m => ({ default: m.LeaguesIndex })))
@@ -50,14 +52,20 @@ const GAME_ROUTES = [
 ]
 
 export default function App() {
+  // The football social layer (challenges, badges, streak sync) stays on football pages.
+  const geography = /^\/geography(\/|$)/.test(useLocation().pathname)
   return (
     <>
       <ScrollToTop />
       <Analytics />
-      <PreviewBanner />
-      <SocialBoot />
-      <ChallengeBanner />
-      <BadgeToast />
+      {!geography && (
+        <>
+          <PreviewBanner />
+          <SocialBoot />
+          <ChallengeBanner />
+          <BadgeToast />
+        </>
+      )}
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Hub />} />
@@ -69,6 +77,7 @@ export default function App() {
           {GAME_ROUTES.map(({ path, el }) => <Route key={path} path={path} element={el} />)}
           {/* Football Pointless MVP */}
           <Route path="/football-pointless" element={<GamePage path="/football-pointless"><FootballPointless /></GamePage>} />
+          <Route path="/geography/*" element={<GeographyApp />} />
         </Routes>
       </Suspense>
     </>

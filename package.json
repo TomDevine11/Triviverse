@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "server": "node server/index.js",
-    "build": "node scripts/seo/build-relations.mjs && vite build && node scripts/prerender.mjs",
+    "build": "node scripts/seo/build-relations.mjs && vite build && node scripts/prerender.mjs && node scripts/geography/prerender.mjs",
     "build:pages": "npm run build && node scripts/cloudflare-pages.mjs",
     "indexnow": "node scripts/indexnow.mjs",
     "seo-report": "node scripts/seo/report.mjs",
@@ -42,6 +42,8 @@
     "build:signings": "node scripts/build-signings.mjs",
     "build:indexes": "node scripts/build-indexes.mjs",
     "build:contexto": "node scripts/build-contexto.mjs",
+    "build:geography": "node scripts/geography/build-countries.mjs",
+    "build:geography-flags": "node scripts/geography/build-flags.mjs",
     "build:pointless": "node scripts/growth/gen-pointless.mjs",
     "qgen:report": "node scripts/qgen/report.mjs",
     "build:relations": "node scripts/seo/build-relations.mjs",
@@ -71,7 +73,12 @@
     "serp-log": "node scripts/seo/serp-log.mjs",
     "test:visual": "playwright test --project=visual --project=visual-mobile",
     "dev:social": "node scripts/dev-social.mjs",
-    "social-smoke": "node scripts/social-smoke.mjs"
+    "social-smoke": "node scripts/social-smoke.mjs",
+    "build:postcards": "node scripts/geography/build-postcards.mjs",
+    "build:geography-places": "node scripts/geography/build-places.mjs",
+    "build:milestones": "node scripts/geography/build-milestones.mjs",
+    "build:geography-stats": "node scripts/geography/build-stats.mjs",
+    "outrank:daily": "jiti scripts/geography/outrank-daily.mjs"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
@@ -91,6 +98,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
     "autoprefixer": "^10.5.0",
+    "d3-geo": "^3.1.1",
     "eslint": "^10.3.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",

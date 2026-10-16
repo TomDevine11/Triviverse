@@ -1,0 +1,320 @@
+/* Triviverse Geography — game styles. Built on the Triviverse design tokens
+   (index.css / tailwind.config.js) but owned here, so Geography never edits the
+   football stylesheet. Durations/easings are the shared motion tokens. */
+
+/* The Borderline stage is a chart table: board colour, a faint graticule and a
+   pool of light under the silhouette. */
+.bl-stage {
+  background:
+    radial-gradient(ellipse 60% 55% at 50% 50%, rgb(167 139 250 / 0.10), transparent 70%),
+    repeating-linear-gradient(0deg, rgb(255 255 255 / 0.028) 0 1px, transparent 1px 2.25rem),
+    repeating-linear-gradient(90deg, rgb(255 255 255 / 0.028) 0 1px, transparent 1px 2.25rem),
+    linear-gradient(180deg, rgb(124 58 237 / 0.07), transparent 40%),
+    theme('colors.board');
+}
+.bl-shape { transition: transform var(--duration-slow) var(--ease-spring); transform-origin: center; }
+.bl-shape .bl-fill { transition: opacity var(--duration-slow) var(--ease-out); }
+/* Arrival: the outline is traced, then the land fills in behind it. */
+.bl-enter { animation: bl-rise calc(var(--duration-dramatic) * 1.4) var(--ease-spring) both; }
+.bl-enter .bl-edge { stroke-dasharray: 1; animation: bl-trace calc(var(--duration-dramatic) * 1.8) var(--ease-out) both; }
+.bl-enter .bl-land { animation: bl-land var(--duration-dramatic) var(--ease-out) calc(var(--duration-dramatic) * 0.7) both; }
+@keyframes bl-trace { from { stroke-dashoffset: 1; opacity: 1; } 80% { opacity: 1; } to { stroke-dashoffset: 0; opacity: 0; } }
+@keyframes bl-land { from { opacity: 0; } to { opacity: 1; } }
+@keyframes bl-rise { from { transform: scale(0.94); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+/* A miss nudges the shape; the answer lands with a ring of light. */
+.bl-nudge { animation: bl-nudge var(--duration-slow) var(--ease-out); }
+@keyframes bl-nudge { 30% { transform: scale(0.975); } 100% { transform: scale(1); } }
+.bl-solved { animation: bl-solved calc(var(--duration-dramatic) * 1.3) var(--ease-spring) both; }
+@keyframes bl-solved { 0% { transform: scale(1); } 35% { transform: scale(1.05); } 100% { transform: scale(1); } }
+.bl-ring { animation: bl-ring calc(var(--duration-dramatic) * 1.6) var(--ease-out) both; }
+@keyframes bl-ring { from { transform: scale(0.6); opacity: 0.55; } to { transform: scale(1.35); opacity: 0; } }
+.bl-reveal { animation: bl-reveal var(--duration-slow) var(--ease-spring) both; }
+@keyframes bl-reveal { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+/* Guess rows: each cell lands in turn; the arrow swings onto its bearing. */
+.bl-cell { animation: bl-cell var(--duration-base) var(--ease-spring) both; }
+@keyframes bl-cell { from { opacity: 0; transform: translateY(8px) scale(0.97); } to { opacity: 1; transform: none; } }
+.bl-arrow { transform: rotate(var(--b)); }
+.bl-arrow-in { animation: bl-arrow calc(var(--duration-dramatic) * 1.2) var(--ease-spring) both; }
+@keyframes bl-arrow { from { transform: rotate(calc(var(--b) - 180deg)); opacity: 0; } 30% { opacity: 1; } to { transform: rotate(var(--b)); } }
+.bl-bar { transform-origin: left; animation: bl-grow var(--duration-dramatic) var(--ease-out) both; }
+@keyframes bl-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* Geography home: tiles rise in. */
+.geo-tile-in { animation: bl-cell var(--duration-slow) var(--ease-spring) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bl-enter, .bl-enter .bl-edge, .bl-enter .bl-land, .bl-nudge, .bl-solved, .bl-ring,
+  .bl-reveal, .bl-cell, .bl-arrow-in, .bl-bar, .geo-tile-in { animation: none; }
+  .bl-enter .bl-edge, .bl-ring { opacity: 0; }
+  .bl-shape, .bl-shape .bl-fill { transition: none; }
+}
+
+/* ── Overland: the route map ──────────────────────────────────────── */
+.ov-map {
+  --ov-land: #2a2742;
+  --ov-border: #57517e;
+  --ov-start: #a78bfa;
+  --ov-end: var(--accent-bright);
+  --ov-green: #22c55e;
+  --ov-yellow: #facc15;
+  --ov-orange: #fb923c;
+  --ov-red: #f87171;
+  --ov-ghost: rgb(167 139 250 / 0.35);
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 45%, rgb(79 163 224 / 0.07), transparent 70%),
+    repeating-linear-gradient(0deg, rgb(255 255 255 / 0.022) 0 1px, transparent 1px 2.5rem),
+    repeating-linear-gradient(90deg, rgb(255 255 255 / 0.022) 0 1px, transparent 1px 2.5rem),
+    #0d0c19;
+}
+.ov-land path { fill: var(--ov-land); stroke: var(--ov-land); stroke-width: 1px; vector-effect: non-scaling-stroke; stroke-linejoin: round; transition: stroke var(--duration-slow) var(--ease-out); }
+.ov-land path.ov-bordered { stroke: var(--ov-border); }
+.ov-country { stroke: rgb(13 12 25 / 0.75); stroke-width: 1px; vector-effect: non-scaling-stroke; stroke-linejoin: round; transform-box: fill-box; transform-origin: center; transition: fill var(--duration-slow) var(--ease-out); }
+.ov-endpoint { filter: drop-shadow(0 0 6px rgb(167 139 250 / 0.35)); }
+.ov-ghost { stroke: var(--ov-start); stroke-dasharray: 4 3; }
+.ov-pop { animation: ov-pop calc(var(--duration-dramatic) * 1.1) var(--ease-spring) both; }
+@keyframes ov-pop { 0% { opacity: 0; transform: scale(0.82); } 60% { opacity: 1; transform: scale(1.04); } 100% { transform: scale(1); } }
+.ov-hint { fill: none; stroke: #fff; stroke-width: 1.6px; vector-effect: non-scaling-stroke; stroke-dasharray: 5 4; animation: ov-hint 1.6s linear infinite; }
+@keyframes ov-hint { to { stroke-dashoffset: -18; } }
+.ov-leg { stroke: rgb(255 255 255 / 0.8); stroke-linecap: round; stroke-dasharray: 1; animation: ov-draw calc(var(--duration-dramatic) * 1.2) var(--ease-out) both; }
+.ov-leg-hot { stroke: #fff; }
+.ov-won .ov-leg-hot { stroke: #bbf7d0; filter: drop-shadow(0 0 4px rgb(74 222 128 / 0.9)); }
+@keyframes ov-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.ov-stop { fill: #fff; stroke: #0d0c19; }
+.ov-pin { fill: #fff; stroke: #0d0c19; }
+.ov-pulse { fill: none; stroke: #fff; opacity: 0.6; transform-box: fill-box; transform-origin: center; animation: ov-pulse 2.4s var(--ease-out) infinite; }
+@keyframes ov-pulse { from { transform: scale(0.5); opacity: 0.7; } to { transform: scale(1.6); opacity: 0; } }
+.ov-label { fill: #fff; font-weight: 800; letter-spacing: 0.02em; paint-order: stroke; stroke: #0d0c19; stroke-linejoin: round; pointer-events: none; }
+/* Guess chips + the route ticket */
+.ov-chip-in { animation: bl-cell var(--duration-base) var(--ease-spring) both; }
+.ov-dot { width: 0.6rem; height: 0.6rem; border-radius: 9999px; flex-shrink: 0; }
+.ov-dot.green { background: #22c55e; } .ov-dot.yellow { background: #facc15; } .ov-dot.orange { background: #fb923c; } .ov-dot.red { background: #f87171; }
+.ov-slot { transition: background-color var(--duration-slow) var(--ease-out), border-color var(--duration-slow) var(--ease-out), transform var(--duration-slow) var(--ease-spring); }
+.ov-slot.on { transform: scale(1.12); }
+@media (prefers-reduced-motion: reduce) {
+  .ov-pop, .ov-leg, .ov-chip-in { animation: none; }
+  .ov-pulse, .ov-hint { animation: none; }
+  .ov-pulse { opacity: 0; }
+  .ov-slot { transition: none; }
+}
+
+/* ── Unfurl: the flag stage ───────────────────────────────────────── */
+.uf-stage {
+  --uf-h: clamp(8rem, 24dvh, 16.5rem);
+  background:
+    radial-gradient(ellipse 62% 60% at 50% 45%, rgb(236 122 150 / 0.09), transparent 70%),
+    linear-gradient(180deg, rgb(124 58 237 / 0.07), transparent 45%),
+    theme('colors.board');
+}
+.uf-flag { border-radius: 6px; overflow: hidden; box-shadow: 0 0 0 1px rgb(255 255 255 / 0.10), 0 22px 40px -18px rgb(0 0 0 / 0.85); perspective: 900px; transition: box-shadow var(--duration-slow) var(--ease-out); }
+.uf-won { box-shadow: 0 0 0 2px rgb(74 222 128 / 0.85), 0 0 34px -4px rgb(74 222 128 / 0.45), 0 22px 40px -18px rgb(0 0 0 / 0.85); }
+.uf-lost { box-shadow: 0 0 0 1px rgb(255 255 255 / 0.10), 0 22px 40px -18px rgb(0 0 0 / 0.85); filter: saturate(0.85); }
+.uf-enter { animation: bl-rise calc(var(--duration-dramatic) * 1.3) var(--ease-spring) both; }
+.uf-tile {
+  position: relative;
+  background:
+    repeating-linear-gradient(135deg, rgb(255 255 255 / 0.025) 0 2px, transparent 2px 9px),
+    linear-gradient(160deg, #24203d, #16142a);
+  box-shadow: inset 0 0 0 1px #0b0a14, inset 0 1px 0 1px rgb(255 255 255 / 0.04);
+  transform-origin: 50% 0;
+  backface-visibility: hidden;
+}
+.uf-tile::after { content: ''; position: absolute; left: 50%; top: 50%; width: 0.4rem; height: 0.4rem; margin: -0.2rem; border-radius: 9999px; background: rgb(236 122 150 / 0.35); }
+.uf-tile-open { animation: uf-open calc(var(--duration-dramatic) * 0.95) var(--ease-out) both; }
+@keyframes uf-open {
+  0% { transform: rotateX(0); opacity: 1; filter: brightness(1); }
+  35% { filter: brightness(1.6); }
+  100% { transform: rotateX(-92deg); opacity: 0; filter: brightness(1.2); }
+}
+.uf-sheen { background: linear-gradient(105deg, transparent 35%, rgb(255 255 255 / 0.38) 50%, transparent 65%); transform: translateX(-120%); animation: uf-sheen calc(var(--duration-dramatic) * 1.8) var(--ease-out) calc(var(--duration-dramatic) * 1.1) both; mix-blend-mode: soft-light; }
+@keyframes uf-sheen { to { transform: translateX(120%); } }
+@media (prefers-reduced-motion: reduce) {
+  .uf-enter, .uf-sheen { animation: none; }
+  .uf-sheen { opacity: 0; }
+  .uf-tile-open { animation: none; opacity: 0; }
+  .uf-flag { transition: none; }
+}
+
+/* ── Patchwork: the world map ─────────────────────────────────────── */
+.pw-map {
+  background:
+    radial-gradient(ellipse 75% 70% at 50% 45%, rgb(143 147 247 / 0.07), transparent 72%),
+    repeating-linear-gradient(0deg, rgb(255 255 255 / 0.02) 0 1px, transparent 1px 3rem),
+    repeating-linear-gradient(90deg, rgb(255 255 255 / 0.02) 0 1px, transparent 1px 3rem),
+    #0d0c19;
+}
+.pw-land path { fill: #2c2947; stroke: #4c4772; stroke-width: 0.6px; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.pw-gap path { fill: rgb(143 147 247 / 0.08); stroke: var(--accent-bright); stroke-width: 1.1px; stroke-dasharray: 3 2.5; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.pw-restored path { fill: #22c55e; stroke: #166534; stroke-width: 0.7px; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.pw-revealed path { fill: rgb(251 191 36 / 0.55); stroke: #fbbf24; stroke-width: 0.9px; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+/* Restoration: the shape settles into its slot from a breath larger, flashing pale
+   green to full green, with a short glow. Only the restored country animates. */
+.pw-fresh { transform-box: fill-box; transform-origin: center; animation: pw-settle calc(var(--duration-dramatic) * 1.5) var(--ease-spring) both; }
+.pw-fresh path { animation: pw-fill calc(var(--duration-dramatic) * 2.2) var(--ease-out) both; }
+@keyframes pw-settle { 0% { transform: scale(1.18); opacity: 0; } 45% { opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes pw-fill {
+  0% { fill: #dcfce7; filter: drop-shadow(0 0 0 rgb(74 222 128 / 0)); }
+  35% { fill: #86efac; filter: drop-shadow(0 0 10px rgb(74 222 128 / 0.95)); }
+  100% { fill: #22c55e; filter: drop-shadow(0 0 0 rgb(74 222 128 / 0)); }
+}
+.pw-ping { fill: none; stroke: #86efac; transform-box: fill-box; transform-origin: center; animation: pw-ping 1.2s var(--ease-out) 3 both; }
+@keyframes pw-ping { from { transform: scale(0.3); opacity: 1; } to { transform: scale(1.5); opacity: 0; } }
+.pw-pin { cursor: pointer; }
+.pw-pin circle { fill: var(--accent); stroke: #0d0c19; }
+.pw-pin text { fill: #0d0c19; font-weight: 900; pointer-events: none; }
+.pw-pin line { stroke: var(--accent-bright); stroke-linecap: round; }
+.pw-pop { animation: pw-pop var(--duration-slow) var(--ease-spring); display: inline-block; }
+@keyframes pw-pop { 0% { transform: scale(1); } 40% { transform: scale(1.35); color: #4ade80; } 100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .pw-fresh, .pw-fresh path, .pw-ping, .pw-pop { animation: none; }
+}
+
+/* ── Postcard: photo + pin map ─────────────────────────────────────── */
+/* Mobile: photo on top, map below. The photo yields height to the map the moment
+   you start placing a pin, and comes back with a tap. Desktop: side by side. */
+.pc-photo-slot { flex: 0 0 auto; height: 36%; min-height: 0; transition: height 520ms var(--ease-out); }
+.pc-photo-slot.pc-compact { height: 20%; }
+@media (min-width: 1024px) {
+  .pc-photo-slot, .pc-photo-slot.pc-compact { height: auto; }
+}
+
+.pc-photo { box-shadow: 0 24px 50px -28px rgb(0 0 0 / 0.9); isolation: isolate; }
+.pc-photo-blur { position: absolute; inset: -40px; background-size: cover; background-position: center; filter: blur(30px) saturate(1.15) brightness(0.55); opacity: 0; transition: opacity 600ms var(--ease-out); z-index: -1; }
+.pc-photo-blur.is-on { opacity: 1; }
+.pc-photo-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transform: scale(1.025); transition: opacity 700ms var(--ease-out), transform 1400ms var(--ease-out); }
+.pc-photo-img.is-on { opacity: 1; transform: none; }
+/* the compact strip crops to fill; the full frame always shows the whole photo */
+.pc-photo-compact .pc-photo-img { object-fit: cover; }
+.pc-shimmer { position: absolute; inset: 0; background: linear-gradient(100deg, transparent 30%, rgb(255 255 255 / 0.06) 50%, transparent 70%); background-size: 220% 100%; animation: pc-shimmer 1.4s linear infinite; }
+@keyframes pc-shimmer { from { background-position: 120% 0; } to { background-position: -120% 0; } }
+.pc-photo-top { background: linear-gradient(to bottom, rgb(0 0 0 / 0.42), transparent); transition: opacity 300ms var(--ease-out); }
+.pc-photo-foot { background: linear-gradient(to top, rgb(0 0 0 / 0.72), rgb(0 0 0 / 0.35) 55%, transparent); }
+.pc-kicker { text-shadow: 0 1px 8px rgb(0 0 0 / 0.6); }
+.pc-postmark { opacity: 0.82; transform: rotate(-8deg); filter: drop-shadow(0 1px 4px rgb(0 0 0 / 0.55)); }
+/* compact strip: keep the photo, lose the furniture */
+.pc-photo-compact .pc-photo-top, .pc-photo-compact .pc-credit { opacity: 0; }
+.pc-photo-compact .pc-postmark { display: none; }
+@media (min-width: 1024px) {
+  .pc-photo-compact .pc-photo-img { object-fit: contain; }
+  .pc-photo-compact .pc-photo-top, .pc-photo-compact .pc-credit { opacity: 1; }
+  .pc-photo-compact .pc-postmark { display: block; }
+}
+
+/* the map */
+.pc-map-card { background: #101026; box-shadow: 0 24px 50px -28px rgb(0 0 0 / 0.9); transition: border-color 300ms var(--ease-out); }
+.pc-map { touch-action: none; overscroll-behavior: contain; -webkit-tap-highlight-color: transparent; outline: none; }
+.pc-map.cursor-grab:active { cursor: grabbing; }
+.pc-map:focus-visible { box-shadow: inset 0 0 0 2px var(--accent-bright); }
+.pc-sea { fill: #101026; }
+.pc-grid line { stroke: rgb(255 255 255 / 0.05); stroke-width: 1px; vector-effect: non-scaling-stroke; }
+.pc-grid line.pc-equator { stroke: rgb(255 255 255 / 0.09); stroke-dasharray: 4 4; }
+.pc-land path { fill: #2a2745; stroke: #4a4570; stroke-width: 0.7px; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.pc-place circle { fill: #d9d4f5; }
+.pc-place text { fill: #c9c4e6; font-weight: 600; paint-order: stroke; stroke: #14122a; stroke-linejoin: round; pointer-events: none; animation: pc-fade 260ms var(--ease-out) both; }
+.pc-place.pc-tier-0 text { fill: #ece9ff; font-weight: 700; }
+.pc-place.pc-tier-3 circle { fill: #9d97c4; }
+@keyframes pc-fade { from { opacity: 0; } to { opacity: 1; } }
+.pc-cross { position: absolute; left: 50%; top: 50%; width: 26px; height: 26px; margin: -13px 0 0 -13px; pointer-events: none; opacity: 0; transition: opacity 150ms;
+  background: linear-gradient(var(--accent-bright), var(--accent-bright)) center / 2px 100% no-repeat, linear-gradient(var(--accent-bright), var(--accent-bright)) center / 100% 2px no-repeat; }
+.pc-map:focus-visible .pc-cross { opacity: 0.9; }
+
+/* pins: anchored at the tip */
+.pc-pin { position: absolute; width: 30px; height: 40px; margin: -40px 0 0 -15px; pointer-events: none; z-index: 2; }
+.pc-pin-glyph { position: relative; display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 3px 4px rgb(0 0 0 / 0.5)); }
+.pc-pin-guess .pc-pin-body { fill: #fff; stroke: #0d0c19; stroke-width: 1.6; }
+.pc-pin-guess .pc-pin-mark { fill: #7c3aed; }
+.pc-pin-answer { z-index: 3; color: #052e16; }
+.pc-pin-answer .pc-pin-body { fill: #4ade80; stroke: #052e16; stroke-width: 1.6; }
+.pc-pin-shadow { position: absolute; left: 50%; bottom: -3px; width: 16px; height: 6px; margin-left: -8px; border-radius: 50%; background: rgb(0 0 0 / 0.55); filter: blur(1.5px); }
+.pc-drop .pc-pin-glyph { animation: pc-drop 620ms cubic-bezier(.2,.75,.35,1) both; transform-origin: 50% 100%; }
+.pc-drop .pc-pin-shadow { animation: pc-shadow 620ms cubic-bezier(.2,.75,.35,1) both; }
+.pc-drop-late .pc-pin-glyph, .pc-drop-late .pc-pin-shadow { animation-delay: 1900ms; }
+@keyframes pc-drop {
+  0% { transform: translateY(-46px) scale(0.9); opacity: 0; }
+  45% { transform: translateY(0) scale(1.06, 0.9); opacity: 1; }
+  65% { transform: translateY(-7px) scale(0.97, 1.04); }
+  82% { transform: translateY(0) scale(1.02, 0.97); }
+  100% { transform: none; opacity: 1; }
+}
+@keyframes pc-shadow { 0% { transform: scale(0.3); opacity: 0; } 45% { transform: scale(1.15); opacity: 1; } 65% { transform: scale(0.8); } 100% { transform: none; opacity: 1; } }
+.pc-ring { position: absolute; left: 50%; bottom: -10px; width: 40px; height: 20px; margin-left: -20px; border-radius: 50%; border: 2px solid #4ade80; opacity: 0; animation: pc-ring 1.6s var(--ease-out) 2.2s 2 both; }
+@keyframes pc-ring { from { transform: scale(0.3); opacity: 0.9; } to { transform: scale(1.9); opacity: 0; } }
+
+/* the great circle, drawn out from the guess towards the answer */
+/* stroke width is set in map units (not non-scaling-stroke), so pathLength dashing works */
+.pc-arc { fill: none; stroke: #fff; stroke-dasharray: 1; stroke-dashoffset: 0; stroke-linecap: round; stroke-linejoin: round; opacity: 0.85; filter: drop-shadow(0 0 3px rgb(0 0 0 / 0.6)); }
+.pc-arc-draw { animation: pc-arc 900ms var(--ease-out) 1000ms both; }
+@keyframes pc-arc { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.pc-km { position: absolute; transform: translate(-50%, -150%); padding: 3px 8px; border-radius: 9999px; background: rgb(13 12 25 / 0.88); border: 1px solid rgb(255 255 255 / 0.18); color: #fff; font-size: 0.7rem; font-weight: 800; white-space: nowrap; pointer-events: none; z-index: 1; font-variant-numeric: tabular-nums; }
+.pc-km-in { animation: bl-reveal var(--duration-slow) var(--ease-spring) 1800ms both; }
+.pc-seg { background: var(--accent-bright); animation: bl-grow 700ms var(--ease-out) both; transform-origin: left; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pc-photo-slot { transition: none; }
+  .pc-drop .pc-pin-glyph, .pc-drop .pc-pin-shadow, .pc-ring, .pc-arc-draw, .pc-km-in, .pc-seg, .pc-shimmer, .pc-place text { animation: none; }
+  .pc-photo-img { transition: opacity 200ms; transform: none; }
+}
+.pc-answer-label { position: absolute; left: 50%; top: calc(100% + 6px); transform: translateX(-50%); padding: 2px 8px; border-radius: 6px; background: #052e16; border: 1px solid rgb(74 222 128 / 0.6); color: #bbf7d0; font-size: 0.68rem; font-weight: 800; white-space: nowrap; }
+.pc-drop-late .pc-answer-label { animation: bl-reveal var(--duration-slow) var(--ease-spring) 2300ms both; }
+
+/* ── Milestone ─────────────────────────────────────────────────────── */
+.ms-q { animation: ms-in 420ms var(--ease-out) both; }
+@keyframes ms-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.ms-answer { animation: bl-reveal var(--duration-slow) var(--ease-spring) both; }
+.ms-answer-late { animation-delay: 1500ms; }
+.ms-clue { text-wrap: pretty; }
+.ms-teaser { background: radial-gradient(ellipse 70% 60% at 50% 45%, rgb(217 180 74 / 0.08), transparent 70%), #0d0c19; }
+@media (prefers-reduced-motion: reduce) { .ms-q, .ms-answer { animation: none; } }
+
+/* ── Earshot ─────────────────────────────────────────────────────────────── */
+.es-player { background: radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 55%), rgb(22 21 33 / 0.85); box-shadow: 0 24px 50px -30px rgb(0 0 0 / 0.9); }
+.es-play-core { background: radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--accent) 88%, #fff 12%), color-mix(in srgb, var(--accent) 70%, #0b0a14 30%)); box-shadow: 0 10px 24px -8px color-mix(in srgb, var(--accent) 70%, transparent), inset 0 1px 0 rgb(255 255 255 / 0.25); transition: transform 200ms var(--ease-out), box-shadow 300ms var(--ease-out); }
+.es-play:hover .es-play-core { transform: scale(1.04); }
+.es-play:disabled .es-play-core { filter: saturate(0.4) brightness(0.8); }
+.es-play.is-playing .es-play-core { animation: es-breathe 1.6s ease-in-out infinite; }
+@keyframes es-breathe { 0%, 100% { box-shadow: 0 10px 24px -8px color-mix(in srgb, var(--accent) 70%, transparent), 0 0 0 0 color-mix(in srgb, var(--accent) 35%, transparent); } 50% { box-shadow: 0 10px 24px -8px color-mix(in srgb, var(--accent) 70%, transparent), 0 0 0 10px transparent; } }
+.es-spin { animation: es-spin 800ms linear infinite; }
+@keyframes es-spin { to { transform: rotate(360deg); } }
+.es-bars-locked span { background: rgb(255 255 255 / 0.09); }
+.es-bars-open { transition: clip-path 750ms var(--ease-out); }
+.es-bars-open span { background: color-mix(in srgb, var(--accent) 55%, #3a3654); }
+.es-bars-played span { background: var(--accent-bright); box-shadow: 0 0 6px color-mix(in srgb, var(--accent-bright) 45%, transparent); }
+.es-locked { background: repeating-linear-gradient(135deg, rgb(255 255 255 / 0.035) 0 4px, transparent 4px 9px); border-radius: 4px; }
+.es-pill-current { animation: es-pill 1.8s ease-in-out infinite; }
+@keyframes es-pill { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 0%, transparent); } 50% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); } }
+.es-row { animation: bl-reveal var(--duration-slow) var(--ease-spring) both; }
+.es-reveal { animation: bl-reveal var(--duration-slow) var(--ease-spring) both; background: radial-gradient(120% 120% at 100% 0%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 60%), rgb(22 21 33 / 0.85); }
+.es-round { animation: es-in 320ms var(--ease-out) both; }
+@keyframes es-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .es-play.is-playing .es-play-core, .es-spin, .es-pill-current, .es-row, .es-reveal, .es-round { animation: none; }
+  .es-bars-open, .es-locked { transition: none; }
+  .es-spin { border-top-color: transparent; }
+}
+.es-teaser { background: radial-gradient(ellipse 70% 60% at 50% 45%, rgb(60 196 180 / 0.08), transparent 70%), #0d0c19; }
+
+/* ── Outrank ─────────────────────────────────────────────────────────────── */
+.or-card { border-color: #2c2947; transition: border-color var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out); }
+.or-card-chal { border-color: color-mix(in srgb, var(--accent) 38%, #2c2947); background: linear-gradient(160deg, color-mix(in srgb, var(--accent) 9%, rgb(22 21 33 / 0.85)), rgb(22 21 33 / 0.85) 70%); }
+.or-card-right { border-color: rgb(34 197 94 / 0.7); box-shadow: 0 0 0 1px rgb(34 197 94 / 0.25), 0 18px 40px -22px rgb(34 197 94 / 0.6); }
+.or-card-wrong { border-color: rgb(239 68 68 / 0.7); box-shadow: 0 0 0 1px rgb(239 68 68 / 0.25); }
+.or-card.or-shake { animation: shake var(--duration-slow) ease-in-out; }
+.or-badge { animation: ov-pop var(--duration-base) var(--ease-spring) both; }
+.or-mystery { animation: or-breathe 2.4s ease-in-out infinite; }
+@keyframes or-breathe { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+.or-in { animation: bl-reveal var(--duration-slow) var(--ease-spring) both; }
+.or-new { animation: or-new 520ms var(--ease-spring) 120ms both; }
+@keyframes or-new { from { opacity: 0; transform: translateY(14px) scale(0.97); } to { opacity: 1; transform: none; } }
+/* The challenger takes the reference seat: from below on phones, from the right side by side. */
+.or-from-chal { animation: or-from-below 480ms var(--ease-spring) both; }
+@keyframes or-from-below { from { transform: translateY(calc(100% + 0.625rem)); } to { transform: none; } }
+@media (min-width: 640px) {
+  .or-from-chal { animation-name: or-from-right; }
+  @keyframes or-from-right { from { transform: translateX(calc(100% + 1rem)); } to { transform: none; } }
+}
+.or-stat { animation: bl-reveal var(--duration-slow) var(--ease-spring) both; }
+.or-reveal { animation: bl-reveal var(--duration-slow) var(--ease-spring) both; }
+.or-auto { width: 100%; transform-origin: left; animation: or-auto linear both; }
+@keyframes or-auto { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .or-card.or-shake, .or-badge, .or-mystery, .or-in, .or-new, .or-from-chal, .or-stat, .or-reveal, .or-auto { animation: none; }
+}

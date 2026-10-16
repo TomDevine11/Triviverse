@@ -11,6 +11,17 @@
 import { matchdayIndex } from '../src/utils/matchday.js'
 
 const GAMES = new Set(['tenable', 'wordle', 'tictactoe', 'teammates', 'careers', 'connections', 'higherlower', '501', 'pointless', 'bingo', 'contexto'])
+// Triviverse Geography's dailies (src/geography/games.js — test/geo-social.test.js keeps them in step).
+const GEO_GAMES = new Set(['postcard', 'milestone', 'earshot', 'outrank', 'borderline', 'overland', 'unfurl', 'patchwork'])
+
+// Each section of the site keeps its own competition: its own games, results,
+// totals and leagues (migration 0005). Players and nicknames are shared. Every
+// handler below takes one of these and reads/writes only its tables, so
+// football's SQL is exactly what it was before geography existed.
+export const SECTIONS = {
+  football: { id: 'football', games: GAMES, results: 'results', totals: 'daily_totals', all: 'world_all', scores: 'score_counts', leagues: 'leagues', members: 'members', cache: '' },
+  geography: { id: 'geography', games: GEO_GAMES, results: 'geo_results', totals: 'geo_daily_totals', all: 'geo_world_all', scores: 'geo_score_counts', leagues: 'geo_leagues', members: 'geo_members', cache: 'geo/' },
+}
 const UNITS = new Set(['pts', 'mistakes', 'guesses', 'players', 'streak'])
 const CODE_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'
 const MAX_LEAGUE_MEMBERS = 100
@@ -70,8 +81,8 @@ async function upsertPlayer(db, { player, pub, name }) {
 // than every player's row — a few dozen rows read however many play.
 const vkey = (v) => (v == null ? -1 : v)
 
-async function percentile(db, { day, game, w, v, low }) {
-  const { results } = await db.prepare('SELECT w, vkey, n FROM score_counts WHERE day = ? AND game = ?').bind(day, game).all()
+async function percentile(db, T, { day, game, w, v, low }) {
+  const { results } = await db.prepare(`SELECT w, vkey, n FROM ${T.scores} WHERE day = ? AND game = ?`).bind(day, game).all()
   const mineW = w ? 1 : 0
   const mineV = v == null ? null : v
   let beat = 0, tie = 0, total = 0
@@ -89,11 +100,11 @@ async function percentile(db, { day, game, w, v, low }) {
 }
 
 // Move one result between score_counts buckets (from = null for a new result).
-async function bumpScore(db, day, game, from, to) {
+async function bumpScore(db, T, day, game, from, to) {
   if (from && from.w === to.w && vkey(from.v) === vkey(to.v)) return
-  const stmts = [db.prepare(`INSERT INTO score_counts (day, game, w, vkey, n) VALUES (?, ?, ?, ?, 1)
+  const stmts = [db.prepare(`INSERT INTO ${T.scores} (day, game, w, vkey, n) VALUES (?, ?, ?, ?, 1)
     ON CONFLICT (day, game, w, vkey) DO UPDATE SET n = n + 1`).bind(day, game, to.w ? 1 : 0, vkey(to.v))]
-  if (from) stmts.push(db.prepare('UPDATE score_counts SET n = n - 1 WHERE day = ? AND game = ? AND w = ? AND vkey = ?').bind(day, game, from.w ? 1 : 0, vkey(from.v)))
+  if (from) stmts.push(db.prepare(`UPDATE ${T.scores} SET n = n - 1 WHERE day = ? AND game = ? AND w = ? AND vkey = ?`).bind(day, game, from.w ? 1 : 0, vkey(from.v)))
   await db.batch(stmts)
 }
 
@@ -107,10 +118,10 @@ const PTS_STREAK_PER = 5
 const PTS_STREAK_CAP = 25
 const PERFECT_MULT = 2
 
-async function serverPoints(db, player, day, game, won) {
+async function serverPoints(db, T, player, day, game, won) {
   if (!won) return PTS_PLAY // a loss resets that game's streak, so no bonus
   const cap = PTS_STREAK_CAP / PTS_STREAK_PER
-  const { results } = await db.prepare('SELECT day, w FROM results WHERE player = ? AND game = ? AND day BETWEEN ? AND ?')
+  const { results } = await db.prepare(`SELECT day, w FROM ${T.results} WHERE player = ? AND game = ? AND day BETWEEN ? AND ?`)
     .bind(player, game, day - cap, day - 1).all()
   const wonDays = new Set(results.filter(r => r.w).map(r => r.day))
   let streak = 1
@@ -119,47 +130,47 @@ async function serverPoints(db, player, day, game, won) {
 }
 
 // The perfect-day bonus, awarded by the server when the day's last daily lands.
-async function awardPerfect(db, player, day) {
+async function awardPerfect(db, T, player, day) {
   const row = await db.prepare(`SELECT COUNT(DISTINCT game) AS n, SUM(pts) AS base,
-      (SELECT COUNT(*) FROM results WHERE player = ?1 AND day = ?2 AND game = 'perfect') AS has
-    FROM results WHERE player = ?1 AND day = ?2 AND game != 'perfect'`).bind(player, day).first()
-  if (!row || row.has || row.n < GAMES.size) return
-  await db.prepare(`INSERT OR IGNORE INTO results (player, day, game, w, pts, created) VALUES (?, ?, 'perfect', 1, ?, ?)`)
+      (SELECT COUNT(*) FROM ${T.results} WHERE player = ?1 AND day = ?2 AND game = 'perfect') AS has
+    FROM ${T.results} WHERE player = ?1 AND day = ?2 AND game != 'perfect'`).bind(player, day).first()
+  if (!row || row.has || row.n < T.games.size) return
+  await db.prepare(`INSERT OR IGNORE INTO ${T.results} (player, day, game, w, pts, created) VALUES (?, ?, 'perfect', 1, ?, ?)`)
     .bind(player, day, (row.base || 0) * (PERFECT_MULT - 1), Date.now()).run()
 }
 
 // Recompute one player-day in daily_totals from its (at most twelve) results,
 // and carry the change into world_all — only for an eligible (human-paced) day.
-async function refreshTotals(db, player, day) {
+async function refreshTotals(db, T, player, day) {
   const now = await db.prepare(`SELECT SUM(pts) AS pts,
       SUM(CASE WHEN game != 'perfect' THEN 1 ELSE 0 END) AS played,
       SUM(CASE WHEN game != 'perfect' THEN w ELSE 0 END) AS wins,
       SUM(CASE WHEN game = 'perfect' THEN 1 ELSE 0 END) AS perfect,
       MIN(created) AS first, MAX(created) AS last
-    FROM results WHERE player = ? AND day = ?`).bind(player, day).first()
-  const before = await db.prepare('SELECT pts, played, wins, perfect, eligible FROM daily_totals WHERE player = ? AND day = ?').bind(player, day).first()
+    FROM ${T.results} WHERE player = ? AND day = ?`).bind(player, day).first()
+  const before = await db.prepare(`SELECT pts, played, wins, perfect, eligible FROM ${T.totals} WHERE player = ? AND day = ?`).bind(player, day).first()
   const eligible = !(now.played >= BURST_GAMES && now.last - now.first < BURST_MS)
   const count = (r, ok) => (ok && r ? [r.pts || 0, r.played || 0, r.wins || 0, r.perfect || 0] : [0, 0, 0, 0])
   const was = count(before, !!before?.eligible)
   const is = count(now, eligible)
   const d = is.map((x, i) => x - was[i])
-  const stmts = [db.prepare(`INSERT INTO daily_totals (player, day, pts, played, wins, perfect, first, last, eligible) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+  const stmts = [db.prepare(`INSERT INTO ${T.totals} (player, day, pts, played, wins, perfect, first, last, eligible) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     ON CONFLICT (player, day) DO UPDATE SET pts = excluded.pts, played = excluded.played, wins = excluded.wins,
       perfect = excluded.perfect, first = excluded.first, last = excluded.last, eligible = excluded.eligible`)
     .bind(player, day, now.pts || 0, now.played || 0, now.wins || 0, now.perfect || 0, now.first, now.last, eligible ? 1 : 0)]
   if (d.some(x => x !== 0)) {
-    stmts.push(db.prepare(`INSERT INTO world_all (player, pts, played, wins, perfect) VALUES (?, ?, ?, ?, ?)
+    stmts.push(db.prepare(`INSERT INTO ${T.all} (player, pts, played, wins, perfect) VALUES (?, ?, ?, ?, ?)
       ON CONFLICT (player) DO UPDATE SET pts = pts + excluded.pts, played = played + excluded.played,
         wins = wins + excluded.wins, perfect = perfect + excluded.perfect`).bind(player, ...d))
   }
   await db.batch(stmts)
 }
 
-async function postResult(request, env) {
+async function postResult(request, env, T) {
   const b = await body(request)
   if (!b) return bad('bad_json')
   const game = String(b.game || '')
-  if (!GAMES.has(game) && game !== 'perfect') return bad('bad_game')
+  if (!T.games.has(game) && game !== 'perfect') return bad('bad_game')
   if (!validDay(b.day)) return bad('bad_day')
   // The perfect bonus is the server's to award (awardPerfect); client rows are ignored.
   if (game === 'perfect') return (await upsertPlayer(env.DB, b)) ? json({ ok: true }) : bad('bad_player', 403)
@@ -169,23 +180,23 @@ async function postResult(request, env) {
   const u = UNITS.has(b.u) ? b.u : null
   if (!(await upsertPlayer(env.DB, b))) return bad('bad_player', 403)
   const db = env.DB
-  const prev = await db.prepare('SELECT w, v, low FROM results WHERE player = ? AND day = ? AND game = ?').bind(b.player, b.day, game).first()
+  const prev = await db.prepare(`SELECT w, v, low FROM ${T.results} WHERE player = ? AND day = ? AND game = ?`).bind(b.player, b.day, game).first()
 
   // First write wins for the outcome and its points; a later write may only fill
   // in a missing score (the finish card submits after recordResult's bare row).
   if (!prev) {
-    const pts = await serverPoints(db, b.player, b.day, game, !!b.w)
-    await db.prepare('INSERT OR IGNORE INTO results (player, day, game, w, v, of, low, u, pts, created) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
+    const pts = await serverPoints(db, T, b.player, b.day, game, !!b.w)
+    await db.prepare(`INSERT OR IGNORE INTO ${T.results} (player, day, game, w, v, of, low, u, pts, created) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
       .bind(b.player, b.day, game, b.w ? 1 : 0, v, of, b.low ? 1 : 0, u, pts, Date.now()).run()
-    await awardPerfect(db, b.player, b.day)
-    await refreshTotals(db, b.player, b.day)
+    await awardPerfect(db, T, b.player, b.day)
+    await refreshTotals(db, T, b.player, b.day)
   } else if (prev.v == null && v != null) {
-    await db.prepare('UPDATE results SET v = ?, of = COALESCE(of, ?), u = COALESCE(u, ?), low = ? WHERE player = ? AND day = ? AND game = ?')
+    await db.prepare(`UPDATE ${T.results} SET v = ?, of = COALESCE(of, ?), u = COALESCE(u, ?), low = ? WHERE player = ? AND day = ? AND game = ?`)
       .bind(v, of, u, b.low ? 1 : 0, b.player, b.day, game).run()
   }
   const stored = prev ? { w: prev.w, v: prev.v ?? v, low: prev.v == null ? !!b.low : !!prev.low } : { w: b.w ? 1 : 0, v, low: !!b.low }
-  await bumpScore(db, b.day, game, prev, stored)
-  const rank = await percentile(db, { day: b.day, game, w: stored.w, v: stored.v, low: stored.low })
+  await bumpScore(db, T, b.day, game, prev, stored)
+  const rank = await percentile(db, T, { day: b.day, game, w: stored.w, v: stored.v, low: stored.low })
   return json({ ok: true, ...rank })
 }
 
@@ -203,13 +214,13 @@ async function cached(origin, key, ttl, fn) {
   return value
 }
 
-async function getToday(url, env) {
+async function getToday(url, env, T) {
   const day = Number(url.searchParams.get('day'))
   if (!validViewDay(day)) return bad('bad_day')
-  const data = await cached(url.origin, `today/${day}`, 60, async () => {
+  const data = await cached(url.origin, `${T.cache}today/${day}`, 60, async () => {
     const [players, games] = await env.DB.batch([
-      env.DB.prepare('SELECT COUNT(*) AS n FROM daily_totals WHERE day = ? AND played > 0').bind(day),
-      env.DB.prepare('SELECT game, SUM(n) AS n, SUM(CASE WHEN w = 1 THEN n ELSE 0 END) AS wins FROM score_counts WHERE day = ? GROUP BY game').bind(day),
+      env.DB.prepare(`SELECT COUNT(*) AS n FROM ${T.totals} WHERE day = ? AND played > 0`).bind(day),
+      env.DB.prepare(`SELECT game, SUM(n) AS n, SUM(CASE WHEN w = 1 THEN n ELSE 0 END) AS wins FROM ${T.scores} WHERE day = ? GROUP BY game`).bind(day),
     ])
     const byGame = {}
     for (const r of games.results) byGame[r.game] = { n: r.n, wins: r.wins || 0 }
@@ -218,83 +229,83 @@ async function getToday(url, env) {
   return json(data, 200, { 'cache-control': 'public, max-age=60' })
 }
 
-async function getDist(url, env) {
+async function getDist(url, env, T) {
   const day = Number(url.searchParams.get('day'))
   const game = url.searchParams.get('game') || ''
-  if (!validViewDay(day) || !GAMES.has(game)) return bad('bad_query')
-  const { results } = await env.DB.prepare('SELECT w, vkey, n FROM score_counts WHERE day = ? AND game = ? AND n > 0 ORDER BY w DESC, vkey').bind(day, game).all()
+  if (!validViewDay(day) || !T.games.has(game)) return bad('bad_query')
+  const { results } = await env.DB.prepare(`SELECT w, vkey, n FROM ${T.scores} WHERE day = ? AND game = ? AND n > 0 ORDER BY w DESC, vkey`).bind(day, game).all()
   const total = results.reduce((s, r) => s + r.n, 0)
   return json({ day, game, total, buckets: results.map(r => ({ w: !!r.w, v: r.vkey === -1 ? null : r.vkey, n: r.n })) }, 200, { 'cache-control': 'public, max-age=60' })
 }
 
 // ── Leagues ─────────────────────────────────────────────────────────────────
-async function createLeague(request, env) {
+async function createLeague(request, env, T) {
   const b = await body(request)
   if (!b) return bad('bad_json')
   if (!cleanName(b.name)) return bad('name_required')
   const leagueName = cleanLeagueName(b.leagueName)
   if (!leagueName) return bad('league_name_required')
   if (!(await upsertPlayer(env.DB, b))) return bad('bad_player', 403)
-  const owned = await env.DB.prepare('SELECT COUNT(*) AS n FROM leagues WHERE owner = ?').bind(b.player).first()
+  const owned = await env.DB.prepare(`SELECT COUNT(*) AS n FROM ${T.leagues} WHERE owner = ?`).bind(b.player).first()
   if ((owned?.n || 0) >= MAX_OWNED_LEAGUES) return bad('too_many_leagues')
-  const memberships = await env.DB.prepare('SELECT COUNT(*) AS n FROM members WHERE player = ?').bind(b.player).first()
+  const memberships = await env.DB.prepare(`SELECT COUNT(*) AS n FROM ${T.members} WHERE player = ?`).bind(b.player).first()
   if ((memberships?.n || 0) >= MAX_MEMBERSHIPS) return bad('too_many_memberships')
   let c
   for (let i = 0; i < 5; i++) {
     c = code()
-    const taken = await env.DB.prepare('SELECT 1 FROM leagues WHERE code = ?').bind(c).first()
+    const taken = await env.DB.prepare(`SELECT 1 FROM ${T.leagues} WHERE code = ?`).bind(c).first()
     if (!taken) break
   }
   const now = Date.now()
   await env.DB.batch([
-    env.DB.prepare('INSERT INTO leagues (code, name, owner, created) VALUES (?, ?, ?, ?)').bind(c, leagueName, b.player, now),
-    env.DB.prepare('INSERT INTO members (league, player, joined) VALUES (?, ?, ?)').bind(c, b.player, now),
+    env.DB.prepare(`INSERT INTO ${T.leagues} (code, name, owner, created) VALUES (?, ?, ?, ?)`).bind(c, leagueName, b.player, now),
+    env.DB.prepare(`INSERT INTO ${T.members} (league, player, joined) VALUES (?, ?, ?)`).bind(c, b.player, now),
   ])
   return json({ code: c, name: leagueName })
 }
 
 const normCode = (c) => String(c || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8)
 
-async function joinLeague(request, env, c) {
+async function joinLeague(request, env, T, c) {
   const b = await body(request)
   if (!b) return bad('bad_json')
   if (!cleanName(b.name)) return bad('name_required')
-  const league = await env.DB.prepare('SELECT code, name FROM leagues WHERE code = ?').bind(c).first()
+  const league = await env.DB.prepare(`SELECT code, name FROM ${T.leagues} WHERE code = ?`).bind(c).first()
   if (!league) return bad('not_found', 404)
   if (!(await upsertPlayer(env.DB, b))) return bad('bad_player', 403)
-  const already = await env.DB.prepare('SELECT 1 FROM members WHERE league = ? AND player = ?').bind(c, b.player).first()
+  const already = await env.DB.prepare(`SELECT 1 FROM ${T.members} WHERE league = ? AND player = ?`).bind(c, b.player).first()
   if (!already) {
-    const count = await env.DB.prepare('SELECT COUNT(*) AS n FROM members WHERE league = ?').bind(c).first()
+    const count = await env.DB.prepare(`SELECT COUNT(*) AS n FROM ${T.members} WHERE league = ?`).bind(c).first()
     if ((count?.n || 0) >= MAX_LEAGUE_MEMBERS) return bad('league_full')
-    const memberships = await env.DB.prepare('SELECT COUNT(*) AS n FROM members WHERE player = ?').bind(b.player).first()
+    const memberships = await env.DB.prepare(`SELECT COUNT(*) AS n FROM ${T.members} WHERE player = ?`).bind(b.player).first()
     if ((memberships?.n || 0) >= MAX_MEMBERSHIPS) return bad('too_many_memberships')
-    await env.DB.prepare('INSERT OR IGNORE INTO members (league, player, joined) VALUES (?, ?, ?)').bind(c, b.player, Date.now()).run()
+    await env.DB.prepare(`INSERT OR IGNORE INTO ${T.members} (league, player, joined) VALUES (?, ?, ?)`).bind(c, b.player, Date.now()).run()
   }
   return json({ code: league.code, name: league.name, joined: !already })
 }
 
-async function leaveLeague(request, env, c) {
+async function leaveLeague(request, env, T, c) {
   const b = await body(request)
   if (!b || !validId(b.player)) return bad('bad_player')
-  await env.DB.prepare('DELETE FROM members WHERE league = ? AND player = ?').bind(c, b.player).run()
-  const left = await env.DB.prepare('SELECT player FROM members WHERE league = ? ORDER BY joined LIMIT 1').bind(c).first()
-  if (!left) await env.DB.prepare('DELETE FROM leagues WHERE code = ?').bind(c).run()
-  else await env.DB.prepare('UPDATE leagues SET owner = ? WHERE code = ? AND owner = ?').bind(left.player, c, b.player).run()
+  await env.DB.prepare(`DELETE FROM ${T.members} WHERE league = ? AND player = ?`).bind(c, b.player).run()
+  const left = await env.DB.prepare(`SELECT player FROM ${T.members} WHERE league = ? ORDER BY joined LIMIT 1`).bind(c).first()
+  if (!left) await env.DB.prepare(`DELETE FROM ${T.leagues} WHERE code = ?`).bind(c).run()
+  else await env.DB.prepare(`UPDATE ${T.leagues} SET owner = ? WHERE code = ? AND owner = ?`).bind(left.player, c, b.player).run()
   return json({ ok: true })
 }
 
-async function peekLeague(env, c) {
-  const league = await env.DB.prepare(`SELECT l.code, l.name, p.name AS ownerName, (SELECT COUNT(*) FROM members m WHERE m.league = l.code) AS members
-    FROM leagues l LEFT JOIN players p ON p.id = l.owner WHERE l.code = ?`).bind(c).first()
+async function peekLeague(env, T, c) {
+  const league = await env.DB.prepare(`SELECT l.code, l.name, p.name AS ownerName, (SELECT COUNT(*) FROM ${T.members} m WHERE m.league = l.code) AS members
+    FROM ${T.leagues} l LEFT JOIN players p ON p.id = l.owner WHERE l.code = ?`).bind(c).first()
   if (!league) return bad('not_found', 404)
   return json(league)
 }
 
 // Standings for [from, to]: points, dailies played, wins, perfect days — per member.
-async function standings(env, c, from, to) {
+async function standings(env, T, c, from, to) {
   const { results } = await env.DB.prepare(`
     SELECT t.player, SUM(t.pts) AS pts, SUM(t.played) AS played, SUM(t.wins) AS wins, SUM(t.perfect) AS perfect
-    FROM daily_totals t JOIN members m ON m.player = t.player AND m.league = ?
+    FROM ${T.totals} t JOIN ${T.members} m ON m.player = t.player AND m.league = ?
     WHERE t.day BETWEEN ? AND ? GROUP BY t.player`).bind(c, from, to).all()
   return new Map(results.map(r => [r.player, r]))
 }
@@ -307,23 +318,23 @@ function table(members, stats, youId) {
     .map((r, i, arr) => ({ ...r, rank: 1 + arr.filter(x => x.pts > r.pts || (x.pts === r.pts && x.wins > r.wins)).length, tied: arr.some(x => x !== r && x.pts === r.pts && x.wins === r.wins) }))
 }
 
-async function getLeague(url, env, c) {
+async function getLeague(url, env, T, c) {
   const player = url.searchParams.get('player') || ''
   const day = Number(url.searchParams.get('day'))
   if (!validViewDay(day)) return bad('bad_day')
-  const league = await env.DB.prepare('SELECT code, name, owner, created FROM leagues WHERE code = ?').bind(c).first()
+  const league = await env.DB.prepare(`SELECT code, name, owner, created FROM ${T.leagues} WHERE code = ?`).bind(c).first()
   if (!league) return bad('not_found', 404)
-  const { results: members } = await env.DB.prepare(`SELECT p.id, p.pub, p.name, m.joined FROM members m JOIN players p ON p.id = m.player WHERE m.league = ? ORDER BY m.joined`).bind(c).all()
+  const { results: members } = await env.DB.prepare(`SELECT p.id, p.pub, p.name, m.joined FROM ${T.members} m JOIN players p ON p.id = m.player WHERE m.league = ? ORDER BY m.joined`).bind(c).all()
   const isMember = members.some(m => m.id === player)
   if (!isMember) return json({ code: league.code, name: league.name, member: false, members: members.length })
 
   const ws = weekStart(day)
   const createdDay = matchdayIndex(league.created)
   const [week, lastWeek, allTime, todayRows] = await Promise.all([
-    standings(env, c, ws, ws + 6),
-    standings(env, c, ws - 7, ws - 1),
-    standings(env, c, createdDay, day + 1),
-    env.DB.prepare(`SELECT r.player, r.game, r.w, r.v, r.of, r.low, r.u, r.pts FROM results r JOIN members m ON m.player = r.player AND m.league = ? WHERE r.day = ?`).bind(c, day).all(),
+    standings(env, T, c, ws, ws + 6),
+    standings(env, T, c, ws - 7, ws - 1),
+    standings(env, T, c, createdDay, day + 1),
+    env.DB.prepare(`SELECT r.player, r.game, r.w, r.v, r.of, r.low, r.u, r.pts FROM ${T.results} r JOIN ${T.members} m ON m.player = r.player AND m.league = ? WHERE r.day = ?`).bind(c, day).all(),
   ])
   const pubOf = new Map(members.map(m => [m.id, m.pub]))
   const today = {}
@@ -345,19 +356,19 @@ async function getLeague(url, env, c) {
   })
 }
 
-async function myLeagues(url, env) {
+async function myLeagues(url, env, T) {
   const player = url.searchParams.get('player') || ''
   const day = Number(url.searchParams.get('day'))
   if (!validId(player) || !validViewDay(day)) return bad('bad_query')
-  const { results: leagues } = await env.DB.prepare(`SELECT l.code, l.name, (SELECT COUNT(*) FROM members x WHERE x.league = l.code) AS members
-    FROM members m JOIN leagues l ON l.code = m.league WHERE m.player = ? ORDER BY m.joined`).bind(player).all()
+  const { results: leagues } = await env.DB.prepare(`SELECT l.code, l.name, (SELECT COUNT(*) FROM ${T.members} x WHERE x.league = l.code) AS members
+    FROM ${T.members} m JOIN ${T.leagues} l ON l.code = m.league WHERE m.player = ? ORDER BY m.joined`).bind(player).all()
   const ws = weekStart(day)
   // Optional `game`: what that daily's result added today (plus the perfect-day
   // bonus if it was the eleventh), so the finish card can show "6th → 4th".
   const game = url.searchParams.get('game') || ''
   let gained = 0
-  if (GAMES.has(game)) {
-    const { results: today } = await env.DB.prepare('SELECT game, pts, created FROM results WHERE player = ? AND day = ?').bind(player, day).all()
+  if (T.games.has(game)) {
+    const { results: today } = await env.DB.prepare(`SELECT game, pts, created FROM ${T.results} WHERE player = ? AND day = ?`).bind(player, day).all()
     const mineRow = today.find(r => r.game === game)
     if (mineRow) {
       gained = mineRow.pts
@@ -368,9 +379,9 @@ async function myLeagues(url, env) {
   }
   const out = []
   for (const l of leagues) {
-    const { results: rows } = await env.DB.prepare(`SELECT m.player, p.name, COALESCE(SUM(t.pts), 0) AS pts FROM members m
+    const { results: rows } = await env.DB.prepare(`SELECT m.player, p.name, COALESCE(SUM(t.pts), 0) AS pts FROM ${T.members} m
       JOIN players p ON p.id = m.player
-      LEFT JOIN daily_totals t ON t.player = m.player AND t.day BETWEEN ? AND ? WHERE m.league = ? GROUP BY m.player ORDER BY pts DESC, p.name`).bind(ws, ws + 6, l.code).all()
+      LEFT JOIN ${T.totals} t ON t.player = m.player AND t.day BETWEEN ? AND ? WHERE m.league = ? GROUP BY m.player ORDER BY pts DESC, p.name`).bind(ws, ws + 6, l.code).all()
     const idx = rows.findIndex(r => r.player === player)
     const mine = rows[idx]?.pts || 0
     const leader = rows[0]?.pts || 0
@@ -408,24 +419,24 @@ const BURST_MS = 120000
 const TOP = 50
 
 // The period as a derived table S(player, name, pts, played, wins, perfect).
-function source(period, day) {
+function source(T, period, day) {
   const cols = 't.player, p.name, t.pts, t.played, t.wins, t.perfect'
-  if (period === 'today') return { sql: `SELECT ${cols} FROM daily_totals t JOIN players p ON p.id = t.player WHERE t.day = ? AND t.eligible = 1 AND p.hidden = 0`, args: [day] }
+  if (period === 'today') return { sql: `SELECT ${cols} FROM ${T.totals} t JOIN players p ON p.id = t.player WHERE t.day = ? AND t.eligible = 1 AND p.hidden = 0`, args: [day] }
   if (period === 'week') {
     const ws = weekStart(day)
     return { sql: `SELECT t.player, p.name, SUM(t.pts) AS pts, SUM(t.played) AS played, SUM(t.wins) AS wins, SUM(t.perfect) AS perfect
-      FROM daily_totals t JOIN players p ON p.id = t.player WHERE t.day BETWEEN ? AND ? AND t.eligible = 1 AND p.hidden = 0 GROUP BY t.player`, args: [ws, ws + 6] }
+      FROM ${T.totals} t JOIN players p ON p.id = t.player WHERE t.day BETWEEN ? AND ? AND t.eligible = 1 AND p.hidden = 0 GROUP BY t.player`, args: [ws, ws + 6] }
   }
-  return { sql: `SELECT ${cols} FROM world_all t JOIN players p ON p.id = t.player WHERE p.hidden = 0 AND t.played > 0`, args: [] }
+  return { sql: `SELECT ${cols} FROM ${T.all} t JOIN players p ON p.id = t.player WHERE p.hidden = 0 AND t.played > 0`, args: [] }
 }
-const periodKey = (period, day) => (period === 'week' ? `week/${weekStart(day)}` : period === 'today' ? `today/${day}` : `all/${day}`)
+const periodKey = (T, period, day) => T.cache + (period === 'week' ? `week/${weekStart(day)}` : period === 'today' ? `today/${day}` : `all/${day}`)
 
 // Everyone's points for a period, highest first — just the numbers. Ranks are
 // looked up in this (binary search) instead of counting rows per request; the
 // list is shared by every visitor and rebuilt at most every five minutes.
-async function pointsList(env, origin, period, day) {
-  return cached(origin, `world/pts/${periodKey(period, day)}`, 300, async () => {
-    const S = source(period, day)
+async function pointsList(env, T, origin, period, day) {
+  return cached(origin, `world/pts/${periodKey(T, period, day)}`, 300, async () => {
+    const S = source(T, period, day)
     const { results } = await env.DB.prepare(`SELECT pts FROM (${S.sql}) ORDER BY pts DESC`).bind(...S.args).all()
     return results.map(r => r.pts)
   })
@@ -447,17 +458,17 @@ const byStanding = (a, b) => b.pts - a.pts || b.wins - a.wins || a.played - b.pl
 
 // The top 50 with names — the same for everyone, so edge-cached for two minutes.
 // Reads only the top of the points index (plus a margin for ties at the cut).
-async function worldTop(env, origin, period, day) {
-  return cached(origin, `world/top/${periodKey(period, day)}`, 120, async () => {
-    const S = source(period, day)
+async function worldTop(env, T, origin, period, day) {
+  return cached(origin, `world/top/${periodKey(T, period, day)}`, 120, async () => {
+    const S = source(T, period, day)
     const { results } = await env.DB.prepare(`SELECT * FROM (${S.sql}) ORDER BY pts DESC LIMIT ${TOP + 30}`).bind(...S.args).all()
     return results.sort(byStanding).slice(0, TOP)
   })
 }
 
 // Your own row for a period (a handful of rows by primary key), or null.
-async function myRow(env, period, day, player) {
-  const S = source(period, day)
+async function myRow(env, T, period, day, player) {
+  const S = source(T, period, day)
   return env.DB.prepare(`SELECT * FROM (${S.sql}) WHERE player = ?`).bind(...S.args, player).first()
 }
 
@@ -466,15 +477,15 @@ function ranked(row, list) {
   return { ...row, rank: at.ahead + 1, tied: at.same > 1 }
 }
 
-async function getWorld(url, env) {
+async function getWorld(url, env, T) {
   const player = url.searchParams.get('player') || ''
   const day = Number(url.searchParams.get('day'))
   const period = url.searchParams.get('period') || 'today'
   if (!validViewDay(day) || !['today', 'week', 'all'].includes(period)) return bad('bad_query')
   const [list, top, mine] = await Promise.all([
-    pointsList(env, url.origin, period, day),
-    worldTop(env, url.origin, period, day),
-    validId(player) ? myRow(env, period, day, player) : null,
+    pointsList(env, T, url.origin, period, day),
+    worldTop(env, T, url.origin, period, day),
+    validId(player) ? myRow(env, T, period, day, player) : null,
   ])
   // The cached lists are a few minutes old; your own row is always live, so
   // merge it in (you may have just played your way onto the table, or up it).
@@ -493,24 +504,24 @@ async function getWorld(url, env) {
 }
 
 // Your own position for one day (the hub's World block). Same numbers as /world.
-async function rankOn(env, origin, day, player) {
-  const mine = await myRow(env, 'today', day, player)
+async function rankOn(env, T, origin, day, player) {
+  const mine = await myRow(env, T, 'today', day, player)
   if (!mine) return null
-  const list = await pointsList(env, origin, 'today', day)
+  const list = await pointsList(env, T, origin, 'today', day)
   const at = placeIn(list, mine.pts)
   const players = Math.max(list.length, at.ahead + 1)
   return { rank: at.ahead + 1, players, pts: mine.pts, toNext: at.next != null ? at.next - mine.pts : 0, top: Math.max(1, Math.ceil(((at.ahead + 1) / players) * 100)) }
 }
 
-async function getRank(url, env) {
+async function getRank(url, env, T) {
   const player = url.searchParams.get('player') || ''
   const day = Number(url.searchParams.get('day'))
   if (!validId(player) || !validViewDay(day)) return bad('bad_query')
-  const today = await rankOn(env, url.origin, day, player)
+  const today = await rankOn(env, T, url.origin, day, player)
   if (today) return json({ day, ...today })
   // Not played yet today: yesterday's finish, so there's something to defend.
-  const prev = await rankOn(env, url.origin, day - 1, player)
-  const list = await pointsList(env, url.origin, 'today', day)
+  const prev = await rankOn(env, T, url.origin, day - 1, player)
+  const list = await pointsList(env, T, url.origin, 'today', day)
   return json({ day, rank: null, playing: list.length, yesterday: prev })
 }
 
@@ -564,20 +575,23 @@ export async function lookupLink(env, c) {
 export async function handleApi(request, env) {
   if (!env.DB) return bad('social_api_not_configured', 503)
   const url = new URL(request.url)
-  const p = url.pathname.replace(/^\/api/, '')
+  // /api/geo/* is Triviverse Geography's competition; everything else is football's.
+  const geo = /^\/api\/geo(\/|$)/.test(url.pathname)
+  const T = geo ? SECTIONS.geography : SECTIONS.football
+  const p = url.pathname.replace(geo ? /^\/api\/geo/ : /^\/api/, '')
   const m = request.method
   try {
-    if (p === '/results' && m === 'POST') return await postResult(request, env)
-    if (p === '/today' && m === 'GET') return await getToday(url, env)
-    if (p === '/dist' && m === 'GET') return await getDist(url, env)
+    if (p === '/results' && m === 'POST') return await postResult(request, env, T)
+    if (p === '/today' && m === 'GET') return await getToday(url, env, T)
+    if (p === '/dist' && m === 'GET') return await getDist(url, env, T)
     if (p === '/players' && m === 'POST') {
       const b = await body(request)
       return (await upsertPlayer(env.DB, b || {})) ? json({ ok: true }) : bad('bad_player', 403)
     }
-    if (p === '/leagues' && m === 'POST') return await createLeague(request, env)
-    if (p === '/me/leagues' && m === 'GET') return await myLeagues(url, env)
-    if (p === '/rank' && m === 'GET') return await getRank(url, env)
-    if (p === '/world' && m === 'GET') return await getWorld(url, env)
+    if (p === '/leagues' && m === 'POST') return await createLeague(request, env, T)
+    if (p === '/me/leagues' && m === 'GET') return await myLeagues(url, env, T)
+    if (p === '/rank' && m === 'GET') return await getRank(url, env, T)
+    if (p === '/world' && m === 'GET') return await getWorld(url, env, T)
     if (p === '/transfer' && m === 'POST') return await putTransfer(request, env)
     if (p === '/links' && m === 'POST') return await postLink(request, env)
     let mm
@@ -585,10 +599,10 @@ export async function handleApi(request, env) {
     if ((mm = p.match(/^\/leagues\/([A-Za-z0-9]+)(\/(join|leave|peek))?$/))) {
       const c = normCode(mm[1])
       const action = mm[3]
-      if (action === 'join' && m === 'POST') return await joinLeague(request, env, c)
-      if (action === 'leave' && m === 'POST') return await leaveLeague(request, env, c)
-      if (action === 'peek' && m === 'GET') return await peekLeague(env, c)
-      if (!action && m === 'GET') return await getLeague(url, env, c)
+      if (action === 'join' && m === 'POST') return await joinLeague(request, env, T, c)
+      if (action === 'leave' && m === 'POST') return await leaveLeague(request, env, T, c)
+      if (action === 'peek' && m === 'GET') return await peekLeague(env, T, c)
+      if (!action && m === 'GET') return await getLeague(url, env, T, c)
     }
     return bad('not_found', 404)
   } catch (err) {

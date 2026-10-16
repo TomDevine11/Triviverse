@@ -1,0 +1,9756 @@
+{
+ "commons:Chantara speaking Central Khmer.webm#khmer": {
+  "start": 51.19,
+  "dur": 15.51,
+  "speech": 0.91,
+  "prob": 0.998,
+  "top": [
+   [
+    "km",
+    0.998
+   ],
+   [
+    "en",
+    0.001
+   ],
+   [
+    "th",
+    0
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "km",
+    0.98
+   ],
+   [
+    "km",
+    0.95
+   ],
+   [
+    "km",
+    0.93
+   ]
+  ],
+  "text": "හ්සපිසීතියන් හ෩න් වීත්න වට්ටුවිටෙ හැසිණ ළන්න 6x වීත්ටුන් ළන්නලටි එක හැදික්ඤහු හරිස් හැන් හැන් ස්‍රිය වැම්වම අියුරයි මා බිත්‍රිරෂ Kimchiodyne හැතන්න්ර කුඩති හොඳහන්න්නේම් න්දියිටුරුදි සෂජාංienda 까 każdy ਖਮਾਉ ਉਮਾਗ਼ਲਮਤ VIC headers�ఇ Danielle",
+  "model": "medium"
+ },
+ "commons:Gerard And Partick Speak Vivaro-Alpine Occitan.webm#occitan": {
+  "start": 326.71,
+  "dur": 20,
+  "speech": 0.73,
+  "prob": 0.612,
+  "top": [
+   [
+    "oc",
+    0.612
+   ],
+   [
+    "br",
+    0.265
+   ],
+   [
+    "gl",
+    0.033
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "oc",
+    0.31
+   ],
+   [
+    "it",
+    0.58
+   ],
+   [
+    "fr",
+    0.75
+   ],
+   [
+    "it",
+    0.27
+   ]
+  ],
+  "text": "D'un monde zonettin, cantero, pichu, le monde parlava de perto. Un 50, 60 ans qui est quasi à table. Ce père s'est perdu, c'est perdu à cet angle d'un vieil étendant.",
+  "model": "medium"
+ },
+ "commons:Itwiki-Albena Denkova.ogg#italian": {
+  "start": 174.29,
+  "dur": 20,
+  "speech": 0.93,
+  "prob": 0.999,
+  "top": [
+   [
+    "it",
+    0.999
+   ],
+   [
+    "es",
+    0
+   ],
+   [
+    "en",
+    0
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "it",
+    1
+   ],
+   [
+    "it",
+    0.98
+   ],
+   [
+    "it",
+    0.88
+   ],
+   [
+    "it",
+    0.96
+   ]
+  ],
+  "text": "il più alto riconoscimento ufficiale della Repubblica Bulgara. Questa registrazione e il testo dell'articolo sono rilasciati secondo i termini della GNU Free Documentation License disponibile all'indirizzo internet www.gnu.org slash copyleft",
+  "model": "medium"
+ },
+ "commons:Johanna SjöbergOlson Swe.webm#swedish": {
+  "start": 104.6,
+  "dur": 20,
+  "speech": 0.88,
+  "prob": 0.998,
+  "top": [
+   [
+    "sv",
+    0.998
+   ],
+   [
+    "en",
+    0.001
+   ],
+   [
+    "nn",
+    0
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "sv",
+    0.99
+   ],
+   [
+    "sv",
+    0.99
+   ],
+   [
+    "sv",
+    0.98
+   ],
+   [
+    "sv",
+    0.99
+   ]
+  ],
+  "text": "Ton är viktigt i svenskan då det ibland kan avgöra betydelsen av ett ord. Ni ska få ett exempel som är Ser du anden? Eller ser du anden? Du kanske hörde skillnad, kanske inte Men det var alltså två olika ord Anden",
+  "model": "medium"
+ },
+ "commons:Seke bahare azadi.ogg#persian": {
+  "start": 353.59,
+  "dur": 20,
+  "speech": 0.94,
+  "prob": 0.927,
+  "top": [
+   [
+    "fa",
+    0.927
+   ],
+   [
+    "en",
+    0.019
+   ],
+   [
+    "ar",
+    0.013
+   ]
+  ],
+  "en": 0.019,
+  "chunks": [
+   [
+    "fa",
+    0.81
+   ],
+   [
+    "fa",
+    0.86
+   ],
+   [
+    "fa",
+    0.83
+   ],
+   [
+    "fa",
+    0.81
+   ]
+  ],
+  "text": "دوببون با افسایش عرضه سکه توسط کارکانان قیمت این کالا در آستانه اید کنطرل می شود و ثبت اده سکه هایی خود رانگه هایی داشته و نقبینگی کمتری والد جامعه می شود محریه از زباج در بستیاری از اوقات محریه دخلان ایرانی بر مبنها سکه های تلاتنی می شود از سال طولد دو دخلر گرفته تا شما شماره اید",
+  "model": "medium"
+ },
+ "commons:Stela Speaks Esperanto.webm#esperanto": {
+  "start": 68.4,
+  "dur": 20,
+  "speech": 0.93,
+  "prob": 0.979,
+  "top": [
+   [
+    "la",
+    0.962
+   ],
+   [
+    "en",
+    0.021
+   ],
+   [
+    "cy",
+    0.005
+   ]
+  ],
+  "en": 0.021,
+  "chunks": [
+   [
+    "la",
+    0.93
+   ],
+   [
+    "la",
+    0.8
+   ],
+   [
+    "la",
+    0.92
+   ],
+   [
+    "la",
+    0.94
+   ]
+  ],
+  "text": "mi tre djojas havi tiom da internatsiai kontaktoj dank a la lingvo kaj ankau mi povas diri ke dank a la Esperanto kaj dank a tio ke mi kreskis kun du lingvoj lernado de aliai lingvoj ijis multe pli facila por mi",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES Kavyanjali speaking Hindi.ogg#hindi": {
+  "start": 48.56,
+  "dur": 20,
+  "speech": 0.83,
+  "prob": 0.984,
+  "top": [
+   [
+    "hi",
+    0.984
+   ],
+   [
+    "en",
+    0.01
+   ],
+   [
+    "ur",
+    0.003
+   ]
+  ],
+  "en": 0.01,
+  "chunks": [
+   [
+    "hi",
+    0.99
+   ],
+   [
+    "hi",
+    0.82
+   ],
+   [
+    "hi",
+    0.98
+   ],
+   [
+    "hi",
+    0.93
+   ]
+  ],
+  "text": "सासों पर अविलमबित काया जब चलते चलते चूर हुई दो सने शब्द मिल गए मिली नवसुर्ती थकावत दूर हुई पत के पहचाने चूट गए पर साथ साथ चल रही याद जिस जिस से पत पर सनेह मिला",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Abubakar speaking Hausa.webm#hausa": {
+  "start": 189.65,
+  "dur": 20,
+  "speech": 0.9,
+  "prob": 0.012,
+  "top": [
+   [
+    "am",
+    0.639
+   ],
+   [
+    "so",
+    0.179
+   ],
+   [
+    "gu",
+    0.045
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "am",
+    0.55
+   ],
+   [
+    "am",
+    0.38
+   ],
+   [
+    "am",
+    0.64
+   ],
+   [
+    "am",
+    0.38
+   ]
+  ],
+  "text": "mafi yoan abubuwan de sike shafi harufa de kalmumi na wannan harshi za ka samu chi wasana de taasidi machokasu seida abindey shafi harshi na larabchi de kuma watu ainihing harshi na turenchi సంన్నకాలి నికిం పిన్నాని, మిక్నచి దాని, నండిం పిన్న ఇంలి నిని పిని సండి వాని కాని సండి కాని.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Alaric speaking Afrikaans.webm#afrikaans": {
+  "start": 435.03,
+  "dur": 20,
+  "speech": 0.83,
+  "prob": 0.993,
+  "top": [
+   [
+    "af",
+    0.993
+   ],
+   [
+    "kn",
+    0.002
+   ],
+   [
+    "ps",
+    0.001
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "af",
+    0.93
+   ],
+   [
+    "af",
+    0.36
+   ],
+   [
+    "af",
+    0.98
+   ],
+   [
+    "so",
+    0.46
+   ]
+  ],
+  "text": "wil bekleemd doen wanneer hulle praat met ander mense, sê hulle gewoonlik meneer of mevrouw of geefvrouw of onderwijser en of ander titel wat hulle gebruik so dat die ander persoon kan voel dat hulle nederig is, misschien of goeie manieren het.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Amir speaking Russian and Hebrew.webm#hebrew": {
+  "start": 35.92,
+  "dur": 20,
+  "speech": 0.98,
+  "prob": 0,
+  "top": [
+   [
+    "ru",
+    0.9
+   ],
+   [
+    "be",
+    0.03
+   ],
+   [
+    "uk",
+    0.026
+   ]
+  ],
+  "en": 0.01,
+  "chunks": [
+   [
+    "ru",
+    0.74
+   ],
+   [
+    "ru",
+    0.92
+   ],
+   [
+    "ru",
+    0.92
+   ],
+   [
+    "ru",
+    0.92
+   ]
+  ],
+  "text": "‫אני חושב שזה נשמע ‫בגדולה בישראל. ‫אני רואה שזה נשמע בגדולה בישראל. ‫אני מאוד אוהב ‫שזה נשמע כמו רוסליה, ‫אבל לא ממש, ‫הוא דבר יעשו את כל החלקות. ‫אני ענק את זה ‫עד עד. ‫אני עובד אני כבר על ויקיפדיה. ‫אני אוהב לשתתף על כל החלקות. ‫אני מאוד אוהב את זה.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Amir speaking Russian and Hebrew.webm#russian": {
+  "start": 47.22,
+  "dur": 20,
+  "speech": 1,
+  "prob": 0.904,
+  "top": [
+   [
+    "ru",
+    0.904
+   ],
+   [
+    "en",
+    0.024
+   ],
+   [
+    "be",
+    0.01
+   ]
+  ],
+  "en": 0.024,
+  "chunks": [
+   [
+    "ru",
+    0.96
+   ],
+   [
+    "ru",
+    0.92
+   ],
+   [
+    "ru",
+    0.9
+   ],
+   [
+    "ru",
+    0.87
+   ]
+  ],
+  "text": "очень до сих пор. И этим я на основном и занимаюсь википедией. Я очень люблю слушать другие языки, очень люблю разговаривать с людьми, которые говорят на разных языках, помогать им писать на своих языках википедии. Меня часто спрашивают, сколько языков я знаю, но в самом деле я знаю не очень много. Я знаю русский, я знаю английский, я знаю еврейский.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Cahyo speaking Javanese.webm#javanese": {
+  "start": 10.77,
+  "dur": 20,
+  "speech": 0.96,
+  "prob": 0.725,
+  "top": [
+   [
+    "jw",
+    0.725
+   ],
+   [
+    "my",
+    0.073
+   ],
+   [
+    "id",
+    0.06
+   ]
+  ],
+  "en": 0.004,
+  "chunks": [
+   [
+    "jw",
+    0.44
+   ],
+   [
+    "id",
+    0.65
+   ],
+   [
+    "id",
+    0.54
+   ],
+   [
+    "jw",
+    0.42
+   ]
+  ],
+  "text": "Mereka juga memilih di wikipedia dan di acara konferensi ini. Di wikimania, di wikimania mereka memilih wikipedia, wikidata, wiki-wiki lain. Mereka mengerti wikipedia.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Casiano speaking Quechua.webm#quechua": {
+  "start": 19.57,
+  "dur": 14.47,
+  "speech": 0.86,
+  "prob": 0.991,
+  "top": [
+   [
+    "es",
+    0.549
+   ],
+   [
+    "gl",
+    0.153
+   ],
+   [
+    "la",
+    0.079
+   ]
+  ],
+  "en": 0.009,
+  "chunks": [
+   [
+    "es",
+    0.11
+   ],
+   [
+    "es",
+    0.22
+   ],
+   [
+    "es",
+    0.53
+   ]
+  ],
+  "text": "y hablo español. Hablo inglés. Universidad de Estados Unidos.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Castelline speaking Haitian Creole.webm#haitian-creole": {
+  "start": 169.84,
+  "dur": 20,
+  "speech": 0.88,
+  "prob": 0.91,
+  "top": [
+   [
+    "ht",
+    0.91
+   ],
+   [
+    "ln",
+    0.062
+   ],
+   [
+    "yo",
+    0.009
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "ht",
+    0.39
+   ],
+   [
+    "ht",
+    0.6
+   ],
+   [
+    "yo",
+    0.48
+   ],
+   [
+    "ht",
+    0.87
+   ]
+  ],
+  "text": "Ve komanse li la Bible, de kute radio aixien, se radio li mie ki pi popi ou le Miami. Aki sam de fe anko, nepoad sa am de ka fe pou ma apon pa le kriol. Sa ve di kon ya, mka degaj e mwen, me ekri a li kriol, on te jand difficile pou mwen.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Clara speaking French.webm#french": {
+  "start": 13.4,
+  "dur": 20,
+  "speech": 0.92,
+  "prob": 0.977,
+  "top": [
+   [
+    "fr",
+    0.977
+   ],
+   [
+    "en",
+    0.012
+   ],
+   [
+    "ko",
+    0.002
+   ]
+  ],
+  "en": 0.012,
+  "chunks": [
+   [
+    "fr",
+    0.94
+   ],
+   [
+    "fr",
+    0.96
+   ],
+   [
+    "fr",
+    0.94
+   ],
+   [
+    "fr",
+    0.93
+   ]
+  ],
+  "text": "Je suis étudiante en économie en troisième année et voilà, je parle espagnol et français parce que de par mon père je suis espagnol, de par ma mère je suis Suisse et puis à la maison on a toujours parlé les deux langues à la fois donc pour moi le fait de vivre entre deux cultures c'est...",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Daniel speaking Farsi.webm#persian": {
+  "start": 57.68,
+  "dur": 20,
+  "speech": 0.86,
+  "prob": 0.99,
+  "top": [
+   [
+    "fa",
+    0.99
+   ],
+   [
+    "en",
+    0.002
+   ],
+   [
+    "hu",
+    0.002
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "fa",
+    0.98
+   ],
+   [
+    "fa",
+    0.98
+   ],
+   [
+    "fa",
+    0.94
+   ],
+   [
+    "fa",
+    0.95
+   ]
+  ],
+  "text": "بایگی شما هر شاخه از زبون ایندوی ویورپین رو بشناسی فارسی یاد گرتن و سواباد کردم برای شما است. اون ترخواه ها هد بود. و اینو ما برای سایت ویکی تانگ زف کردیم. خیلی ممکن از هنگی. ما ایندر دانشقه یو تیدی شهر دلازی یاد تکزاس امیریکا هستیم. و هم نرسی از شما که...",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- David speaking Spanish.webm#spanish": {
+  "start": 21.68,
+  "dur": 20,
+  "speech": 0.88,
+  "prob": 0.975,
+  "top": [
+   [
+    "es",
+    0.975
+   ],
+   [
+    "en",
+    0.006
+   ],
+   [
+    "gl",
+    0.005
+   ]
+  ],
+  "en": 0.006,
+  "chunks": [
+   [
+    "es",
+    0.92
+   ],
+   [
+    "es",
+    0.95
+   ],
+   [
+    "es",
+    0.95
+   ],
+   [
+    "es",
+    0.93
+   ]
+  ],
+  "text": "son una gran cantidad de personas que conformamos el pueblo guayos y a veces hay la noción de que a un pueblo al tener demasiados hablantes a veces se asume de que ese pueblo tiene su idioma vibrante y es así pero...",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- David speaking Syrian Arabic.webm#arabic": {
+  "start": 24.82,
+  "dur": 16.85,
+  "speech": 0.77,
+  "prob": 0.993,
+  "top": [
+   [
+    "ar",
+    0.993
+   ],
+   [
+    "en",
+    0.004
+   ],
+   [
+    "fr",
+    0
+   ]
+  ],
+  "en": 0.004,
+  "chunks": [
+   [
+    "ar",
+    0.98
+   ],
+   [
+    "ar",
+    0.96
+   ],
+   [
+    "ar",
+    0.98
+   ]
+  ],
+  "text": "أول لغة التي تعلمت أن أتحدثها هي اللغة العربية وكذلك تعلمت الكتابة و الكراءة لدي أخ أحد أصغر مني يتحدث أيضا عربي وأهلي أصلون من الشعب وأحب أن أشكر لكل أهل الفرصة",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Ela speaking Turkish.webm#turkish": {
+  "error": "no speech-dense window",
+  "total": 79.5,
+  "text": null,
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Emily speaking Norwegian.webm#norwegian": {
+  "start": 101.04,
+  "dur": 20,
+  "speech": 0.87,
+  "prob": 0.979,
+  "top": [
+   [
+    "no",
+    0.979
+   ],
+   [
+    "nn",
+    0.009
+   ],
+   [
+    "sv",
+    0.006
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "no",
+    0.96
+   ],
+   [
+    "no",
+    0.99
+   ],
+   [
+    "no",
+    0.95
+   ],
+   [
+    "de",
+    0.5
+   ]
+  ],
+  "text": "Det er helt fantastisk, og jeg elsker, elsker, elsker Norge. Og jeg skal kanskje flytte meg der også, som tanten min gjør det. Ja, og dialekten, at jeg snakker, er dialekten som det finnes rundt Oslo og i Oslo.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Erika speaking Lithuanian.webm#lithuanian": {
+  "start": 33.94,
+  "dur": 20,
+  "speech": 0.94,
+  "prob": 0.983,
+  "top": [
+   [
+    "lt",
+    0.983
+   ],
+   [
+    "lv",
+    0.003
+   ],
+   [
+    "is",
+    0.002
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "ro",
+    0.5
+   ],
+   [
+    "lt",
+    0.97
+   ],
+   [
+    "lt",
+    0.93
+   ],
+   [
+    "lt",
+    0.77
+   ]
+  ],
+  "text": "Trečią kartą man patinka kultūrą žmonės ir kalba yra labai skirtinė Albanų. Pamukos vyksta labai intensyviai ir tikrai manau jį manoma išmokti bent jų pirmalygi Albanų kalba.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Eva speaking Dutch.webm#dutch": {
+  "start": 39.48,
+  "dur": 20,
+  "speech": 0.87,
+  "prob": 0.986,
+  "top": [
+   [
+    "nl",
+    0.986
+   ],
+   [
+    "en",
+    0.009
+   ],
+   [
+    "de",
+    0.002
+   ]
+  ],
+  "en": 0.009,
+  "chunks": [
+   [
+    "nl",
+    0.99
+   ],
+   [
+    "nl",
+    0.92
+   ],
+   [
+    "en",
+    0.38
+   ],
+   [
+    "nl",
+    0.92
+   ]
+  ],
+  "text": "Toen ging ik eigenlijk pas dingen missen van thuis en zag ik hoe verschillend het eigenlijk is terwijl Amerikaans en Nederlandse cultuur niet zo heel anders zijn. Dus ja, nu hoor ik eigenlijk pas hoe mooi Nederlands is en hoe fijn Nederlandse mensen eigenlijk zijn. Nederlandse mensen zijn heel...",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Gereon speaking German.webm#german": {
+  "start": 40.63,
+  "dur": 20,
+  "speech": 0.84,
+  "prob": 0.992,
+  "top": [
+   [
+    "de",
+    0.992
+   ],
+   [
+    "en",
+    0.003
+   ],
+   [
+    "ru",
+    0.001
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "de",
+    0.99
+   ],
+   [
+    "de",
+    0.95
+   ],
+   [
+    "de",
+    0.89
+   ],
+   [
+    "de",
+    0.99
+   ]
+  ],
+  "text": "Ich wohne am nächsten zu polnischen Grenze oder zu holländischen Grenze, zu österreichischen oder französischen Grenze. Ich denke, da können sich die Leute schon viel bessere Vorstellungen machen, wo man wohnt. Vor allen Dingen, wenn man in einer Kleinstadt wohnt, in einer Provinz oder so. Wäre vielleicht eine Methode, den das mehr bilden kann.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Guillem speaking Catalan.webm#catalan": {
+  "start": 72.37,
+  "dur": 20,
+  "speech": 1,
+  "prob": 0.961,
+  "top": [
+   [
+    "ca",
+    0.961
+   ],
+   [
+    "es",
+    0.014
+   ],
+   [
+    "en",
+    0.004
+   ]
+  ],
+  "en": 0.004,
+  "chunks": [
+   [
+    "ca",
+    0.93
+   ],
+   [
+    "ca",
+    0.54
+   ],
+   [
+    "ca",
+    0.88
+   ],
+   [
+    "ca",
+    0.9
+   ]
+  ],
+  "text": "Des de finals de març fins a finals d'octubre es fan diferents coses amb diferents llengües darrere del món, sobretot d'Europa. Les primeres deu setmanes són llengües d'Holanda, diferents varietats del Baix Alemany, el Frisò, el Lling Borguès. Després venen durant deu setmanes llengües mil·lioritzades europees entre les quals...",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Hanbid speaking Korean.webm#korean": {
+  "start": 29.04,
+  "dur": 20,
+  "speech": 0.79,
+  "prob": 0.985,
+  "top": [
+   [
+    "ko",
+    0.985
+   ],
+   [
+    "ja",
+    0.005
+   ],
+   [
+    "en",
+    0.003
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "ko",
+    0.99
+   ],
+   [
+    "ko",
+    0.94
+   ],
+   [
+    "ko",
+    0.97
+   ],
+   [
+    "ko",
+    0.93
+   ]
+  ],
+  "text": "저는 지금까지 대만을 두 번 왔습니다. 지금은 두 번째 이거요. 첫 번째는 교환학생으로 왔어요. 교환학생으로 대만에 왔을 때 대만이 많은 것들을 보았죠. 뭐 친구도 사귀어보고 많은 대만 음식도 먹어보고 아주 맛있어요.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Hasive speaking Bengali.webm#bengali": {
+  "start": 92.85,
+  "dur": 20,
+  "speech": 0.97,
+  "prob": 0.905,
+  "top": [
+   [
+    "bn",
+    0.905
+   ],
+   [
+    "ne",
+    0.029
+   ],
+   [
+    "en",
+    0.017
+   ]
+  ],
+  "en": 0.017,
+  "chunks": [
+   [
+    "bn",
+    0.91
+   ],
+   [
+    "bn",
+    0.82
+   ],
+   [
+    "bn",
+    0.53
+   ],
+   [
+    "bn",
+    0.44
+   ]
+  ],
+  "text": "नो़ह खिःन Ephem особенно सबू बज्ढ़ए ने लिः जब खम्मा, यश्रenser धीम टेस्वां हर् отпुरल णा विश्य, इशूद दीम की pairing चिञुन जंग untoं अपले का पाराब ले இकkichे का उसतः российी की मेंस ज़ाना साइ आती था through our videos At the land of Bangladesh And the Michaels the American",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Iain speaking Scottish Gaelic.webm#scottish-gaelic": {
+  "start": 81.04,
+  "dur": 20,
+  "speech": 0.86,
+  "prob": 0.987,
+  "top": [
+   [
+    "cy",
+    0.946
+   ],
+   [
+    "en",
+    0.013
+   ],
+   [
+    "fo",
+    0.009
+   ]
+  ],
+  "en": 0.013,
+  "chunks": [
+   [
+    "cy",
+    0.51
+   ],
+   [
+    "nl",
+    0.66
+   ],
+   [
+    "cy",
+    0.76
+   ],
+   [
+    "cy",
+    0.89
+   ]
+  ],
+  "text": "a cwrc yn y raci'n i'r cwp yn leiaf, y bryd yn y Galic, ffat na hwnna, ddi cael cyfle, yr wyst i ddynnu'r hyn sydd yn cael ei gynnal i fyw gyd-ddiwrc. Felly am go iawn. A chwyngais yn ochr cymaint o lawer tydd haast yn y glosgo, yn y gyd-ddiograeth y tu'n, henys sgarp di'n y beiriau, gyd-ddiwrcf, ac y ganyn sy'n...",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Iddy speaking Swahili.webm#swahili": {
+  "start": 176.12,
+  "dur": 20,
+  "speech": 0.98,
+  "prob": 0.914,
+  "top": [
+   [
+    "sw",
+    0.914
+   ],
+   [
+    "sn",
+    0.031
+   ],
+   [
+    "en",
+    0.017
+   ]
+  ],
+  "en": 0.017,
+  "chunks": [
+   [
+    "sw",
+    0.87
+   ],
+   [
+    "sw",
+    0.91
+   ],
+   [
+    "sw",
+    0.88
+   ],
+   [
+    "sw",
+    0.82
+   ]
+  ],
+  "text": "Nimitu ambaye na pendelia sana piya, Micheso, wakini mana nini na tumia mdamungi katika kazi na vile vile nintomba nila penda kufanya mazoziki wale kutuzafia yangu. Doto yangu ni nini, doto yangu ni kutembea na doto yangu ni kukikisha na itanga za tanzani ya kukupitia atovuti kubwa bazo zimebeba data nini kama vile wiki.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Iñaki speaking Basque.webm#basque": {
+  "start": 7.09,
+  "dur": 20,
+  "speech": 0.93,
+  "prob": 0.875,
+  "top": [
+   [
+    "eu",
+    0.875
+   ],
+   [
+    "km",
+    0.031
+   ],
+   [
+    "es",
+    0.03
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "eu",
+    0.55
+   ],
+   [
+    "it",
+    0.87
+   ],
+   [
+    "eu",
+    0.62
+   ],
+   [
+    "es",
+    0.31
+   ]
+  ],
+  "text": "eta eee, bueno, Euskara de Euskalerrian itz egiten da eta sortzire unia perxona inguruke itz egiten dute eta eskatu dut egin dena grabaak eta bat egiteko nire euskera haren eta nire eizkuntzaren eta beraz torri nahiz eta, bueno, horretas gainera",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Jamal speaking Uzbek.webm#uzbek": {
+  "start": 47.06,
+  "dur": 20,
+  "speech": 0.81,
+  "prob": 0.002,
+  "top": [
+   [
+    "az",
+    0.521
+   ],
+   [
+    "kk",
+    0.427
+   ],
+   [
+    "lt",
+    0.019
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "ms",
+    0.14
+   ],
+   [
+    "kk",
+    0.39
+   ],
+   [
+    "az",
+    0.71
+   ],
+   [
+    "pl",
+    0.68
+   ]
+  ],
+  "text": "bana hobi larim futboğho boğun iman man majdaq diqe, ünjurseddiqe kamandala man man uzum bahtimdi, boş bahtimdi man kompitur programme yozaman",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Jean Luc speaking Breton.webm#breton": {
+  "start": 42.8,
+  "dur": 20,
+  "speech": 0.9,
+  "prob": 0.784,
+  "top": [
+   [
+    "br",
+    0.784
+   ],
+   [
+    "oc",
+    0.093
+   ],
+   [
+    "fr",
+    0.028
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "br",
+    0.51
+   ],
+   [
+    "fr",
+    0.19
+   ],
+   [
+    "fr",
+    0.76
+   ],
+   [
+    "fr",
+    0.85
+   ]
+  ],
+  "text": "et c'est tu que tu changes de la bourse, quand on en a dit, mais c'est la bourse, mais c'est la même chose que la bourse du Nord, la bourse de Paris, la bourse de l'Ezée-Nouve, c'est tu, bon, et bien...",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Jenni speaking Finnish.webm#finnish": {
+  "start": 156.85,
+  "dur": 20,
+  "speech": 0.88,
+  "prob": 0.996,
+  "top": [
+   [
+    "fi",
+    0.996
+   ],
+   [
+    "en",
+    0.002
+   ],
+   [
+    "sv",
+    0
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "fi",
+    0.99
+   ],
+   [
+    "fi",
+    0.99
+   ],
+   [
+    "fi",
+    0.99
+   ],
+   [
+    "fi",
+    0.99
+   ]
+  ],
+  "text": "Se on ihan hyvä juttu, koska sitten minulla ei tunnu, että minun on pakko mennä Suomeen ja minun ei pakko pysyä täällä. Minä voin vähän mennä, minne enkidä minä haluan ja se on ihan ok. Minä voin vielä oppia enemmän muista kulttuureista. Minusta se on tärkeää kaikille, että ne ymmärtäisivät muita paremmin.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- John speaking Armenian.webm#armenian": {
+  "start": 113.78,
+  "dur": 20,
+  "speech": 0.9,
+  "prob": 0.959,
+  "top": [
+   [
+    "hy",
+    0.959
+   ],
+   [
+    "fa",
+    0.008
+   ],
+   [
+    "ro",
+    0.008
+   ]
+  ],
+  "en": 0.004,
+  "chunks": [
+   [
+    "hy",
+    0.97
+   ],
+   [
+    "hy",
+    0.83
+   ],
+   [
+    "hy",
+    0.74
+   ],
+   [
+    "hy",
+    0.72
+   ]
+  ],
+  "text": "անդեղ մենացիր 30 դարի վերշ եգար հորտանան ամսացավ արաբ Մրիստունյան, և եթ տարցանք ամերկա�, ինչև 73 դարի ես աշխադեցար ամերկան, իմ գինի ես ամերգացի եղավ վերս է։",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Jon speaking Basque.webm#basque": {
+  "start": 39.67,
+  "dur": 20,
+  "speech": 0.86,
+  "prob": 0.991,
+  "top": [
+   [
+    "eu",
+    0.991
+   ],
+   [
+    "es",
+    0.003
+   ],
+   [
+    "gl",
+    0.001
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "eu",
+    0.96
+   ],
+   [
+    "eu",
+    0.81
+   ],
+   [
+    "eu",
+    0.94
+   ],
+   [
+    "eu",
+    0.65
+   ]
+  ],
+  "text": "Kultura diferentea eta ezberdinaik ezagutxendosuz, jendea eta giroa ezagutxendosu, gero ingelesa ere obetu egin nuen, eta bueno, hilabete batzu ostean, berriro bajoibatxu edukitxendosu.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Josh speaking Tagalog.webm#filipino": {
+  "start": 112.34,
+  "dur": 20,
+  "speech": 0.76,
+  "prob": 0.992,
+  "top": [
+   [
+    "tl",
+    0.992
+   ],
+   [
+    "en",
+    0.002
+   ],
+   [
+    "id",
+    0.002
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "tl",
+    0.99
+   ],
+   [
+    "tl",
+    0.98
+   ],
+   [
+    "tl",
+    0.97
+   ],
+   [
+    "tl",
+    0.98
+   ]
+  ],
+  "text": "at ito ay isang pamayanan ng napakatalinong tao, napakadedikadong mga kusang loob na kaya gumawa ng napakaraming bagay kung sa kalimay pagkakataon lang sila na...",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Joshi speaking Esperanto.webm#esperanto": {
+  "start": 15.86,
+  "dur": 20,
+  "speech": 0.84,
+  "prob": 0.994,
+  "top": [
+   [
+    "la",
+    0.929
+   ],
+   [
+    "es",
+    0.043
+   ],
+   [
+    "oc",
+    0.007
+   ]
+  ],
+  "en": 0.006,
+  "chunks": [
+   [
+    "la",
+    0.69
+   ],
+   [
+    "la",
+    0.84
+   ],
+   [
+    "la",
+    0.79
+   ],
+   [
+    "es",
+    0.28
+   ]
+  ],
+  "text": "La'u mi, Esperanto estas interesa lingvo pro tyo ke ji estas tre' yuna kaj havas tre' novan, yunan kulturo'n sed min ne pensas ke ji estas tute nutrala, tute tute igala, tute perfekta lingvo",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Jānis speaking Latvian.webm#latvian": {
+  "start": 83.92,
+  "dur": 20,
+  "speech": 0.8,
+  "prob": 0.968,
+  "top": [
+   [
+    "lv",
+    0.968
+   ],
+   [
+    "lt",
+    0.008
+   ],
+   [
+    "et",
+    0.008
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "hr",
+    0.25
+   ],
+   [
+    "lv",
+    0.97
+   ],
+   [
+    "de",
+    0.26
+   ],
+   [
+    "en",
+    0.36
+   ]
+  ],
+  "text": "ir padiesībā lbāģis, kas kā saliekot divus vārus kopā tieguz cita vārda. Un tur ir tāda ziļāka nozina, tam vissam kā varu saprast, kā ori...",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Kangkana speaking Assamese and English.webm#assamese": {
+  "start": 32.34,
+  "dur": 20,
+  "speech": 0.86,
+  "prob": 0.23,
+  "top": [
+   [
+    "bn",
+    0.489
+   ],
+   [
+    "as",
+    0.23
+   ],
+   [
+    "ne",
+    0.136
+   ]
+  ],
+  "en": 0.021,
+  "chunks": [
+   [
+    "bn",
+    0.55
+   ],
+   [
+    "es",
+    0.31
+   ],
+   [
+    "si",
+    0.65
+   ],
+   [
+    "en",
+    0.3
+   ]
+  ],
+  "text": "វ ហ ហ ៍ ឰ ្ ្ ះ ឆ ង ័ ៙ ។ ជ ផ ល ផ ឍ ន ្ ផ ក ឡ ធ ផ ធ ្ ឱ ប",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Karl speaking Filipino.webm#filipino": {
+  "start": 119.41,
+  "dur": 20,
+  "speech": 0.92,
+  "prob": 0.98,
+  "top": [
+   [
+    "tl",
+    0.98
+   ],
+   [
+    "en",
+    0.012
+   ],
+   [
+    "ar",
+    0.002
+   ]
+  ],
+  "en": 0.012,
+  "chunks": [
+   [
+    "tl",
+    0.98
+   ],
+   [
+    "tl",
+    0.97
+   ],
+   [
+    "tl",
+    0.88
+   ],
+   [
+    "tl",
+    0.91
+   ]
+  ],
+  "text": "Pero sa everyday speech giningamit pa rin ang mga English na loan words. At yung mga inaimmento ng salita ng mga purista, hindi naman ginigamit sa koloquel na sitwasyon. At halos walang nakakatanda. Pero ang Tagalog pa rin naman ay may mga nanasjornalista.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Keith speaking Maltese.webm#maltese": {
+  "start": 8.08,
+  "dur": 20,
+  "speech": 0.82,
+  "prob": 0.185,
+  "top": [
+   [
+    "sq",
+    0.193
+   ],
+   [
+    "mt",
+    0.185
+   ],
+   [
+    "ar",
+    0.144
+   ]
+  ],
+  "en": 0.011,
+  "chunks": [
+   [
+    "el",
+    0.26
+   ],
+   [
+    "ar",
+    0.58
+   ],
+   [
+    "sv",
+    0.23
+   ],
+   [
+    "ar",
+    0.69
+   ]
+  ],
+  "text": "xobi gheidh dhe nol mek t'unxub t'un dhurs dhe t'unxub għunna fadal t'un pajic nzira zaira, nzira zabija nahde mħl belt, nħubba kħun pos kħidh t'ajzor randek t'un belt l'indina t'un nop mħndek t'un nħatħa fok t'un pajic t'un mawdish nzira dħak t'ajzab i māltħ t'un mħn eżzora",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Khulan speaking Mongolian.webm#mongolian": {
+  "start": 25.84,
+  "dur": 20,
+  "speech": 0.86,
+  "prob": 0.995,
+  "top": [
+   [
+    "mn",
+    0.995
+   ],
+   [
+    "bo",
+    0.001
+   ],
+   [
+    "en",
+    0.001
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "mn",
+    0.98
+   ],
+   [
+    "mn",
+    0.92
+   ],
+   [
+    "mn",
+    0.98
+   ],
+   [
+    "mn",
+    0.96
+   ]
+  ],
+  "text": "Mongolian language is not a good language. Mongolian language is not a good language. It's not a good language. I don't know how to say it. I don't know how to say it.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Kostas speaking Greek.webm#greek": {
+  "start": 31.16,
+  "dur": 20,
+  "speech": 0.76,
+  "prob": 0.993,
+  "top": [
+   [
+    "el",
+    0.993
+   ],
+   [
+    "en",
+    0.002
+   ],
+   [
+    "pt",
+    0.001
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "el",
+    0.96
+   ],
+   [
+    "el",
+    0.98
+   ],
+   [
+    "el",
+    0.98
+   ],
+   [
+    "el",
+    0.98
+   ]
+  ],
+  "text": "Με λυπεί γενικά το γεγονός ότι η Αθήνα και η Ελλάδα έχει καταντήσει να είναι σε αυτό σημείο και με την οικονομία εννοώ. Δεν θα μπω παραπάνω σε αυτό το θέμα γιατί, εντάξει, το έχουμε πολύ συζητήσει και είναι κακή φάση αλλά γενικά μπορούμε να κρατήσουμε τα θετικά της χώρας μας.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Kumudini speaking Kannada.webm#kannada": {
+  "start": 87.99,
+  "dur": 20,
+  "speech": 1,
+  "prob": 0.957,
+  "top": [
+   [
+    "kn",
+    0.957
+   ],
+   [
+    "lt",
+    0.025
+   ],
+   [
+    "et",
+    0.007
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "ml",
+    0.48
+   ],
+   [
+    "ta",
+    0.86
+   ],
+   [
+    "kn",
+    0.93
+   ],
+   [
+    "kn",
+    0.96
+   ]
+  ],
+  "text": "ಕಾರವರಿಲಿಲ್ಲಾ ಅದ್ಧಾದೇ ಎಂಕ್ನೀನಾರು ತೊತಾಗಿರಿಧಿದಿಕುರ್ ತೊತಕುರು ದೌಂಗಾತೋರ್ಟಿಲುಸ್ಖುರು ಜನಿಕೆ ಇಂದೆ ಅದ್ಯಿಪತ್ತಿನ್ನನು ಆನ್ಟಾರಿನು ಸಿಕೊಯರ್​ ಮಾಹನನ�",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- La speaking Lao.webm#lao": {
+  "start": 6.58,
+  "dur": 20,
+  "speech": 0.74,
+  "prob": 0.015,
+  "top": [
+   [
+    "vi",
+    0.192
+   ],
+   [
+    "km",
+    0.128
+   ],
+   [
+    "en",
+    0.123
+   ]
+  ],
+  "en": 0.123,
+  "chunks": [
+   [
+    "fr",
+    0.24
+   ],
+   [
+    "ms",
+    0.33
+   ],
+   [
+    "vi",
+    0.38
+   ],
+   [
+    "zh",
+    0.8
+   ]
+  ],
+  "text": "",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Liisi speaking Estonian.webm#estonian": {
+  "start": 34.8,
+  "dur": 20,
+  "speech": 0.95,
+  "prob": 0.988,
+  "top": [
+   [
+    "et",
+    0.988
+   ],
+   [
+    "lt",
+    0.004
+   ],
+   [
+    "lv",
+    0.002
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "et",
+    0.98
+   ],
+   [
+    "et",
+    0.18
+   ],
+   [
+    "et",
+    0.97
+   ],
+   [
+    "fi",
+    0.37
+   ]
+  ],
+  "text": "Põhimõtteliselt alla minna ja siis tõenna koju pärast. Põhimõtteliselt hetkel on, kui ta peisist see nii kummaline, natuke nefiilik on. Rääkki ta kamerasse kui kaks härras vees, kes siin kõrru on, neid võistavite, midagi, mis ta ma räägi. Siis see on natuke veide.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Ljóni speaking Icelandic.webm#icelandic": {
+  "start": 16.85,
+  "dur": 20,
+  "speech": 0.84,
+  "prob": 0.975,
+  "top": [
+   [
+    "is",
+    0.975
+   ],
+   [
+    "lt",
+    0.005
+   ],
+   [
+    "fi",
+    0.003
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "is",
+    0.95
+   ],
+   [
+    "is",
+    0.87
+   ],
+   [
+    "is",
+    0.93
+   ],
+   [
+    "lt",
+    0.26
+   ]
+  ],
+  "text": "Það er erfið orð, til dæmis talg. Það er mjög erfiðtt að segja talg, ef maður er ekki fettir á Íslandi og uppalinn. Það er hérna, það er orð eins og fjörður sem að beigast mjög mikið, breytast mjög mikið. Fjörður, fjörður, fjörður fjörðar, fjörður, fjörður fjörðum fjörða.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Mahmoud speaking Iraqi Arabic.webm#arabic": {
+  "start": 23.51,
+  "dur": 20,
+  "speech": 0.98,
+  "prob": 0.988,
+  "top": [
+   [
+    "ar",
+    0.988
+   ],
+   [
+    "en",
+    0.006
+   ],
+   [
+    "fr",
+    0.001
+   ]
+  ],
+  "en": 0.006,
+  "chunks": [
+   [
+    "ar",
+    0.97
+   ],
+   [
+    "ar",
+    0.93
+   ],
+   [
+    "ar",
+    0.97
+   ],
+   [
+    "ar",
+    0.94
+   ]
+  ],
+  "text": "وأيام القليل أجلفت أيام صعبة جداً بسبب الاحتلال وبعدها بدأت المشاكل المتعلقة بالاحتلال والتبجيرات والإرهاب والمشاكل الطائفية بحيث أنه سنة التي تخرجت بها الحمد لله تخرجت بشق الأنفس بحيث كنا نتوقع أن نروح للدوام وما نرجع لها",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Manjusha speaking Telugu.webm#telugu": {
+  "start": 66,
+  "dur": 20,
+  "speech": 0.87,
+  "prob": 0.977,
+  "top": [
+   [
+    "te",
+    0.977
+   ],
+   [
+    "en",
+    0.006
+   ],
+   [
+    "ta",
+    0.003
+   ]
+  ],
+  "en": 0.006,
+  "chunks": [
+   [
+    "te",
+    0.95
+   ],
+   [
+    "te",
+    0.95
+   ],
+   [
+    "te",
+    0.94
+   ],
+   [
+    "te",
+    0.97
+   ]
+  ],
+  "text": "अबाय घुरुरिची जबते यकदिकि वालतूनादू लेपूर्धें अम्माय गृरिचि जबते यकदिकि वालतुनादू ने मार्पुस्तुदुदी। तेल्गुभाशु योका यासा प्रान्थिक्ने भट्ती नुटनदी। మాకుద్ల్ముitet వాం అనరం రూశర]:",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Marapun speaking Tamil.webm#tamil": {
+  "start": 71.92,
+  "dur": 20,
+  "speech": 0.87,
+  "prob": 0.99,
+  "top": [
+   [
+    "ta",
+    0.99
+   ],
+   [
+    "ml",
+    0.004
+   ],
+   [
+    "en",
+    0.001
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "ta",
+    0.84
+   ],
+   [
+    "ta",
+    0.98
+   ],
+   [
+    "ta",
+    0.96
+   ],
+   [
+    "ta",
+    0.87
+   ]
+  ],
+  "text": "கெரிஸ்துவிவுமாதம் கேமரன் மலையுலுக்கு சுட்டி பார்ப்பதற்கு நிறைய தணப் பொறுகின்ற அண்ணர் guilt",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Mariam speaking Georgian.webm#georgian": {
+  "start": 20.31,
+  "dur": 20,
+  "speech": 0.96,
+  "prob": 0.925,
+  "top": [
+   [
+    "ka",
+    0.925
+   ],
+   [
+    "hy",
+    0.05
+   ],
+   [
+    "sk",
+    0.013
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "ka",
+    0.67
+   ],
+   [
+    "ka",
+    0.76
+   ],
+   [
+    "ka",
+    0.53
+   ],
+   [
+    "ka",
+    0.92
+   ]
+  ],
+  "text": "ეე ეე ეე ეე ეე ეე ეე ეე ეე ეე ეე ეე ეე ეე ეე ეე ეე ეე ეე ეე ეე ეე ეე ეე ეე ეე ეე ე ე ეე ე ეე ე ეე ე ე ე ე ე ე ე ე ე ე �",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Mark speaking Luxembourgish.webm#luxembourgish": {
+  "start": 135.41,
+  "dur": 20,
+  "speech": 0.88,
+  "prob": 0.041,
+  "top": [
+   [
+    "yi",
+    0.518
+   ],
+   [
+    "de",
+    0.139
+   ],
+   [
+    "oc",
+    0.057
+   ]
+  ],
+  "en": 0.004,
+  "chunks": [
+   [
+    "de",
+    0.6
+   ],
+   [
+    "de",
+    0.82
+   ],
+   [
+    "de",
+    0.9
+   ],
+   [
+    "de",
+    0.61
+   ]
+  ],
+  "text": "Letzböjarspróch vaad anfet in deitschen dialectas. Azepis vaad ons als Letzböj definéat. Et tödoch zing avontaj en et das enkspróch die vunemmels letzböj gespáat, ke têch misi kwaasiforséat poliglot zigeen. Mish waad zing deitsch, franzoïch, an englö.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Marta Speaking Polish.webm#polish": {
+  "start": 93.46,
+  "dur": 20,
+  "speech": 0.9,
+  "prob": 0.998,
+  "top": [
+   [
+    "pl",
+    0.998
+   ],
+   [
+    "en",
+    0.001
+   ],
+   [
+    "ru",
+    0
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "pl",
+    1
+   ],
+   [
+    "pl",
+    1
+   ],
+   [
+    "pl",
+    0.99
+   ],
+   [
+    "pl",
+    0.99
+   ]
+  ],
+  "text": "ciepłe miejsce, domowy obiad mamy czy kominek. To jest również całe... Nasze państwo, nasz kraj to jest dom, gdyż inaczej się człowiek czuje u siebie, inaczej się człowiek czuje jak idzie po ulicy w Polsce, jak rozumie innych ludzi, niż jak jest...",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Marta speaking Polish.webm#polish": {
+  "start": 61.97,
+  "dur": 20,
+  "speech": 0.82,
+  "prob": 0.999,
+  "top": [
+   [
+    "pl",
+    0.999
+   ],
+   [
+    "en",
+    0.001
+   ],
+   [
+    "nn",
+    0
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "pl",
+    1
+   ],
+   [
+    "pl",
+    1
+   ],
+   [
+    "pl",
+    1
+   ],
+   [
+    "pl",
+    0.99
+   ]
+  ],
+  "text": "I właśnie, co do brzmienia języka polskiego, to jest chyba ten drugi główny powód, dla którego lubię język polski. Po prostu podoba mi się, jak on brzmi. Chociaż ostatnio pojawiły się we mnie pewne wątpliwości. Czy aby na pewno lubię język polski za to, jak brzmi? A może po prostu ja jestem tak przyzwyczajana...",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- María speaking Guarani.webm#guarani": {
+  "start": 61.3,
+  "dur": 20,
+  "speech": 0.73,
+  "prob": 0.987,
+  "top": [
+   [
+    "es",
+    0.92
+   ],
+   [
+    "gl",
+    0.019
+   ],
+   [
+    "en",
+    0.013
+   ]
+  ],
+  "en": 0.013,
+  "chunks": [
+   [
+    "es",
+    0.95
+   ],
+   [
+    "es",
+    0.91
+   ],
+   [
+    "es",
+    0.72
+   ],
+   [
+    "es",
+    0.96
+   ]
+  ],
+  "text": "No hay plata para la casa, no hay pasaje. Y el dinero no vale mucho. El peso no vale nada. Pero aquí está, no se venden bares. Y aquí hay bares para la casa. Para la pobreza está en las paredes.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Matt speaking Yiddish.webm#yiddish": {
+  "error": "no speech-dense window",
+  "total": 43.3,
+  "text": null,
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Maxime speaking Québecois French.webm#french": {
+  "start": 168.56,
+  "dur": 20,
+  "speech": 0.88,
+  "prob": 0.975,
+  "top": [
+   [
+    "fr",
+    0.975
+   ],
+   [
+    "en",
+    0.017
+   ],
+   [
+    "nn",
+    0.002
+   ]
+  ],
+  "en": 0.017,
+  "chunks": [
+   [
+    "fr",
+    0.97
+   ],
+   [
+    "fr",
+    0.97
+   ],
+   [
+    "fr",
+    0.95
+   ],
+   [
+    "fr",
+    0.91
+   ]
+  ],
+  "text": "moment de fierté. Mais ça s'arrête pas là parce que lentement le café se remplissait. D'ailleurs il y avait comme une grande vague de gens qui sont arrivés à ce moment là. Moi j'avais une grande table, j'étais assis là tout seul. Je me dis bon, je vais me lever, m'aller m'asseoir avec eux autres et me laisser la table pour du bon lit.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Mckensie speaking English.webm#english": {
+  "start": 50.77,
+  "dur": 20,
+  "speech": 0.96,
+  "prob": 0.986,
+  "top": [
+   [
+    "en",
+    0.986
+   ],
+   [
+    "la",
+    0.002
+   ],
+   [
+    "nn",
+    0.002
+   ]
+  ],
+  "en": 0.986,
+  "chunks": [
+   [
+    "en",
+    0.99
+   ],
+   [
+    "en",
+    0.98
+   ],
+   [
+    "en",
+    0.98
+   ],
+   [
+    "en",
+    0.98
+   ]
+  ],
+  "text": "So that basically is my pitch. You can find out more information about us at info at artandfeminism.org. And you can, yeah, basically I think that's the way that you can find us. You can also find us on Instagram at artandfem, A-R-T, and at The M, and on Twitter at artandfeminism. And that's the way. Thank you.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Mereinur speaking Kazakh.webm#kazakh": {
+  "start": 93.52,
+  "dur": 20,
+  "speech": 0.94,
+  "prob": 0.768,
+  "top": [
+   [
+    "kk",
+    0.768
+   ],
+   [
+    "az",
+    0.133
+   ],
+   [
+    "ru",
+    0.033
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "kk",
+    0.61
+   ],
+   [
+    "ru",
+    0.44
+   ],
+   [
+    "ru",
+    0.29
+   ],
+   [
+    "mn",
+    0.67
+   ]
+  ],
+  "text": "Біз бұларға ең алдымен қуинау теренде қуинау терен бай тілімізді мұра едіп қалдыруыныз керек. Бұлар ене бүгінгіл жүртің саңасына баланызды. Алынды әлемді үскерікіміз кенесе, ең алдымен өз-өзіміздейін бастайық. Тілімізді жүрел...",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Michael speaking Khmer.webm#khmer": {
+  "start": 15.19,
+  "dur": 20,
+  "speech": 0.85,
+  "prob": 0.819,
+  "top": [
+   [
+    "km",
+    0.819
+   ],
+   [
+    "la",
+    0.025
+   ],
+   [
+    "en",
+    0.025
+   ]
+  ],
+  "en": 0.025,
+  "chunks": [
+   [
+    "en",
+    0.18
+   ],
+   [
+    "en",
+    0.31
+   ],
+   [
+    "km",
+    0.3
+   ],
+   [
+    "th",
+    0.39
+   ]
+  ],
+  "text": "Әа, Әа, I have a Khmer mother and father, Әа, Әа, I am not only Khmer, Әа, I am American, Әа, I have Khmer ancestors, Әа, Әа, I have my mother ancestors.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Mirela speaking Bosnian.webm#bosnian": {
+  "start": 82.93,
+  "dur": 20,
+  "speech": 0.97,
+  "prob": 0.722,
+  "top": [
+   [
+    "bs",
+    0.722
+   ],
+   [
+    "hr",
+    0.159
+   ],
+   [
+    "sr",
+    0.066
+   ]
+  ],
+  "en": 0.008,
+  "chunks": [
+   [
+    "bs",
+    0.63
+   ],
+   [
+    "hr",
+    0.57
+   ],
+   [
+    "bs",
+    0.67
+   ],
+   [
+    "bs",
+    0.46
+   ]
+  ],
+  "text": "Jeziku. Dakle, kao što sam rekla, studiram engleski jezik i književnost. Pored englesko govorim još tri strana jezika. Albanski, koji je dakle jezik većine ovdje na Kosovu. Zatim govorim španski i njemački jezik. I naravno ako možemo svrstati pošto su ovo svi jeziki svijeta, srpski, crnogorski, hrvati.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Mohamad speaking Kurdish.webm#kurdish": {
+  "start": 10.42,
+  "dur": 20,
+  "speech": 0.85,
+  "prob": 0.997,
+  "top": [
+   [
+    "ps",
+    0.37
+   ],
+   [
+    "fa",
+    0.284
+   ],
+   [
+    "ar",
+    0.112
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "sq",
+    0.64
+   ],
+   [
+    "ar",
+    0.3
+   ],
+   [
+    "ar",
+    0.79
+   ],
+   [
+    "ar",
+    0.81
+   ]
+  ],
+  "text": "ḵo ḵurd enkoo le ba kur e Kurdistan e le rojava e Kurdistan e ef zarav de axivin ḵo ḵurd enkoo le ba shura e Kurdistan e le rojala e Kurdistan e be sorani de axivin jan pertrin yani bas kurd enkoo be kurmanji je be axivin lwirji henna az buxwa",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Nataev speaking Uzbek.webm#uzbek": {
+  "start": 4.63,
+  "dur": 20,
+  "speech": 0.95,
+  "prob": 0.001,
+  "top": [
+   [
+    "kk",
+    0.756
+   ],
+   [
+    "az",
+    0.088
+   ],
+   [
+    "mn",
+    0.035
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "kk",
+    0.57
+   ],
+   [
+    "sk",
+    0.26
+   ],
+   [
+    "de",
+    0.12
+   ],
+   [
+    "kk",
+    0.64
+   ]
+  ],
+  "text": "2900 dan bry uz biqtja Wikipedia gye xasakush b'gelerma Bundan ta saka Ingreshtja Wikipedia daya ma taqqatub turama Wikipedia, sizge malun bugan dyk otsyuq insikotopedia unge hamza xasakusha ula be 100 milleta daqtuse adamdın ona tili bulgan nga qaramastan Wikipedia mi sajda g'na xashqo",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Naw speaking Burmese.webm#burmese": {
+  "start": 85.36,
+  "dur": 20,
+  "speech": 0.91,
+  "prob": 0.69,
+  "top": [
+   [
+    "my",
+    0.69
+   ],
+   [
+    "zh",
+    0.087
+   ],
+   [
+    "th",
+    0.079
+   ]
+  ],
+  "en": 0.014,
+  "chunks": [
+   [
+    "zh",
+    0.67
+   ],
+   [
+    "ms",
+    0.69
+   ],
+   [
+    "ko",
+    0.4
+   ],
+   [
+    "es",
+    0.12
+   ]
+  ],
+  "text": "But I'm not sure if I can go to the airport there. Because I can't go to the airport in the morning. I don't know if it's because I can't go to the airport in the morning. I'll go to the airport after I finish my work. But I'm not sure if I can go to the airport.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Netha speaking Malayalam.webm#malayalam": {
+  "start": 115.92,
+  "dur": 20,
+  "speech": 1,
+  "prob": 0.978,
+  "top": [
+   [
+    "ml",
+    0.978
+   ],
+   [
+    "en",
+    0.006
+   ],
+   [
+    "fi",
+    0.005
+   ]
+  ],
+  "en": 0.006,
+  "chunks": [
+   [
+    "ml",
+    0.97
+   ],
+   [
+    "ml",
+    0.98
+   ],
+   [
+    "ml",
+    0.97
+   ],
+   [
+    "ml",
+    0.99
+   ]
+  ],
+  "text": "სოოეეაიალი მეღსაიეი კაეავსრ სვბაბ რლირლმი ტრელუერმლმი ყღეოეეენი So, the main point is that my friends before had a lot of friends They get to see everyone again and again and make new friends, that is the thing I like So, I've tried to do all that",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Nila speaking Indonesian.webm#indonesian": {
+  "start": 78.96,
+  "dur": 20,
+  "speech": 0.89,
+  "prob": 0.997,
+  "top": [
+   [
+    "id",
+    0.997
+   ],
+   [
+    "en",
+    0.001
+   ],
+   [
+    "tl",
+    0
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "id",
+    0.99
+   ],
+   [
+    "id",
+    0.99
+   ],
+   [
+    "id",
+    0.96
+   ],
+   [
+    "id",
+    0.97
+   ]
+  ],
+  "text": "Dan kelima-limanya diberikan kesempatan untuk merayakan hari raya masing-masing Misalnya, kalau misalnya ada hari raya untuk satu agama... Akan ada hari libur untuk agama itu dan juga untuk agama lain Jadi tidak ada simpang di dalam rayaan keagamaan Selain itu...",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Olaniyan speaking Yoruba.webm#yoruba": {
+  "start": 47.99,
+  "dur": 20,
+  "speech": 0.81,
+  "prob": 0.97,
+  "top": [
+   [
+    "yo",
+    0.97
+   ],
+   [
+    "ht",
+    0.017
+   ],
+   [
+    "sn",
+    0.003
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "yo",
+    0.95
+   ],
+   [
+    "yo",
+    0.36
+   ],
+   [
+    "yo",
+    0.82
+   ],
+   [
+    "yo",
+    0.91
+   ]
+  ],
+  "text": "ʻAʻtʻi ba nʻon ni mʻotʻi mʻon ʻi ba ʻaʻtʻi maʻa ʻaʻn kʻo wikipedia ni ʻe de ujiboh ʻi ʻi bon mʻom ʻan ba won nʻon ni ʻi ba ʻu po ʻaʻtʻi maʻa kʻo ʻi ba ʻi ba ʻidu mɨ tʰu ʻu ka ʻi di kɨ di",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Orsolya speaking Hungarian.webm#hungarian": {
+  "start": 63.51,
+  "dur": 20,
+  "speech": 0.88,
+  "prob": 0.997,
+  "top": [
+   [
+    "hu",
+    0.997
+   ],
+   [
+    "en",
+    0.001
+   ],
+   [
+    "fa",
+    0
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "hu",
+    1
+   ],
+   [
+    "hu",
+    0.98
+   ],
+   [
+    "hu",
+    0.96
+   ],
+   [
+    "hu",
+    0.98
+   ]
+  ],
+  "text": "És én nagyon szeretném mindenkinek elmondani azt, hogy ez igenis egy nagyon jó hely, nagyon kedves emberekkel, hihetetlen lehetőségek előtt áll ez az ország szerintem, és én nagyon szeretnék itt lenni és látni, ahogy fejlődik.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Pau speaking French, Lithuanian, Italian, English, Spanish, and Catalan.webm#italian": {
+  "start": 174.23,
+  "dur": 20,
+  "speech": 0.94,
+  "prob": 0.994,
+  "top": [
+   [
+    "it",
+    0.994
+   ],
+   [
+    "la",
+    0.001
+   ],
+   [
+    "es",
+    0.001
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "it",
+    0.99
+   ],
+   [
+    "it",
+    0.92
+   ],
+   [
+    "it",
+    0.69
+   ],
+   [
+    "it",
+    0.97
+   ]
+  ],
+  "text": "So che anche la mia grammatica, la mia strutturazione verbale, come faccio le parole, le frasi, non è perfetta, ma secondo me mi posso fare capire agli italiani e le persone che parlano italiano.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Priscilla speaking Tok Pisin.webm#tok-pisin": {
+  "start": 58.96,
+  "dur": 20,
+  "speech": 0.85,
+  "prob": 0.794,
+  "top": [
+   [
+    "en",
+    0.206
+   ],
+   [
+    "jw",
+    0.121
+   ],
+   [
+    "tl",
+    0.115
+   ]
+  ],
+  "en": 0.206,
+  "chunks": [
+   [
+    "ro",
+    0.42
+   ],
+   [
+    "en",
+    0.47
+   ],
+   [
+    "bn",
+    0.39
+   ],
+   [
+    "ar",
+    0.7
+   ]
+  ],
+  "text": "The store number is 711-2. The restaurant number is 2. The machine number is 3.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Raluca speaking Romanian.webm#romanian": {
+  "start": 33.11,
+  "dur": 20,
+  "speech": 0.86,
+  "prob": 0.993,
+  "top": [
+   [
+    "ro",
+    0.993
+   ],
+   [
+    "en",
+    0.003
+   ],
+   [
+    "pt",
+    0.001
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "ro",
+    0.97
+   ],
+   [
+    "ro",
+    0.95
+   ],
+   [
+    "ro",
+    0.98
+   ],
+   [
+    "hy",
+    0.23
+   ]
+  ],
+  "text": "și se numește Lasteaua și sună cam așa. Lasteaua care a îlsărit e o cale atât de lungă că mii de ani i-au trebuit luminii să ne ajungă. Poate de mult s-a stins în drum în depărtărea albastra, iera să-i abia acum lucit privirul nostrui. Cam așa este. Poate sună ciudat limba română.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Raphael speaking Twi.webm#twi": {
+  "start": 81.43,
+  "dur": 20,
+  "speech": 0.85,
+  "prob": 0.993,
+  "top": [
+   [
+    "yo",
+    0.523
+   ],
+   [
+    "ht",
+    0.138
+   ],
+   [
+    "ln",
+    0.13
+   ]
+  ],
+  "en": 0.007,
+  "chunks": [
+   [
+    "yo",
+    0.28
+   ],
+   [
+    "yo",
+    0.47
+   ],
+   [
+    "yo",
+    0.53
+   ],
+   [
+    "yo",
+    0.5
+   ]
+  ],
+  "text": "longe njegò ma nitu mi ni yek ese, anjiti na efe nukutun funo, e nasa o xi gana ma j kanti bupostan, onon kwa kani wajina wajeya o majini t foamoshenasen, njengò mwede kaka kani miti kama ma wome wone mon no, ene ma kanchoni. Njengò mini bisik.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Rosemary speaking Scottish Gaelic.webm#scottish-gaelic": {
+  "start": 6.29,
+  "dur": 20,
+  "speech": 1,
+  "prob": 0.954,
+  "top": [
+   [
+    "cy",
+    0.545
+   ],
+   [
+    "fo",
+    0.308
+   ],
+   [
+    "en",
+    0.046
+   ]
+  ],
+  "en": 0.046,
+  "chunks": [
+   [
+    "cy",
+    0.76
+   ],
+   [
+    "cy",
+    0.65
+   ],
+   [
+    "cy",
+    0.4
+   ],
+   [
+    "cy",
+    0.6
+   ]
+  ],
+  "text": "Mae Galic ac ar o'r Galic ac ar y ddau, ac yn y dyfodol mae'n cael fy nghymdeithas i'r ddechrau ar y ros i'r glechgwyr beoedd yn y tŷ. Ond yn y dyfodol mae'n cael fy ddau trwy'r sgol ac mae'n cael fy nghymdeithas i'r Galic ar yr adnodd. Mae'n dweud ymlaen yn y ddau o blwyddyn ymlaen trwy'r ddau o'r Galic, ac yn y ddau o'r...",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Sai speaking Tamil.webm#tamil": {
+  "start": 119.06,
+  "dur": 20,
+  "speech": 0.98,
+  "prob": 0.995,
+  "top": [
+   [
+    "ta",
+    0.995
+   ],
+   [
+    "en",
+    0.001
+   ],
+   [
+    "te",
+    0.001
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "ta",
+    0.99
+   ],
+   [
+    "ta",
+    0.97
+   ],
+   [
+    "ta",
+    0.96
+   ],
+   [
+    "ta",
+    0.95
+   ]
+  ],
+  "text": "கோஞ்பத்தூற் கேரலவின் சாயில் உள்ள Excellent Thamizh Country இந்த வாய்ப்பை எங்க காடித்ததுக்கு என்னுடைய நண்பர்களுக்கும் என்னுடைய பழிலைக் கழகத்துக்கும் நான் என்னந்திரிய தெரிவித்துக்கொள்கிறேன் என்னுடைய தாய் மொழியம் தமிழி ஆனால் நேரம் ஆகிவிட்றதால்",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Sandra speaking Welsh.webm#welsh": {
+  "start": 94.23,
+  "dur": 20,
+  "speech": 0.92,
+  "prob": 0.993,
+  "top": [
+   [
+    "cy",
+    0.993
+   ],
+   [
+    "en",
+    0.002
+   ],
+   [
+    "la",
+    0.001
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "cy",
+    0.97
+   ],
+   [
+    "cy",
+    0.97
+   ],
+   [
+    "cy",
+    0.97
+   ],
+   [
+    "cy",
+    0.87
+   ]
+  ],
+  "text": "Roeddwn i'n dod yn ôl i gweithio yma yn y gogledd a dros Gymru i gyd i ddweud y gwir. Ac felly mae'n rhaid i mi dysgu'r iaith. So mi ei isi i cwrs o pann a dosbarthau nos a, wel nawr, dwi ddim yn hollol rygol, dwi dal yn dysgu.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Sanjoy speaking Bengali.webm#bengali": {
+  "start": 41.72,
+  "dur": 20,
+  "speech": 0.81,
+  "prob": 0.987,
+  "top": [
+   [
+    "bn",
+    0.987
+   ],
+   [
+    "en",
+    0.005
+   ],
+   [
+    "la",
+    0.002
+   ]
+  ],
+  "en": 0.005,
+  "chunks": [
+   [
+    "bn",
+    0.94
+   ],
+   [
+    "bn",
+    0.97
+   ],
+   [
+    "bn",
+    0.55
+   ],
+   [
+    "bn",
+    0.97
+   ]
+  ],
+  "text": "চবাটাব sao gegeben 14 চবাতাবলো and my life depicted",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Sara speaking Portuguese.webm#portuguese": {
+  "start": 18.71,
+  "dur": 20,
+  "speech": 0.93,
+  "prob": 0.992,
+  "top": [
+   [
+    "pt",
+    0.992
+   ],
+   [
+    "en",
+    0.004
+   ],
+   [
+    "nn",
+    0.001
+   ]
+  ],
+  "en": 0.004,
+  "chunks": [
+   [
+    "pt",
+    0.96
+   ],
+   [
+    "pt",
+    0.95
+   ],
+   [
+    "pt",
+    0.97
+   ],
+   [
+    "pt",
+    0.98
+   ]
+  ],
+  "text": "Escolhi fazer este mestrado porque gosto muito de línguas, já estudei italiano, francês, alemão, inglês, claro, e neste momento estou a estudar holandês aqui. Aqui nesta província também se fala outra língua, para além do holandês, o frísio, e é uma das razões que eu também decidi escolher este mestrado.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Scarlett speaking Urdu.webm#urdu": {
+  "start": 49.52,
+  "dur": 20,
+  "speech": 0.86,
+  "prob": 0.975,
+  "top": [
+   [
+    "ur",
+    0.975
+   ],
+   [
+    "en",
+    0.011
+   ],
+   [
+    "ar",
+    0.006
+   ]
+  ],
+  "en": 0.011,
+  "chunks": [
+   [
+    "ur",
+    0.96
+   ],
+   [
+    "ur",
+    0.91
+   ],
+   [
+    "ur",
+    0.74
+   ],
+   [
+    "cy",
+    0.78
+   ]
+  ],
+  "text": "تو میں یہاں سے وہاں اپنے آپ کو غیر محسوس کرتی ہوں وہ اس لئے کہ جب میں وہاں جاتی ہوں تو مجھے یادلائے جاتا ہے کہ کتنا میری سوچ، میرا رویہ اور میرا بولنے کا طریقہ بدل گیا ہے بہت مختلف ہو گیا ہے اور لیکن میرے لیے",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Senful speaking Malay.webm#malay": {
+  "error": "no speech-dense window",
+  "total": 125,
+  "text": null,
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Suri speaking Yiddish.webm#yiddish": {
+  "start": 255.16,
+  "dur": 20,
+  "speech": 0.81,
+  "prob": 0.986,
+  "top": [
+   [
+    "yi",
+    0.986
+   ],
+   [
+    "br",
+    0.006
+   ],
+   [
+    "ht",
+    0.001
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "yi",
+    0.99
+   ],
+   [
+    "yi",
+    0.68
+   ],
+   [
+    "de",
+    0.48
+   ],
+   [
+    "en",
+    0.76
+   ]
+  ],
+  "text": "ו��요, אוקיי, איך לך ארמנשט ekhen. איך אורמפי אכע Sophie. את ג хоть י robustertas Berry but you for sure know what i'm like. ו Football ísimo How do I say fare? נ gustFrank obviously safe",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Tao speaking Thai.webm#thai": {
+  "start": 50.68,
+  "dur": 20,
+  "speech": 0.81,
+  "prob": 0.979,
+  "top": [
+   [
+    "th",
+    0.979
+   ],
+   [
+    "en",
+    0.009
+   ],
+   [
+    "zh",
+    0.002
+   ]
+  ],
+  "en": 0.009,
+  "chunks": [
+   [
+    "th",
+    0.94
+   ],
+   [
+    "th",
+    0.96
+   ],
+   [
+    "th",
+    0.91
+   ],
+   [
+    "th",
+    0.84
+   ]
+  ],
+  "text": "และก็สอนคนเวียดนาลภาษาจีนอยู่ที่นี่ ทุกร้านหนังสือที่นี่ครับ ร้านหนังสือที่นี่เป็นร้านที่ทำเพื่อทุกท่านอย่างเป็นกันเอง เพื่อในคนอเชียร์ตะวันออกเชียมได้ มีข้อมูล...",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Two Azerbaijani users speaking Azerbaijani.webm#azerbaijani": {
+  "start": 129.36,
+  "dur": 20,
+  "speech": 0.82,
+  "prob": 0.907,
+  "top": [
+   [
+    "az",
+    0.907
+   ],
+   [
+    "lt",
+    0.029
+   ],
+   [
+    "tr",
+    0.02
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "az",
+    0.75
+   ],
+   [
+    "tr",
+    0.99
+   ],
+   [
+    "tr",
+    0.96
+   ],
+   [
+    "az",
+    0.25
+   ]
+  ],
+  "text": "Gördünüz kimi çəkilişləri tək siz yox, mən də daun etdirəm. Və bu formada burada anas nələ çəkilişli dostunuz bizi çəkir və biz də onu çəkirik. Bu təz birdən bir xartı olar var. Münəkuri otorinku açsın.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Uladzislau speaking Belarusian.webm#belarusian": {
+  "start": 23.6,
+  "dur": 20,
+  "speech": 1,
+  "prob": 0.023,
+  "top": [
+   [
+    "ru",
+    0.554
+   ],
+   [
+    "uk",
+    0.119
+   ],
+   [
+    "en",
+    0.04
+   ]
+  ],
+  "en": 0.04,
+  "chunks": [
+   [
+    "ru",
+    0.8
+   ],
+   [
+    "ru",
+    0.92
+   ],
+   [
+    "ru",
+    0.77
+   ],
+   [
+    "ru",
+    0.76
+   ]
+  ],
+  "text": "Што у хаці там бы врубель, У цане і по курсу старому. Не забыць, як морозам злым, Клямка пальцепяча балюша И адкуль на стале тваім, Бохан свежа, хлеба пахучы. Помніць свой нэржыщы тэнь, Не забыць, як зяуць суседа, Не забыць, як пэя падзень, За гэсцолым сталом бэс.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Valentine speaking Igbo.webm#igbo": {
+  "start": 11.28,
+  "dur": 20,
+  "speech": 0.72,
+  "prob": 0.995,
+  "top": [
+   [
+    "yo",
+    0.608
+   ],
+   [
+    "ht",
+    0.264
+   ],
+   [
+    "ln",
+    0.062
+   ]
+  ],
+  "en": 0.005,
+  "chunks": [
+   [
+    "ht",
+    0.51
+   ],
+   [
+    "nl",
+    0.38
+   ],
+   [
+    "sw",
+    0.34
+   ],
+   [
+    "ht",
+    0.35
+   ]
+  ],
+  "text": "Yeso boy I na atunobu da anwa, maa epidemic unter. My coxAs na mdamnunā now Mmoni Nou Mew-Fridge? Maana kia Kangiainations obuda anwa, ebun Lubi nambi obuda anwe bi da goakwa. Yomal argued eya atasika tos tasya.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Vira speaking Ukrainian.webm#ukrainian": {
+  "start": 167.32,
+  "dur": 20,
+  "speech": 0.92,
+  "prob": 0.996,
+  "top": [
+   [
+    "uk",
+    0.996
+   ],
+   [
+    "ru",
+    0.002
+   ],
+   [
+    "en",
+    0
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "uk",
+    1
+   ],
+   [
+    "uk",
+    0.98
+   ],
+   [
+    "ru",
+    0.8
+   ],
+   [
+    "uk",
+    0.99
+   ]
+  ],
+  "text": "то я вирішила цим зайнятися. Є речі, які я роблю постійно. Наприклад, кожного тижня я перекладаю технічні новини від розробників, про те, що змінилося за тиждень у Вікіпедії. Можливо, є якісь новинки, які людям обов'язково будуть цікаві і про які вони могли би не дізнатися в Вікіпедії.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Wayne speaking Breton.webm#breton": {
+  "start": 212.05,
+  "dur": 20,
+  "speech": 0.74,
+  "prob": 0.378,
+  "top": [
+   [
+    "br",
+    0.378
+   ],
+   [
+    "la",
+    0.192
+   ],
+   [
+    "fr",
+    0.179
+   ]
+  ],
+  "en": 0.019,
+  "chunks": [
+   [
+    "fr",
+    0.41
+   ],
+   [
+    "fr",
+    0.67
+   ],
+   [
+    "de",
+    0.22
+   ],
+   [
+    "fr",
+    0.73
+   ]
+  ],
+  "text": "C'est bien la vie. Cliché, mais très ingrown, c'est ce que nous avons fait. Mais il est juste en dune, à la base. C'est une discrédition de la scolaire en d'eau, pas besoin d'alerte, et l'opéra studio.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Yernur speaking Kazakh.webm#kazakh": {
+  "start": 16.66,
+  "dur": 20,
+  "speech": 0.93,
+  "prob": 0.618,
+  "top": [
+   [
+    "kk",
+    0.618
+   ],
+   [
+    "az",
+    0.19
+   ],
+   [
+    "lt",
+    0.075
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "az",
+    0.28
+   ],
+   [
+    "ru",
+    0.37
+   ],
+   [
+    "km",
+    0.26
+   ],
+   [
+    "az",
+    0.49
+   ]
+  ],
+  "text": "Тайванға келген іме 6 жыл болды. Алқашқы ек жыл Тайванда Тайпей қаласында Кытайша өрендім. Судан кейін. Осын да университетге бастадым. Дипломатия ма мантыра. Казір 40 жыл сонды жылым. Үuringсі ақлық, 6 жылын.",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Yusuf speaking Sundanese.webm#sundanese": {
+  "start": 86.26,
+  "dur": 20,
+  "speech": 0.81,
+  "prob": 0.001,
+  "top": [
+   [
+    "id",
+    0.475
+   ],
+   [
+    "jw",
+    0.392
+   ],
+   [
+    "ms",
+    0.049
+   ]
+  ],
+  "en": 0.004,
+  "chunks": [
+   [
+    "id",
+    0.45
+   ],
+   [
+    "id",
+    0.53
+   ],
+   [
+    "id",
+    0.64
+   ],
+   [
+    "id",
+    0.74
+   ]
+  ],
+  "text": "Nyahun, bahasa Sunda ke, ngakiduhan sistem aksarana nyalira Eta, anu aina diangwete, gubahan tina bahasa Sundahubel Bahasa Sundahubel oge, lemundirunut mah Tiasa ayak kapendak ti hubunganate jeng",
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Zairul speaking Malay.webm#malay": {
+  "error": "no speech-dense window",
+  "total": 59,
+  "text": null,
+  "model": "medium"
+ },
+ "commons:WIKITONGUES- Zerovsho speaking Tajik.webm#tajik": {
+  "start": 45.17,
+  "dur": 20,
+  "speech": 0.86,
+  "prob": 0.082,
+  "top": [
+   [
+    "ps",
+    0.282
+   ],
+   [
+    "fa",
+    0.214
+   ],
+   [
+    "sq",
+    0.083
+   ]
+  ],
+  "en": 0.007,
+  "chunks": [
+   [
+    "fa",
+    0.49
+   ],
+   [
+    "pl",
+    0.33
+   ],
+   [
+    "ps",
+    0.23
+   ],
+   [
+    "en",
+    0.28
+   ]
+  ],
+  "text": "тарау бу гиди чи дегар шароетен edikation, donish, maktab, school, money, pool, osu azm kha azm jat tshot pomir, тарау бараo jy xeito, postadi barao jy xeito, na wa zindagi kino mn New York nde",
+  "model": "medium"
+ },
+ "commons:Wikitongues- Safal speaking Nepali.webm#nepali": {
+  "start": 4.63,
+  "dur": 20,
+  "speech": 0.94,
+  "prob": 0.979,
+  "top": [
+   [
+    "ne",
+    0.979
+   ],
+   [
+    "en",
+    0.003
+   ],
+   [
+    "as",
+    0.003
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "ne",
+    0.84
+   ],
+   [
+    "ne",
+    0.89
+   ],
+   [
+    "ne",
+    0.96
+   ],
+   [
+    "ne",
+    0.93
+   ]
+  ],
+  "text": "क्या? हामरो देशं आउनू औनि तपाले तामंगवरuben geopolit teaching",
+  "model": "medium"
+ },
+ "commons:Zaeem speaking Pashto.MTS.webm#pashto": {
+  "start": 30.71,
+  "dur": 20,
+  "speech": 0.9,
+  "prob": 0.316,
+  "top": [
+   [
+    "ur",
+    0.39
+   ],
+   [
+    "ps",
+    0.316
+   ],
+   [
+    "pa",
+    0.088
+   ]
+  ],
+  "en": 0.007,
+  "chunks": [
+   [
+    "en",
+    0.21
+   ],
+   [
+    "sq",
+    0.24
+   ],
+   [
+    "tl",
+    0.56
+   ],
+   [
+    "ur",
+    0.68
+   ]
+  ],
+  "text": "ត ឦ databищ បអ ក សឧល manque ឮឡ� nasze ឤោក លៅ� demonic ឡ�isms. ភំ ឩេក ឱំ ឵�esianដᴉ. Crow franchise ទ័ ឯ�... ជយឰ័ ភ៊ទ.",
+  "model": "medium"
+ },
+ "commons:Zh-Twitter.ogg#mandarin": {
+  "start": 222,
+  "dur": 20,
+  "speech": 0.9,
+  "prob": 0.998,
+  "top": [
+   [
+    "zh",
+    0.998
+   ],
+   [
+    "en",
+    0.001
+   ],
+   [
+    "ko",
+    0
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "zh",
+    0.99
+   ],
+   [
+    "zh",
+    0.99
+   ],
+   [
+    "zh",
+    0.95
+   ],
+   [
+    "zh",
+    0.97
+   ]
+  ],
+  "text": "Twitter被录入克林斯英文词典30周年版中 Twitter的事宜为一个让人们发表有关个人现状的短消息的网站 动词是以为在Twitter网站上写短消息 据美国商业周刊在2009年5月的统计 使用Twitter的美国大公司CEO",
+  "model": "medium"
+ },
+ "fleurs:am_et:11621976555934089988.wav#amharic": {
+  "start": 0.88,
+  "dur": 13.78,
+  "speech": 0.97,
+  "prob": 0.011,
+  "top": [
+   [
+    "ar",
+    0.636
+   ],
+   [
+    "mt",
+    0.071
+   ],
+   [
+    "ps",
+    0.064
+   ]
+  ],
+  "en": 0.007,
+  "chunks": [
+   [
+    "sq",
+    0.59
+   ],
+   [
+    "ar",
+    0.96
+   ],
+   [
+    "ms",
+    0.48
+   ]
+  ],
+  "text": "ప్లరార్ మైనుతితి పైమానిందింది నుత ప్లర్ త్లాలు నాన్తి కోనాన ప్లానుతు త్లాన్నంది ప్లాన్ ప్లానుతి పరర్రినె పరిసింది.",
+  "model": "medium"
+ },
+ "fleurs:am_et:12384747777709706566.wav#amharic": {
+  "start": 0.95,
+  "dur": 18.74,
+  "speech": 0.98,
+  "prob": 0.006,
+  "top": [
+   [
+    "ps",
+    0.665
+   ],
+   [
+    "fa",
+    0.237
+   ],
+   [
+    "ar",
+    0.028
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "pa",
+    0.43
+   ],
+   [
+    "ps",
+    0.74
+   ],
+   [
+    "fa",
+    0.59
+   ],
+   [
+    "ar",
+    0.97
+   ]
+  ],
+  "text": "වශර්ස්ස් සහියි සම් අනය වීන්පයිස් කරන්න් ඇවිස්ව් දින්පන් දියින් හාන 2 කර අර්ලට සත්ර මිශ්‍ර්ඥ්ව විස්න් කරන්න්න් විශ්‍ර්හාන් ඨබන �",
+  "model": "medium"
+ },
+ "fleurs:am_et:12998937052293449003.wav#amharic": {
+  "error": "no speech-dense window",
+  "total": 15.2,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:am_et:13435547275115311957.wav#amharic": {
+  "start": 0.47,
+  "dur": 14.26,
+  "speech": 0.97,
+  "prob": 0.246,
+  "top": [
+   [
+    "am",
+    0.246
+   ],
+   [
+    "ar",
+    0.192
+   ],
+   [
+    "so",
+    0.153
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "as",
+    0.14
+   ],
+   [
+    "ar",
+    0.67
+   ],
+   [
+    "ar",
+    0.86
+   ]
+  ],
+  "text": "විස ව෉තුයෙළ නැහ මිශ්යිය නැහනය වැළන් ඇරය ලෙනන් ඉරිපම්ය ලුල්න ඇරය අවශ්යන ඇරය හැළුහිකර හැනන් ඇරය මිශ්ය අවහාන.",
+  "model": "medium"
+ },
+ "fleurs:ar_eg:10367320584353134559.wav#arabic": {
+  "start": 0.24,
+  "dur": 14.23,
+  "speech": 0.97,
+  "prob": 0.997,
+  "top": [
+   [
+    "ar",
+    0.997
+   ],
+   [
+    "en",
+    0.001
+   ],
+   [
+    "nn",
+    0
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "ar",
+    0.99
+   ],
+   [
+    "ar",
+    0.99
+   ],
+   [
+    "ar",
+    0.99
+   ]
+  ],
+  "text": "الهاتف الذي يعمل بالأقمار الصناعية لا يعد عموماً بديلاً عن الهاتف المحمول إذ يجب أن تكون في الخارج في وجود خط رؤية واضح مع القمر الصناعي لإجراء مكالمة هاتفية",
+  "model": "medium"
+ },
+ "fleurs:ar_eg:10717708623801440033.wav#arabic": {
+  "start": 1.01,
+  "dur": 15.09,
+  "speech": 0.92,
+  "prob": 0.979,
+  "top": [
+   [
+    "ar",
+    0.979
+   ],
+   [
+    "nn",
+    0.009
+   ],
+   [
+    "en",
+    0.004
+   ]
+  ],
+  "en": 0.004,
+  "chunks": [
+   [
+    "ar",
+    0.84
+   ],
+   [
+    "ar",
+    0.97
+   ],
+   [
+    "ar",
+    0.94
+   ]
+  ],
+  "text": "بمرور الوقت بينما يبدأ سكان الجدد في التكيف مع بيئتهم الجديدة يكون تشابه مع سكان الأخرين تدريجيا",
+  "model": "medium"
+ },
+ "fleurs:ar_eg:1111218701064952461.wav#arabic": {
+  "start": 0.5,
+  "dur": 15.16,
+  "speech": 0.97,
+  "prob": 0.991,
+  "top": [
+   [
+    "ar",
+    0.991
+   ],
+   [
+    "nn",
+    0.003
+   ],
+   [
+    "en",
+    0.002
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "ar",
+    1
+   ],
+   [
+    "ar",
+    0.94
+   ],
+   [
+    "ar",
+    0.98
+   ]
+  ],
+  "text": "من بين 1400 شخص شملهم استطلاع ما قبل الانتخابات الفيدرالية لعام 2010 ذادت نسبة من يعارضون أن تصبح أستراليا جمهورية بمقدار 8% منذ عام 2008",
+  "model": "medium"
+ },
+ "fleurs:ar_eg:1169715995831709235.wav#arabic": {
+  "start": 0.88,
+  "dur": 17.75,
+  "speech": 0.98,
+  "prob": 0.998,
+  "top": [
+   [
+    "ar",
+    0.998
+   ],
+   [
+    "en",
+    0.001
+   ],
+   [
+    "nn",
+    0
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "ar",
+    0.99
+   ],
+   [
+    "ar",
+    0.98
+   ],
+   [
+    "ar",
+    0.99
+   ],
+   [
+    "ar",
+    1
+   ]
+  ],
+  "text": "إنها تستعمل تقنية مرتبطة بالأقمار الاصطناعية بخلاف التقنية القديمة التي تستعمل رضاراً أرضياً للسماح للمراقبين الجويين بتحديد مكان طائرة بدقة أعلى وتزود الطيارين بمعلومات محددة أكثر.",
+  "model": "medium"
+ },
+ "fleurs:bg_bg:10214319390221351261.wav#bulgarian": {
+  "start": 0.53,
+  "dur": 16.18,
+  "speech": 0.98,
+  "prob": 0.995,
+  "top": [
+   [
+    "bg",
+    0.995
+   ],
+   [
+    "ro",
+    0.003
+   ],
+   [
+    "nn",
+    0.001
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "bg",
+    0.98
+   ],
+   [
+    "bg",
+    0.95
+   ],
+   [
+    "bg",
+    0.98
+   ]
+  ],
+  "text": "Широки болеварти, изгради с стъклини фасади и съвременни тръговски центрове се редуват в традиционно червени покриви пазар от 18 век и стари джеми и църкви, пъпреки че атмосферата в грата е по-оплиска до среди Семноморска Европа, отколкото до традиционна Турция.",
+  "model": "medium"
+ },
+ "fleurs:bg_bg:11451792516835486834.wav#bulgarian": {
+  "start": 0.34,
+  "dur": 18.2,
+  "speech": 0.96,
+  "prob": 0.996,
+  "top": [
+   [
+    "bg",
+    0.996
+   ],
+   [
+    "ro",
+    0.002
+   ],
+   [
+    "mk",
+    0
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "bg",
+    1
+   ],
+   [
+    "bg",
+    0.95
+   ],
+   [
+    "bg",
+    0.98
+   ],
+   [
+    "bg",
+    0.98
+   ]
+  ],
+  "text": "Структурата на перата предполага, че те не са били използвани по време на полет, а по-скоро за регулиране температурата или парадиране. Според инсетователите, въпреки че това е опашката на млад Тинозавър, пробата показва оперение на възрастен екземпляр, а не пилешки пух.",
+  "model": "medium"
+ },
+ "fleurs:bg_bg:11886482788558419978.wav#bulgarian": {
+  "error": "no speech-dense window",
+  "total": 14.6,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:bg_bg:13432403841880557638.wav#bulgarian": {
+  "start": 0.95,
+  "dur": 15.89,
+  "speech": 0.98,
+  "prob": 0.99,
+  "top": [
+   [
+    "bg",
+    0.99
+   ],
+   [
+    "mk",
+    0.003
+   ],
+   [
+    "hr",
+    0.002
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "bg",
+    0.98
+   ],
+   [
+    "bg",
+    0.96
+   ],
+   [
+    "bg",
+    0.97
+   ]
+  ],
+  "text": "В днешно време широко разпространена фархипелага, яванската кухня включва множество семпл подправени естия, а преобладаващите аромати, които яванците предпочитат салюти, чушки, фастъци, захар, особено яванска кокосова захар, както и разнообразни ароматни подправки.",
+  "model": "medium"
+ },
+ "fleurs:ceb_ph:10268972956478395910.wav#cebuano": {
+  "start": 0.21,
+  "dur": 15,
+  "speech": 0.9,
+  "prob": 0.953,
+  "top": [
+   [
+    "tl",
+    0.779
+   ],
+   [
+    "en",
+    0.047
+   ],
+   [
+    "jw",
+    0.032
+   ]
+  ],
+  "en": 0.047,
+  "chunks": [
+   [
+    "tl",
+    0.71
+   ],
+   [
+    "tl",
+    0.76
+   ],
+   [
+    "tl",
+    0.35
+   ]
+  ],
+  "text": "Si Ruben Utapa ang Adonai kinatasang punto sa mga ining 70 kada ghani sa 41 lamang kabula pinaggi sa pag-igo sa 11 niya upat, doha ka hunom.",
+  "model": "medium"
+ },
+ "fleurs:ceb_ph:10516192674449033300.wav#cebuano": {
+  "start": 0.44,
+  "dur": 20,
+  "speech": 0.86,
+  "prob": 0.962,
+  "top": [
+   [
+    "tl",
+    0.863
+   ],
+   [
+    "en",
+    0.038
+   ],
+   [
+    "nn",
+    0.019
+   ]
+  ],
+  "en": 0.038,
+  "chunks": [
+   [
+    "tl",
+    0.72
+   ],
+   [
+    "tl",
+    0.63
+   ],
+   [
+    "ms",
+    0.41
+   ],
+   [
+    "tl",
+    0.79
+   ]
+  ],
+  "text": "Isip, NSA gtabangan niya si Carter sa diplomatikong pagdumala sa mga kalihukan, sa kalibutan, sa mga sama sa Camp David across sa Accords sa 28, 1978. Paghimong...",
+  "model": "medium"
+ },
+ "fleurs:ceb_ph:11024139271704438119.wav#cebuano": {
+  "start": 1.27,
+  "dur": 18.07,
+  "speech": 0.85,
+  "prob": 0.983,
+  "top": [
+   [
+    "tl",
+    0.93
+   ],
+   [
+    "en",
+    0.017
+   ],
+   [
+    "ar",
+    0.012
+   ]
+  ],
+  "en": 0.017,
+  "chunks": [
+   [
+    "tl",
+    0.88
+   ],
+   [
+    "tl",
+    0.93
+   ],
+   [
+    "tl",
+    0.84
+   ],
+   [
+    "tl",
+    0.9
+   ]
+  ],
+  "text": "Dapat masabdan sa mga babayi ang mga kalainan sa mga kultor ang posibling mag-isulta sa ilang gitawag na pagbinastos o gomong lang ng sundan birahon ang bokton o uban pa.",
+  "model": "medium"
+ },
+ "fleurs:ceb_ph:11341028936287422476.wav#cebuano": {
+  "start": 0.47,
+  "dur": 16.12,
+  "speech": 0.83,
+  "prob": 0.978,
+  "top": [
+   [
+    "tl",
+    0.887
+   ],
+   [
+    "en",
+    0.022
+   ],
+   [
+    "nn",
+    0.02
+   ]
+  ],
+  "en": 0.022,
+  "chunks": [
+   [
+    "tl",
+    0.72
+   ],
+   [
+    "tl",
+    0.89
+   ],
+   [
+    "tl",
+    0.92
+   ]
+  ],
+  "text": "Ang pinakaunan niyang lumba maung slalom. Di na kadawat si Yaug did not finish iyang unang pagdagan. Ang 30 size sa... sa gatos 16 nga mga kakumpetensya at dunay lamang resulta sa maung lumba.",
+  "model": "medium"
+ },
+ "fleurs:ckb_iq:10291673238695184316.wav#kurdish": {
+  "error": "no speech-dense window",
+  "total": 14.6,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:ckb_iq:10376614085066511744.wav#kurdish": {
+  "error": "no speech-dense window",
+  "total": 16,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:ckb_iq:10433190303413508291.wav#kurdish": {
+  "error": "no speech-dense window",
+  "total": 16.2,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:ckb_iq:10718237189896345645.wav#kurdish": {
+  "start": 0.98,
+  "dur": 20,
+  "speech": 0.98,
+  "prob": 0.975,
+  "top": [
+   [
+    "fa",
+    0.462
+   ],
+   [
+    "ps",
+    0.193
+   ],
+   [
+    "sq",
+    0.057
+   ]
+  ],
+  "en": 0.025,
+  "chunks": [
+   [
+    "fa",
+    0.68
+   ],
+   [
+    "fa",
+    0.52
+   ],
+   [
+    "ar",
+    0.67
+   ],
+   [
+    "fa",
+    0.35
+   ]
+  ],
+  "text": "اینجا از ازور برد استلکو مالا درگه کده خوارنی جاوائی اما چشنهل خوارنی به حارات کراوی ساده و تاته همه بنابانگه کن کتاب یک هنه هز ینلی و وکو علی بابو بی بری توی نوشکر بطیبتی شکری جویز ویندی و جاوائی لگال تندن به حاراتی بندارده",
+  "model": "medium"
+ },
+ "fleurs:ckb_iq:12356723981749176395.wav#kurdish": {
+  "start": 5.4,
+  "dur": 16.05,
+  "speech": 0.94,
+  "prob": 0.994,
+  "top": [
+   [
+    "ps",
+    0.597
+   ],
+   [
+    "fa",
+    0.229
+   ],
+   [
+    "ar",
+    0.025
+   ]
+  ],
+  "en": 0.006,
+  "chunks": [
+   [
+    "ps",
+    0.44
+   ],
+   [
+    "fa",
+    0.58
+   ],
+   [
+    "ka",
+    0.17
+   ]
+  ],
+  "text": "глийه طرق و برنافق با سغفی کاش سوری طقليد و روپوش کراون بازار 118 معزگو تو کاریسا کونکان rawn ارسی شارکا کشوحوهایکی زیاد راوششوی داری نوراستی و اوروپیه یارا کشوحوهایا آسای ترجی",
+  "model": "medium"
+ },
+ "fleurs:ckb_iq:13660703172456572400.wav#kurdish": {
+  "start": 1.88,
+  "dur": 16.6,
+  "speech": 0.83,
+  "prob": 0.998,
+  "top": [
+   [
+    "ps",
+    0.547
+   ],
+   [
+    "fa",
+    0.181
+   ],
+   [
+    "tg",
+    0.032
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "ar",
+    0.08
+   ],
+   [
+    "ps",
+    0.52
+   ],
+   [
+    "ar",
+    0.42
+   ]
+  ],
+  "text": "بونمونا فیر بون تیکلاو بونی کوملاتی پیشنیار دا کرین باوی حنداری گرنگ بن بو با کارهنانی انترنت dzej misu awaniter 1995",
+  "model": "medium"
+ },
+ "fleurs:ckb_iq:17576253341158214249.wav#kurdish": {
+  "start": 2.61,
+  "dur": 17.78,
+  "speech": 0.88,
+  "prob": 0.999,
+  "top": [
+   [
+    "fa",
+    0.302
+   ],
+   [
+    "ps",
+    0.213
+   ],
+   [
+    "sq",
+    0.107
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "fa",
+    0.37
+   ],
+   [
+    "fa",
+    0.45
+   ],
+   [
+    "sw",
+    0.2
+   ],
+   [
+    "sq",
+    0.47
+   ]
+  ],
+  "text": "کشه نانی نوان پویند ماریونو فرماند سخترین باردوخی لخورین دنوینیت لسرگای خیرای بو فالو پتس بیارک کبن نو تسدابراوکانی دوهای دارستانکن تپاردابت.",
+  "model": "medium"
+ },
+ "fleurs:ckb_iq:17629596639057731239.wav#kurdish": {
+  "start": 1.97,
+  "dur": 15.22,
+  "speech": 0.92,
+  "prob": 1,
+  "top": [
+   [
+    "ps",
+    0.301
+   ],
+   [
+    "so",
+    0.171
+   ],
+   [
+    "kk",
+    0.092
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "ps",
+    0.37
+   ],
+   [
+    "am",
+    0.28
+   ],
+   [
+    "so",
+    0.25
+   ]
+  ],
+  "text": "మాసికిలా ఉంమాలలమ ఉపి, తానపె పకలినసి నాలో విసిక ఇదిక కనికల నాలమ వివీక పలా. లం మీలా తానలి కా పి ముం నాల.",
+  "model": "medium"
+ },
+ "fleurs:cmn_hans_cn:10116334326946811387.wav#mandarin": {
+  "error": "no speech-dense window",
+  "total": 18.4,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:cmn_hans_cn:10323412965683910375.wav#mandarin": {
+  "error": "no speech-dense window",
+  "total": 15.5,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:cmn_hans_cn:10378712431948705352.wav#mandarin": {
+  "error": "no speech-dense window",
+  "total": 15.4,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:cmn_hans_cn:107165528601558926.wav#mandarin": {
+  "error": "no speech-dense window",
+  "total": 16.8,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:cmn_hans_cn:1074188475771767661.wav#mandarin": {
+  "start": 3.03,
+  "dur": 17.04,
+  "speech": 0.92,
+  "prob": 0.985,
+  "top": [
+   [
+    "zh",
+    0.985
+   ],
+   [
+    "en",
+    0.007
+   ],
+   [
+    "nn",
+    0.002
+   ]
+  ],
+  "en": 0.007,
+  "chunks": [
+   [
+    "zh",
+    0.99
+   ],
+   [
+    "zh",
+    0.98
+   ],
+   [
+    "zh",
+    0.98
+   ]
+  ],
+  "text": "在宽阔的铃音大道、玻璃外墙的建筑和现代化的购物中心中间 散布着传统的红瓦屋顶、18世纪的市场以及古老的清称寺和教堂 不过这所城市比传统的土耳其更有地中海欧洲的氛围",
+  "model": "medium"
+ },
+ "fleurs:cmn_hans_cn:11588356629622749646.wav#mandarin": {
+  "error": "no speech-dense window",
+  "total": 19.3,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:cmn_hans_cn:11595834040520631107.wav#mandarin": {
+  "start": 4.02,
+  "dur": 19.25,
+  "speech": 0.78,
+  "prob": 0.995,
+  "top": [
+   [
+    "zh",
+    0.995
+   ],
+   [
+    "en",
+    0.001
+   ],
+   [
+    "nn",
+    0.001
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "zh",
+    0.98
+   ],
+   [
+    "zh",
+    0.98
+   ],
+   [
+    "zh",
+    0.97
+   ],
+   [
+    "zh",
+    0.99
+   ]
+  ],
+  "text": "现在群岛上到处都能吃到爪哇菜 其中有多款调味方法简单的菜品 而爪哇人喜欢的主要调味料有花生辣椒糖 尤其是爪哇椰子糖和各种香辛料",
+  "model": "medium"
+ },
+ "fleurs:cmn_hans_cn:11968496623114323568.wav#mandarin": {
+  "error": "no speech-dense window",
+  "total": 20.5,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:cmn_hans_cn:12672935131814570594.wav#mandarin": {
+  "start": 6.2,
+  "dur": 16.63,
+  "speech": 0.81,
+  "prob": 0.989,
+  "top": [
+   [
+    "zh",
+    0.989
+   ],
+   [
+    "en",
+    0.004
+   ],
+   [
+    "nn",
+    0.001
+   ]
+  ],
+  "en": 0.004,
+  "chunks": [
+   [
+    "zh",
+    0.94
+   ],
+   [
+    "zh",
+    0.86
+   ],
+   [
+    "zh",
+    0.98
+   ]
+  ],
+  "text": "儘管吉普賽一次英勇廣泛 尤其在非羅木人當中更為盛行 但他通常被認為是一種冒犯 因為他與負面的刻板印象 和對羅木人錯誤的看法相關聯",
+  "model": "medium"
+ },
+ "fleurs:cs_cz:10271652573499546371.wav#czech": {
+  "start": 2,
+  "dur": 14.52,
+  "speech": 0.91,
+  "prob": 0.864,
+  "top": [
+   [
+    "cs",
+    0.864
+   ],
+   [
+    "nn",
+    0.051
+   ],
+   [
+    "sk",
+    0.046
+   ]
+  ],
+  "en": 0.007,
+  "chunks": [
+   [
+    "sk",
+    0.5
+   ],
+   [
+    "cs",
+    0.89
+   ],
+   [
+    "cs",
+    0.96
+   ]
+  ],
+  "text": "Napříč spojenémi státy americkými je známo z ruba 400 000 případů roztroušené sklerózy, což z toho to vnemosnění činí přední neurologické vnemosnění v dospělých v mladším a středním věku.",
+  "model": "medium"
+ },
+ "fleurs:cs_cz:10310248239492377282.wav#czech": {
+  "error": "no speech-dense window",
+  "total": 15.8,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:cs_cz:10567413040573386981.wav#czech": {
+  "start": 2.42,
+  "dur": 14.74,
+  "speech": 0.82,
+  "prob": 0.954,
+  "top": [
+   [
+    "cs",
+    0.954
+   ],
+   [
+    "pl",
+    0.013
+   ],
+   [
+    "sk",
+    0.012
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "cs",
+    0.97
+   ],
+   [
+    "cs",
+    0.84
+   ],
+   [
+    "cs",
+    0.82
+   ]
+  ],
+  "text": "Články vyžadovali jednomyselnej souhlas všich států a teprve poté mohly být doplněny. Státy brali centrální vádu na lehkou váhu, a to natolik, že jejich zástupci často nebyli přítomně.",
+  "model": "medium"
+ },
+ "fleurs:cs_cz:10600734060901820962.wav#czech": {
+  "start": 0.92,
+  "dur": 15.54,
+  "speech": 0.95,
+  "prob": 0.826,
+  "top": [
+   [
+    "cs",
+    0.826
+   ],
+   [
+    "nn",
+    0.061
+   ],
+   [
+    "sk",
+    0.04
+   ]
+  ],
+  "en": 0.023,
+  "chunks": [
+   [
+    "cs",
+    0.77
+   ],
+   [
+    "cs",
+    0.52
+   ],
+   [
+    "cs",
+    0.96
+   ]
+  ],
+  "text": "Struktura peří naznačuje, že nebyla používána za zaletu, ale spíše pro regulaci teploty nebo předvádění. Vědci předpokládají, že i když se jedna oocaz mladého dinosauru, vzorek ukazuje dospělé peří a několiv mláděte.",
+  "model": "medium"
+ },
+ "fleurs:da_dk:10384023295824244841.wav#danish": {
+  "start": 0.76,
+  "dur": 16.34,
+  "speech": 0.87,
+  "prob": 0.911,
+  "top": [
+   [
+    "da",
+    0.911
+   ],
+   [
+    "nn",
+    0.056
+   ],
+   [
+    "en",
+    0.013
+   ]
+  ],
+  "en": 0.013,
+  "chunks": [
+   [
+    "da",
+    0.78
+   ],
+   [
+    "da",
+    0.86
+   ],
+   [
+    "da",
+    0.87
+   ]
+  ],
+  "text": "Nu er det javanesiske køkken bredt tilgængeligt i hele øgegruppen. Det består af en række enkelt krydderiet rette, hvor de mest populære krydderier er jordnødder, chili, sukker, især javans kokosukker og forskellige aromatiske krydderier.",
+  "model": "medium"
+ },
+ "fleurs:da_dk:10643177695350295438.wav#danish": {
+  "start": 1.3,
+  "dur": 20,
+  "speech": 0.96,
+  "prob": 0.985,
+  "top": [
+   [
+    "da",
+    0.985
+   ],
+   [
+    "nn",
+    0.009
+   ],
+   [
+    "en",
+    0.002
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "da",
+    0.8
+   ],
+   [
+    "da",
+    0.75
+   ],
+   [
+    "da",
+    0.91
+   ],
+   [
+    "da",
+    0.97
+   ]
+  ],
+  "text": "Den skrækslagende Kong Ludwig XVI., dronning Marie Antoinette, deres to små børn, 11 år gamle Marie Thérèse og 4 år gamle Louis Charles, og Kongens søster Fug Elisabeth blev tvunget tilbage til Paris fra Versailles den 6. oktober 1789 af en flok, Marques Kvinder.",
+  "model": "medium"
+ },
+ "fleurs:da_dk:1082526890319744810.wav#danish": {
+  "start": 1.01,
+  "dur": 15.38,
+  "speech": 0.92,
+  "prob": 0.996,
+  "top": [
+   [
+    "da",
+    0.996
+   ],
+   [
+    "en",
+    0.002
+   ],
+   [
+    "nn",
+    0.001
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "da",
+    0.99
+   ],
+   [
+    "da",
+    0.91
+   ],
+   [
+    "da",
+    0.98
+   ]
+  ],
+  "text": "I partnerskab mellem NWS og Sporting & Shooter Association of Australia, NSW Inc. blev kvalificeret frivillige rekruteret under Sporting & Shooters Association Jagdprogram.",
+  "model": "medium"
+ },
+ "fleurs:da_dk:10990629507895095010.wav#danish": {
+  "start": 1.27,
+  "dur": 13.73,
+  "speech": 0.78,
+  "prob": 0.963,
+  "top": [
+   [
+    "da",
+    0.963
+   ],
+   [
+    "nn",
+    0.019
+   ],
+   [
+    "en",
+    0.005
+   ]
+  ],
+  "en": 0.005,
+  "chunks": [
+   [
+    "da",
+    0.85
+   ],
+   [
+    "da",
+    0.65
+   ],
+   [
+    "da",
+    0.86
+   ]
+  ],
+  "text": "Før en organisation kan være innovative, skal lederne skabe en kultur, som fremmer innovation, samt videndeling og organisatorisk læring.",
+  "model": "medium"
+ },
+ "fleurs:fr_fr:10231054783949933111.wav#french": {
+  "start": 0,
+  "dur": 15.36,
+  "speech": 1,
+  "prob": 0.996,
+  "top": [
+   [
+    "fr",
+    0.996
+   ],
+   [
+    "en",
+    0.002
+   ],
+   [
+    "nn",
+    0
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "fr",
+    0.99
+   ],
+   [
+    "fr",
+    0.96
+   ],
+   [
+    "fr",
+    1
+   ]
+  ],
+  "text": "Maintenant, largement disponible dans tout l'archipel, la cuisine javanaises propose un éventail de plats simplement assaisonnés, des saveurs prédominantes que le javanais privilégie étant les cacahuètes, les piments, le sucre en particulier le sucre de coco javanais et diverses épices aromatiques.",
+  "model": "medium"
+ },
+ "fleurs:fr_fr:12455102251511200837.wav#french": {
+  "start": 1.59,
+  "dur": 13.88,
+  "speech": 0.97,
+  "prob": 0.996,
+  "top": [
+   [
+    "fr",
+    0.996
+   ],
+   [
+    "en",
+    0.003
+   ],
+   [
+    "it",
+    0
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "fr",
+    0.99
+   ],
+   [
+    "fr",
+    1
+   ],
+   [
+    "fr",
+    0.99
+   ]
+  ],
+  "text": "Ce nouvel environnement a des ressources et des concurrents différents, de sorte que la nouvelle population aura besoin de caractéristiques ou d'adaptation nouvelle pour être un concurrent puissant par rapport à ce dont elle avait besoin auparavant.",
+  "model": "medium"
+ },
+ "fleurs:fr_fr:14069282449977562378.wav#french": {
+  "error": "no speech-dense window",
+  "total": 15,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:fr_fr:14182961541317050604.wav#french": {
+  "error": "no speech-dense window",
+  "total": 15.1,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:gl_es:10311233456086191702.wav#galician": {
+  "start": 0.82,
+  "dur": 18.68,
+  "speech": 0.98,
+  "prob": 0.984,
+  "top": [
+   [
+    "gl",
+    0.984
+   ],
+   [
+    "eu",
+    0.006
+   ],
+   [
+    "ca",
+    0.004
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "es",
+    0.72
+   ],
+   [
+    "es",
+    0.72
+   ],
+   [
+    "gl",
+    0.75
+   ],
+   [
+    "es",
+    0.63
+   ]
+  ],
+  "text": "Os bulevares anchos, os edificios de frontais acristalados en modernos centros comerciais, mesturan-se ente tradicionais, tellados de lo usado vermelho, o mercado do século XIII e bellas mesquitas e igrejas, a pesar de que a cidade tenga unha atmósfera máis propia da Europa Mediterránea que a de Turquía tradicional.",
+  "model": "medium"
+ },
+ "fleurs:gl_es:11945389209038046393.wav#galician": {
+  "error": "no speech-dense window",
+  "total": 14.8,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:gl_es:12322982363628385604.wav#galician": {
+  "start": 2,
+  "dur": 17.27,
+  "speech": 0.88,
+  "prob": 0.437,
+  "top": [
+   [
+    "gl",
+    0.437
+   ],
+   [
+    "ca",
+    0.235
+   ],
+   [
+    "es",
+    0.134
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "es",
+    0.8
+   ],
+   [
+    "es",
+    0.85
+   ],
+   [
+    "es",
+    0.48
+   ]
+  ],
+  "text": "A estrutura das plumas xuxire que non se usaban para boar, senón para regular a temperatura ou como enfeite. Os investigadores xuxeriron que, ainda que se trataba toda cola dun dinosaurio novo, a mostra presenta plumaxa adulta e non se trata de penuncia dunha cría nova.",
+  "model": "medium"
+ },
+ "fleurs:gl_es:13407481082447862607.wav#galician": {
+  "error": "no speech-dense window",
+  "total": 15.3,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:gl_es:15459318379942880759.wav#galician": {
+  "start": 1.52,
+  "dur": 15.41,
+  "speech": 0.95,
+  "prob": 0.795,
+  "top": [
+   [
+    "gl",
+    0.795
+   ],
+   [
+    "es",
+    0.183
+   ],
+   [
+    "ca",
+    0.007
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "es",
+    0.95
+   ],
+   [
+    "es",
+    0.92
+   ],
+   [
+    "gl",
+    0.66
+   ]
+  ],
+  "text": "Na actualidade é fácilmente disponible ao longo do arquipélago, a gastronomía de xaba inclui unha gama de pratos de condimentos simples, sendo os sabores predominantes favoritos dos xabaneses os cacahuetes, os chiles ou azucre, especialmente o azucre de coco de xaba e diferentes especias aromáticas.",
+  "model": "medium"
+ },
+ "fleurs:gl_es:4586262066829418470.wav#galician": {
+  "start": 5.14,
+  "dur": 16.02,
+  "speech": 0.98,
+  "prob": 0.251,
+  "top": [
+   [
+    "eu",
+    0.511
+   ],
+   [
+    "gl",
+    0.251
+   ],
+   [
+    "es",
+    0.117
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "gl",
+    0.4
+   ],
+   [
+    "es",
+    0.93
+   ],
+   [
+    "es",
+    0.82
+   ]
+  ],
+  "text": "na categoría masculina para cegos e a súa guía Ana ou Garcinska remataron en 13ª posición no Super G. O sul coreano John Seor Park terminou en 24ª posición no Super G masculino en modalidade sentada.",
+  "model": "medium"
+ },
+ "fleurs:gl_es:6514071864797778950.wav#galician": {
+  "start": 0.69,
+  "dur": 20,
+  "speech": 1,
+  "prob": 0.947,
+  "top": [
+   [
+    "gl",
+    0.947
+   ],
+   [
+    "ca",
+    0.018
+   ],
+   [
+    "eu",
+    0.018
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "gl",
+    0.56
+   ],
+   [
+    "es",
+    0.85
+   ],
+   [
+    "gl",
+    0.54
+   ],
+   [
+    "es",
+    0.48
+   ]
+  ],
+  "text": "na asencia nacional de seguridad, asistiu a cárter na gestión diplomática de temas internacionais como os acordos de Camp David en 1978, a normalización das relacións entre Estados Unidos e China até a finais dos anos 70, a revolución iraniana que desencadeou a crise dos reféns iranianos en 1979 e invasión de",
+  "model": "medium"
+ },
+ "fleurs:gu_in:10770059002999349627.wav#gujarati": {
+  "error": "no speech-dense window",
+  "total": 14.5,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:gu_in:10934962808328790533.wav#gujarati": {
+  "start": 0.5,
+  "dur": 13.65,
+  "speech": 0.93,
+  "prob": 0.006,
+  "top": [
+   [
+    "hi",
+    0.697
+   ],
+   [
+    "ur",
+    0.193
+   ],
+   [
+    "pa",
+    0.043
+   ]
+  ],
+  "en": 0.005,
+  "chunks": [
+   [
+    "hi",
+    0.7
+   ],
+   [
+    "hi",
+    0.86
+   ],
+   [
+    "hi",
+    0.67
+   ]
+  ],
+  "text": "तेमने एक अजार मेटर टिकिट हती. महान कार्यो द्वारा स्विडिश राजाये डविड कौलकर एहरंट श्ट्रो में बेहजार मा लक्यो हतू के गिनीज बौक औप वाल्ड रेकोट्स मा सुच्चिबद थातू.",
+  "model": "medium"
+ },
+ "fleurs:gu_in:11537347276296047113.wav#gujarati": {
+  "start": 0,
+  "dur": 20,
+  "speech": 0.94,
+  "prob": 0.053,
+  "top": [
+   [
+    "hi",
+    0.545
+   ],
+   [
+    "pa",
+    0.194
+   ],
+   [
+    "mr",
+    0.086
+   ]
+  ],
+  "en": 0.009,
+  "chunks": [
+   [
+    "hi",
+    0.53
+   ],
+   [
+    "hi",
+    0.54
+   ],
+   [
+    "kn",
+    0.39
+   ],
+   [
+    "hi",
+    0.36
+   ]
+  ],
+  "text": "सुरक्षण श relación सेंगियारादाथ्पाटीitious वववन कय वैशविक गतनाisphere नू राजके कोहिन्स Kaltharbury धावın क сопौप्यालासिा चीळ करन्सांप, CALTERряप और स्चाएक कार्पार कर्माना सम्हाहाइ करिया। मधियास्विक सांगिर さंगिर Kubernetes",
+  "model": "medium"
+ },
+ "fleurs:gu_in:12495272719079263705.wav#gujarati": {
+  "start": 0.63,
+  "dur": 14.39,
+  "speech": 0.95,
+  "prob": 0.261,
+  "top": [
+   [
+    "hi",
+    0.349
+   ],
+   [
+    "mr",
+    0.274
+   ],
+   [
+    "gu",
+    0.261
+   ]
+  ],
+  "en": 0.007,
+  "chunks": [
+   [
+    "en",
+    0.9
+   ],
+   [
+    "hi",
+    0.5
+   ],
+   [
+    "hi",
+    0.84
+   ]
+  ],
+  "text": "lire కోలDIO ఇంంాగిసేమ ఎలెసీపెడిాల ఇక్లహాలిక అవిడిన బామా ఇప్ల�vo సు",
+  "model": "medium"
+ },
+ "fleurs:he_il:10012360550181770926.wav#hebrew": {
+  "start": 0.63,
+  "dur": 14.55,
+  "speech": 0.82,
+  "prob": 0.758,
+  "top": [
+   [
+    "he",
+    0.758
+   ],
+   [
+    "nn",
+    0.136
+   ],
+   [
+    "en",
+    0.044
+   ]
+  ],
+  "en": 0.044,
+  "chunks": [
+   [
+    "he",
+    0.62
+   ],
+   [
+    "he",
+    0.39
+   ],
+   [
+    "nn",
+    0.3
+   ]
+  ],
+  "text": "כעת זמין באופן ריחי בכל רחבי הארכיפלג, המטבח הג'ווני מאופיין ומגוון מנהלת מטובלות בפשטות, והתאמים הבולטים שהג'וון סאנים אוהבים הם בוטנים, בלבל צ'ילי, סוכר ומגוון תבלינים האומותי.",
+  "model": "medium"
+ },
+ "fleurs:he_il:11304748757603993363.wav#hebrew": {
+  "start": 0.79,
+  "dur": 15.57,
+  "speech": 0.91,
+  "prob": 0.796,
+  "top": [
+   [
+    "he",
+    0.796
+   ],
+   [
+    "ar",
+    0.108
+   ],
+   [
+    "en",
+    0.033
+   ]
+  ],
+  "en": 0.033,
+  "chunks": [
+   [
+    "he",
+    0.65
+   ],
+   [
+    "he",
+    0.42
+   ],
+   [
+    "ar",
+    0.86
+   ]
+  ],
+  "text": "כך שהיא עדיין המכילה הצבעית המובילה בקרב המבוגרים צעירים. M.S. ברחבי ארצות הברית ישנם 400 אלף מקרים יודעים של תרשת נבוצה ובגיל העמידה.",
+  "model": "medium"
+ },
+ "fleurs:he_il:11816505664411611127.wav#hebrew": {
+  "start": 1.14,
+  "dur": 18.04,
+  "speech": 0.98,
+  "prob": 0.876,
+  "top": [
+   [
+    "he",
+    0.876
+   ],
+   [
+    "en",
+    0.037
+   ],
+   [
+    "ar",
+    0.024
+   ]
+  ],
+  "en": 0.037,
+  "chunks": [
+   [
+    "he",
+    0.94
+   ],
+   [
+    "he",
+    0.35
+   ],
+   [
+    "he",
+    0.78
+   ],
+   [
+    "he",
+    0.27
+   ]
+  ],
+  "text": "עושייה לקארטר בתור להתנהל בדיפלומטיות בענייני מדינות העולם כמו אירועי קמפ דייביד, 1978, לרמולי חסר ארצות הבריצין במהלך שנות ה-70 המאוחרות, המהפכה האיראנית אשרובילה למקרה בני ערובה, 1979, והפלישה הסובייטית לאפגניסטן, 1979.",
+  "model": "medium"
+ },
+ "fleurs:he_il:12260859926971658677.wav#hebrew": {
+  "start": 0.92,
+  "dur": 19.16,
+  "speech": 0.98,
+  "prob": 0.013,
+  "top": [
+   [
+    "ar",
+    0.742
+   ],
+   [
+    "en",
+    0.042
+   ],
+   [
+    "mt",
+    0.038
+   ]
+  ],
+  "en": 0.042,
+  "chunks": [
+   [
+    "he",
+    0.71
+   ],
+   [
+    "he",
+    0.84
+   ],
+   [
+    "ar",
+    0.86
+   ],
+   [
+    "ar",
+    0.86
+   ]
+  ],
+  "text": "היא משתמשת בטכנולוגיה מבוססת לוויאן בניגוד לטכנולוגיה השני יותר מבוססת מקם קרקאי כדי להשלף כחי התיסע לאתר מתוסים ביותר דיוק ולתת לתייסים מדע מדויק יותר",
+  "model": "medium"
+ },
+ "fleurs:hr_hr:10434914513250323038.wav#croatian": {
+  "error": "no speech-dense window",
+  "total": 14.6,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:hr_hr:10687943044629904275.wav#croatian": {
+  "start": 0.69,
+  "dur": 14.52,
+  "speech": 0.97,
+  "prob": 0.884,
+  "top": [
+   [
+    "hr",
+    0.884
+   ],
+   [
+    "bs",
+    0.089
+   ],
+   [
+    "sk",
+    0.009
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "hr",
+    0.83
+   ],
+   [
+    "hr",
+    0.75
+   ],
+   [
+    "hr",
+    0.91
+   ]
+  ],
+  "text": "Prema strukturi perija može se zahljučiti da nije koričteno za letenja, nego radije za regulaću temperature ili pokazivanje. Istraživači tvrde da iako je rep mladog dinosaura, uzorak pokazuje perije boje odrasit primjeraka, a ne paperije mladunaca.",
+  "model": "medium"
+ },
+ "fleurs:hr_hr:1077747449153106603.wav#croatian": {
+  "start": 1.72,
+  "dur": 20,
+  "speech": 0.98,
+  "prob": 0.954,
+  "top": [
+   [
+    "hr",
+    0.954
+   ],
+   [
+    "bs",
+    0.026
+   ],
+   [
+    "sr",
+    0.004
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "hr",
+    0.92
+   ],
+   [
+    "hr",
+    0.9
+   ],
+   [
+    "hr",
+    0.86
+   ],
+   [
+    "hr",
+    0.6
+   ]
+  ],
+  "text": "kao savjetnik za načinomavu sigurnost asistirao je Carter u diplomatskom rješavanju globalnih pitanja poput sporazoma iskem devida 1978, normalizacija odnosa između USA i Kine krajem 1970. Iranske revolucije koja je dovela do iranske talačke krize 1978.",
+  "model": "medium"
+ },
+ "fleurs:hr_hr:10780638557699981263.wav#croatian": {
+  "error": "no speech-dense window",
+  "total": 14.6,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:ja_jp:10282008873026289596.wav#japanese": {
+  "error": "no speech-dense window",
+  "total": 22.9,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:ja_jp:1062963029061341657.wav#japanese": {
+  "start": 3.06,
+  "dur": 20,
+  "speech": 1,
+  "prob": 0.996,
+  "top": [
+   [
+    "ja",
+    0.996
+   ],
+   [
+    "zh",
+    0.002
+   ],
+   [
+    "nn",
+    0.001
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "ja",
+    0.99
+   ],
+   [
+    "ja",
+    0.94
+   ],
+   [
+    "ja",
+    0.96
+   ],
+   [
+    "ja",
+    0.98
+   ]
+  ],
+  "text": "NSAとしてカーターを捕さし1978年のキャンプデイビット合意 1970年代後半の米中関係の正常化 1979年のイラン一意思事件につながったイラン革命 1979年のソビエトのアフガニスタン侵攻など",
+  "model": "medium"
+ },
+ "fleurs:ja_jp:10920211949244193018.wav#japanese": {
+  "error": "no speech-dense window",
+  "total": 14.8,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:ja_jp:11060402684756084326.wav#japanese": {
+  "error": "no speech-dense window",
+  "total": 17.5,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:jv_id:10099440925770748143.wav#javanese": {
+  "error": "no speech-dense window",
+  "total": 15.4,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:jv_id:10133426030712406380.wav#javanese": {
+  "start": 1.24,
+  "dur": 17.72,
+  "speech": 0.93,
+  "prob": 0.881,
+  "top": [
+   [
+    "jw",
+    0.881
+   ],
+   [
+    "ms",
+    0.024
+   ],
+   [
+    "km",
+    0.015
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "id",
+    0.61
+   ],
+   [
+    "jw",
+    0.43
+   ],
+   [
+    "jw",
+    0.66
+   ],
+   [
+    "jw",
+    0.56
+   ]
+  ],
+  "text": "Arly Fallesquets soka Mexico rampung enk posisi lima, molas enk super G lunguh putra. Adam Hull soka New Zealand rampung enk posisi kasonga, enk super G ngatik putra.",
+  "model": "medium"
+ },
+ "fleurs:jv_id:10219956073456339753.wav#javanese": {
+  "error": "no speech-dense window",
+  "total": 16.7,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:jv_id:10506101901396864270.wav#javanese": {
+  "error": "no speech-dense window",
+  "total": 16.6,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:jv_id:1074164459193746195.wav#javanese": {
+  "start": 1.59,
+  "dur": 18.07,
+  "speech": 0.92,
+  "prob": 0.906,
+  "top": [
+   [
+    "jw",
+    0.906
+   ],
+   [
+    "id",
+    0.044
+   ],
+   [
+    "km",
+    0.007
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "jw",
+    0.75
+   ],
+   [
+    "jw",
+    0.44
+   ],
+   [
+    "id",
+    0.71
+   ],
+   [
+    "id",
+    0.42
+   ]
+  ],
+  "text": "Israel menuntut tekani sorodadu sing bladrenk eng lembah sa jerone sepuluh taun sa visemupakat ditapak asmani naliko pa sarujokang gu ni ngalake ngersane ka seput mung limang taun",
+  "model": "medium"
+ },
+ "fleurs:jv_id:12057337511228948277.wav#javanese": {
+  "start": 3.96,
+  "dur": 20,
+  "speech": 0.94,
+  "prob": 0.675,
+  "top": [
+   [
+    "jw",
+    0.675
+   ],
+   [
+    "id",
+    0.193
+   ],
+   [
+    "la",
+    0.017
+   ]
+  ],
+  "en": 0.016,
+  "chunks": [
+   [
+    "id",
+    0.7
+   ],
+   [
+    "id",
+    0.57
+   ],
+   [
+    "id",
+    0.65
+   ],
+   [
+    "jw",
+    0.48
+   ]
+  ],
+  "text": "Iking guna ake teknologi a dedasar satelit, ti nimbang teknologi a dedasar radar tanah sing lawas, kanggung ngidini pangatur lalu lintas udara, kanggung nuduh ake pesawat kanti teliti sing luwet duwer lelan mena.",
+  "model": "medium"
+ },
+ "fleurs:jv_id:12324618765312337509.wav#javanese": {
+  "start": 8.02,
+  "dur": 13.68,
+  "speech": 0.84,
+  "prob": 0.714,
+  "top": [
+   [
+    "jw",
+    0.714
+   ],
+   [
+    "km",
+    0.058
+   ],
+   [
+    "id",
+    0.042
+   ]
+  ],
+  "en": 0.007,
+  "chunks": [
+   [
+    "jw",
+    0.49
+   ],
+   [
+    "id",
+    0.43
+   ],
+   [
+    "jw",
+    0.34
+   ]
+  ],
+  "text": "Anak Ugar Sinska Rampung Engtelulas Engsoperji Jengsok Pak Soka Korakidul Rampung Engrongpuluh Tapat Engsoperjilanang",
+  "model": "medium"
+ },
+ "fleurs:jv_id:13017409713446913350.wav#javanese": {
+  "start": 0.82,
+  "dur": 19.41,
+  "speech": 0.94,
+  "prob": 0.587,
+  "top": [
+   [
+    "jw",
+    0.587
+   ],
+   [
+    "id",
+    0.188
+   ],
+   [
+    "ms",
+    0.056
+   ]
+  ],
+  "en": 0.015,
+  "chunks": [
+   [
+    "jw",
+    0.68
+   ],
+   [
+    "jw",
+    0.23
+   ],
+   [
+    "id",
+    0.48
+   ],
+   [
+    "jw",
+    0.41
+   ]
+  ],
+  "text": "Iki Kongsi NPWS Lampa Kumpulan Pemberdil Ularaga Soka Australia Utawa NSW INJ Relawan Singtrap Karo Sarad Direkrut Sangisore Program Grimmo Pabkumpulan Pemberdil Ularaga",
+  "model": "medium"
+ },
+ "fleurs:kn_in:10042618008895891646.wav#kannada": {
+  "start": 0.72,
+  "dur": 20,
+  "speech": 0.98,
+  "prob": 0.828,
+  "top": [
+   [
+    "kn",
+    0.828
+   ],
+   [
+    "te",
+    0.057
+   ],
+   [
+    "ta",
+    0.057
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "ml",
+    0.72
+   ],
+   [
+    "ta",
+    0.33
+   ],
+   [
+    "kn",
+    0.59
+   ],
+   [
+    "kn",
+    0.24
+   ]
+  ],
+  "text": "ಕಾರಲಸೇವಾಸನ ಬಾಕ್ಷಗಲಲನಲೆ ವಾಗ್ಷವಾ ಜಾವನರ್ಮಿಸ್ತಾಗೆನನನ ಬಾದ್ತೆ ಇಗದವಿಪಡಿಪ ಸಮಾರ್ಧಿಂತ್ ವಾಪಕಾವಿ ಬಾದ್ತ್ತೆದ್ತೆ ಜಾವನ್ಮಿಸ್ತಾಡ್ತಾ ನೇಚಿನ್ ಮಾಶರ್ಣ ಮಾಸ",
+  "model": "medium"
+ },
+ "fleurs:kn_in:10246342157479005750.wav#kannada": {
+  "error": "no speech-dense window",
+  "total": 15.4,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:kn_in:1028289630786851265.wav#kannada": {
+  "start": 1.27,
+  "dur": 17.08,
+  "speech": 0.95,
+  "prob": 0.966,
+  "top": [
+   [
+    "kn",
+    0.966
+   ],
+   [
+    "lt",
+    0.007
+   ],
+   [
+    "ml",
+    0.006
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "kn",
+    0.59
+   ],
+   [
+    "kn",
+    0.49
+   ],
+   [
+    "ml",
+    0.94
+   ]
+  ],
+  "text": "ಗಾಲಿಯಲಿ ಮದಲಾಲಾರಿದ ಜಿವಿಗಲಿಲಿನರೆ ಅವಿಕಿಟಾಗಳು. ಅವಿಗಳಲ ಹಾರಾಟದ ಸಾಮರ್ತಿದಿಂದಾಗಿ, ಸ್ತ್ರಕಲಿಲಿಂದ ಸುಲವಾಗಿ ತಪ್ಸಿಕೇಲಲಿಲು ಮಾತ್ತ್ತಿದೆ ಆಹಾರಾ ಮಾತ್ತ್ತಿದೆ ಸಂಗಾತಿಗಳನು ಹೆಚ್ತ್ತೆ ಪರಿಲಾಮಕಾರಿಯಿಯಿ ವಿಕ್ಕ್ಲು ಸಹಾಯಮಾಡಿತು.",
+  "model": "medium"
+ },
+ "fleurs:kn_in:10432595004504955046.wav#kannada": {
+  "start": 0.72,
+  "dur": 17.46,
+  "speech": 0.98,
+  "prob": 0.87,
+  "top": [
+   [
+    "kn",
+    0.87
+   ],
+   [
+    "sa",
+    0.034
+   ],
+   [
+    "ta",
+    0.029
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "te",
+    0.35
+   ],
+   [
+    "kn",
+    0.44
+   ],
+   [
+    "kn",
+    0.46
+   ]
+  ],
+  "text": "ವಿಗ್ಣಾನಿಕವಿದಾನದ ಮುಲಕ ಜಗತ್ತ್ ಹೆಗಯಕಾರ್ಯಾನೆ ನುವಾಯಸ್ತ್ತ್ತೆ ಎಂಪ್ತಾನೆ ಕನ್ಡಿಯುದು ವಿಗ್ಣಾನದ ಮುಕ್ತ್ತ್ತೆ ಉದೇಷವಾಗಿದೆ ಇವಿದಾನೆ ವುಹೆ ವಿಗ್ಣಾನಿಕಾಸ್ತ",
+  "model": "medium"
+ },
+ "fleurs:ky_kg:1021494209812558554.wav#kyrgyz": {
+  "start": 0.5,
+  "dur": 16.31,
+  "speech": 0.96,
+  "prob": 1,
+  "top": [
+   [
+    "kk",
+    0.679
+   ],
+   [
+    "az",
+    0.202
+   ],
+   [
+    "lt",
+    0.013
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "kk",
+    0.61
+   ],
+   [
+    "kk",
+    0.48
+   ],
+   [
+    "az",
+    0.33
+   ]
+  ],
+  "text": "Мамықтын структуры асаылы чығанда қолдыңылы бағанын бір оқып температураны жұңғы салыпті көрсі тұруы ішін ғана қолдыңылығанның бөджім олдынады. Излді өйтілір бұл жәштің азауырды, ұйрығы болса да ұйылгі балапан діназауыр өмес, Мөс үмес үшін көрінің мамығы екендейін бұйдырды.",
+  "model": "medium"
+ },
+ "fleurs:ky_kg:10226675800353772418.wav#kyrgyz": {
+  "start": 1.01,
+  "dur": 16.76,
+  "speech": 0.98,
+  "prob": 0.998,
+  "top": [
+   [
+    "kk",
+    0.407
+   ],
+   [
+    "mn",
+    0.138
+   ],
+   [
+    "az",
+    0.12
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "kk",
+    0.37
+   ],
+   [
+    "kk",
+    0.26
+   ],
+   [
+    "tr",
+    0.15
+   ]
+  ],
+  "text": "Чексіздіктен республика чылыққы өті, Метрикалық тұтымды қолдыңы, Улутчылдық, Жаны өлкенің бірелі башқа ручуға емес, Елге таындық, Экеніне ішені өйсі, Сіяқтыу, Көптөгін сайаси, Жаны сәтсиялық эффектер бар.",
+  "model": "medium"
+ },
+ "fleurs:ky_kg:10418215157593919723.wav#kyrgyz": {
+  "error": "no speech-dense window",
+  "total": 15.2,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:ky_kg:10721206408373271918.wav#kyrgyz": {
+  "start": 0.82,
+  "dur": 14.29,
+  "speech": 0.97,
+  "prob": 1,
+  "top": [
+   [
+    "kk",
+    0.759
+   ],
+   [
+    "az",
+    0.063
+   ],
+   [
+    "mn",
+    0.033
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "kk",
+    0.54
+   ],
+   [
+    "kk",
+    0.41
+   ],
+   [
+    "kk",
+    0.3
+   ]
+  ],
+  "text": "Партугалиялықтар аны қыйратқандан кейін қайра құруп, қаса бұран қадеп аташқан. Бұрок бірмейін 755-інчі жылы, жертді тирегенден кейін аны қалдырып кетісткен.",
+  "model": "medium"
+ },
+ "fleurs:lb_lu:10122273994971617840.wav#luxembourgish": {
+  "start": 0.63,
+  "dur": 18.09,
+  "speech": 0.88,
+  "prob": 0.003,
+  "top": [
+   [
+    "yi",
+    0.395
+   ],
+   [
+    "nn",
+    0.123
+   ],
+   [
+    "de",
+    0.105
+   ]
+  ],
+  "en": 0.013,
+  "chunks": [
+   [
+    "he",
+    0.29
+   ],
+   [
+    "de",
+    0.33
+   ],
+   [
+    "ru",
+    0.2
+   ],
+   [
+    "de",
+    0.3
+   ]
+  ],
+  "text": "Javanese kischen aus Mittlawe Langose nach Schipal, Weitverbreder, biet ein Watsch von einvergewetst Plan, wobei die vier herrschend aho mann von der javanische Kischen, Kakaoetten, Chili en Zucker, besone javanisch-javanese Kukkoszucker verschiedene Aromattsch gewetze se.",
+  "model": "medium"
+ },
+ "fleurs:lb_lu:10262727838169630463.wav#luxembourgish": {
+  "start": 0.85,
+  "dur": 16.01,
+  "speech": 0.89,
+  "prob": 0.002,
+  "top": [
+   [
+    "yi",
+    0.183
+   ],
+   [
+    "nn",
+    0.133
+   ],
+   [
+    "de",
+    0.117
+   ]
+  ],
+  "en": 0.042,
+  "chunks": [
+   [
+    "ar",
+    0.3
+   ],
+   [
+    "de",
+    0.13
+   ],
+   [
+    "de",
+    0.34
+   ]
+  ],
+  "text": "Desei behöno t' polnische xifura, ma siexh krizel anzeng, git ana ogach zinska zin am Mäna Super G 13 kin, d'Südkorean zhong xyok parkas am Mäna Super G am 1724 kin.",
+  "model": "medium"
+ },
+ "fleurs:lb_lu:10307416114906302116.wav#luxembourgish": {
+  "start": 0.28,
+  "dur": 15.48,
+  "speech": 0.93,
+  "prob": 0.008,
+  "top": [
+   [
+    "nn",
+    0.278
+   ],
+   [
+    "de",
+    0.18
+   ],
+   [
+    "nl",
+    0.105
+   ]
+  ],
+  "en": 0.029,
+  "chunks": [
+   [
+    "de",
+    0.6
+   ],
+   [
+    "en",
+    0.52
+   ],
+   [
+    "de",
+    0.64
+   ]
+  ],
+  "text": "ane nga partnership fun NPWS an das Sporting Shooters Association of Australia, NSW, INC, GOV GOV kualifizera traiwilische am Kardof im Jugendprogramm fun das Sporting Shooters Association rekrutert.",
+  "model": "medium"
+ },
+ "fleurs:lb_lu:10555577988841219666.wav#luxembourgish": {
+  "error": "no speech-dense window",
+  "total": 15.7,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:ln_cd:10075547217854967812.wav#lingala": {
+  "start": 1.04,
+  "dur": 15.25,
+  "speech": 0.84,
+  "prob": 0.034,
+  "top": [
+   [
+    "sw",
+    0.535
+   ],
+   [
+    "yo",
+    0.201
+   ],
+   [
+    "sn",
+    0.109
+   ]
+  ],
+  "en": 0.007,
+  "chunks": [
+   [
+    "sw",
+    0.65
+   ],
+   [
+    "sw",
+    0.6
+   ],
+   [
+    "yo",
+    0.35
+   ]
+  ],
+  "text": "Si ma ya tango bato yasika babandaki komesa nanayisika na ban mngo yasika, bakoma ki kokese na mingi na batomosuso.",
+  "model": "medium"
+ },
+ "fleurs:ln_cd:10096953997051921855.wav#lingala": {
+  "start": 2.9,
+  "dur": 17.27,
+  "speech": 0.7,
+  "prob": 0.002,
+  "top": [
+   [
+    "sw",
+    0.73
+   ],
+   [
+    "sn",
+    0.167
+   ],
+   [
+    "yo",
+    0.04
+   ]
+  ],
+  "en": 0.009,
+  "chunks": [
+   [
+    "sw",
+    0.72
+   ],
+   [
+    "sw",
+    0.86
+   ],
+   [
+    "sw",
+    0.88
+   ]
+  ],
+  "text": "tan ngo okenaki na mboka bapaya, bala diboson. Batubazalaki motema mola ipe komitia na isika na yo, ba ebi ete batu ba i na mboka ya isika bosengeli komisani.",
+  "model": "medium"
+ },
+ "fleurs:ln_cd:10165840911153414459.wav#lingala": {
+  "error": "no speech-dense window",
+  "total": 14.9,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:ln_cd:10510152275479538272.wav#lingala": {
+  "start": 1.2,
+  "dur": 18.58,
+  "speech": 0.7,
+  "prob": 0.026,
+  "top": [
+   [
+    "yo",
+    0.513
+   ],
+   [
+    "ht",
+    0.217
+   ],
+   [
+    "sw",
+    0.037
+   ]
+  ],
+  "en": 0.012,
+  "chunks": [
+   [
+    "ht",
+    0.42
+   ],
+   [
+    "pt",
+    0.3
+   ],
+   [
+    "ru",
+    0.34
+   ],
+   [
+    "el",
+    0.35
+   ]
+  ],
+  "text": "Ba'a rab, ba'a mey ma kimpé, di kambo ya, ya mi zil ma, na mi kili wana, spé e bra na, ming, ya komore spé, ya ma heit.",
+  "model": "medium"
+ },
+ "fleurs:lo_la:10141832205632175762.wav#lao": {
+  "start": 0.28,
+  "dur": 17.14,
+  "speech": 0.88,
+  "prob": 0.009,
+  "top": [
+   [
+    "th",
+    0.918
+   ],
+   [
+    "nn",
+    0.014
+   ],
+   [
+    "km",
+    0.014
+   ]
+  ],
+  "en": 0.012,
+  "chunks": [
+   [
+    "th",
+    0.73
+   ],
+   [
+    "th",
+    0.85
+   ],
+   [
+    "th",
+    0.81
+   ]
+  ],
+  "text": "มันดาทนุนกว่องๆ อาคารที่เป็นแก้วดันน่า และสุนกันขาดที่ท่านสมัยที่เห็นได้ด้วยน้องคากกะเปืองสีแดง ตลาดสัตวัตรที่ 18 และวัดเกาแก้งกับบอกต่างๆ ทั้งแม่งว่าเมืองนี้มีบรรยากาศห้องเออร์ลบเมดี เตรียน และกับวัฒนธรรมตุรกี",
+  "model": "medium"
+ },
+ "fleurs:lo_la:1099385939952472242.wav#lao": {
+  "error": "no speech-dense window",
+  "total": 17.1,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:lo_la:11205390282487710197.wav#lao": {
+  "start": 0.95,
+  "dur": 16.95,
+  "speech": 0.86,
+  "prob": 0.001,
+  "top": [
+   [
+    "th",
+    0.9
+   ],
+   [
+    "nn",
+    0.029
+   ],
+   [
+    "en",
+    0.022
+   ]
+  ],
+  "en": 0.022,
+  "chunks": [
+   [
+    "th",
+    0.89
+   ],
+   [
+    "th",
+    0.58
+   ],
+   [
+    "th",
+    0.78
+   ]
+  ],
+  "text": "แมงไหม้แมนสถามิตที่นำพาไปถึงอากาศความสามารถในการบินของพวกมัน ได้สวยให้พวกมันลบลิกสัตว์ได้ง่ายๆ ดาย และซอกหาอาหาร และซอกหาครูได้ยังมีพฤษธิภาพหลายขึ้น",
+  "model": "medium"
+ },
+ "fleurs:lo_la:11304539212095289738.wav#lao": {
+  "start": 7.19,
+  "dur": 20,
+  "speech": 0.79,
+  "prob": 0.002,
+  "top": [
+   [
+    "th",
+    0.893
+   ],
+   [
+    "nn",
+    0.025
+   ],
+   [
+    "km",
+    0.024
+   ]
+  ],
+  "en": 0.018,
+  "chunks": [
+   [
+    "th",
+    0.9
+   ],
+   [
+    "th",
+    0.73
+   ],
+   [
+    "th",
+    0.78
+   ],
+   [
+    "th",
+    0.59
+   ]
+  ],
+  "text": "ลูกน้อย 2 คนของพวกเขา มาลีเทริต มี 11 ปี และลุยซา มีอันยู 4 ปี และเอ้ยของพระอุง มาดามอลิสเบส ได้ถึกบิบบังคับให้กลับคืนประยูนครหลวงพาริต จากเมืองวักไซน์",
+  "model": "medium"
+ },
+ "fleurs:lt_lt:10003907204622388362.wav#lithuanian": {
+  "start": 0.47,
+  "dur": 18.42,
+  "speech": 0.95,
+  "prob": 0.936,
+  "top": [
+   [
+    "lt",
+    0.936
+   ],
+   [
+    "bg",
+    0.033
+   ],
+   [
+    "ro",
+    0.008
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "lt",
+    0.65
+   ],
+   [
+    "lt",
+    0.67
+   ],
+   [
+    "lt",
+    0.79
+   ],
+   [
+    "lt",
+    0.95
+   ]
+  ],
+  "text": "Junktinės Amerikos valstijose yra apie 400,000 žinomų išsietinės sklerozės į es atveju. Todėl yra laikoma pagrindinė jaunų ir vidutinė amžiu saugusiu neurologinę ilgą.",
+  "model": "medium"
+ },
+ "fleurs:lt_lt:10098581695548622530.wav#lithuanian": {
+  "error": "no speech-dense window",
+  "total": 14.3,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:lt_lt:10653822806475106736.wav#lithuanian": {
+  "start": 0.6,
+  "dur": 20,
+  "speech": 0.94,
+  "prob": 0.966,
+  "top": [
+   [
+    "lt",
+    0.966
+   ],
+   [
+    "ru",
+    0.009
+   ],
+   [
+    "ro",
+    0.007
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "lt",
+    0.93
+   ],
+   [
+    "lt",
+    0.9
+   ],
+   [
+    "lt",
+    0.82
+   ],
+   [
+    "lt",
+    0.9
+   ]
+  ],
+  "text": "Nors žodis čigonas yra plačiai vartojamas, ypaš tarp neromų tautybė žmonių, nes dažnai laikomas į žaidžiančių, nes kelia asociacijų sunėgiamais stereotypais ir netikslių suvokimų apie tai, kas yra romai.",
+  "model": "medium"
+ },
+ "fleurs:lt_lt:10894918173318670589.wav#lithuanian": {
+  "error": "no speech-dense window",
+  "total": 14.2,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:lv_lv:10121321833629885114.wav#latvian": {
+  "start": 1.46,
+  "dur": 14.96,
+  "speech": 0.95,
+  "prob": 0.983,
+  "top": [
+   [
+    "lv",
+    0.983
+   ],
+   [
+    "et",
+    0.004
+   ],
+   [
+    "lt",
+    0.003
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "lv",
+    0.94
+   ],
+   [
+    "lv",
+    0.92
+   ],
+   [
+    "lv",
+    0.92
+   ]
+  ],
+  "text": "Robinis Utapa īnīngos sasnīdvis augstāko rezultātu. 70 skrēji no strāpo tieši 41 bumbiņai un gūstot šādu rezultātu. 11 skrējiņa 4 punktu vērtībā un 2 skrējiņa 6 punktu vērtībā.",
+  "model": "medium"
+ },
+ "fleurs:lv_lv:1018542227575660725.wav#latvian": {
+  "error": "no speech-dense window",
+  "total": 14.7,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:lv_lv:10333448184887392360.wav#latvian": {
+  "start": 0.95,
+  "dur": 14.55,
+  "speech": 0.85,
+  "prob": 0.983,
+  "top": [
+   [
+    "lv",
+    0.983
+   ],
+   [
+    "fi",
+    0.005
+   ],
+   [
+    "lt",
+    0.003
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "lv",
+    0.98
+   ],
+   [
+    "lv",
+    0.95
+   ],
+   [
+    "lv",
+    0.97
+   ]
+  ],
+  "text": "Gaisa satiksmes negatījumi Irānā ir biježas astopami, jo tajā ir novacojas Lidaprāta flaute, kurotiek slikti uzturēti gan civiliezīvotāju pārvadājumu, gan militāro operāciju vajadzībām.",
+  "model": "medium"
+ },
+ "fleurs:lv_lv:10574614749415062975.wav#latvian": {
+  "start": 0.82,
+  "dur": 18.68,
+  "speech": 0.93,
+  "prob": 0.992,
+  "top": [
+   [
+    "lv",
+    0.992
+   ],
+   [
+    "fi",
+    0.003
+   ],
+   [
+    "et",
+    0.001
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "lv",
+    0.99
+   ],
+   [
+    "lv",
+    0.98
+   ],
+   [
+    "lv",
+    0.91
+   ],
+   [
+    "lv",
+    0.96
+   ]
+  ],
+  "text": "Polijas vairadzīgais slēpotājs Macais kretcelas un pavadone Anna Ogarszinskas supergigantā iegavu 13. vietu. Dien vidkoreietis Jankas Jorks paks vīriešas supergigantā, ko veica sēdus, finišēja 24.",
+  "model": "medium"
+ },
+ "fleurs:mk_mk:10360233840913077984.wav#macedonian": {
+  "start": 1.01,
+  "dur": 17.72,
+  "speech": 0.98,
+  "prob": 0.323,
+  "top": [
+   [
+    "bg",
+    0.435
+   ],
+   [
+    "mk",
+    0.323
+   ],
+   [
+    "hr",
+    0.158
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "bg",
+    0.34
+   ],
+   [
+    "hr",
+    0.41
+   ],
+   [
+    "bg",
+    0.89
+   ],
+   [
+    "bg",
+    0.48
+   ]
+  ],
+  "text": "Сега широко достапна Нисархипелагот, јаванската куина прикажува избор од едноставно зачинети обраци, најдоминантни вкусови на јаванската куина се кикириќи, чили, шекер, особено јавански кокосов шекер и различни ароматични зачини.",
+  "model": "medium"
+ },
+ "fleurs:mk_mk:10903717166466714252.wav#macedonian": {
+  "start": 1.49,
+  "dur": 17.65,
+  "speech": 0.98,
+  "prob": 0.111,
+  "top": [
+   [
+    "bg",
+    0.864
+   ],
+   [
+    "mk",
+    0.111
+   ],
+   [
+    "hr",
+    0.007
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "bg",
+    0.95
+   ],
+   [
+    "bg",
+    0.77
+   ],
+   [
+    "bg",
+    0.54
+   ],
+   [
+    "bg",
+    0.84
+   ]
+  ],
+  "text": "Той користи технологија која се заснува на сателит, нас према старата технологија која се заснува на земјен радар за да им помогне на контролорите на летови по-прецизно да го одредат леталото и да им дадат на пилотите по-точни информации.",
+  "model": "medium"
+ },
+ "fleurs:mk_mk:10991888760769641064.wav#macedonian": {
+  "start": 0.82,
+  "dur": 14.42,
+  "speech": 0.96,
+  "prob": 0.31,
+  "top": [
+   [
+    "bg",
+    0.593
+   ],
+   [
+    "mk",
+    0.31
+   ],
+   [
+    "hr",
+    0.045
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "bg",
+    0.51
+   ],
+   [
+    "bg",
+    0.44
+   ],
+   [
+    "hr",
+    0.3
+   ]
+  ],
+  "text": "Квалитетите што дредуваат една подкултура како карактеристична може да бидат лингвистички, естетски, религиозни, политички, сексуални, географски или комбинација од фактори.",
+  "model": "medium"
+ },
+ "fleurs:mk_mk:11281857760413158988.wav#macedonian": {
+  "start": 1.2,
+  "dur": 20,
+  "speech": 0.95,
+  "prob": 0.276,
+  "top": [
+   [
+    "bg",
+    0.628
+   ],
+   [
+    "mk",
+    0.276
+   ],
+   [
+    "hr",
+    0.046
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "bg",
+    0.94
+   ],
+   [
+    "bg",
+    0.34
+   ],
+   [
+    "bg",
+    0.3
+   ],
+   [
+    "bg",
+    0.93
+   ]
+  ],
+  "text": "Како советник за национална безбедност, тој му помагал на картер во дипломатско решавање на светските прашања како договорите од Кам Дейвид 1978 година, нормализацијата на односите Сад Кина водоцните 1970.",
+  "model": "medium"
+ },
+ "fleurs:mn_mn:10965673393485205771.wav#mongolian": {
+  "start": 1.4,
+  "dur": 15.35,
+  "speech": 0.88,
+  "prob": 0.977,
+  "top": [
+   [
+    "mn",
+    0.977
+   ],
+   [
+    "fo",
+    0.008
+   ],
+   [
+    "nn",
+    0.004
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "mn",
+    0.96
+   ],
+   [
+    "mn",
+    0.55
+   ],
+   [
+    "mn",
+    0.95
+   ]
+  ],
+  "text": "Кириан Нгарин густау цурс тунтахосл, хунди, тзи тзарзы тзы хы чын бэшолхы, и цыраи лос жар тза жпагапол. Ти хы ке ин им бэлтаны, нұқтыллик, иңғтұ тавын жіліа ыңңтұ, өрхы қызшы жёй.",
+  "model": "medium"
+ },
+ "fleurs:mn_mn:11274122478211300687.wav#mongolian": {
+  "start": 1.17,
+  "dur": 13.68,
+  "speech": 0.75,
+  "prob": 0.916,
+  "top": [
+   [
+    "mn",
+    0.916
+   ],
+   [
+    "is",
+    0.016
+   ],
+   [
+    "nn",
+    0.015
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "mn",
+    0.73
+   ],
+   [
+    "de",
+    0.39
+   ],
+   [
+    "mn",
+    0.82
+   ]
+  ],
+  "text": "Бағал Қшын даи үлің Құрс Құыр аңдыс Ұиңдыс, Бағал Қшын ең ұыдлы ғыдлы, үлтіт негітус бұлғас ғатын. Ирейтун золын цыд дури. Кх, татғағың джигар боғал ғаңтол, дитың болтс, ұұтыл болтс.",
+  "model": "medium"
+ },
+ "fleurs:mn_mn:11562197880200006958.wav#mongolian": {
+  "start": 1.17,
+  "dur": 16.66,
+  "speech": 0.91,
+  "prob": 0.917,
+  "top": [
+   [
+    "mn",
+    0.917
+   ],
+   [
+    "kk",
+    0.025
+   ],
+   [
+    "ne",
+    0.021
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "mn",
+    0.75
+   ],
+   [
+    "mn",
+    0.77
+   ],
+   [
+    "mn",
+    0.67
+   ]
+  ],
+  "text": "Orkun Goltunsunudu şilin nurtte b gherenud bollung artçınçagin holtanede uddin olunçil dolağın unkutte devrili likçin bağ. Aron Un'u ngar tjóni tsağ bollung xóş ni masg bollunçumudun turki olunçil giygisi qazardomdi'in yavrabin gelite orançulliği orolcuğunu.",
+  "model": "medium"
+ },
+ "fleurs:mn_mn:1168194423454826629.wav#mongolian": {
+  "error": "no speech-dense window",
+  "total": 14.6,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:ms_my:11262268402794467066.wav#malay": {
+  "error": "no speech-dense window",
+  "total": 15.2,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:ms_my:11812727851306918321.wav#malay": {
+  "error": "no speech-dense window",
+  "total": 15,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:ms_my:12403556937569630440.wav#malay": {
+  "error": "no speech-dense window",
+  "total": 15.1,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:ms_my:13373768090259501403.wav#malay": {
+  "error": "no speech-dense window",
+  "total": 14.6,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:ms_my:17272491734145661970.wav#malay": {
+  "start": 1.68,
+  "dur": 17.65,
+  "speech": 0.93,
+  "prob": 0.534,
+  "top": [
+   [
+    "ms",
+    0.534
+   ],
+   [
+    "jw",
+    0.279
+   ],
+   [
+    "id",
+    0.138
+   ]
+  ],
+  "en": 0.005,
+  "chunks": [
+   [
+    "ms",
+    0.42
+   ],
+   [
+    "jw",
+    0.39
+   ],
+   [
+    "ms",
+    0.24
+   ],
+   [
+    "ms",
+    0.95
+   ]
+  ],
+  "text": "Pemain ski lelaki yang cacat penglihatan dari Poland, Marci Skryzel, dan pemanduannya Ana Orgazinska menduduki tempat ke 13 di Super G Jongseok Park dari Korea Selatan menduduki tempat ke 24 dalam acara duduk Super G lelaki.",
+  "model": "medium"
+ },
+ "fleurs:ms_my:3295898591831226875.wav#malay": {
+  "start": 0.31,
+  "dur": 20,
+  "speech": 1,
+  "prob": 0.986,
+  "top": [
+   [
+    "ms",
+    0.986
+   ],
+   [
+    "id",
+    0.004
+   ],
+   [
+    "nn",
+    0.004
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "ms",
+    0.98
+   ],
+   [
+    "ms",
+    0.81
+   ],
+   [
+    "ms",
+    0.74
+   ],
+   [
+    "id",
+    0.58
+   ]
+  ],
+  "text": "Sebagai anggota NSA, beliau telah membantu kata mengurus urusan se-dunia dengan diplomatik seperti penjanjian Camp David 1978 memjasaikan hubungan E.S. China sepanjang tahun 1970-an, revolusi Iran yang menyebabkan krisis tawanan Iran 1979 dan penyerangan Soviet di Afghanistan",
+  "model": "medium"
+ },
+ "fleurs:ms_my:4512122400434183768.wav#malay": {
+  "start": 5.36,
+  "dur": 14.1,
+  "speech": 0.92,
+  "prob": 0.887,
+  "top": [
+   [
+    "ms",
+    0.887
+   ],
+   [
+    "jw",
+    0.056
+   ],
+   [
+    "id",
+    0.024
+   ]
+  ],
+  "en": 0.004,
+  "chunks": [
+   [
+    "ms",
+    0.55
+   ],
+   [
+    "ms",
+    0.7
+   ],
+   [
+    "ms",
+    0.77
+   ]
+  ],
+  "text": "Chaapan Bok dalam agama Hindu, 56 item berbeza yang boleh dimakan seperti manisan, buah kekacang, cuwadah dan sebagainya. Yang dipersembahkan kepada dewa, dihidangkan kepada Baba Shyam.",
+  "model": "medium"
+ },
+ "fleurs:ms_my:4780506254814710913.wav#malay": {
+  "start": 2.04,
+  "dur": 17.46,
+  "speech": 0.95,
+  "prob": 0.999,
+  "top": [
+   [
+    "ms",
+    0.999
+   ],
+   [
+    "ur",
+    0
+   ],
+   [
+    "en",
+    0
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "ms",
+    1
+   ],
+   [
+    "ms",
+    0.98
+   ],
+   [
+    "ms",
+    1
+   ]
+  ],
+  "text": "Struktur bulu mencadangkan bahawa ia tidak digunakan untuk tujuan terbang tetapi lebih kepada pengawalan suhu atau untuk dipamerkan. Para penyelidik mencadangkan, walaupun ekor itu ekor dan esau berusia muda, sampel menunjukkan bulu adalah milik dewasa dan bukan yang muda.",
+  "model": "medium"
+ },
+ "fleurs:ms_my:5451540922205905111.wav#malay": {
+  "start": 1.91,
+  "dur": 16.5,
+  "speech": 0.92,
+  "prob": 0.999,
+  "top": [
+   [
+    "ms",
+    0.999
+   ],
+   [
+    "ur",
+    0
+   ],
+   [
+    "en",
+    0
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "ms",
+    0.99
+   ],
+   [
+    "ms",
+    0.99
+   ],
+   [
+    "ms",
+    1
+   ]
+  ],
+  "text": "Di seluruh Amerika Syarikat, terdapat sekitar 400,000 kes sklerosis berbilang yang ni MS yang diketahui yang membuatkannya menjadi penyakit neurological paling banyak pada dewasa, muda dan petengahan umur.",
+  "model": "medium"
+ },
+ "fleurs:nl_nl:11093534218217910243.wav#dutch": {
+  "error": "no speech-dense window",
+  "total": 14.9,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:nl_nl:11342019489717166157.wav#dutch": {
+  "error": "no speech-dense window",
+  "total": 17.5,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:nl_nl:11669021396862478948.wav#dutch": {
+  "error": "no speech-dense window",
+  "total": 17.5,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:nl_nl:11973708134627605110.wav#dutch": {
+  "start": 0.6,
+  "dur": 14.07,
+  "speech": 0.9,
+  "prob": 0.94,
+  "top": [
+   [
+    "nl",
+    0.94
+   ],
+   [
+    "nn",
+    0.02
+   ],
+   [
+    "de",
+    0.016
+   ]
+  ],
+  "en": 0.014,
+  "chunks": [
+   [
+    "nl",
+    0.95
+   ],
+   [
+    "nl",
+    0.78
+   ],
+   [
+    "nl",
+    0.82
+   ]
+  ],
+  "text": "Het maakt gebruik van satellietgebaseerde technologie, in tegenstelling tot oudere technologieën met grondradars, waardoor luchtverkeersleiders luchtvaartuigen veel beter kunnen localiseren en ze piloten duidelijkere informatie kunnen verschaffen.",
+  "model": "medium"
+ },
+ "fleurs:om_et:1685351358579605494.wav#oromo": {
+  "start": 1.46,
+  "dur": 17.65,
+  "speech": 0.86,
+  "prob": 0.993,
+  "top": [
+   [
+    "si",
+    0.371
+   ],
+   [
+    "as",
+    0.091
+   ],
+   [
+    "bn",
+    0.09
+   ]
+  ],
+  "en": 0.007,
+  "chunks": [
+   [
+    "id",
+    0.72
+   ],
+   [
+    "id",
+    0.33
+   ],
+   [
+    "si",
+    0.78
+   ],
+   [
+    "sw",
+    0.87
+   ]
+  ],
+  "text": "අපි මෙන්නමන් විවින් මත්න විවිත්ලමු. අපි සම ලෙන්නම් කරයටිසිවේ්. ល මුළුගතරක් විටියෝපා යෙපන් හැන්න විටියොතයෝා ඓම්පා කිරියිට විටියක් කර සහ ඇටියෙන් නැල් තමඩ් වය ඇරිටයේර කෝරියෙට හැන් සමහා විටියි�",
+  "model": "medium"
+ },
+ "fleurs:om_et:17849911995871570945.wav#oromo": {
+  "start": 0.82,
+  "dur": 17.78,
+  "speech": 0.91,
+  "prob": 0.998,
+  "top": [
+   [
+    "so",
+    0.654
+   ],
+   [
+    "mn",
+    0.088
+   ],
+   [
+    "am",
+    0.06
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "so",
+    0.29
+   ],
+   [
+    "ar",
+    0.23
+   ],
+   [
+    "si",
+    0.27
+   ],
+   [
+    "ar",
+    0.24
+   ]
+  ],
+  "text": "თშეიზნშეიჟპიი  människიურეეი მარსეშინლსნს იეენეეიიეი موت مقدّو وكاليسا سا سيا فودكشو باكبوتوني إساني إرى دي ديبناني حفا تراني",
+  "model": "medium"
+ },
+ "fleurs:om_et:3396891438901209126.wav#oromo": {
+  "start": 0.88,
+  "dur": 20,
+  "speech": 0.91,
+  "prob": 0.999,
+  "top": [
+   [
+    "so",
+    0.659
+   ],
+   [
+    "am",
+    0.091
+   ],
+   [
+    "ka",
+    0.037
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "so",
+    0.31
+   ],
+   [
+    "si",
+    0.21
+   ],
+   [
+    "so",
+    0.42
+   ],
+   [
+    "es",
+    0.17
+   ]
+  ],
+  "text": "منذ قبل 123 يومين سننتهي المساعدين على أن يكونوا يتطورون ويبقى بلد سنواتها نحن سنبقى بلد ونرى الأمور التي سنجدها أما أننا سنحاول المساعدين أن تتلقى إلى المساعدين",
+  "model": "medium"
+ },
+ "fleurs:om_et:4008531006744065262.wav#oromo": {
+  "start": 0.05,
+  "dur": 19.51,
+  "speech": 0.87,
+  "prob": 0.997,
+  "top": [
+   [
+    "so",
+    0.503
+   ],
+   [
+    "am",
+    0.1
+   ],
+   [
+    "ar",
+    0.063
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "ar",
+    0.43
+   ],
+   [
+    "ar",
+    0.22
+   ],
+   [
+    "ar",
+    0.23
+   ],
+   [
+    "so",
+    0.21
+   ]
+  ],
+  "text": "وران الدنيا تكوف ارتيتان تيوي باب بدو في مچاليسان دالا نما ارتي ملتي بيوني نبهي ارقان ارقاني بودان غرأ فول دراتي اكا ديبية هينو ممنيفي بيوتيتين فدتي ارقيسيسان",
+  "model": "medium"
+ },
+ "fleurs:pa_in:10039386502091710584.wav#punjabi": {
+  "start": 0.82,
+  "dur": 15.99,
+  "speech": 0.89,
+  "prob": 0.85,
+  "top": [
+   [
+    "pa",
+    0.85
+   ],
+   [
+    "hi",
+    0.105
+   ],
+   [
+    "ur",
+    0.013
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "pa",
+    0.8
+   ],
+   [
+    "hi",
+    0.88
+   ],
+   [
+    "hi",
+    0.47
+   ]
+  ],
+  "text": "викम शुर्को पर लिजियारिक पे लिए पूट्liśmyिंट रहे है तुम आकषर शाली के अफoyo जंंद श्वाइरीळव्र की ड़र seis ॉ � constraint श्ची श्वं में लि� featuring च Horizon जस वाज्पैशन सिष्टता अते गुप्त पाशा में शमल घुन्दि ली है।",
+  "model": "medium"
+ },
+ "fleurs:pa_in:10054909099469272144.wav#punjabi": {
+  "start": 0.56,
+  "dur": 20,
+  "speech": 0.94,
+  "prob": 0.588,
+  "top": [
+   [
+    "pa",
+    0.588
+   ],
+   [
+    "hi",
+    0.282
+   ],
+   [
+    "ur",
+    0.095
+   ]
+  ],
+  "en": 0.005,
+  "chunks": [
+   [
+    "hi",
+    0.48
+   ],
+   [
+    "hi",
+    0.95
+   ],
+   [
+    "hi",
+    0.4
+   ],
+   [
+    "hi",
+    0.39
+   ]
+  ],
+  "text": "ਖਮਬੇ ਦੇਦ ਏ� Bubbles have been found not to have been treated in flight rather, they were treated for spray or routine experiments. Researchers suggested that any young dinosaur's tail would not be shown to be a refrain cheated by municipalities.",
+  "model": "medium"
+ },
+ "fleurs:pa_in:1024701938837467713.wav#punjabi": {
+  "start": 0.6,
+  "dur": 15.09,
+  "speech": 0.84,
+  "prob": 0.848,
+  "top": [
+   [
+    "pa",
+    0.848
+   ],
+   [
+    "hi",
+    0.106
+   ],
+   [
+    "mr",
+    0.013
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "pa",
+    0.75
+   ],
+   [
+    "pa",
+    0.32
+   ],
+   [
+    "pa",
+    0.9
+   ]
+  ],
+  "text": "ושеюсь, खस्टर्खारे पानिदे मगरमच समुंडर विछ सरूण सiformी नार्मिनहि रειαंदे मुखे भाए और सेतिन्म। ओननादड़ा प्रमुक्स्वसेबा राब क्याविलाब्चहान flags भृत्री नदी जवार।",
+  "model": "medium"
+ },
+ "fleurs:pa_in:10652863023970204355.wav#punjabi": {
+  "start": 0.72,
+  "dur": 18.42,
+  "speech": 0.98,
+  "prob": 0.967,
+  "top": [
+   [
+    "pa",
+    0.967
+   ],
+   [
+    "hi",
+    0.011
+   ],
+   [
+    "mr",
+    0.006
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "pa",
+    0.96
+   ],
+   [
+    "pa",
+    0.41
+   ],
+   [
+    "kn",
+    0.7
+   ],
+   [
+    "hi",
+    0.39
+   ]
+  ],
+  "text": "लक्ष",
+  "model": "medium"
+ },
+ "fleurs:ps_af:1074055182783558661.wav#pashto": {
+  "start": 0.24,
+  "dur": 20,
+  "speech": 1,
+  "prob": 0.509,
+  "top": [
+   [
+    "ps",
+    0.509
+   ],
+   [
+    "ur",
+    0.331
+   ],
+   [
+    "fa",
+    0.059
+   ]
+  ],
+  "en": 0.01,
+  "chunks": [
+   [
+    "kn",
+    0.45
+   ],
+   [
+    "kn",
+    0.64
+   ],
+   [
+    "ur",
+    0.26
+   ],
+   [
+    "ur",
+    0.51
+   ]
+  ],
+  "text": "పతాగాలిపారీ పా ఎపలో మాతి కతల ఇం పా పండుతాలి. కారితర సం మున సం అటాలి. కమ తి మాని తర్న న నలల సం అట పరి ఆర్లి. కంలాడి మాల సంవా ఆరన ఇంది, ఉపరితాని, పద్రరపటి, మాల పంతాయల వండి, కంలాడి,",
+  "model": "medium"
+ },
+ "fleurs:ps_af:11992556678035849531.wav#pashto": {
+  "start": 0.69,
+  "dur": 14.96,
+  "speech": 0.97,
+  "prob": 0.039,
+  "top": [
+   [
+    "pa",
+    0.347
+   ],
+   [
+    "gu",
+    0.262
+   ],
+   [
+    "kn",
+    0.219
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "kn",
+    0.44
+   ],
+   [
+    "hi",
+    0.25
+   ],
+   [
+    "sq",
+    0.39
+   ]
+  ],
+  "text": "మంకావలమ చాపరయాల సంరసియాద దిసితాన జవనన వకిక మంద చాపరయాల హరయక సంరకత సంరక గాడి దలి డి డి పరాత ని కితారాస ది ధకలి పకాల జి లాశ �",
+  "model": "medium"
+ },
+ "fleurs:ps_af:12952817456467488931.wav#pashto": {
+  "start": 0.79,
+  "dur": 18.89,
+  "speech": 0.96,
+  "prob": 0.853,
+  "top": [
+   [
+    "ps",
+    0.853
+   ],
+   [
+    "fa",
+    0.027
+   ],
+   [
+    "kn",
+    0.021
+   ]
+  ],
+  "en": 0.004,
+  "chunks": [
+   [
+    "ps",
+    0.51
+   ],
+   [
+    "ar",
+    0.38
+   ],
+   [
+    "ps",
+    0.5
+   ],
+   [
+    "mr",
+    0.38
+   ]
+  ],
+  "text": "astern خư د ء món شکایطو نمو پایلا concluded that When will the photo album release be released?",
+  "model": "medium"
+ },
+ "fleurs:ps_af:13628251754525850278.wav#pashto": {
+  "start": 8.47,
+  "dur": 13.79,
+  "speech": 0.95,
+  "prob": 0.646,
+  "top": [
+   [
+    "ps",
+    0.646
+   ],
+   [
+    "fa",
+    0.102
+   ],
+   [
+    "ur",
+    0.081
+   ]
+  ],
+  "en": 0.005,
+  "chunks": [
+   [
+    "ur",
+    0.36
+   ],
+   [
+    "ps",
+    0.42
+   ],
+   [
+    "sq",
+    0.34
+   ]
+  ],
+  "text": "Mỹطلف dirt,9 Ï ëIf I marry you I want to have a baby,",
+  "model": "medium"
+ },
+ "fleurs:ps_af:14188304846733134274.wav#pashto": {
+  "start": 1.24,
+  "dur": 17.78,
+  "speech": 0.96,
+  "prob": 0.868,
+  "top": [
+   [
+    "ps",
+    0.868
+   ],
+   [
+    "fa",
+    0.027
+   ],
+   [
+    "ur",
+    0.013
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "he",
+    0.41
+   ],
+   [
+    "ps",
+    0.35
+   ],
+   [
+    "ms",
+    0.63
+   ],
+   [
+    "ur",
+    0.69
+   ]
+  ],
+  "text": "ეე ჉�rayმთე ეე ჉� Roxბა-ʔბა-ʔგე ეე ირფსე ეუტ ეინე ჋ბა-ʔე თჍა",
+  "model": "medium"
+ },
+ "fleurs:ro_ro:10105989786580992399.wav#romanian": {
+  "start": 0.24,
+  "dur": 13.97,
+  "speech": 0.94,
+  "prob": 0.997,
+  "top": [
+   [
+    "ro",
+    0.997
+   ],
+   [
+    "en",
+    0.001
+   ],
+   [
+    "nn",
+    0.001
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "ro",
+    1
+   ],
+   [
+    "ro",
+    0.96
+   ],
+   [
+    "ro",
+    0.99
+   ]
+  ],
+  "text": "a avut multe efecte sociale și politice, precum adoptarea sistemului metric trecerea de la un sistem absolutist la unul republican, naționalist, ci convingerea că țara aparține poporului, nu unul singur conducător.",
+  "model": "medium"
+ },
+ "fleurs:ro_ro:10129819525242469551.wav#romanian": {
+  "start": 0.76,
+  "dur": 20,
+  "speech": 0.88,
+  "prob": 0.998,
+  "top": [
+   [
+    "ro",
+    0.998
+   ],
+   [
+    "nn",
+    0.001
+   ],
+   [
+    "en",
+    0
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "ro",
+    1
+   ],
+   [
+    "ro",
+    0.99
+   ],
+   [
+    "ro",
+    0.99
+   ],
+   [
+    "ro",
+    0.99
+   ]
+  ],
+  "text": "La 6 octobri 1789, în spermântatul Rege Ludovic al XVI-lea, regina Maria Antoinetta, cei doi copii ai lor, Marie Therese de 11 ani si Louise Charles de 4 ani si sora regelui, Madame Elisabeth, au fost forțați de către o umbulțime formată din negustoria.",
+  "model": "medium"
+ },
+ "fleurs:ro_ro:10253288504080793715.wav#romanian": {
+  "start": 0.95,
+  "dur": 13.62,
+  "speech": 0.95,
+  "prob": 0.996,
+  "top": [
+   [
+    "ro",
+    0.996
+   ],
+   [
+    "nn",
+    0.002
+   ],
+   [
+    "en",
+    0
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "ro",
+    0.98
+   ],
+   [
+    "ro",
+    0.99
+   ],
+   [
+    "ro",
+    1
+   ]
+  ],
+  "text": "Medaliatul cu aoa la olimpiad au urmas în noapte la joc lecomul otrui, în proba de 100-200 de metri lipe, precum și în trei probe de stafeta, însă condiția sa fizica a fost puse sub semnul întrebări din cauza plângerilor sale.",
+  "model": "medium"
+ },
+ "fleurs:ro_ro:10284565274109682870.wav#romanian": {
+  "start": 0.76,
+  "dur": 13.88,
+  "speech": 0.97,
+  "prob": 0.994,
+  "top": [
+   [
+    "ro",
+    0.994
+   ],
+   [
+    "it",
+    0.001
+   ],
+   [
+    "en",
+    0.001
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "ro",
+    0.99
+   ],
+   [
+    "ro",
+    0.99
+   ],
+   [
+    "ro",
+    0.96
+   ]
+  ],
+  "text": "Catoate ca este larg utilizat, in special printre non-Romi, cuvantul tigan este adesea considerat jignitor din cauza asociierii sale cu stereotipurile negative si o percepere incorrecta populatiei Romei.",
+  "model": "medium"
+ },
+ "fleurs:ru_ru:1024552646813367065.wav#russian": {
+  "start": 0.82,
+  "dur": 14.45,
+  "speech": 0.88,
+  "prob": 0.991,
+  "top": [
+   [
+    "ru",
+    0.991
+   ],
+   [
+    "nn",
+    0.004
+   ],
+   [
+    "en",
+    0.002
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "ru",
+    0.97
+   ],
+   [
+    "ru",
+    0.98
+   ],
+   [
+    "ru",
+    1
+   ]
+  ],
+  "text": "В северной части, то есть на хребте Сантинелл, находятся самые высокие горы Антарктиды. Массив Винсон, самая высшая точка которого достигает 4892 метра и называется пик Винсон.",
+  "model": "medium"
+ },
+ "fleurs:ru_ru:10506159478104812570.wav#russian": {
+  "start": 1.65,
+  "dur": 20,
+  "speech": 1,
+  "prob": 0.999,
+  "top": [
+   [
+    "ru",
+    0.999
+   ],
+   [
+    "nn",
+    0
+   ],
+   [
+    "en",
+    0
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "ru",
+    0.95
+   ],
+   [
+    "ru",
+    0.99
+   ],
+   [
+    "ru",
+    0.93
+   ],
+   [
+    "ru",
+    0.99
+   ]
+  ],
+  "text": "широкие бульвары, здания со стеклянными фасадами, современные торговые центры перемежаются местами с традиционными крышами с красной черепицей, рынком 18 века, старыми мечетями и церквями, хотя город и имеет большую атмосферу средиземноморской.",
+  "model": "medium"
+ },
+ "fleurs:ru_ru:10972430421637175826.wav#russian": {
+  "error": "no speech-dense window",
+  "total": 15.2,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:ru_ru:1140005451550671380.wav#russian": {
+  "start": 1.72,
+  "dur": 13.62,
+  "speech": 0.91,
+  "prob": 0.996,
+  "top": [
+   [
+    "ru",
+    0.996
+   ],
+   [
+    "en",
+    0.001
+   ],
+   [
+    "nn",
+    0.001
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "ru",
+    0.97
+   ],
+   [
+    "ru",
+    0.9
+   ],
+   [
+    "ru",
+    0.99
+   ]
+  ],
+  "text": "Мы можем начать жить, больше заботясь об окружающей среде. Мы можем стать членами экологического движения, и даже можем быть активистами, чтобы хоть немного облегчить дальнейшие страдания.",
+  "model": "medium"
+ },
+ "fleurs:sk_sk:10380670665788119466.wav#slovak": {
+  "error": "no speech-dense window",
+  "total": 15.4,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:sk_sk:10390861216936084174.wav#slovak": {
+  "start": 1.49,
+  "dur": 15,
+  "speech": 0.94,
+  "prob": 0.961,
+  "top": [
+   [
+    "sk",
+    0.961
+   ],
+   [
+    "cs",
+    0.02
+   ],
+   [
+    "hr",
+    0.006
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "sk",
+    0.87
+   ],
+   [
+    "sk",
+    0.83
+   ],
+   [
+    "sk",
+    0.94
+   ]
+  ],
+  "text": "V USA je zaznamenaných okolo 400 000 prípadov z klerozy multiplex SM, čím patrí medzi popredné neurologické ochorenia u dospelých v mladšom a strednom veku.",
+  "model": "medium"
+ },
+ "fleurs:sk_sk:10408145324112582891.wav#slovak": {
+  "start": 1.46,
+  "dur": 20,
+  "speech": 0.98,
+  "prob": 0.933,
+  "top": [
+   [
+    "sk",
+    0.933
+   ],
+   [
+    "cs",
+    0.048
+   ],
+   [
+    "nn",
+    0.004
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "sk",
+    0.9
+   ],
+   [
+    "sk",
+    0.57
+   ],
+   [
+    "cs",
+    0.81
+   ],
+   [
+    "sk",
+    0.66
+   ]
+  ],
+  "text": "Vo funkcii poradcu pre národnú bezpečnosť pomáhal Carterovi pri diplomatickom riešení svetových udalostí. Konkrétne išlo napríklad o dohodi s Camp Davidu z roku 1978, koncom 1970. rokov zase o normalizáciu sťahov medzi USA a Činou. Potom to bola Ránska revolúcia...",
+  "model": "medium"
+ },
+ "fleurs:sk_sk:10447712674803734650.wav#slovak": {
+  "start": 1.68,
+  "dur": 18.55,
+  "speech": 0.96,
+  "prob": 0.974,
+  "top": [
+   [
+    "sk",
+    0.974
+   ],
+   [
+    "cs",
+    0.016
+   ],
+   [
+    "nn",
+    0.002
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "sk",
+    0.89
+   ],
+   [
+    "sk",
+    0.82
+   ],
+   [
+    "sk",
+    0.59
+   ],
+   [
+    "sk",
+    0.91
+   ]
+  ],
+  "text": "Pomedzi širokými bulvármi, budovami so sklenenou fasádou a modernými nákupnými centrami sa nachádzajú domy s tradičnými strechami z červenej škridle, trh z 18. storočia a staré mešity a kostoly. V meste cítiť viac atmosféru stredomorskej Európy než súčasného Turecka.",
+  "model": "medium"
+ },
+ "fleurs:sl_si:10111466907969714937.wav#slovenian": {
+  "start": 0.47,
+  "dur": 20,
+  "speech": 0.98,
+  "prob": 0.949,
+  "top": [
+   [
+    "sl",
+    0.949
+   ],
+   [
+    "mk",
+    0.014
+   ],
+   [
+    "sq",
+    0.013
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "sl",
+    0.95
+   ],
+   [
+    "sl",
+    0.63
+   ],
+   [
+    "sl",
+    0.43
+   ],
+   [
+    "sl",
+    0.93
+   ]
+  ],
+  "text": "Kot svetovalec državne varnosti je pomagał Kartari v prisvetovnih diplomatskih zadevah, napr. s porazumu iz Ken Davida leta 1978 in 70. Normaliziranju ameriško-kitajskih odnosov v pozni 70. letih 20. stoletja, iranski revoluciji, ki je vodile v iransko kriza Stalci leta 1979 in 70. in so...",
+  "model": "medium"
+ },
+ "fleurs:sl_si:10997763125831085108.wav#slovenian": {
+  "start": 0.76,
+  "dur": 14.1,
+  "speech": 0.94,
+  "prob": 0.433,
+  "top": [
+   [
+    "sl",
+    0.433
+   ],
+   [
+    "hr",
+    0.383
+   ],
+   [
+    "bs",
+    0.038
+   ]
+  ],
+  "en": 0.007,
+  "chunks": [
+   [
+    "hr",
+    0.82
+   ],
+   [
+    "bg",
+    0.29
+   ],
+   [
+    "sl",
+    0.74
+   ]
+  ],
+  "text": "Nosilet zlato olimpijske medalje bi moral plavati 100 in 200 metrov prosto, ter 3 štafete na igrah Commonwealtha, vendar je bilo zrati njegovih težav, njegov telesna pripravljena so prašljiva.",
+  "model": "medium"
+ },
+ "fleurs:sl_si:11228616055163414087.wav#slovenian": {
+  "start": 0.24,
+  "dur": 14.84,
+  "speech": 0.97,
+  "prob": 0.986,
+  "top": [
+   [
+    "sl",
+    0.986
+   ],
+   [
+    "mk",
+    0.003
+   ],
+   [
+    "sq",
+    0.002
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "sl",
+    0.92
+   ],
+   [
+    "sl",
+    0.85
+   ],
+   [
+    "sl",
+    0.88
+   ]
+  ],
+  "text": "v sdelovanju za NP Dvojni Vs in Sporting Shooters Association of Australia, NS Dvojni V in se pod pokraviteljstvom lovskega programa Sporting Shooters Association pridobi kvalificirane prostovolce.",
+  "model": "medium"
+ },
+ "fleurs:sl_si:11781754535064668008.wav#slovenian": {
+  "start": 1.36,
+  "dur": 14.13,
+  "speech": 0.89,
+  "prob": 0.505,
+  "top": [
+   [
+    "sl",
+    0.505
+   ],
+   [
+    "bg",
+    0.294
+   ],
+   [
+    "mk",
+    0.072
+   ]
+  ],
+  "en": 0.008,
+  "chunks": [
+   [
+    "sl",
+    0.58
+   ],
+   [
+    "bg",
+    0.67
+   ],
+   [
+    "sl",
+    0.88
+   ]
+  ],
+  "text": "Babi Šijamo so postregli 108 krožnjkev Čapanboga v Hinduizmo, to pomeni 56 različnih jedi, kot so sletkarije, sade, oreški, pripravljane jedi in drugo, ki se jih deruje božanstvo.",
+  "model": "medium"
+ },
+ "fleurs:sr_rs:10863419775888008996.wav#serbian": {
+  "start": 0.98,
+  "dur": 15.25,
+  "speech": 0.98,
+  "prob": 0.016,
+  "top": [
+   [
+    "hr",
+    0.898
+   ],
+   [
+    "bs",
+    0.072
+   ],
+   [
+    "sr",
+    0.016
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "hr",
+    0.7
+   ],
+   [
+    "hr",
+    0.9
+   ],
+   [
+    "hr",
+    0.92
+   ]
+  ],
+  "text": "Ovo novo ukruženje ima različite resurse i različite suparnike, tako da će nova populacija morati da ima drugačije karakteristike, ili da se adaptira da bude jači suparnik nego što je to ranije bilo potrebno.",
+  "model": "medium"
+ },
+ "fleurs:sr_rs:13210443985656164761.wav#serbian": {
+  "error": "no speech-dense window",
+  "total": 14.5,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:sr_rs:13479785467508982928.wav#serbian": {
+  "error": "no speech-dense window",
+  "total": 14.9,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:sr_rs:13793205262719995621.wav#serbian": {
+  "error": "no speech-dense window",
+  "total": 14.7,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:sv_se:10265664148994425275.wav#swedish": {
+  "start": 1.08,
+  "dur": 15.06,
+  "speech": 0.92,
+  "prob": 0.968,
+  "top": [
+   [
+    "sv",
+    0.968
+   ],
+   [
+    "nn",
+    0.025
+   ],
+   [
+    "la",
+    0.002
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "sv",
+    0.82
+   ],
+   [
+    "sv",
+    0.96
+   ],
+   [
+    "sv",
+    0.95
+   ]
+  ],
+  "text": "Babas Chiam serverades 108 tallrikar med Khapan Bhog. I hinduismen innebär det 50 och 6 olika ädbara saker, som godisfrukt, nötter, rätter med mera som erbjuds till gudomligheter.",
+  "model": "medium"
+ },
+ "fleurs:sv_se:10411502267097546866.wav#swedish": {
+  "start": 1.2,
+  "dur": 16.18,
+  "speech": 0.92,
+  "prob": 0.963,
+  "top": [
+   [
+    "sv",
+    0.963
+   ],
+   [
+    "nn",
+    0.031
+   ],
+   [
+    "en",
+    0.001
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "sv",
+    0.87
+   ],
+   [
+    "sv",
+    0.85
+   ],
+   [
+    "sv",
+    0.97
+   ]
+  ],
+  "text": "Matsjej Kresel i The Polska Herrlaget för synskadade och ledsagaren Anna Ogarsinska slutade på 13 plats i Super G, Sydkoreas Jongsyork Park hamnade på 24 plats i Herrenas sittande Super G.",
+  "model": "medium"
+ },
+ "fleurs:sv_se:10890076096809006585.wav#swedish": {
+  "error": "no speech-dense window",
+  "total": 14.6,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:sv_se:11046286194796046971.wav#swedish": {
+  "error": "no speech-dense window",
+  "total": 14.8,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:te_in:12057338419435289098.wav#telugu": {
+  "start": 0.37,
+  "dur": 18.29,
+  "speech": 0.98,
+  "prob": 0.29,
+  "top": [
+   [
+    "te",
+    0.29
+   ],
+   [
+    "nn",
+    0.162
+   ],
+   [
+    "kn",
+    0.151
+   ]
+  ],
+  "en": 0.088,
+  "chunks": [
+   [
+    "kn",
+    0.46
+   ],
+   [
+    "te",
+    0.34
+   ],
+   [
+    "hi",
+    0.33
+   ],
+   [
+    "pa",
+    0.89
+   ]
+  ],
+  "text": "ි 활동 też ි හහළසවෆ ළයකworthy හහා ම්පලෙන් class ඔවැයිසු නැය මද ෆධ්ය හා කරර හවත්ට අප ද� Lego- හොඳෙන් ඝ��volt�දුඦය සහා ෇රරෙඩන් සපරාලිසාදයක්",
+  "model": "medium"
+ },
+ "fleurs:te_in:12236664289157907815.wav#telugu": {
+  "start": 6.58,
+  "dur": 16.79,
+  "speech": 0.9,
+  "prob": 0.923,
+  "top": [
+   [
+    "te",
+    0.923
+   ],
+   [
+    "nn",
+    0.024
+   ],
+   [
+    "en",
+    0.016
+   ]
+  ],
+  "en": 0.016,
+  "chunks": [
+   [
+    "te",
+    0.85
+   ],
+   [
+    "te",
+    0.8
+   ],
+   [
+    "te",
+    0.94
+   ]
+  ],
+  "text": "పాయంపరంతలక కిగరమ రాజ లోమిస పదరార రాని మిరి ఆనటనిటి మరియాటి వరి ఏదిలి పిలలలాన పదరాలల మరి మరి తరిసి తరిసి సంవతరలల మరి మరిస�",
+  "model": "medium"
+ },
+ "fleurs:te_in:14267063961628176801.wav#telugu": {
+  "start": 0.28,
+  "dur": 18.52,
+  "speech": 0.8,
+  "prob": 0.951,
+  "top": [
+   [
+    "te",
+    0.951
+   ],
+   [
+    "ta",
+    0.01
+   ],
+   [
+    "en",
+    0.01
+   ]
+  ],
+  "en": 0.01,
+  "chunks": [
+   [
+    "te",
+    0.59
+   ],
+   [
+    "te",
+    0.43
+   ],
+   [
+    "te",
+    0.76
+   ],
+   [
+    "te",
+    0.95
+   ]
+  ],
+  "text": "ఇసమనయమల ఇరక లాక తేసికికిన చరిలావలన వరకాలమది ఇదం పరిగి హిమాల లాడి గనాడి గనారగాలని ఇదం అపకాలమన యావరి హామి ఇవలయరన అధారాని అ",
+  "model": "medium"
+ },
+ "fleurs:te_in:2295866105154812464.wav#telugu": {
+  "start": 11.67,
+  "dur": 20,
+  "speech": 0.87,
+  "prob": 0.96,
+  "top": [
+   [
+    "te",
+    0.96
+   ],
+   [
+    "ta",
+    0.017
+   ],
+   [
+    "kn",
+    0.005
+   ]
+  ],
+  "en": 0.004,
+  "chunks": [
+   [
+    "te",
+    0.6
+   ],
+   [
+    "te",
+    0.7
+   ],
+   [
+    "kn",
+    0.69
+   ],
+   [
+    "te",
+    0.95
+   ]
+  ],
+  "text": "ఇరాన బందిలల సంకలవాన కందిలిలి దారి తిసిన ఇరాన వపరవరం పందిని 79 అవకానిసిటాన సవియటి ధానం యాతర పందిన నిపంచన యారాలల ని దావికిపర",
+  "model": "medium"
+ },
+ "fleurs:te_in:4216007152394413397.wav#telugu": {
+  "start": 0.53,
+  "dur": 17.88,
+  "speech": 0.97,
+  "prob": 0.964,
+  "top": [
+   [
+    "te",
+    0.964
+   ],
+   [
+    "ta",
+    0.009
+   ],
+   [
+    "en",
+    0.005
+   ]
+  ],
+  "en": 0.005,
+  "chunks": [
+   [
+    "te",
+    0.92
+   ],
+   [
+    "te",
+    0.91
+   ],
+   [
+    "te",
+    0.84
+   ],
+   [
+    "te",
+    0.87
+   ]
+  ],
+  "text": "ఇప్ము ధిపాసంకం అధూటా విస్తమి అంద్దివాట్లా ఉనా జావణిసి వంటకల కోవాలం కాలోనీగాన విస్లగారం చకర ముంగా జావణిసి కాబిషిక్లికార",
+  "model": "medium"
+ },
+ "fleurs:tg_tj:1090679641903998946.wav#tajik": {
+  "start": 1.52,
+  "dur": 19.41,
+  "speech": 0.98,
+  "prob": 0.016,
+  "top": [
+   [
+    "fa",
+    0.873
+   ],
+   [
+    "ps",
+    0.06
+   ],
+   [
+    "tg",
+    0.016
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "ka",
+    0.38
+   ],
+   [
+    "fa",
+    0.91
+   ],
+   [
+    "fa",
+    0.8
+   ],
+   [
+    "ka",
+    0.43
+   ]
+  ],
+  "text": "Соқтори болхо ехтимол дорад ки онхо на бараи парвоз, балке бараи танзим намудани харорад истифодамешаван. Мхаqиqон ехтимол доранд ки гершанде ки двомид динозавр джавон аз на муна ба такяхои динозаври калон муна аз на ба ин пари чуджаи.",
+  "model": "medium"
+ },
+ "fleurs:tg_tj:11050696215340011795.wav#tajik": {
+  "start": 1.84,
+  "dur": 16.24,
+  "speech": 0.96,
+  "prob": 0.004,
+  "top": [
+   [
+    "fa",
+    0.815
+   ],
+   [
+    "ps",
+    0.14
+   ],
+   [
+    "yo",
+    0.009
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "fa",
+    0.72
+   ],
+   [
+    "fa",
+    0.86
+   ],
+   [
+    "fa",
+    0.95
+   ]
+  ],
+  "text": "Лежарони кухи, яки аз намудхои асаси саяхи бараи бисьор аз друсдарон махсуме ёбадки, баазан ба нами «лежаронхои бекорчи» маруфастан ки тамоми таатилра дар атрафи лежарони дарджой муаиян ба нақшыме гиранд.",
+  "model": "medium"
+ },
+ "fleurs:tg_tj:11062580460689706421.wav#tajik": {
+  "start": 4.28,
+  "dur": 15.09,
+  "speech": 0.93,
+  "prob": 0.007,
+  "top": [
+   [
+    "fa",
+    0.589
+   ],
+   [
+    "ps",
+    0.299
+   ],
+   [
+    "ar",
+    0.024
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "fa",
+    0.59
+   ],
+   [
+    "fa",
+    0.91
+   ],
+   [
+    "ro",
+    0.12
+   ]
+  ],
+  "text": "Дар хиндуизм 56 масоли гунагуни хурдани баб аз qабил ширинихо меважад, чормагзхо, хороко ва гайрахо ки ба маабуд пешнихот карда мишаванд ба ба ба шиям пешнихот кардиданд",
+  "model": "medium"
+ },
+ "fleurs:tg_tj:11864674339415112631.wav#tajik": {
+  "start": 0.85,
+  "dur": 17.17,
+  "speech": 0.98,
+  "prob": 0.002,
+  "top": [
+   [
+    "fa",
+    0.712
+   ],
+   [
+    "ps",
+    0.167
+   ],
+   [
+    "ar",
+    0.039
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "fa",
+    0.68
+   ],
+   [
+    "fa",
+    0.76
+   ],
+   [
+    "fa",
+    0.45
+   ]
+  ],
+  "text": "Дар еолоти Муттахидай Амрико тахрибан 400 хазар халати маолуми бемори MS суддабанди бафтаи узуха вахфаромушхатиди бақайт грифта шудан ки он хамчун бемори асуси неврологи дар миян јавонони хурцол ва миянасол бақи мемонад.",
+  "model": "medium"
+ },
+ "fleurs:tg_tj:1190959588133931515.wav#tajik": {
+  "start": 2.04,
+  "dur": 18.84,
+  "speech": 0.98,
+  "prob": 0.04,
+  "top": [
+   [
+    "fa",
+    0.642
+   ],
+   [
+    "ps",
+    0.148
+   ],
+   [
+    "tg",
+    0.04
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "fa",
+    0.46
+   ],
+   [
+    "fa",
+    0.81
+   ],
+   [
+    "fa",
+    0.84
+   ],
+   [
+    "lv",
+    0.22
+   ]
+  ],
+  "text": "Бисор надиджаои ичтимои ивасиоси мауѓуд ме бошан, ба монанди истифоде системе метрики, гузариш аз хокимете мутлаq, ба жумхуреви, миладгарои ива боваркуни ба таалог доштани кишвар ба мардум, наи инки ба як хокими, як она.",
+  "model": "medium"
+ },
+ "fleurs:tr_tr:10005228519380753710.wav#turkish": {
+  "error": "no speech-dense window",
+  "total": 16.8,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:tr_tr:1000847601644945595.wav#turkish": {
+  "error": "no speech-dense window",
+  "total": 15.2,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:tr_tr:10017444110191735282.wav#turkish": {
+  "error": "no speech-dense window",
+  "total": 16.4,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:tr_tr:10037968623013233667.wav#turkish": {
+  "error": "no speech-dense window",
+  "total": 15.3,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:tr_tr:12608904409694197471.wav#turkish": {
+  "start": 2.93,
+  "dur": 15.99,
+  "speech": 0.98,
+  "prob": 0.996,
+  "top": [
+   [
+    "tr",
+    0.996
+   ],
+   [
+    "en",
+    0.002
+   ],
+   [
+    "nn",
+    0.001
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "tr",
+    0.99
+   ],
+   [
+    "tr",
+    0.99
+   ],
+   [
+    "tr",
+    1
+   ]
+  ],
+  "text": "18. yüzyıl pazarı, tarihi camiler ve kiliseler ile şehir geleneksel Türkiye'den daha çok Akdeniz Avrupası havasına sahip olmasına rağmen geniş bulbarlar, cam binalar ve modern alışveriş merkezleri geleneksel kırmızı kiremitli çatılarla çevrilidir.",
+  "model": "medium"
+ },
+ "fleurs:tr_tr:12851978157302391969.wav#turkish": {
+  "start": 2.52,
+  "dur": 13.62,
+  "speech": 0.93,
+  "prob": 0.991,
+  "top": [
+   [
+    "tr",
+    0.991
+   ],
+   [
+    "en",
+    0.003
+   ],
+   [
+    "nn",
+    0.002
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "tr",
+    0.98
+   ],
+   [
+    "tr",
+    0.96
+   ],
+   [
+    "tr",
+    0.99
+   ]
+  ],
+  "text": "Bilim insanları, oselotların diğer hayvanları yerin neresinde olduklarını sezerek, koklayarak, yemek, parantez içinde avlamak için takip ettiklerini ve bulduklarını düşünüyor.",
+  "model": "medium"
+ },
+ "fleurs:tr_tr:13112273879309658180.wav#turkish": {
+  "start": 2.39,
+  "dur": 14.64,
+  "speech": 0.97,
+  "prob": 0.998,
+  "top": [
+   [
+    "tr",
+    0.998
+   ],
+   [
+    "en",
+    0.001
+   ],
+   [
+    "nn",
+    0
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "tr",
+    1
+   ],
+   [
+    "tr",
+    0.99
+   ],
+   [
+    "tr",
+    0.99
+   ]
+  ],
+  "text": "Özellikle Romani olmayanlar arasında yaygın biçimde kullanılsa da Çingene kelimesi Romani halkına dair olumsuz kalıp yargılar ve doğru olmayan algılarla ilişkilendirilmiş olması nedeniyle genellikle saldırgan olarak kabul edilir.",
+  "model": "medium"
+ },
+ "fleurs:tr_tr:14224627544840650435.wav#turkish": {
+  "start": 2.13,
+  "dur": 14.42,
+  "speech": 0.96,
+  "prob": 0.997,
+  "top": [
+   [
+    "tr",
+    0.997
+   ],
+   [
+    "en",
+    0.001
+   ],
+   [
+    "nn",
+    0.001
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "tr",
+    0.99
+   ],
+   [
+    "tr",
+    0.99
+   ],
+   [
+    "tr",
+    1
+   ]
+  ],
+  "text": "2010 Federal seçimlerinden önce 1400 kişiyle yapılan ankete göre Avustralya'nın cumhuriyet olmasına karşı çıkanların sayısı 2008'den bu yana %8 oranında arttı.",
+  "model": "medium"
+ },
+ "fleurs:tr_tr:14552409153720569302.wav#turkish": {
+  "start": 11.28,
+  "dur": 18.71,
+  "speech": 0.95,
+  "prob": 0.996,
+  "top": [
+   [
+    "tr",
+    0.996
+   ],
+   [
+    "en",
+    0.001
+   ],
+   [
+    "nn",
+    0.001
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "tr",
+    0.99
+   ],
+   [
+    "tr",
+    0.97
+   ],
+   [
+    "tr",
+    1
+   ],
+   [
+    "tr",
+    0.99
+   ]
+  ],
+  "text": "ABD Çin ilişkilerinin normalleşmesi, 1979'daki İran rehinik krizine yol açan İran devrimi ve 1979'da Afganistan'ın Sovyetler tarafından işgali gibi dünya meselelerinin diplomatik olarak ele alınmasında Kartra yardımcı oldu.",
+  "model": "medium"
+ },
+ "fleurs:uk_ua:10275110423183381243.wav#ukrainian": {
+  "start": 0.66,
+  "dur": 14.13,
+  "speech": 0.97,
+  "prob": 0.962,
+  "top": [
+   [
+    "uk",
+    0.962
+   ],
+   [
+    "ru",
+    0.035
+   ],
+   [
+    "pl",
+    0.001
+   ]
+  ],
+  "en": 0.001,
+  "chunks": [
+   [
+    "uk",
+    0.5
+   ],
+   [
+    "uk",
+    0.68
+   ],
+   [
+    "uk",
+    0.68
+   ]
+  ],
+  "text": "Для баба Шиам було подано 108 тарілок виробника з Хабхан Бгох. В індуїзмі 56 різних їстівних речей, наприклад, солодищів, фруктів, гріхів, страв, тощо, які пропонуються Божеству.",
+  "model": "medium"
+ },
+ "fleurs:uk_ua:10549747991265548535.wav#ukrainian": {
+  "start": 1.04,
+  "dur": 18.71,
+  "speech": 0.92,
+  "prob": 0.963,
+  "top": [
+   [
+    "uk",
+    0.963
+   ],
+   [
+    "ru",
+    0.02
+   ],
+   [
+    "nn",
+    0.005
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "uk",
+    0.52
+   ],
+   [
+    "uk",
+    0.47
+   ],
+   [
+    "uk",
+    0.55
+   ],
+   [
+    "ru",
+    0.93
+   ]
+  ],
+  "text": "Яванська кухня зараз дуже поширена на всьому архіпелазі і пропонує широкий вибір просто приправлених страв, серед яких переважаючими смаками є арахіс, чілі, цукор, особливо яванський кокосовий цукор, а також різноманітні ароматні спеції.",
+  "model": "medium"
+ },
+ "fleurs:uk_ua:11265069043720488714.wav#ukrainian": {
+  "start": 0.5,
+  "dur": 14.58,
+  "speech": 0.97,
+  "prob": 0.716,
+  "top": [
+   [
+    "uk",
+    0.716
+   ],
+   [
+    "ru",
+    0.173
+   ],
+   [
+    "en",
+    0.033
+   ]
+  ],
+  "en": 0.033,
+  "chunks": [
+   [
+    "ru",
+    0.46
+   ],
+   [
+    "uk",
+    0.62
+   ],
+   [
+    "uk",
+    0.94
+   ]
+  ],
+  "text": "Арлів Ласкес з Мексики фінішував 15-му в чоловічому сидячому заїзді з супергігантського слалому. Новозаландський спортсмен Адам Хоу фінішував 9-му в чоловічому стоючому заїзді з супергігантського слалому.",
+  "model": "medium"
+ },
+ "fleurs:uk_ua:13374397642142305369.wav#ukrainian": {
+  "start": 0.44,
+  "dur": 17.84,
+  "speech": 0.94,
+  "prob": 0.915,
+  "top": [
+   [
+    "uk",
+    0.915
+   ],
+   [
+    "ru",
+    0.04
+   ],
+   [
+    "nn",
+    0.025
+   ]
+  ],
+  "en": 0.005,
+  "chunks": [
+   [
+    "uk",
+    0.46
+   ],
+   [
+    "uk",
+    0.44
+   ],
+   [
+    "ru",
+    0.45
+   ],
+   [
+    "ru",
+    0.65
+   ]
+  ],
+  "text": "Вона користується сопутниковою технологією, напротивагу більш застарілій технології наземного радіолокатора, що дає можливість диспетчерам повітряного руху з максимальною точністю виокремлювати літаки та надавати пілотам детальну інформацію.",
+  "model": "medium"
+ },
+ "fleurs:ur_pk:1062406740550773141.wav#urdu": {
+  "start": 0.79,
+  "dur": 16.85,
+  "speech": 0.94,
+  "prob": 0.316,
+  "top": [
+   [
+    "hi",
+    0.639
+   ],
+   [
+    "ur",
+    0.316
+   ],
+   [
+    "en",
+    0.028
+   ]
+  ],
+  "en": 0.028,
+  "chunks": [
+   [
+    "ur",
+    0.5
+   ],
+   [
+    "hi",
+    0.64
+   ],
+   [
+    "hi",
+    0.51
+   ]
+  ],
+  "text": "پوائنٹ میریان اور فیر مونٹ کے درمیان پھیلاؤ کے سبب بیفلو پیس، ٹرکبرگ ہائیوے پر ارکت ہلک درونی جنگل، جنگلی علاقے کے درمیان سے کسرت سے گزرتے ہوئے گاری چلانا مشکل بھرا کام ہوتا ہے۔",
+  "model": "medium"
+ },
+ "fleurs:ur_pk:11232893244960293483.wav#urdu": {
+  "start": 0.6,
+  "dur": 14.26,
+  "speech": 0.97,
+  "prob": 0.798,
+  "top": [
+   [
+    "ur",
+    0.798
+   ],
+   [
+    "hi",
+    0.178
+   ],
+   [
+    "en",
+    0.007
+   ]
+  ],
+  "en": 0.007,
+  "chunks": [
+   [
+    "ur",
+    0.54
+   ],
+   [
+    "hi",
+    0.77
+   ],
+   [
+    "ur",
+    0.7
+   ]
+  ],
+  "text": "حشا تُل ارس پہلے جاندار تھے جنہیں ہمہاں لے جایا گیا ان کو اُنڈنے کی سلحیت نے دشمنوں کو زیادہ سانی سے ختم کرنے اور زیادہ موصلنداز میں خراف اور ساتھی ڈھوننے میں ان کی مدد کی",
+  "model": "medium"
+ },
+ "fleurs:ur_pk:112515957570874732.wav#urdu": {
+  "error": "no speech-dense window",
+  "total": 14.5,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:ur_pk:11798929122613241760.wav#urdu": {
+  "start": 0.53,
+  "dur": 19,
+  "speech": 0.95,
+  "prob": 0.845,
+  "top": [
+   [
+    "ur",
+    0.845
+   ],
+   [
+    "hi",
+    0.121
+   ],
+   [
+    "pa",
+    0.011
+   ]
+  ],
+  "en": 0.009,
+  "chunks": [
+   [
+    "ur",
+    0.88
+   ],
+   [
+    "hi",
+    0.85
+   ],
+   [
+    "hi",
+    0.96
+   ],
+   [
+    "hi",
+    0.63
+   ]
+  ],
+  "text": "ویلائیات متہدہ امریکہ کے طول و ارز میں تسلب مطادد ملٹیپل سرویسز کے تقریباً 400 ہزار کیس پائے گئے ہیں جس سے اس کی حیثیر نوجوانوں اور ادھیر بلغان کے سربراوردہ سابی بیماری کی ہو گئی ہے",
+  "model": "medium"
+ },
+ "fleurs:uz_uz:10085397880080377835.wav#uzbek": {
+  "start": 5.17,
+  "dur": 18,
+  "speech": 0.95,
+  "prob": 0.079,
+  "top": [
+   [
+    "kk",
+    0.652
+   ],
+   [
+    "az",
+    0.152
+   ],
+   [
+    "uz",
+    0.079
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "kk",
+    0.56
+   ],
+   [
+    "tr",
+    0.28
+   ],
+   [
+    "ps",
+    0.25
+   ],
+   [
+    "fa",
+    0.67
+   ]
+  ],
+  "text": "100-200 m ertgin usulde suzish baqs lara hamda uç garrra ham doslik uyun lara da uçta estafita da qatnaishi kirak idi Broq, shikoyatlari sabapli nin salomat lege shupqa asita qolayot gandi",
+  "model": "medium"
+ },
+ "fleurs:uz_uz:10841228809447442509.wav#uzbek": {
+  "start": 0.88,
+  "dur": 17.36,
+  "speech": 0.98,
+  "prob": 0.003,
+  "top": [
+   [
+    "az",
+    0.82
+   ],
+   [
+    "kk",
+    0.087
+   ],
+   [
+    "lt",
+    0.019
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "az",
+    0.29
+   ],
+   [
+    "kk",
+    0.52
+   ],
+   [
+    "az",
+    0.62
+   ]
+  ],
+  "text": "∂ً' religion – Allahcestor criterion All of them say aqueer was wrong.",
+  "model": "medium"
+ },
+ "fleurs:uz_uz:11554434528677861045.wav#uzbek": {
+  "start": 1.2,
+  "dur": 17.62,
+  "speech": 0.98,
+  "prob": 0.019,
+  "top": [
+   [
+    "az",
+    0.555
+   ],
+   [
+    "kk",
+    0.34
+   ],
+   [
+    "uz",
+    0.019
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "kk",
+    0.41
+   ],
+   [
+    "az",
+    0.34
+   ],
+   [
+    "kk",
+    0.25
+   ],
+   [
+    "fa",
+    0.6
+   ]
+  ],
+  "text": "Tekhnologi yechimni jaylarge virtual ekskursyalar arkali daklif qaladi. Talabalar os sinfda uturgen xalda muzeydagi ertifakidlarini da morshiqlixlara, akvaryungi tashrif piyurixlari ya ki gozal sanatga makhliewa bolishlara mokün.",
+  "model": "medium"
+ },
+ "fleurs:uz_uz:11635949868011077748.wav#uzbek": {
+  "start": 0.82,
+  "dur": 17.56,
+  "speech": 0.91,
+  "prob": 0.013,
+  "top": [
+   [
+    "az",
+    0.505
+   ],
+   [
+    "kk",
+    0.362
+   ],
+   [
+    "kn",
+    0.038
+   ]
+  ],
+  "en": 0,
+  "chunks": [
+   [
+    "ro",
+    0.95
+   ],
+   [
+    "kk",
+    0.41
+   ],
+   [
+    "sq",
+    0.74
+   ],
+   [
+    "az",
+    0.27
+   ]
+  ],
+  "text": "Uni minenchi markasi, ikki minenchi yilda David Klöker, Eren Strahl tamonidan yaratilgen. Dunya rekordlari, geniz kitabiya kriytilgan luqward, Shved shoklarini büg ishlari bulgen eda.",
+  "model": "medium"
+ },
+ "fleurs:uz_uz:11860566126017202458.wav#uzbek": {
+  "start": 1.33,
+  "dur": 20,
+  "speech": 1,
+  "prob": 0.004,
+  "top": [
+   [
+    "az",
+    0.436
+   ],
+   [
+    "kk",
+    0.354
+   ],
+   [
+    "mn",
+    0.033
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "kk",
+    0.73
+   ],
+   [
+    "ru",
+    0.47
+   ],
+   [
+    "pt",
+    0.31
+   ],
+   [
+    "kn",
+    0.14
+   ]
+  ],
+  "text": "�인 물어�aurus ញកក នក ឋጀ로� Esta ឩក ជក ជេ ឣក។ ឋក ឍ លក ប០� MALE ʻOʻlɐ ʒĨ ʸɨmɨ. ʷɨsɨt qɨzɨ ʃɨ ʀɪdʒqɨ ɪdʰɨmɨ ʃɨn çɨlɨ ʒɨs ʀɪdʒqɨ ʀɪtɨ ɐtʃɨ fɨqn.",
+  "model": "medium"
+ },
+ "fleurs:vi_vn:10056093347220194289.wav#vietnamese": {
+  "start": 0.72,
+  "dur": 13.78,
+  "speech": 0.82,
+  "prob": 0.987,
+  "top": [
+   [
+    "vi",
+    0.987
+   ],
+   [
+    "nn",
+    0.007
+   ],
+   [
+    "en",
+    0.002
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "vi",
+    0.97
+   ],
+   [
+    "vi",
+    0.98
+   ],
+   [
+    "vi",
+    0.99
+   ]
+  ],
+  "text": "Một số loài động vật như vôi và hú cao cổ thường hay lợi gần xe và chỉ với các dùng cầu bình thường Chúng ta cũng sẽ quan sát một cách dễ dàng",
+  "model": "medium"
+ },
+ "fleurs:vi_vn:10629394448273158255.wav#vietnamese": {
+  "start": 1.2,
+  "dur": 13.81,
+  "speech": 0.89,
+  "prob": 0.939,
+  "top": [
+   [
+    "vi",
+    0.939
+   ],
+   [
+    "nn",
+    0.044
+   ],
+   [
+    "ja",
+    0.003
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "vi",
+    0.84
+   ],
+   [
+    "vi",
+    0.73
+   ],
+   [
+    "vi",
+    0.95
+   ]
+  ],
+  "text": "Nó sử dụng công nghệ vệ tinh cơ sở trái ngược với công nghệ radar mặt đất Cơ sở cho phép kiểm soát viên không lưu định vị máy bay với độ chính xác cao hơn Và cho phép vi công những thông tin chính xác hơn",
+  "model": "medium"
+ },
+ "fleurs:vi_vn:10702218987765403898.wav#vietnamese": {
+  "start": 1.01,
+  "dur": 15.73,
+  "speech": 0.76,
+  "prob": 0.963,
+  "top": [
+   [
+    "vi",
+    0.963
+   ],
+   [
+    "nn",
+    0.021
+   ],
+   [
+    "en",
+    0.003
+   ]
+  ],
+  "en": 0.003,
+  "chunks": [
+   [
+    "vi",
+    0.98
+   ],
+   [
+    "vi",
+    0.97
+   ],
+   [
+    "vi",
+    0.98
+   ]
+  ],
+  "text": "Tôi bị lạc em gái và bạn của cô ấy và khi đang trên đường có hai người khuất tập ngồi xe lăng mọi người cứ chạm lên và xô đẩy họ ạc manh và say nói",
+  "model": "medium"
+ },
+ "fleurs:vi_vn:10880870198356795831.wav#vietnamese": {
+  "error": "no speech-dense window",
+  "total": 16.1,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:wo_sn:10089385142876885479.wav#wolof": {
+  "start": 4.92,
+  "dur": 20,
+  "speech": 0.66,
+  "prob": 0.966,
+  "top": [
+   [
+    "mn",
+    0.077
+   ],
+   [
+    "my",
+    0.07
+   ],
+   [
+    "sw",
+    0.062
+   ]
+  ],
+  "en": 0.034,
+  "chunks": [
+   [
+    "en",
+    0.2
+   ],
+   [
+    "ar",
+    0.28
+   ],
+   [
+    "jw",
+    0.31
+   ],
+   [
+    "ar",
+    0.13
+   ]
+  ],
+  "text": "I have been working in the field for more than a year. I have been working in the field for more than a year, and I have been working in the field for more than a year.",
+  "model": "medium"
+ },
+ "fleurs:wo_sn:10114812511384845207.wav#wolof": {
+  "start": 8.37,
+  "dur": 17.08,
+  "speech": 0.77,
+  "prob": 0.98,
+  "top": [
+   [
+    "yo",
+    0.288
+   ],
+   [
+    "ln",
+    0.148
+   ],
+   [
+    "sw",
+    0.121
+   ]
+  ],
+  "en": 0.02,
+  "chunks": [
+   [
+    "fr",
+    0.12
+   ],
+   [
+    "sw",
+    0.66
+   ],
+   [
+    "yo",
+    0.18
+   ]
+  ],
+  "text": "Tithor tor ayi Ampere nyolendi nos ngir senbop kese Aki yenen nit yuboko chi ngurgi Chili wör amperyal bi",
+  "model": "medium"
+ },
+ "fleurs:wo_sn:10685696706014675.wav#wolof": {
+  "start": 4.56,
+  "dur": 19.83,
+  "speech": 0.91,
+  "prob": 0.923,
+  "top": [
+   [
+    "sn",
+    0.137
+   ],
+   [
+    "sw",
+    0.099
+   ],
+   [
+    "jw",
+    0.098
+   ]
+  ],
+  "en": 0.077,
+  "chunks": [
+   [
+    "en",
+    0.25
+   ],
+   [
+    "tl",
+    0.42
+   ],
+   [
+    "ms",
+    0.3
+   ],
+   [
+    "sw",
+    0.32
+   ]
+  ],
+  "text": "The Fallak, the Njip, the Nanguchi, the Rew, the Yip, the Latay, the Mulendi, the Manajel, the Terew, the Njil, the Nanyu, the Murgumakchi, the Mugunaleyare, the Niseni, the Tewal, the Danyudan, the Faraldi, the Ngakatew.",
+  "model": "medium"
+ },
+ "fleurs:wo_sn:10787832839015733940.wav#wolof": {
+  "start": 1.33,
+  "dur": 17.17,
+  "speech": 0.82,
+  "prob": 0.974,
+  "top": [
+   [
+    "ht",
+    0.156
+   ],
+   [
+    "yo",
+    0.152
+   ],
+   [
+    "ln",
+    0.139
+   ]
+  ],
+  "en": 0.026,
+  "chunks": [
+   [
+    "fr",
+    0.14
+   ],
+   [
+    "yo",
+    0.1
+   ],
+   [
+    "ht",
+    0.35
+   ]
+  ],
+  "text": "Dige nyi dan nyo wara xam ni ute si walu mchosan mena wara liniw i mena jap ni hoqa tal te nekul lunu ta omul di top nyu ti eko si loho agi yenen",
+  "model": "medium"
+ },
+ "fleurs:yue_hant_hk:10033329815200977556.wav#cantonese": {
+  "error": "no speech-dense window",
+  "total": 15.5,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:yue_hant_hk:10343823703592916276.wav#cantonese": {
+  "start": 1.04,
+  "dur": 14.48,
+  "speech": 0.95,
+  "prob": 0,
+  "top": [
+   [
+    "zh",
+    0.991
+   ],
+   [
+    "en",
+    0.004
+   ],
+   [
+    "nn",
+    0.001
+   ]
+  ],
+  "en": 0.004,
+  "chunks": [
+   [
+    "zh",
+    0.99
+   ],
+   [
+    "zh",
+    0.91
+   ],
+   [
+    "zh",
+    0.94
+   ]
+  ],
+  "text": "科學嘅主要目標 試透過科學方法了解世界運作嘅方式 呢種方法實際上也引領咗多數科學研究",
+  "model": "medium"
+ },
+ "fleurs:yue_hant_hk:10352066443493306881.wav#cantonese": {
+  "error": "no speech-dense window",
+  "total": 17.1,
+  "text": null,
+  "model": "medium"
+ },
+ "fleurs:yue_hant_hk:10521143446517693354.wav#cantonese": {
+  "start": 0.79,
+  "dur": 14.55,
+  "speech": 0.97,
+  "prob": 0,
+  "top": [
+   [
+    "zh",
+    0.99
+   ],
+   [
+    "nn",
+    0.002
+   ],
+   [
+    "vi",
+    0.002
+   ]
+  ],
+  "en": 0.002,
+  "chunks": [
+   [
+    "zh",
+    0.99
+   ],
+   [
+    "zh",
+    0.96
+   ],
+   [
+    "zh",
+    0.98
+   ]
+  ],
+  "text": "密西哥的阿里貝拉斯克斯在男子座式超大曲度競賽排名第15位 紐西蘭的阿當·霍爾在男子站式超大曲度競賽排名第9位",
+  "model": "medium"
+ }
+}
