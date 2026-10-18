@@ -78,7 +78,8 @@
     "build:geography-places": "node scripts/geography/build-places.mjs",
     "build:milestones": "node scripts/geography/build-milestones.mjs",
     "build:geography-stats": "node scripts/geography/build-stats.mjs",
-    "outrank:daily": "jiti scripts/geography/outrank-daily.mjs"
+    "outrank:daily": "jiti scripts/geography/outrank-daily.mjs",
+    "seo-borderline": "node scripts/seo/geo-scorecard.mjs borderline"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

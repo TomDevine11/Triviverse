@@ -199,10 +199,16 @@ const ROUTES = [
   {
     path: '/geography/borderline',
     name: 'Borderline',
-    title: 'Borderline — Guess the Country by Its Shape | Triviverse Geography',
-    description: 'Borderline is a free daily geography game: name the country from its silhouette in six guesses, with distance, direction and proximity clues after each one.',
-    h1: 'Borderline — guess the country from its shape',
-    tagline: 'Name the country from its outline in six guesses.',
+    // Descriptive first: the query family is "guess the country (by shape)" / "country
+    // guessing game", and an unrelated game already uses the name "Borderline"
+    // (borderlinequiz.com). Evidence and alternatives: docs/seo/borderline.md.
+    title: 'Guess the Country by Its Shape: Daily & Unlimited | Borderline',
+    description: 'Free country guessing game: name the country from its silhouette in six guesses, with distance and direction clues. A new country daily, plus unlimited play.',
+    ogTitle: 'Borderline — guess the country by its shape',
+    image: '/og/geography-borderline.png',
+    imageAlt: 'Borderline: guess the country by its shape. A white country silhouette on a purple background.',
+    h1: 'Borderline — guess the country by its shape',
+    tagline: 'A country guessing game: name the country from its outline in six guesses.',
     about: 'Borderline is a daily geography puzzle. Every day the outline of one country or territory appears on the board, and you have six guesses to name it. After each wrong guess you are told how far away your country is from the answer, which compass direction to head, and how close you are as a percentage — so even a wild first guess narrows the map. Everyone gets the same country each day, and Unlimited mode serves random countries whenever you want more.',
     howTo: [
       'Study the silhouette — every country is scaled to fill the board, so size is not a clue.',
@@ -345,17 +351,27 @@ export const absolute = (path) => SITE_URL + path
 
 export function metaTags(route) {
   const url = absolute(route.path)
+  // Social titles can lead with the game's name; the <title> leads with what searchers type.
+  const ogTitle = route.ogTitle || route.title
+  const image = route.image ? absolute(route.image) : null
   return [
     { name: 'description', content: route.description },
     { name: 'robots', content: 'index, follow' },
     { property: 'og:type', content: 'website' },
     { property: 'og:site_name', content: BRAND },
-    { property: 'og:title', content: route.title },
+    { property: 'og:title', content: ogTitle },
     { property: 'og:description', content: route.description },
     { property: 'og:url', content: url },
-    { name: 'twitter:card', content: 'summary' },
-    { name: 'twitter:title', content: route.title },
+    ...(image ? [
+      { property: 'og:image', content: image },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '630' },
+      { property: 'og:image:alt', content: route.imageAlt || route.ogTitle || route.title },
+    ] : []),
+    { name: 'twitter:card', content: image ? 'summary_large_image' : 'summary' },
+    { name: 'twitter:title', content: ogTitle },
     { name: 'twitter:description', content: route.description },
+    ...(image ? [{ name: 'twitter:image', content: image }] : []),
   ]
 }
 
@@ -366,7 +382,10 @@ export function jsonLd(route) {
     blocks.push({
       '@context': 'https://schema.org', '@type': 'VideoGame', name: route.name, url,
       description: route.description, genre: ['Puzzle', 'Geography', 'Trivia'],
-      gamePlatform: 'Web browser', applicationCategory: 'Game', operatingSystem: 'Any',
+      gamePlatform: 'Web browser', applicationCategory: 'GameApplication', operatingSystem: 'Any',
+      inLanguage: 'en-GB', isAccessibleForFree: true,
+      publisher: { '@type': 'Organization', name: 'Triviverse', url: SITE_URL },
+      ...(route.image ? { image: absolute(route.image) } : {}),
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
     })
     blocks.push({

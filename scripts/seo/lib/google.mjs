@@ -33,15 +33,18 @@ async function ga4Client() {
   return _ga
 }
 
-export async function ga4Run({ dimensions = [], metrics = [], days = config.defaults.days, limit = 25, orderBy = null } = {}) {
+// `dimensionFilter` is a GA4 FilterExpression; `dateRange` overrides `days` with
+// explicit { startDate, endDate } (YYYY-MM-DD or NdaysAgo).
+export async function ga4Run({ dimensions = [], metrics = [], days = config.defaults.days, limit = 25, orderBy = null, dimensionFilter = null, dateRange = null } = {}) {
   const client = await ga4Client()
   const [res] = await client.runReport({
     property: `properties/${config.google.ga4PropertyId}`,
-    dateRanges: [{ startDate: `${days}daysAgo`, endDate: 'today' }],
+    dateRanges: [dateRange || { startDate: `${days}daysAgo`, endDate: 'today' }],
     dimensions: dimensions.map(name => ({ name })),
     metrics: metrics.map(name => ({ name })),
     limit,
     orderBys: orderBy ? [orderBy] : undefined,
+    dimensionFilter: dimensionFilter || undefined,
   })
   const dimH = (res.dimensionHeaders || []).map(h => h.name)
   const metH = (res.metricHeaders || []).map(h => h.name)

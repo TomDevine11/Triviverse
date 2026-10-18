@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { geoRoute, metaTags, jsonLd, absolute, GEO_ROUTES } from '../seo'
 import { GeoFooter } from './ui'
+import { geoTrack, gameIdFromPath, GEO_EVENTS } from '../analytics'
 
 // Head manager for Geography routes: title, meta, canonical and JSON-LD, all
 // tagged data-seo (the same convention the prerender uses) so they swap cleanly.
@@ -54,7 +55,12 @@ export function GeoContent({ path }) {
         </section>
       )}
       <nav aria-label="More geography" className="text-sm flex flex-wrap gap-x-5 gap-y-1.5">
-        {others.map(o => <Link key={o.path} to={o.path} className="text-brand-bright hover:text-brand transition-colors">{o.name}</Link>)}
+        {others.map(o => (
+          <Link key={o.path} to={o.path} className="text-brand-bright hover:text-brand transition-colors"
+            onClick={() => geoTrack(GEO_EVENTS.related, gameIdFromPath(path), { to: gameIdFromPath(o.path), placement: 'page_links' })}>
+            {o.name}
+          </Link>
+        ))}
       </nav>
       <GeoFooter />
     </div>
