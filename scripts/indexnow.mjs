@@ -14,11 +14,14 @@
 // ─────────────────────────────────────────────────────────────────────────
 
 import { SITE_URL, absolute, indexableRoutes } from '../src/seo/seoConfig.js'
+import { GEO_ROUTES } from '../src/geography/seo.js'
 
 const KEY = 'b96efb81bd679e402103103fa79f9dc4'
 const host = new URL(SITE_URL).host
 const keyLocation = `${SITE_URL}/${KEY}.txt`
-const urlList = indexableRoutes().map(r => absolute(r.path))
+// Football routes plus Triviverse Geography's (its own SEO config; until 2026-10-18
+// the geography pages were never pinged).
+const urlList = [...indexableRoutes().map(r => absolute(r.path)), ...GEO_ROUTES.map(r => SITE_URL + r.path)]
 
 async function main() {
   // Sanity check: the key file must be reachable and contain the key.

@@ -127,14 +127,16 @@ const ShareIcon = () => (
 )
 
 // Native share sheet on phones, clipboard elsewhere.
-export function ShareButton({ text, primary = false }) {
+// `onShared(method)` fires only once the share actually happened ('native' or
+// 'copy'), never for a cancelled sheet or a blocked clipboard.
+export function ShareButton({ text, primary = false, onShared }) {
   const [copied, setCopied] = useState(false)
   const onShare = async () => {
     if (typeof navigator.share === 'function' && window.matchMedia?.('(pointer: coarse)').matches) {
-      try { await navigator.share({ text }) } catch { /* cancelled */ }
+      try { await navigator.share({ text }); onShared?.('native') } catch { /* cancelled */ }
       return
     }
-    try { await navigator.clipboard.writeText(text); setCopied(true); setTimeout(() => setCopied(false), 2000) } catch { /* blocked */ }
+    try { await navigator.clipboard.writeText(text); setCopied(true); setTimeout(() => setCopied(false), 2000); onShared?.('copy') } catch { /* blocked */ }
   }
   return (
     <button type="button" onClick={onShare}

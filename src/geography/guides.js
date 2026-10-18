@@ -213,7 +213,7 @@ export const GUIDES = {
   },
 
   '/geography/borderline': {
-    about: 'Borderline is a daily geography puzzle. Each day the outline of one country appears on the board, and you have six guesses to name it. After each wrong guess you are told how far your country is from the answer, which compass direction to head and how close you are as a percentage. Even a wild first guess narrows the map. Everyone gets the same country each day, and Unlimited mode serves random countries whenever you want more.',
+    about: 'Borderline is a free country guessing game: guess the country by its shape. Each day the silhouette of one country appears on the board, and you have six guesses to name it. After each wrong guess you are told how far your country is from the answer, which compass direction to head and how close you are as a percentage, so even a wild first guess narrows the map. Everyone gets the same country each day, and Unlimited mode serves a random country whenever you want another, without touching your daily streak.',
     howTo: [
       'Study the silhouette. Every country is scaled to fill the board, so size is not a clue, but the shape of coastlines and borders is.',
       'Type a country and pick it from the suggestions.',
@@ -256,6 +256,7 @@ export const GUIDES = {
       { q: 'How is the distance calculated?', a: 'It is the great-circle distance between the centres of the two countries, so even bordering countries show a distance.' },
       { q: 'Is size a clue?', a: 'No. Every country is scaled to fill the board, so Russia and Malta appear the same size. Only the shape matters.' },
       { q: 'Can I play more than one a day?', a: 'Yes. Unlimited mode gives you a random country as often as you like without affecting your daily streak.' },
+      { q: 'Is Borderline the same as Worldle?', a: 'No. Borderline is made independently by Triviverse and is not affiliated with Worldle or any other game. It uses a similar idea, naming a country from its outline with distance and direction clues, and is part of Triviverse Geography, so your daily result also scores points in leagues with friends. It has its own Unlimited mode for extra rounds.' },
     ],
   },
 

@@ -167,6 +167,32 @@
       "baseline": "Both URLs existed but served duplicate English metadata.",
       "status": "open",
       "conclusion": null
+    },
+    {
+      "id": "EXP-007",
+      "hypothesis": "Leading the Borderline title with the searcher phrase (\"Guess the Country by Its Shape\") plus daily/unlimited, and splitting the geography bundle, gets the page indexed and earning impressions for the guess-the-country / country-guessing-game family on Google and Bing.",
+      "change": "New title, meta description, H1, OG card and Worldle-disambiguation FAQ on /geography/borderline; geography routes lazy-loaded (Borderline JS ~437→~218 KB gz); geography URLs added to IndexNow.",
+      "prs": [],
+      "shippedAt": "2026-10-18",
+      "targets": {
+        "pages": [
+          "/geography/borderline"
+        ],
+        "queries": [
+          "guess the country by shape",
+          "guess the country game",
+          "country guessing game",
+          "country guesser",
+          "guess the country by its shape",
+          "country shape game",
+          "worldle unlimited"
+        ]
+      },
+      "metric": "impressions",
+      "expected": "up",
+      "baseline": "2026-10-18: Google URL Inspection \"Discovered - currently not indexed\"; 0 GSC impressions/clicks (28d); Bing 0; GA4 5 page_views and 1 organic landing session (7d). Pre-launch page had existed since 2026-10-16 only, so this measures indexing + first impressions, not a before/after on an established page.",
+      "status": "open",
+      "conclusion": null
     }
   ]
 }

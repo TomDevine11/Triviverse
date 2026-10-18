@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useId } from 'react'
+import { useState, useEffect, useMemo, useId, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import {
   MAX_GUESSES, BOX, countryByCode, evaluate, shareRow, dailyCode, puzzleNumber, randomCode,
@@ -12,6 +12,7 @@ import { GuessRow, EmptyRow, GuessHeader } from '../../components/GuessRows'
 import GeoMotif from '../../components/GeoMotif'
 import { geoAccentVars } from '../../games'
 import { t } from '../../strings'
+import { geoTrack, GEO_EVENTS } from '../../analytics'
 import '../../geography.css'
 
 const GAME = 'borderline'
@@ -74,6 +75,8 @@ export default function Borderline() {
   const [nudge, setNudge] = useState(false)
   const [showResult, setShowResult] = useState(!!saved?.done)
   const countdown = useCountdown()
+  // One game_complete per round, even if two guesses land in the same render.
+  const completedRound = useRef(false)
 
   const country = countryByCode(target)
   const results = useMemo(() => guesses.map(g => evaluate(g, target)).filter(Boolean), [guesses, target])
@@ -97,24 +100,42 @@ export default function Borderline() {
     return () => clearTimeout(id)
   }, [phase]) // eslint-disable-line react-hooks/exhaustive-deps
 
+  // Analytics fire from here, on a real guess, so restoring a saved daily on refresh
+  // never re-sends a start or a completion.
   const onGuess = (code) => {
     if (phase !== 'playing') return
     const n = guesses.length + 1
-    if (mode === 'daily' && (code === target || n >= MAX_GUESSES)) recordResult(GAME, code === target, n, MAX_GUESSES)
+    const finished = code === target || n >= MAX_GUESSES
+    if (mode === 'daily' && finished) recordResult(GAME, code === target, n, MAX_GUESSES)
+    if (n === 1) geoTrack(GEO_EVENTS.start, GAME, { game_mode: mode })
+    geoTrack(GEO_EVENTS.guess, GAME, { game_mode: mode, guess_number: n })
+    if (finished && !completedRound.current) {
+      completedRound.current = true
+      geoTrack(GEO_EVENTS.complete, GAME, { game_mode: mode, outcome: code === target ? 'won' : 'lost', won: code === target, guesses: n })
+    }
     setFresh(guesses.length)
     setGuesses(g => [...g, code])
     if (code !== target) { setNudge(true); setTimeout(() => setNudge(false), 450) }
   }
 
   const startUnlimited = () => {
+    completedRound.current = false
     setMode('unlimited'); setTarget(randomCode(target)); setGuesses([]); setFresh(-1); setShowResult(false)
   }
   const restoreDaily = () => {
     const code = dailyCode()
     const s = loadProgress(GAME, code)
+    completedRound.current = !!s?.done
     setMode('daily'); setTarget(code); setGuesses(s?.guesses ?? []); setFresh(-1); setShowResult(!!s?.done)
   }
-  const onModeChange = (m) => (m === 'daily' ? restoreDaily() : startUnlimited())
+  const onModeChange = (m) => {
+    geoTrack(GEO_EVENTS.mode, GAME, { game_mode: m, source: 'toggle' })
+    return m === 'daily' ? restoreDaily() : startUnlimited()
+  }
+  const unlimitedFromResult = () => {
+    geoTrack(GEO_EVENTS.mode, GAME, { game_mode: 'unlimited', source: 'result_card' })
+    startUnlimited()
+  }
 
   const last = results[results.length - 1]
   const live = last
@@ -202,9 +223,9 @@ export default function Borderline() {
             </div>
             <StatsBlock stats={stats} last={phase === 'won' ? results.length : null} />
             <div className="w-full mt-4 text-[0.72rem] text-muted">{t('borderline.nextIn')} <b className="text-primary tabular-nums">{countdown}</b></div>
-            <ShareButton text={shareText} primary />
-            <button onClick={startUnlimited} className={SECONDARY_BTN}>{t('borderline.playUnlimited')}</button>
-            <Link to="/geography" className="mt-3 text-[0.78rem] font-bold text-brand-bright hover:text-brand">{t('borderline.allGames')} →</Link>
+            <ShareButton text={shareText} primary onShared={(method) => geoTrack(GEO_EVENTS.share, GAME, { method, game_mode: mode })} />
+            <button onClick={unlimitedFromResult} className={SECONDARY_BTN}>{t('borderline.playUnlimited')}</button>
+            <Link to="/geography" onClick={() => geoTrack(GEO_EVENTS.related, GAME, { to: 'hub', placement: 'result_card' })} className="mt-3 text-[0.78rem] font-bold text-brand-bright hover:text-brand">{t('borderline.allGames')} →</Link>
           </div>
         </ResultModal>
       </div>
