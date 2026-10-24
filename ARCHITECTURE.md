@@ -189,6 +189,22 @@ The pipeline is **offline and manual**. Deployment does *not* run it — the app
 ships pre-generated, committed JSON (see [Deployment](#deployment)). You only run
 it when refreshing the data.
 
+**Refreshing (do this at the start of each season and after each transfer window
+— early August and early September, and early February):**
+
+```bash
+npm run refresh:football   # this season's league pages, then transfers / caps /
+                           # honours for every active player (--refresh), then
+                           # the derived chain + identity. Resumable; ~4–5 hours.
+npm test && npm run build  # then commit src/data in a PR
+```
+
+Nothing does this automatically: there is no scheduled job (Transfermarkt blocks
+CI's datacentre IPs, and the old monthly Action that pulled Wikidata was deleted
+after silently failing Aug–Oct 2026). If players are showing last season's clubs,
+this hasn't been run. Without `--refresh` the per-player scrapers only fetch
+players they have never seen, so they never pick up a move, a cap or a trophy.
+
 **Scraping** (local only — Transfermarkt blocks datacentre IPs; runs are resumable
 and idempotent, caching per entity under the git-ignored `data/pl-history/cache/`):
 

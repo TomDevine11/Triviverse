@@ -9,7 +9,8 @@
 // Universe: the RECOGNISABLE player set (recognisability >= MIN_RECOG) rather than
 // all 42k — honours matter for players fans know, and trophy winners (Ballon d'Or,
 // World Cup) are all highly recognisable, so this captures them while keeping the
-// run tractable. Resumable + idempotent.
+// run tractable. Resumable + idempotent. `--refresh` also re-fetches active
+// players (new trophies) — config.mjs staleActive.
 //
 // RUN LOCALLY (Transfermarkt prefers residential IPs).
 //
@@ -18,13 +19,15 @@
 //
 //   # FULL RUN (resumable):
 //   npm run scrape:honours
+//
+//   # NEW SEASON — re-fetch active players:  npm run scrape:honours -- --refresh
 // ─────────────────────────────────────────────────────────────────────────
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { fetchHtml, parseHonours } from './lib.mjs'
-import { DIR, DELAY_MS, BASE } from './config.mjs'
+import { DIR, DELAY_MS, BASE, staleActive } from './config.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..', '..')
@@ -55,9 +58,11 @@ async function run() {
   if (SAVE_HTML) mkdirSync(HTML_DIR, { recursive: true })
   const players = universe()
   const already = new Set(readdirSync(CACHE).filter(f => f.endsWith('.json')).map(f => f.replace('.json', '')))
-  const todo = players.filter(p => !already.has(p.id)).slice(0, LIMIT)
+  const stale = staleActive(args, (id) => path.join(CACHE, `${id}.json`))
+  const refresh = players.filter(p => already.has(p.id) && stale(p.id)).length
+  const todo = players.filter(p => !already.has(p.id) || stale(p.id)).slice(0, LIMIT)
   console.error(`Data source: transfermarkt.com (honours; recognisability >= ${MIN_RECOG})`)
-  console.error(`Universe ${players.length} recognisable players — ${already.size} cached, ${todo.length} to fetch.\n`)
+  console.error(`Universe ${players.length} recognisable players — ${already.size} cached (${refresh} stale active), ${todo.length} to fetch.\n`)
 
   const t0 = Date.now()
   let done = 0, withHonours = 0, failed = 0
