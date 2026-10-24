@@ -7,7 +7,7 @@
 // artefact the client validates against. Deterministic: same data + code ⇒ same
 // output. Recognisability shapes SELECTION and POINTS, never correctness — every
 // player who genuinely appeared is a valid answer (and may score a "pointless" 0).
-import { writeFileSync, mkdirSync } from 'fs'
+import { writeFileSync, mkdirSync, readFileSync } from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { loadRegistry, norm } from '../qgen/registry.mjs'
@@ -15,6 +15,7 @@ import { makeResolver } from '../qgen/predicates.mjs'
 import { pointlessFamilies } from '../qgen/families.mjs'
 import { evaluateCandidate } from '../qgen/quality.mjs'
 import { dedup, diversifyOrder } from '../qgen/similarity.mjs'
+import { normalize } from '../../src/data/canonical/normalize.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const slug = (s) => norm(s).replace(/ /g, '-').slice(0, 60)
@@ -44,6 +45,21 @@ const { kept, dropped } = dedup(eligible)
 // days feel varied — a freshness-aware order baked in at generation time.
 const order = diversifyOrder(kept)
 
+// An answer whose name more than one player shares (two Nico Gonzálezes, or two
+// namesakes on one board) carries that player's id as `i`, so a namesake picked
+// from the dropdown isn't scored as them. Unique names stay id-free to keep the
+// pool lean; the client matches those by name.
+const ALIASES = JSON.parse(readFileSync(path.join(__dirname, '..', '..', 'src/data/canonical/players.aliases.generated.json'), 'utf8'))
+function withIds(answers) {
+  const count = new Map()
+  for (const a of answers) count.set(normalize(a.d), (count.get(normalize(a.d)) || 0) + 1)
+  return answers.map(a => {
+    const k = normalize(a.d)
+    const shared = Array.isArray(ALIASES[k]) || count.get(k) > 1
+    return { d: a.d, p: a.p, y: a.y, ...(shared && a.id != null ? { i: `tm:${a.id}` } : {}) }
+  })
+}
+
 const questions = order.map(({ c, e }) => ({
   id: slug(`${c.familyId}-${c.title}`),
   title: c.title,
@@ -54,7 +70,7 @@ const questions = order.map(({ c, e }) => ({
   // Answerability signals (also surfaced in the dev QA debug panel).
   comfortable: e.signals.comfortable, friction: e.signals.friction, effective: e.signals.effective,
   // `n` (normalised) is derived at load via norm(d) — not stored, to keep the pool lean.
-  answers: e.answers.map(a => ({ d: a.d, p: a.p, y: a.y })),
+  answers: withIds(e.answers),
 }))
 
 const outDir = path.join(__dirname, '..', '..', 'src', 'data', 'pointless')

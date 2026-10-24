@@ -1,5 +1,5 @@
 import { Fragment, useState, useRef, useEffect, useMemo } from 'react'
-import { getRandomGrid, buildGrid, categoryLabel, resolveGuess, normalizeName } from '../../data/tictactoe'
+import { getRandomGrid, buildGrid, categoryLabel, resolvePick, normalizeName } from '../../data/tictactoe'
 import { usePlayerSuggestions } from './usePlayerSuggestions'
 import { getWinner, isFull } from './winner'
 import GridBuilder from './GridBuilder'
@@ -100,9 +100,9 @@ export default function TicTacToeVersus({ onBackToModes }) {
     setInput('')
   }
 
-  const submitGuess = (text) => {
+  const submitGuess = (text, selectedId = null) => {
     if (selectedCell == null || result != null) return
-    const match = resolveGuess(text, grid.candidates[selectedCell], usedNames)
+    const match = resolvePick(grid, selectedCell, text, selectedId, usedNames)
     if (!match) { endTurnWrong(text, selectedCell); return }
 
     const nextOwners = { ...owners, [selectedCell]: turn }
@@ -127,7 +127,7 @@ export default function TicTacToeVersus({ onBackToModes }) {
     e.preventDefault()
     if (!active) return
     if (highlightedIndex >= 0 && visibleSuggestions[highlightedIndex]) {
-      submitGuess(visibleSuggestions[highlightedIndex].name); return
+      { const s = visibleSuggestions[highlightedIndex]; submitGuess(s.name, s.id) } return
     }
     if (input.trim()) submitGuess(input.trim())
   }
@@ -356,18 +356,18 @@ export default function TicTacToeVersus({ onBackToModes }) {
               <div ref={dropdownRef} id="ttt-vs-suggestions" role="listbox" className="absolute top-full left-0 right-0 mt-1 bg-surface border border-border-strong rounded-xl overflow-hidden z-10 shadow-2xl">
                 {visibleSuggestions.map((item, i) => (
                   <button
-                    key={item.name}
+                    key={item.id || item.name}
                     type="button"
                     id={`ttt-vs-option-${i}`}
                     role="option"
                     aria-selected={i === highlightedIndex}
-                    onMouseDown={e => { e.preventDefault(); submitGuess(item.name) }}
+                    onMouseDown={e => { e.preventDefault(); submitGuess(item.name, item.id) }}
                     onMouseEnter={() => setHighlightedIndex(i)}
                     className={`w-full text-left px-4 py-2.5 transition-colors border-b border-border/50 last:border-0 ${i === highlightedIndex ? 'bg-canvas-high' : 'hover:bg-canvas-high/60'}`}
                   >
                     <div className="flex items-center gap-2">
                       {item.flag && <span className="text-base shrink-0">{item.flag}</span>}
-                      <span className="text-primary text-sm font-medium truncate">{item.name}</span>
+                      <span className="text-primary text-sm font-medium truncate">{item.name}</span>{item.hint && <span className="ml-auto pl-2 max-w-[55%] shrink-0 truncate text-muted text-xs">{item.hint}</span>}
                     </div>
                   </button>
                 ))}

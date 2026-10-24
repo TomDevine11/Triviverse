@@ -208,6 +208,7 @@ function buildSearchIndex() {
     id: p.id,
     nationality: p.nationalities[0] || '',
     position: POS_BADGE[(p.positions || [])[0]] || null,
+    hint: p.hint || null,
   }))
 }
 export function searchRegistry(query, limit = 14) {
@@ -226,22 +227,26 @@ export function searchRegistry(query, limit = 14) {
     hits.push({ p, rank })
   }
   hits.sort((a, b) => a.rank - b.rank || (b.p.notable - a.p.notable) || a.p.name.localeCompare(b.p.name))
-  return hits.slice(0, limit).map(({ p }) => ({ name: p.name, flag: p.flag, id: p.id, nationality: p.nationality, position: p.position }))
+  return hits.slice(0, limit).map(({ p }) => ({ name: p.name, flag: p.flag, id: p.id, nationality: p.nationality, position: p.position, hint: p.hint }))
 }
 
 export function refineSuggestions(list, usedNames = new Set()) {
-  const canon = new Map()       // normalized canonical name -> item
+  const canon = new Map()       // player id (or normalized name when unknown) -> item
   const knownFuzzy = new Set()  // fuzzy keys already covered by a known player
   const unknowns = []
-  const addCanon = (name, src) => {
+  const addCanon = (name, src, id = resolveNameToId(name)) => {
     const shown = asShown(name)
-    const key = normalize(shown)
-    // Attach the stable id from the true canonical name (not the possibly-bare
-    // shown form), so suggestions carry identity and dedup by it.
-    if (!canon.has(key)) canon.set(key, { ...src, name: shown, id: resolveNameToId(name) })
+    // Keyed by identity, so namesakes (two Nico Gonzálezes) stay two entries;
+    // the id comes from the true canonical name, not the possibly-bare shown form.
+    const key = id || normalize(shown)
+    if (!canon.has(key)) canon.set(key, { ...src, name: shown, id })
     knownFuzzy.add(fuzzyKey(shown))
   }
   for (const item of list) {
+    // A registry hit already IS a specific player: keep its id rather than
+    // re-resolving the name, which can't tell namesakes apart.
+    const known = item.id ? getPlayer(item.id) : null
+    if (known) { addCanon(known.displayName, item, known.id); continue }
     const r = resolve(item.name)
     if (r.status === OK) addCanon(r.displayName, item)
     else if (r.status === AMBIGUOUS) r.options.forEach(opt => addCanon(opt, {}))

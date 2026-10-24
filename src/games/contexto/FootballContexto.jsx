@@ -197,7 +197,7 @@ export default function FootballContexto() {
                     >
                       <div className="flex items-center gap-2">
                         {item.flag && <span className="text-base shrink-0">{item.flag}</span>}
-                        <span className="text-primary text-sm font-medium truncate">{item.name}</span>
+                        <span className="text-primary text-sm font-medium truncate">{item.name}</span>{item.hint && <span className="ml-auto pl-2 max-w-[55%] shrink-0 truncate text-muted text-xs">{item.hint}</span>}
                       </div>
                     </button>
                   ))}

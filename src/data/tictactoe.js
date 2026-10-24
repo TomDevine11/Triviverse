@@ -171,6 +171,20 @@ export function resolveGuess(guessText, candidateNames, usedNames) {
   return resolveAgainst(guessText, candidateNames, usedNames)
 }
 
+// Validate a guess for grid cell `cell` (0–8). A suggestion picked from the
+// dropdown is one specific player, so it's valid only if THAT id fits both
+// categories — never through a namesake's shared name (the Spanish Nico González
+// must not fill an Argentina cell). Free-typed text falls back to the name
+// resolver, which uses the cell to disambiguate.
+export function resolvePick(grid, cell, text, selectedId, usedNames) {
+  const picked = selectedId != null ? getPlayer(selectedId) : null
+  if (picked) {
+    const fits = intersectIds(membersOf(grid.rowCategories[Math.floor(cell / 3)]), membersOf(grid.colCategories[cell % 3])).has(picked.id)
+    return fits && !usedNames.has(picked.displayName) ? picked.displayName : null
+  }
+  return resolveGuess(text, grid.candidates[cell], usedNames)
+}
+
 // Find one distinct-player assignment across cell candidate lists, skipping
 // `exclude`. Used to reveal example answers (callers pass the NOTABLE `reveal`
 // lists so examples are famous).

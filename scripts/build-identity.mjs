@@ -635,6 +635,70 @@ function rekeyDeterministic(registry, crosswalk) {
   crosswalk.meta.count = registry.length
 }
 
+// ── Namesake nationality bleed ──────────────────────────────────────────────
+// Name-only sources (curated lists, teammates, the Wordle pool) attach facts by
+// NAME, so on a shared name they land on whichever namesake the alias points at,
+// and the prior registry carries them forward build after build: both Nico
+// Gonzálezes ended up "Argentina/Spain". A player with a Transfermarkt id has its
+// own nationality on its history row, so drop any nationality that belongs to a
+// NAMESAKE's row but not to this player's. Other extra nationalities stay — they
+// are real dual nationalities (Diego Costa Brazil/Spain, Rakitić).
+function collectTmFacts() {
+  const J = p => JSON.parse(readFileSync(path.join(ROOT, p), 'utf8'))
+  const nats = new Map()  // tmId -> Set(nationality)
+  const clubs = new Map() // tmId -> Map(club name -> apps)
+  const last = new Map()  // tmId -> last season
+  for (const c of ['GB1', 'ES1', 'IT1', 'FR1', 'L1', 'CL']) {
+    const h = J(`src/data/football501/history.${c}.generated.json`)
+    for (const p of h.players) {
+      if (!p?.id) continue
+      const id = String(p.id)
+      if (p.nat) (nats.get(id) || nats.set(id, new Set()).get(id)).add(p.nat)
+      last.set(id, Math.max(last.get(id) || 0, p.last || 0))
+      const byClub = clubs.get(id) || clubs.set(id, new Map()).get(id)
+      for (const [cid, s] of Object.entries(p.comps?.[c]?.clubs || {})) {
+        const name = h.clubs?.[cid]?.name
+        if (name) byClub.set(name, (byClub.get(name) || 0) + (s.apps || 0))
+      }
+    }
+  }
+  return { nats, clubs, last }
+}
+
+function applyTmNationalities(registry, { nats }) {
+  const own = (rec) => (rec.refs.tm != null && nats.get(String(rec.refs.tm))) || new Set()
+  const groups = new Map()
+  for (const rec of registry) { const k = normalize(rec.displayName); (groups.get(k) || groups.set(k, []).get(k)).push(rec) }
+  for (const group of groups.values()) {
+    if (group.length < 2) continue
+    for (const rec of group) {
+      const mine = own(rec)
+      if (!mine.size) continue
+      const theirs = new Set(group.filter(o => o !== rec).flatMap(o => [...own(o)]))
+      rec.nationalities = rec.nationalities.filter(n => mine.has(n) || !theirs.has(n))
+      for (const n of mine) if (!rec.nationalities.includes(n)) rec.nationalities.push(n)
+      rec.nationalities.sort()
+    }
+  }
+}
+
+// Namesakes in the searchable universe (same name once accents/punctuation are
+// folded: two Nico Gonzálezes, Pepe/Pepê) get a short hint, so the dropdown can
+// show them apart: their main club in our competitions and their last season.
+function addNamesakeHints(players, { clubs, last }) {
+  const groups = new Map()
+  for (const p of players) { const k = normalize(p.displayName); (groups.get(k) || groups.set(k, []).get(k)).push(p) }
+  for (const group of groups.values()) {
+    if (group.length < 2) continue
+    for (const p of group) {
+      const tm = p.id.startsWith('tm:') ? p.id.slice(3) : null
+      const main = tm ? [...(clubs.get(tm) || new Map()).entries()].sort((a, b) => b[1] - a[1])[0]?.[0] : null
+      const season = tm ? last.get(tm) : null
+      if (main) p.hint = season ? `${main} · ${season}/${String((season + 1) % 100).padStart(2, '0')}` : main
+    }
+  }
+}
+
 async function main() {
   const prior = loadPrior()
   const sources = await collectSources()
@@ -647,6 +711,8 @@ async function main() {
   const { registry, crosswalk, report, recognisableNames } = buildIdentity({ sources, tmIndex, tmPositions, prior, recog: apps })
 
   rekeyDeterministic(registry, crosswalk)
+  const tmFacts = collectTmFacts()
+  applyTmNationalities(registry, tmFacts)
   runIntegrityChecks(registry, crosswalk) // throws → non-zero exit on violation
 
   // Compact internal-id → position-badge map for the games' dropdowns.
@@ -676,6 +742,7 @@ async function main() {
   } catch { /* categories not built yet — seed stays recognisable-only */ }
   const recognisable = registry.filter(r => recognisableIds.has(r.id))
     .map(r => ({ id: r.id, displayName: r.displayName, nationalities: r.nationalities, positions: r.positions, fame: r.refs.tm != null ? (recogById[r.refs.tm] || 0) : 0 }))
+  addNamesakeHints(recognisable, tmFacts)
 
   // Lean CLIENT alias index (name → id) — only names that resolve to a recognisable
   // player, so the browser ships ~recognisable names, not the full 44k crosswalk

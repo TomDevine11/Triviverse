@@ -99,7 +99,7 @@ const files = readdirSync(CACHE).filter(f => f.endsWith('.json'))
 const clubNames = {}         // clubId → name
 const transfers = []         // [playerId, fromId, toId, date, feeEur, type]
 const careers = []           // { name, clubs:[{name,from,to}] }
-const timelineByName = new Map() // name → [cleaned timeline, …] (namesakes share a name)
+const timelineByName = new Map() // name → [{ pid, timeline }, …] (namesakes share a name)
 const timelineById = new Map()   // Transfermarkt id → cleaned timeline
 let withCareer = 0
 
@@ -141,9 +141,9 @@ for (const f of files) {
   const nkey = normalize(pname)
   const timeline = seniorClubs.map(({ name, from, to }) => ({ name, from, to }))
   timelineById.set(pid, timeline)
-  if (pname) timelineByName.set(pname, [...(timelineByName.get(pname) || []), timeline])
+  if (pname) timelineByName.set(pname, [...(timelineByName.get(pname) || []), { pid, timeline }])
   if (pname && seniorClubs.length >= MIN_CLUBS && (recog[nkey] || 0) >= MIN_RECOG && KNOWN.has(nkey) && tmIdFor(pname) === pid) {
-    careers.push({ name: pname, clubs: seniorClubs.map(({ name, from, to }) => ({ name, from, to })) })
+    careers.push({ id: `tm:${pid}`, name: pname, clubs: seniorClubs.map(({ name, from, to }) => ({ name, from, to })) })
     withCareer++
   }
 }
@@ -180,13 +180,16 @@ if (!process.env.REFRESH_POOL && existsSync(OUT_C)) {
     }
     placed.add(p.name)
     let fresh = id ? timelineById.get(id) : null
+    let freshId = id
     if (!fresh && !id) {
       // No unambiguous identity: fall back to the namesake whose clubs best match.
       const options = timelineByName.get(p.name) || []
-      fresh = options.sort((x, y) => overlap(y, p.clubs) - overlap(x, p.clubs))[0]
-      if (fresh && overlap(fresh, p.clubs) < 2) fresh = null
+      const best = options.sort((x, y) => overlap(y.timeline, p.clubs) - overlap(x.timeline, p.clubs))[0]
+      if (best && overlap(best.timeline, p.clubs) >= 2) { fresh = best.timeline; freshId = best.pid }
     }
-    if (fresh && fresh.length >= MIN_CLUBS) return { name: p.name, clubs: fresh }
+    // The target's id travels with it, so a namesake picked from the dropdown
+    // (the other Danilo) is never accepted as this player.
+    if (fresh && fresh.length >= MIN_CLUBS) return { ...(freshId ? { id: `tm:${freshId}` } : {}), name: p.name, clubs: fresh }
     const sub = spare.shift()
     if (!sub) return p
     replaced++

@@ -149,8 +149,8 @@ export default function FootballTenable() {
     const a = new Map(), p = new Map()
     let unresolved = 0
     if (question.type === 'player') {
-      for (const ans of question.answers) { const id = resolveNameToId(ans.text); if (id) a.set(id, ans); else unresolved++ }
-      for (const pl of question.tiePool || []) { const id = resolveNameToId(pl.text); if (id) p.set(id, pl); else unresolved++ }
+      for (const ans of question.answers) { const id = ans.id || resolveNameToId(ans.text); if (id) a.set(id, ans); else unresolved++ }
+      for (const pl of question.tiePool || []) { const id = pl.id || resolveNameToId(pl.text); if (id) p.set(id, pl); else unresolved++ }
     }
     return { idToAnswer: a, idToPooled: p, unresolvedValid: unresolved }
   }, [question])
@@ -428,7 +428,7 @@ export default function FootballTenable() {
               <div ref={dropdownRef} role="listbox" className="absolute top-full left-0 right-0 mt-1 bg-surface border border-border-strong rounded-xl overflow-hidden z-dropdown shadow-float">
                 {visibleSuggestions.map((item, i) => (
                   <button
-                    key={item.name}
+                    key={item.id || item.name}
                     type="button"
                     role="option"
                     aria-selected={i === highlightedIndex}
@@ -438,7 +438,7 @@ export default function FootballTenable() {
                   >
                     <div className="flex items-center gap-2">
                       {item.flag && <span className="text-base shrink-0">{item.flag}</span>}
-                      <span className="text-primary text-sm font-medium truncate">{item.name}</span>
+                      <span className="text-primary text-sm font-medium truncate">{item.name}</span>{item.hint && <span className="ml-auto pl-2 max-w-[55%] shrink-0 truncate text-muted text-xs">{item.hint}</span>}
                     </div>
                   </button>
                 ))}

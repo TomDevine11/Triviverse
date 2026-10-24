@@ -27,11 +27,18 @@ const surname = (norm) => norm.split(' ').pop()
  * @param {string} guessNorm   normalized guess text
  * @param {string|null} guessId picked suggestion's id, or the resolved id of a
  *                              typed name; null if unknown
- * @param {{text:string, aliases?:string[]}} answer
+ * @param {{text:string, id?:string, aliases?:string[]}} answer
  * @param {boolean} isPlayer   true for player questions (enables surname leniency)
  */
 export function answerMatches(guessNorm, guessId, answer, isPlayer) {
   if (!guessNorm) return false
+  const answerId = isPlayer ? (answer.id || resolveNameToId(answer.text)) : null // generated answers carry their id
+  // Two different Transfermarkt players are never the same answer, however alike
+  // their names: the Spanish Nico González isn't the Argentine one. (Only tm: ids
+  // are compared — a legend held under a name-based p: id may still be the same
+  // person as a tm: answer.)
+  if (guessId && answerId && guessId !== answerId && guessId.startsWith('tm:') && answerId.startsWith('tm:')) return false
+
   // Exact name or a curated alias always matches.
   const candidates = [answer.text, ...(answer.aliases || [])].map(normalize)
   if (candidates.includes(guessNorm)) return true
@@ -45,7 +52,6 @@ export function answerMatches(guessNorm, guessId, answer, isPlayer) {
   // player, accept regardless of name form. This is what makes East-Asian name
   // order work ("Son Heung-min" ↔ "Heung-min Son"), where the "surname" (last
   // word) differs between orders.
-  const answerId = resolveNameToId(answer.text)
   if (guessId && answerId && guessId === answerId) return true
 
   // Otherwise, players match by surname…
