@@ -149,7 +149,8 @@ export function GeoLeaguesIndex() {
   )
 }
 
-function Table({ rows }) {
+// Shared with /geography/world. A { gap: true } row draws a "…" separator.
+export function Table({ rows }) {
   return (
     <table className="w-full text-[0.82rem] border-collapse">
       <thead>
@@ -163,8 +164,10 @@ function Table({ rows }) {
         </tr>
       </thead>
       <tbody>
-        {rows.map(r => (
-          <tr key={r.pub} className={r.you ? 'bg-brand-tint' : 'border-t border-border'}>
+        {rows.map((r, i) => r.gap ? (
+          <tr key={`gap-${i}`} className="border-t border-border"><td colSpan={6} className="px-2 py-1 text-center text-faint">…</td></tr>
+        ) : (
+          <tr key={r.pub || `${r.rank}-${i}`} className={r.you ? 'bg-brand-tint' : 'border-t border-border'}>
             <td className="px-2 py-2"><span className="score-number text-[1.1rem] text-secondary">{r.tied ? '=' : ''}{r.rank}</span></td>
             <td className="px-2 py-2 font-bold text-primary truncate max-w-[10rem]">
               {r.name && r.name !== '—' ? r.name : <span className="text-muted font-semibold">{t('leagues.anonymous')}</span>}

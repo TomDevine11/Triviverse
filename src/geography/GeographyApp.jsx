@@ -18,6 +18,7 @@ const Outrank = lazy(() => import('./games/outrank/Outrank'))
 const GeoLeaguesIndex = lazy(() => import('./pages/GeoLeagues').then(m => ({ default: m.GeoLeaguesIndex })))
 const GeoLeagueView = lazy(() => import('./pages/GeoLeagues').then(m => ({ default: m.GeoLeagueView })))
 const GeoBaseCamp = lazy(() => import('./pages/GeoBaseCamp'))
+const GeoWorld = lazy(() => import('./pages/GeoWorld'))
 
 const Loading = () => <div className="min-h-screen bg-canvas" aria-busy="true" />
 
@@ -42,6 +43,7 @@ export default function GeographyApp() {
         <Route path="leagues" element={<GeoLeaguesIndex />} />
         <Route path="leagues/:code" element={<GeoLeagueView />} />
         <Route path="basecamp" element={<GeoBaseCamp />} />
+        <Route path="world" element={<GeoWorld />} />
         <Route path="*" element={<GeoHub />} />
       </Routes>
     </Suspense>

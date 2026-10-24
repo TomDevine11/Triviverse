@@ -4,7 +4,7 @@ import BrandMark from '../../components/BrandMark'
 import GeoMotif from '../components/GeoMotif'
 import { GeoHead, GeoContent } from '../components/GeoSeo'
 import { GEO_GAMES } from '../games'
-import { geoDayNumber, msUntilNextDay } from '../data/day'
+import { geoDay, geoDayNumber, msUntilNextDay } from '../data/day'
 import { loadProgress, loadStats } from '../data/progress'
 import { dailyPair, pairSig, evaluateGame } from '../data/overland'
 import { dailyCode as unfurlDaily, openCount } from '../data/unfurl'
@@ -17,6 +17,7 @@ import { dailyQuestions as outrankDaily, DAILY_SIZE as OR_SIZE } from '../data/o
 import { readDaily as outrankProgress, dailyResults as outrankResults, dailyComplete as outrankComplete, dailyWon as outrankWon } from '../data/outrankPlay'
 import { useGeoLeagues, chaseLeague, chaseLine } from '../social/leagues'
 import { dayStreak, loadLog } from '../social/log'
+import { worldRank } from '../social/api'
 import { SITE_URL } from '../seo'
 import { t } from '../strings'
 import '../geography.css'
@@ -25,7 +26,7 @@ import '../geography.css'
 // today's dailies as a board of compact tiles (2 across on phones, 3 from sm)
 // with the perfect-day square as the last slot, and the competition — your
 // league chase and Base Camp — in a rail on the right (stacked around the board
-// on phones). Geography's own data, state and leagues throughout.
+// on phones), with today's world rank and Base Camp under it. Geography's own data, state and leagues throughout.
 
 function hhmm() {
   const mins = Math.ceil(msUntilNextDay() / 60000)
@@ -147,6 +148,11 @@ const StarIcon = ({ className }) => (
 const TableIcon = ({ className }) => (
   <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
 )
+const GlobeIcon = ({ className }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+    <circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" />
+  </svg>
+)
 // Base Camp: a tent under a peak.
 export const CampIcon = ({ className }) => (
   <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
@@ -249,7 +255,7 @@ function PerfectTile({ played, total, shareText }) {
   )
 }
 
-// ── The competition: league chase · Base Camp ───────────────────────────────
+// ── The competition: league chase · world rank · Base Camp ───────────────────────────────
 const Overline = ({ children, right }) => (
   <div className="flex items-center justify-between gap-2 text-[0.6rem] font-black tracking-[0.16em] uppercase text-muted">
     <span className="flex items-center gap-1.5 min-w-0">{children}</span>{right}
@@ -309,6 +315,39 @@ function LeagueBlock({ league, compact }) {
   )
 }
 
+// Today's place on the geography world table (/api/geo/rank); before you've
+// played, yesterday's finish to defend or how many are playing.
+function WorldBlock({ world }) {
+  if (!world) return null
+  const fmt = (n) => n.toLocaleString('en-GB')
+  let big = null, sub, extra = null
+  if (world.rank) {
+    big = `#${fmt(world.rank)}`
+    sub = world.rank === 1 ? t('race.worldTop') : t('race.worldRank', { n: fmt(world.players), pc: world.top })
+    if (world.toNext > 0) extra = t('race.toNext', { n: world.toNext })
+  } else if (world.yesterday?.rank) {
+    big = `#${fmt(world.yesterday.rank)}`
+    sub = t('race.yesterday')
+    extra = t('race.defend')
+  } else {
+    sub = world.playing > 0 ? t('race.unranked', { n: fmt(world.playing) }) : t('race.unrankedNone')
+  }
+  return (
+    <div className="flex flex-col gap-1.5">
+      <Overline right={<Link to="/geography/world" className="text-brand-bright hover:text-brand tracking-[0.08em]">{t('race.worldBoard')} ›</Link>}>
+        <GlobeIcon className="w-3.5 h-3.5 text-brand-bright" />{t('race.world')}
+      </Overline>
+      {big ? (
+        <div className="flex items-baseline gap-2.5 flex-wrap">
+          <span className="score-number text-[2.6rem] leading-[0.9] tv-wordmark">{big}</span>
+          <span className="text-[0.78rem] text-muted">{sub}</span>
+        </div>
+      ) : <p className="m-0 text-[0.8rem] text-muted">{sub}</p>}
+      {extra && <p className="m-0 text-[0.75rem] font-bold text-brand-bright">{extra}</p>}
+    </div>
+  )
+}
+
 function CampBlock({ camp, compact }) {
   return (
     <Link to="/geography/basecamp" className={`group flex flex-col gap-1.5 ${compact ? 'bg-surface border border-border-strong rounded-xl p-3 shadow-panel' : ''}`}>
@@ -331,13 +370,19 @@ function CampBlock({ camp, compact }) {
 
 export default function GeoHub() {
   const [countdown, setCountdown] = useState(hhmm)
-  const [, setTick] = useState(0)
+  const [tick, setTick] = useState(0)
+  const [world, setWorld] = useState(null)
   useEffect(() => {
     const id = setInterval(() => setCountdown(hhmm()), 30_000)
     const on = () => setTick(n => n + 1) // a result landed: re-read the day log
     window.addEventListener('tvg-social', on)
     return () => { clearInterval(id); window.removeEventListener('tvg-social', on) }
   }, [])
+  useEffect(() => {
+    let alive = true
+    worldRank(geoDay()).then(w => { if (alive) setWorld(w && !w.error ? w : null) })
+    return () => { alive = false }
+  }, [tick])
   const league = chaseLeague(useGeoLeagues())
 
   const lineup = GEO_GAMES.map(g => {
@@ -424,11 +469,13 @@ export default function GeoHub() {
 
           <aside aria-label={t('race.title')} className="hidden lg:flex flex-col gap-4 bg-surface border border-border-strong rounded-2xl p-4 shadow-panel">
             <LeagueBlock league={league} />
+            {world && <><hr className="border-0 border-t border-border m-0" /><WorldBlock world={world} /></>}
             <hr className="border-0 border-t border-border m-0" />
             <CampBlock camp={camp} />
           </aside>
 
           <div className="lg:hidden flex flex-col gap-3">
+            {world && <section className="bg-surface border border-border-strong rounded-xl p-3 shadow-panel"><WorldBlock world={world} /></section>}
             <CampBlock camp={camp} compact />
           </div>
         </div>
