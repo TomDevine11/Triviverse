@@ -10,7 +10,9 @@
 //
 // Player universe: the union of ids in the committed history.<comp> fact tables.
 // Resumable + idempotent: a player whose cache file exists is skipped, so you can
-// Ctrl-C and re-run freely.
+// Ctrl-C and re-run freely. `--refresh` also re-fetches active players whose
+// cache is over a week old (config.mjs staleActive) — that's how a new season's
+// moves get in.
 //
 // RUN LOCALLY (Transfermarkt prefers residential IPs).
 //
@@ -20,6 +22,9 @@
 //   # 2) FULL RUN (resumable):
 //   npm run scrape:transfers
 //
+//   # 3) NEW SEASON / AFTER A TRANSFER WINDOW — re-fetch active players:
+//   npm run scrape:transfers -- --refresh
+//
 //   # optional: target specific players →  PLAYERS=8198,28003 npm run scrape:transfers
 // ─────────────────────────────────────────────────────────────────────────
 
@@ -27,7 +32,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 
 import { execFileSync } from 'node:child_process'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { DIR, DELAY_MS, UA, RETRIES } from './config.mjs'
+import { DIR, DELAY_MS, UA, RETRIES, staleActive } from './config.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..', '..')
@@ -66,9 +71,11 @@ async function run() {
   mkdirSync(CACHE, { recursive: true })
   const players = universe()
   const already = new Set(readdirSync(CACHE).filter(f => f.endsWith('.json')).map(f => f.replace('.json', '')))
-  const todo = players.filter(id => !already.has(id)).slice(0, LIMIT)
+  const stale = staleActive(args, cacheFile)
+  const refresh = players.filter(id => already.has(id) && stale(id)).length
+  const todo = players.filter(id => !already.has(id) || stale(id)).slice(0, LIMIT)
   console.error(`Data source: transfermarkt.com (transferHistory)`)
-  console.error(`Universe ${players.length} players — ${already.size} cached, ${todo.length} to fetch${LIMIT !== Infinity ? ` (limit ${LIMIT})` : ''}.\n`)
+  console.error(`Universe ${players.length} players — ${already.size} cached (${refresh} stale active), ${todo.length} to fetch${LIMIT !== Infinity ? ` (limit ${LIMIT})` : ''}.\n`)
 
   const t0 = Date.now()
   let done = 0, withTransfers = 0, failed = 0

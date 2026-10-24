@@ -10,6 +10,7 @@
 // Player universe: the union of ids in the committed history.<comp> fact tables
 // (everyone with a real club appearance). Resumable + idempotent: a player whose
 // cache file already exists is skipped, so you can Ctrl-C and re-run freely.
+// `--refresh` also re-fetches active players (new caps) — config.mjs staleActive.
 //
 // RUN LOCALLY (Transfermarkt prefers residential IPs; it blocks datacentre IPs).
 //
@@ -20,6 +21,8 @@
 //   # 2) FULL RUN (resumable; ~cache/intl/<id>.json per player):
 //   npm run scrape:intl
 //
+//   # 3) NEW SEASON — re-fetch active players:  npm run scrape:intl -- --refresh
+//
 //   # optional: target specific players →  PLAYERS=8198,28003 npm run scrape:intl
 // ─────────────────────────────────────────────────────────────────────────
 
@@ -27,7 +30,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { fetchHtml, parseNationalTeam } from './lib.mjs'
-import { DIR, DELAY_MS, BASE } from './config.mjs'
+import { DIR, DELAY_MS, BASE, staleActive } from './config.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..', '..')
@@ -62,9 +65,11 @@ async function run() {
   if (SAVE_HTML) mkdirSync(HTML_DIR, { recursive: true })
   const players = universe()
   const already = new Set(readdirSync(CACHE).filter(f => f.endsWith('.json')).map(f => f.replace('.json', '')))
-  const todo = players.filter(p => !already.has(p.id)).slice(0, LIMIT)
+  const stale = staleActive(args, cacheFile)
+  const refresh = players.filter(p => already.has(p.id) && stale(p.id)).length
+  const todo = players.filter(p => !already.has(p.id) || stale(p.id)).slice(0, LIMIT)
   console.error(`Data source: transfermarkt.com (national team)`)
-  console.error(`Universe ${players.length} players — ${already.size} cached, ${todo.length} to fetch${LIMIT !== Infinity ? ` (limit ${LIMIT})` : ''}.\n`)
+  console.error(`Universe ${players.length} players — ${already.size} cached (${refresh} stale active), ${todo.length} to fetch${LIMIT !== Infinity ? ` (limit ${LIMIT})` : ''}.\n`)
 
   const t0 = Date.now()
   let done = 0, withData = 0, failed = 0

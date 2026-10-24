@@ -11,6 +11,7 @@
 // ─────────────────────────────────────────────────────────────────────────
 
 import path from 'node:path'
+import { readFileSync, statSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -52,3 +53,29 @@ export const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/5
 export const DELAY_MS = 1500
 export const RETRIES = 3
 export const BASE = 'https://www.transfermarkt.com'
+
+// ── Refreshing per-player caches (--refresh) ─────────────────────────────
+// The per-player scrapers (transfers, intl, honours) skip anyone already cached,
+// so on their own they never see a summer move, a new cap or a new trophy.
+// `--refresh` also re-fetches players who are still playing — last season in the
+// committed history within a season of now — when their cache file is older than
+// REFRESH_DAYS. Retired players' pages don't change and stay cached; a refresh
+// run stays resumable because files fetched in this run are fresh.
+export const REFRESH_DAYS = 7
+const HISTORY_COMPS = Object.keys(COMPETITIONS)
+
+export function staleActive(args, cacheFile) {
+  if (!args.includes('--refresh')) return () => false
+  const last = new Map()
+  for (const c of HISTORY_COMPS) {
+    for (const p of JSON.parse(readFileSync(path.join(ROOT, 'src', 'data', 'football501', `history.${c}.generated.json`), 'utf8')).players) {
+      last.set(p.id, Math.max(last.get(p.id) || 0, p.last || 0))
+    }
+  }
+  const active = currentSeason() - 1
+  const cutoff = Date.now() - REFRESH_DAYS * 864e5
+  return (id) => {
+    if ((last.get(id) || 0) < active) return false
+    try { return statSync(cacheFile(id)).mtimeMs < cutoff } catch { return true }
+  }
+}

@@ -8,6 +8,7 @@
 // id → English name into data/pl-history/clubnames.<COMP>.json. Resumable.
 //
 //   COMP=IT1 npm run build:pl-clubnames   (or npm run clubnames:all)
+//   PL_SEASONS=2026 …                      (only those seasons — a new season's promoted clubs)
 // ─────────────────────────────────────────────────────────────────────────
 
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
@@ -20,8 +21,11 @@ const sleep = (ms) => new Promise(r => setTimeout(r, ms))
 
 async function run() {
   const names = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : {}
-  console.error(`Club names for ${COMPETITION.name} (${FIRST_SEASON}–${currentSeason()})`)
-  for (let s = FIRST_SEASON; s <= currentSeason(); s++) {
+  const seasons = process.env.PL_SEASONS
+    ? process.env.PL_SEASONS.split(',').map(s => parseInt(s.trim(), 10))
+    : Array.from({ length: currentSeason() - FIRST_SEASON + 1 }, (_, i) => FIRST_SEASON + i)
+  console.error(`Club names for ${COMPETITION.name} (${seasons[0]}–${seasons[seasons.length - 1]})`)
+  for (const s of seasons) {
     let added = 0
     for (const c of parseCompetitionClubs(fetchHtml(competitionUrl(s)))) {
       if (c.name && !names[c.id]) { names[c.id] = c.name; added++ }
