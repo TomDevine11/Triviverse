@@ -8,10 +8,10 @@
    "first": 1992,
    "enumerate": "league"
   },
-  "seasons": "1992–2025",
-  "clubSeasons": 686,
-  "players": 5120,
-  "builtAt": "2026-07-26"
+  "seasons": "1992–2026",
+  "clubSeasons": 706,
+  "players": 5221,
+  "builtAt": "2026-10-24"
  },
  "players": [
   {
@@ -52996,14 +52996,14 @@
    "nat": "Croatia",
    "natKey": "croatia",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 209,
+     "apps": 212,
      "goals": 11,
      "clubs": {
       "281": {
-       "apps": 67,
+       "apps": 70,
        "goals": 7
       },
       "631": {
@@ -55568,11 +55568,11 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 463,
-     "goals": 34,
+     "apps": 466,
+     "goals": 36,
      "clubs": {
       "31": {
        "apps": 360,
@@ -55581,6 +55581,10 @@
       "289": {
        "apps": 71,
        "goals": 4
+      },
+      "631": {
+       "apps": 3,
+       "goals": 2
       },
       "1148": {
        "apps": 32,
@@ -55816,10 +55820,10 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 256,
+     "apps": 263,
      "goals": 5,
      "clubs": {
       "148": {
@@ -55827,7 +55831,7 @@
        "goals": 0
       },
       "989": {
-       "apps": 255,
+       "apps": 262,
        "goals": 5
       }
      }
@@ -56892,10 +56896,10 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 400,
+     "apps": 405,
      "goals": 90,
      "clubs": {
       "11": {
@@ -56905,6 +56909,10 @@
       "289": {
        "apps": 26,
        "goals": 6
+      },
+      "631": {
+       "apps": 5,
+       "goals": 0
       },
       "985": {
        "apps": 92,
@@ -58140,10 +58148,10 @@
    "nat": "Germany",
    "natKey": "germany",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 251,
+     "apps": 258,
      "goals": 0,
      "clubs": {
       "11": {
@@ -58151,7 +58159,7 @@
        "goals": 0
       },
       "931": {
-       "apps": 150,
+       "apps": 157,
        "goals": 0
       }
      }
@@ -60228,15 +60236,15 @@
    "nat": "Germany",
    "natKey": "germany",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 247,
-     "goals": 31,
+     "apps": 254,
+     "goals": 34,
      "clubs": {
       "1237": {
-       "apps": 247,
-       "goals": 31
+       "apps": 254,
+       "goals": 34
       }
      }
     }
@@ -62520,6 +62528,26 @@
      "clubs": {
       "1010": {
        "apps": 17,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "100986",
+   "name": "Thomas Meunier",
+   "nat": "Belgium",
+   "natKey": "belgium",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "289": {
+       "apps": 6,
        "goals": 0
       }
      }
@@ -64948,14 +64976,14 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 255,
+     "apps": 262,
      "goals": 1,
      "clubs": {
       "31": {
-       "apps": 255,
+       "apps": 262,
        "goals": 1
       }
      }
@@ -66768,14 +66796,14 @@
    "nat": "New Zealand",
    "natKey": "new zealand",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 278,
+     "apps": 285,
      "goals": 92,
      "clubs": {
       "703": {
-       "apps": 89,
+       "apps": 96,
        "goals": 38
       },
       "762": {
@@ -67752,10 +67780,10 @@
    "nat": "Switzerland",
    "natKey": "switzerland",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 259,
+     "apps": 266,
      "goals": 18,
      "clubs": {
       "11": {
@@ -67763,7 +67791,7 @@
        "goals": 17
       },
       "289": {
-       "apps": 34,
+       "apps": 41,
        "goals": 1
       }
      }
@@ -67860,10 +67888,10 @@
    "nat": "Argentina",
    "natKey": "argentina",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 228,
+     "apps": 234,
      "goals": 0,
      "clubs": {
       "11": {
@@ -67872,6 +67900,10 @@
       },
       "405": {
        "apps": 213,
+       "goals": 0
+      },
+      "631": {
+       "apps": 6,
        "goals": 0
       }
      }
@@ -68640,14 +68672,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 286,
+     "apps": 287,
      "goals": 19,
      "clubs": {
       "29": {
-       "apps": 229,
+       "apps": 230,
        "goals": 17
       },
       "985": {
@@ -69108,15 +69140,19 @@
    "nat": "Ireland",
    "natKey": "ireland",
    "pos": "DEF",
-   "last": 2023,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 73,
+     "apps": 80,
      "goals": 2,
      "clubs": {
       "350": {
        "apps": 73,
        "goals": 2
+      },
+      "3008": {
+       "apps": 7,
+       "goals": 0
       }
      }
     }
@@ -69532,14 +69568,14 @@
    "nat": "Scotland",
    "natKey": "scotland",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 168,
+     "apps": 169,
      "goals": 10,
      "clubs": {
       "931": {
-       "apps": 157,
+       "apps": 158,
        "goals": 9
       },
       "3008": {
@@ -69616,10 +69652,10 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 271,
+     "apps": 275,
      "goals": 95,
      "clubs": {
       "379": {
@@ -69633,6 +69669,10 @@
       "989": {
        "apps": 126,
        "goals": 41
+      },
+      "1148": {
+       "apps": 4,
+       "goals": 0
       }
      }
     }
@@ -69760,14 +69800,14 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 7,
+     "apps": 8,
      "goals": 0,
      "clubs": {
       "405": {
-       "apps": 7,
+       "apps": 8,
        "goals": 0
       }
      }
@@ -70292,14 +70332,14 @@
    "nat": "Belgium",
    "natKey": "belgium",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 85,
+     "apps": 93,
      "goals": 0,
      "clubs": {
       "703": {
-       "apps": 85,
+       "apps": 93,
        "goals": 0
       }
      }
@@ -71092,14 +71132,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 362,
+     "apps": 369,
      "goals": 0,
      "clubs": {
       "29": {
-       "apps": 331,
+       "apps": 338,
        "goals": 0
       },
       "289": {
@@ -71300,10 +71340,10 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 305,
+     "apps": 312,
      "goals": 40,
      "clubs": {
       "29": {
@@ -71311,7 +71351,7 @@
        "goals": 21
       },
       "405": {
-       "apps": 65,
+       "apps": 72,
        "goals": 9
       },
       "631": {
@@ -71516,14 +71556,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 236,
+     "apps": 238,
      "goals": 7,
      "clubs": {
       "762": {
-       "apps": 153,
+       "apps": 155,
        "goals": 5
       },
       "931": {
@@ -71756,14 +71796,14 @@
    "nat": "Switzerland",
    "natKey": "switzerland",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 211,
+     "apps": 213,
      "goals": 18,
      "clubs": {
       "762": {
-       "apps": 211,
+       "apps": 213,
        "goals": 18
       }
      }
@@ -72112,14 +72152,14 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 339,
+     "apps": 346,
      "goals": 31,
      "clubs": {
       "31": {
-       "apps": 272,
+       "apps": 279,
        "goals": 27
       },
       "180": {
@@ -73076,15 +73116,15 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 299,
-     "goals": 17,
+     "apps": 305,
+     "goals": 18,
      "clubs": {
       "1237": {
-       "apps": 299,
-       "goals": 17
+       "apps": 305,
+       "goals": 18
       }
      }
     }
@@ -73140,14 +73180,18 @@
    "nat": "Denmark",
    "natKey": "denmark",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 129,
+     "apps": 130,
      "goals": 11,
      "clubs": {
       "11": {
        "apps": 7,
+       "goals": 0
+      },
+      "29": {
+       "apps": 1,
        "goals": 0
       },
       "1148": {
@@ -73649,6 +73693,26 @@
       "1110": {
        "apps": 45,
        "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "153084",
+   "name": "Leon Goretzka",
+   "nat": "Germany",
+   "natKey": "germany",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "405": {
+       "apps": 1,
+       "goals": 0
       }
      }
     }
@@ -74624,10 +74688,10 @@
    "nat": "Northern Ireland",
    "natKey": "northern ireland",
    "pos": "DEF",
-   "last": 2016,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 33,
+     "apps": 34,
      "goals": 0,
      "clubs": {
       "289": {
@@ -74636,6 +74700,10 @@
       },
       "985": {
        "apps": 24,
+       "goals": 0
+      },
+      "3008": {
+       "apps": 1,
        "goals": 0
       }
      }
@@ -74892,6 +74960,26 @@
      "clubs": {
       "289": {
        "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "169416",
+   "name": "Matt Crooks",
+   "nat": "England",
+   "natKey": "england",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "3008": {
+       "apps": 5,
        "goals": 0
       }
      }
@@ -75660,15 +75748,15 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 340,
-     "goals": 12,
+     "apps": 347,
+     "goals": 13,
      "clubs": {
       "29": {
-       "apps": 146,
-       "goals": 5
+       "apps": 153,
+       "goals": 6
       },
       "1132": {
        "apps": 194,
@@ -78040,14 +78128,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 291,
+     "apps": 298,
      "goals": 15,
      "clubs": {
       "985": {
-       "apps": 190,
+       "apps": 197,
        "goals": 8
       },
       "1003": {
@@ -78692,10 +78780,10 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 296,
+     "apps": 301,
      "goals": 4,
      "clubs": {
       "180": {
@@ -78703,7 +78791,7 @@
        "goals": 0
       },
       "985": {
-       "apps": 236,
+       "apps": 241,
        "goals": 4
       }
      }
@@ -78968,14 +79056,14 @@
    "nat": "Sweden",
    "natKey": "sweden",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 211,
+     "apps": 219,
      "goals": 4,
      "clubs": {
       "405": {
-       "apps": 17,
+       "apps": 25,
        "goals": 0
       },
       "985": {
@@ -79308,14 +79396,14 @@
    "nat": "Scotland",
    "natKey": "scotland",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 124,
+     "apps": 130,
      "goals": 5,
      "clubs": {
       "989": {
-       "apps": 124,
+       "apps": 130,
        "goals": 5
       }
      }
@@ -79615,20 +79703,40 @@
    }
   },
   {
+   "id": "192635",
+   "name": "Nico Elvedi",
+   "nat": "Switzerland",
+   "natKey": "switzerland",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "399": {
+       "apps": 6,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "192765",
    "name": "Ben Davies",
    "nat": "Wales",
    "natKey": "wales",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 316,
-     "goals": 11,
+     "apps": 317,
+     "goals": 12,
      "clubs": {
       "148": {
-       "apps": 245,
-       "goals": 8
+       "apps": 246,
+       "goals": 9
       },
       "2288": {
        "apps": 71,
@@ -79688,15 +79796,15 @@
    "nat": "Scotland",
    "natKey": "scotland",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 233,
-     "goals": 22,
+     "apps": 241,
+     "goals": 23,
      "clubs": {
       "405": {
-       "apps": 233,
-       "goals": 22
+       "apps": 241,
+       "goals": 23
       }
      }
     }
@@ -80460,15 +80568,19 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2014,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 4,
-     "goals": 0,
+     "apps": 10,
+     "goals": 1,
      "clubs": {
       "11": {
        "apps": 4,
        "goals": 0
+      },
+      "677": {
+       "apps": 6,
+       "goals": 1
       }
      }
     }
@@ -80632,14 +80744,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 218,
+     "apps": 224,
      "goals": 22,
      "clubs": {
       "762": {
-       "apps": 218,
+       "apps": 224,
        "goals": 22
       }
      }
@@ -81056,18 +81168,18 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 210,
+     "apps": 216,
      "goals": 29,
      "clubs": {
       "29": {
-       "apps": 20,
+       "apps": 25,
        "goals": 2
       },
       "281": {
-       "apps": 94,
+       "apps": 95,
        "goals": 12
       },
       "405": {
@@ -81392,14 +81504,14 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 111,
+     "apps": 113,
      "goals": 3,
      "clubs": {
       "931": {
-       "apps": 111,
+       "apps": 113,
        "goals": 3
       }
      }
@@ -81440,14 +81552,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 214,
+     "apps": 217,
      "goals": 6,
      "clubs": {
       "873": {
-       "apps": 137,
+       "apps": 140,
        "goals": 1
       },
       "1010": {
@@ -81632,14 +81744,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "GK",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 7,
+     "apps": 11,
      "goals": 0,
      "clubs": {
       "677": {
-       "apps": 7,
+       "apps": 11,
        "goals": 0
       }
      }
@@ -85607,6 +85719,26 @@
    }
   },
   {
+   "id": "223979",
+   "name": "Xaver Schlager",
+   "nat": "Austria",
+   "natKey": "austria",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 8,
+     "goals": 0,
+     "clubs": {
+      "703": {
+       "apps": 8,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "223990",
    "name": "Sam McMahon",
    "nat": "England",
@@ -89292,15 +89424,19 @@
    "nat": "Scotland",
    "natKey": "scotland",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 332,
+     "apps": 338,
      "goals": 12,
      "clubs": {
       "31": {
        "apps": 275,
        "goals": 11
+      },
+      "148": {
+       "apps": 6,
+       "goals": 0
       },
       "3008": {
        "apps": 57,
@@ -89416,10 +89552,10 @@
    "nat": "Nigeria",
    "natKey": "nigeria",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 109,
+     "apps": 114,
      "goals": 5,
      "clubs": {
       "631": {
@@ -89427,7 +89563,7 @@
        "goals": 0
       },
       "703": {
-       "apps": 75,
+       "apps": 80,
        "goals": 3
       },
       "931": {
@@ -89976,15 +90112,15 @@
    "nat": "Portugal",
    "natKey": "portugal",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 230,
-     "goals": 71,
+     "apps": 237,
+     "goals": 74,
      "clubs": {
       "985": {
-       "apps": 230,
-       "goals": 71
+       "apps": 237,
+       "goals": 74
       }
      }
     }
@@ -89996,14 +90132,14 @@
    "nat": "Mozambique",
    "natKey": "mozambique",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 25,
+     "apps": 31,
      "goals": 0,
      "clubs": {
       "289": {
-       "apps": 25,
+       "apps": 31,
        "goals": 0
       }
      }
@@ -90179,12 +90315,12 @@
    "name": "Alex Iwobi",
    "nat": "Nigeria",
    "natKey": "nigeria",
-   "pos": "FWD",
-   "last": 2025,
+   "pos": "MID",
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 320,
-     "goals": 35,
+     "apps": 327,
+     "goals": 36,
      "clubs": {
       "11": {
        "apps": 100,
@@ -90195,8 +90331,8 @@
        "goals": 6
       },
       "931": {
-       "apps": 97,
-       "goals": 18
+       "apps": 104,
+       "goals": 19
       }
      }
     }
@@ -90336,12 +90472,16 @@
    "nat": "Serbia",
    "natKey": "serbia",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 92,
+     "apps": 98,
      "goals": 2,
      "clubs": {
+      "677": {
+       "apps": 6,
+       "goals": 0
+      },
       "931": {
        "apps": 92,
        "goals": 2
@@ -90572,14 +90712,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 190,
+     "apps": 197,
      "goals": 1,
      "clubs": {
       "989": {
-       "apps": 190,
+       "apps": 197,
        "goals": 1
       }
      }
@@ -90656,15 +90796,19 @@
    "nat": "Belgium",
    "natKey": "belgium",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 244,
+     "apps": 251,
      "goals": 26,
      "clubs": {
       "405": {
        "apps": 93,
        "goals": 5
+      },
+      "985": {
+       "apps": 7,
+       "goals": 0
       },
       "1003": {
        "apps": 151,
@@ -90768,10 +90912,10 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 164,
+     "apps": 165,
      "goals": 3,
      "clubs": {
       "180": {
@@ -90784,6 +90928,10 @@
       },
       "762": {
        "apps": 38,
+       "goals": 0
+      },
+      "3008": {
+       "apps": 1,
        "goals": 0
       }
      }
@@ -90924,15 +91072,19 @@
    "nat": "Nigeria",
    "natKey": "nigeria",
    "pos": "DEF",
-   "last": 2020,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 33,
-     "goals": 2,
+     "apps": 40,
+     "goals": 3,
      "clubs": {
       "984": {
        "apps": 33,
        "goals": 2
+      },
+      "3008": {
+       "apps": 7,
+       "goals": 1
       }
      }
     }
@@ -91004,14 +91156,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 189,
+     "apps": 195,
      "goals": 6,
      "clubs": {
       "405": {
-       "apps": 172,
+       "apps": 178,
        "goals": 6
       },
       "989": {
@@ -91176,14 +91328,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 170,
+     "apps": 172,
      "goals": 0,
      "clubs": {
       "31": {
-       "apps": 170,
+       "apps": 172,
        "goals": 0
       }
      }
@@ -91280,14 +91432,14 @@
    "nat": "Portugal",
    "natKey": "portugal",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 170,
+     "apps": 178,
      "goals": 5,
      "clubs": {
       "281": {
-       "apps": 170,
+       "apps": 178,
        "goals": 5
       }
      }
@@ -91380,12 +91532,16 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 116,
+     "apps": 118,
      "goals": 4,
      "clubs": {
+      "148": {
+       "apps": 2,
+       "goals": 0
+      },
       "631": {
        "apps": 38,
        "goals": 1
@@ -91484,19 +91640,19 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 176,
-     "goals": 41,
+     "apps": 183,
+     "goals": 42,
      "clubs": {
       "31": {
        "apps": 21,
        "goals": 1
       },
       "148": {
-       "apps": 42,
-       "goals": 12
+       "apps": 49,
+       "goals": 13
       },
       "989": {
        "apps": 113,
@@ -91521,6 +91677,26 @@
       "148": {
        "apps": 1,
        "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "258915",
+   "name": "Jay Dasilva",
+   "nat": "Wales",
+   "natKey": "wales",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 1,
+     "clubs": {
+      "990": {
+       "apps": 7,
+       "goals": 1
       }
      }
     }
@@ -91556,10 +91732,10 @@
    "nat": "England",
    "natKey": "england",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 160,
+     "apps": 163,
      "goals": 0,
      "clubs": {
       "350": {
@@ -91571,7 +91747,7 @@
        "goals": 0
       },
       "873": {
-       "apps": 93,
+       "apps": 96,
        "goals": 0
       },
       "985": {
@@ -91588,10 +91764,10 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 297,
+     "apps": 303,
      "goals": 89,
      "clubs": {
       "405": {
@@ -91599,7 +91775,7 @@
        "goals": 2
       },
       "985": {
-       "apps": 287,
+       "apps": 293,
        "goals": 87
       }
      }
@@ -91652,10 +91828,10 @@
    "nat": "Denmark",
    "natKey": "denmark",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 198,
+     "apps": 201,
      "goals": 4,
      "clubs": {
       "873": {
@@ -91663,7 +91839,7 @@
        "goals": 3
       },
       "931": {
-       "apps": 93,
+       "apps": 96,
        "goals": 1
       }
      }
@@ -91776,14 +91952,14 @@
    "nat": "Belgium",
    "natKey": "belgium",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 179,
+     "apps": 185,
      "goals": 6,
      "clubs": {
       "931": {
-       "apps": 88,
+       "apps": 94,
        "goals": 1
       },
       "1003": {
@@ -91840,14 +92016,14 @@
    "nat": "Spain",
    "natKey": "spain",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 169,
+     "apps": 176,
      "goals": 0,
      "clubs": {
       "11": {
-       "apps": 107,
+       "apps": 114,
        "goals": 0
       },
       "1148": {
@@ -91864,15 +92040,15 @@
    "nat": "Colombia",
    "natKey": "colombia",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 192,
-     "goals": 9,
+     "apps": 196,
+     "goals": 10,
      "clubs": {
       "873": {
-       "apps": 92,
-       "goals": 1
+       "apps": 96,
+       "goals": 2
       },
       "989": {
        "apps": 100,
@@ -91888,10 +92064,10 @@
    "nat": "Austria",
    "natKey": "austria",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 40,
+     "apps": 45,
      "goals": 0,
      "clubs": {
       "148": {
@@ -91900,6 +92076,10 @@
       },
       "180": {
        "apps": 6,
+       "goals": 0
+      },
+      "289": {
+       "apps": 5,
        "goals": 0
       }
      }
@@ -92040,12 +92220,16 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2015,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 4,
+     "apps": 11,
      "goals": 0,
      "clubs": {
+      "990": {
+       "apps": 7,
+       "goals": 0
+      },
       "2288": {
        "apps": 4,
        "goals": 0
@@ -92080,15 +92264,15 @@
    "nat": "Germany",
    "natKey": "germany",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 161,
-     "goals": 10,
+     "apps": 168,
+     "goals": 12,
      "clubs": {
       "1148": {
-       "apps": 161,
-       "goals": 10
+       "apps": 168,
+       "goals": 12
       }
      }
     }
@@ -92120,15 +92304,19 @@
    "nat": "Morocco",
    "natKey": "morocco",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 173,
+     "apps": 181,
      "goals": 8,
      "clubs": {
       "379": {
        "apps": 96,
        "goals": 6
+      },
+      "677": {
+       "apps": 8,
+       "goals": 0
       },
       "931": {
        "apps": 77,
@@ -92264,14 +92452,14 @@
    "nat": "Wales",
    "natKey": "wales",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 118,
+     "apps": 123,
      "goals": 12,
      "clubs": {
       "989": {
-       "apps": 118,
+       "apps": 123,
        "goals": 12
       }
      }
@@ -92364,12 +92552,16 @@
    "nat": "Wales",
    "natKey": "wales",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 156,
+     "apps": 161,
      "goals": 29,
      "clubs": {
+      "399": {
+       "apps": 5,
+       "goals": 0
+      },
       "931": {
        "apps": 125,
        "goals": 22
@@ -92444,14 +92636,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 12,
+     "apps": 14,
      "goals": 0,
      "clubs": {
       "289": {
-       "apps": 12,
+       "apps": 14,
        "goals": 0
       }
      }
@@ -92652,14 +92844,18 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2022,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 109,
-     "goals": 1,
+     "apps": 114,
+     "goals": 2,
      "clubs": {
       "11": {
        "apps": 72,
+       "goals": 1
+      },
+      "29": {
+       "apps": 5,
        "goals": 1
       },
       "180": {
@@ -93328,15 +93524,15 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 225,
-     "goals": 56,
+     "apps": 230,
+     "goals": 57,
      "clubs": {
       "148": {
-       "apps": 62,
-       "goals": 13
+       "apps": 67,
+       "goals": 14
       },
       "1003": {
        "apps": 163,
@@ -93352,15 +93548,19 @@
    "nat": "Nigeria",
    "natKey": "nigeria",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 90,
+     "apps": 95,
      "goals": 21,
      "clubs": {
       "703": {
        "apps": 90,
        "goals": 21
+      },
+      "990": {
+       "apps": 5,
+       "goals": 0
       }
      }
     }
@@ -93476,14 +93676,14 @@
    "nat": "Argentina",
    "natKey": "argentina",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 1,
+     "apps": 5,
      "goals": 0,
      "clubs": {
       "873": {
-       "apps": 1,
+       "apps": 5,
        "goals": 0
       }
      }
@@ -93520,10 +93720,10 @@
    "nat": "Wales",
    "natKey": "wales",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 50,
+     "apps": 52,
      "goals": 2,
      "clubs": {
       "148": {
@@ -93531,7 +93731,7 @@
        "goals": 0
       },
       "399": {
-       "apps": 35,
+       "apps": 37,
        "goals": 2
       }
      }
@@ -93564,10 +93764,10 @@
    "nat": "Scotland",
    "natKey": "scotland",
    "pos": "FWD",
-   "last": 2023,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 96,
+     "apps": 103,
      "goals": 13,
      "clubs": {
       "350": {
@@ -93576,6 +93776,10 @@
       },
       "2288": {
        "apps": 16,
+       "goals": 0
+      },
+      "3008": {
+       "apps": 7,
        "goals": 0
       }
      }
@@ -93708,19 +93912,19 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 274,
-     "goals": 71,
+     "apps": 281,
+     "goals": 75,
      "clubs": {
       "29": {
        "apps": 239,
        "goals": 57
       },
       "399": {
-       "apps": 35,
-       "goals": 14
+       "apps": 42,
+       "goals": 18
       }
      }
     }
@@ -93792,15 +93996,15 @@
    "nat": "Germany",
    "natKey": "germany",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 163,
-     "goals": 43,
+     "apps": 170,
+     "goals": 45,
      "clubs": {
       "11": {
-       "apps": 72,
-       "goals": 24
+       "apps": 79,
+       "goals": 26
       },
       "631": {
        "apps": 91,
@@ -93988,10 +94192,10 @@
    "nat": "Germany",
    "natKey": "germany",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 33,
+     "apps": 39,
      "goals": 6,
      "clubs": {
       "281": {
@@ -93999,7 +94203,7 @@
        "goals": 0
       },
       "399": {
-       "apps": 31,
+       "apps": 37,
        "goals": 6
       }
      }
@@ -94179,6 +94383,26 @@
    }
   },
   {
+   "id": "315145",
+   "name": "Azor Matusiwa",
+   "nat": "Netherlands",
+   "natKey": "netherlands",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "677": {
+       "apps": 2,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "315185",
    "name": "Jake Hesketh",
    "nat": "England",
@@ -94224,14 +94448,14 @@
    "nat": "Italy",
    "natKey": "italy",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 34,
+     "apps": 42,
      "goals": 0,
      "clubs": {
       "281": {
-       "apps": 34,
+       "apps": 42,
        "goals": 0
       }
      }
@@ -94284,19 +94508,19 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 177,
-     "goals": 13,
+     "apps": 179,
+     "goals": 14,
      "clubs": {
       "631": {
        "apps": 70,
        "goals": 8
       },
       "873": {
-       "apps": 8,
-       "goals": 1
+       "apps": 10,
+       "goals": 2
       },
       "1003": {
        "apps": 99,
@@ -94312,15 +94536,15 @@
    "nat": "Norway",
    "natKey": "norway",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 176,
-     "goals": 35,
+     "apps": 183,
+     "goals": 37,
      "clubs": {
       "11": {
-       "apps": 176,
-       "goals": 35
+       "apps": 183,
+       "goals": 37
       }
      }
     }
@@ -94372,14 +94596,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 12,
+     "apps": 19,
      "goals": 0,
      "clubs": {
       "1237": {
-       "apps": 12,
+       "apps": 19,
        "goals": 0
       }
      }
@@ -94412,14 +94636,14 @@
    "nat": "Wales",
    "natKey": "wales",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 125,
+     "apps": 128,
      "goals": 12,
      "clubs": {
       "399": {
-       "apps": 55,
+       "apps": 58,
        "goals": 4
       },
       "931": {
@@ -94460,14 +94684,14 @@
    "nat": "Denmark",
    "natKey": "denmark",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 160,
+     "apps": 163,
      "goals": 11,
      "clubs": {
       "1148": {
-       "apps": 160,
+       "apps": 163,
        "goals": 11
       }
      }
@@ -94564,15 +94788,15 @@
    "nat": "Argentina",
    "natKey": "argentina",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 157,
-     "goals": 16,
+     "apps": 164,
+     "goals": 17,
      "clubs": {
       "405": {
-       "apps": 121,
-       "goals": 15
+       "apps": 128,
+       "goals": 16
       },
       "1123": {
        "apps": 36,
@@ -94608,15 +94832,19 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "MID",
-   "last": 2023,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 36,
+     "apps": 40,
      "goals": 4,
      "clubs": {
       "350": {
        "apps": 36,
        "goals": 4
+      },
+      "990": {
+       "apps": 4,
+       "goals": 0
       }
      }
     }
@@ -94732,14 +94960,14 @@
    "nat": "Sweden",
    "natKey": "sweden",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 36,
+     "apps": 40,
      "goals": 14,
      "clubs": {
       "11": {
-       "apps": 36,
+       "apps": 40,
        "goals": 14
       }
      }
@@ -94792,15 +95020,15 @@
    "nat": "Norway",
    "natKey": "norway",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 112,
-     "goals": 3,
+     "apps": 119,
+     "goals": 4,
      "clubs": {
       "1148": {
-       "apps": 112,
-       "goals": 3
+       "apps": 119,
+       "goals": 4
       }
      }
     }
@@ -94891,16 +95119,36 @@
    "name": "Justin Kluivert",
    "nat": "Netherlands",
    "natKey": "netherlands",
-   "pos": "FWD",
-   "last": 2025,
+   "pos": "MID",
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 86,
-     "goals": 21,
+     "apps": 91,
+     "goals": 22,
      "clubs": {
       "989": {
-       "apps": 86,
-       "goals": 21
+       "apps": 91,
+       "goals": 22
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "331505",
+   "name": "Óscar Mingueza",
+   "nat": "Spain",
+   "natKey": "spain",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "873": {
+       "apps": 2,
+       "goals": 0
       }
      }
     }
@@ -94912,15 +95160,19 @@
    "nat": "Japan",
    "natKey": "japan",
    "pos": "DEF",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 65,
+     "apps": 69,
      "goals": 2,
      "clubs": {
       "11": {
        "apps": 65,
        "goals": 2
+      },
+      "873": {
+       "apps": 4,
+       "goals": 0
       }
      }
     }
@@ -94932,14 +95184,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 101,
+     "apps": 105,
      "goals": 28,
      "clubs": {
       "405": {
-       "apps": 12,
+       "apps": 16,
        "goals": 2
       },
       "631": {
@@ -95020,10 +95272,10 @@
    "nat": "United States",
    "natKey": "united states",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 80,
+     "apps": 87,
      "goals": 2,
      "clubs": {
       "399": {
@@ -95031,7 +95283,7 @@
        "goals": 0
       },
       "989": {
-       "apps": 56,
+       "apps": 63,
        "goals": 2
       }
      }
@@ -95044,10 +95296,10 @@
    "nat": "Norway",
    "natKey": "norway",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 132,
+     "apps": 139,
      "goals": 3,
      "clubs": {
       "350": {
@@ -95055,7 +95307,7 @@
        "goals": 2
       },
       "931": {
-       "apps": 66,
+       "apps": 73,
        "goals": 0
       },
       "1132": {
@@ -95072,14 +95324,14 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 212,
+     "apps": 214,
      "goals": 24,
      "clubs": {
       "762": {
-       "apps": 212,
+       "apps": 214,
        "goals": 24
       }
      }
@@ -95152,14 +95404,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 172,
+     "apps": 178,
      "goals": 6,
      "clubs": {
       "11": {
-       "apps": 136,
+       "apps": 142,
        "goals": 6
       },
       "1237": {
@@ -95336,14 +95588,14 @@
    "nat": "Greece",
    "natKey": "greece",
    "pos": "DEF",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 66,
+     "apps": 68,
      "goals": 0,
      "clubs": {
       "31": {
-       "apps": 66,
+       "apps": 68,
        "goals": 0
       }
      }
@@ -95356,14 +95608,14 @@
    "nat": "Spain",
    "natKey": "spain",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 74,
+     "apps": 81,
      "goals": 12,
      "clubs": {
       "11": {
-       "apps": 50,
+       "apps": 57,
        "goals": 11
       },
       "762": {
@@ -95460,14 +95712,14 @@
    "nat": "Jamaica",
    "natKey": "jamaica",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 106,
+     "apps": 107,
      "goals": 3,
      "clubs": {
       "1148": {
-       "apps": 106,
+       "apps": 107,
        "goals": 3
       }
      }
@@ -95520,10 +95772,10 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 157,
+     "apps": 163,
      "goals": 24,
      "clubs": {
       "11": {
@@ -95531,7 +95783,7 @@
        "goals": 19
       },
       "873": {
-       "apps": 41,
+       "apps": 47,
        "goals": 5
       }
      }
@@ -95592,19 +95844,19 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 183,
-     "goals": 15,
+     "apps": 190,
+     "goals": 17,
      "clubs": {
       "11": {
        "apps": 40,
        "goals": 1
       },
       "762": {
-       "apps": 143,
-       "goals": 14
+       "apps": 150,
+       "goals": 16
       }
      }
     }
@@ -95636,14 +95888,14 @@
    "nat": "Morocco",
    "natKey": "morocco",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 57,
+     "apps": 61,
      "goals": 0,
      "clubs": {
       "985": {
-       "apps": 57,
+       "apps": 61,
        "goals": 0
       }
      }
@@ -95656,10 +95908,10 @@
    "nat": "Ireland",
    "natKey": "ireland",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 62,
+     "apps": 69,
      "goals": 0,
      "clubs": {
       "31": {
@@ -95667,7 +95919,7 @@
        "goals": 0
       },
       "1148": {
-       "apps": 37,
+       "apps": 44,
        "goals": 0
       }
      }
@@ -95732,14 +95984,14 @@
    "nat": "Italy",
    "natKey": "italy",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 32,
+     "apps": 33,
      "goals": 2,
      "clubs": {
       "31": {
-       "apps": 32,
+       "apps": 33,
        "goals": 2
       }
      }
@@ -96004,15 +96256,15 @@
    "nat": "Germany",
    "natKey": "germany",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 29,
-     "goals": 5,
+     "apps": 36,
+     "goals": 6,
      "clubs": {
       "399": {
-       "apps": 29,
-       "goals": 5
+       "apps": 36,
+       "goals": 6
       }
      }
     }
@@ -96260,10 +96512,10 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 183,
+     "apps": 185,
      "goals": 32,
      "clubs": {
       "631": {
@@ -96271,7 +96523,7 @@
        "goals": 27
       },
       "985": {
-       "apps": 54,
+       "apps": 56,
        "goals": 5
       }
      }
@@ -96284,14 +96536,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 194,
+     "apps": 197,
      "goals": 12,
      "clubs": {
       "399": {
-       "apps": 23,
+       "apps": 26,
        "goals": 2
       },
       "762": {
@@ -96328,15 +96580,15 @@
    "nat": "Switzerland",
    "natKey": "switzerland",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 28,
-     "goals": 8,
+     "apps": 35,
+     "goals": 9,
      "clubs": {
       "399": {
-       "apps": 28,
-       "goals": 8
+       "apps": 35,
+       "goals": 9
       }
      }
     }
@@ -96368,14 +96620,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 32,
+     "apps": 38,
      "goals": 3,
      "clubs": {
       "289": {
-       "apps": 32,
+       "apps": 38,
        "goals": 3
       }
      }
@@ -96452,15 +96704,15 @@
    "nat": "Sweden",
    "natKey": "sweden",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 100,
-     "goals": 57,
+     "apps": 106,
+     "goals": 62,
      "clubs": {
       "31": {
-       "apps": 14,
-       "goals": 3
+       "apps": 20,
+       "goals": 8
       },
       "762": {
        "apps": 86,
@@ -96516,14 +96768,14 @@
    "nat": "United States",
    "natKey": "united states",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 158,
+     "apps": 164,
      "goals": 1,
      "clubs": {
       "931": {
-       "apps": 158,
+       "apps": 164,
        "goals": 1
       }
      }
@@ -96568,12 +96820,16 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2020,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 38,
+     "apps": 39,
      "goals": 1,
      "clubs": {
+      "677": {
+       "apps": 1,
+       "goals": 0
+      },
       "984": {
        "apps": 35,
        "goals": 1
@@ -96612,14 +96868,14 @@
    "nat": "Paraguay",
    "natKey": "paraguay",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 33,
+     "apps": 35,
      "goals": 1,
      "clubs": {
       "289": {
-       "apps": 33,
+       "apps": 35,
        "goals": 1
       }
      }
@@ -96672,14 +96928,14 @@
    "nat": "Uruguay",
    "natKey": "uruguay",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 110,
+     "apps": 116,
      "goals": 9,
      "clubs": {
       "148": {
-       "apps": 110,
+       "apps": 116,
        "goals": 9
       }
      }
@@ -96740,15 +96996,15 @@
    "nat": "Japan",
    "natKey": "japan",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 62,
-     "goals": 0,
+     "apps": 69,
+     "goals": 1,
      "clubs": {
       "873": {
-       "apps": 62,
-       "goals": 0
+       "apps": 69,
+       "goals": 1
       }
      }
     }
@@ -96780,14 +97036,14 @@
    "nat": "Portugal",
    "natKey": "portugal",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 173,
+     "apps": 180,
      "goals": 4,
      "clubs": {
       "985": {
-       "apps": 173,
+       "apps": 180,
        "goals": 4
       }
      }
@@ -96824,12 +97080,16 @@
    "nat": "Portugal",
    "natKey": "portugal",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 31,
+     "apps": 36,
      "goals": 0,
      "clubs": {
+      "677": {
+       "apps": 5,
+       "goals": 0
+      },
       "1132": {
        "apps": 31,
        "goals": 0
@@ -96904,14 +97164,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 313,
+     "apps": 320,
      "goals": 25,
      "clubs": {
       "11": {
-       "apps": 109,
+       "apps": 116,
        "goals": 15
       },
       "379": {
@@ -96968,15 +97228,15 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 86,
-     "goals": 3,
+     "apps": 93,
+     "goals": 4,
      "clubs": {
       "762": {
-       "apps": 86,
-       "goals": 3
+       "apps": 93,
+       "goals": 4
       }
      }
     }
@@ -97032,14 +97292,14 @@
    "nat": "Sweden",
    "natKey": "sweden",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 32,
+     "apps": 37,
      "goals": 0,
      "clubs": {
       "399": {
-       "apps": 32,
+       "apps": 37,
        "goals": 0
       }
      }
@@ -97176,15 +97436,15 @@
    "nat": "Switzerland",
    "natKey": "switzerland",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 24,
-     "goals": 1,
+     "apps": 32,
+     "goals": 3,
      "clubs": {
       "703": {
-       "apps": 24,
-       "goals": 1
+       "apps": 32,
+       "goals": 3
       }
      }
     }
@@ -97256,14 +97516,14 @@
    "nat": "Türkiye",
    "natKey": "turkiye",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 43,
+     "apps": 49,
      "goals": 2,
      "clubs": {
       "1237": {
-       "apps": 43,
+       "apps": 49,
        "goals": 2
       }
      }
@@ -97420,14 +97680,14 @@
    "nat": "Slovenia",
    "natKey": "slovenia",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 25,
+     "apps": 29,
      "goals": 1,
      "clubs": {
       "399": {
-       "apps": 25,
+       "apps": 29,
        "goals": 1
       }
      }
@@ -97540,14 +97800,14 @@
    "nat": "Cote d'Ivoire",
    "natKey": "ivory coast",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 58,
+     "apps": 63,
      "goals": 2,
      "clubs": {
       "703": {
-       "apps": 58,
+       "apps": 63,
        "goals": 2
       }
      }
@@ -97620,10 +97880,10 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 275,
+     "apps": 276,
      "goals": 75,
      "clubs": {
       "29": {
@@ -97631,7 +97891,7 @@
        "goals": 43
       },
       "148": {
-       "apps": 102,
+       "apps": 103,
        "goals": 27
       },
       "1010": {
@@ -97920,10 +98180,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 58,
+     "apps": 61,
      "goals": 3,
      "clubs": {
       "379": {
@@ -97937,6 +98197,10 @@
       "631": {
        "apps": 37,
        "goals": 3
+      },
+      "873": {
+       "apps": 3,
+       "goals": 0
       }
      }
     }
@@ -98008,15 +98272,15 @@
    "nat": "DR Congo",
    "natKey": "dr congo",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 156,
-     "goals": 46,
+     "apps": 163,
+     "goals": 47,
      "clubs": {
       "762": {
-       "apps": 19,
-       "goals": 1
+       "apps": 26,
+       "goals": 2
       },
       "1148": {
        "apps": 137,
@@ -98196,15 +98460,15 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 167,
-     "goals": 9,
+     "apps": 175,
+     "goals": 10,
      "clubs": {
       "281": {
-       "apps": 15,
-       "goals": 1
+       "apps": 23,
+       "goals": 2
       },
       "873": {
        "apps": 152,
@@ -98240,10 +98504,10 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 151,
+     "apps": 155,
      "goals": 21,
      "clubs": {
       "11": {
@@ -98251,7 +98515,7 @@
        "goals": 12
       },
       "931": {
-       "apps": 71,
+       "apps": 75,
        "goals": 9
       }
      }
@@ -98264,10 +98528,10 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 162,
+     "apps": 166,
      "goals": 20,
      "clubs": {
       "631": {
@@ -98275,7 +98539,7 @@
        "goals": 4
       },
       "703": {
-       "apps": 90,
+       "apps": 94,
        "goals": 16
       }
      }
@@ -98312,10 +98576,10 @@
    "nat": "Wales",
    "natKey": "wales",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 61,
+     "apps": 68,
      "goals": 1,
      "clubs": {
       "350": {
@@ -98323,7 +98587,7 @@
        "goals": 0
       },
       "399": {
-       "apps": 35,
+       "apps": 42,
        "goals": 1
       },
       "631": {
@@ -98340,19 +98604,19 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 116,
-     "goals": 11,
+     "apps": 121,
+     "goals": 12,
      "clubs": {
       "148": {
        "apps": 38,
        "goals": 2
       },
       "931": {
-       "apps": 78,
-       "goals": 9
+       "apps": 83,
+       "goals": 10
       }
      }
     }
@@ -98364,14 +98628,14 @@
    "nat": "United States",
    "natKey": "united states",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 73,
+     "apps": 79,
      "goals": 5,
      "clubs": {
       "399": {
-       "apps": 73,
+       "apps": 79,
        "goals": 5
       }
      }
@@ -98404,14 +98668,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 88,
+     "apps": 96,
      "goals": 2,
      "clubs": {
       "405": {
-       "apps": 88,
+       "apps": 96,
        "goals": 2
       }
      }
@@ -98488,12 +98752,16 @@
    "nat": "Italy",
    "natKey": "italy",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 79,
+     "apps": 86,
      "goals": 5,
      "clubs": {
+      "148": {
+       "apps": 7,
+       "goals": 0
+      },
       "762": {
        "apps": 79,
        "goals": 5
@@ -98528,15 +98796,15 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 237,
-     "goals": 56,
+     "apps": 244,
+     "goals": 57,
      "clubs": {
       "762": {
-       "apps": 91,
-       "goals": 21
+       "apps": 98,
+       "goals": 22
       },
       "1003": {
        "apps": 146,
@@ -98616,15 +98884,15 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 116,
-     "goals": 18,
+     "apps": 123,
+     "goals": 22,
      "clubs": {
       "989": {
-       "apps": 116,
-       "goals": 18
+       "apps": 123,
+       "goals": 22
       }
      }
     }
@@ -98636,14 +98904,14 @@
    "nat": "Spain",
    "natKey": "spain",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 74,
+     "apps": 79,
      "goals": 2,
      "clubs": {
       "405": {
-       "apps": 74,
+       "apps": 79,
        "goals": 2
       }
      }
@@ -98728,15 +98996,15 @@
    "nat": "Ireland",
    "natKey": "ireland",
    "pos": "DEF",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 96,
-     "goals": 3,
+     "apps": 104,
+     "goals": 4,
      "clubs": {
       "677": {
-       "apps": 35,
-       "goals": 0
+       "apps": 43,
+       "goals": 1
       },
       "984": {
        "apps": 28,
@@ -98765,6 +99033,26 @@
       "379": {
        "apps": 59,
        "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "401578",
+   "name": "Exequiel Palacios",
+   "nat": "Argentina",
+   "natKey": "argentina",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "677": {
+       "apps": 7,
+       "goals": 0
       }
      }
     }
@@ -98816,18 +99104,38 @@
    "nat": "Spain",
    "natKey": "spain",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 170,
+     "apps": 171,
      "goals": 0,
      "clubs": {
       "631": {
-       "apps": 83,
+       "apps": 84,
        "goals": 0
       },
       "1237": {
        "apps": 87,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "403692",
+   "name": "Victor Torp",
+   "nat": "Denmark",
+   "natKey": "denmark",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "990": {
+       "apps": 4,
        "goals": 0
       }
      }
@@ -98900,14 +99208,14 @@
    "nat": "Ukraine",
    "natKey": "ukraine",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 143,
+     "apps": 149,
      "goals": 4,
      "clubs": {
       "29": {
-       "apps": 143,
+       "apps": 149,
        "goals": 4
       }
      }
@@ -99028,14 +99336,14 @@
    "nat": "Denmark",
    "natKey": "denmark",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 27,
+     "apps": 29,
      "goals": 3,
      "clubs": {
       "1237": {
-       "apps": 27,
+       "apps": 29,
        "goals": 3
       }
      }
@@ -99047,16 +99355,16 @@
    "name": "Phil Foden",
    "nat": "England",
    "natKey": "england",
-   "pos": "FWD",
-   "last": 2025,
+   "pos": "MID",
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 225,
-     "goals": 68,
+     "apps": 230,
+     "goals": 69,
      "clubs": {
       "281": {
-       "apps": 225,
-       "goals": 68
+       "apps": 230,
+       "goals": 69
       }
      }
     }
@@ -99132,14 +99440,14 @@
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 116,
+     "apps": 118,
      "goals": 27,
      "clubs": {
       "873": {
-       "apps": 66,
+       "apps": 68,
        "goals": 17
       },
       "1010": {
@@ -99200,15 +99508,19 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 119,
+     "apps": 123,
      "goals": 4,
      "clubs": {
       "399": {
        "apps": 119,
        "goals": 4
+      },
+      "1237": {
+       "apps": 4,
+       "goals": 0
       }
      }
     }
@@ -99240,12 +99552,16 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 29,
-     "goals": 11,
+     "apps": 35,
+     "goals": 13,
      "clubs": {
+      "677": {
+       "apps": 6,
+       "goals": 2
+      },
       "1132": {
        "apps": 29,
        "goals": 11
@@ -99295,6 +99611,26 @@
    }
   },
   {
+   "id": "412823",
+   "name": "Joel Latibeaudiere",
+   "nat": "Jamaica",
+   "natKey": "jamaica",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "990": {
+       "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "413032",
    "name": "Ibrahima Diallo",
    "nat": "France",
@@ -99320,15 +99656,15 @@
    "nat": "Cameroon",
    "natKey": "cameroon",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 169,
-     "goals": 53,
+     "apps": 176,
+     "goals": 57,
      "clubs": {
       "985": {
-       "apps": 33,
-       "goals": 11
+       "apps": 40,
+       "goals": 15
       },
       "1148": {
        "apps": 136,
@@ -99344,19 +99680,39 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 128,
-     "goals": 6,
+     "apps": 135,
+     "goals": 7,
      "clubs": {
       "399": {
-       "apps": 29,
-       "goals": 2
+       "apps": 36,
+       "goals": 3
       },
       "1003": {
        "apps": 99,
        "goals": 4
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "413402",
+   "name": "Lewie Coyle",
+   "nat": "England",
+   "natKey": "england",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "3008": {
+       "apps": 7,
+       "goals": 0
       }
      }
     }
@@ -99368,12 +99724,16 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 231,
+     "apps": 237,
      "goals": 8,
      "clubs": {
+      "11": {
+       "apps": 6,
+       "goals": 0
+      },
       "405": {
        "apps": 231,
        "goals": 8
@@ -99388,14 +99748,14 @@
    "nat": "Serbia",
    "natKey": "serbia",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 75,
+     "apps": 79,
      "goals": 5,
      "clubs": {
       "703": {
-       "apps": 75,
+       "apps": 79,
        "goals": 5
       }
      }
@@ -99427,15 +99787,15 @@
    "name": "Mats Wieffer",
    "nat": "Netherlands",
    "natKey": "netherlands",
-   "pos": "MID",
-   "last": 2025,
+   "pos": "DEF",
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 51,
+     "apps": 53,
      "goals": 3,
      "clubs": {
       "1237": {
-       "apps": 51,
+       "apps": 53,
        "goals": 3
       }
      }
@@ -99540,15 +99900,15 @@
    "nat": "Norway",
    "natKey": "norway",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 132,
-     "goals": 112,
+     "apps": 140,
+     "goals": 120,
      "clubs": {
       "281": {
-       "apps": 132,
-       "goals": 112
+       "apps": 140,
+       "goals": 120
       }
      }
     }
@@ -99644,14 +100004,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 162,
+     "apps": 164,
      "goals": 50,
      "clubs": {
       "873": {
-       "apps": 162,
+       "apps": 164,
        "goals": 50
       }
      }
@@ -99679,19 +100039,39 @@
    }
   },
   {
+   "id": "420213",
+   "name": "Quinten Timber",
+   "nat": "Netherlands",
+   "natKey": "netherlands",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "873": {
+       "apps": 5,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "420243",
    "name": "Jurriën Timber",
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 62,
+     "apps": 66,
      "goals": 4,
      "clubs": {
       "11": {
-       "apps": 62,
+       "apps": 66,
        "goals": 4
       }
      }
@@ -99723,6 +100103,26 @@
    }
   },
   {
+   "id": "420931",
+   "name": "Daizen Maeda",
+   "nat": "Japan",
+   "natKey": "japan",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 8,
+     "goals": 1,
+     "clubs": {
+      "677": {
+       "apps": 8,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "421424",
    "name": "Jake Vokins",
    "nat": "England",
@@ -99748,12 +100148,16 @@
    "nat": "Nigeria",
    "natKey": "nigeria",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 75,
+     "apps": 81,
      "goals": 1,
      "clubs": {
+      "990": {
+       "apps": 6,
+       "goals": 0
+      },
       "1148": {
        "apps": 75,
        "goals": 1
@@ -99768,14 +100172,14 @@
    "nat": "Spain",
    "natKey": "spain",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 38,
+     "apps": 43,
      "goals": 5,
      "clubs": {
       "11": {
-       "apps": 38,
+       "apps": 43,
        "goals": 5
       }
      }
@@ -99876,14 +100280,14 @@
    "nat": "Poland",
    "natKey": "poland",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 183,
+     "apps": 190,
      "goals": 10,
      "clubs": {
       "405": {
-       "apps": 183,
+       "apps": 190,
        "goals": 10
       }
      }
@@ -100036,19 +100440,19 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 191,
-     "goals": 33,
+     "apps": 198,
+     "goals": 34,
      "clubs": {
       "543": {
        "apps": 48,
        "goals": 1
       },
       "703": {
-       "apps": 143,
-       "goals": 32
+       "apps": 150,
+       "goals": 33
       }
      }
     }
@@ -100060,15 +100464,15 @@
    "nat": "Belgium",
    "natKey": "belgium",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 30,
-     "goals": 2,
+     "apps": 37,
+     "goals": 4,
      "clubs": {
       "1237": {
-       "apps": 30,
-       "goals": 2
+       "apps": 37,
+       "goals": 4
       }
      }
     }
@@ -100080,19 +100484,19 @@
    "nat": "Norway",
    "natKey": "norway",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 71,
-     "goals": 18,
+     "apps": 78,
+     "goals": 19,
      "clubs": {
       "543": {
        "apps": 57,
        "goals": 15
       },
       "873": {
-       "apps": 14,
-       "goals": 3
+       "apps": 21,
+       "goals": 4
       }
      }
     }
@@ -100144,14 +100548,14 @@
    "nat": "Sweden",
    "natKey": "sweden",
    "pos": "MID",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 116,
+     "apps": 117,
      "goals": 22,
      "clubs": {
       "148": {
-       "apps": 116,
+       "apps": 117,
        "goals": 22
       }
      }
@@ -100164,15 +100568,15 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 37,
-     "goals": 6,
+     "apps": 42,
+     "goals": 7,
      "clubs": {
       "703": {
-       "apps": 37,
-       "goals": 6
+       "apps": 42,
+       "goals": 7
       }
      }
     }
@@ -100192,6 +100596,26 @@
      "clubs": {
       "873": {
        "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "432298",
+   "name": "Zion Suzuki",
+   "nat": "Japan",
+   "natKey": "japan",
+   "pos": "GK",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "405": {
+       "apps": 7,
        "goals": 0
       }
      }
@@ -100224,15 +100648,15 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 226,
-     "goals": 60,
+     "apps": 233,
+     "goals": 63,
      "clubs": {
       "11": {
-       "apps": 226,
-       "goals": 60
+       "apps": 233,
+       "goals": 63
       }
      }
     }
@@ -100368,12 +100792,16 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 70,
+     "apps": 77,
      "goals": 2,
      "clubs": {
+      "631": {
+       "apps": 7,
+       "goals": 0
+      },
       "873": {
        "apps": 70,
        "goals": 2
@@ -100388,15 +100816,15 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 127,
-     "goals": 32,
+     "apps": 132,
+     "goals": 33,
      "clubs": {
       "31": {
-       "apps": 127,
-       "goals": 32
+       "apps": 132,
+       "goals": 33
       }
      }
     }
@@ -100408,14 +100836,14 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 192,
+     "apps": 199,
      "goals": 20,
      "clubs": {
       "11": {
-       "apps": 192,
+       "apps": 199,
        "goals": 20
       }
      }
@@ -100428,14 +100856,14 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 56,
+     "apps": 59,
      "goals": 5,
      "clubs": {
       "985": {
-       "apps": 56,
+       "apps": 59,
        "goals": 5
       }
      }
@@ -100457,6 +100885,26 @@
       "543": {
        "apps": 70,
        "goals": 3
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "438961",
+   "name": "Michael Svoboda",
+   "nat": "Austria",
+   "natKey": "austria",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "1237": {
+       "apps": 2,
+       "goals": 0
       }
      }
     }
@@ -100488,12 +100936,16 @@
    "nat": "Jamaica",
    "natKey": "jamaica",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 117,
+     "apps": 123,
      "goals": 8,
      "clubs": {
+      "990": {
+       "apps": 6,
+       "goals": 0
+      },
       "1148": {
        "apps": 117,
        "goals": 8
@@ -100592,12 +101044,16 @@
    "nat": "Egypt",
    "natKey": "egypt",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 37,
-     "goals": 10,
+     "apps": 43,
+     "goals": 11,
      "clubs": {
+      "148": {
+       "apps": 6,
+       "goals": 1
+      },
       "281": {
        "apps": 37,
        "goals": 10
@@ -100720,15 +101176,15 @@
    "nat": "Hungary",
    "natKey": "hungary",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 105,
-     "goals": 15,
+     "apps": 111,
+     "goals": 16,
      "clubs": {
       "31": {
-       "apps": 105,
-       "goals": 15
+       "apps": 111,
+       "goals": 16
       }
      }
     }
@@ -100740,14 +101196,58 @@
    "nat": "Greece",
    "natKey": "greece",
    "pos": "FWD",
-   "last": 2021,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 14,
+     "apps": 19,
      "goals": 0,
      "clubs": {
+      "11": {
+       "apps": 5,
+       "goals": 0
+      },
       "1123": {
        "apps": 14,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "451747",
+   "name": "Brandon Thomas-Asante",
+   "nat": "Ghana",
+   "natKey": "ghana",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "990": {
+       "apps": 7,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "452483",
+   "name": "David Affengruber",
+   "nat": "Austria",
+   "natKey": "austria",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "931": {
+       "apps": 4,
        "goals": 0
       }
      }
@@ -100820,14 +101320,14 @@
    "nat": "Germany",
    "natKey": "germany",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 33,
+     "apps": 34,
      "goals": 8,
      "clubs": {
       "762": {
-       "apps": 33,
+       "apps": 34,
        "goals": 8
       }
      }
@@ -100960,14 +101460,14 @@
    "nat": "Nigeria",
    "natKey": "nigeria",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 94,
+     "apps": 101,
      "goals": 3,
      "clubs": {
       "931": {
-       "apps": 94,
+       "apps": 101,
        "goals": 3
       }
      }
@@ -101015,6 +101515,26 @@
    }
   },
   {
+   "id": "463527",
+   "name": "Kjell Scherpen",
+   "nat": "Netherlands",
+   "natKey": "netherlands",
+   "pos": "GK",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "677": {
+       "apps": 4,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "463603",
    "name": "Benoît Badiashile",
    "nat": "France",
@@ -101040,14 +101560,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 18,
+     "apps": 19,
      "goals": 0,
      "clubs": {
       "989": {
-       "apps": 18,
+       "apps": 19,
        "goals": 0
       }
      }
@@ -101080,10 +101600,10 @@
    "nat": "Serbia",
    "natKey": "serbia",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 61,
+     "apps": 68,
      "goals": 0,
      "clubs": {
       "631": {
@@ -101091,7 +101611,7 @@
        "goals": 0
       },
       "989": {
-       "apps": 38,
+       "apps": 45,
        "goals": 0
       }
      }
@@ -101124,19 +101644,19 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 84,
-     "goals": 6,
+     "apps": 91,
+     "goals": 7,
      "clubs": {
       "350": {
        "apps": 50,
        "goals": 5
       },
       "399": {
-       "apps": 34,
-       "goals": 1
+       "apps": 41,
+       "goals": 2
       }
      }
     }
@@ -101156,6 +101676,26 @@
      "clubs": {
       "11": {
        "apps": 57,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "466637",
+   "name": "Ephron Mason-Clark",
+   "nat": "Jamaica",
+   "natKey": "jamaica",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "990": {
+       "apps": 6,
        "goals": 0
       }
      }
@@ -101188,15 +101728,19 @@
    "nat": "Spain",
    "natKey": "spain",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 36,
+     "apps": 41,
      "goals": 2,
      "clubs": {
       "281": {
        "apps": 36,
        "goals": 2
+      },
+      "762": {
+       "apps": 5,
+       "goals": 0
       }
      }
     }
@@ -101372,10 +101916,10 @@
    "nat": "Ireland",
    "natKey": "ireland",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 150,
+     "apps": 153,
      "goals": 6,
      "clubs": {
       "543": {
@@ -101387,7 +101931,7 @@
        "goals": 2
       },
       "1148": {
-       "apps": 105,
+       "apps": 108,
        "goals": 4
       }
      }
@@ -101400,12 +101944,16 @@
    "nat": "Argentina",
    "natKey": "argentina",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 116,
+     "apps": 118,
      "goals": 6,
      "clubs": {
+      "148": {
+       "apps": 2,
+       "goals": 0
+      },
       "989": {
        "apps": 116,
        "goals": 6
@@ -101480,12 +102028,16 @@
    "nat": "Wales",
    "natKey": "wales",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 140,
+     "apps": 147,
      "goals": 26,
      "clubs": {
+      "29": {
+       "apps": 7,
+       "goals": 0
+      },
       "148": {
        "apps": 81,
        "goals": 18
@@ -101532,14 +102084,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 156,
+     "apps": 160,
      "goals": 10,
      "clubs": {
       "631": {
-       "apps": 156,
+       "apps": 160,
        "goals": 10
       }
      }
@@ -101552,15 +102104,35 @@
    "nat": "Germany",
    "natKey": "germany",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 102,
-     "goals": 21,
+     "apps": 109,
+     "goals": 24,
      "clubs": {
       "1148": {
-       "apps": 102,
-       "goals": 21
+       "apps": 109,
+       "goals": 24
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "473080",
+   "name": "Regan Slater",
+   "nat": "England",
+   "natKey": "england",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "3008": {
+       "apps": 7,
+       "goals": 0
       }
      }
     }
@@ -101572,15 +102144,15 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 31,
-     "goals": 7,
+     "apps": 36,
+     "goals": 10,
      "clubs": {
       "289": {
-       "apps": 31,
-       "goals": 7
+       "apps": 36,
+       "goals": 10
       }
      }
     }
@@ -101616,15 +102188,15 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 103,
-     "goals": 11,
+     "apps": 110,
+     "goals": 13,
      "clubs": {
       "29": {
-       "apps": 31,
-       "goals": 8
+       "apps": 38,
+       "goals": 10
       },
       "631": {
        "apps": 13,
@@ -101644,18 +102216,38 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 91,
+     "apps": 95,
      "goals": 1,
      "clubs": {
       "631": {
-       "apps": 54,
+       "apps": 58,
        "goals": 1
       },
       "1003": {
        "apps": 37,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "475416",
+   "name": "Sorba Thomas",
+   "nat": "Wales",
+   "natKey": "wales",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "3008": {
+       "apps": 5,
        "goals": 0
       }
      }
@@ -101668,15 +102260,15 @@
    "nat": "Croatia",
    "natKey": "croatia",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 83,
-     "goals": 11,
+     "apps": 91,
+     "goals": 12,
      "clubs": {
       "281": {
-       "apps": 83,
-       "goals": 11
+       "apps": 91,
+       "goals": 12
       }
      }
     }
@@ -101788,15 +102380,19 @@
    "nat": "DR Congo",
    "natKey": "dr congo",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 233,
+     "apps": 239,
      "goals": 4,
      "clubs": {
       "379": {
        "apps": 61,
        "goals": 2
+      },
+      "405": {
+       "apps": 6,
+       "goals": 0
       },
       "873": {
        "apps": 42,
@@ -101816,14 +102412,14 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 99,
+     "apps": 105,
      "goals": 6,
      "clubs": {
       "31": {
-       "apps": 99,
+       "apps": 105,
        "goals": 6
       }
      }
@@ -101876,14 +102472,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 179,
+     "apps": 184,
      "goals": 41,
      "clubs": {
       "11": {
-       "apps": 32,
+       "apps": 37,
        "goals": 7
       },
       "873": {
@@ -101919,6 +102515,26 @@
    }
   },
   {
+   "id": "480267",
+   "name": "Ronald Araújo",
+   "nat": "Uruguay",
+   "natKey": "uruguay",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "31": {
+       "apps": 7,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "480692",
    "name": "Luis Díaz",
    "nat": "Colombia",
@@ -101944,14 +102560,14 @@
    "nat": "Argentina",
    "natKey": "argentina",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 76,
+     "apps": 82,
      "goals": 3,
      "clubs": {
       "985": {
-       "apps": 76,
+       "apps": 82,
        "goals": 3
       }
      }
@@ -102064,14 +102680,14 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 21,
+     "apps": 26,
      "goals": 0,
      "clubs": {
       "31": {
-       "apps": 21,
+       "apps": 26,
        "goals": 0
       }
      }
@@ -102144,14 +102760,14 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 71,
+     "apps": 76,
      "goals": 1,
      "clubs": {
       "405": {
-       "apps": 59,
+       "apps": 64,
        "goals": 1
       },
       "631": {
@@ -102192,15 +102808,15 @@
    "nat": "Belgium",
    "natKey": "belgium",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 88,
-     "goals": 11,
+     "apps": 92,
+     "goals": 12,
      "clubs": {
       "281": {
-       "apps": 88,
-       "goals": 11
+       "apps": 92,
+       "goals": 12
       }
      }
     }
@@ -102267,24 +102883,44 @@
    }
   },
   {
+   "id": "487417",
+   "name": "Liam Millar",
+   "nat": "Canada",
+   "natKey": "canada",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 2,
+     "goals": 1,
+     "clubs": {
+      "3008": {
+       "apps": 2,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "487465",
    "name": "Pedro Neto",
    "nat": "Portugal",
    "natKey": "portugal",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 180,
-     "goals": 20,
+     "apps": 187,
+     "goals": 23,
      "clubs": {
       "543": {
        "apps": 111,
        "goals": 11
       },
       "631": {
-       "apps": 69,
-       "goals": 9
+       "apps": 76,
+       "goals": 12
       }
      }
     }
@@ -102336,15 +102972,15 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 152,
-     "goals": 19,
+     "apps": 157,
+     "goals": 20,
      "clubs": {
       "148": {
-       "apps": 16,
-       "goals": 1
+       "apps": 21,
+       "goals": 2
       },
       "631": {
        "apps": 72,
@@ -102408,14 +103044,14 @@
    "nat": "Japan",
    "natKey": "japan",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 28,
+     "apps": 34,
      "goals": 2,
      "clubs": {
       "399": {
-       "apps": 28,
+       "apps": 34,
        "goals": 2
       }
      }
@@ -102468,14 +103104,18 @@
    "nat": "Colombia",
    "natKey": "colombia",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 82,
+     "apps": 89,
      "goals": 8,
      "clubs": {
+      "703": {
+       "apps": 6,
+       "goals": 0
+      },
       "873": {
-       "apps": 82,
+       "apps": 83,
        "goals": 8
       }
      }
@@ -102508,15 +103148,15 @@
    "nat": "Haiti",
    "natKey": "haiti",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 32,
-     "goals": 6,
+     "apps": 38,
+     "goals": 7,
      "clubs": {
       "289": {
-       "apps": 32,
-       "goals": 6
+       "apps": 38,
+       "goals": 7
       }
      }
     }
@@ -102528,14 +103168,14 @@
    "nat": "Spain",
    "natKey": "spain",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 23,
+     "apps": 24,
      "goals": 0,
      "clubs": {
       "931": {
-       "apps": 23,
+       "apps": 24,
        "goals": 0
       }
      }
@@ -102568,14 +103208,14 @@
    "nat": "Argentina",
    "natKey": "argentina",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 87,
+     "apps": 89,
      "goals": 3,
      "clubs": {
       "703": {
-       "apps": 87,
+       "apps": 89,
        "goals": 3
       }
      }
@@ -102608,10 +103248,10 @@
    "nat": "Cote d'Ivoire",
    "natKey": "ivory coast",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 21,
+     "apps": 23,
      "goals": 1,
      "clubs": {
       "405": {
@@ -102619,7 +103259,7 @@
        "goals": 0
       },
       "873": {
-       "apps": 8,
+       "apps": 10,
        "goals": 1
       }
      }
@@ -102652,15 +103292,15 @@
    "nat": "Italy",
    "natKey": "italy",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 45,
-     "goals": 3,
+     "apps": 52,
+     "goals": 4,
      "clubs": {
       "11": {
-       "apps": 45,
-       "goals": 3
+       "apps": 52,
+       "goals": 4
       }
      }
     }
@@ -102692,19 +103332,19 @@
    "nat": "Wales",
    "natKey": "wales",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 142,
-     "goals": 4,
+     "apps": 150,
+     "goals": 5,
      "clubs": {
       "31": {
        "apps": 13,
        "goals": 0
       },
       "703": {
-       "apps": 129,
-       "goals": 4
+       "apps": 137,
+       "goals": 5
       }
      }
     }
@@ -102716,14 +103356,14 @@
    "nat": "Northern Ireland",
    "natKey": "northern ireland",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 29,
+     "apps": 34,
      "goals": 2,
      "clubs": {
       "289": {
-       "apps": 29,
+       "apps": 34,
        "goals": 2
       }
      }
@@ -102780,15 +103420,19 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 85,
-     "goals": 21,
+     "apps": 92,
+     "goals": 25,
      "clubs": {
       "405": {
        "apps": 85,
        "goals": 21
+      },
+      "631": {
+       "apps": 7,
+       "goals": 4
       }
      }
     }
@@ -102800,19 +103444,19 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 164,
-     "goals": 16,
+     "apps": 167,
+     "goals": 17,
      "clubs": {
       "405": {
        "apps": 136,
        "goals": 14
       },
       "762": {
-       "apps": 28,
-       "goals": 2
+       "apps": 31,
+       "goals": 3
       }
      }
     }
@@ -102888,14 +103532,14 @@
    "nat": "Belgium",
    "natKey": "belgium",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 32,
+     "apps": 39,
      "goals": 0,
      "clubs": {
       "985": {
-       "apps": 32,
+       "apps": 39,
        "goals": 0
       }
      }
@@ -102948,15 +103592,19 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2022,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 35,
-     "goals": 2,
+     "apps": 38,
+     "goals": 3,
      "clubs": {
       "399": {
        "apps": 35,
        "goals": 2
+      },
+      "3008": {
+       "apps": 3,
+       "goals": 1
       }
      }
     }
@@ -102968,10 +103616,10 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 110,
+     "apps": 112,
      "goals": 2,
      "clubs": {
       "180": {
@@ -102979,7 +103627,7 @@
        "goals": 1
       },
       "762": {
-       "apps": 80,
+       "apps": 82,
        "goals": 1
       }
      }
@@ -102992,15 +103640,15 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 93,
-     "goals": 16,
+     "apps": 97,
+     "goals": 17,
      "clubs": {
       "11": {
-       "apps": 26,
-       "goals": 3
+       "apps": 30,
+       "goals": 4
       },
       "631": {
        "apps": 67,
@@ -103100,14 +103748,18 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2023,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 11,
+     "apps": 18,
      "goals": 0,
      "clubs": {
       "1031": {
        "apps": 11,
+       "goals": 0
+      },
+      "3008": {
+       "apps": 7,
        "goals": 0
       }
      }
@@ -103164,14 +103816,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 114,
+     "apps": 121,
      "goals": 3,
      "clubs": {
       "29": {
-       "apps": 112,
+       "apps": 119,
        "goals": 3
       },
       "985": {
@@ -103296,14 +103948,18 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2022,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 12,
-     "goals": 1,
+     "apps": 16,
+     "goals": 2,
      "clubs": {
       "29": {
        "apps": 12,
+       "goals": 1
+      },
+      "990": {
+       "apps": 4,
        "goals": 1
       }
      }
@@ -103460,14 +104116,14 @@
    "nat": "Northern Ireland",
    "natKey": "northern ireland",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 38,
+     "apps": 44,
      "goals": 2,
      "clubs": {
       "289": {
-       "apps": 38,
+       "apps": 44,
        "goals": 2
       }
      }
@@ -103480,19 +104136,39 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 115,
-     "goals": 39,
+     "apps": 122,
+     "goals": 40,
      "clubs": {
       "543": {
        "apps": 82,
        "goals": 29
       },
       "985": {
-       "apps": 33,
-       "goals": 10
+       "apps": 40,
+       "goals": 11
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "519184",
+   "name": "Amar Dedic",
+   "nat": "Bosnia-Herzegovina",
+   "natKey": "bosnia herzegovina",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "762": {
+       "apps": 5,
+       "goals": 0
       }
      }
     }
@@ -103504,12 +104180,16 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 153,
-     "goals": 30,
+     "apps": 158,
+     "goals": 32,
      "clubs": {
+      "11": {
+       "apps": 5,
+       "goals": 2
+      },
       "762": {
        "apps": 153,
        "goals": 30
@@ -103524,14 +104204,14 @@
    "nat": "Germany",
    "natKey": "germany",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 35,
+     "apps": 42,
      "goals": 4,
      "clubs": {
       "762": {
-       "apps": 35,
+       "apps": 42,
        "goals": 4
       }
      }
@@ -103564,14 +104244,34 @@
    "nat": "Germany",
    "natKey": "germany",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 7,
+     "apps": 11,
      "goals": 0,
      "clubs": {
       "703": {
-       "apps": 7,
+       "apps": 11,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "524315",
+   "name": "Hidemasa Morita",
+   "nat": "Japan",
+   "natKey": "japan",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 3,
+     "goals": 0,
+     "clubs": {
+      "3008": {
+       "apps": 3,
        "goals": 0
       }
      }
@@ -103712,14 +104412,18 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2022,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 4,
+     "apps": 6,
      "goals": 0,
      "clubs": {
       "399": {
        "apps": 4,
+       "goals": 0
+      },
+      "3008": {
+       "apps": 2,
        "goals": 0
       }
      }
@@ -103767,19 +104471,39 @@
    }
   },
   {
+   "id": "532775",
+   "name": "Melvin Bard",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "399": {
+       "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "532776",
    "name": "Amine Adli",
    "nat": "Morocco",
    "natKey": "morocco",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 31,
+     "apps": 32,
      "goals": 3,
      "clubs": {
       "989": {
-       "apps": 31,
+       "apps": 32,
        "goals": 3
       }
      }
@@ -103900,14 +104624,14 @@
    "nat": "Argentina",
    "natKey": "argentina",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 203,
+     "apps": 210,
      "goals": 28,
      "clubs": {
       "31": {
-       "apps": 105,
+       "apps": 112,
        "goals": 12
       },
       "1237": {
@@ -104008,14 +104732,14 @@
    "nat": "Cote d'Ivoire",
    "natKey": "ivory coast",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 70,
+     "apps": 72,
      "goals": 11,
      "clubs": {
       "985": {
-       "apps": 70,
+       "apps": 72,
        "goals": 11
       }
      }
@@ -104088,15 +104812,39 @@
    "nat": "Ukraine",
    "natKey": "ukraine",
    "pos": "FWD",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 53,
+     "apps": 54,
      "goals": 5,
      "clubs": {
+      "148": {
+       "apps": 1,
+       "goals": 0
+      },
       "631": {
        "apps": 53,
        "goals": 5
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "538216",
+   "name": "Hayden Hackney",
+   "nat": "England",
+   "natKey": "england",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "29": {
+       "apps": 6,
+       "goals": 0
       }
      }
     }
@@ -104128,10 +104876,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 71,
+     "apps": 75,
      "goals": 8,
      "clubs": {
       "399": {
@@ -104139,8 +104887,28 @@
        "goals": 0
       },
       "1237": {
-       "apps": 60,
+       "apps": 64,
        "goals": 8
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "539252",
+   "name": "Costinha",
+   "nat": "Portugal",
+   "natKey": "portugal",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "1237": {
+       "apps": 6,
+       "goals": 0
       }
      }
     }
@@ -104171,15 +104939,15 @@
    "name": "Mikkel Damsgaard",
    "nat": "Denmark",
    "natKey": "denmark",
-   "pos": "FWD",
-   "last": 2025,
+   "pos": "MID",
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 120,
+     "apps": 126,
      "goals": 6,
      "clubs": {
       "1148": {
-       "apps": 120,
+       "apps": 126,
        "goals": 6
       }
      }
@@ -104192,14 +104960,14 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 63,
+     "apps": 64,
      "goals": 0,
      "clubs": {
       "1148": {
-       "apps": 63,
+       "apps": 64,
        "goals": 0
       }
      }
@@ -104292,14 +105060,14 @@
    "nat": "Ghana",
    "natKey": "ghana",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 84,
+     "apps": 90,
      "goals": 15,
      "clubs": {
       "148": {
-       "apps": 19,
+       "apps": 25,
        "goals": 2
       },
       "379": {
@@ -104456,14 +105224,14 @@
    "nat": "Spain",
    "natKey": "spain",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 117,
+     "apps": 120,
      "goals": 9,
      "clubs": {
       "148": {
-       "apps": 117,
+       "apps": 120,
        "goals": 9
       }
      }
@@ -104484,6 +105252,26 @@
      "clubs": {
       "350": {
        "apps": 11,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "554389",
+   "name": "Konstantinos Tzolakis",
+   "nat": "Greece",
+   "natKey": "greece",
+   "pos": "GK",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "3008": {
+       "apps": 7,
        "goals": 0
       }
      }
@@ -104516,14 +105304,14 @@
    "nat": "Italy",
    "natKey": "italy",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 73,
+     "apps": 77,
      "goals": 2,
      "clubs": {
       "148": {
-       "apps": 73,
+       "apps": 77,
        "goals": 2
       }
      }
@@ -104536,14 +105324,14 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 75,
+     "apps": 81,
      "goals": 7,
      "clubs": {
       "148": {
-       "apps": 75,
+       "apps": 81,
        "goals": 7
       }
      }
@@ -104596,11 +105384,11 @@
    "nat": "Portugal",
    "natKey": "portugal",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 42,
-     "goals": 6,
+     "apps": 43,
+     "goals": 7,
      "clubs": {
       "31": {
        "apps": 13,
@@ -104611,8 +105399,8 @@
        "goals": 1
       },
       "1148": {
-       "apps": 25,
-       "goals": 3
+       "apps": 26,
+       "goals": 4
       }
      }
     }
@@ -104624,15 +105412,15 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 32,
-     "goals": 0,
+     "apps": 39,
+     "goals": 1,
      "clubs": {
       "677": {
-       "apps": 32,
-       "goals": 0
+       "apps": 39,
+       "goals": 1
       }
      }
     }
@@ -104764,14 +105552,14 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 95,
+     "apps": 102,
      "goals": 0,
      "clubs": {
       "1237": {
-       "apps": 95,
+       "apps": 102,
        "goals": 0
       }
      }
@@ -104852,14 +105640,18 @@
    "nat": "England",
    "natKey": "england",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 32,
+     "apps": 39,
      "goals": 0,
      "clubs": {
       "281": {
        "apps": 4,
+       "goals": 0
+      },
+      "399": {
+       "apps": 7,
        "goals": 0
       },
       "1132": {
@@ -104896,12 +105688,16 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 119,
+     "apps": 127,
      "goals": 6,
      "clubs": {
+      "281": {
+       "apps": 8,
+       "goals": 0
+      },
       "703": {
        "apps": 75,
        "goals": 6
@@ -104980,15 +105776,15 @@
    "nat": "Spain",
    "natKey": "spain",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 34,
-     "goals": 2,
+     "apps": 41,
+     "goals": 3,
      "clubs": {
       "873": {
-       "apps": 34,
-       "goals": 2
+       "apps": 41,
+       "goals": 3
       }
      }
     }
@@ -105000,19 +105796,19 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 115,
-     "goals": 47,
+     "apps": 122,
+     "goals": 49,
      "clubs": {
       "281": {
        "apps": 19,
        "goals": 0
       },
       "631": {
-       "apps": 96,
-       "goals": 47
+       "apps": 103,
+       "goals": 49
       }
      }
     }
@@ -105200,12 +105996,16 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 106,
-     "goals": 4,
+     "apps": 113,
+     "goals": 5,
      "clubs": {
+      "148": {
+       "apps": 7,
+       "goals": 1
+      },
       "1237": {
        "apps": 106,
        "goals": 4
@@ -105244,14 +106044,14 @@
    "nat": "United States",
    "natKey": "united states",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 92,
+     "apps": 99,
      "goals": 3,
      "clubs": {
       "873": {
-       "apps": 92,
+       "apps": 99,
        "goals": 3
       }
      }
@@ -105344,19 +106144,19 @@
    "nat": "Sweden",
    "natKey": "sweden",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 145,
-     "goals": 14,
+     "apps": 148,
+     "goals": 16,
      "clubs": {
       "703": {
        "apps": 74,
        "goals": 11
       },
       "762": {
-       "apps": 32,
-       "goals": 0
+       "apps": 35,
+       "goals": 2
       },
       "985": {
        "apps": 39,
@@ -105372,10 +106172,10 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 62,
+     "apps": 70,
      "goals": 6,
      "clubs": {
       "281": {
@@ -105387,7 +106187,7 @@
        "goals": 3
       },
       "703": {
-       "apps": 14,
+       "apps": 22,
        "goals": 0
       }
      }
@@ -105400,15 +106200,15 @@
    "nat": "Ghana",
    "natKey": "ghana",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 118,
-     "goals": 37,
+     "apps": 125,
+     "goals": 39,
      "clubs": {
       "281": {
-       "apps": 17,
-       "goals": 7
+       "apps": 24,
+       "goals": 9
       },
       "989": {
        "apps": 101,
@@ -105444,15 +106244,19 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 248,
+     "apps": 252,
      "goals": 21,
      "clubs": {
       "29": {
        "apps": 114,
        "goals": 14
+      },
+      "873": {
+       "apps": 4,
+       "goals": 0
       },
       "1132": {
        "apps": 134,
@@ -105508,14 +106312,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 9,
+     "apps": 12,
      "goals": 0,
      "clubs": {
       "703": {
-       "apps": 9,
+       "apps": 12,
        "goals": 0
       }
      }
@@ -105603,6 +106407,26 @@
    }
   },
   {
+   "id": "587335",
+   "name": "Milan van Ewijk",
+   "nat": "Netherlands",
+   "natKey": "netherlands",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "990": {
+       "apps": 6,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "588989",
    "name": "Jhon Arias",
    "nat": "Colombia",
@@ -105648,14 +106472,14 @@
    "nat": "Scotland",
    "natKey": "scotland",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 56,
+     "apps": 63,
      "goals": 0,
      "clubs": {
       "1148": {
-       "apps": 56,
+       "apps": 63,
        "goals": 0
       }
      }
@@ -105708,15 +106532,35 @@
    "nat": "Guinea-Bissau",
    "natKey": "guinea bissau",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 97,
+     "apps": 99,
      "goals": 20,
      "clubs": {
       "29": {
-       "apps": 97,
+       "apps": 99,
        "goals": 20
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "596122",
+   "name": "Pep Chavarría",
+   "nat": "Spain",
+   "natKey": "spain",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "631": {
+       "apps": 6,
+       "goals": 0
       }
      }
     }
@@ -105728,19 +106572,19 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 35,
-     "goals": 1,
+     "apps": 43,
+     "goals": 3,
      "clubs": {
       "399": {
        "apps": 2,
        "goals": 0
       },
       "677": {
-       "apps": 33,
-       "goals": 1
+       "apps": 41,
+       "goals": 3
       }
      }
     }
@@ -105772,14 +106616,14 @@
    "nat": "Germany",
    "natKey": "germany",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 33,
+     "apps": 40,
      "goals": 5,
      "clubs": {
       "31": {
-       "apps": 33,
+       "apps": 40,
        "goals": 5
       }
      }
@@ -105811,15 +106655,15 @@
    "name": "Matheus Nunes",
    "nat": "Portugal",
    "natKey": "portugal",
-   "pos": "MID",
-   "last": 2025,
+   "pos": "DEF",
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 113,
+     "apps": 118,
      "goals": 3,
      "clubs": {
       "281": {
-       "apps": 77,
+       "apps": 82,
        "goals": 2
       },
       "543": {
@@ -105916,15 +106760,15 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 33,
-     "goals": 4,
+     "apps": 40,
+     "goals": 8,
      "clubs": {
       "281": {
-       "apps": 33,
-       "goals": 4
+       "apps": 40,
+       "goals": 8
       }
      }
     }
@@ -105960,12 +106804,16 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 29,
+     "apps": 33,
      "goals": 2,
      "clubs": {
+      "990": {
+       "apps": 4,
+       "goals": 0
+      },
       "1132": {
        "apps": 29,
        "goals": 2
@@ -106000,14 +106848,14 @@
    "nat": "Germany",
    "natKey": "germany",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 16,
+     "apps": 20,
      "goals": 1,
      "clubs": {
       "29": {
-       "apps": 16,
+       "apps": 20,
        "goals": 1
       }
      }
@@ -106020,10 +106868,10 @@
    "nat": "Denmark",
    "natKey": "denmark",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 59,
+     "apps": 62,
      "goals": 8,
      "clubs": {
       "350": {
@@ -106031,7 +106879,7 @@
        "goals": 0
       },
       "762": {
-       "apps": 38,
+       "apps": 41,
        "goals": 8
       }
      }
@@ -106104,11 +106952,11 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 67,
-     "goals": 13,
+     "apps": 74,
+     "goals": 14,
      "clubs": {
       "281": {
        "apps": 2,
@@ -106121,6 +106969,10 @@
       "677": {
        "apps": 37,
        "goals": 12
+      },
+      "703": {
+       "apps": 7,
+       "goals": 1
       }
      }
     }
@@ -106132,14 +106984,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 44,
+     "apps": 51,
      "goals": 0,
      "clubs": {
       "989": {
-       "apps": 44,
+       "apps": 51,
        "goals": 0
       }
      }
@@ -106212,14 +107064,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 78,
+     "apps": 84,
      "goals": 3,
      "clubs": {
       "631": {
-       "apps": 61,
+       "apps": 67,
        "goals": 3
       },
       "1237": {
@@ -106271,6 +107123,46 @@
    }
   },
   {
+   "id": "616631",
+   "name": "Matteo Ruggeri",
+   "nat": "Italy",
+   "natKey": "italy",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "405": {
+       "apps": 4,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "617408",
+   "name": "Tatsuhiro Sakamoto",
+   "nat": "Japan",
+   "natKey": "japan",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 3,
+     "goals": 0,
+     "clubs": {
+      "990": {
+       "apps": 3,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "617755",
    "name": "Jenson Seelt",
    "nat": "Netherlands",
@@ -106311,19 +107203,39 @@
    }
   },
   {
+   "id": "620313",
+   "name": "Lucas Gourna-Douath",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 3,
+     "goals": 0,
+     "clubs": {
+      "3008": {
+       "apps": 3,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "620322",
    "name": "Malo Gusto",
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 93,
+     "apps": 98,
      "goals": 2,
      "clubs": {
       "631": {
-       "apps": 93,
+       "apps": 98,
        "goals": 2
       }
      }
@@ -106356,12 +107268,16 @@
    "nat": "Ireland",
    "natKey": "ireland",
    "pos": "FWD",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 19,
+     "apps": 22,
      "goals": 1,
      "clubs": {
+      "677": {
+       "apps": 3,
+       "goals": 0
+      },
       "1003": {
        "apps": 19,
        "goals": 1
@@ -106420,15 +107336,19 @@
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 66,
+     "apps": 74,
      "goals": 15,
      "clubs": {
       "29": {
-       "apps": 65,
+       "apps": 67,
        "goals": 15
+      },
+      "281": {
+       "apps": 6,
+       "goals": 0
       },
       "350": {
        "apps": 1,
@@ -106464,15 +107384,15 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 124,
-     "goals": 37,
+     "apps": 130,
+     "goals": 42,
      "clubs": {
       "631": {
-       "apps": 35,
-       "goals": 15
+       "apps": 41,
+       "goals": 20
       },
       "1010": {
        "apps": 31,
@@ -106492,14 +107412,18 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2023,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 3,
+     "apps": 4,
      "goals": 0,
      "clubs": {
       "405": {
        "apps": 3,
+       "goals": 0
+      },
+      "990": {
+       "apps": 1,
        "goals": 0
       }
      }
@@ -106532,15 +107456,15 @@
    "nat": "Slovenia",
    "natKey": "slovenia",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 30,
-     "goals": 11,
+     "apps": 34,
+     "goals": 12,
      "clubs": {
       "985": {
-       "apps": 30,
-       "goals": 11
+       "apps": 34,
+       "goals": 12
       }
      }
     }
@@ -106572,18 +107496,38 @@
    "nat": "Belgium",
    "natKey": "belgium",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 58,
-     "goals": 1,
+     "apps": 64,
+     "goals": 2,
      "clubs": {
       "180": {
        "apps": 29,
        "goals": 1
       },
       "631": {
-       "apps": 29,
+       "apps": 35,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "629773",
+   "name": "Lukas Hornicek",
+   "nat": "Czech Republic",
+   "natKey": "czech republic",
+   "pos": "GK",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "762": {
+       "apps": 7,
        "goals": 0
       }
      }
@@ -106676,15 +107620,15 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 36,
-     "goals": 5,
+     "apps": 43,
+     "goals": 6,
      "clubs": {
       "289": {
-       "apps": 36,
-       "goals": 5
+       "apps": 43,
+       "goals": 6
       }
      }
     }
@@ -106704,6 +107648,26 @@
      "clubs": {
       "1010": {
        "apps": 20,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "635645",
+   "name": "Aurèle Amenda",
+   "nat": "Switzerland",
+   "natKey": "switzerland",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "990": {
+       "apps": 4,
        "goals": 0
       }
      }
@@ -106795,16 +107759,16 @@
    "name": "Keane Lewis-Potter",
    "nat": "England",
    "natKey": "england",
-   "pos": "FWD",
-   "last": 2025,
+   "pos": "DEF",
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 114,
-     "goals": 7,
+     "apps": 121,
+     "goals": 9,
      "clubs": {
       "1148": {
-       "apps": 114,
-       "goals": 7
+       "apps": 121,
+       "goals": 9
       }
      }
     }
@@ -106815,15 +107779,35 @@
    "name": "Lamare Bogarde",
    "nat": "Netherlands",
    "natKey": "netherlands",
-   "pos": "DEF",
-   "last": 2025,
+   "pos": "MID",
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 36,
+     "apps": 37,
      "goals": 0,
      "clubs": {
       "405": {
-       "apps": 36,
+       "apps": 37,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "646353",
+   "name": "Carl Rushworth",
+   "nat": "England",
+   "natKey": "england",
+   "pos": "GK",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "990": {
+       "apps": 7,
        "goals": 0
       }
      }
@@ -106876,14 +107860,34 @@
    "nat": "Spain",
    "natKey": "spain",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 20,
+     "apps": 22,
      "goals": 0,
      "clubs": {
       "11": {
-       "apps": 20,
+       "apps": 22,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "646824",
+   "name": "Manuel Ángel",
+   "nat": "Spain",
+   "natKey": "spain",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "931": {
+       "apps": 1,
        "goals": 0
       }
      }
@@ -106896,14 +107900,14 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 35,
+     "apps": 42,
      "goals": 0,
      "clubs": {
       "289": {
-       "apps": 35,
+       "apps": 42,
        "goals": 0
       }
      }
@@ -106940,14 +107944,18 @@
    "nat": "Argentina",
    "natKey": "argentina",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 118,
-     "goals": 19,
+     "apps": 125,
+     "goals": 20,
      "clubs": {
+      "281": {
+       "apps": 6,
+       "goals": 1
+      },
       "631": {
-       "apps": 118,
+       "apps": 119,
        "goals": 19
       }
      }
@@ -107015,6 +108023,26 @@
    }
   },
   {
+   "id": "650568",
+   "name": "António Silva",
+   "nat": "Portugal",
+   "natKey": "portugal",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "989": {
+       "apps": 7,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "652979",
    "name": "Lewis Warrington",
    "nat": "England",
@@ -107060,14 +108088,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 38,
+     "apps": 45,
      "goals": 1,
      "clubs": {
       "989": {
-       "apps": 38,
+       "apps": 45,
        "goals": 1
       }
      }
@@ -107248,14 +108276,14 @@
    "nat": "Ecuador",
    "natKey": "ecuador",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 25,
+     "apps": 28,
      "goals": 1,
      "clubs": {
       "11": {
-       "apps": 25,
+       "apps": 28,
        "goals": 1
       }
      }
@@ -107288,15 +108316,15 @@
    "nat": "Paraguay",
    "natKey": "paraguay",
    "pos": "MID",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 57,
-     "goals": 6,
+     "apps": 65,
+     "goals": 7,
      "clubs": {
       "677": {
-       "apps": 13,
-       "goals": 2
+       "apps": 21,
+       "goals": 3
       },
       "1237": {
        "apps": 44,
@@ -107312,14 +108340,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 85,
+     "apps": 92,
      "goals": 5,
      "clubs": {
       "29": {
-       "apps": 85,
+       "apps": 92,
        "goals": 5
       }
      }
@@ -107332,10 +108360,10 @@
    "nat": "Norway",
    "natKey": "norway",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 40,
+     "apps": 47,
      "goals": 1,
      "clubs": {
       "281": {
@@ -107343,7 +108371,7 @@
        "goals": 1
       },
       "931": {
-       "apps": 14,
+       "apps": 21,
        "goals": 0
       }
      }
@@ -107385,6 +108413,26 @@
       "543": {
        "apps": 22,
        "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "662476",
+   "name": "Jack Rudoni",
+   "nat": "England",
+   "natKey": "england",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 2,
+     "clubs": {
+      "990": {
+       "apps": 7,
+       "goals": 2
       }
      }
     }
@@ -107476,10 +108524,10 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 24,
+     "apps": 28,
      "goals": 2,
      "clubs": {
       "405": {
@@ -107487,7 +108535,7 @@
        "goals": 0
       },
       "677": {
-       "apps": 10,
+       "apps": 14,
        "goals": 2
       }
      }
@@ -107520,15 +108568,15 @@
    "nat": "Sweden",
    "natKey": "sweden",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 66,
-     "goals": 5,
+     "apps": 72,
+     "goals": 7,
      "clubs": {
       "1237": {
-       "apps": 66,
-       "goals": 5
+       "apps": 72,
+       "goals": 7
       }
      }
     }
@@ -107695,6 +108743,26 @@
    }
   },
   {
+   "id": "670847",
+   "name": "Mohamed-Ali Cho",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 4,
+     "goals": 1,
+     "clubs": {
+      "3008": {
+       "apps": 4,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "670848",
    "name": "Divin Mubama",
    "nat": "England",
@@ -107744,19 +108812,19 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 84,
-     "goals": 2,
+     "apps": 91,
+     "goals": 3,
      "clubs": {
       "631": {
        "apps": 9,
        "goals": 0
       },
       "762": {
-       "apps": 75,
-       "goals": 2
+       "apps": 82,
+       "goals": 3
       }
      }
     }
@@ -107883,6 +108951,26 @@
    }
   },
   {
+   "id": "676042",
+   "name": "Juanlu Sánchez",
+   "nat": "Spain",
+   "natKey": "spain",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "989": {
+       "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "676318",
    "name": "Facundo Pellistri",
    "nat": "Uruguay",
@@ -107896,6 +108984,26 @@
      "clubs": {
       "985": {
        "apps": 13,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "679423",
+   "name": "Tarik Muharemović",
+   "nat": "Bosnia-Herzegovina",
+   "natKey": "bosnia herzegovina",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "399": {
+       "apps": 7,
        "goals": 0
       }
      }
@@ -108008,11 +109116,11 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 70,
-     "goals": 11,
+     "apps": 77,
+     "goals": 12,
      "clubs": {
       "989": {
        "apps": 33,
@@ -108021,6 +109129,30 @@
       "1132": {
        "apps": 37,
        "goals": 8
+      },
+      "1148": {
+       "apps": 7,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "687622",
+   "name": "Elliot Stroud",
+   "nat": "Sweden",
+   "natKey": "sweden",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "3008": {
+       "apps": 5,
+       "goals": 0
       }
      }
     }
@@ -108032,14 +109164,14 @@
    "nat": "Ecuador",
    "natKey": "ecuador",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 151,
+     "apps": 154,
      "goals": 7,
      "clubs": {
       "631": {
-       "apps": 106,
+       "apps": 109,
        "goals": 5
       },
       "1237": {
@@ -108056,14 +109188,14 @@
    "nat": "Morocco",
    "natKey": "morocco",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 10,
+     "apps": 11,
      "goals": 0,
      "clubs": {
       "873": {
-       "apps": 10,
+       "apps": 11,
        "goals": 0
       }
      }
@@ -108076,14 +109208,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 25,
+     "apps": 30,
      "goals": 1,
      "clubs": {
       "677": {
-       "apps": 25,
+       "apps": 30,
        "goals": 1
       }
      }
@@ -108116,14 +109248,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 14,
+     "apps": 15,
      "goals": 0,
      "clubs": {
       "289": {
-       "apps": 14,
+       "apps": 15,
        "goals": 0
       }
      }
@@ -108156,18 +109288,22 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 59,
+     "apps": 64,
      "goals": 0,
      "clubs": {
       "29": {
-       "apps": 47,
+       "apps": 48,
        "goals": 0
       },
       "405": {
        "apps": 12,
+       "goals": 0
+      },
+      "3008": {
+       "apps": 4,
        "goals": 0
       }
      }
@@ -108280,14 +109416,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 69,
+     "apps": 70,
      "goals": 3,
      "clubs": {
       "281": {
-       "apps": 69,
+       "apps": 70,
        "goals": 3
       }
      }
@@ -108375,6 +109511,26 @@
    }
   },
   {
+   "id": "708265",
+   "name": "Bradley Barcola",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "31": {
+       "apps": 5,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "709726",
    "name": "Hugo Ekitiké",
    "nat": "France",
@@ -108420,15 +109576,15 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 67,
-     "goals": 16,
+     "apps": 74,
+     "goals": 18,
      "clubs": {
       "989": {
-       "apps": 67,
-       "goals": 16
+       "apps": 74,
+       "goals": 18
       }
      }
     }
@@ -108440,14 +109596,14 @@
    "nat": "Ireland",
    "natKey": "ireland",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 57,
+     "apps": 60,
      "goals": 3,
      "clubs": {
       "29": {
-       "apps": 57,
+       "apps": 60,
        "goals": 3
       }
      }
@@ -108543,6 +109699,26 @@
    }
   },
   {
+   "id": "715558",
+   "name": "Marcelino Núñez",
+   "nat": "Chile",
+   "natKey": "chile",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "677": {
+       "apps": 2,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "716276",
    "name": "Yerson Mosquera",
    "nat": "Colombia",
@@ -108568,15 +109744,15 @@
    "nat": "Ukraine",
    "natKey": "ukraine",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 95,
-     "goals": 1,
+     "apps": 102,
+     "goals": 2,
      "clubs": {
       "1148": {
-       "apps": 95,
-       "goals": 1
+       "apps": 102,
+       "goals": 2
       }
      }
     }
@@ -108588,10 +109764,10 @@
    "nat": "Scotland",
    "natKey": "scotland",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 11,
+     "apps": 17,
      "goals": 0,
      "clubs": {
       "31": {
@@ -108599,7 +109775,27 @@
        "goals": 0
       },
       "989": {
-       "apps": 8,
+       "apps": 14,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "724129",
+   "name": "Matias Fernandez-Pardo",
+   "nat": "Belgium",
+   "natKey": "belgium",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "762": {
+       "apps": 5,
        "goals": 0
       }
      }
@@ -108652,14 +109848,14 @@
    "nat": "Czech Republic",
    "natKey": "czech republic",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 13,
+     "apps": 20,
      "goals": 0,
      "clubs": {
       "148": {
-       "apps": 13,
+       "apps": 20,
        "goals": 0
       }
      }
@@ -108692,14 +109888,34 @@
    "nat": "DR Congo",
    "natKey": "dr congo",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 33,
+     "apps": 40,
      "goals": 0,
      "clubs": {
       "289": {
-       "apps": 33,
+       "apps": 40,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "728733",
+   "name": "Brooke Norton-Cuffy",
+   "nat": "England",
+   "natKey": "england",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 3,
+     "goals": 0,
+     "clubs": {
+      "3008": {
+       "apps": 3,
        "goals": 0
       }
      }
@@ -108732,14 +109948,14 @@
    "nat": "Hungary",
    "natKey": "hungary",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 100,
+     "apps": 107,
      "goals": 4,
      "clubs": {
       "31": {
-       "apps": 34,
+       "apps": 41,
        "goals": 2
       },
       "989": {
@@ -108756,15 +109972,15 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 207,
-     "goals": 4,
+     "apps": 214,
+     "goals": 6,
      "clubs": {
       "873": {
-       "apps": 207,
-       "goals": 4
+       "apps": 214,
+       "goals": 6
       }
      }
     }
@@ -108836,12 +110052,16 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 116,
+     "apps": 121,
      "goals": 7,
      "clubs": {
+      "405": {
+       "apps": 5,
+       "goals": 0
+      },
       "543": {
        "apps": 116,
        "goals": 7
@@ -108856,14 +110076,14 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 78,
+     "apps": 83,
      "goals": 18,
      "clubs": {
       "931": {
-       "apps": 78,
+       "apps": 83,
        "goals": 18
       }
      }
@@ -108876,15 +110096,15 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 46,
-     "goals": 22,
+     "apps": 53,
+     "goals": 23,
      "clubs": {
       "1148": {
-       "apps": 46,
-       "goals": 22
+       "apps": 53,
+       "goals": 23
       }
      }
     }
@@ -108984,15 +110204,35 @@
    "nat": "Morocco",
    "natKey": "morocco",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 28,
+     "apps": 29,
      "goals": 4,
      "clubs": {
       "289": {
-       "apps": 28,
+       "apps": 29,
        "goals": 4
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "743386",
+   "name": "Malick Fofana",
+   "nat": "Belgium",
+   "natKey": "belgium",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "289": {
+       "apps": 4,
+       "goals": 0
       }
      }
     }
@@ -109003,15 +110243,15 @@
    "name": "Nico O'Reilly",
    "nat": "England",
    "natKey": "england",
-   "pos": "MID",
-   "last": 2025,
+   "pos": "DEF",
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 43,
+     "apps": 49,
      "goals": 7,
      "clubs": {
       "281": {
-       "apps": 43,
+       "apps": 49,
        "goals": 7
       }
      }
@@ -109048,12 +110288,16 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 53,
+     "apps": 57,
      "goals": 2,
      "clubs": {
+      "148": {
+       "apps": 4,
+       "goals": 0
+      },
       "281": {
        "apps": 53,
        "goals": 2
@@ -109083,15 +110327,35 @@
    }
   },
   {
+   "id": "743599",
+   "name": "Emersonn",
+   "nat": "Brazil",
+   "natKey": "brazil",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 8,
+     "goals": 2,
+     "clubs": {
+      "677": {
+       "apps": 8,
+       "goals": 2
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "743600",
    "name": "Andrey Santos",
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 28,
+     "apps": 32,
      "goals": 1,
      "clubs": {
       "631": {
@@ -109100,6 +110364,10 @@
       },
       "703": {
        "apps": 1,
+       "goals": 0
+      },
+      "985": {
+       "apps": 4,
        "goals": 0
       }
      }
@@ -109112,14 +110380,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 70,
+     "apps": 77,
      "goals": 1,
      "clubs": {
       "873": {
-       "apps": 70,
+       "apps": 77,
        "goals": 1
       }
      }
@@ -109252,10 +110520,10 @@
    "nat": "Canada",
    "natKey": "canada",
    "pos": "FWD",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 21,
+     "apps": 24,
      "goals": 2,
      "clubs": {
       "350": {
@@ -109263,7 +110531,7 @@
        "goals": 1
       },
       "989": {
-       "apps": 16,
+       "apps": 19,
        "goals": 1
       }
      }
@@ -109316,14 +110584,18 @@
    "nat": "Northern Ireland",
    "natKey": "northern ireland",
    "pos": "MID",
-   "last": 2022,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 1,
+     "apps": 8,
      "goals": 0,
      "clubs": {
       "281": {
        "apps": 1,
+       "goals": 0
+      },
+      "931": {
+       "apps": 7,
        "goals": 0
       }
      }
@@ -109336,14 +110608,14 @@
    "nat": "Argentina",
    "natKey": "argentina",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 54,
+     "apps": 57,
      "goals": 6,
      "clubs": {
       "29": {
-       "apps": 35,
+       "apps": 38,
        "goals": 2
       },
       "180": {
@@ -109355,19 +110627,39 @@
    }
   },
   {
+   "id": "750903",
+   "name": "Jaouen Hadjam",
+   "nat": "Algeria",
+   "natKey": "algeria",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 2,
+     "goals": 1,
+     "clubs": {
+      "1237": {
+       "apps": 2,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "763079",
    "name": "Abdukodir Khusanov",
    "nat": "Uzbekistan",
    "natKey": "uzbekistan",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 27,
+     "apps": 32,
      "goals": 0,
      "clubs": {
       "281": {
-       "apps": 27,
+       "apps": 32,
        "goals": 0
       }
      }
@@ -109380,12 +110672,16 @@
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "FWD",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 65,
-     "goals": 24,
+     "apps": 72,
+     "goals": 27,
      "clubs": {
+      "405": {
+       "apps": 7,
+       "goals": 3
+      },
       "631": {
        "apps": 65,
        "goals": 24
@@ -109453,6 +110749,26 @@
       "1132": {
        "apps": 15,
        "goals": 4
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "788283",
+   "name": "Bobby Thomas",
+   "nat": "England",
+   "natKey": "england",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "990": {
+       "apps": 7,
+       "goals": 0
       }
      }
     }
@@ -109544,14 +110860,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 44,
+     "apps": 49,
      "goals": 6,
      "clubs": {
       "148": {
-       "apps": 44,
+       "apps": 49,
        "goals": 6
       }
      }
@@ -109599,6 +110915,26 @@
    }
   },
   {
+   "id": "808348",
+   "name": "Mamadou Sangaré",
+   "nat": "Mali",
+   "natKey": "mali",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "1148": {
+       "apps": 7,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "808509",
    "name": "Danilo",
    "nat": "Brazil",
@@ -109624,12 +110960,16 @@
    "nat": "Argentina",
    "natKey": "argentina",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 117,
+     "apps": 120,
      "goals": 17,
      "clubs": {
+      "405": {
+       "apps": 3,
+       "goals": 0
+      },
       "631": {
        "apps": 24,
        "goals": 1
@@ -109688,14 +111028,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 78,
+     "apps": 84,
      "goals": 4,
      "clubs": {
       "985": {
-       "apps": 78,
+       "apps": 84,
        "goals": 4
       }
      }
@@ -109728,10 +111068,10 @@
    "nat": "Burkina Faso",
    "natKey": "burkina faso",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 113,
+     "apps": 120,
      "goals": 16,
      "clubs": {
       "989": {
@@ -109739,7 +111079,7 @@
        "goals": 9
       },
       "1148": {
-       "apps": 32,
+       "apps": 39,
        "goals": 7
       }
      }
@@ -109752,15 +111092,15 @@
    "nat": "Italy",
    "natKey": "italy",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 49,
-     "goals": 1,
+     "apps": 56,
+     "goals": 2,
      "clubs": {
       "1148": {
-       "apps": 49,
-       "goals": 1
+       "apps": 56,
+       "goals": 2
       }
      }
     }
@@ -109780,6 +111120,26 @@
      "clubs": {
       "1132": {
        "apps": 3,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "834397",
+   "name": "Mike Penders",
+   "nat": "Belgium",
+   "natKey": "belgium",
+   "pos": "GK",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "631": {
+       "apps": 1,
        "goals": 0
       }
      }
@@ -109971,13 +111331,17 @@
    "name": "Valentín Barco",
    "nat": "Argentina",
    "natKey": "argentina",
-   "pos": "DEF",
-   "last": 2023,
+   "pos": "MID",
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 6,
+     "apps": 9,
      "goals": 0,
      "clubs": {
+      "631": {
+       "apps": 3,
+       "goals": 0
+      },
       "1237": {
        "apps": 6,
        "goals": 0
@@ -110032,15 +111396,15 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 80,
-     "goals": 4,
+     "apps": 85,
+     "goals": 5,
      "clubs": {
       "989": {
-       "apps": 80,
-       "goals": 4
+       "apps": 85,
+       "goals": 5
       }
      }
     }
@@ -110061,6 +111425,26 @@
       "29": {
        "apps": 1,
        "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "857079",
+   "name": "Mohamed Belloumi",
+   "nat": "Algeria",
+   "natKey": "algeria",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 3,
+     "clubs": {
+      "3008": {
+       "apps": 7,
+       "goals": 3
       }
      }
     }
@@ -110132,12 +111516,16 @@
    "nat": "Ghana",
    "natKey": "ghana",
    "pos": "FWD",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 11,
+     "apps": 18,
      "goals": 0,
      "clubs": {
+      "677": {
+       "apps": 7,
+       "goals": 0
+      },
       "1003": {
        "apps": 11,
        "goals": 0
@@ -110232,14 +111620,14 @@
    "nat": "Sweden",
    "natKey": "sweden",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 50,
+     "apps": 54,
      "goals": 1,
      "clubs": {
       "148": {
-       "apps": 50,
+       "apps": 54,
        "goals": 1
       }
      }
@@ -110252,14 +111640,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 47,
+     "apps": 49,
      "goals": 2,
      "clubs": {
       "29": {
-       "apps": 14,
+       "apps": 16,
        "goals": 0
       },
       "180": {
@@ -110275,16 +111663,16 @@
    "name": "Jack Hinshelwood",
    "nat": "England",
    "natKey": "england",
-   "pos": "DEF",
-   "last": 2025,
+   "pos": "MID",
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 66,
-     "goals": 12,
+     "apps": 68,
+     "goals": 15,
      "clubs": {
       "1237": {
-       "apps": 66,
-       "goals": 12
+       "apps": 68,
+       "goals": 15
       }
      }
     }
@@ -110376,14 +111764,14 @@
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 20,
+     "apps": 23,
      "goals": 2,
      "clubs": {
       "289": {
-       "apps": 20,
+       "apps": 23,
        "goals": 2
       }
      }
@@ -110416,12 +111804,16 @@
    "nat": "Portugal",
    "natKey": "portugal",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 72,
+     "apps": 79,
      "goals": 5,
      "clubs": {
+      "148": {
+       "apps": 7,
+       "goals": 0
+      },
       "180": {
        "apps": 36,
        "goals": 2
@@ -110429,6 +111821,26 @@
       "379": {
        "apps": 36,
        "goals": 3
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "881116",
+   "name": "Darío Osorio",
+   "nat": "Chile",
+   "natKey": "chile",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "873": {
+       "apps": 1,
+       "goals": 0
       }
      }
     }
@@ -110495,6 +111907,26 @@
    }
   },
   {
+   "id": "888785",
+   "name": "Promise David",
+   "nat": "Canada",
+   "natKey": "canada",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "1237": {
+       "apps": 2,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "890290",
    "name": "Dean Huijsen",
    "nat": "Spain",
@@ -110540,15 +111972,55 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 43,
+     "apps": 48,
      "goals": 1,
      "clubs": {
       "11": {
-       "apps": 43,
+       "apps": 48,
        "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "892160",
+   "name": "Luka Vuskovic",
+   "nat": "Croatia",
+   "natKey": "croatia",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 1,
+     "clubs": {
+      "1237": {
+       "apps": 7,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "895937",
+   "name": "Marco Palestra",
+   "nat": "Italy",
+   "natKey": "italy",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "631": {
+       "apps": 2,
+       "goals": 0
       }
      }
     }
@@ -110580,14 +112052,14 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 26,
+     "apps": 31,
      "goals": 1,
      "clubs": {
       "931": {
-       "apps": 26,
+       "apps": 31,
        "goals": 1
       }
      }
@@ -110620,15 +112092,15 @@
    "nat": "Ecuador",
    "natKey": "ecuador",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 8,
-     "goals": 0,
+     "apps": 14,
+     "goals": 1,
      "clubs": {
       "289": {
-       "apps": 8,
-       "goals": 0
+       "apps": 14,
+       "goals": 1
       }
      }
     }
@@ -110640,14 +112112,14 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 22,
+     "apps": 27,
      "goals": 0,
      "clubs": {
       "631": {
-       "apps": 22,
+       "apps": 27,
        "goals": 0
       }
      }
@@ -110735,6 +112207,46 @@
    }
   },
   {
+   "id": "915418",
+   "name": "Jannik Schuster",
+   "nat": "Austria",
+   "natKey": "austria",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "1148": {
+       "apps": 4,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "922462",
+   "name": "Lewis Koumas",
+   "nat": "Wales",
+   "natKey": "wales",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "31": {
+       "apps": 5,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "922563",
    "name": "Oliver Scarles",
    "nat": "England",
@@ -110760,14 +112272,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 52,
+     "apps": 58,
      "goals": 2,
      "clubs": {
       "148": {
-       "apps": 52,
+       "apps": 58,
        "goals": 2
       }
      }
@@ -110800,15 +112312,55 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 55,
+     "apps": 62,
      "goals": 3,
      "clubs": {
       "762": {
-       "apps": 55,
+       "apps": 62,
        "goals": 3
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "923504",
+   "name": "Sindre Walle Egeli",
+   "nat": "Norway",
+   "natKey": "norway",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "677": {
+       "apps": 2,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "923535",
+   "name": "Jens Hjertø-Dahl",
+   "nat": "Norway",
+   "natKey": "norway",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "3008": {
+       "apps": 1,
+       "goals": 0
       }
      }
     }
@@ -110820,14 +112372,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 53,
+     "apps": 57,
      "goals": 0,
      "clubs": {
       "985": {
-       "apps": 53,
+       "apps": 57,
        "goals": 0
       }
      }
@@ -110860,14 +112412,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 3,
+     "apps": 4,
      "goals": 0,
      "clubs": {
       "985": {
-       "apps": 3,
+       "apps": 4,
        "goals": 0
       }
      }
@@ -110880,15 +112432,35 @@
    "nat": "Denmark",
    "natKey": "denmark",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 38,
+     "apps": 43,
      "goals": 4,
      "clubs": {
       "985": {
-       "apps": 38,
+       "apps": 43,
        "goals": 4
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "927353",
+   "name": "Johan Manzambi",
+   "nat": "Switzerland",
+   "natKey": "switzerland",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 5,
+     "goals": 2,
+     "clubs": {
+      "405": {
+       "apps": 5,
+       "goals": 2
       }
      }
     }
@@ -110908,6 +112480,26 @@
      "clubs": {
       "1132": {
        "apps": 20,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "931838",
+   "name": "Hugo Larsson",
+   "nat": "Sweden",
+   "natKey": "sweden",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "931": {
+       "apps": 4,
        "goals": 0
       }
      }
@@ -110975,6 +112567,46 @@
    }
   },
   {
+   "id": "935230",
+   "name": "Gonzalo García",
+   "nat": "Spain",
+   "natKey": "spain",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 1,
+     "clubs": {
+      "931": {
+       "apps": 7,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "935231",
+   "name": "Víctor Muñoz",
+   "nat": "Spain",
+   "natKey": "spain",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 2,
+     "clubs": {
+      "31": {
+       "apps": 7,
+       "goals": 2
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "936842",
    "name": "Michael Golding",
    "nat": "England",
@@ -111000,15 +112632,15 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 23,
-     "goals": 1,
+     "apps": 30,
+     "goals": 2,
      "clubs": {
       "29": {
-       "apps": 11,
-       "goals": 0
+       "apps": 18,
+       "goals": 1
       },
       "631": {
        "apps": 12,
@@ -111044,15 +112676,15 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 38,
-     "goals": 8,
+     "apps": 45,
+     "goals": 11,
      "clubs": {
       "29": {
-       "apps": 38,
-       "goals": 8
+       "apps": 45,
+       "goals": 11
       }
      }
     }
@@ -111103,6 +112735,26 @@
    }
   },
   {
+   "id": "939964",
+   "name": "Jean-Mattéo Bahoya",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "399": {
+       "apps": 2,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "942497",
    "name": "Jahmai Simpson-Pusey",
    "nat": "England",
@@ -111143,19 +112795,99 @@
    }
   },
   {
+   "id": "945021",
+   "name": "Anan Khalaili",
+   "nat": "Israel",
+   "natKey": "israel",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 1,
+     "clubs": {
+      "873": {
+       "apps": 7,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "947411",
    "name": "Chris Rigg",
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 18,
+     "apps": 21,
      "goals": 1,
      "clubs": {
       "289": {
-       "apps": 18,
+       "apps": 21,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "948272",
+   "name": "César Palacios",
+   "nat": "Spain",
+   "natKey": "spain",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 5,
+     "goals": 1,
+     "clubs": {
+      "931": {
+       "apps": 5,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "948275",
+   "name": "Álvaro Rodríguez",
+   "nat": "Uruguay",
+   "natKey": "uruguay",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "989": {
+       "apps": 4,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "948279",
+   "name": "Chema Andrés",
+   "nat": "Spain",
+   "natKey": "spain",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 4,
+     "goals": 1,
+     "clubs": {
+      "1237": {
+       "apps": 4,
        "goals": 1
       }
      }
@@ -111328,15 +113060,59 @@
    "nat": "Cameroon",
    "natKey": "cameroon",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 92,
+     "apps": 94,
      "goals": 3,
      "clubs": {
+      "985": {
+       "apps": 2,
+       "goals": 0
+      },
       "1237": {
        "apps": 92,
        "goals": 3
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "974982",
+   "name": "Ousmane Diomande",
+   "nat": "Cote d'Ivoire",
+   "natKey": "ivory coast",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "703": {
+       "apps": 5,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "975347",
+   "name": "Aladji Bamba",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 3,
+     "goals": 0,
+     "clubs": {
+      "762": {
+       "apps": 3,
+       "goals": 0
       }
      }
     }
@@ -111420,14 +113196,14 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 9,
+     "apps": 15,
      "goals": 0,
      "clubs": {
       "703": {
-       "apps": 9,
+       "apps": 15,
        "goals": 0
       }
      }
@@ -111449,6 +113225,26 @@
       "148": {
        "apps": 1,
        "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "986288",
+   "name": "Sidiki Chérif",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 3,
+     "goals": 1,
+     "clubs": {
+      "990": {
+       "apps": 3,
+       "goals": 1
       }
      }
     }
@@ -111489,6 +113285,26 @@
       "989": {
        "apps": 7,
        "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "991487",
+   "name": "Abdoul Ouattara",
+   "nat": "Cote d'Ivoire",
+   "natKey": "ivory coast",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 8,
+     "goals": 1,
+     "clubs": {
+      "677": {
+       "apps": 8,
+       "goals": 1
       }
      }
     }
@@ -111560,15 +113376,15 @@
    "nat": "Paraguay",
    "natKey": "paraguay",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 48,
-     "goals": 6,
+     "apps": 55,
+     "goals": 7,
      "clubs": {
       "1237": {
-       "apps": 48,
-       "goals": 6
+       "apps": 55,
+       "goals": 7
       }
      }
     }
@@ -111580,14 +113396,14 @@
    "nat": "Hungary",
    "natKey": "hungary",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 9,
+     "apps": 11,
      "goals": 0,
      "clubs": {
       "989": {
-       "apps": 9,
+       "apps": 11,
        "goals": 0
       }
      }
@@ -111615,19 +113431,39 @@
    }
   },
   {
+   "id": "1004301",
+   "name": "Jérémy Jacquet",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "31": {
+       "apps": 7,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1004708",
    "name": "Josh Acheampong",
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 22,
+     "apps": 28,
      "goals": 1,
      "clubs": {
       "631": {
-       "apps": 22,
+       "apps": 28,
        "goals": 1
       }
      }
@@ -111640,14 +113476,14 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "DEF",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 1,
+     "apps": 2,
      "goals": 0,
      "clubs": {
       "281": {
-       "apps": 1,
+       "apps": 2,
        "goals": 0
       }
      }
@@ -111660,15 +113496,15 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 3,
-     "goals": 0,
+     "apps": 10,
+     "goals": 1,
      "clubs": {
       "405": {
-       "apps": 3,
-       "goals": 0
+       "apps": 10,
+       "goals": 1
       }
      }
     }
@@ -111680,14 +113516,14 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 93,
+     "apps": 101,
      "goals": 3,
      "clubs": {
       "703": {
-       "apps": 93,
+       "apps": 101,
        "goals": 3
       }
      }
@@ -111700,14 +113536,34 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 20,
+     "apps": 26,
      "goals": 0,
      "clubs": {
       "873": {
-       "apps": 20,
+       "apps": 26,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1007383",
+   "name": "Zavier Gozo",
+   "nat": "United States",
+   "natKey": "united states",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "873": {
+       "apps": 2,
        "goals": 0
       }
      }
@@ -111720,14 +113576,14 @@
    "nat": "Argentina",
    "natKey": "argentina",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 6,
+     "apps": 7,
      "goals": 0,
      "clubs": {
       "989": {
-       "apps": 6,
+       "apps": 7,
        "goals": 0
       }
      }
@@ -111760,15 +113616,15 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 40,
-     "goals": 1,
+     "apps": 47,
+     "goals": 3,
      "clubs": {
       "931": {
-       "apps": 40,
-       "goals": 1
+       "apps": 47,
+       "goals": 3
       }
      }
     }
@@ -111800,14 +113656,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 12,
+     "apps": 14,
      "goals": 0,
      "clubs": {
       "148": {
-       "apps": 12,
+       "apps": 14,
        "goals": 0
       }
      }
@@ -111880,14 +113736,14 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 15,
+     "apps": 22,
      "goals": 5,
      "clubs": {
       "989": {
-       "apps": 15,
+       "apps": 22,
        "goals": 5
       }
      }
@@ -111899,15 +113755,15 @@
    "name": "George Hemmings",
    "nat": "England",
    "natKey": "england",
-   "pos": "MID",
-   "last": 2025,
+   "pos": "FWD",
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 2,
+     "apps": 7,
      "goals": 0,
      "clubs": {
       "405": {
-       "apps": 2,
+       "apps": 7,
        "goals": 0
       }
      }
@@ -111929,6 +113785,26 @@
       "350": {
        "apps": 1,
        "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1034853",
+   "name": "Nobel Mendy",
+   "nat": "Senegal",
+   "natKey": "senegal",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 5,
+     "goals": 1,
+     "clubs": {
+      "3008": {
+       "apps": 5,
+       "goals": 1
       }
      }
     }
@@ -111980,14 +113856,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 6,
+     "apps": 11,
      "goals": 0,
      "clubs": {
       "31": {
-       "apps": 6,
+       "apps": 11,
        "goals": 0
       }
      }
@@ -112095,6 +113971,26 @@
    }
   },
   {
+   "id": "1049020",
+   "name": "Stephen Mfuni",
+   "nat": "England",
+   "natKey": "england",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 2,
+     "goals": 1,
+     "clubs": {
+      "990": {
+       "apps": 2,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1049911",
    "name": "Tyler Fletcher",
    "nat": "Scotland",
@@ -112120,14 +114016,14 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 22,
+     "apps": 27,
      "goals": 2,
      "clubs": {
       "631": {
-       "apps": 22,
+       "apps": 27,
        "goals": 2
       }
      }
@@ -112140,15 +114036,15 @@
    "nat": "Greece",
    "natKey": "greece",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 21,
-     "goals": 2,
+     "apps": 28,
+     "goals": 5,
      "clubs": {
       "1237": {
-       "apps": 21,
-       "goals": 2
+       "apps": 28,
+       "goals": 5
       }
      }
     }
@@ -112255,6 +114151,26 @@
    }
   },
   {
+   "id": "1067904",
+   "name": "Bazoumana Touré",
+   "nat": "Cote d'Ivoire",
+   "natKey": "ivory coast",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 5,
+     "goals": 1,
+     "clubs": {
+      "762": {
+       "apps": 5,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1069512",
    "name": "Jonah Kusi-Asare",
    "nat": "Sweden",
@@ -112295,19 +114211,79 @@
    }
   },
   {
+   "id": "1077175",
+   "name": "Honest Ahanor",
+   "nat": "Italy",
+   "natKey": "italy",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 3,
+     "goals": 0,
+     "clubs": {
+      "873": {
+       "apps": 3,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1078156",
+   "name": "Kaden Braithwaite",
+   "nat": "England",
+   "natKey": "england",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "281": {
+       "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1078163",
    "name": "Ayden Heaven",
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 21,
+     "apps": 23,
      "goals": 0,
      "clubs": {
       "985": {
-       "apps": 21,
+       "apps": 23,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1079078",
+   "name": "Timur Tuterov",
+   "nat": "Ukraine",
+   "natKey": "ukraine",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "289": {
+       "apps": 1,
        "goals": 0
       }
      }
@@ -112328,6 +114304,26 @@
      "clubs": {
       "379": {
        "apps": 11,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1082631",
+   "name": "Allan",
+   "nat": "Brazil",
+   "natKey": "brazil",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "281": {
+       "apps": 1,
        "goals": 0
       }
      }
@@ -112475,6 +114471,26 @@
    }
   },
   {
+   "id": "1097139",
+   "name": "Ayyoub Bouaddi",
+   "nat": "Morocco",
+   "natKey": "morocco",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "281": {
+       "apps": 4,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1107726",
    "name": "Ezra Mayers",
    "nat": "England",
@@ -112500,14 +114516,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 16,
+     "apps": 23,
      "goals": 0,
      "clubs": {
       "29": {
-       "apps": 16,
+       "apps": 23,
        "goals": 0
       }
      }
@@ -112520,15 +114536,55 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 19,
+     "apps": 24,
      "goals": 2,
      "clubs": {
       "31": {
-       "apps": 19,
+       "apps": 24,
        "goals": 2
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1110406",
+   "name": "Ibrahim Osman",
+   "nat": "Ghana",
+   "natKey": "ghana",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 3,
+     "goals": 0,
+     "clubs": {
+      "1237": {
+       "apps": 3,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1111063",
+   "name": "Sean Steur",
+   "nat": "Netherlands",
+   "natKey": "netherlands",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "762": {
+       "apps": 5,
+       "goals": 0
       }
      }
     }
@@ -112540,14 +114596,18 @@
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 32,
+     "apps": 36,
      "goals": 0,
      "clubs": {
       "379": {
        "apps": 32,
+       "goals": 0
+      },
+      "1148": {
+       "apps": 4,
        "goals": 0
       }
      }
@@ -112568,6 +114628,26 @@
      "clubs": {
       "873": {
        "apps": 14,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1131161",
+   "name": "Robinio Vaz",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "3008": {
+       "apps": 4,
        "goals": 0
       }
      }
@@ -112615,6 +114695,26 @@
    }
   },
   {
+   "id": "1138758",
+   "name": "Geovany Quenda",
+   "nat": "Portugal",
+   "natKey": "portugal",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 3,
+     "goals": 0,
+     "clubs": {
+      "631": {
+       "apps": 3,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1141628",
    "name": "Yunus Konak",
    "nat": "Türkiye",
@@ -112655,20 +114755,100 @@
    }
   },
   {
+   "id": "1178758",
+   "name": "Malick Yalcouyé",
+   "nat": "Cote d'Ivoire",
+   "natKey": "ivory coast",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 2,
+     "clubs": {
+      "1237": {
+       "apps": 7,
+       "goals": 2
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1185888",
+   "name": "Ibrahim Mbaye",
+   "nat": "Senegal",
+   "natKey": "senegal",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "405": {
+       "apps": 4,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1187629",
    "name": "Max Dowman",
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
-     "apps": 6,
+     "apps": 7,
      "goals": 1,
      "clubs": {
       "11": {
-       "apps": 6,
+       "apps": 7,
        "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1187640",
+   "name": "Ryan McAidoo",
+   "nat": "England",
+   "natKey": "england",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "281": {
+       "apps": 2,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1191444",
+   "name": "Dayann Méthalie",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "289": {
+       "apps": 2,
+       "goals": 0
       }
      }
     }
@@ -112755,6 +114935,26 @@
    }
   },
   {
+   "id": "1240763",
+   "name": "Caleb Yirenkyi",
+   "nat": "Ghana",
+   "natKey": "ghana",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "990": {
+       "apps": 7,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1245948",
    "name": "Jeremy Monga",
    "nat": "England",
@@ -112775,12 +114975,12 @@
    }
   },
   {
-   "id": "1322090",
-   "name": "Jocelin Ta Bi",
-   "nat": "Cote d'Ivoire",
-   "natKey": "ivory coast",
+   "id": "1257410",
+   "name": "Juan Riquelme Angulo",
+   "nat": "Ecuador",
+   "natKey": "ecuador",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "GB1": {
      "apps": 1,
@@ -112788,6 +114988,46 @@
      "clubs": {
       "289": {
        "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1279984",
+   "name": "Lucas Herrington",
+   "nat": "Australia",
+   "natKey": "australia",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "3008": {
+       "apps": 6,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1322090",
+   "name": "Jocelin Ta Bi",
+   "nat": "Cote d'Ivoire",
+   "natKey": "ivory coast",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "289": {
+       "apps": 2,
        "goals": 0
       }
      }
@@ -112815,6 +115055,26 @@
    }
   },
   {
+   "id": "1353008",
+   "name": "Mahdi Nicoll-Jazuli",
+   "nat": "England",
+   "natKey": "england",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "631": {
+       "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1370903",
    "name": "Jerome Abbey",
    "nat": "England",
@@ -112833,6 +115093,46 @@
      }
     }
    }
+  },
+  {
+   "id": "1401779",
+   "name": "Jules Ahoka",
+   "nat": "DR Congo",
+   "natKey": "dr congo",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "289": {
+       "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1421433",
+   "name": "Zadok Yohanna",
+   "nat": "Nigeria",
+   "natKey": "nigeria",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "GB1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "1237": {
+       "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
   }
  ],
  "clubs": {
@@ -112840,7 +115140,7 @@
    "name": "Arsenal FC",
    "norm": "arsenal fc",
    "competitionId": "GB1",
-   "last": 2025
+   "last": 2026
   },
   "22": {
    "name": "Derby County",
@@ -112852,19 +115152,19 @@
    "name": "Everton FC",
    "norm": "everton fc",
    "competitionId": "GB1",
-   "last": 2025
+   "last": 2026
   },
   "31": {
    "name": "Liverpool FC",
    "norm": "liverpool fc",
    "competitionId": "GB1",
-   "last": 2025
+   "last": 2026
   },
   "148": {
    "name": "Tottenham Hotspur",
    "norm": "tottenham hotspur",
    "competitionId": "GB1",
-   "last": 2025
+   "last": 2026
   },
   "164": {
    "name": "Blackburn Rovers",
@@ -112882,13 +115182,13 @@
    "name": "Manchester City",
    "norm": "manchester city",
    "competitionId": "GB1",
-   "last": 2025
+   "last": 2026
   },
   "289": {
    "name": "Sunderland AFC",
    "norm": "sunderland afc",
    "competitionId": "GB1",
-   "last": 2025
+   "last": 2026
   },
   "337": {
    "name": "Birmingham City",
@@ -112936,13 +115236,13 @@
    "name": "Leeds United",
    "norm": "leeds united",
    "competitionId": "GB1",
-   "last": 2025
+   "last": 2026
   },
   "405": {
    "name": "Aston Villa",
    "norm": "aston villa",
    "competitionId": "GB1",
-   "last": 2025
+   "last": 2026
   },
   "512": {
    "name": "Stoke City",
@@ -112966,7 +115266,7 @@
    "name": "Chelsea FC",
    "norm": "chelsea fc",
    "competitionId": "GB1",
-   "last": 2025
+   "last": 2026
   },
   "641": {
    "name": "Middlesbrough FC",
@@ -112978,31 +115278,31 @@
    "name": "Ipswich Town",
    "norm": "ipswich town",
    "competitionId": "GB1",
-   "last": 2024
+   "last": 2026
   },
   "703": {
    "name": "Nottingham Forest",
    "norm": "nottingham forest",
    "competitionId": "GB1",
-   "last": 2025
+   "last": 2026
   },
   "762": {
    "name": "Newcastle United",
    "norm": "newcastle united",
    "competitionId": "GB1",
-   "last": 2025
+   "last": 2026
   },
   "873": {
    "name": "Crystal Palace",
    "norm": "crystal palace",
    "competitionId": "GB1",
-   "last": 2025
+   "last": 2026
   },
   "931": {
    "name": "Fulham FC",
    "norm": "fulham fc",
    "competitionId": "GB1",
-   "last": 2025
+   "last": 2026
   },
   "984": {
    "name": "West Bromwich Albion",
@@ -113014,19 +115314,19 @@
    "name": "Manchester United",
    "norm": "manchester united",
    "competitionId": "GB1",
-   "last": 2025
+   "last": 2026
   },
   "989": {
    "name": "AFC Bournemouth",
    "norm": "afc bournemouth",
    "competitionId": "GB1",
-   "last": 2025
+   "last": 2026
   },
   "990": {
    "name": "Coventry City",
    "norm": "coventry city",
    "competitionId": "GB1",
-   "last": 2000
+   "last": 2026
   },
   "1003": {
    "name": "Leicester City",
@@ -113110,7 +115410,7 @@
    "name": "Brentford FC",
    "norm": "brentford fc",
    "competitionId": "GB1",
-   "last": 2025
+   "last": 2026
   },
   "1181": {
    "name": "Blackpool FC",
@@ -113122,7 +115422,7 @@
    "name": "Brighton & Hove Albion",
    "norm": "brighton hove albion",
    "competitionId": "GB1",
-   "last": 2025
+   "last": 2026
   },
   "2288": {
    "name": "Swansea City",
@@ -113134,7 +115434,7 @@
    "name": "Hull City",
    "norm": "hull city",
    "competitionId": "GB1",
-   "last": 2016
+   "last": 2026
   },
   "114309": {
    "name": "Wimbledon FC (- 2004)",

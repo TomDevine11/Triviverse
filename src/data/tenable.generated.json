@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-10-09",
+    "generatedAt": "2026-10-24",
     "source": "transfermarkt (leagues + international), fun-gated recognisable top-10s",
     "floor": {
       "goals": 10,
@@ -8,7 +8,7 @@
       "caps": 25,
       "fee": 10000000
     },
-    "count": 101
+    "count": 99
   },
   "questions": [
     {
@@ -1233,39 +1233,39 @@
         },
         {
           "rank": 5,
+          "text": "Enzo Fernández",
+          "detail": "€145m",
+          "value": 145000000
+        },
+        {
+          "rank": 6,
           "text": "Morgan Rogers",
           "detail": "€138m",
           "value": 138000000
         },
         {
-          "rank": 6,
+          "rank": 7,
           "text": "Elliot Anderson",
           "detail": "€135m",
           "value": 135000000
         },
         {
-          "rank": 7,
+          "rank": 8,
           "text": "Philippe Coutinho",
           "detail": "€135m",
           "value": 135000000
         },
         {
-          "rank": 8,
+          "rank": 9,
           "text": "João Félix",
           "detail": "€127m",
           "value": 127200000
         },
         {
-          "rank": 9,
+          "rank": 10,
           "text": "Jude Bellingham",
           "detail": "€127m",
           "value": 127000000
-        },
-        {
-          "rank": 10,
-          "text": "Florian Wirtz",
-          "detail": "€125m",
-          "value": 125000000
         }
       ]
     },
@@ -1485,9 +1485,9 @@
         },
         {
           "rank": 10,
-          "text": "Maximilian Beier",
-          "detail": "€29m",
-          "value": 28500000
+          "text": "Konstantinos Karetsas",
+          "detail": "€30m",
+          "value": 30000000
         }
       ]
     },
@@ -1506,62 +1506,62 @@
         {
           "rank": 1,
           "text": "Gonçalo Ramos",
-          "detail": "€74m",
-          "value": 74000000
+          "detail": "€73m",
+          "value": 73100000
         },
         {
           "rank": 2,
+          "text": "Diego Moreira",
+          "detail": "€50m",
+          "value": 50000000
+        },
+        {
+          "rank": 3,
           "text": "Rafael Leão",
           "detail": "€50m",
           "value": 49500000
         },
         {
-          "rank": 3,
+          "rank": 4,
           "text": "Leonardo Bonucci",
           "detail": "€42m",
           "value": 42000000
         },
         {
-          "rank": 4,
+          "rank": 5,
           "text": "Rui Costa",
           "detail": "€41m",
           "value": 41320000
         },
         {
-          "rank": 5,
+          "rank": 6,
           "text": "Lucas Paquetá",
           "detail": "€38m",
           "value": 38400000
         },
         {
-          "rank": 6,
+          "rank": 7,
           "text": "André Silva",
           "detail": "€38m",
           "value": 38000000
         },
         {
-          "rank": 7,
+          "rank": 8,
+          "text": "Christopher Nkunku",
+          "detail": "€38m",
+          "value": 37900000
+        },
+        {
+          "rank": 9,
           "text": "Mattia Caldara",
           "detail": "€38m",
           "value": 37740000
         },
         {
-          "rank": 8,
+          "rank": 10,
           "text": "Charles De Ketelaere",
           "detail": "€38m",
           "value": 37500000
-        },
-        {
-          "rank": 9,
-          "text": "Christopher Nkunku",
-          "detail": "€37m",
-          "value": 37000000
-        },
-        {
-          "rank": 10,
-          "text": "Filippo Inzaghi",
-          "detail": "€36m",
-          "value": 36150000
         }
       ]
     },
@@ -1621,21 +1621,21 @@
         },
         {
           "rank": 8,
-          "text": "Kang-in Lee",
-          "detail": "€40m",
-          "value": 40000000
-        },
-        {
-          "rank": 9,
           "text": "Morten Hjulmand",
           "detail": "€40m",
           "value": 40000000
         },
         {
-          "rank": 10,
+          "rank": 9,
           "text": "Radamel Falcao",
           "detail": "€40m",
           "value": 40000000
+        },
+        {
+          "rank": 10,
+          "text": "Vitolo",
+          "detail": "€36m",
+          "value": 35600000
         }
       ]
     },
@@ -1665,51 +1665,51 @@
         },
         {
           "rank": 3,
+          "text": "Savinho",
+          "detail": "€88m",
+          "value": 87700000
+        },
+        {
+          "rank": 4,
           "text": "Xavi Simons",
           "detail": "€65m",
           "value": 65000000
         },
         {
-          "rank": 4,
+          "rank": 5,
           "text": "Dominic Solanke",
           "detail": "€64m",
           "value": 64300000
         },
         {
-          "rank": 5,
+          "rank": 6,
           "text": "Mohammed Kudus",
           "detail": "€64m",
           "value": 63800000
         },
         {
-          "rank": 6,
+          "rank": 7,
           "text": "Tanguy Ndombélé",
           "detail": "€62m",
           "value": 62000000
         },
         {
-          "rank": 7,
+          "rank": 8,
           "text": "Jan Paul van Hecke",
           "detail": "€60m",
           "value": 60000000
         },
         {
-          "rank": 8,
+          "rank": 9,
           "text": "Richarlison",
           "detail": "€58m",
           "value": 58000000
         },
         {
-          "rank": 9,
+          "rank": 10,
           "text": "Brennan Johnson",
           "detail": "€55m",
           "value": 55000000
-        },
-        {
-          "rank": 10,
-          "text": "Cristian Romero",
-          "detail": "€54m",
-          "value": 53800000
         }
       ]
     },
@@ -1769,21 +1769,21 @@
         },
         {
           "rank": 8,
+          "text": "Carlos Baleba",
+          "detail": "€76m",
+          "value": 75900000
+        },
+        {
+          "rank": 9,
           "text": "Ángel Di María",
           "detail": "€75m",
           "value": 75000000
         },
         {
-          "rank": 9,
+          "rank": 10,
           "text": "Bryan Mbeumo",
           "detail": "€75m",
           "value": 75000000
-        },
-        {
-          "rank": 10,
-          "text": "Matheus Cunha",
-          "detail": "€74m",
-          "value": 74200000
         }
       ]
     },
@@ -1881,57 +1881,57 @@
         },
         {
           "rank": 2,
+          "text": "Yan Diomande",
+          "detail": "€125m",
+          "value": 125000000
+        },
+        {
+          "rank": 3,
           "text": "Eden Hazard",
           "detail": "€121m",
           "value": 120800000
         },
         {
-          "rank": 3,
+          "rank": 4,
           "text": "Gareth Bale",
           "detail": "€101m",
           "value": 101000000
         },
         {
-          "rank": 4,
+          "rank": 5,
           "text": "Cristiano Ronaldo",
           "detail": "€94m",
           "value": 94000000
         },
         {
-          "rank": 5,
+          "rank": 6,
           "text": "Aurélien Tchouaméni",
           "detail": "€80m",
           "value": 80000000
         },
         {
-          "rank": 6,
+          "rank": 7,
           "text": "Zinédine Zidane",
           "detail": "€78m",
           "value": 77500000
         },
         {
-          "rank": 7,
+          "rank": 8,
           "text": "James Rodríguez",
           "detail": "€75m",
           "value": 75000000
         },
         {
-          "rank": 8,
+          "rank": 9,
           "text": "Kaká",
           "detail": "€67m",
           "value": 67000000
         },
         {
-          "rank": 9,
+          "rank": 10,
           "text": "Luka Jović",
           "detail": "€63m",
           "value": 63000000
-        },
-        {
-          "rank": 10,
-          "text": "Dean Huijsen",
-          "detail": "€63m",
-          "value": 62500000
         }
       ]
     },
@@ -1955,57 +1955,57 @@
         },
         {
           "rank": 2,
+          "text": "Bruno Guimarães",
+          "detail": "€88m",
+          "value": 87500000
+        },
+        {
+          "rank": 3,
           "text": "Nicolas Pépé",
           "detail": "€80m",
           "value": 80000000
         },
         {
-          "rank": 3,
+          "rank": 4,
           "text": "Kai Havertz",
           "detail": "€75m",
           "value": 75000000
         },
         {
-          "rank": 4,
+          "rank": 5,
           "text": "Martín Zubimendi",
           "detail": "€70m",
           "value": 70000000
         },
         {
-          "rank": 5,
+          "rank": 6,
+          "text": "Viktor Gyökeres",
+          "detail": "€70m",
+          "value": 69870000
+        },
+        {
+          "rank": 7,
           "text": "Eberechi Eze",
           "detail": "€69m",
           "value": 69300000
         },
         {
-          "rank": 6,
-          "text": "Viktor Gyökeres",
-          "detail": "€67m",
-          "value": 66900000
-        },
-        {
-          "rank": 7,
+          "rank": 8,
           "text": "Pierre-Emerick Aubameyang",
           "detail": "€64m",
           "value": 63750000
         },
         {
-          "rank": 8,
-          "text": "Ben White",
-          "detail": "€59m",
-          "value": 58500000
-        },
-        {
           "rank": 9,
-          "text": "Noni Madueke",
-          "detail": "€56m",
-          "value": 56000000
+          "text": "Ezri Konsa",
+          "detail": "€60m",
+          "value": 59600000
         },
         {
           "rank": 10,
-          "text": "Alexandre Lacazette",
-          "detail": "€53m",
-          "value": 53000000
+          "text": "Ben White",
+          "detail": "€59m",
+          "value": 58500000
         }
       ]
     },
@@ -2081,6 +2081,12 @@
           "detail": "€60m",
           "value": 60000000
         }
+      ],
+      "tieValue": 60000000,
+      "tiePool": [
+        {
+          "text": "Rodri"
+        }
       ]
     },
     {
@@ -2097,69 +2103,69 @@
       "answers": [
         {
           "rank": 1,
+          "text": "Enzo Fernández",
+          "detail": "€145m",
+          "value": 145000000
+        },
+        {
+          "rank": 2,
           "text": "Elliot Anderson",
           "detail": "€135m",
           "value": 135000000
         },
         {
-          "rank": 2,
+          "rank": 3,
           "text": "Jack Grealish",
           "detail": "€118m",
           "value": 117500000
         },
         {
-          "rank": 3,
+          "rank": 4,
+          "text": "Ayyoub Bouaddi",
+          "detail": "€95m",
+          "value": 95000000
+        },
+        {
+          "rank": 5,
           "text": "Josko Gvardiol",
           "detail": "€90m",
           "value": 90000000
         },
         {
-          "rank": 4,
+          "rank": 6,
           "text": "Kevin De Bruyne",
           "detail": "€76m",
           "value": 76000000
         },
         {
-          "rank": 5,
+          "rank": 7,
           "text": "Omar Marmoush",
           "detail": "€75m",
           "value": 75000000
         },
         {
-          "rank": 6,
+          "rank": 8,
           "text": "Antoine Semenyo",
           "detail": "€72m",
           "value": 72000000
         },
         {
-          "rank": 7,
+          "rank": 9,
           "text": "Rúben Dias",
           "detail": "€72m",
           "value": 71600000
         },
         {
-          "rank": 8,
-          "text": "Rodri",
+          "rank": 10,
+          "text": "Iliman Ndiaye",
           "detail": "€70m",
           "value": 70000000
-        },
-        {
-          "rank": 9,
-          "text": "Riyad Mahrez",
-          "detail": "€68m",
-          "value": 67800000
-        },
-        {
-          "rank": 10,
-          "text": "Aymeric Laporte",
-          "detail": "€65m",
-          "value": 65000000
         }
       ],
-      "tieValue": 65000000,
+      "tieValue": 70000000,
       "tiePool": [
         {
-          "text": "João Cancelo"
+          "text": "Rodri"
         }
       ]
     },
@@ -2183,57 +2189,57 @@
         },
         {
           "rank": 2,
-          "text": "Florian Wirtz",
+          "text": "Bradley Barcola",
           "detail": "€125m",
           "value": 125000000
         },
         {
           "rank": 3,
+          "text": "Florian Wirtz",
+          "detail": "€125m",
+          "value": 125000000
+        },
+        {
+          "rank": 4,
           "text": "Hugo Ekitiké",
           "detail": "€95m",
           "value": 95000000
         },
         {
-          "rank": 4,
+          "rank": 5,
           "text": "Darwin Núñez",
           "detail": "€85m",
           "value": 85000000
         },
         {
-          "rank": 5,
+          "rank": 6,
           "text": "Virgil van Dijk",
           "detail": "€85m",
           "value": 84650000
         },
         {
-          "rank": 6,
+          "rank": 7,
           "text": "Alisson",
           "detail": "€73m",
           "value": 72500000
         },
         {
-          "rank": 7,
+          "rank": 8,
           "text": "Dominik Szoboszlai",
           "detail": "€70m",
           "value": 70000000
         },
         {
-          "rank": 8,
+          "rank": 9,
           "text": "Jérémy Jacquet",
           "detail": "€64m",
           "value": 63600000
         },
         {
-          "rank": 9,
+          "rank": 10,
           "text": "Naby Keïta",
           "detail": "€60m",
           "value": 60000000
-        },
-        {
-          "rank": 10,
-          "text": "Luis Díaz",
-          "detail": "€49m",
-          "value": 49000000
         }
       ]
     },
@@ -2547,63 +2553,69 @@
       "answers": [
         {
           "rank": 1,
+          "text": "Bradley Barcola",
+          "detail": "€125m",
+          "value": 125000000
+        },
+        {
+          "rank": 2,
           "text": "Neymar",
           "detail": "€90m",
           "value": 90000000
         },
         {
-          "rank": 2,
+          "rank": 3,
           "text": "Gonçalo Ramos",
-          "detail": "€74m",
-          "value": 74000000
+          "detail": "€73m",
+          "value": 73100000
         },
         {
-          "rank": 3,
+          "rank": 4,
+          "text": "Ibrahim Mbaye",
+          "detail": "€55m",
+          "value": 55000000
+        },
+        {
+          "rank": 5,
           "text": "Manuel Ugarte",
           "detail": "€50m",
           "value": 50000000
         },
         {
-          "rank": 4,
+          "rank": 6,
           "text": "Xavi Simons",
           "detail": "€50m",
           "value": 50000000
         },
         {
-          "rank": 5,
+          "rank": 7,
           "text": "Marco Verratti",
           "detail": "€45m",
           "value": 45000000
         },
         {
-          "rank": 6,
+          "rank": 8,
+          "text": "Randal Kolo Muani",
+          "detail": "€41m",
+          "value": 41200000
+        },
+        {
+          "rank": 9,
           "text": "Gonçalo Guedes",
           "detail": "€40m",
           "value": 40000000
         },
         {
-          "rank": 7,
-          "text": "Kang-in Lee",
-          "detail": "€40m",
-          "value": 40000000
-        },
-        {
-          "rank": 8,
+          "rank": 10,
           "text": "David Luiz",
           "detail": "€35m",
           "value": 35000000
-        },
+        }
+      ],
+      "tieValue": 35000000,
+      "tiePool": [
         {
-          "rank": 9,
-          "text": "Ronaldinho",
-          "detail": "€32m",
-          "value": 32250000
-        },
-        {
-          "rank": 10,
-          "text": "Hugo Ekitiké",
-          "detail": "€32m",
-          "value": 31500000
+          "text": "Kang-in Lee"
         }
       ]
     },
@@ -2811,21 +2823,21 @@
         },
         {
           "rank": 8,
+          "text": "Cristian Romero",
+          "detail": "€33m",
+          "value": 33000000
+        },
+        {
+          "rank": 9,
           "text": "Steven Bergwijn",
           "detail": "€31m",
           "value": 31250000
         },
         {
-          "rank": 9,
-          "text": "Michael Carrick",
-          "detail": "€27m",
-          "value": 27200000
-        },
-        {
           "rank": 10,
-          "text": "Christian Eriksen",
-          "detail": "€27m",
-          "value": 27000000
+          "text": "Djed Spence",
+          "detail": "€30m",
+          "value": 30000000
         }
       ]
     },
@@ -3051,9 +3063,15 @@
         },
         {
           "rank": 10,
-          "text": "Raphaël Varane",
+          "text": "Gonzalo García",
           "detail": "€40m",
           "value": 40000000
+        }
+      ],
+      "tieValue": 40000000,
+      "tiePool": [
+        {
+          "text": "Raphaël Varane"
         }
       ]
     },
@@ -3101,33 +3119,33 @@
         },
         {
           "rank": 6,
+          "text": "Rafael Leão",
+          "detail": "€38m",
+          "value": 38000000
+        },
+        {
+          "rank": 7,
           "text": "Leonardo Bonucci",
           "detail": "€35m",
           "value": 35000000
         },
         {
-          "rank": 7,
+          "rank": 8,
           "text": "Malick Thiaw",
           "detail": "€35m",
           "value": 35000000
         },
         {
-          "rank": 8,
+          "rank": 9,
           "text": "Theo Hernández",
           "detail": "€25m",
           "value": 25000000
         },
         {
-          "rank": 9,
+          "rank": 10,
           "text": "Krzysztof Piatek",
           "detail": "€24m",
           "value": 24000000
-        },
-        {
-          "rank": 10,
-          "text": "Charles De Ketelaere",
-          "detail": "€24m",
-          "value": 23700000
         }
       ]
     },
@@ -3145,63 +3163,63 @@
       "answers": [
         {
           "rank": 1,
+          "text": "Enzo Fernández",
+          "detail": "€145m",
+          "value": 145000000
+        },
+        {
+          "rank": 2,
           "text": "Eden Hazard",
           "detail": "€121m",
           "value": 120800000
         },
         {
-          "rank": 2,
+          "rank": 3,
           "text": "Kai Havertz",
           "detail": "€75m",
           "value": 75000000
         },
         {
-          "rank": 3,
+          "rank": 4,
           "text": "Mason Mount",
           "detail": "€68m",
           "value": 67700000
         },
         {
-          "rank": 4,
+          "rank": 5,
           "text": "Diego Costa",
           "detail": "€60m",
           "value": 60000000
         },
         {
-          "rank": 5,
+          "rank": 6,
           "text": "Oscar",
           "detail": "€60m",
           "value": 60000000
         },
         {
-          "rank": 6,
+          "rank": 7,
           "text": "Andrey Santos",
           "detail": "€56m",
           "value": 56300000
         },
         {
-          "rank": 7,
+          "rank": 8,
           "text": "Noni Madueke",
           "detail": "€56m",
           "value": 56000000
         },
         {
-          "rank": 8,
-          "text": "Marc Cucurella",
-          "detail": "€55m",
-          "value": 55000000
-        },
-        {
           "rank": 9,
-          "text": "David Luiz",
-          "detail": "€50m",
-          "value": 49500000
+          "text": "Nicolas Jackson",
+          "detail": "€56m",
+          "value": 55500000
         },
         {
           "rank": 10,
-          "text": "Juan Mata",
-          "detail": "€45m",
-          "value": 44730000
+          "text": "Marc Cucurella",
+          "detail": "€55m",
+          "value": 55000000
         }
       ]
     },
@@ -3367,63 +3385,63 @@
       "answers": [
         {
           "rank": 1,
+          "text": "Gabriel Martinelli",
+          "detail": "€70m",
+          "value": 70000000
+        },
+        {
+          "rank": 2,
           "text": "Alex Oxlade-Chamberlain",
           "detail": "€38m",
           "value": 38000000
         },
         {
-          "rank": 2,
+          "rank": 3,
           "text": "Nicolas Anelka",
           "detail": "€35m",
           "value": 35000000
         },
         {
-          "rank": 3,
+          "rank": 4,
           "text": "Alexis Sánchez",
           "detail": "€34m",
           "value": 34000000
         },
         {
-          "rank": 4,
+          "rank": 5,
           "text": "Cesc Fàbregas",
           "detail": "€34m",
           "value": 34000000
         },
         {
-          "rank": 5,
+          "rank": 6,
           "text": "Emile Smith Rowe",
           "detail": "€32m",
           "value": 31800000
         },
         {
-          "rank": 6,
+          "rank": 7,
           "text": "Robin van Persie",
           "detail": "€31m",
           "value": 30700000
         },
         {
-          "rank": 7,
+          "rank": 8,
           "text": "Alex Iwobi",
           "detail": "€30m",
           "value": 30400000
         },
         {
-          "rank": 8,
+          "rank": 9,
           "text": "Folarin Balogun",
           "detail": "€30m",
           "value": 30000000
         },
         {
-          "rank": 9,
+          "rank": 10,
           "text": "Eddie Nketiah",
           "detail": "€30m",
           "value": 29700000
-        },
-        {
-          "rank": 10,
-          "text": "Joe Willock",
-          "detail": "€29m",
-          "value": 29400000
         }
       ]
     },
@@ -3489,15 +3507,15 @@
         },
         {
           "rank": 9,
-          "text": "Allan",
-          "detail": "€25m",
-          "value": 24600000
+          "text": "Miguel Gutiérrez",
+          "detail": "€26m",
+          "value": 26000000
         },
         {
           "rank": 10,
-          "text": "Eljif Elmas",
-          "detail": "€24m",
-          "value": 24000000
+          "text": "Allan",
+          "detail": "€25m",
+          "value": 24600000
         }
       ]
     },
@@ -3539,39 +3557,39 @@
         },
         {
           "rank": 5,
+          "text": "Ferran Torres",
+          "detail": "€49m",
+          "value": 48500000
+        },
+        {
+          "rank": 6,
           "text": "Alexis Sánchez",
           "detail": "€43m",
           "value": 42500000
         },
         {
-          "rank": 6,
+          "rank": 7,
           "text": "Paulinho",
           "detail": "€42m",
           "value": 42000000
         },
         {
-          "rank": 7,
+          "rank": 8,
           "text": "Malcom",
           "detail": "€42m",
           "value": 41500000
         },
         {
-          "rank": 8,
+          "rank": 9,
           "text": "Jasper Cillessen",
           "detail": "€35m",
           "value": 35000000
         },
         {
-          "rank": 9,
+          "rank": 10,
           "text": "Cesc Fàbregas",
           "detail": "€33m",
           "value": 33000000
-        },
-        {
-          "rank": 10,
-          "text": "Nélson Semedo",
-          "detail": "€32m",
-          "value": 32000000
         }
       ]
     },
@@ -3589,63 +3607,63 @@
       "answers": [
         {
           "rank": 1,
+          "text": "Savinho",
+          "detail": "€88m",
+          "value": 87700000
+        },
+        {
+          "rank": 2,
           "text": "Julián Alvarez",
           "detail": "€75m",
           "value": 75000000
         },
         {
-          "rank": 2,
+          "rank": 3,
+          "text": "Tijjani Reijnders",
+          "detail": "€61m",
+          "value": 61000000
+        },
+        {
+          "rank": 4,
+          "text": "Rodri",
+          "detail": "€60m",
+          "value": 60000000
+        },
+        {
+          "rank": 5,
           "text": "Raheem Sterling",
           "detail": "€56m",
           "value": 56200000
         },
         {
-          "rank": 3,
+          "rank": 6,
+          "text": "Nico González",
+          "detail": "€56m",
+          "value": 56000000
+        },
+        {
+          "rank": 7,
           "text": "Ferran Torres",
           "detail": "€55m",
           "value": 55000000
         },
         {
-          "rank": 4,
+          "rank": 8,
           "text": "Gabriel Jesus",
           "detail": "€52m",
           "value": 52000000
         },
         {
-          "rank": 5,
+          "rank": 9,
           "text": "Leroy Sané",
           "detail": "€49m",
           "value": 49000000
         },
         {
-          "rank": 6,
+          "rank": 10,
           "text": "Cole Palmer",
           "detail": "€47m",
           "value": 47000000
-        },
-        {
-          "rank": 7,
-          "text": "Danilo",
-          "detail": "€37m",
-          "value": 37000000
-        },
-        {
-          "rank": 8,
-          "text": "Oleksandr Zinchenko",
-          "detail": "€35m",
-          "value": 35000000
-        },
-        {
-          "rank": 9,
-          "text": "Riyad Mahrez",
-          "detail": "€35m",
-          "value": 35000000
-        },
-        {
-          "rank": 10,
-          "text": "Shaun Wright-Phillips",
-          "detail": "€32m",
-          "value": 31500000
         }
       ]
     },
@@ -4149,39 +4167,39 @@
         },
         {
           "rank": 5,
+          "text": "Kylian Mbappé",
+          "detail": "73 goals",
+          "value": 73
+        },
+        {
+          "rank": 6,
           "text": "Raúl",
           "detail": "71 goals",
           "value": 71
         },
         {
-          "rank": 6,
-          "text": "Kylian Mbappé",
-          "detail": "70 goals",
-          "value": 70
-        },
-        {
           "rank": 7,
           "text": "Erling Haaland",
-          "detail": "57 goals",
-          "value": 57
+          "detail": "61 goals",
+          "value": 61
         },
         {
           "rank": 8,
+          "text": "Harry Kane",
+          "detail": "58 goals",
+          "value": 58
+        },
+        {
+          "rank": 9,
           "text": "Thomas Müller",
           "detail": "57 goals",
           "value": 57
         },
         {
-          "rank": 9,
+          "rank": 10,
           "text": "Ruud van Nistelrooy",
           "detail": "56 goals",
           "value": 56
-        },
-        {
-          "rank": 10,
-          "text": "Harry Kane",
-          "detail": "54 goals",
-          "value": 54
         }
       ]
     },
@@ -4242,8 +4260,8 @@
         {
           "rank": 8,
           "text": "Cole Palmer",
-          "detail": "47 goals",
-          "value": 47
+          "detail": "49 goals",
+          "value": 49
         },
         {
           "rank": 9,
@@ -4476,8 +4494,8 @@
         {
           "rank": 10,
           "text": "Ben Davies",
-          "detail": "245 apps",
-          "value": 245
+          "detail": "246 apps",
+          "value": 246
         }
       ]
     },
@@ -4544,8 +4562,8 @@
         {
           "rank": 9,
           "text": "Bruno Fernandes",
-          "detail": "71 goals",
-          "value": 71
+          "detail": "74 goals",
+          "value": 74
         },
         {
           "rank": 10,
@@ -4624,8 +4642,8 @@
         {
           "rank": 10,
           "text": "Marcus Rashford",
-          "detail": "287 apps",
-          "value": 287
+          "detail": "293 apps",
+          "value": 293
         }
       ]
     },
@@ -4685,19 +4703,19 @@
         },
         {
           "rank": 8,
+          "text": "Bukayo Saka",
+          "detail": "63 goals",
+          "value": 63
+        },
+        {
+          "rank": 9,
           "text": "Robert Pirès",
           "detail": "62 goals",
           "value": 62
         },
         {
-          "rank": 9,
-          "text": "Alexis Sánchez",
-          "detail": "60 goals",
-          "value": 60
-        },
-        {
           "rank": 10,
-          "text": "Bukayo Saka",
+          "text": "Alexis Sánchez",
           "detail": "60 goals",
           "value": 60
         }
@@ -4827,15 +4845,15 @@
         },
         {
           "rank": 7,
-          "text": "Andrew Robertson",
-          "detail": "275 apps",
-          "value": 275
+          "text": "Virgil van Dijk",
+          "detail": "279 apps",
+          "value": 279
         },
         {
           "rank": 8,
-          "text": "Virgil van Dijk",
-          "detail": "272 apps",
-          "value": 272
+          "text": "Andrew Robertson",
+          "detail": "275 apps",
+          "value": 275
         },
         {
           "rank": 9,
@@ -4845,9 +4863,9 @@
         },
         {
           "rank": 10,
-          "text": "Trent Alexander-Arnold",
-          "detail": "259 apps",
-          "value": 259
+          "text": "Alisson",
+          "detail": "262 apps",
+          "value": 262
         }
       ]
     },
@@ -4872,8 +4890,8 @@
         {
           "rank": 2,
           "text": "Erling Haaland",
-          "detail": "112 goals",
-          "value": 112
+          "detail": "120 goals",
+          "value": 120
         },
         {
           "rank": 3,
@@ -4890,8 +4908,8 @@
         {
           "rank": 5,
           "text": "Phil Foden",
-          "detail": "68 goals",
-          "value": 68
+          "detail": "69 goals",
+          "value": 69
         },
         {
           "rank": 6,
@@ -5000,6 +5018,9 @@
       ],
       "tieValue": 230,
       "tiePool": [
+        {
+          "text": "Phil Foden"
+        },
         {
           "text": "Yaya Touré"
         }
@@ -5168,20 +5189,20 @@
         {
           "rank": 1,
           "text": "Koke",
-          "detail": "519 apps",
-          "value": 519
+          "detail": "527 apps",
+          "value": 527
         },
         {
           "rank": 2,
-          "text": "Adelardo",
-          "detail": "401 apps",
-          "value": 401
+          "text": "Jan Oblak",
+          "detail": "408 apps",
+          "value": 408
         },
         {
           "rank": 3,
-          "text": "Jan Oblak",
-          "detail": "399 apps",
-          "value": 399
+          "text": "Adelardo",
+          "detail": "401 apps",
+          "value": 401
         },
         {
           "rank": 4,
@@ -5302,80 +5323,6 @@
       ]
     },
     {
-      "id": "gen-club-IT1-6195-apps",
-      "type": "player",
-      "scope": "club",
-      "title": "Serie A — Most Appearances for SSC Napoli",
-      "description": "Name the 10 players with the most Serie A apps for SSC Napoli.",
-      "icon": {
-        "type": "club",
-        "value": "SSC Napoli"
-      },
-      "daily": false,
-      "answers": [
-        {
-          "rank": 1,
-          "text": "Marek Hamsik",
-          "detail": "408 apps",
-          "value": 408
-        },
-        {
-          "rank": 2,
-          "text": "Giuseppe Bruscolotti",
-          "detail": "386 apps",
-          "value": 386
-        },
-        {
-          "rank": 3,
-          "text": "Antonio Juliano",
-          "detail": "354 apps",
-          "value": 354
-        },
-        {
-          "rank": 4,
-          "text": "Lorenzo Insigne",
-          "detail": "337 apps",
-          "value": 337
-        },
-        {
-          "rank": 5,
-          "text": "Moreno Ferrario",
-          "detail": "311 apps",
-          "value": 311
-        },
-        {
-          "rank": 6,
-          "text": "Dries Mertens",
-          "detail": "295 apps",
-          "value": 295
-        },
-        {
-          "rank": 7,
-          "text": "Piotr Zielinski",
-          "detail": "281 apps",
-          "value": 281
-        },
-        {
-          "rank": 8,
-          "text": "José Callejón",
-          "detail": "255 apps",
-          "value": 255
-        },
-        {
-          "rank": 9,
-          "text": "Ottavio Bugatti",
-          "detail": "255 apps",
-          "value": 255
-        },
-        {
-          "rank": 10,
-          "text": "Ciro Ferrara",
-          "detail": "247 apps",
-          "value": 247
-        }
-      ]
-    },
-    {
       "id": "gen-club-L1-27-goals",
       "type": "player",
       "scope": "club",
@@ -5425,15 +5372,15 @@
         },
         {
           "rank": 7,
-          "text": "Arjen Robben",
-          "detail": "99 goals",
-          "value": 99
+          "text": "Harry Kane",
+          "detail": "102 goals",
+          "value": 102
         },
         {
           "rank": 8,
-          "text": "Harry Kane",
-          "detail": "98 goals",
-          "value": 98
+          "text": "Arjen Robben",
+          "detail": "99 goals",
+          "value": 99
         },
         {
           "rank": 9,
@@ -5704,14 +5651,14 @@
         {
           "rank": 3,
           "text": "Bernd Leno",
-          "detail": "251 apps",
-          "value": 251
+          "detail": "258 apps",
+          "value": 258
         },
         {
           "rank": 4,
           "text": "Pascal Groß",
-          "detail": "247 apps",
-          "value": 247
+          "detail": "254 apps",
+          "value": 254
         },
         {
           "rank": 5,
@@ -5728,14 +5675,14 @@
         {
           "rank": 7,
           "text": "Kai Havertz",
-          "detail": "163 apps",
-          "value": 163
+          "detail": "170 apps",
+          "value": 170
         },
         {
           "rank": 8,
           "text": "Vitaly Janelt",
-          "detail": "161 apps",
-          "value": 161
+          "detail": "168 apps",
+          "value": 168
         },
         {
           "rank": 9,
@@ -5943,21 +5890,21 @@
         },
         {
           "rank": 6,
+          "text": "Youri Tielemans",
+          "detail": "251 apps",
+          "value": 251
+        },
+        {
+          "rank": 7,
           "text": "Eden Hazard",
           "detail": "245 apps",
           "value": 245
         },
         {
-          "rank": 7,
+          "rank": 8,
           "text": "Simon Mignolet",
           "detail": "245 apps",
           "value": 245
-        },
-        {
-          "rank": 8,
-          "text": "Youri Tielemans",
-          "detail": "244 apps",
-          "value": 244
         },
         {
           "rank": 9,
@@ -5999,15 +5946,15 @@
         },
         {
           "rank": 3,
-          "text": "Cristiano Ronaldo",
-          "detail": "236 apps",
-          "value": 236
+          "text": "Bruno Fernandes",
+          "detail": "237 apps",
+          "value": 237
         },
         {
           "rank": 4,
-          "text": "Bruno Fernandes",
-          "detail": "230 apps",
-          "value": 230
+          "text": "Cristiano Ronaldo",
+          "detail": "236 apps",
+          "value": 236
         },
         {
           "rank": 5,
@@ -6018,32 +5965,32 @@
         {
           "rank": 6,
           "text": "Pedro Neto",
+          "detail": "187 apps",
+          "value": 187
+        },
+        {
+          "rank": 7,
+          "text": "Diogo Dalot",
           "detail": "180 apps",
           "value": 180
         },
         {
-          "rank": 7,
+          "rank": 8,
           "text": "José Fonte",
           "detail": "178 apps",
           "value": 178
         },
         {
-          "rank": 8,
-          "text": "Rúben Neves",
-          "detail": "177 apps",
-          "value": 177
-        },
-        {
           "rank": 9,
-          "text": "João Moutinho",
-          "detail": "175 apps",
-          "value": 175
+          "text": "Rúben Dias",
+          "detail": "178 apps",
+          "value": 178
         },
         {
           "rank": 10,
-          "text": "Diogo Dalot",
-          "detail": "173 apps",
-          "value": 173
+          "text": "Rúben Neves",
+          "detail": "177 apps",
+          "value": 177
         }
       ]
     },
@@ -6091,27 +6038,27 @@
         },
         {
           "rank": 6,
+          "text": "João Pedro",
+          "detail": "42 goals",
+          "value": 42
+        },
+        {
+          "rank": 7,
           "text": "Gabriel Martinelli",
           "detail": "41 goals",
           "value": 41
         },
         {
-          "rank": 7,
-          "text": "Matheus Cunha",
-          "detail": "39 goals",
-          "value": 39
-        },
-        {
           "rank": 8,
-          "text": "João Pedro",
-          "detail": "37 goals",
-          "value": 37
+          "text": "Matheus Cunha",
+          "detail": "40 goals",
+          "value": 40
         },
         {
           "rank": 9,
           "text": "Bruno Guimarães",
-          "detail": "30 goals",
-          "value": 30
+          "detail": "32 goals",
+          "value": 32
         },
         {
           "rank": 10,
@@ -6148,8 +6095,8 @@
         {
           "rank": 3,
           "text": "Richarlison",
-          "detail": "275 apps",
-          "value": 275
+          "detail": "276 apps",
+          "value": 276
         },
         {
           "rank": 4,
@@ -6159,15 +6106,15 @@
         },
         {
           "rank": 5,
-          "text": "Roberto Firmino",
-          "detail": "256 apps",
-          "value": 256
+          "text": "Alisson",
+          "detail": "262 apps",
+          "value": 262
         },
         {
           "rank": 6,
-          "text": "Alisson",
-          "detail": "255 apps",
-          "value": 255
+          "text": "Roberto Firmino",
+          "detail": "256 apps",
+          "value": 256
         },
         {
           "rank": 7,
@@ -6183,15 +6130,15 @@
         },
         {
           "rank": 9,
-          "text": "David Luiz",
-          "detail": "213 apps",
-          "value": 213
+          "text": "Joelinton",
+          "detail": "214 apps",
+          "value": 214
         },
         {
           "rank": 10,
-          "text": "Joelinton",
-          "detail": "212 apps",
-          "value": 212
+          "text": "David Luiz",
+          "detail": "213 apps",
+          "value": 213
         }
       ]
     },
@@ -6222,8 +6169,8 @@
         {
           "rank": 3,
           "text": "Emiliano Martínez",
-          "detail": "228 apps",
-          "value": 228
+          "detail": "234 apps",
+          "value": 234
         },
         {
           "rank": 4,
@@ -6234,8 +6181,8 @@
         {
           "rank": 5,
           "text": "Alexis Mac Allister",
-          "detail": "203 apps",
-          "value": 203
+          "detail": "210 apps",
+          "value": 210
         },
         {
           "rank": 6,
@@ -6263,9 +6210,9 @@
         },
         {
           "rank": 10,
-          "text": "Claudio Yacob",
-          "detail": "160 apps",
-          "value": 160
+          "text": "Emiliano Buendía",
+          "detail": "164 apps",
+          "value": 164
         }
       ]
     },
@@ -6486,8 +6433,8 @@
         {
           "rank": 10,
           "text": "Vinicius Junior",
-          "detail": "242 apps",
-          "value": 242
+          "detail": "250 apps",
+          "value": 250
         }
       ]
     },
@@ -6566,80 +6513,6 @@
       ]
     },
     {
-      "id": "gen-natcomp-ES1-argentina-apps",
-      "type": "player",
-      "scope": "nationality",
-      "title": "La Liga — Top Argentina Appearances",
-      "description": "Name the 10 top Argentina players by appearances in the La Liga.",
-      "icon": {
-        "type": "nationality",
-        "value": "Argentina"
-      },
-      "daily": false,
-      "answers": [
-        {
-          "rank": 1,
-          "text": "Lionel Messi",
-          "detail": "520 apps",
-          "value": 520
-        },
-        {
-          "rank": 2,
-          "text": "Ariel Ibagaza",
-          "detail": "343 apps",
-          "value": 343
-        },
-        {
-          "rank": 3,
-          "text": "Fernando Cáceres",
-          "detail": "340 apps",
-          "value": 340
-        },
-        {
-          "rank": 4,
-          "text": "Ángel Correa",
-          "detail": "335 apps",
-          "value": 335
-        },
-        {
-          "rank": 5,
-          "text": "Leo Franco",
-          "detail": "329 apps",
-          "value": 329
-        },
-        {
-          "rank": 6,
-          "text": "Éver Banega",
-          "detail": "315 apps",
-          "value": 315
-        },
-        {
-          "rank": 7,
-          "text": "Pablo Piatti",
-          "detail": "313 apps",
-          "value": 313
-        },
-        {
-          "rank": 8,
-          "text": "Gustavo López",
-          "detail": "310 apps",
-          "value": 310
-        },
-        {
-          "rank": 9,
-          "text": "Carlos Fenoy",
-          "detail": "300 apps",
-          "value": 300
-        },
-        {
-          "rank": 10,
-          "text": "Mauricio Pochettino",
-          "detail": "276 apps",
-          "value": 276
-        }
-      ]
-    },
-    {
       "id": "gen-natcomp-ES1-france-apps",
       "type": "player",
       "scope": "nationality",
@@ -6666,8 +6539,8 @@
         {
           "rank": 3,
           "text": "Florian Lejeune",
-          "detail": "241 apps",
-          "value": 241
+          "detail": "249 apps",
+          "value": 249
         },
         {
           "rank": 4,
@@ -6690,8 +6563,8 @@
         {
           "rank": 7,
           "text": "Jules Koundé",
-          "detail": "221 apps",
-          "value": 221
+          "detail": "227 apps",
+          "value": 227
         },
         {
           "rank": 8,
@@ -6844,8 +6717,8 @@
         {
           "rank": 8,
           "text": "Gonçalo Guedes",
-          "detail": "195 apps",
-          "value": 195
+          "detail": "203 apps",
+          "value": 203
         },
         {
           "rank": 9,
@@ -6882,8 +6755,8 @@
         {
           "rank": 2,
           "text": "Marten de Roon",
-          "detail": "340 apps",
-          "value": 340
+          "detail": "344 apps",
+          "value": 344
         },
         {
           "rank": 3,
@@ -6918,8 +6791,8 @@
         {
           "rank": 8,
           "text": "Teun Koopmeiners",
-          "detail": "158 apps",
-          "value": 158
+          "detail": "164 apps",
+          "value": 164
         },
         {
           "rank": 9,
@@ -6962,8 +6835,8 @@
         {
           "rank": 3,
           "text": "Lautaro Martínez",
-          "detail": "132 goals",
-          "value": 132
+          "detail": "136 goals",
+          "value": 136
         },
         {
           "rank": 4,
@@ -7004,8 +6877,8 @@
         {
           "rank": 10,
           "text": "Giovanni Simeone",
-          "detail": "84 goals",
-          "value": 84
+          "detail": "86 goals",
+          "value": 86
         }
       ]
     },
@@ -7036,8 +6909,8 @@
         {
           "rank": 3,
           "text": "Paulo Dybala",
-          "detail": "370 apps",
-          "value": 370
+          "detail": "376 apps",
+          "value": 376
         },
         {
           "rank": 4,
@@ -7054,8 +6927,8 @@
         {
           "rank": 6,
           "text": "Giovanni Simeone",
-          "detail": "330 apps",
-          "value": 330
+          "detail": "338 apps",
+          "value": 338
         },
         {
           "rank": 7,
@@ -7196,8 +7069,8 @@
         {
           "rank": 5,
           "text": "Alexis Saelemaekers",
-          "detail": "199 apps",
-          "value": 199
+          "detail": "203 apps",
+          "value": 203
         },
         {
           "rank": 6,
@@ -7214,8 +7087,8 @@
         {
           "rank": 8,
           "text": "Charles De Ketelaere",
-          "detail": "134 apps",
-          "value": 134
+          "detail": "141 apps",
+          "value": 141
         },
         {
           "rank": 9,
@@ -7338,8 +7211,8 @@
         {
           "rank": 4,
           "text": "Christopher Nkunku",
-          "detail": "47 goals",
-          "value": 47
+          "detail": "51 goals",
+          "value": 51
         },
         {
           "rank": 5,
@@ -7361,21 +7234,21 @@
         },
         {
           "rank": 8,
-          "text": "Johan Micoud",
-          "detail": "31 goals",
-          "value": 31
+          "text": "Michael Olise",
+          "detail": "32 goals",
+          "value": 32
         },
         {
           "rank": 9,
           "text": "Moussa Diaby",
-          "detail": "31 goals",
-          "value": 31
+          "detail": "32 goals",
+          "value": 32
         },
         {
           "rank": 10,
-          "text": "Michael Olise",
-          "detail": "27 goals",
-          "value": 27
+          "text": "Johan Micoud",
+          "detail": "31 goals",
+          "value": 31
         }
       ]
     },
@@ -7406,8 +7279,8 @@
         {
           "rank": 3,
           "text": "Dayot Upamecano",
-          "detail": "238 apps",
-          "value": 238
+          "detail": "244 apps",
+          "value": 244
         },
         {
           "rank": 4,
@@ -7468,8 +7341,8 @@
         {
           "rank": 1,
           "text": "Anthony Lopes",
-          "detail": "427 apps",
-          "value": 427
+          "detail": "434 apps",
+          "value": 434
         },
         {
           "rank": 2,
@@ -7515,15 +7388,15 @@
         },
         {
           "rank": 9,
-          "text": "Paulo Machado",
-          "detail": "124 apps",
-          "value": 124
+          "text": "Vitinha",
+          "detail": "129 apps",
+          "value": 129
         },
         {
           "rank": 10,
-          "text": "Bruno Basto",
-          "detail": "123 apps",
-          "value": 123
+          "text": "Paulo Machado",
+          "detail": "124 apps",
+          "value": 124
         }
       ]
     }

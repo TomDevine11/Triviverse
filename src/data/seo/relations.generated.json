@@ -80,7 +80,7 @@
       "tier": "rich",
       "total": 28,
       "totalQualifying": 28,
-      "famous": 2,
+      "famous": 1,
       "notable": 2,
       "players": [
         {
@@ -182,7 +182,7 @@
         {
           "id": "4257",
           "n": "Samuel Eto'o",
-          "s": true,
+          "s": false,
           "a": {
             "apps": 182,
             "goals": 124
@@ -562,7 +562,7 @@
       "tier": "rich",
       "total": 53,
       "totalQualifying": 53,
-      "famous": 7,
+      "famous": 6,
       "notable": 7,
       "players": [
         {
@@ -638,8 +638,8 @@
             "goals": 22
           },
           "b": {
-            "apps": 192,
-            "goals": 44
+            "apps": 200,
+            "goals": 47
           },
           "surname": "calhanoglu",
           "aliases": [],
@@ -920,7 +920,7 @@
         {
           "id": "19447",
           "n": "Giampaolo Pazzini",
-          "s": true,
+          "s": false,
           "a": {
             "apps": 81,
             "goals": 21
@@ -1436,10 +1436,10 @@
       "aId": "11",
       "bId": "631",
       "tier": "rich",
-      "total": 17,
-      "totalQualifying": 17,
-      "famous": 9,
-      "notable": 11,
+      "total": 19,
+      "totalQualifying": 19,
+      "famous": 10,
+      "notable": 13,
       "players": [
         {
           "id": "5658",
@@ -1590,8 +1590,8 @@
           "n": "Kai Havertz",
           "s": true,
           "a": {
-            "apps": 96,
-            "goals": 33
+            "apps": 106,
+            "goals": 35
           },
           "b": {
             "apps": 122,
@@ -1636,7 +1636,7 @@
         {
           "id": "192279",
           "n": "Kepa Arrizabalaga",
-          "s": true,
+          "s": false,
           "a": {
             "apps": 2,
             "goals": 0
@@ -1656,14 +1656,30 @@
           "n": "Noni Madueke",
           "s": false,
           "a": {
-            "apps": 36,
-            "goals": 6
+            "apps": 43,
+            "goals": 7
           },
           "b": {
             "apps": 67,
             "goals": 13
           },
           "surname": "madueke",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "67063",
+          "n": "Danny Welbeck",
+          "s": true,
+          "a": {
+            "apps": 96,
+            "goals": 19
+          },
+          "b": {
+            "apps": 5,
+            "goals": 0
+          },
+          "surname": "welbeck",
           "aliases": [],
           "flags": []
         },
@@ -1714,6 +1730,22 @@
           "surname": "diarra",
           "aliases": [],
           "flags": []
+        },
+        {
+          "id": "111873",
+          "n": "Emiliano Martínez",
+          "s": true,
+          "a": {
+            "apps": 17,
+            "goals": 0
+          },
+          "b": {
+            "apps": 6,
+            "goals": 0
+          },
+          "surname": "martinez",
+          "aliases": [],
+          "flags": []
         }
       ],
       "coverageNote": "Counted from appearances in the Premier League (from 1992), La Liga, Serie A, Bundesliga or Ligue 1, plus Champions League appearances from 1992. Pre-1992 English First Division and European Cup appearances aren’t included, so all-time totals published elsewhere can be higher.",
@@ -1734,15 +1766,15 @@
       "aId": "631",
       "bId": "281",
       "tier": "rich",
-      "total": 20,
-      "totalQualifying": 20,
+      "total": 21,
+      "totalQualifying": 21,
       "famous": 6,
-      "notable": 6,
+      "notable": 8,
       "players": [
         {
           "id": "3163",
           "n": "Frank Lampard",
-          "s": true,
+          "s": false,
           "a": {
             "apps": 531,
             "goals": 170
@@ -1812,7 +1844,7 @@
             "goals": 6
           },
           "b": {
-            "apps": 80,
+            "apps": 84,
             "goals": 8
           },
           "surname": "kovacic",
@@ -1868,12 +1900,28 @@
           "flags": []
         },
         {
+          "id": "648195",
+          "n": "Enzo Fernández",
+          "s": true,
+          "a": {
+            "apps": 133,
+            "goals": 22
+          },
+          "b": {
+            "apps": 9,
+            "goals": 1
+          },
+          "surname": "fernandez",
+          "aliases": [],
+          "flags": []
+        },
+        {
           "id": "568177",
           "n": "Cole Palmer",
           "s": true,
           "a": {
-            "apps": 100,
-            "goals": 48
+            "apps": 107,
+            "goals": 50
           },
           "b": {
             "apps": 27,
@@ -2064,8 +2112,8 @@
       "externalVerified": false,
       "warnings": [],
       "related": [
-        "chelsea-and-real-madrid",
         "arsenal-and-chelsea",
+        "chelsea-and-real-madrid",
         "manchester-city-and-manchester-united"
       ]
     },
@@ -2284,7 +2332,7 @@
             "goals": 2
           },
           "b": {
-            "apps": 106,
+            "apps": 113,
             "goals": 7
           },
           "surname": "sabitzer",
@@ -2420,10 +2468,10 @@
       "aId": "631",
       "bId": "418",
       "tier": "rich",
-      "total": 17,
-      "totalQualifying": 17,
-      "famous": 10,
-      "notable": 10,
+      "total": 18,
+      "totalQualifying": 18,
+      "famous": 9,
+      "notable": 11,
       "players": [
         {
           "id": "108390",
@@ -2434,7 +2482,7 @@
             "goals": 0
           },
           "b": {
-            "apps": 303,
+            "apps": 315,
             "goals": 0
           },
           "surname": "courtois",
@@ -2482,8 +2530,8 @@
             "goals": 10
           },
           "b": {
-            "apps": 155,
-            "goals": 6
+            "apps": 161,
+            "goals": 8
           },
           "surname": "rudiger",
           "aliases": [],
@@ -2622,7 +2670,7 @@
         {
           "id": "192279",
           "n": "Kepa Arrizabalaga",
-          "s": true,
+          "s": false,
           "a": {
             "apps": 126,
             "goals": 0
@@ -2632,6 +2680,22 @@
             "goals": 0
           },
           "surname": "arrizabalaga",
+          "aliases": [],
+          "flags": []
+        },
+        {
+          "id": "284857",
+          "n": "Marc Cucurella",
+          "s": true,
+          "a": {
+            "apps": 132,
+            "goals": 6
+          },
+          "b": {
+            "apps": 12,
+            "goals": 0
+          },
+          "surname": "cucurella",
           "aliases": [],
           "flags": []
         },
@@ -2686,7 +2750,7 @@
         {
           "id": "4257",
           "n": "Samuel Eto'o",
-          "s": true,
+          "s": false,
           "a": {
             "apps": 30,
             "goals": 12
@@ -3071,7 +3135,7 @@
       "total": 4,
       "totalQualifying": 4,
       "famous": 0,
-      "notable": 1,
+      "notable": 0,
       "players": [
         {
           "id": "3198",
