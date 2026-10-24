@@ -44,9 +44,16 @@ function lookups(q) {
 // A typed/selected player → its scored answer, or null if not a valid answer.
 // Tries: exact name → same tokens any order (East-Asian name order) → unambiguous
 // surname. The order-insensitive/surname fallbacks only fire when unambiguous.
-export function matchAnswer(q, typed) {
+// A player picked from the dropdown also passes its id: answers whose name is
+// shared carry one (`i`), so a namesake is matched to the right answer or rejected.
+export function matchAnswer(q, typed, id = null) {
   const n = norm(typed)
   const { byName, bySurname, bySorted } = lookups(q)
+  if (id) {
+    const exact = q.answers.find(a => a.i === id)
+    if (exact) return exact
+    if (id.startsWith('tm:') && byName.get(n)?.i) return null // that answer is a namesake
+  }
   if (byName.has(n)) return byName.get(n)
   const sk = sortedKey(n)
   if (sk.includes(' ')) { const s = bySorted.get(sk); if (s && s.length === 1) return s[0] }

@@ -20044,7 +20044,7 @@
   ],
   "positions": [],
   "recognisable": true,
-  "slug": "mbwana-samatta"
+  "slug": "p:mbwana-samatta"
  },
  {
   "id": "p:mengalvio",
@@ -20613,7 +20613,7 @@
   ],
   "positions": [],
   "recognisable": true,
-  "slug": "mousa-al-tamari"
+  "slug": "p:mousa-al-tamari"
  },
  {
   "id": "p:muller-1966",
@@ -31700,7 +31700,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "moses-usor"
+  "slug": "tm:1003622"
  },
  {
   "id": "tm:100399",
@@ -32032,7 +32032,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "william-gomes"
+  "slug": "tm:1004725"
  },
  {
   "id": "tm:100474",
@@ -33124,7 +33124,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "santiago-castaneda"
+  "slug": "tm:1005509"
  },
  {
   "id": "tm:1005575",
@@ -33212,7 +33212,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "joao-tornich"
+  "slug": "tm:1005651"
  },
  {
   "id": "tm:10058",
@@ -34484,7 +34484,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "zavier-gozo"
+  "slug": "tm:1007383"
  },
  {
   "id": "tm:100743",
@@ -35222,7 +35222,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "dominik-drobnic"
+  "slug": "tm:1009616"
  },
  {
   "id": "tm:1009658",
@@ -35405,7 +35405,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "adam-bakoune"
+  "slug": "tm:1010150"
  },
  {
   "id": "tm:101017",
@@ -35819,7 +35819,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "sahmkou-camara"
+  "slug": "tm:1010818"
  },
  {
   "id": "tm:1010854",
@@ -39104,7 +39104,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "wiktor-nowak"
+  "slug": "tm:1018224"
  },
  {
   "id": "tm:101825",
@@ -40116,8 +40116,6 @@
   "fame": 100,
   "curated": false,
   "nationalities": [
-   "Brazil",
-   "Guinea-Bissau",
    "Italy"
   ],
   "positions": [
@@ -40914,7 +40912,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "jeremiaha-maluze"
+  "slug": "tm:1022523"
  },
  {
   "id": "tm:102258",
@@ -44735,7 +44733,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "gleiker-mendoza"
+  "slug": "tm:1029207"
  },
  {
   "id": "tm:1029294",
@@ -44801,7 +44799,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "william-harhouz"
+  "slug": "tm:1029482"
  },
  {
   "id": "tm:10295",
@@ -49183,7 +49181,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "omar-fayed"
+  "slug": "tm:1036405"
  },
  {
   "id": "tm:103641",
@@ -50227,7 +50225,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "raphael-kofler"
+  "slug": "tm:1039342"
  },
  {
   "id": "tm:1039825",
@@ -50860,7 +50858,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "yvan-maye"
+  "slug": "tm:1041129"
  },
  {
   "id": "tm:104115",
@@ -52823,7 +52821,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "genesis-antwi"
+  "slug": "tm:1045121"
  },
  {
   "id": "tm:1045123",
@@ -52955,7 +52953,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "niko-sigur"
+  "slug": "tm:1045375"
  },
  {
   "id": "tm:1045446",
@@ -53840,7 +53838,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "stephen-mfuni"
+  "slug": "tm:1049020"
  },
  {
   "id": "tm:104903",
@@ -55087,7 +55085,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "reigan-heskey"
+  "slug": "tm:1056437"
  },
  {
   "id": "tm:10566",
@@ -55668,7 +55666,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "rafa-rodriguez"
+  "slug": "tm:1057394"
  },
  {
   "id": "tm:1057523",
@@ -55910,7 +55908,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "simone-lontani"
+  "slug": "tm:1058366"
  },
  {
   "id": "tm:1058368",
@@ -56313,7 +56311,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "matia-barzic"
+  "slug": "tm:1060456"
  },
  {
   "id": "tm:106064",
@@ -56908,7 +56906,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "amin-cosic"
+  "slug": "tm:1062729"
  },
  {
   "id": "tm:106306",
@@ -56952,7 +56950,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "deniz-gul"
+  "slug": "tm:1063292"
  },
  {
   "id": "tm:1063329",
@@ -57288,7 +57286,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "kevin-sanchez"
+  "slug": "tm:1064139"
  },
  {
   "id": "tm:1064184",
@@ -57310,7 +57308,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "ayoni-santos"
+  "slug": "tm:1064184"
  },
  {
   "id": "tm:10642",
@@ -57383,7 +57381,7 @@
   "reviewFlags": [
    "possible-namesake"
   ],
-  "slug": "paul-okon-engstler"
+  "slug": "tm:1064377"
  },
  {
   "id": "tm:106441",
@@ -57493,7 +57491,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "rafita-garrido"
+  "slug": "tm:1064717"
  },
  {
   "id": "tm:1064871",
@@ -57625,7 +57623,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "mauro-echegoyen"
+  "slug": "tm:1065440"
  },
  {
   "id": "tm:1065442",
@@ -57669,7 +57667,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "unai-santos"
+  "slug": "tm:1065454"
  },
  {
   "id": "tm:1065832",
@@ -57934,7 +57932,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "fritz-fleck"
+  "slug": "tm:1067439"
  },
  {
   "id": "tm:10676",
@@ -60127,7 +60125,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "mathieu-nguefack"
+  "slug": "tm:1070980"
  },
  {
   "id": "tm:107099",
@@ -62722,7 +62720,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "joane-gadou"
+  "slug": "tm:1075577"
  },
  {
   "id": "tm:1075580",
@@ -62744,7 +62742,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "mathys-niflore"
+  "slug": "tm:1075580"
  },
  {
   "id": "tm:1075583",
@@ -63972,7 +63970,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "kaden-braithwaite"
+  "slug": "tm:1078156"
  },
  {
   "id": "tm:1078159",
@@ -64193,7 +64191,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "izan-merino"
+  "slug": "tm:1078436"
  },
  {
   "id": "tm:107860",
@@ -64304,7 +64302,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "timur-tuterov"
+  "slug": "tm:1079078"
  },
  {
   "id": "tm:107919",
@@ -64678,7 +64676,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "paul-erevbenagie"
+  "slug": "tm:1080555"
  },
  {
   "id": "tm:1080924",
@@ -65190,7 +65188,7 @@
   "reviewFlags": [
    "possible-namesake"
   ],
-  "slug": "allan"
+  "slug": "tm:1082631"
  },
  {
   "id": "tm:1082774",
@@ -65556,7 +65554,7 @@
   "aliases": [
    "Alisson"
   ],
-  "fame": 0,
+  "fame": 100,
   "curated": false,
   "nationalities": [
    "Brazil"
@@ -65570,7 +65568,8 @@
   "reviewFlags": [
    "possible-namesake"
   ],
-  "slug": "alisson"
+  "slug": "tm:1083070",
+  "recognisable": true
  },
  {
   "id": "tm:1083116",
@@ -67156,7 +67155,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "abdou-salam-konate"
+  "slug": "tm:1087009"
  },
  {
   "id": "tm:108701",
@@ -67871,7 +67870,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "tobias-van-den-elshout"
+  "slug": "tm:1087982"
  },
  {
   "id": "tm:1088110",
@@ -72969,7 +72968,7 @@
   "reviewFlags": [
    "possible-namesake"
   ],
-  "slug": "otavio"
+  "slug": "tm:1094885"
  },
  {
   "id": "tm:109489",
@@ -79490,7 +79489,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "nathan-de-cat"
+  "slug": "tm:1105541"
  },
  {
   "id": "tm:110577",
@@ -79666,7 +79665,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "diego-diaz"
+  "slug": "tm:1106911"
  },
  {
   "id": "tm:110708",
@@ -79754,7 +79753,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "mohamed-ouedraogo"
+  "slug": "tm:1107570"
  },
  {
   "id": "tm:1107726",
@@ -82097,7 +82096,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "rael-nakuzola"
+  "slug": "tm:1112952"
  },
  {
   "id": "tm:1113",
@@ -82141,7 +82140,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "alexej-maros"
+  "slug": "tm:1113217"
  },
  {
   "id": "tm:111338",
@@ -82274,7 +82273,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "christ-makosso"
+  "slug": "tm:1113528"
  },
  {
   "id": "tm:111355",
@@ -83998,7 +83997,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "joseph-kalulu"
+  "slug": "tm:1117092"
  },
  {
   "id": "tm:111740",
@@ -84376,7 +84375,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "jan-leszczynski"
+  "slug": "tm:1118874"
  },
  {
   "id": "tm:111893",
@@ -84486,7 +84485,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "kaua-elias"
+  "slug": "tm:1119009"
  },
  {
   "id": "tm:111932",
@@ -84558,7 +84557,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "rayan-mandengue"
+  "slug": "tm:1119338"
  },
  {
   "id": "tm:1119391",
@@ -84780,7 +84779,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "noah-donkor"
+  "slug": "tm:1119840"
  },
  {
   "id": "tm:1119845",
@@ -84802,7 +84801,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "anis-ouzenadji"
+  "slug": "tm:1119845"
  },
  {
   "id": "tm:1119877",
@@ -84824,7 +84823,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "guy-noel-zohouri"
+  "slug": "tm:1119877"
  },
  {
   "id": "tm:1119880",
@@ -85022,7 +85021,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "vetle-auklend"
+  "slug": "tm:1120134"
  },
  {
   "id": "tm:1120184",
@@ -88968,7 +88967,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "lamine-fanne"
+  "slug": "tm:1126888"
  },
  {
   "id": "tm:1126894",
@@ -91714,7 +91713,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "omar-sissoko"
+  "slug": "tm:1132426"
  },
  {
   "id": "tm:113250",
@@ -100119,7 +100118,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "foe-ondoa"
+  "slug": "tm:1143375"
  },
  {
   "id": "tm:114340",
@@ -101336,7 +101335,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "amir-bouhamdi"
+  "slug": "tm:1146474"
  },
  {
   "id": "tm:1146513",
@@ -101446,7 +101445,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "keita-kosugi"
+  "slug": "tm:1146988"
  },
  {
   "id": "tm:1147248",
@@ -104490,7 +104489,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "clemens-lippmann"
+  "slug": "tm:1148887"
  },
  {
   "id": "tm:1148888",
@@ -105348,7 +105347,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "rockson-yeboah"
+  "slug": "tm:1149188"
  },
  {
   "id": "tm:1149189",
@@ -111238,7 +111237,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "adam-zulevic"
+  "slug": "tm:1153661"
  },
  {
   "id": "tm:115382",
@@ -113689,7 +113688,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "souleymane-sagnan"
+  "slug": "tm:1160378"
  },
  {
   "id": "tm:116061",
@@ -113894,7 +113893,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "isaac-cossier"
+  "slug": "tm:1160753"
  },
  {
   "id": "tm:116076",
@@ -114412,7 +114411,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "oskar-pietuszewski"
+  "slug": "tm:1162012"
  },
  {
   "id": "tm:1162413",
@@ -114434,7 +114433,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "luca-vozar"
+  "slug": "tm:1162413"
  },
  {
   "id": "tm:1162654",
@@ -114500,7 +114499,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "mekhi-gray"
+  "slug": "tm:1162925"
  },
  {
   "id": "tm:1162968",
@@ -115337,7 +115336,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "adil-bourabaa"
+  "slug": "tm:1166137"
  },
  {
   "id": "tm:116614",
@@ -117233,7 +117232,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "ifeanyi-ndukwe"
+  "slug": "tm:1167696"
  },
  {
   "id": "tm:116792",
@@ -117277,7 +117276,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "mathis-mout"
+  "slug": "tm:1167990"
  },
  {
   "id": "tm:11680",
@@ -117657,7 +117656,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "noa-boisse"
+  "slug": "tm:1169041"
  },
  {
   "id": "tm:116905",
@@ -119099,7 +119098,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "mathys-detourbet"
+  "slug": "tm:1171981"
  },
  {
   "id": "tm:117199",
@@ -119209,7 +119208,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "franz-ethan-meichtry"
+  "slug": "tm:1172166"
  },
  {
   "id": "tm:117219",
@@ -121105,7 +121104,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "emanuele-lulli"
+  "slug": "tm:1175298"
  },
  {
   "id": "tm:1175304",
@@ -121127,7 +121126,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "alessandro-sugamele"
+  "slug": "tm:1175304"
  },
  {
   "id": "tm:1175410",
@@ -122503,7 +122502,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "bright-ede"
+  "slug": "tm:1177033"
  },
  {
   "id": "tm:1177237",
@@ -122569,7 +122568,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "ismail-diallo"
+  "slug": "tm:1177290"
  },
  {
   "id": "tm:117731",
@@ -126456,7 +126455,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "kelyann-bezahaf"
+  "slug": "tm:1183715"
  },
  {
   "id": "tm:1183719",
@@ -127099,7 +127098,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "emmanuel-mbemba"
+  "slug": "tm:1185941"
  },
  {
   "id": "tm:1186",
@@ -127143,7 +127142,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "safouane-benzahra"
+  "slug": "tm:1186029"
  },
  {
   "id": "tm:1186235",
@@ -127187,7 +127186,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "jacobo-ortega"
+  "slug": "tm:1186237"
  },
  {
   "id": "tm:1186244",
@@ -127769,7 +127768,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "ryan-mcaidoo"
+  "slug": "tm:1187640"
  },
  {
   "id": "tm:1187942",
@@ -127813,7 +127812,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "mathis-laine"
+  "slug": "tm:1188254"
  },
  {
   "id": "tm:118847",
@@ -128124,7 +128123,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "mikkel-bro-hansen"
+  "slug": "tm:1189915"
  },
  {
   "id": "tm:1189921",
@@ -133880,7 +133879,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "alex-marchal"
+  "slug": "tm:1201530"
  },
  {
   "id": "tm:120175",
@@ -137451,7 +137450,7 @@
   "reviewFlags": [
    "possible-namesake"
   ],
-  "slug": "lamine-ndiaye"
+  "slug": "tm:1207432"
  },
  {
   "id": "tm:120745",
@@ -137979,7 +137978,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "djelan-morana"
+  "slug": "tm:1208979"
  },
  {
   "id": "tm:12090",
@@ -140587,7 +140586,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "iaia-manco-danfa"
+  "slug": "tm:1211929"
  },
  {
   "id": "tm:1211949",
@@ -142984,7 +142983,6 @@
   "fame": 27,
   "curated": false,
   "nationalities": [
-   "Brazil",
    "Italy"
   ],
   "positions": [
@@ -143547,7 +143545,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "isaque"
+  "slug": "tm:1219752"
  },
  {
   "id": "tm:1219849",
@@ -143569,7 +143567,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "lucas-ferreira"
+  "slug": "tm:1219849"
  },
  {
   "id": "tm:121985",
@@ -143759,7 +143757,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "luca-meirelles"
+  "slug": "tm:1220143"
  },
  {
   "id": "tm:1220261",
@@ -143958,7 +143956,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "vincent-sasso"
+  "slug": "tm:122115"
  },
  {
   "id": "tm:1221152",
@@ -145784,7 +145782,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "umaru-konare"
+  "slug": "tm:1226602"
  },
  {
   "id": "tm:122675",
@@ -146636,7 +146634,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "hakim-dongopandji"
+  "slug": "tm:1228318"
  },
  {
   "id": "tm:1228320",
@@ -147619,7 +147617,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "alasana-yirajang"
+  "slug": "tm:1231655"
  },
  {
   "id": "tm:1231659",
@@ -148193,7 +148191,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "gaoussou-diarra"
+  "slug": "tm:1233996"
  },
  {
   "id": "tm:1234626",
@@ -149016,7 +149014,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "nico-guillen"
+  "slug": "tm:1236856"
  },
  {
   "id": "tm:12370",
@@ -149948,7 +149946,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "christian-nwachukwu"
+  "slug": "tm:1239794"
  },
  {
   "id": "tm:12398",
@@ -150226,7 +150224,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "caleb-yirenkyi"
+  "slug": "tm:1240763"
  },
  {
   "id": "tm:124083",
@@ -150309,8 +150307,7 @@
   "fame": 39,
   "curated": false,
   "nationalities": [
-   "England",
-   "Wales"
+   "England"
   ],
   "positions": [
    "forward",
@@ -152090,7 +152087,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "youssef-khoudda"
+  "slug": "tm:1253657"
  },
  {
   "id": "tm:1254",
@@ -152222,7 +152219,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "aimar-blazquez"
+  "slug": "tm:1254646"
  },
  {
   "id": "tm:1254786",
@@ -153007,7 +153004,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "juan-riquelme-angulo"
+  "slug": "tm:1257410"
  },
  {
   "id": "tm:125745",
@@ -153118,7 +153115,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "gabriel-kulla"
+  "slug": "tm:1257915"
  },
  {
   "id": "tm:125797",
@@ -153278,7 +153275,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "jose-angel-lopez"
+  "slug": "tm:1258838"
  },
  {
   "id": "tm:12589",
@@ -153344,7 +153341,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "hamza-abdelkarim"
+  "slug": "tm:1259085"
  },
  {
   "id": "tm:1259094",
@@ -153741,7 +153738,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "malik-pimpong"
+  "slug": "tm:1259986"
  },
  {
   "id": "tm:126",
@@ -154338,7 +154335,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "jorge-salinas"
+  "slug": "tm:1262996"
  },
  {
   "id": "tm:1263",
@@ -154495,7 +154492,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "floyd-samba"
+  "slug": "tm:1263739"
  },
  {
   "id": "tm:1264",
@@ -156151,7 +156148,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "sota-nakamura"
+  "slug": "tm:1268075"
  },
  {
   "id": "tm:12684",
@@ -157044,7 +157041,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "oumar-konate"
+  "slug": "tm:1270789"
  },
  {
   "id": "tm:1270796",
@@ -157066,7 +157063,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "christ-tape"
+  "slug": "tm:1270796"
  },
  {
   "id": "tm:127083",
@@ -158452,7 +158449,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "kaua-prates"
+  "slug": "tm:1275068"
  },
  {
   "id": "tm:127554",
@@ -159605,7 +159602,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "christ-inao-oulai"
+  "slug": "tm:1279526"
  },
  {
   "id": "tm:127987",
@@ -159673,7 +159670,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "lucas-herrington"
+  "slug": "tm:1279984"
  },
  {
   "id": "tm:12800",
@@ -160004,7 +160001,6 @@
   "fame": 54,
   "curated": false,
   "nationalities": [
-   "Brazil",
    "Spain"
   ],
   "positions": [
@@ -160246,7 +160242,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "mikel-amondarain"
+  "slug": "tm:1283311"
  },
  {
   "id": "tm:128375",
@@ -161991,7 +161987,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "lamfia-dioubate"
+  "slug": "tm:1291922"
  },
  {
   "id": "tm:1291928",
@@ -162013,7 +162009,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "elikya-legros"
+  "slug": "tm:1291928"
  },
  {
   "id": "tm:1291929",
@@ -162167,7 +162163,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "oskar-kubiak"
+  "slug": "tm:1292977"
  },
  {
   "id": "tm:1293040",
@@ -162343,7 +162339,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "flavio-goncalves"
+  "slug": "tm:1294120"
  },
  {
   "id": "tm:1294399",
@@ -162469,7 +162465,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "alfonso-herrero"
+  "slug": "tm:129478"
  },
  {
   "id": "tm:1294853",
@@ -162734,7 +162730,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "samuel-wiafe"
+  "slug": "tm:1295778"
  },
  {
   "id": "tm:129586",
@@ -163293,7 +163289,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "mael-gernigon"
+  "slug": "tm:1297628"
  },
  {
   "id": "tm:1297638",
@@ -163315,7 +163311,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "xavier-mandza"
+  "slug": "tm:1297638"
  },
  {
   "id": "tm:1297673",
@@ -163717,7 +163713,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "bil-nsongo"
+  "slug": "tm:1299392"
  },
  {
   "id": "tm:1299566",
@@ -163739,7 +163735,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "yanis-musuayi"
+  "slug": "tm:1299566"
  },
  {
   "id": "tm:129990",
@@ -165208,7 +165204,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "jean-ives-valou"
+  "slug": "tm:1305564"
  },
  {
   "id": "tm:1305792",
@@ -165386,7 +165382,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "anis-soubeir"
+  "slug": "tm:1307000"
  },
  {
   "id": "tm:1307004",
@@ -166041,7 +166037,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "marco-libra"
+  "slug": "tm:1311378"
  },
  {
   "id": "tm:13114",
@@ -168493,7 +168489,6 @@
   "fame": 27,
   "curated": false,
   "nationalities": [
-   "Brazil",
    "Portugal"
   ],
   "positions": [
@@ -171338,7 +171333,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "aboulaye-camara"
+  "slug": "tm:1334469"
  },
  {
   "id": "tm:133465",
@@ -171536,7 +171531,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "jose-antonio-morante"
+  "slug": "tm:1335870"
  },
  {
   "id": "tm:1336",
@@ -171866,7 +171861,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "christ-batola"
+  "slug": "tm:1337539"
  },
  {
   "id": "tm:133794",
@@ -173255,7 +173250,7 @@
   "reviewFlags": [
    "possible-namesake"
   ],
-  "slug": "oscar-lopez"
+  "slug": "tm:1343439"
  },
  {
   "id": "tm:134345",
@@ -176520,7 +176515,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "mahdi-nicoll-jazuli"
+  "slug": "tm:1353008"
  },
  {
   "id": "tm:13532",
@@ -176653,7 +176648,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "jerayno-schaken"
+  "slug": "tm:1353447"
  },
  {
   "id": "tm:1353609",
@@ -176857,7 +176852,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "nizar-el-jmili"
+  "slug": "tm:1354880"
  },
  {
   "id": "tm:135490",
@@ -177056,7 +177051,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "robinho-junior"
+  "slug": "tm:1355385"
  },
  {
   "id": "tm:13556",
@@ -178485,7 +178480,6 @@
   "fame": 49,
   "curated": false,
   "nationalities": [
-   "Brazil",
    "Spain"
   ],
   "positions": [
@@ -182342,7 +182336,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "sion-oppong"
+  "slug": "tm:1368526"
  },
  {
   "id": "tm:13686",
@@ -182442,7 +182436,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "gnangoro-bouare"
+  "slug": "tm:1368893"
  },
  {
   "id": "tm:1369",
@@ -182486,7 +182480,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "nael-kane"
+  "slug": "tm:1369023"
  },
  {
   "id": "tm:1369381",
@@ -184541,7 +184535,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "samuel-isife"
+  "slug": "tm:1372515"
  },
  {
   "id": "tm:137255",
@@ -187906,7 +187900,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "toumani-diakite"
+  "slug": "tm:1381483"
  },
  {
   "id": "tm:1381527",
@@ -190858,7 +190852,7 @@
   "reviewFlags": [
    "possible-namesake"
   ],
-  "slug": "sergio-martinez"
+  "slug": "tm:1393961"
  },
  {
   "id": "tm:1393997",
@@ -191321,7 +191315,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "renato-nhaga"
+  "slug": "tm:1396595"
  },
  {
   "id": "tm:13966",
@@ -192591,7 +192585,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "jules-ahoka"
+  "slug": "tm:1401779"
  },
  {
   "id": "tm:140191",
@@ -194641,7 +194635,6 @@
   "fame": 88,
   "curated": true,
   "nationalities": [
-   "Brazil",
    "Portugal"
   ],
   "positions": [
@@ -196577,7 +196570,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "zadok-yohanna"
+  "slug": "tm:1421433"
  },
  {
   "id": "tm:142149",
@@ -201965,7 +201958,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "mubarak-suleiman"
+  "slug": "tm:1457962"
  },
  {
   "id": "tm:145817",
@@ -202130,7 +202123,7 @@
   "reviewFlags": [
    "possible-namesake"
   ],
-  "slug": "mamadou-kone"
+  "slug": "tm:1459673"
  },
  {
   "id": "tm:145988",
@@ -202249,7 +202242,7 @@
   "reviewFlags": [
    "possible-namesake"
   ],
-  "slug": "jorge-dominguez"
+  "slug": "tm:1460961"
  },
  {
   "id": "tm:146099",
@@ -202937,7 +202930,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "alvaro-padilla"
+  "slug": "tm:1466272"
  },
  {
   "id": "tm:146648",
@@ -204228,7 +204221,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "marc-santos"
+  "slug": "tm:1476132"
  },
  {
   "id": "tm:147617",
@@ -209160,7 +209153,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "bruninho"
+  "slug": "tm:1500420"
  },
  {
   "id": "tm:150187",
@@ -212524,7 +212517,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "aaron-mayol"
+  "slug": "tm:1515724"
  },
  {
   "id": "tm:151582",
@@ -213726,7 +213719,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "yacouba-kone"
+  "slug": "tm:1523861"
  },
  {
   "id": "tm:1524",
@@ -213815,7 +213808,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "djibril-ouziad"
+  "slug": "tm:1524445"
  },
  {
   "id": "tm:152448",
@@ -214123,7 +214116,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "joy-lance-mickels"
+  "slug": "tm:152634"
  },
  {
   "id": "tm:15265",
@@ -240530,8 +240523,7 @@
   "fame": 100,
   "curated": false,
   "nationalities": [
-   "France",
-   "Portugal"
+   "France"
   ],
   "positions": [
    "defender",
@@ -243808,7 +243800,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "matt-crooks"
+  "slug": "tm:169416"
  },
  {
   "id": "tm:16947",
@@ -271937,8 +271929,7 @@
   "fame": 48,
   "curated": false,
   "nationalities": [
-   "Brazil",
-   "Portugal"
+   "Brazil"
   ],
   "positions": [
    "midfielder"
@@ -273080,7 +273071,7 @@
    "Ally Samatta",
    "Mbwana Samatta"
   ],
-  "fame": 63,
+  "fame": 65,
   "curated": false,
   "nationalities": [
    "Tanzania"
@@ -280052,7 +280043,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "sascha-horvath"
+  "slug": "tm:186365"
  },
  {
   "id": "tm:186368",
@@ -287293,7 +287284,6 @@
   "fame": 100,
   "curated": false,
   "nationalities": [
-   "England",
    "Wales"
   ],
   "positions": [
@@ -287438,7 +287428,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "jan-gyamerah"
+  "slug": "tm:192840"
  },
  {
   "id": "tm:19285",
@@ -289793,7 +289783,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "zlatko-tripic"
+  "slug": "tm:195274"
  },
  {
   "id": "tm:1953",
@@ -297600,7 +297590,6 @@
   "fame": 64,
   "curated": true,
   "nationalities": [
-   "Brazil",
    "Portugal"
   ],
   "positions": [
@@ -298261,7 +298250,6 @@
   "fame": 67,
   "curated": false,
   "nationalities": [
-   "Mali",
    "Spain"
   ],
   "positions": [
@@ -300781,7 +300769,6 @@
   "fame": 53,
   "curated": false,
   "nationalities": [
-   "Spain",
    "Uruguay"
   ],
   "positions": [
@@ -300994,7 +300981,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "amara-conde"
+  "slug": "tm:207580"
  },
  {
   "id": "tm:207590",
@@ -319900,8 +319887,7 @@
   "fame": 23,
   "curated": false,
   "nationalities": [
-   "England",
-   "Scotland"
+   "England"
   ],
   "positions": [
    "forward",
@@ -323674,8 +323660,7 @@
   "fame": 24,
   "curated": false,
   "nationalities": [
-   "Northern Ireland",
-   "Scotland"
+   "Northern Ireland"
   ],
   "positions": [
    "defender",
@@ -330973,7 +330958,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "kristoffer-haugen"
+  "slug": "tm:225823"
  },
  {
   "id": "tm:22583",
@@ -347699,7 +347684,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "luca-schnellbacher"
+  "slug": "tm:229991"
  },
  {
   "id": "tm:23",
@@ -358920,7 +358905,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "viljar-vevatne"
+  "slug": "tm:240012"
  },
  {
   "id": "tm:24002",
@@ -359168,7 +359153,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "stas-pokatilov"
+  "slug": "tm:240178"
  },
  {
   "id": "tm:240197",
@@ -362695,7 +362680,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "tobias-schutzenauer"
+  "slug": "tm:243237"
  },
  {
   "id": "tm:243239",
@@ -372819,7 +372804,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "einar-galilea"
+  "slug": "tm:251046"
  },
  {
   "id": "tm:251058",
@@ -373879,8 +373864,7 @@
   "fame": 100,
   "curated": true,
   "nationalities": [
-   "Guinea-Bissau",
-   "Portugal"
+   "Guinea-Bissau"
   ],
   "positions": [
    "defender",
@@ -377077,7 +377061,6 @@
   "fame": 25,
   "curated": false,
   "nationalities": [
-   "England",
    "Spain"
   ],
   "positions": [
@@ -381882,8 +381865,7 @@
   "fame": 100,
   "curated": false,
   "nationalities": [
-   "England",
-   "Wales"
+   "England"
   ],
   "positions": [
    "defender"
@@ -384542,7 +384524,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "jay-dasilva"
+  "slug": "tm:258915"
  },
  {
   "id": "tm:258916",
@@ -386985,8 +386967,7 @@
   "fame": 61,
   "curated": false,
   "nationalities": [
-   "Brazil",
-   "Spain"
+   "Brazil"
   ],
   "positions": [
    "defender",
@@ -394123,7 +394104,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "henrik-bj-rdal"
+  "slug": "tm:268620"
  },
  {
   "id": "tm:268642",
@@ -396068,7 +396049,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "florian-flecker"
+  "slug": "tm:272159"
  },
  {
   "id": "tm:272261",
@@ -406532,7 +406513,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "adrien-monfray"
+  "slug": "tm:281611"
  },
  {
   "id": "tm:28163",
@@ -423631,7 +423612,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "hasan-kurucay"
+  "slug": "tm:292812"
  },
  {
   "id": "tm:292813",
@@ -433327,7 +433308,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "giacomo-calo"
+  "slug": "tm:301235"
  },
  {
   "id": "tm:301236",
@@ -443147,7 +443128,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "lion-lauberbach"
+  "slug": "tm:307800"
  },
  {
   "id": "tm:307805",
@@ -453795,7 +453776,6 @@
   "fame": 31,
   "curated": false,
   "nationalities": [
-   "Italy",
    "Spain"
   ],
   "positions": [
@@ -460874,7 +460854,6 @@
   "fame": 36,
   "curated": false,
   "nationalities": [
-   "Brazil",
    "Spain"
   ],
   "positions": [
@@ -482669,7 +482648,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "isac-lidberg"
+  "slug": "tm:322073"
  },
  {
   "id": "tm:322075",
@@ -484945,7 +484924,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "alec-georgen"
+  "slug": "tm:324800"
  },
  {
   "id": "tm:324803",
@@ -486914,7 +486893,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "janik-bachmann"
+  "slug": "tm:327862"
  },
  {
   "id": "tm:327863",
@@ -487273,7 +487252,7 @@
    "forward"
   ],
   "recognisable": true,
-  "slug": "barnabas-varga"
+  "slug": "tm:328573"
  },
  {
   "id": "tm:3286",
@@ -489121,7 +489100,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "raphael-obermair"
+  "slug": "tm:330699"
  },
  {
   "id": "tm:3307",
@@ -489728,7 +489707,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "tom-baack"
+  "slug": "tm:331637"
  },
  {
   "id": "tm:3317",
@@ -490172,7 +490151,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "aleksey-isayev"
+  "slug": "tm:332242"
  },
  {
   "id": "tm:3323",
@@ -490288,7 +490267,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "ron-schallenberg"
+  "slug": "tm:332392"
  },
  {
   "id": "tm:3324",
@@ -491517,7 +491496,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "lion-schweers"
+  "slug": "tm:333942"
  },
  {
   "id": "tm:334",
@@ -496957,7 +496936,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "tom-zimmerschied"
+  "slug": "tm:337097"
  },
  {
   "id": "tm:3371",
@@ -506225,7 +506204,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "harold-voyer"
+  "slug": "tm:344382"
  },
  {
   "id": "tm:344393",
@@ -508128,7 +508107,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "joe-bell"
+  "slug": "tm:345700"
  },
  {
   "id": "tm:34572",
@@ -518160,7 +518139,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "nicolas-kristof"
+  "slug": "tm:349465"
  },
  {
   "id": "tm:349476",
@@ -524893,7 +524872,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "florian-le-joncour"
+  "slug": "tm:352332"
  },
  {
   "id": "tm:35235",
@@ -526663,7 +526642,6 @@
   "fame": 36,
   "curated": false,
   "nationalities": [
-   "Brazil",
    "Spain"
   ],
   "positions": [
@@ -527253,7 +527231,6 @@
   "fame": 43,
   "curated": false,
   "nationalities": [
-   "Portugal",
    "Spain"
   ],
   "positions": [
@@ -534034,7 +534011,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "nicolas-kocik"
+  "slug": "tm:357069"
  },
  {
   "id": "tm:35707",
@@ -536943,7 +536920,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "julian-faye-lund"
+  "slug": "tm:358726"
  },
  {
   "id": "tm:358761",
@@ -537037,7 +537014,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "calvin-brackelmann"
+  "slug": "tm:358766"
  },
  {
   "id": "tm:3588",
@@ -550867,7 +550844,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "milan-robin"
+  "slug": "tm:371143"
  },
  {
   "id": "tm:371145",
@@ -556588,7 +556565,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "eneko-jauregi"
+  "slug": "tm:376589"
  },
  {
   "id": "tm:3766",
@@ -560193,7 +560170,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "egil-selvik"
+  "slug": "tm:380744"
  },
  {
   "id": "tm:3808",
@@ -563839,7 +563816,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "samuel-yohou"
+  "slug": "tm:386048"
  },
  {
   "id": "tm:386057",
@@ -571474,7 +571451,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "emmanuel-latte-lath"
+  "slug": "tm:392964"
  },
  {
   "id": "tm:392966",
@@ -571890,7 +571867,6 @@
   "fame": 27,
   "curated": false,
   "nationalities": [
-   "England",
    "Jamaica"
   ],
   "positions": [
@@ -572368,7 +572344,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "felix-bacher"
+  "slug": "tm:394134"
  },
  {
   "id": "tm:394152",
@@ -574296,7 +574272,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "manu-hernando"
+  "slug": "tm:396161"
  },
  {
   "id": "tm:396174",
@@ -579196,7 +579172,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "miguel-loureiro"
+  "slug": "tm:400104"
  },
  {
   "id": "tm:400131",
@@ -581791,7 +581767,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "victor-torp"
+  "slug": "tm:403692"
  },
  {
   "id": "tm:4037",
@@ -586546,7 +586522,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "maik-nawrocki"
+  "slug": "tm:407745"
  },
  {
   "id": "tm:407772",
@@ -589166,7 +589142,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "aliou-dieng"
+  "slug": "tm:410427"
  },
  {
   "id": "tm:41043",
@@ -589503,7 +589479,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "adrian-gantenbein"
+  "slug": "tm:410870"
  },
  {
   "id": "tm:4109",
@@ -590649,7 +590625,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "giorgi-chakvetadze"
+  "slug": "tm:412616"
  },
  {
   "id": "tm:412649",
@@ -590850,7 +590826,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "joel-latibeaudiere"
+  "slug": "tm:412823"
  },
  {
   "id": "tm:412829",
@@ -591600,7 +591576,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "lewie-coyle"
+  "slug": "tm:413402"
  },
  {
   "id": "tm:413403",
@@ -594193,7 +594169,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "jesper-daland"
+  "slug": "tm:418553"
  },
  {
   "id": "tm:418559",
@@ -594794,7 +594770,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "cristian-martinez"
+  "slug": "tm:419247"
  },
  {
   "id": "tm:419255",
@@ -595333,7 +595309,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "justin-de-haas"
+  "slug": "tm:420196"
  },
  {
   "id": "tm:420210",
@@ -596250,7 +596226,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "danijel-sturm"
+  "slug": "tm:421758"
  },
  {
   "id": "tm:421768",
@@ -596759,7 +596735,7 @@
    "defender"
   ],
   "recognisable": true,
-  "slug": "p:nikola-katic"
+  "slug": "tm:422051"
  },
  {
   "id": "tm:4221",
@@ -597072,7 +597048,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "aboubakary-koita"
+  "slug": "tm:422377"
  },
  {
   "id": "tm:422380",
@@ -597611,7 +597587,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "dame-gueye"
+  "slug": "tm:422711"
  },
  {
   "id": "tm:422715",
@@ -601744,7 +601720,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "nicholas-mickelson"
+  "slug": "tm:430034"
  },
  {
   "id": "tm:43012",
@@ -605165,7 +605141,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "joshua-kitolano"
+  "slug": "tm:432694"
  },
  {
   "id": "tm:4327",
@@ -610903,7 +610879,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "maximilian-rohr"
+  "slug": "tm:440386"
  },
  {
   "id": "tm:4404",
@@ -612646,8 +612622,6 @@
   "fame": 112,
   "curated": true,
   "nationalities": [
-   "Colombia",
-   "Spain",
    "Uruguay"
   ],
   "positions": [
@@ -616631,7 +616605,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "lukas-pinckert"
+  "slug": "tm:448259"
  },
  {
   "id": "tm:44832",
@@ -619171,7 +619145,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "brandon-thomas-asante"
+  "slug": "tm:451747"
  },
  {
   "id": "tm:451758",
@@ -624915,7 +624889,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "giuseppe-aurelio"
+  "slug": "tm:457444"
  },
  {
   "id": "tm:457476",
@@ -627588,7 +627562,6 @@
   "fame": 49,
   "curated": false,
   "nationalities": [
-   "Brazil",
    "Spain"
   ],
   "positions": [
@@ -628695,7 +628668,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "juan-carlos-arana"
+  "slug": "tm:461631"
  },
  {
   "id": "tm:461707",
@@ -631170,8 +631143,7 @@
   "fame": 42,
   "curated": false,
   "nationalities": [
-   "Mexico",
-   "Spain"
+   "Mexico"
   ],
   "positions": [
    "defender",
@@ -633937,7 +633909,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "imad-rondic"
+  "slug": "tm:464154"
  },
  {
   "id": "tm:464195",
@@ -636398,7 +636370,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "ephron-mason-clark"
+  "slug": "tm:466637"
  },
  {
   "id": "tm:466638",
@@ -637135,7 +637107,6 @@
   "fame": 89,
   "curated": false,
   "nationalities": [
-   "Argentina",
    "Spain"
   ],
   "positions": [
@@ -638357,7 +638328,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "kasper-j-rgensen"
+  "slug": "tm:467236"
  },
  {
   "id": "tm:467243",
@@ -639546,7 +639517,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "daniel-birligea"
+  "slug": "tm:468192"
  },
  {
   "id": "tm:468198",
@@ -641936,7 +641907,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "svetozar-markovic"
+  "slug": "tm:470790"
  },
  {
   "id": "tm:470794",
@@ -643722,7 +643693,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "regan-slater"
+  "slug": "tm:473080"
  },
  {
   "id": "tm:4731",
@@ -649338,7 +649309,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "francisco-moura"
+  "slug": "tm:478365"
  },
  {
   "id": "tm:47839",
@@ -659512,7 +659483,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "sandro-cruz"
+  "slug": "tm:481627"
  },
  {
   "id": "tm:48164",
@@ -660788,7 +660759,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "rahman-dashdamirov"
+  "slug": "tm:481981"
  },
  {
   "id": "tm:481982",
@@ -666901,7 +666872,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "lazaros-rota"
+  "slug": "tm:483916"
  },
  {
   "id": "tm:483917",
@@ -669940,8 +669911,7 @@
   "fame": 91,
   "curated": false,
   "nationalities": [
-   "Argentina",
-   "Spain"
+   "Argentina"
   ],
   "positions": [
    "forward"
@@ -674808,7 +674778,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "liam-millar"
+  "slug": "tm:487417"
  },
  {
   "id": "tm:48746",
@@ -677947,7 +677917,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "peter-pokorny"
+  "slug": "tm:490595"
  },
  {
   "id": "tm:490606",
@@ -678960,7 +678930,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "ludovit-reis"
+  "slug": "tm:490884"
  },
  {
   "id": "tm:49094",
@@ -682064,7 +682034,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "ivan-lepinjica"
+  "slug": "tm:494851"
  },
  {
   "id": "tm:494880",
@@ -686752,7 +686722,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "ola-brynhildsen"
+  "slug": "tm:499759"
  },
  {
   "id": "tm:499760",
@@ -688509,7 +688479,6 @@
   "fame": 81,
   "curated": true,
   "nationalities": [
-   "England",
    "Wales"
   ],
   "positions": [
@@ -690669,7 +690638,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "giorgi-guliashvili"
+  "slug": "tm:502682"
  },
  {
   "id": "tm:50271",
@@ -699047,7 +699016,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "tjark-scheller"
+  "slug": "tm:509650"
  },
  {
   "id": "tm:509734",
@@ -699163,7 +699132,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "tomas-bobcek"
+  "slug": "tm:510103"
  },
  {
   "id": "tm:510134",
@@ -700194,8 +700163,7 @@
   "fame": 41,
   "curated": false,
   "nationalities": [
-   "Brazil",
-   "Spain"
+   "Brazil"
   ],
   "positions": [
    "midfielder"
@@ -700401,7 +700369,6 @@
   "curated": false,
   "nationalities": [
    "Colombia",
-   "Spain",
    "Uruguay"
   ],
   "positions": [
@@ -703930,8 +703897,7 @@
   "fame": 31,
   "curated": false,
   "nationalities": [
-   "Brazil",
-   "Portugal"
+   "Brazil"
   ],
   "positions": [
    "forward"
@@ -704599,7 +704565,6 @@
   "fame": 77,
   "curated": false,
   "nationalities": [
-   "Germany",
    "Spain"
   ],
   "positions": [
@@ -707744,7 +707709,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "laurin-curda"
+  "slug": "tm:516978"
  },
  {
   "id": "tm:51699",
@@ -708651,7 +708616,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "shaqueel-van-persie"
+  "slug": "tm:517811"
  },
  {
   "id": "tm:517842",
@@ -711219,7 +711184,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "zakaria-eddahchouri"
+  "slug": "tm:519651"
  },
  {
   "id": "tm:5197",
@@ -713174,8 +713139,7 @@
   "fame": 88,
   "curated": true,
   "nationalities": [
-   "Brazil",
-   "Portugal"
+   "Brazil"
   ],
   "positions": [
    "defender",
@@ -713977,7 +713941,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "luca-sirch"
+  "slug": "tm:521928"
  },
  {
   "id": "tm:521964",
@@ -714767,7 +714731,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "inigo-sainz-maza"
+  "slug": "tm:522730"
  },
  {
   "id": "tm:522737",
@@ -720129,7 +720093,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "christoph-lang"
+  "slug": "tm:527589"
  },
  {
   "id": "tm:5276",
@@ -722128,7 +722092,6 @@
   "fame": 80,
   "curated": false,
   "nationalities": [
-   "France",
    "Mali"
   ],
   "positions": [
@@ -722487,7 +722450,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "kaheem-parris"
+  "slug": "tm:530414"
  },
  {
   "id": "tm:530501",
@@ -724002,7 +723965,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "sebastian-caceres"
+  "slug": "tm:532389"
  },
  {
   "id": "tm:53239",
@@ -727471,7 +727434,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "lucas-maronnier"
+  "slug": "tm:536473"
  },
  {
   "id": "tm:536477",
@@ -729228,7 +729191,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "hayden-hackney"
+  "slug": "tm:538216"
  },
  {
   "id": "tm:53823",
@@ -733441,7 +733404,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "peter-christiansen"
+  "slug": "tm:542462"
  },
  {
   "id": "tm:5425",
@@ -748178,7 +748141,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "roman-cerepkai"
+  "slug": "tm:546879"
  },
  {
   "id": "tm:546880",
@@ -754760,8 +754723,7 @@
   "fame": 41,
   "curated": false,
   "nationalities": [
-   "Brazil",
-   "Spain"
+   "Brazil"
   ],
   "positions": [
    "forward"
@@ -755957,7 +755919,7 @@
    "Mousa Al-Tamari",
    "Mousa Tamari"
   ],
-  "fame": 75,
+  "fame": 77,
   "curated": false,
   "nationalities": [
    "Jordan"
@@ -773028,7 +772990,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "oguz-ayd-n"
+  "slug": "tm:563749"
  },
  {
   "id": "tm:56378",
@@ -776865,7 +776827,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "ramon-enriquez"
+  "slug": "tm:567222"
  },
  {
   "id": "tm:56723",
@@ -777063,7 +777025,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "lorenzo-lucchesi"
+  "slug": "tm:567454"
  },
  {
   "id": "tm:567497",
@@ -777085,7 +777047,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "filipe-relvas"
+  "slug": "tm:567497"
  },
  {
   "id": "tm:567576",
@@ -778221,7 +778183,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "mario-soriano"
+  "slug": "tm:568148"
  },
  {
   "id": "tm:56815",
@@ -780601,7 +780563,6 @@
   "fame": 71,
   "curated": false,
   "nationalities": [
-   "Cote d'Ivoire",
    "France"
   ],
   "positions": [
@@ -781944,7 +781905,6 @@
   "fame": 32,
   "curated": false,
   "nationalities": [
-   "Brazil",
    "Portugal"
   ],
   "positions": [
@@ -783070,7 +783030,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "gabriele-bracaglia"
+  "slug": "tm:571600"
  },
  {
   "id": "tm:571604",
@@ -784273,7 +784233,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "stavro-pilo"
+  "slug": "tm:572879"
  },
  {
   "id": "tm:5729",
@@ -790767,7 +790727,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "sven-mijnans"
+  "slug": "tm:578804"
  },
  {
   "id": "tm:57881",
@@ -793350,7 +793310,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "archie-brown"
+  "slug": "tm:581329"
  },
  {
   "id": "tm:581330",
@@ -797364,8 +797324,7 @@
   "fame": 54,
   "curated": false,
   "nationalities": [
-   "Brazil",
-   "Spain"
+   "Brazil"
   ],
   "positions": [
    "midfielder"
@@ -798486,7 +798445,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "alexandre-phliponeau"
+  "slug": "tm:585951"
  },
  {
   "id": "tm:585958",
@@ -798508,7 +798467,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "junior-kadile"
+  "slug": "tm:585958"
  },
  {
   "id": "tm:585959",
@@ -800095,7 +800054,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "milan-van-ewijk"
+  "slug": "tm:587335"
  },
  {
   "id": "tm:587357",
@@ -802262,9 +802221,6 @@
   "fame": 100,
   "curated": false,
   "nationalities": [
-   "Brazil",
-   "Guinea-Bissau",
-   "Italy",
    "Portugal"
   ],
   "positions": [
@@ -802436,7 +802392,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "diego-villares"
+  "slug": "tm:590687"
  },
  {
   "id": "tm:59069",
@@ -804662,7 +804618,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "sem-steijn"
+  "slug": "tm:593519"
  },
  {
   "id": "tm:59352",
@@ -804825,7 +804781,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "anouar-el-azzouzi"
+  "slug": "tm:593774"
  },
  {
   "id": "tm:5938",
@@ -805273,7 +805229,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "fabio-gruber"
+  "slug": "tm:594731"
  },
  {
   "id": "tm:59474",
@@ -806339,9 +806295,7 @@
   "fame": 66,
   "curated": false,
   "nationalities": [
-   "Brazil",
-   "Guinea-Bissau",
-   "Portugal"
+   "Guinea-Bissau"
   ],
   "positions": [
    "forward",
@@ -807312,7 +807266,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "riki-rodriguez"
+  "slug": "tm:596899"
  },
  {
   "id": "tm:5969",
@@ -808252,7 +808206,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "p:tsuyoshi-watanabe"
+  "slug": "tm:598791"
  },
  {
   "id": "tm:5988",
@@ -809365,7 +809319,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "nahuel-noll"
+  "slug": "tm:600942"
  },
  {
   "id": "tm:601",
@@ -809701,7 +809655,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "luciano-valente"
+  "slug": "tm:601495"
  },
  {
   "id": "tm:6015",
@@ -811207,7 +811161,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "david-herold"
+  "slug": "tm:604358"
  },
  {
   "id": "tm:604359",
@@ -811650,7 +811604,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "frederik-schmahl"
+  "slug": "tm:604756"
  },
  {
   "id": "tm:6048",
@@ -812801,7 +812755,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "jano-ter-horst"
+  "slug": "tm:606113"
  },
  {
   "id": "tm:606119",
@@ -817125,7 +817079,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "ismail-yuksek"
+  "slug": "tm:613725"
  },
  {
   "id": "tm:61375",
@@ -819359,8 +819313,7 @@
   "fame": 53,
   "curated": false,
   "nationalities": [
-   "Spain",
-   "Uruguay"
+   "Spain"
   ],
   "positions": [
    "forward",
@@ -819549,7 +819502,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "tatsuhiro-sakamoto"
+  "slug": "tm:617408"
  },
  {
   "id": "tm:61743",
@@ -819566,7 +819519,6 @@
   "fame": 32,
   "curated": false,
   "nationalities": [
-   "Brazil",
    "Portugal"
   ],
   "positions": [
@@ -823997,7 +823949,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "jean-vercruysse"
+  "slug": "tm:626592"
  },
  {
   "id": "tm:6267",
@@ -824036,8 +823988,7 @@
   "fame": 64,
   "curated": false,
   "nationalities": [
-   "Brazil",
-   "Italy"
+   "Brazil"
   ],
   "positions": [
    "forward"
@@ -824719,7 +824670,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "gianni-stensness"
+  "slug": "tm:627472"
  },
  {
   "id": "tm:6275",
@@ -824989,7 +824940,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "giannis-konstantelias"
+  "slug": "tm:628331"
  },
  {
   "id": "tm:628365",
@@ -825217,7 +825168,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "jonathan-dubasin"
+  "slug": "tm:628621"
  },
  {
   "id": "tm:6287",
@@ -825428,7 +825379,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "lukas-jungwirth"
+  "slug": "tm:629011"
  },
  {
   "id": "tm:62913",
@@ -825717,7 +825668,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "pablo-ramon"
+  "slug": "tm:629511"
  },
  {
   "id": "tm:629566",
@@ -825871,7 +825822,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "lukas-hornicek"
+  "slug": "tm:629773"
  },
  {
   "id": "tm:629785",
@@ -827813,7 +827764,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "francho-serrano"
+  "slug": "tm:632930"
  },
  {
   "id": "tm:633",
@@ -827879,7 +827830,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "alex-calatrava"
+  "slug": "tm:633111"
  },
  {
   "id": "tm:633306",
@@ -827901,7 +827852,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "ivan-azon"
+  "slug": "tm:633306"
  },
  {
   "id": "tm:633398",
@@ -828888,7 +828839,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "david-larrubia"
+  "slug": "tm:635939"
  },
  {
   "id": "tm:636",
@@ -828954,7 +828905,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "alvaro-mantilla"
+  "slug": "tm:636116"
  },
  {
   "id": "tm:636385",
@@ -828976,7 +828927,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "yeremay-hernandez"
+  "slug": "tm:636385"
  },
  {
   "id": "tm:636421",
@@ -831846,7 +831797,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "xavier-mbuyamba"
+  "slug": "tm:640432"
  },
  {
   "id": "tm:6405",
@@ -832001,7 +831952,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "milan-vitalis"
+  "slug": "tm:640994"
  },
  {
   "id": "tm:641",
@@ -833014,7 +832965,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "samuel-adeniran"
+  "slug": "tm:643088"
  },
  {
   "id": "tm:6431",
@@ -833058,7 +833009,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "orlando-gill"
+  "slug": "tm:643259"
  },
  {
   "id": "tm:64339",
@@ -834155,7 +834106,6 @@
   "fame": 35,
   "curated": false,
   "nationalities": [
-   "Brazil",
    "Netherlands"
   ],
   "positions": [
@@ -834308,7 +834258,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "carl-rushworth"
+  "slug": "tm:646353"
  },
  {
   "id": "tm:646402",
@@ -834369,8 +834319,7 @@
   "fame": 81,
   "curated": true,
   "nationalities": [
-   "England",
-   "Wales"
+   "England"
   ],
   "positions": [
    "midfielder"
@@ -836466,9 +836415,7 @@
   "fame": 67,
   "curated": false,
   "nationalities": [
-   "Brazil",
-   "Guinea-Bissau",
-   "Portugal"
+   "Brazil"
   ],
   "positions": [
    "goalkeeper",
@@ -836767,7 +836714,6 @@
   "fame": 100,
   "curated": true,
   "nationalities": [
-   "Brazil",
    "Spain"
   ],
   "positions": [
@@ -837183,7 +837129,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "abdulakh-khaybulayev"
+  "slug": "tm:654118"
  },
  {
   "id": "tm:654175",
@@ -837786,7 +837732,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "bartug-elmaz"
+  "slug": "tm:655895"
  },
  {
   "id": "tm:655899",
@@ -841834,7 +841780,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "exequiel-zeballos"
+  "slug": "tm:661132"
  },
  {
   "id": "tm:661145",
@@ -842829,7 +842775,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "jack-rudoni"
+  "slug": "tm:662476"
  },
  {
   "id": "tm:662489",
@@ -845721,7 +845667,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "satoshi-tanaka"
+  "slug": "tm:665618"
  },
  {
   "id": "tm:665657",
@@ -846538,7 +846484,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "haitam-abaida"
+  "slug": "tm:667996"
  },
  {
   "id": "tm:668",
@@ -846883,7 +846829,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "david-romero"
+  "slug": "tm:668512"
  },
  {
   "id": "tm:668529",
@@ -848061,7 +848007,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "luke-chambers"
+  "slug": "tm:670861"
  },
  {
   "id": "tm:670877",
@@ -850922,7 +850868,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "herman-haugen"
+  "slug": "tm:674288"
  },
  {
   "id": "tm:674383",
@@ -851567,7 +851513,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "noel-futkeu"
+  "slug": "tm:675535"
  },
  {
   "id": "tm:67556",
@@ -852286,7 +852232,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "kaito-mizuta"
+  "slug": "tm:677794"
  },
  {
   "id": "tm:6778",
@@ -852462,7 +852408,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "jay-enem"
+  "slug": "tm:678035"
  },
  {
   "id": "tm:67808",
@@ -855794,7 +855740,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "silas-andersen"
+  "slug": "tm:685657"
  },
  {
   "id": "tm:6857",
@@ -856455,7 +856401,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "elliot-stroud"
+  "slug": "tm:687622"
  },
  {
   "id": "tm:687626",
@@ -858661,7 +858607,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "mattes-hansen"
+  "slug": "tm:694132"
  },
  {
   "id": "tm:69436",
@@ -859937,7 +859883,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "soufiane-el-faouzi"
+  "slug": "tm:697740"
  },
  {
   "id": "tm:69775",
@@ -860495,7 +860441,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "jonah-sticker"
+  "slug": "tm:698843"
  },
  {
   "id": "tm:698914",
@@ -861509,9 +861455,7 @@
   "fame": 68,
   "curated": false,
   "nationalities": [
-   "Cote d'Ivoire",
-   "Mali",
-   "Spain"
+   "Cote d'Ivoire"
   ],
   "positions": [
    "defender",
@@ -861684,7 +861628,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "rachid-kouda"
+  "slug": "tm:702324"
  },
  {
   "id": "tm:702372",
@@ -862421,7 +862365,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "nosa-edward-obaretin"
+  "slug": "tm:704456"
  },
  {
   "id": "tm:7046",
@@ -862620,7 +862564,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "lorenzo-palmisani"
+  "slug": "tm:705355"
  },
  {
   "id": "tm:70537",
@@ -863416,7 +863360,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "han-beom-lee"
+  "slug": "tm:706963"
  },
  {
   "id": "tm:707",
@@ -863533,7 +863477,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "enzo-bardeli"
+  "slug": "tm:707222"
  },
  {
   "id": "tm:707225",
@@ -863869,7 +863813,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "suleiman-camara"
+  "slug": "tm:707568"
  },
  {
   "id": "tm:707572",
@@ -864620,7 +864564,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "benat-gerenabarrena"
+  "slug": "tm:709214"
  },
  {
   "id": "tm:709215",
@@ -866160,7 +866104,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "rahim-ibrahim"
+  "slug": "tm:711597"
  },
  {
   "id": "tm:711625",
@@ -868023,7 +867967,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "marcelino-nunez"
+  "slug": "tm:715558"
  },
  {
   "id": "tm:71559",
@@ -868319,7 +868263,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "david-puczka"
+  "slug": "tm:715894"
  },
  {
   "id": "tm:71599",
@@ -869252,7 +869196,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "zini"
+  "slug": "tm:718115"
  },
  {
   "id": "tm:7182",
@@ -870721,7 +870665,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "aleksey-batrakov"
+  "slug": "tm:720286"
  },
  {
   "id": "tm:72043",
@@ -870863,7 +870807,6 @@
   "fame": 31,
   "curated": false,
   "nationalities": [
-   "Brazil",
    "Spain"
   ],
   "positions": [
@@ -871103,7 +871046,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "mikel-rodriguez"
+  "slug": "tm:721660"
  },
  {
   "id": "tm:721746",
@@ -872664,7 +872607,6 @@
   "fame": 69,
   "curated": false,
   "nationalities": [
-   "Brazil",
    "Spain"
   ],
   "positions": [
@@ -873168,7 +873110,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "luis-hasa"
+  "slug": "tm:724178"
  },
  {
   "id": "tm:72422",
@@ -873890,7 +873832,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "ewan-hatfout"
+  "slug": "tm:725963"
  },
  {
   "id": "tm:726",
@@ -877150,7 +877092,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "noel-tornqvist"
+  "slug": "tm:730531"
  },
  {
   "id": "tm:73056",
@@ -879617,7 +879559,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "arild-stb"
+  "slug": "tm:73327"
  },
  {
   "id": "tm:73333",
@@ -882052,7 +881994,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "amine-el-ouazzani"
+  "slug": "tm:735051"
  },
  {
   "id": "tm:73517",
@@ -883179,7 +883121,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "teun-gijselhart"
+  "slug": "tm:738477"
  },
  {
   "id": "tm:73852",
@@ -884025,7 +883967,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "david-mella"
+  "slug": "tm:741256"
  },
  {
   "id": "tm:741257",
@@ -884952,7 +884894,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "henrik-falchener"
+  "slug": "tm:743088"
  },
  {
   "id": "tm:743091",
@@ -885107,7 +885049,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "lucas-noubi"
+  "slug": "tm:743379"
  },
  {
   "id": "tm:743381",
@@ -886507,7 +886449,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "matteo-dagasso"
+  "slug": "tm:744621"
  },
  {
   "id": "tm:744641",
@@ -886529,7 +886471,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "orphe-mbina"
+  "slug": "tm:744641"
  },
  {
   "id": "tm:74465",
@@ -887384,7 +887326,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "gabriele-calvani"
+  "slug": "tm:745778"
  },
  {
   "id": "tm:745851",
@@ -889327,7 +889269,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "yacine-titraoui"
+  "slug": "tm:748445"
  },
  {
   "id": "tm:7485",
@@ -891144,7 +891086,6 @@
   "fame": 49,
   "curated": false,
   "nationalities": [
-   "Brazil",
    "Cape Verde"
   ],
   "positions": [
@@ -896352,7 +896293,6 @@
   "fame": 40,
   "curated": false,
   "nationalities": [
-   "France",
    "Spain"
   ],
   "positions": [
@@ -896522,7 +896462,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "mikulas-konecny"
+  "slug": "tm:765094"
  },
  {
   "id": "tm:7651",
@@ -897165,7 +897105,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "usman-simbakoli"
+  "slug": "tm:766839"
  },
  {
   "id": "tm:7669",
@@ -900685,7 +900625,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "arthur-piedfort"
+  "slug": "tm:775981"
  },
  {
   "id": "tm:776",
@@ -900950,7 +900890,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "carlos-puga"
+  "slug": "tm:776703"
  },
  {
   "id": "tm:776798",
@@ -903030,7 +902970,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "chupe"
+  "slug": "tm:780817"
  },
  {
   "id": "tm:78082",
@@ -903096,7 +903036,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "steve-solvet"
+  "slug": "tm:780990"
  },
  {
   "id": "tm:7811",
@@ -903867,7 +903807,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "robbie-ure"
+  "slug": "tm:783373"
  },
  {
   "id": "tm:78339",
@@ -906252,7 +906192,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "bobby-thomas"
+  "slug": "tm:788283"
  },
  {
   "id": "tm:7883",
@@ -907030,7 +906970,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "henrik-heggheim"
+  "slug": "tm:790245"
  },
  {
   "id": "tm:79027",
@@ -907547,7 +907487,6 @@
   "fame": 64,
   "curated": false,
   "nationalities": [
-   "Brazil",
    "Mexico"
   ],
   "positions": [
@@ -908759,7 +908698,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "cheveyo-tsawa"
+  "slug": "tm:794749"
  },
  {
   "id": "tm:794758",
@@ -909710,7 +909649,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "junior-almeida"
+  "slug": "tm:796739"
  },
  {
   "id": "tm:7968",
@@ -911378,7 +911317,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "dennis-seimen"
+  "slug": "tm:800946"
  },
  {
   "id": "tm:800948",
@@ -911828,7 +911767,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "theo-eyoum"
+  "slug": "tm:801762"
  },
  {
   "id": "tm:8018",
@@ -911918,7 +911857,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "isak-jensen"
+  "slug": "tm:801886"
  },
  {
   "id": "tm:8019",
@@ -912057,7 +911996,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "arnau-ortiz"
+  "slug": "tm:802046"
  },
  {
   "id": "tm:80205",
@@ -912647,7 +912586,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "erwan-colas"
+  "slug": "tm:804386"
  },
  {
   "id": "tm:80444",
@@ -912831,7 +912770,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "ange-nguessan"
+  "slug": "tm:804799"
  },
  {
   "id": "tm:804812",
@@ -914068,7 +914007,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "antoine-mille"
+  "slug": "tm:807653"
  },
  {
   "id": "tm:807688",
@@ -916050,7 +915989,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "felix-keidel"
+  "slug": "tm:815322"
  },
  {
   "id": "tm:815359",
@@ -916569,7 +916508,7 @@
   "reviewFlags": [
    "possible-namesake"
   ],
-  "slug": "pedro-lima"
+  "slug": "tm:816135"
  },
  {
   "id": "tm:81615",
@@ -918472,7 +918411,6 @@
   "fame": 45,
   "curated": false,
   "nationalities": [
-   "Argentina",
    "Spain"
   ],
   "positions": [
@@ -919051,7 +918989,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "zakaria-el-ouahdi"
+  "slug": "tm:820474"
  },
  {
   "id": "tm:82048",
@@ -919118,7 +919056,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "costantino-favasuli"
+  "slug": "tm:820635"
  },
  {
   "id": "tm:8207",
@@ -919433,7 +919371,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "oskar-wojcik"
+  "slug": "tm:821350"
  },
  {
   "id": "tm:82144",
@@ -920258,7 +920196,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "dariusz-stalmach"
+  "slug": "tm:826795"
  },
  {
   "id": "tm:82684",
@@ -920671,7 +920609,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "stefano-marino"
+  "slug": "tm:829267"
  },
  {
   "id": "tm:829299",
@@ -920715,7 +920653,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "maurice-krattenmacher"
+  "slug": "tm:829316"
  },
  {
   "id": "tm:829838",
@@ -922664,7 +922602,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "umarali-rakhmonaliev"
+  "slug": "tm:837432"
  },
  {
   "id": "tm:838",
@@ -923237,7 +923175,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "matija-frigan"
+  "slug": "tm:840149"
  },
  {
   "id": "tm:84020",
@@ -925543,7 +925481,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "nathan-saliba"
+  "slug": "tm:842420"
  },
  {
   "id": "tm:842425",
@@ -926324,7 +926262,6 @@
   "fame": 44,
   "curated": false,
   "nationalities": [
-   "Italy",
    "Portugal"
   ],
   "positions": [
@@ -933016,7 +932953,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "mohamed-belloumi"
+  "slug": "tm:857079"
  },
  {
   "id": "tm:857148",
@@ -935507,7 +935444,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "yvan-dibango"
+  "slug": "tm:863919"
  },
  {
   "id": "tm:864",
@@ -935573,7 +935510,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "basar-onal"
+  "slug": "tm:864112"
  },
  {
   "id": "tm:864121",
@@ -938044,8 +937981,7 @@
   "fame": 66,
   "curated": false,
   "nationalities": [
-   "Brazil",
-   "Italy"
+   "Brazil"
   ],
   "positions": [
    "midfielder"
@@ -938779,7 +938715,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "kaiki"
+  "slug": "tm:879217"
  },
  {
   "id": "tm:87946",
@@ -939230,7 +939166,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "dario-osorio"
+  "slug": "tm:881116"
  },
  {
   "id": "tm:881208",
@@ -942348,7 +942284,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "leonardo-colombo"
+  "slug": "tm:891869"
  },
  {
   "id": "tm:891923",
@@ -943201,7 +943137,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "simen-kvia-egeskog"
+  "slug": "tm:893547"
  },
  {
   "id": "tm:893661",
@@ -944598,7 +944534,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "noah-darvich"
+  "slug": "tm:897480"
  },
  {
   "id": "tm:897481",
@@ -944664,7 +944600,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "angel-recio"
+  "slug": "tm:897521"
  },
  {
   "id": "tm:897620",
@@ -944972,7 +944908,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "facundo-bernal"
+  "slug": "tm:898350"
  },
  {
   "id": "tm:898352",
@@ -947549,7 +947485,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "otto-ruoppi"
+  "slug": "tm:901877"
  },
  {
   "id": "tm:901956",
@@ -948222,7 +948158,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "noel-aseko"
+  "slug": "tm:904974"
  },
  {
   "id": "tm:905011",
@@ -948553,7 +948489,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "du-queiroz"
+  "slug": "tm:906774"
  },
  {
   "id": "tm:90681",
@@ -948620,7 +948556,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "ruben-muller"
+  "slug": "tm:907085"
  },
  {
   "id": "tm:907087",
@@ -948642,7 +948578,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "berkay-y-lmaz"
+  "slug": "tm:907087"
  },
  {
   "id": "tm:907215",
@@ -949238,7 +949174,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "raif-adam"
+  "slug": "tm:910538"
  },
  {
   "id": "tm:910541",
@@ -949665,7 +949601,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "milan-robberechts"
+  "slug": "tm:913022"
  },
  {
   "id": "tm:91304",
@@ -950001,7 +949937,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "redouane-halhal"
+  "slug": "tm:913660"
  },
  {
   "id": "tm:91396",
@@ -950289,7 +950225,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "jannik-schuster"
+  "slug": "tm:915418"
  },
  {
   "id": "tm:915849",
@@ -950649,7 +950585,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "keisuke-goto"
+  "slug": "tm:916623"
  },
  {
   "id": "tm:91668",
@@ -950869,7 +950805,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "mamadou-diop"
+  "slug": "tm:917147"
  },
  {
   "id": "tm:91716",
@@ -951700,7 +951636,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "roy-revivo"
+  "slug": "tm:919538"
  },
  {
   "id": "tm:91956",
@@ -951768,7 +951704,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "simone-cinquegrano"
+  "slug": "tm:919669"
  },
  {
   "id": "tm:91968",
@@ -951836,7 +951772,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "vitalie-becker"
+  "slug": "tm:919703"
  },
  {
   "id": "tm:91972",
@@ -953255,7 +953191,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "lewis-koumas"
+  "slug": "tm:922462"
  },
  {
   "id": "tm:92251",
@@ -953409,7 +953345,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "giovani-versini"
+  "slug": "tm:922685"
  },
  {
   "id": "tm:922693",
@@ -953896,7 +953832,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "sindre-walle-egeli"
+  "slug": "tm:923504"
  },
  {
   "id": "tm:923535",
@@ -953918,7 +953854,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "jens-hjert-dahl"
+  "slug": "tm:923535"
  },
  {
   "id": "tm:92354",
@@ -955495,7 +955431,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "matteo-cichella"
+  "slug": "tm:927905"
  },
  {
   "id": "tm:928037",
@@ -956068,7 +956004,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "kerim-alajbegovic"
+  "slug": "tm:929994"
  },
  {
   "id": "tm:93002",
@@ -956578,7 +956514,7 @@
   "aliases": [
    "Gustavo Varela"
   ],
-  "fame": 0,
+  "fame": 31,
   "curated": false,
   "nationalities": [
    "Portugal"
@@ -956592,7 +956528,8 @@
   "reviewFlags": [
    "possible-namesake"
   ],
-  "slug": "gustavo-varela"
+  "slug": "tm:931900",
+  "recognisable": true
  },
  {
   "id": "tm:9320",
@@ -956996,7 +956933,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "mouhamed-diop"
+  "slug": "tm:933147"
  },
  {
   "id": "tm:93319",
@@ -957178,7 +957115,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "maguette-gueye"
+  "slug": "tm:933795"
  },
  {
   "id": "tm:9338",
@@ -958082,7 +958019,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "martim-fernandes"
+  "slug": "tm:935480"
  },
  {
   "id": "tm:93552",
@@ -959067,7 +959004,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "diogo-sousa"
+  "slug": "tm:937729"
  },
  {
   "id": "tm:937941",
@@ -959190,7 +959127,7 @@
   "reviewFlags": [
    "possible-namesake"
   ],
-  "slug": "paco-esteban"
+  "slug": "tm:937954"
  },
  {
   "id": "tm:937955",
@@ -959456,7 +959393,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "justin-oboavwoduo"
+  "slug": "tm:938430"
  },
  {
   "id": "tm:93844",
@@ -960236,7 +960173,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "relja-obric"
+  "slug": "tm:940553"
  },
  {
   "id": "tm:94056",
@@ -961338,7 +961275,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "xanet-olaiz"
+  "slug": "tm:941155"
  },
  {
   "id": "tm:94123",
@@ -961778,7 +961715,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "lucas-bretelle"
+  "slug": "tm:941561"
  },
  {
   "id": "tm:94158",
@@ -962552,7 +962489,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "hugo-picard"
+  "slug": "tm:944181"
  },
  {
   "id": "tm:944331",
@@ -963044,7 +962981,7 @@
   "reviewFlags": [
    "possible-namesake"
   ],
-  "slug": "javi-hernandez"
+  "slug": "tm:946279"
  },
  {
   "id": "tm:94655",
@@ -963453,7 +963390,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "ryunosuke-sato"
+  "slug": "tm:948169"
  },
  {
   "id": "tm:948259",
@@ -964172,7 +964109,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "niklas-mohr"
+  "slug": "tm:949389"
  },
  {
   "id": "tm:94939",
@@ -964820,7 +964757,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "viery"
+  "slug": "tm:950393"
  },
  {
   "id": "tm:9504",
@@ -967487,7 +967424,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "thomas-j-rgensen"
+  "slug": "tm:953004"
  },
  {
   "id": "tm:953067",
@@ -970703,7 +970640,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "nestory-irankunda"
+  "slug": "tm:956920"
  },
  {
   "id": "tm:957242",
@@ -970725,7 +970662,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "essien-bassey"
+  "slug": "tm:957242"
  },
  {
   "id": "tm:95732",
@@ -970814,7 +970751,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "zento-uno"
+  "slug": "tm:957526"
  },
  {
   "id": "tm:957544",
@@ -970836,7 +970773,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "kodai-sano"
+  "slug": "tm:957544"
  },
  {
   "id": "tm:95755",
@@ -970968,7 +970905,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "rodrigo-mora"
+  "slug": "tm:957653"
  },
  {
   "id": "tm:957822",
@@ -971007,8 +970944,7 @@
   "fame": 27,
   "curated": false,
   "nationalities": [
-   "Brazil",
-   "Italy"
+   "Brazil"
   ],
   "positions": [
    "forward",
@@ -974007,7 +973943,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "yanik-spalt"
+  "slug": "tm:960462"
  },
  {
   "id": "tm:96047",
@@ -974095,7 +974031,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "dani-lorenzo"
+  "slug": "tm:960562"
  },
  {
   "id": "tm:960571",
@@ -974530,8 +974466,7 @@
   "fame": 33,
   "curated": false,
   "nationalities": [
-   "Spain",
-   "Uruguay"
+   "Spain"
   ],
   "positions": [
    "forward"
@@ -975192,7 +975127,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "marcos-fernandez"
+  "slug": "tm:961948"
  },
  {
   "id": "tm:96195",
@@ -975724,7 +975659,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "ousmane-diallo"
+  "slug": "tm:962149"
  },
  {
   "id": "tm:96215",
@@ -977188,7 +977123,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "kaique-pereira"
+  "slug": "tm:964590"
  },
  {
   "id": "tm:9646",
@@ -978534,7 +978469,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "aden-mccarthy"
+  "slug": "tm:965990"
  },
  {
   "id": "tm:966",
@@ -980685,7 +980620,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "mertcan-ayhan"
+  "slug": "tm:969376"
  },
  {
   "id": "tm:969447",
@@ -988753,7 +988688,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "merwan-ifnaoui"
+  "slug": "tm:976861"
  },
  {
   "id": "tm:97687",
@@ -992071,7 +992006,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "rayan-bamba"
+  "slug": "tm:979760"
  },
  {
   "id": "tm:979761",
@@ -992896,7 +992831,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "diego-mascardi"
+  "slug": "tm:981998"
  },
  {
   "id": "tm:982097",
@@ -994042,7 +993977,7 @@
   "positions": [
    "goalkeeper"
   ],
-  "slug": "patrick-beach"
+  "slug": "tm:983578"
  },
  {
   "id": "tm:98359",
@@ -994108,7 +994043,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "mats-rots"
+  "slug": "tm:983677"
  },
  {
   "id": "tm:983702",
@@ -994511,7 +994446,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "mateo-del-blanco"
+  "slug": "tm:984529"
  },
  {
   "id": "tm:984544",
@@ -995105,7 +995040,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "emmanuel-ayaosi"
+  "slug": "tm:985844"
  },
  {
   "id": "tm:9859",
@@ -995304,7 +995239,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "ismail-bouneb"
+  "slug": "tm:986286"
  },
  {
   "id": "tm:986288",
@@ -995393,7 +995328,7 @@
   "positions": [
    "defender"
   ],
-  "slug": "yvann-titi"
+  "slug": "tm:986299"
  },
  {
   "id": "tm:9863",
@@ -996090,7 +996025,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "alessandro-di-nunzio"
+  "slug": "tm:988995"
  },
  {
   "id": "tm:989112",
@@ -996332,7 +996267,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "konstantinos-karetsas"
+  "slug": "tm:990148"
  },
  {
   "id": "tm:99015",
@@ -996618,7 +996553,7 @@
   "positions": [
    "midfielder"
   ],
-  "slug": "tobias-moi"
+  "slug": "tm:990983"
  },
  {
   "id": "tm:991",
@@ -996863,7 +996798,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "abiel-osorio"
+  "slug": "tm:991773"
  },
  {
   "id": "tm:9918",
@@ -997741,7 +997676,7 @@
   "positions": [
    "forward"
   ],
-  "slug": "pavel-kacor"
+  "slug": "tm:995525"
  },
  {
   "id": "tm:99559",

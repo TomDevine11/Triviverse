@@ -134,10 +134,10 @@ export default function EnglandQuiz() {
           {visibleSuggestions.length > 0 && (
             <div ref={dropdownRef} id="england-suggestions" role="listbox" className="absolute top-full left-0 right-0 mt-1 bg-surface border border-border-strong rounded-xl overflow-hidden z-dropdown shadow-float">
               {visibleSuggestions.map((item, i) => (
-                <button key={item.name} type="button" role="option" aria-selected={i === highlightedIndex}
+                <button key={item.id || item.name} type="button" role="option" aria-selected={i === highlightedIndex}
                   onMouseDown={e => { e.preventDefault(); submitGuess(item.name, item.id) }} onMouseEnter={() => setHighlightedIndex(i)}
                   className={`w-full text-left px-4 py-2.5 transition-colors border-b border-border/50 last:border-0 ${i === highlightedIndex ? 'bg-border' : 'hover:bg-border/60'}`}>
-                  <div className="flex items-center gap-2">{item.flag && <span className="text-base shrink-0">{item.flag}</span>}<span className="text-primary text-sm font-medium truncate">{item.name}</span></div>
+                  <div className="flex items-center gap-2">{item.flag && <span className="text-base shrink-0">{item.flag}</span>}<span className="text-primary text-sm font-medium truncate">{item.name}</span>{item.hint && <span className="ml-auto pl-2 max-w-[55%] shrink-0 truncate text-muted text-xs">{item.hint}</span>}</div>
                 </button>
               ))}
             </div>

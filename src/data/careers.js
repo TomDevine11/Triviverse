@@ -36,9 +36,10 @@ export const TARGET_COUNT = ELIGIBLE.length
 function toRound(p) {
   const clubs = seniorClubs(p).map(c => ({ club: c.name, years: years(c) }))
   const name = fixName(p.name)
-  // Phase 3: carry the stable player id (null when the name is ambiguous/unknown,
-  // in which case the game keeps name-based matching).
-  return { name, id: resolveNameToId(name), clues: clubs }
+  // Carry the stable player id: the generated target's own (so namesakes like the
+  // two Danilos can't stand in for each other), else resolved from the name (null
+  // when ambiguous/unknown → the game keeps name-based matching).
+  return { name, id: p.id || resolveNameToId(name), clues: clubs }
 }
 
 // Build a game round from any career player ({ name, clubs }). Used by themed

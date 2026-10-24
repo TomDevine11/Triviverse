@@ -1,9 +1,8 @@
 import { Fragment, useState, useRef, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { getDailyGrid, getRandomGrid, getGridForDay, categoryLabel, resolveGuess, findAssignment, normalizeName } from '../../data/tictactoe'
+import { getDailyGrid, getRandomGrid, getGridForDay, categoryLabel, resolvePick, findAssignment, normalizeName } from '../../data/tictactoe'
 import { useQa } from '../../dev/qa'
 import QaBar from '../../dev/QaBar'
-import { resolveNameToId } from '../../data/canonical/resolve'
 import { refineSuggestions, searchRegistry } from '../../data/canonical/resolve.js'
 import { ShareCard, RESULT_SECONDARY_BTN } from '../../components/ShareCard'
 import ModeToggle from '../../components/ModeToggle'
@@ -206,17 +205,8 @@ export default function FootballTicTacToe({ onBackToModes }) {
 
   const submitGuess = (text, selectedId = null) => {
     if (selectedCell == null) return
-    const candidates = grid.candidates[selectedCell]
-    // Phase 3: a picked suggestion validates by stable id against this cell's
-    // candidates. Free-typed text falls back to the (identity-backed) resolver,
-    // which also handles surname disambiguation by cell context.
-    let match = null
-    if (selectedId != null) {
-      for (const name of candidates) {
-        if (resolveNameToId(name) === selectedId && !usedNames.has(name)) { match = name; break }
-      }
-    }
-    if (!match) match = resolveGuess(text, candidates, usedNames)
+    // A picked suggestion validates by its player id; free text by name.
+    const match = resolvePick(grid, selectedCell, text, selectedId, usedNames)
 
     if (match) {
       setFilled(prev => ({ ...prev, [selectedCell]: match }))
@@ -412,7 +402,7 @@ export default function FootballTicTacToe({ onBackToModes }) {
               <div ref={dropdownRef} id="ttt-suggestions" role="listbox" className="absolute top-full left-0 right-0 mt-1 bg-surface border border-border-strong rounded-xl overflow-hidden z-10 shadow-2xl">
                 {visibleSuggestions.map((item, i) => (
                   <button
-                    key={item.name}
+                    key={item.id || item.name}
                     type="button"
                     id={`ttt-option-${i}`}
                     role="option"
@@ -423,7 +413,7 @@ export default function FootballTicTacToe({ onBackToModes }) {
                   >
                     <div className="flex items-center gap-2">
                       {item.flag && <span className="text-base shrink-0">{item.flag}</span>}
-                      <span className="text-primary text-sm font-medium truncate">{item.name}</span>
+                      <span className="text-primary text-sm font-medium truncate">{item.name}</span>{item.hint && <span className="ml-auto pl-2 max-w-[55%] shrink-0 truncate text-muted text-xs">{item.hint}</span>}
                     </div>
                   </button>
                 ))}

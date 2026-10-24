@@ -30,6 +30,9 @@ const nm = (id) => R.players.get(id)?.name
 // source row carried — the national record tables include players from before our
 // league coverage starts (B-035).
 const label = (r) => nm(r.id) || r.name
+// The answer's player id (registry form), so a dropdown pick is matched by WHO it
+// is, not by a name a namesake shares.
+const pid = (r) => (r.id != null ? { id: `tm:${r.id}` } : {})
 
 // The real driver of "is this fun?" is ENTITY PROMINENCE — is this a nation/club the
 // audience actually follows? A general fan can name Germany's or Arsenal's top-10 but
@@ -80,7 +83,7 @@ function topTen(rows, floor) {
   // capped ties at 90). The extra tied record-holders join a tiePool so any of them
   // counts for the joint slot — same pattern as the marquee competition lists.
   const tied = rows.slice(10).filter(r => r.value === top[9].value)
-  return { top, tieValue: tied.length ? top[9].value : undefined, tiePool: tied.length ? tied.map(r => ({ text: label(r) })) : undefined }
+  return { top, tieValue: tied.length ? top[9].value : undefined, tiePool: tied.length ? tied.map(r => ({ text: label(r), ...pid(r) })) : undefined }
 }
 
 const PREV_DAILY = new Map()
@@ -100,7 +103,7 @@ function emit({ id, scope, title, description, icon, unit, list, detail }) {
   const anchored = top.slice(0, ANCHOR_IN).some(r => marquee(r.id))
   if (recogN + legends < FUN_MIN || !anchored) return
   const fmt = detail || ((v) => `${v} ${unit}`)
-  const answers = top.map((r, i) => ({ rank: i + 1, text: label(r), detail: fmt(r.value), value: r.value }))
+  const answers = top.map((r, i) => ({ rank: i + 1, text: label(r), ...pid(r), detail: fmt(r.value), value: r.value }))
   // Rotation stability: the daily is picked by POSITION in the daily-eligible list,
   // so flipping one existing question's flag reshuffles every future daily (and
   // today's). A question that already exists keeps the flag it shipped with; only

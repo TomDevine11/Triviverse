@@ -658,14 +658,14 @@ export default function Football501({ initialMode = 'daily' }) {
             {suggestions.length > 0 && (
               <div ref={dropdownRef} role="listbox" className="absolute top-full left-0 right-0 mt-1 bg-surface border border-border-strong rounded-xl overflow-hidden z-dropdown shadow-float">
                 {suggestions.map((player, i) => (
-                  <button key={player.name} role="option" aria-selected={i === highlightedIndex}
+                  <button key={player.id || player.name} role="option" aria-selected={i === highlightedIndex}
                     onMouseDown={e => { e.preventDefault(); submitGuess(player) }} onMouseEnter={() => setHighlightedIndex(i)}
                     className={`w-full text-left px-4 py-2.5 transition-colors border-b border-border/50 last:border-0 ${i === highlightedIndex ? 'bg-border' : 'hover:bg-border/60'}`}>
                     <div className="flex items-center gap-3">
                       <span className="text-xl shrink-0">{player.flag}</span>
                       <div className="min-w-0 flex-1">
                         <div className="text-primary text-sm font-medium truncate">{player.name}</div>
-                        <div className="text-muted text-xs">{player.nationality}{player.dob ? ` · ${player.dob}` : ''}</div>
+                        <div className="text-muted text-xs truncate">{player.nationality}{player.hint ? ` · ${player.hint}` : player.dob ? ` · ${player.dob}` : ''}</div>
                       </div>
                       {player.position && <span className={POS_BADGE}>{player.position}</span>}
                     </div>

@@ -106,17 +106,17 @@ export default function FootballPointless() {
   const qaGoto = (i) => { const n = ((i % N) + N) % N; qa.goto(n); setMode('unlimited'); setQIndex(n); resetRound() }
 
   const flash = (msg) => { setToast(msg); setShake(true); setTimeout(() => setShake(false), 400); setTimeout(() => setToast(''), 1600) }
-  const submit = (text) => {
+  const submit = (text, id = null) => {
     if (!active || !text.trim()) return
     setInput('')
-    const m = matchAnswer(question, text)
+    const m = matchAnswer(question, text, id)
     if (!m) { flash('Not a valid answer for this one'); return }
-    if (answers.some(a => a.d === m.d)) { flash('Already used'); return }
+    if (answers.some(a => a.d === m.d && a.i === m.i)) { flash('Already used'); return }
     setAnswers(a => [...a, m])
     setReveal({ score: m.p, name: m.d, key: Date.now() }) // drive the tower countdown
     setTimeout(() => inputRef.current?.focus(), 0)
   }
-  const handleSubmit = (e) => { e.preventDefault(); if (!active) return; if (highlightedIndex >= 0 && visibleSuggestions[highlightedIndex]) { submit(visibleSuggestions[highlightedIndex].name); return } if (input.trim()) submit(input.trim()) }
+  const handleSubmit = (e) => { e.preventDefault(); if (!active) return; if (highlightedIndex >= 0 && visibleSuggestions[highlightedIndex]) { { const s = visibleSuggestions[highlightedIndex]; submit(s.name, s.id) } return } if (input.trim()) submit(input.trim()) }
   const handleKeyDown = (e) => {
     if (e.key === 'Escape') { setDismissed(true); setHighlightedIndex(-1); return }
     if (!visibleSuggestions.length) return
@@ -193,10 +193,10 @@ export default function FootballPointless() {
             {visibleSuggestions.length > 0 && (
               <div ref={dropdownRef} role="listbox" className="absolute top-full left-0 right-0 mt-1 bg-surface border border-border-strong rounded-xl overflow-hidden z-dropdown shadow-float">
                 {visibleSuggestions.map((item, i) => (
-                  <button key={item.name} type="button" role="option" aria-selected={i === highlightedIndex}
-                    onMouseDown={e => { e.preventDefault(); submit(item.name) }} onMouseEnter={() => setHighlightedIndex(i)}
+                  <button key={item.id || item.name} type="button" role="option" aria-selected={i === highlightedIndex}
+                    onMouseDown={e => { e.preventDefault(); submit(item.name, item.id) }} onMouseEnter={() => setHighlightedIndex(i)}
                     className={`w-full text-left px-4 py-2.5 transition-colors border-b border-border/50 last:border-0 ${i === highlightedIndex ? 'bg-border' : 'hover:bg-border/60'}`}>
-                    <div className="flex items-center gap-2">{item.flag && <span className="text-base shrink-0">{item.flag}</span>}<span className="text-primary text-sm font-medium truncate">{item.name}</span></div>
+                    <div className="flex items-center gap-2">{item.flag && <span className="text-base shrink-0">{item.flag}</span>}<span className="text-primary text-sm font-medium truncate">{item.name}</span>{item.hint && <span className="ml-auto pl-2 max-w-[55%] shrink-0 truncate text-muted text-xs">{item.hint}</span>}</div>
                   </button>
                 ))}
               </div>

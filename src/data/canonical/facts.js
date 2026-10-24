@@ -88,6 +88,7 @@ function recordFact(playerId, type, value, source) {
 for (const p of universePlayers) {
   const r = ensureById(p.id, p.displayName)
   if ((p.fame || 0) > r.fame) r.fame = p.fame
+  if (p.hint) r.hint = p.hint // namesake disambiguator for dropdowns (main club · last season)
   for (const n of p.nationalities || []) if (!r.nationalities.includes(n)) r.nationalities.push(n)
   for (const pos of p.positions || []) if (!r.positions.includes(pos)) r.positions.push(pos)
 }
