@@ -2,9 +2,10 @@
  "meta": {
   "schemaVersion": 1,
   "source": "transfermarkt history (derived dimensions)",
-  "generatedAt": "2026-07-27",
-  "count": 894,
-  "kind": "club"
+  "generatedAt": "2026-10-24",
+  "count": 897,
+  "club": 457,
+  "national": 440
  },
  "teams": [
   {
@@ -499,7 +500,7 @@
   {
    "id": "64",
    "kind": "club",
-   "name": "SV 07. Elversberg",
+   "name": "SV 07 Elversberg",
    "norm": "sv 07 elversberg",
    "country": null,
    "competitions": [
@@ -1650,6 +1651,17 @@
    "last": 1943
   },
   {
+   "id": "413",
+   "kind": "club",
+   "name": "LASK",
+   "norm": "lask",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2026
+  },
+  {
    "id": "415",
    "kind": "club",
    "name": "FC Toulouse",
@@ -2709,7 +2721,8 @@
    "norm": "como 1907",
    "country": null,
    "competitions": [
-    "IT1"
+    "IT1",
+    "CL"
    ],
    "last": 1943
   },
@@ -4721,6 +4734,15 @@
    "last": 0
   },
   {
+   "id": "3855",
+   "kind": "national",
+   "name": "Rwanda",
+   "norm": "rwanda",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "3856",
    "kind": "national",
    "name": "Guinea",
@@ -6292,15 +6314,6 @@
    "last": 0
   },
   {
-   "id": "16298",
-   "kind": "national",
-   "name": "Poland U19",
-   "norm": "poland u19",
-   "country": null,
-   "competitions": [],
-   "last": 0
-  },
-  {
    "id": "16299",
    "kind": "national",
    "name": "Poland U20",
@@ -6395,15 +6408,6 @@
    "kind": "national",
    "name": "Portugal U21",
    "norm": "portugal u21",
-   "country": null,
-   "competitions": [],
-   "last": 0
-  },
-  {
-   "id": "16418",
-   "kind": "national",
-   "name": "Mexico U23",
-   "norm": "mexico u23",
    "country": null,
    "competitions": [],
    "last": 0
@@ -6830,15 +6834,6 @@
    "kind": "national",
    "name": "Croatia U17",
    "norm": "croatia u17",
-   "country": null,
-   "competitions": [],
-   "last": 0
-  },
-  {
-   "id": "21233",
-   "kind": "national",
-   "name": "Ukraine U19",
-   "norm": "ukraine u19",
    "country": null,
    "competitions": [],
    "last": 0
@@ -7386,6 +7381,15 @@
    "last": 0
   },
   {
+   "id": "24957",
+   "kind": "national",
+   "name": "Azerbaijan U21",
+   "norm": "azerbaijan u21",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "24960",
    "kind": "national",
    "name": "Kazakhstan U21",
@@ -7514,6 +7518,15 @@
    "last": 0
   },
   {
+   "id": "26099",
+   "kind": "national",
+   "name": "Albania U19",
+   "norm": "albania u19",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
    "id": "26399",
    "kind": "national",
    "name": "Scotland B",
@@ -7621,15 +7634,6 @@
    "kind": "national",
    "name": "Israel U18",
    "norm": "israel u18",
-   "country": null,
-   "competitions": [],
-   "last": 0
-  },
-  {
-   "id": "28164",
-   "kind": "national",
-   "name": "United States U19",
-   "norm": "united states u19",
    "country": null,
    "competitions": [],
    "last": 0
@@ -7787,15 +7791,6 @@
    "kind": "national",
    "name": "Ecuador U20",
    "norm": "ecuador u20",
-   "country": null,
-   "competitions": [],
-   "last": 0
-  },
-  {
-   "id": "31519",
-   "kind": "national",
-   "name": "Republic of the Congo U17",
-   "norm": "republic of the congo u17",
    "country": null,
    "competitions": [],
    "last": 0
@@ -8102,6 +8097,15 @@
     "ES1"
    ],
    "last": 1995
+  },
+  {
+   "id": "38231",
+   "kind": "national",
+   "name": "Norway U23",
+   "norm": "norway u23",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "38280",
@@ -8748,10 +8752,30 @@
    "last": 1932
   },
   {
+   "id": "63993",
+   "kind": "club",
+   "name": "Sabah FK",
+   "norm": "sabah fk",
+   "country": null,
+   "competitions": [
+    "CL"
+   ],
+   "last": 2026
+  },
+  {
    "id": "65623",
    "kind": "national",
    "name": "Brazil U16",
    "norm": "brazil u16",
+   "country": null,
+   "competitions": [],
+   "last": 0
+  },
+  {
+   "id": "67194",
+   "kind": "national",
+   "name": "Dänische Liga-Auswahl",
+   "norm": "danische liga auswahl",
    "country": null,
    "competitions": [],
    "last": 0
@@ -9014,6 +9038,15 @@
     "ES1"
    ],
    "last": 1971
+  },
+  {
+   "id": "118369",
+   "kind": "national",
+   "name": "Morocco U18",
+   "norm": "morocco u18",
+   "country": null,
+   "competitions": [],
+   "last": 0
   },
   {
    "id": "120259",

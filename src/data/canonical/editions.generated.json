@@ -2,8 +2,8 @@
  "meta": {
   "schemaVersion": 1,
   "source": "transfermarkt history (derived dimensions)",
-  "generatedAt": "2026-07-27",
-  "count": 419,
+  "generatedAt": "2026-10-24",
+  "count": 425,
   "outcomes": "skeleton (null — C11)"
  },
  "editions": [
@@ -308,6 +308,15 @@
    "id": "GB1_2025",
    "competitionId": "GB1",
    "seasonId": "2025",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "GB1_2026",
+   "competitionId": "GB1",
+   "seasonId": "2026",
    "champion": null,
    "runnerUp": null,
    "topScorer": null,
@@ -1187,6 +1196,15 @@
    "participants": null
   },
   {
+   "id": "ES1_2026",
+   "competitionId": "ES1",
+   "seasonId": "2026",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
    "id": "IT1_1929",
    "competitionId": "IT1",
    "seasonId": "1929",
@@ -2060,6 +2078,15 @@
    "participants": null
   },
   {
+   "id": "IT1_2026",
+   "competitionId": "IT1",
+   "seasonId": "2026",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
    "id": "FR1_1932",
    "competitionId": "FR1",
    "seasonId": "1932",
@@ -2906,6 +2933,15 @@
    "participants": null
   },
   {
+   "id": "FR1_2026",
+   "competitionId": "FR1",
+   "seasonId": "2026",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
    "id": "L1_1963",
    "competitionId": "L1",
    "seasonId": "1963",
@@ -3473,6 +3509,15 @@
    "participants": null
   },
   {
+   "id": "L1_2026",
+   "competitionId": "L1",
+   "seasonId": "2026",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
    "id": "CL_1992",
    "competitionId": "CL",
    "seasonId": "1992",
@@ -3773,6 +3818,15 @@
    "id": "CL_2025",
    "competitionId": "CL",
    "seasonId": "2025",
+   "champion": null,
+   "runnerUp": null,
+   "topScorer": null,
+   "participants": null
+  },
+  {
+   "id": "CL_2026",
+   "competitionId": "CL",
+   "seasonId": "2026",
    "champion": null,
    "runnerUp": null,
    "topScorer": null,

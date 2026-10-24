@@ -2,9 +2,9 @@
  "meta": {
   "schemaVersion": 1,
   "source": "transfermarkt history (derived dimensions)",
-  "generatedAt": "2026-07-27",
-  "count": 97,
-  "span": "1929–2025"
+  "generatedAt": "2026-10-24",
+  "count": 98,
+  "span": "1929–2026"
  },
  "seasons": [
   {
@@ -588,6 +588,12 @@
    "label": "2025/26",
    "startYear": 2025,
    "endYear": 2026
+  },
+  {
+   "id": "2026",
+   "label": "2026/27",
+   "startYear": 2026,
+   "endYear": 2027
   }
  ]
 }

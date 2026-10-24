@@ -8,10 +8,10 @@
    "first": 1932,
    "enumerate": "league"
   },
-  "seasons": "1932–2025",
-  "clubSeasons": 1946,
-  "players": 10702,
-  "builtAt": "2026-07-26"
+  "seasons": "1932–2026",
+  "clubSeasons": 1964,
+  "players": 10820,
+  "builtAt": "2026-10-24"
  },
  "players": [
   {
@@ -38515,6 +38515,26 @@
    }
   },
   {
+   "id": "35047",
+   "name": "Axel Witsel",
+   "nat": "Belgium",
+   "natKey": "belgium",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "417": {
+       "apps": 7,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "35099",
    "name": "Steven Fletcher",
    "nat": "Scotland",
@@ -43468,10 +43488,10 @@
    "nat": "Germany",
    "natKey": "germany",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 85,
+     "apps": 92,
      "goals": 0,
      "clubs": {
       "583": {
@@ -43479,7 +43499,7 @@
        "goals": 0
       },
       "10004": {
-       "apps": 22,
+       "apps": 29,
        "goals": 0
       }
      }
@@ -44084,14 +44104,14 @@
    "nat": "Finland",
    "natKey": "finland",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 17,
+     "apps": 24,
      "goals": 0,
      "clubs": {
       "162": {
-       "apps": 17,
+       "apps": 24,
        "goals": 0
       }
      }
@@ -48564,10 +48584,10 @@
    "nat": "Portugal",
    "natKey": "portugal",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 427,
+     "apps": 434,
      "goals": 0,
      "clubs": {
       "995": {
@@ -48576,6 +48596,10 @@
       },
       "1041": {
        "apps": 378,
+       "goals": 0
+      },
+      "1420": {
+       "apps": 7,
        "goals": 0
       }
      }
@@ -52980,19 +53004,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 103,
-     "goals": 40,
+     "apps": 110,
+     "goals": 42,
      "clubs": {
       "969": {
        "apps": 73,
        "goals": 33
       },
       "1082": {
-       "apps": 30,
-       "goals": 7
+       "apps": 37,
+       "goals": 9
       }
      }
     }
@@ -53264,10 +53288,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 465,
+     "apps": 470,
      "goals": 26,
      "clubs": {
       "273": {
@@ -53275,7 +53299,7 @@
        "goals": 7
       },
       "1082": {
-       "apps": 215,
+       "apps": 220,
        "goals": 11
       },
       "1147": {
@@ -57169,6 +57193,26 @@
       "494": {
        "apps": 28,
        "goals": 12
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "102226",
+   "name": "Thorgan Hazard",
+   "nat": "Belgium",
+   "natKey": "belgium",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "826": {
+       "apps": 5,
+       "goals": 0
       }
      }
     }
@@ -63407,6 +63451,26 @@
    }
   },
   {
+   "id": "122115",
+   "name": "Vincent Sasso",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 3,
+     "goals": 0,
+     "clubs": {
+      "738": {
+       "apps": 3,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "122116",
    "name": "Nicolas de Préville",
    "nat": "France",
@@ -64116,14 +64180,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 185,
+     "apps": 188,
      "goals": 2,
      "clubs": {
       "826": {
-       "apps": 162,
+       "apps": 165,
        "goals": 2
       },
       "1162": {
@@ -64248,14 +64312,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2014,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 79,
+     "apps": 82,
      "goals": 2,
      "clubs": {
       "583": {
-       "apps": 30,
+       "apps": 33,
        "goals": 0
       },
       "1082": {
@@ -65300,10 +65364,10 @@
    "nat": "Central African Republic",
    "natKey": "central african republic",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 113,
+     "apps": 117,
      "goals": 2,
      "clubs": {
       "162": {
@@ -65311,7 +65375,7 @@
        "goals": 2
       },
       "244": {
-       "apps": 61,
+       "apps": 65,
        "goals": 0
       },
       "826": {
@@ -66352,14 +66416,14 @@
    "nat": "Argentina",
    "natKey": "argentina",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 103,
+     "apps": 104,
      "goals": 7,
      "clubs": {
       "1041": {
-       "apps": 103,
+       "apps": 104,
        "goals": 7
       }
      }
@@ -68168,14 +68232,14 @@
    "nat": "Algeria",
    "natKey": "algeria",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 182,
+     "apps": 184,
      "goals": 2,
      "clubs": {
       "1420": {
-       "apps": 55,
+       "apps": 57,
        "goals": 0
       },
       "3911": {
@@ -70236,15 +70300,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2016,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 5,
+     "apps": 10,
      "goals": 1,
      "clubs": {
       "244": {
        "apps": 5,
        "goals": 1
+      },
+      "1164": {
+       "apps": 5,
+       "goals": 0
       }
      }
     }
@@ -70476,14 +70544,14 @@
    "nat": "Switzerland",
    "natKey": "switzerland",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 86,
+     "apps": 93,
      "goals": 0,
      "clubs": {
       "1158": {
-       "apps": 86,
+       "apps": 93,
        "goals": 0
       }
      }
@@ -77500,10 +77568,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 285,
+     "apps": 289,
      "goals": 14,
      "clubs": {
       "162": {
@@ -77517,6 +77585,10 @@
       "1082": {
        "apps": 96,
        "goals": 7
+      },
+      "1164": {
+       "apps": 4,
+       "goals": 0
       }
      }
     }
@@ -77892,14 +77964,14 @@
    "nat": "DR Congo",
    "natKey": "dr congo",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 4,
+     "apps": 7,
      "goals": 0,
      "clubs": {
       "738": {
-       "apps": 4,
+       "apps": 7,
        "goals": 0
       }
      }
@@ -77992,14 +78064,14 @@
    "nat": "Japan",
    "natKey": "japan",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 94,
+     "apps": 95,
      "goals": 19,
      "clubs": {
       "162": {
-       "apps": 94,
+       "apps": 95,
        "goals": 19
       }
      }
@@ -78136,15 +78208,15 @@
    "nat": "Denmark",
    "natKey": "denmark",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 62,
-     "goals": 6,
+     "apps": 67,
+     "goals": 7,
      "clubs": {
       "244": {
-       "apps": 62,
-       "goals": 6
+       "apps": 67,
+       "goals": 7
       }
      }
     }
@@ -84320,10 +84392,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 304,
+     "apps": 305,
      "goals": 41,
      "clubs": {
       "244": {
@@ -84331,7 +84403,7 @@
        "goals": 22
       },
       "417": {
-       "apps": 66,
+       "apps": 67,
        "goals": 5
       },
       "667": {
@@ -84460,11 +84532,11 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 249,
-     "goals": 19,
+     "apps": 257,
+     "goals": 20,
      "clubs": {
       "667": {
        "apps": 111,
@@ -84475,8 +84547,8 @@
        "goals": 1
       },
       "3911": {
-       "apps": 112,
-       "goals": 5
+       "apps": 120,
+       "goals": 6
       }
      }
     }
@@ -85132,19 +85204,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 189,
-     "goals": 17,
+     "apps": 197,
+     "goals": 18,
      "clubs": {
       "244": {
        "apps": 61,
        "goals": 5
       },
       "417": {
-       "apps": 58,
-       "goals": 4
+       "apps": 66,
+       "goals": 5
       },
       "826": {
        "apps": 70,
@@ -85160,15 +85232,15 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 9,
-     "goals": 1,
+     "apps": 15,
+     "goals": 2,
      "clubs": {
       "162": {
-       "apps": 9,
-       "goals": 1
+       "apps": 15,
+       "goals": 2
       }
      }
     }
@@ -86228,15 +86300,15 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 326,
-     "goals": 26,
+     "apps": 331,
+     "goals": 29,
      "clubs": {
       "583": {
-       "apps": 326,
-       "goals": 26
+       "apps": 331,
+       "goals": 29
       }
      }
     }
@@ -86268,14 +86340,14 @@
    "nat": "Italy",
    "natKey": "italy",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 57,
+     "apps": 64,
      "goals": 1,
      "clubs": {
       "244": {
-       "apps": 28,
+       "apps": 35,
        "goals": 0
       },
       "1041": {
@@ -86288,19 +86360,19 @@
   },
   {
    "id": "182201",
-   "name": "Ally Samatta",
+   "name": "Mbwana Samatta",
    "nat": "Tanzania",
    "natKey": "tanzania",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 27,
-     "goals": 2,
+     "apps": 34,
+     "goals": 4,
      "clubs": {
       "738": {
-       "apps": 27,
-       "goals": 2
+       "apps": 34,
+       "goals": 4
       }
      }
     }
@@ -87116,11 +87188,11 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 292,
-     "goals": 97,
+     "apps": 299,
+     "goals": 100,
      "clubs": {
       "244": {
        "apps": 227,
@@ -87131,8 +87203,8 @@
        "goals": 10
       },
       "826": {
-       "apps": 33,
-       "goals": 11
+       "apps": 40,
+       "goals": 14
       }
      }
     }
@@ -87360,14 +87432,14 @@
    "nat": "Angola",
    "natKey": "angola",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 89,
+     "apps": 91,
      "goals": 0,
      "clubs": {
       "1041": {
-       "apps": 89,
+       "apps": 91,
        "goals": 0
       }
      }
@@ -87656,14 +87728,18 @@
    "nat": "France",
    "natKey": "france",
    "pos": "GK",
-   "last": 2021,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 47,
+     "apps": 48,
      "goals": 0,
      "clubs": {
       "162": {
        "apps": 2,
+       "goals": 0
+      },
+      "290": {
+       "apps": 1,
        "goals": 0
       },
       "1158": {
@@ -87804,15 +87880,15 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 233,
-     "goals": 42,
+     "apps": 240,
+     "goals": 43,
      "clubs": {
       "1041": {
-       "apps": 233,
-       "goals": 42
+       "apps": 240,
+       "goals": 43
       }
      }
     }
@@ -87928,10 +88004,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 177,
+     "apps": 183,
      "goals": 0,
      "clubs": {
       "244": {
@@ -87939,7 +88015,7 @@
        "goals": 0
       },
       "273": {
-       "apps": 49,
+       "apps": 55,
        "goals": 0
       },
       "826": {
@@ -88104,10 +88180,10 @@
    "nat": "Mauritania",
    "natKey": "mauritania",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 101,
+     "apps": 107,
      "goals": 0,
      "clubs": {
       "1416": {
@@ -88115,7 +88191,7 @@
        "goals": 0
       },
       "1420": {
-       "apps": 68,
+       "apps": 74,
        "goals": 0
       }
      }
@@ -88148,14 +88224,14 @@
    "nat": "Switzerland",
    "natKey": "switzerland",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 37,
+     "apps": 40,
      "goals": 2,
      "clubs": {
       "244": {
-       "apps": 37,
+       "apps": 40,
        "goals": 2
       }
      }
@@ -88260,14 +88336,18 @@
    "nat": "France",
    "natKey": "france",
    "pos": "GK",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 62,
+     "apps": 67,
      "goals": 0,
      "clubs": {
       "273": {
        "apps": 1,
+       "goals": 0
+      },
+      "738": {
+       "apps": 5,
        "goals": 0
       },
       "1095": {
@@ -89316,19 +89396,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 227,
-     "goals": 6,
+     "apps": 233,
+     "goals": 7,
      "clubs": {
       "162": {
        "apps": 100,
        "goals": 1
       },
       "826": {
-       "apps": 67,
-       "goals": 4
+       "apps": 73,
+       "goals": 5
       },
       "969": {
        "apps": 60,
@@ -89384,19 +89464,19 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 50,
-     "goals": 5,
+     "apps": 57,
+     "goals": 6,
      "clubs": {
       "415": {
        "apps": 35,
        "goals": 5
       },
       "1420": {
-       "apps": 15,
-       "goals": 0
+       "apps": 22,
+       "goals": 1
       }
      }
     }
@@ -90344,14 +90424,14 @@
    "nat": "Tunisia",
    "natKey": "tunisia",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 47,
+     "apps": 50,
      "goals": 8,
      "clubs": {
       "417": {
-       "apps": 47,
+       "apps": 50,
        "goals": 8
       }
      }
@@ -91576,12 +91656,16 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 379,
-     "goals": 49,
+     "apps": 386,
+     "goals": 51,
      "clubs": {
+      "273": {
+       "apps": 7,
+       "goals": 2
+      },
       "667": {
        "apps": 142,
        "goals": 26
@@ -91936,14 +92020,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 82,
+     "apps": 88,
      "goals": 11,
      "clubs": {
       "244": {
-       "apps": 23,
+       "apps": 29,
        "goals": 4
       },
       "417": {
@@ -93068,14 +93152,14 @@
    "nat": "Germany",
    "natKey": "germany",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 155,
+     "apps": 156,
      "goals": 9,
      "clubs": {
       "162": {
-       "apps": 70,
+       "apps": 71,
        "goals": 5
       },
       "583": {
@@ -94164,15 +94248,15 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2022,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 154,
-     "goals": 29,
+     "apps": 161,
+     "goals": 30,
      "clubs": {
       "1095": {
-       "apps": 54,
-       "goals": 6
+       "apps": 61,
+       "goals": 7
       },
       "1160": {
        "apps": 100,
@@ -95788,14 +95872,14 @@
    "nat": "Benin",
    "natKey": "benin",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 46,
+     "apps": 48,
      "goals": 7,
      "clubs": {
       "1158": {
-       "apps": 46,
+       "apps": 48,
        "goals": 7
       }
      }
@@ -95808,15 +95892,15 @@
    "nat": "Poland",
    "natKey": "poland",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 141,
-     "goals": 19,
+     "apps": 148,
+     "goals": 20,
      "clubs": {
       "273": {
-       "apps": 19,
-       "goals": 1
+       "apps": 26,
+       "goals": 2
       },
       "826": {
        "apps": 122,
@@ -96852,14 +96936,14 @@
    "nat": "Algeria",
    "natKey": "algeria",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 110,
+     "apps": 117,
      "goals": 8,
      "clubs": {
       "1082": {
-       "apps": 62,
+       "apps": 69,
        "goals": 3
       },
       "1420": {
@@ -97628,10 +97712,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 96,
+     "apps": 103,
      "goals": 5,
      "clubs": {
       "417": {
@@ -97641,6 +97725,10 @@
       "738": {
        "apps": 91,
        "goals": 5
+      },
+      "3911": {
+       "apps": 7,
+       "goals": 0
       }
      }
     }
@@ -98652,14 +98740,14 @@
    "nat": "Indonesia",
    "natKey": "indonesia",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 18,
+     "apps": 23,
      "goals": 0,
      "clubs": {
       "1082": {
-       "apps": 18,
+       "apps": 23,
        "goals": 0
       }
      }
@@ -99068,14 +99156,14 @@
    "nat": "Russia",
    "natKey": "russia",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 206,
+     "apps": 213,
      "goals": 36,
      "clubs": {
       "162": {
-       "apps": 206,
+       "apps": 213,
        "goals": 36
       }
      }
@@ -100932,10 +101020,10 @@
    "nat": "Nigeria",
    "natKey": "nigeria",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 206,
+     "apps": 211,
      "goals": 36,
      "clubs": {
       "995": {
@@ -100943,7 +101031,7 @@
        "goals": 33
       },
       "10004": {
-       "apps": 29,
+       "apps": 34,
        "goals": 3
       }
      }
@@ -100976,14 +101064,14 @@
    "nat": "Germany",
    "natKey": "germany",
    "pos": "MID",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 31,
+     "apps": 35,
      "goals": 1,
      "clubs": {
       "415": {
-       "apps": 31,
+       "apps": 35,
        "goals": 1
       }
      }
@@ -101455,19 +101543,39 @@
    }
   },
   {
+   "id": "281611",
+   "name": "Adrien Monfray",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "1095": {
+       "apps": 7,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "281963",
    "name": "Lucas Hernández",
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 68,
+     "apps": 72,
      "goals": 1,
      "clubs": {
       "583": {
-       "apps": 68,
+       "apps": 72,
        "goals": 1
       }
      }
@@ -101480,10 +101588,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 13,
+     "apps": 15,
      "goals": 0,
      "clubs": {
       "995": {
@@ -101491,7 +101599,7 @@
        "goals": 0
       },
       "1041": {
-       "apps": 6,
+       "apps": 8,
        "goals": 0
       }
      }
@@ -101768,14 +101876,14 @@
    "nat": "Denmark",
    "natKey": "denmark",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 106,
+     "apps": 110,
      "goals": 3,
      "clubs": {
       "415": {
-       "apps": 106,
+       "apps": 110,
        "goals": 3
       }
      }
@@ -101788,19 +101896,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 198,
-     "goals": 67,
+     "apps": 206,
+     "goals": 70,
      "clubs": {
       "667": {
        "apps": 135,
        "goals": 46
       },
       "3911": {
-       "apps": 63,
-       "goals": 21
+       "apps": 71,
+       "goals": 24
       }
      }
     }
@@ -102028,14 +102136,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 325,
+     "apps": 332,
      "goals": 53,
      "clubs": {
       "273": {
-       "apps": 90,
+       "apps": 97,
        "goals": 15
       },
       "855": {
@@ -102056,19 +102164,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 103,
-     "goals": 46,
+     "apps": 108,
+     "goals": 47,
      "clubs": {
       "273": {
        "apps": 26,
        "goals": 12
       },
       "583": {
-       "apps": 77,
-       "goals": 34
+       "apps": 82,
+       "goals": 35
       }
      }
     }
@@ -103644,19 +103752,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 139,
-     "goals": 4,
+     "apps": 146,
+     "goals": 6,
      "clubs": {
       "244": {
        "apps": 113,
        "goals": 4
       },
       "10004": {
-       "apps": 26,
-       "goals": 0
+       "apps": 33,
+       "goals": 2
       }
      }
     }
@@ -103876,10 +103984,10 @@
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 98,
+     "apps": 103,
      "goals": 0,
      "clubs": {
       "347": {
@@ -103887,7 +103995,7 @@
        "goals": 0
       },
       "1041": {
-       "apps": 63,
+       "apps": 68,
        "goals": 0
       }
      }
@@ -105784,10 +105892,10 @@
    "nat": "Mali",
    "natKey": "mali",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 241,
+     "apps": 247,
      "goals": 7,
      "clubs": {
       "273": {
@@ -105799,7 +105907,7 @@
        "goals": 2
       },
       "10004": {
-       "apps": 18,
+       "apps": 24,
        "goals": 0
       }
      }
@@ -111260,14 +111368,14 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 5,
+     "apps": 12,
      "goals": 0,
      "clubs": {
       "244": {
-       "apps": 5,
+       "apps": 12,
        "goals": 0
       }
      }
@@ -111672,14 +111780,14 @@
    "nat": "Slovakia",
    "natKey": "slovakia",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 29,
+     "apps": 34,
      "goals": 0,
      "clubs": {
       "1041": {
-       "apps": 29,
+       "apps": 34,
        "goals": 0
       }
      }
@@ -112360,14 +112468,14 @@
    "nat": "Russia",
    "natKey": "russia",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 25,
+     "apps": 32,
      "goals": 0,
      "clubs": {
       "583": {
-       "apps": 25,
+       "apps": 32,
        "goals": 0
       }
      }
@@ -112460,10 +112568,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 106,
+     "apps": 113,
      "goals": 6,
      "clubs": {
       "417": {
@@ -112471,7 +112579,7 @@
        "goals": 0
       },
       "1082": {
-       "apps": 30,
+       "apps": 37,
        "goals": 3
       },
       "3911": {
@@ -112580,15 +112688,15 @@
    "nat": "Poland",
    "natKey": "poland",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 16,
-     "goals": 1,
+     "apps": 21,
+     "goals": 2,
      "clubs": {
       "273": {
-       "apps": 16,
-       "goals": 1
+       "apps": 21,
+       "goals": 2
       }
      }
     }
@@ -112936,11 +113044,11 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 133,
-     "goals": 7,
+     "apps": 140,
+     "goals": 8,
      "clubs": {
       "415": {
        "apps": 19,
@@ -112951,8 +113059,8 @@
        "goals": 1
       },
       "1158": {
-       "apps": 57,
-       "goals": 4
+       "apps": 64,
+       "goals": 5
       },
       "1162": {
        "apps": 27,
@@ -113436,10 +113544,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 180,
+     "apps": 182,
      "goals": 16,
      "clubs": {
       "583": {
@@ -113455,7 +113563,7 @@
        "goals": 11
       },
       "10004": {
-       "apps": 23,
+       "apps": 25,
        "goals": 3
       }
      }
@@ -113488,14 +113596,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 214,
+     "apps": 220,
      "goals": 23,
      "clubs": {
       "273": {
-       "apps": 32,
+       "apps": 38,
        "goals": 3
       },
       "618": {
@@ -113505,6 +113613,26 @@
       "3911": {
        "apps": 97,
        "goals": 14
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "324800",
+   "name": "Alec Georgen",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "1158": {
+       "apps": 2,
+       "goals": 0
       }
      }
     }
@@ -113584,14 +113712,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 208,
+     "apps": 211,
      "goals": 34,
      "clubs": {
       "273": {
-       "apps": 10,
+       "apps": 13,
        "goals": 1
       },
       "618": {
@@ -113680,11 +113808,11 @@
    "nat": "Guinea-Bissau",
    "natKey": "guinea bissau",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 184,
-     "goals": 34,
+     "apps": 191,
+     "goals": 36,
      "clubs": {
       "1041": {
        "apps": 22,
@@ -113699,8 +113827,8 @@
        "goals": 13
       },
       "3911": {
-       "apps": 45,
-       "goals": 4
+       "apps": 52,
+       "goals": 6
       }
      }
     }
@@ -113813,6 +113941,26 @@
       "1421": {
        "apps": 6,
        "goals": 4
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "325924",
+   "name": "Ahmed Touba",
+   "nat": "Algeria",
+   "natKey": "algeria",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "738": {
+       "apps": 6,
+       "goals": 0
       }
      }
     }
@@ -113932,14 +114080,14 @@
    "nat": "Canada",
    "natKey": "canada",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 23,
+     "apps": 26,
      "goals": 0,
      "clubs": {
       "244": {
-       "apps": 23,
+       "apps": 26,
        "goals": 0
       }
      }
@@ -114396,19 +114544,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 302,
-     "goals": 15,
+     "apps": 309,
+     "goals": 16,
      "clubs": {
       "244": {
        "apps": 152,
        "goals": 5
       },
       "273": {
-       "apps": 31,
-       "goals": 2
+       "apps": 38,
+       "goals": 3
       },
       "995": {
        "apps": 119,
@@ -114576,14 +114724,14 @@
    "nat": "Switzerland",
    "natKey": "switzerland",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 75,
+     "apps": 82,
      "goals": 12,
      "clubs": {
       "162": {
-       "apps": 75,
+       "apps": 82,
        "goals": 12
       }
      }
@@ -114764,10 +114912,10 @@
    "nat": "Belgium",
    "natKey": "belgium",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 79,
+     "apps": 80,
      "goals": 0,
      "clubs": {
       "1421": {
@@ -114775,7 +114923,7 @@
        "goals": 0
       },
       "10004": {
-       "apps": 17,
+       "apps": 18,
        "goals": 0
       }
      }
@@ -114920,6 +115068,26 @@
      "clubs": {
       "1158": {
        "apps": 13,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "342046",
+   "name": "Axel Tuanzebe",
+   "nat": "DR Congo",
+   "natKey": "dr congo",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "290": {
+       "apps": 4,
        "goals": 0
       }
      }
@@ -115268,19 +115436,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 45,
-     "goals": 13,
+     "apps": 51,
+     "goals": 14,
      "clubs": {
       "415": {
        "apps": 16,
        "goals": 1
       },
       "826": {
-       "apps": 29,
-       "goals": 12
+       "apps": 35,
+       "goals": 13
       }
      }
     }
@@ -115321,6 +115489,26 @@
       "583": {
        "apps": 55,
        "goals": 8
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "344382",
+   "name": "Harold Voyer",
+   "nat": "Martinique",
+   "natKey": "martinique",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "1164": {
+       "apps": 6,
+       "goals": 0
       }
      }
     }
@@ -115468,15 +115656,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2020,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 23,
+     "apps": 29,
      "goals": 2,
      "clubs": {
       "244": {
        "apps": 23,
        "goals": 2
+      },
+      "826": {
+       "apps": 6,
+       "goals": 0
       }
      }
     }
@@ -115592,19 +115784,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 123,
-     "goals": 5,
+     "apps": 129,
+     "goals": 7,
      "clubs": {
       "347": {
        "apps": 89,
        "goals": 4
       },
       "826": {
-       "apps": 34,
-       "goals": 1
+       "apps": 40,
+       "goals": 3
       }
      }
     }
@@ -115616,11 +115808,11 @@
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 175,
-     "goals": 57,
+     "apps": 180,
+     "goals": 58,
      "clubs": {
       "347": {
        "apps": 75,
@@ -115629,6 +115821,10 @@
       "667": {
        "apps": 100,
        "goals": 40
+      },
+      "1164": {
+       "apps": 5,
+       "goals": 1
       }
      }
     }
@@ -115640,10 +115836,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 80,
+     "apps": 88,
      "goals": 11,
      "clubs": {
       "290": {
@@ -115653,6 +115849,10 @@
       "347": {
        "apps": 45,
        "goals": 9
+      },
+      "417": {
+       "apps": 8,
+       "goals": 0
       }
      }
     }
@@ -116260,14 +116460,14 @@
    "nat": "Spain",
    "natKey": "spain",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 98,
+     "apps": 104,
      "goals": 9,
      "clubs": {
       "583": {
-       "apps": 98,
+       "apps": 104,
        "goals": 9
       }
      }
@@ -116688,11 +116888,11 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 217,
-     "goals": 31,
+     "apps": 219,
+     "goals": 32,
      "clubs": {
       "273": {
        "apps": 78,
@@ -116703,8 +116903,8 @@
        "goals": 0
       },
       "3911": {
-       "apps": 137,
-       "goals": 29
+       "apps": 139,
+       "goals": 30
       }
      }
     }
@@ -116736,10 +116936,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 86,
+     "apps": 90,
      "goals": 15,
      "clubs": {
       "290": {
@@ -116751,7 +116951,7 @@
        "goals": 1
       },
       "1082": {
-       "apps": 12,
+       "apps": 16,
        "goals": 1
       }
      }
@@ -116764,19 +116964,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 138,
-     "goals": 4,
+     "apps": 146,
+     "goals": 5,
      "clubs": {
       "1041": {
        "apps": 114,
        "goals": 3
       },
       "3911": {
-       "apps": 24,
-       "goals": 1
+       "apps": 32,
+       "goals": 2
       }
      }
     }
@@ -117020,15 +117220,15 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 196,
-     "goals": 30,
+     "apps": 200,
+     "goals": 31,
      "clubs": {
       "826": {
-       "apps": 195,
-       "goals": 30
+       "apps": 199,
+       "goals": 31
       },
       "969": {
        "apps": 1,
@@ -117180,6 +117380,26 @@
       },
       "3911": {
        "apps": 62,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "357069",
+   "name": "Nicolas Kocik",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "GK",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "1164": {
+       "apps": 5,
        "goals": 0
       }
      }
@@ -117432,10 +117652,10 @@
    "nat": "Cote d'Ivoire",
    "natKey": "ivory coast",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 47,
+     "apps": 48,
      "goals": 3,
      "clubs": {
       "618": {
@@ -117443,7 +117663,7 @@
        "goals": 1
       },
       "10004": {
-       "apps": 25,
+       "apps": 26,
        "goals": 2
       }
      }
@@ -117540,14 +117760,14 @@
    "nat": "Türkiye",
    "natKey": "turkiye",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 32,
+     "apps": 38,
      "goals": 0,
      "clubs": {
       "1082": {
-       "apps": 32,
+       "apps": 38,
        "goals": 0
       }
      }
@@ -117592,14 +117812,14 @@
    "nat": "Morocco",
    "natKey": "morocco",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 107,
+     "apps": 114,
      "goals": 10,
      "clubs": {
       "244": {
-       "apps": 16,
+       "apps": 23,
        "goals": 1
       },
       "273": {
@@ -117840,14 +118060,14 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 49,
+     "apps": 51,
      "goals": 2,
      "clubs": {
       "162": {
-       "apps": 49,
+       "apps": 51,
        "goals": 2
       }
      }
@@ -118064,15 +118284,19 @@
    "nat": "Belgium",
    "natKey": "belgium",
    "pos": "FWD",
-   "last": 2022,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 38,
-     "goals": 21,
+     "apps": 43,
+     "goals": 22,
      "clubs": {
       "826": {
        "apps": 38,
        "goals": 21
+      },
+      "1041": {
+       "apps": 5,
+       "goals": 1
       }
      }
     }
@@ -118144,14 +118368,14 @@
    "nat": "United States",
    "natKey": "united states",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 123,
+     "apps": 129,
      "goals": 9,
      "clubs": {
       "244": {
-       "apps": 29,
+       "apps": 35,
        "goals": 2
       },
       "583": {
@@ -118233,6 +118457,26 @@
       "1421": {
        "apps": 9,
        "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "371143",
+   "name": "Milan Robin",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "1164": {
+       "apps": 1,
+       "goals": 0
       }
      }
     }
@@ -118344,15 +118588,15 @@
    "nat": "Haiti",
    "natKey": "haiti",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 54,
-     "goals": 0,
+     "apps": 60,
+     "goals": 1,
      "clubs": {
       "1420": {
-       "apps": 54,
-       "goals": 0
+       "apps": 60,
+       "goals": 1
       }
      }
     }
@@ -118404,15 +118648,15 @@
    "nat": "Morocco",
    "natKey": "morocco",
    "pos": "FWD",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 104,
-     "goals": 8,
+     "apps": 111,
+     "goals": 10,
      "clubs": {
       "244": {
-       "apps": 74,
-       "goals": 7
+       "apps": 81,
+       "goals": 9
       },
       "995": {
        "apps": 30,
@@ -118512,12 +118756,16 @@
    "nat": "France",
    "natKey": "france",
    "pos": "GK",
-   "last": 2019,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 1,
+     "apps": 2,
      "goals": 0,
      "clubs": {
+      "273": {
+       "apps": 1,
+       "goals": 0
+      },
       "1421": {
        "apps": 1,
        "goals": 0
@@ -118532,11 +118780,11 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 71,
-     "goals": 2,
+     "apps": 73,
+     "goals": 3,
      "clubs": {
       "1147": {
        "apps": 31,
@@ -118547,8 +118795,8 @@
        "goals": 0
       },
       "10004": {
-       "apps": 23,
-       "goals": 2
+       "apps": 25,
+       "goals": 3
       }
      }
     }
@@ -118696,10 +118944,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 256,
+     "apps": 263,
      "goals": 35,
      "clubs": {
       "417": {
@@ -118715,7 +118963,7 @@
        "goals": 11
       },
       "10004": {
-       "apps": 22,
+       "apps": 29,
        "goals": 1
       }
      }
@@ -119147,6 +119395,26 @@
    }
   },
   {
+   "id": "380744",
+   "name": "Egil Selvik",
+   "nat": "Norway",
+   "natKey": "norway",
+   "pos": "GK",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 8,
+     "goals": 0,
+     "clubs": {
+      "3911": {
+       "apps": 8,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "381187",
    "name": "Emmanuel Sabbi",
    "nat": "United States",
@@ -119401,6 +119669,26 @@
       "1421": {
        "apps": 31,
        "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "386048",
+   "name": "Samuel Yohou",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "1164": {
+       "apps": 5,
+       "goals": 0
       }
      }
     }
@@ -119792,15 +120080,15 @@
    "nat": "Cameroon",
    "natKey": "cameroon",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 30,
-     "goals": 3,
+     "apps": 37,
+     "goals": 6,
      "clubs": {
       "290": {
-       "apps": 30,
-       "goals": 3
+       "apps": 37,
+       "goals": 6
       }
      }
     }
@@ -119812,15 +120100,15 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 119,
-     "goals": 7,
+     "apps": 126,
+     "goals": 8,
      "clubs": {
       "244": {
-       "apps": 14,
-       "goals": 3
+       "apps": 21,
+       "goals": 4
       },
       "1082": {
        "apps": 105,
@@ -119923,6 +120211,26 @@
    }
   },
   {
+   "id": "393565",
+   "name": "Michal Skoras",
+   "nat": "Poland",
+   "natKey": "poland",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "826": {
+       "apps": 6,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "393621",
    "name": "Douglas Augusto",
    "nat": "Brazil",
@@ -119937,6 +120245,26 @@
       "995": {
        "apps": 53,
        "goals": 4
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "394134",
+   "name": "Felix Bacher",
+   "nat": "Austria",
+   "natKey": "austria",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 1,
+     "clubs": {
+      "1041": {
+       "apps": 7,
+       "goals": 1
       }
      }
     }
@@ -120500,15 +120828,35 @@
    "nat": "Morocco",
    "natKey": "morocco",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 128,
+     "apps": 134,
      "goals": 19,
      "clubs": {
       "583": {
-       "apps": 128,
+       "apps": 134,
        "goals": 19
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "398184",
+   "name": "Ferran Torres",
+   "nat": "Spain",
+   "natKey": "spain",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 4,
+     "clubs": {
+      "583": {
+       "apps": 7,
+       "goals": 4
       }
      }
     }
@@ -120752,14 +121100,14 @@
    "nat": "Mali",
    "natKey": "mali",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 7,
+     "apps": 13,
      "goals": 1,
      "clubs": {
       "826": {
-       "apps": 7,
+       "apps": 13,
        "goals": 1
       }
      }
@@ -120812,14 +121160,14 @@
    "nat": "Japan",
    "natKey": "japan",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 30,
+     "apps": 36,
      "goals": 0,
      "clubs": {
       "738": {
-       "apps": 30,
+       "apps": 36,
        "goals": 0
       }
      }
@@ -120832,12 +121180,16 @@
    "nat": "Japan",
    "natKey": "japan",
    "pos": "FWD",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 57,
+     "apps": 61,
      "goals": 15,
      "clubs": {
+      "1041": {
+       "apps": 4,
+       "goals": 0
+      },
       "1421": {
        "apps": 57,
        "goals": 15
@@ -121205,6 +121557,26 @@
       "244": {
        "apps": 15,
        "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "407745",
+   "name": "Maik Nawrocki",
+   "nat": "Poland",
+   "natKey": "poland",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "826": {
+       "apps": 2,
+       "goals": 0
       }
      }
     }
@@ -123600,15 +123972,15 @@
    "nat": "Algeria",
    "natKey": "algeria",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 202,
-     "goals": 65,
+     "apps": 209,
+     "goals": 70,
      "clubs": {
       "244": {
-       "apps": 36,
-       "goals": 18
+       "apps": 43,
+       "goals": 23
       },
       "273": {
        "apps": 83,
@@ -123820,14 +124192,14 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 15,
+     "apps": 16,
      "goals": 0,
      "clubs": {
       "244": {
-       "apps": 15,
+       "apps": 16,
        "goals": 0
       }
      }
@@ -123909,6 +124281,26 @@
       "101982": {
        "apps": 95,
        "goals": 64
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "422711",
+   "name": "Dame Gueye",
+   "nat": "Senegal",
+   "natKey": "senegal",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 1,
+     "clubs": {
+      "1164": {
+       "apps": 7,
+       "goals": 1
       }
      }
     }
@@ -124380,14 +124772,14 @@
    "nat": "United States",
    "natKey": "united states",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 59,
+     "apps": 66,
      "goals": 1,
      "clubs": {
       "415": {
-       "apps": 59,
+       "apps": 66,
        "goals": 1
       }
      }
@@ -125332,14 +125724,14 @@
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 127,
+     "apps": 135,
      "goals": 0,
      "clubs": {
       "417": {
-       "apps": 26,
+       "apps": 34,
        "goals": 0
       },
       "1421": {
@@ -126020,15 +126412,19 @@
    "nat": "Nigeria",
    "natKey": "nigeria",
    "pos": "FWD",
-   "last": 2021,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 47,
-     "goals": 9,
+     "apps": 54,
+     "goals": 10,
      "clubs": {
       "40": {
        "apps": 47,
        "goals": 9
+      },
+      "738": {
+       "apps": 7,
+       "goals": 1
       }
      }
     }
@@ -126244,15 +126640,15 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 62,
-     "goals": 30,
+     "apps": 69,
+     "goals": 37,
      "clubs": {
       "273": {
-       "apps": 32,
-       "goals": 20
+       "apps": 39,
+       "goals": 27
       },
       "1420": {
        "apps": 30,
@@ -126268,15 +126664,19 @@
    "nat": "Central African Republic",
    "natKey": "central african republic",
    "pos": "FWD",
-   "last": 2021,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 15,
-     "goals": 2,
+     "apps": 22,
+     "goals": 6,
      "clubs": {
       "347": {
        "apps": 15,
        "goals": 2
+      },
+      "1164": {
+       "apps": 7,
+       "goals": 4
       }
      }
     }
@@ -126365,6 +126765,26 @@
       "995": {
        "apps": 119,
        "goals": 25
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "462832",
+   "name": "Mads Bidstrup",
+   "nat": "Denmark",
+   "natKey": "denmark",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "1041": {
+       "apps": 7,
+       "goals": 0
       }
      }
     }
@@ -126616,10 +127036,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 96,
+     "apps": 98,
      "goals": 17,
      "clubs": {
       "273": {
@@ -126627,7 +127047,7 @@
        "goals": 1
       },
       "415": {
-       "apps": 78,
+       "apps": 80,
        "goals": 16
       }
      }
@@ -126741,6 +127161,26 @@
       "415": {
        "apps": 1,
        "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "464598",
+   "name": "Casper Tengstedt",
+   "nat": "Denmark",
+   "natKey": "denmark",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 5,
+     "clubs": {
+      "415": {
+       "apps": 5,
+       "goals": 5
       }
      }
     }
@@ -127764,14 +128204,14 @@
    "nat": "Spain",
    "natKey": "spain",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 25,
+     "apps": 27,
      "goals": 11,
      "clubs": {
       "162": {
-       "apps": 25,
+       "apps": 27,
        "goals": 11
       }
      }
@@ -128200,14 +128640,14 @@
    "nat": "Venezuela",
    "natKey": "venezuela",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 94,
+     "apps": 101,
      "goals": 4,
      "clubs": {
       "415": {
-       "apps": 94,
+       "apps": 101,
        "goals": 4
       }
      }
@@ -128772,14 +129212,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 179,
+     "apps": 186,
      "goals": 5,
      "clubs": {
       "3911": {
-       "apps": 179,
+       "apps": 186,
        "goals": 5
       }
      }
@@ -128825,6 +129265,26 @@
       "826": {
        "apps": 147,
        "goals": 6
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "475208",
+   "name": "Bryan Reynolds",
+   "nat": "United States",
+   "natKey": "united states",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "273": {
+       "apps": 5,
+       "goals": 0
       }
      }
     }
@@ -129000,15 +129460,15 @@
    "nat": "Norway",
    "natKey": "norway",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 87,
-     "goals": 6,
+     "apps": 89,
+     "goals": 7,
      "clubs": {
       "415": {
-       "apps": 87,
-       "goals": 6
+       "apps": 89,
+       "goals": 7
       }
      }
     }
@@ -129264,14 +129724,14 @@
    "nat": "Portugal",
    "natKey": "portugal",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 34,
+     "apps": 36,
      "goals": 4,
      "clubs": {
       "1082": {
-       "apps": 34,
+       "apps": 36,
        "goals": 4
       }
      }
@@ -142531,20 +142991,40 @@
    }
   },
   {
+   "id": "487333",
+   "name": "Paolo Gozzi",
+   "nat": "Italy",
+   "natKey": "italy",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "1095": {
+       "apps": 2,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "487469",
    "name": "Vitinha",
    "nat": "Portugal",
    "natKey": "portugal",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 122,
-     "goals": 15,
+     "apps": 129,
+     "goals": 16,
      "clubs": {
       "583": {
-       "apps": 122,
-       "goals": 15
+       "apps": 129,
+       "goals": 16
       }
      }
     }
@@ -143776,14 +144256,14 @@
    "nat": "Tunisia",
    "natKey": "tunisia",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 92,
+     "apps": 99,
      "goals": 1,
      "clubs": {
       "1158": {
-       "apps": 92,
+       "apps": 99,
        "goals": 1
       }
      }
@@ -144416,15 +144896,15 @@
    "nat": "Czech Republic",
    "natKey": "czech republic",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 27,
-     "goals": 11,
+     "apps": 34,
+     "goals": 12,
      "clubs": {
       "1041": {
-       "apps": 27,
-       "goals": 11
+       "apps": 34,
+       "goals": 12
       }
      }
     }
@@ -144520,14 +145000,14 @@
    "nat": "Canada",
    "natKey": "canada",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 31,
+     "apps": 32,
      "goals": 2,
      "clubs": {
       "290": {
-       "apps": 31,
+       "apps": 32,
        "goals": 2
       }
      }
@@ -144540,15 +145020,15 @@
    "nat": "Georgia",
    "natKey": "georgia",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 42,
-     "goals": 12,
+     "apps": 49,
+     "goals": 13,
      "clubs": {
       "583": {
-       "apps": 42,
-       "goals": 12
+       "apps": 49,
+       "goals": 13
       }
      }
     }
@@ -144600,14 +145080,14 @@
    "nat": "United States",
    "natKey": "united states",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 109,
+     "apps": 112,
      "goals": 45,
      "clubs": {
       "162": {
-       "apps": 72,
+       "apps": 75,
        "goals": 24
       },
       "1421": {
@@ -144673,6 +145153,26 @@
       "40": {
        "apps": 1,
        "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "504215",
+   "name": "Giovanni Reyna",
+   "nat": "United States",
+   "natKey": "united states",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 2,
+     "clubs": {
+      "667": {
+       "apps": 7,
+       "goals": 2
       }
      }
     }
@@ -148140,12 +148640,16 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2019,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 8,
-     "goals": 0,
+     "apps": 13,
+     "goals": 1,
      "clubs": {
+      "1095": {
+       "apps": 5,
+       "goals": 1
+      },
       "1421": {
        "apps": 8,
        "goals": 0
@@ -149064,14 +149568,18 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2020,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 8,
+     "apps": 11,
      "goals": 0,
      "clubs": {
       "1160": {
        "apps": 8,
+       "goals": 0
+      },
+      "1164": {
+       "apps": 3,
        "goals": 0
       }
      }
@@ -149124,14 +149632,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 166,
+     "apps": 168,
      "goals": 7,
      "clubs": {
       "417": {
-       "apps": 151,
+       "apps": 153,
        "goals": 7
       },
       "1041": {
@@ -149201,6 +149709,26 @@
       "244": {
        "apps": 66,
        "goals": 37
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "533662",
+   "name": "Cameron Archer",
+   "nat": "England",
+   "natKey": "england",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 4,
+     "clubs": {
+      "290": {
+       "apps": 5,
+       "goals": 4
       }
      }
     }
@@ -149312,14 +149840,14 @@
    "nat": "Sweden",
    "natKey": "sweden",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 22,
+     "apps": 27,
      "goals": 1,
      "clubs": {
       "417": {
-       "apps": 22,
+       "apps": 27,
        "goals": 1
       }
      }
@@ -149381,6 +149909,26 @@
       "618": {
        "apps": 11,
        "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "536473",
+   "name": "Lucas Maronnier",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 6,
+     "goals": 1,
+     "clubs": {
+      "1095": {
+       "apps": 6,
+       "goals": 1
       }
      }
     }
@@ -149624,10 +150172,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 18,
+     "apps": 25,
      "goals": 0,
      "clubs": {
       "273": {
@@ -149635,7 +150183,7 @@
        "goals": 0
       },
       "290": {
-       "apps": 15,
+       "apps": 22,
        "goals": 0
       }
      }
@@ -149688,12 +150236,16 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 29,
+     "apps": 33,
      "goals": 1,
      "clubs": {
+      "290": {
+       "apps": 4,
+       "goals": 0
+      },
       "618": {
        "apps": 29,
        "goals": 1
@@ -149708,15 +150260,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2019,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 6,
+     "apps": 8,
      "goals": 2,
      "clubs": {
       "583": {
        "apps": 6,
        "goals": 2
+      },
+      "1082": {
+       "apps": 2,
+       "goals": 0
       }
      }
     }
@@ -149728,10 +150284,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 71,
+     "apps": 74,
      "goals": 3,
      "clubs": {
       "40": {
@@ -149743,7 +150299,7 @@
        "goals": 1
       },
       "738": {
-       "apps": 34,
+       "apps": 37,
        "goals": 1
       }
      }
@@ -149804,14 +150360,14 @@
    "nat": "Norway",
    "natKey": "norway",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 32,
+     "apps": 37,
      "goals": 0,
      "clubs": {
       "290": {
-       "apps": 32,
+       "apps": 37,
        "goals": 0
       }
      }
@@ -149864,11 +150420,11 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 76,
-     "goals": 10,
+     "apps": 82,
+     "goals": 12,
      "clubs": {
       "40": {
        "apps": 12,
@@ -149877,6 +150433,10 @@
       "667": {
        "apps": 64,
        "goals": 10
+      },
+      "1082": {
+       "apps": 6,
+       "goals": 2
       }
      }
     }
@@ -149968,15 +150528,19 @@
    "nat": "Algeria",
    "natKey": "algeria",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 69,
+     "apps": 74,
      "goals": 3,
      "clubs": {
       "417": {
        "apps": 42,
        "goals": 3
+      },
+      "1164": {
+       "apps": 5,
+       "goals": 0
       },
       "1420": {
        "apps": 9,
@@ -150379,6 +150943,26 @@
    }
   },
   {
+   "id": "548028",
+   "name": "Franjo Ivanović",
+   "nat": "Croatia",
+   "natKey": "croatia",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 2,
+     "clubs": {
+      "826": {
+       "apps": 5,
+       "goals": 2
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "548164",
    "name": "Ernesto Tomasi",
    "nat": "Italy",
@@ -150404,14 +150988,14 @@
    "nat": "Belgium",
    "natKey": "belgium",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 29,
+     "apps": 35,
      "goals": 1,
      "clubs": {
       "1082": {
-       "apps": 29,
+       "apps": 35,
        "goals": 1
       }
      }
@@ -150740,18 +151324,18 @@
   },
   {
    "id": "551505",
-   "name": "Mousa Tamari",
+   "name": "Mousa Al-Tamari",
    "nat": "Jordan",
    "natKey": "jordan",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 86,
+     "apps": 93,
      "goals": 14,
      "clubs": {
       "273": {
-       "apps": 44,
+       "apps": 51,
        "goals": 7
       },
       "969": {
@@ -151052,15 +151636,19 @@
    "nat": "Algeria",
    "natKey": "algeria",
    "pos": "DEF",
-   "last": 2022,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 42,
+     "apps": 47,
      "goals": 1,
      "clubs": {
       "1095": {
        "apps": 42,
        "goals": 1
+      },
+      "1164": {
+       "apps": 5,
+       "goals": 0
       }
      }
     }
@@ -151092,19 +151680,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 145,
-     "goals": 29,
+     "apps": 152,
+     "goals": 30,
      "clubs": {
       "162": {
        "apps": 1,
        "goals": 0
       },
       "290": {
-       "apps": 10,
-       "goals": 0
+       "apps": 17,
+       "goals": 1
       },
       "1041": {
        "apps": 24,
@@ -151544,10 +152132,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 86,
+     "apps": 88,
      "goals": 11,
      "clubs": {
       "40": {
@@ -151559,7 +152147,7 @@
        "goals": 3
       },
       "667": {
-       "apps": 25,
+       "apps": 27,
        "goals": 1
       }
      }
@@ -151572,10 +152160,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 138,
+     "apps": 142,
      "goals": 5,
      "clubs": {
       "244": {
@@ -151583,7 +152171,7 @@
        "goals": 1
       },
       "273": {
-       "apps": 33,
+       "apps": 37,
        "goals": 1
       },
       "995": {
@@ -151808,14 +152396,14 @@
    "nat": "Algeria",
    "natKey": "algeria",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 173,
+     "apps": 177,
      "goals": 13,
      "clubs": {
       "417": {
-       "apps": 173,
+       "apps": 177,
        "goals": 13
       }
      }
@@ -152320,14 +152908,14 @@
    "nat": "Ghana",
    "natKey": "ghana",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 39,
+     "apps": 41,
      "goals": 2,
      "clubs": {
       "162": {
-       "apps": 39,
+       "apps": 41,
        "goals": 2
       }
      }
@@ -152940,14 +153528,14 @@
    "nat": "Denmark",
    "natKey": "denmark",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 48,
+     "apps": 51,
      "goals": 15,
      "clubs": {
       "162": {
-       "apps": 48,
+       "apps": 51,
        "goals": 15
       }
      }
@@ -152960,14 +153548,14 @@
    "nat": "Egypt",
    "natKey": "egypt",
    "pos": "DEF",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 12,
+     "apps": 20,
      "goals": 0,
      "clubs": {
       "417": {
-       "apps": 12,
+       "apps": 20,
        "goals": 0
       }
      }
@@ -153612,12 +154200,16 @@
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 70,
+     "apps": 76,
      "goals": 13,
      "clubs": {
+      "273": {
+       "apps": 6,
+       "goals": 0
+      },
       "738": {
        "apps": 70,
        "goals": 13
@@ -153696,15 +154288,19 @@
    "nat": "Mali",
    "natKey": "mali",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 99,
-     "goals": 18,
+     "apps": 106,
+     "goals": 24,
      "clubs": {
       "290": {
        "apps": 99,
        "goals": 18
+      },
+      "10004": {
+       "apps": 7,
+       "goals": 6
       }
      }
     }
@@ -153920,19 +154516,19 @@
    "nat": "Morocco",
    "natKey": "morocco",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 169,
-     "goals": 29,
+     "apps": 177,
+     "goals": 30,
      "clubs": {
       "162": {
        "apps": 76,
        "goals": 14
       },
       "417": {
-       "apps": 93,
-       "goals": 15
+       "apps": 101,
+       "goals": 16
       }
      }
     }
@@ -154224,14 +154820,18 @@
    "nat": "Guinea",
    "natKey": "guinea",
    "pos": "FWD",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 1,
+     "apps": 8,
      "goals": 0,
      "clubs": {
       "738": {
        "apps": 1,
+       "goals": 0
+      },
+      "1095": {
+       "apps": 7,
        "goals": 0
       }
      }
@@ -154568,14 +155168,14 @@
    "nat": "Netherlands",
    "natKey": "netherlands",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 16,
+     "apps": 19,
      "goals": 1,
      "clubs": {
       "1041": {
-       "apps": 16,
+       "apps": 19,
        "goals": 1
       }
      }
@@ -154836,14 +155436,14 @@
    "nat": "Sweden",
    "natKey": "sweden",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 50,
+     "apps": 55,
      "goals": 13,
      "clubs": {
       "667": {
-       "apps": 50,
+       "apps": 55,
        "goals": 13
       }
      }
@@ -154880,14 +155480,14 @@
    "nat": "Morocco",
    "natKey": "morocco",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 48,
+     "apps": 52,
      "goals": 4,
      "clubs": {
       "1082": {
-       "apps": 48,
+       "apps": 52,
        "goals": 4
       }
      }
@@ -154920,14 +155520,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 11,
+     "apps": 18,
      "goals": 0,
      "clubs": {
       "244": {
-       "apps": 11,
+       "apps": 18,
        "goals": 0
       }
      }
@@ -155167,6 +155767,26 @@
    }
   },
   {
+   "id": "585323",
+   "name": "Filip Jørgensen",
+   "nat": "Denmark",
+   "natKey": "denmark",
+   "pos": "GK",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "667": {
+       "apps": 7,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "585686",
    "name": "Charles Allé",
    "nat": "France",
@@ -155204,6 +155824,46 @@
       },
       "1774": {
        "apps": 25,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "585951",
+   "name": "Alexandre Phliponeau",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 3,
+     "goals": 0,
+     "clubs": {
+      "1095": {
+       "apps": 3,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "585958",
+   "name": "Junior Kadile",
+   "nat": "DR Congo",
+   "natKey": "dr congo",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "826": {
+       "apps": 2,
        "goals": 0
       }
      }
@@ -155875,6 +156535,26 @@
    }
   },
   {
+   "id": "589128",
+   "name": "Ayase Ueda",
+   "nat": "Japan",
+   "natKey": "japan",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 4,
+     "goals": 2,
+     "clubs": {
+      "1082": {
+       "apps": 4,
+       "goals": 2
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "589172",
    "name": "Alfred Dambach",
    "nat": "France",
@@ -156447,6 +157127,26 @@
    }
   },
   {
+   "id": "591193",
+   "name": "Niels Nkounkou",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "417": {
+       "apps": 6,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "591195",
    "name": "Yahya Soumaré",
    "nat": "France",
@@ -156556,15 +157256,15 @@
    "nat": "Algeria",
    "natKey": "algeria",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 83,
-     "goals": 10,
+     "apps": 90,
+     "goals": 12,
      "clubs": {
       "244": {
-       "apps": 8,
-       "goals": 0
+       "apps": 15,
+       "goals": 2
       },
       "1420": {
        "apps": 75,
@@ -157340,12 +158040,16 @@
    "nat": "England",
    "natKey": "england",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 60,
+     "apps": 67,
      "goals": 6,
      "clubs": {
+      "273": {
+       "apps": 7,
+       "goals": 0
+      },
       "415": {
        "apps": 60,
        "goals": 6
@@ -157360,14 +158064,14 @@
    "nat": "Cameroon",
    "natKey": "cameroon",
    "pos": "FWD",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 14,
+     "apps": 19,
      "goals": 3,
      "clubs": {
       "244": {
-       "apps": 14,
+       "apps": 19,
        "goals": 3
       }
      }
@@ -157972,10 +158676,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2023,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 125,
+     "apps": 128,
      "goals": 3,
      "clubs": {
       "415": {
@@ -157985,6 +158689,10 @@
       "417": {
        "apps": 115,
        "goals": 2
+      },
+      "826": {
+       "apps": 3,
+       "goals": 0
       }
      }
     }
@@ -158735,6 +159443,26 @@
    }
   },
   {
+   "id": "610405",
+   "name": "Maurits Kjærgaard",
+   "nat": "Denmark",
+   "natKey": "denmark",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "1082": {
+       "apps": 4,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "611035",
    "name": "Michel Massemba",
    "nat": "Congo",
@@ -159072,14 +159800,14 @@
    "nat": "Portugal",
    "natKey": "portugal",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 100,
+     "apps": 103,
      "goals": 8,
      "clubs": {
       "583": {
-       "apps": 100,
+       "apps": 103,
        "goals": 8
       }
      }
@@ -159512,14 +160240,14 @@
    "nat": "England",
    "natKey": "england",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 29,
+     "apps": 35,
      "goals": 2,
      "clubs": {
       "1041": {
-       "apps": 29,
+       "apps": 35,
        "goals": 2
       }
      }
@@ -159784,14 +160512,14 @@
    "nat": "Ireland",
    "natKey": "ireland",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 35,
+     "apps": 37,
      "goals": 1,
      "clubs": {
       "667": {
-       "apps": 35,
+       "apps": 37,
        "goals": 1
       }
      }
@@ -159824,10 +160552,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 210,
+     "apps": 218,
      "goals": 4,
      "clubs": {
       "969": {
@@ -159835,7 +160563,7 @@
        "goals": 2
       },
       "3911": {
-       "apps": 33,
+       "apps": 41,
        "goals": 2
       }
      }
@@ -159995,17 +160723,41 @@
    }
   },
   {
+   "id": "626592",
+   "name": "Jean Vercruysse",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "1164": {
+       "apps": 6,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "626913",
    "name": "Boulaye Dia",
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "FWD",
-   "last": 2020,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 78,
-     "goals": 24,
+     "apps": 83,
+     "goals": 26,
      "clubs": {
+      "273": {
+       "apps": 5,
+       "goals": 2
+      },
       "1421": {
        "apps": 78,
        "goals": 24
@@ -160160,14 +160912,18 @@
    "nat": "Cameroon",
    "natKey": "cameroon",
    "pos": "FWD",
-   "last": 2022,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 3,
+     "apps": 8,
      "goals": 0,
      "clubs": {
       "415": {
        "apps": 3,
+       "goals": 0
+      },
+      "417": {
+       "apps": 5,
        "goals": 0
       }
      }
@@ -160239,6 +160995,26 @@
    }
   },
   {
+   "id": "631222",
+   "name": "Raúl Torrente",
+   "nat": "Spain",
+   "natKey": "spain",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "1164": {
+       "apps": 2,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "631462",
    "name": "Philippe Barot",
    "nat": "France",
@@ -160268,15 +161044,15 @@
    "nat": "Saudi Arabia",
    "natKey": "saudi arabia",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 25,
-     "goals": 2,
+     "apps": 27,
+     "goals": 3,
      "clubs": {
       "826": {
-       "apps": 25,
-       "goals": 2
+       "apps": 27,
+       "goals": 3
       }
      }
     }
@@ -160775,6 +161551,26 @@
    }
   },
   {
+   "id": "643259",
+   "name": "Orlando Gill",
+   "nat": "Paraguay",
+   "natKey": "paraguay",
+   "pos": "GK",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "1082": {
+       "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "643493",
    "name": "Franck Turpin",
    "nat": "France",
@@ -160860,15 +161656,35 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 45,
+     "apps": 51,
      "goals": 4,
      "clubs": {
       "1041": {
-       "apps": 45,
+       "apps": 51,
        "goals": 4
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "646478",
+   "name": "Elias Jelert",
+   "nat": "Denmark",
+   "natKey": "denmark",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "738": {
+       "apps": 4,
+       "goals": 0
       }
      }
     }
@@ -160880,14 +161696,14 @@
    "nat": "Gabon",
    "natKey": "gabon",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 129,
+     "apps": 136,
      "goals": 6,
      "clubs": {
       "1420": {
-       "apps": 34,
+       "apps": 41,
        "goals": 2
       },
       "3524": {
@@ -160904,14 +161720,14 @@
    "nat": "Ghana",
    "natKey": "ghana",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 30,
+     "apps": 37,
      "goals": 0,
      "clubs": {
       "1158": {
-       "apps": 30,
+       "apps": 37,
        "goals": 0
       }
      }
@@ -160924,14 +161740,14 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 89,
+     "apps": 95,
      "goals": 4,
      "clubs": {
       "1082": {
-       "apps": 89,
+       "apps": 95,
        "goals": 4
       }
      }
@@ -161064,10 +161880,10 @@
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 32,
+     "apps": 36,
      "goals": 0,
      "clubs": {
       "1421": {
@@ -161075,7 +161891,7 @@
        "goals": 0
       },
       "10004": {
-       "apps": 31,
+       "apps": 35,
        "goals": 0
       }
      }
@@ -161312,15 +162128,15 @@
    "nat": "Iceland",
    "natKey": "iceland",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 83,
-     "goals": 15,
+     "apps": 90,
+     "goals": 16,
      "clubs": {
       "1082": {
-       "apps": 83,
-       "goals": 15
+       "apps": 90,
+       "goals": 16
       }
      }
     }
@@ -161392,15 +162208,15 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 30,
-     "goals": 6,
+     "apps": 36,
+     "goals": 7,
      "clubs": {
       "244": {
-       "apps": 30,
-       "goals": 6
+       "apps": 36,
+       "goals": 7
       }
      }
     }
@@ -161540,14 +162356,14 @@
    "nat": "Austria",
    "natKey": "austria",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 23,
+     "apps": 25,
      "goals": 2,
      "clubs": {
       "826": {
-       "apps": 23,
+       "apps": 25,
        "goals": 2
       }
      }
@@ -161772,14 +162588,14 @@
    "nat": "Cote d'Ivoire",
    "natKey": "ivory coast",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 20,
+     "apps": 21,
      "goals": 1,
      "clubs": {
       "290": {
-       "apps": 20,
+       "apps": 21,
        "goals": 1
       }
      }
@@ -161812,15 +162628,15 @@
    "nat": "Ukraine",
    "natKey": "ukraine",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 28,
-     "goals": 1,
+     "apps": 30,
+     "goals": 2,
      "clubs": {
       "583": {
-       "apps": 28,
-       "goals": 1
+       "apps": 30,
+       "goals": 2
       }
      }
     }
@@ -161920,19 +162736,19 @@
    "nat": "Cote d'Ivoire",
    "natKey": "ivory coast",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 139,
-     "goals": 49,
+     "apps": 146,
+     "goals": 52,
      "clubs": {
       "244": {
        "apps": 13,
        "goals": 3
       },
       "417": {
-       "apps": 14,
-       "goals": 5
+       "apps": 21,
+       "goals": 8
       },
       "826": {
        "apps": 27,
@@ -161952,12 +162768,16 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 126,
-     "goals": 23,
+     "apps": 132,
+     "goals": 24,
      "clubs": {
+      "162": {
+       "apps": 6,
+       "goals": 1
+      },
       "273": {
        "apps": 19,
        "goals": 1
@@ -162020,14 +162840,14 @@
    "nat": "Italy",
    "natKey": "italy",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 13,
+     "apps": 20,
      "goals": 0,
      "clubs": {
       "10004": {
-       "apps": 13,
+       "apps": 20,
        "goals": 0
       }
      }
@@ -162060,14 +162880,14 @@
    "nat": "Ecuador",
    "natKey": "ecuador",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 51,
+     "apps": 56,
      "goals": 0,
      "clubs": {
       "583": {
-       "apps": 51,
+       "apps": 56,
        "goals": 0
       }
      }
@@ -162080,14 +162900,14 @@
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 79,
+     "apps": 85,
      "goals": 5,
      "clubs": {
       "738": {
-       "apps": 79,
+       "apps": 85,
        "goals": 5
       }
      }
@@ -162308,14 +163128,38 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2018,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 3,
+     "apps": 9,
      "goals": 0,
      "clubs": {
       "40": {
        "apps": 3,
+       "goals": 0
+      },
+      "1164": {
+       "apps": 6,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "666971",
+   "name": "Souleymane Faye",
+   "nat": "Senegal",
+   "natKey": "senegal",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "1158": {
+       "apps": 4,
        "goals": 0
       }
      }
@@ -162472,15 +163316,15 @@
    "nat": "Algeria",
    "natKey": "algeria",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 15,
-     "goals": 1,
+     "apps": 20,
+     "goals": 2,
      "clubs": {
       "10004": {
-       "apps": 15,
-       "goals": 1
+       "apps": 20,
+       "goals": 2
       }
      }
     }
@@ -162501,6 +163345,26 @@
       "995": {
        "apps": 7,
        "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "668587",
+   "name": "Nazinho",
+   "nat": "Portugal",
+   "natKey": "portugal",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 1,
+     "clubs": {
+      "162": {
+       "apps": 7,
+       "goals": 1
       }
      }
     }
@@ -162576,15 +163440,15 @@
    "nat": "United States",
    "natKey": "united states",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 54,
-     "goals": 2,
+     "apps": 60,
+     "goals": 3,
      "clubs": {
       "1041": {
-       "apps": 54,
-       "goals": 2
+       "apps": 60,
+       "goals": 3
       }
      }
     }
@@ -162596,15 +163460,35 @@
    "nat": "Portugal",
    "natKey": "portugal",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 50,
+     "apps": 56,
      "goals": 8,
      "clubs": {
       "583": {
-       "apps": 50,
+       "apps": 56,
        "goals": 8
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "670717",
+   "name": "Dário Essugo",
+   "nat": "Portugal",
+   "natKey": "portugal",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 1,
+     "clubs": {
+      "667": {
+       "apps": 5,
+       "goals": 1
       }
      }
     }
@@ -162616,14 +163500,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 121,
+     "apps": 122,
      "goals": 12,
      "clubs": {
       "417": {
-       "apps": 68,
+       "apps": 69,
        "goals": 8
       },
       "1420": {
@@ -162675,24 +163559,44 @@
    }
   },
   {
+   "id": "671593",
+   "name": "Mamady Diambou",
+   "nat": "Mali",
+   "natKey": "mali",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "3911": {
+       "apps": 5,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "671594",
    "name": "Kamory Doumbia",
    "nat": "Mali",
    "natKey": "mali",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 113,
-     "goals": 18,
+     "apps": 121,
+     "goals": 22,
      "clubs": {
       "1421": {
        "apps": 34,
        "goals": 4
       },
       "3911": {
-       "apps": 79,
-       "goals": 14
+       "apps": 87,
+       "goals": 18
       }
      }
     }
@@ -162764,14 +163668,14 @@
    "nat": "Burundi",
    "natKey": "burundi",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 58,
+     "apps": 66,
      "goals": 4,
      "clubs": {
       "417": {
-       "apps": 58,
+       "apps": 66,
        "goals": 4
       }
      }
@@ -162817,6 +163721,26 @@
       "347": {
        "apps": 23,
        "goals": 2
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "677794",
+   "name": "Kaito Mizuta",
+   "nat": "Japan",
+   "natKey": "japan",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "738": {
+       "apps": 5,
+       "goals": 0
       }
      }
     }
@@ -163028,15 +163952,15 @@
    "nat": "Canada",
    "natKey": "canada",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 13,
-     "goals": 1,
+     "apps": 20,
+     "goals": 3,
      "clubs": {
       "415": {
-       "apps": 13,
-       "goals": 1
+       "apps": 20,
+       "goals": 3
       }
      }
     }
@@ -163560,14 +164484,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 69,
+     "apps": 73,
      "goals": 3,
      "clubs": {
       "273": {
-       "apps": 32,
+       "apps": 36,
        "goals": 1
       },
       "415": {
@@ -163624,14 +164548,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 47,
+     "apps": 48,
      "goals": 1,
      "clubs": {
       "738": {
-       "apps": 47,
+       "apps": 48,
        "goals": 1
       }
      }
@@ -163644,15 +164568,35 @@
    "nat": "Guadeloupe",
    "natKey": "guadeloupe",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 28,
-     "goals": 3,
+     "apps": 35,
+     "goals": 4,
      "clubs": {
       "1158": {
-       "apps": 28,
-       "goals": 3
+       "apps": 35,
+       "goals": 4
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "693352",
+   "name": "Iron Gomis",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "1095": {
+       "apps": 7,
+       "goals": 0
       }
      }
     }
@@ -164048,14 +164992,14 @@
    "nat": "Cote d'Ivoire",
    "natKey": "ivory coast",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 119,
+     "apps": 121,
      "goals": 5,
      "clubs": {
       "290": {
-       "apps": 47,
+       "apps": 49,
        "goals": 5
       },
       "1041": {
@@ -164121,6 +165065,26 @@
       "1158": {
        "apps": 52,
        "goals": 7
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "704456",
+   "name": "Nosa Edward Obaretin",
+   "nat": "Italy",
+   "natKey": "italy",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "1158": {
+       "apps": 2,
+       "goals": 0
       }
      }
     }
@@ -164368,10 +165332,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 49,
+     "apps": 51,
      "goals": 2,
      "clubs": {
       "244": {
@@ -164383,7 +165347,7 @@
        "goals": 1
       },
       "1158": {
-       "apps": 25,
+       "apps": 27,
        "goals": 1
       }
      }
@@ -164588,10 +165552,10 @@
    "nat": "Cote d'Ivoire",
    "natKey": "ivory coast",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 82,
+     "apps": 83,
      "goals": 3,
      "clubs": {
       "273": {
@@ -164599,7 +165563,7 @@
        "goals": 0
       },
       "667": {
-       "apps": 56,
+       "apps": 57,
        "goals": 3
       }
      }
@@ -166043,6 +167007,26 @@
    }
   },
   {
+   "id": "725963",
+   "name": "Ewan Hatfout",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "GK",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 3,
+     "goals": 0,
+     "clubs": {
+      "1164": {
+       "apps": 3,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "726738",
    "name": "Juan José Duarte",
    "nat": "Uruguay",
@@ -166615,6 +167599,26 @@
    }
   },
   {
+   "id": "735051",
+   "name": "Amine El Ouazzani",
+   "nat": "Morocco",
+   "natKey": "morocco",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 2,
+     "clubs": {
+      "1420": {
+       "apps": 7,
+       "goals": 2
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "735491",
    "name": "François Bruant",
    "nat": "France",
@@ -166808,12 +167812,16 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 127,
-     "goals": 20,
+     "apps": 132,
+     "goals": 21,
      "clubs": {
+      "1095": {
+       "apps": 5,
+       "goals": 1
+      },
       "3911": {
        "apps": 127,
        "goals": 20
@@ -166932,19 +167940,19 @@
    "nat": "Algeria",
    "natKey": "algeria",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 60,
-     "goals": 10,
+     "apps": 67,
+     "goals": 11,
      "clubs": {
       "1421": {
        "apps": 31,
        "goals": 1
       },
       "10004": {
-       "apps": 29,
-       "goals": 9
+       "apps": 36,
+       "goals": 10
       }
      }
     }
@@ -167016,15 +168024,15 @@
    "nat": "Belgium",
    "natKey": "belgium",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 58,
-     "goals": 10,
+     "apps": 60,
+     "goals": 11,
      "clubs": {
       "1041": {
-       "apps": 58,
-       "goals": 10
+       "apps": 60,
+       "goals": 11
       }
      }
     }
@@ -167036,14 +168044,34 @@
    "nat": "Belgium",
    "natKey": "belgium",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 8,
-     "goals": 1,
+     "apps": 13,
+     "goals": 2,
      "clubs": {
       "162": {
-       "apps": 8,
+       "apps": 13,
+       "goals": 2
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "743395",
+   "name": "Noah Mbamba",
+   "nat": "DR Congo",
+   "natKey": "dr congo",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 3,
+     "goals": 1,
+     "clubs": {
+      "1158": {
+       "apps": 3,
        "goals": 1
       }
      }
@@ -167076,14 +168104,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 56,
+     "apps": 63,
      "goals": 3,
      "clubs": {
       "290": {
-       "apps": 56,
+       "apps": 63,
        "goals": 3
       }
      }
@@ -167180,14 +168208,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 33,
+     "apps": 40,
      "goals": 0,
      "clubs": {
       "826": {
-       "apps": 33,
+       "apps": 40,
        "goals": 0
       }
      }
@@ -168252,14 +169280,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 31,
+     "apps": 34,
      "goals": 3,
      "clubs": {
       "162": {
-       "apps": 31,
+       "apps": 34,
        "goals": 3
       }
      }
@@ -168272,15 +169300,15 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2023,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 17,
-     "goals": 1,
+     "apps": 20,
+     "goals": 2,
      "clubs": {
       "162": {
-       "apps": 17,
-       "goals": 1
+       "apps": 20,
+       "goals": 2
       }
      }
     }
@@ -168312,15 +169340,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 109,
-     "goals": 18,
+     "apps": 116,
+     "goals": 19,
      "clubs": {
       "162": {
        "apps": 109,
        "goals": 18
+      },
+      "583": {
+       "apps": 7,
+       "goals": 1
       }
      }
     }
@@ -168332,14 +169364,14 @@
    "nat": "Italy",
    "natKey": "italy",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 16,
+     "apps": 22,
      "goals": 3,
      "clubs": {
       "10004": {
-       "apps": 16,
+       "apps": 22,
        "goals": 3
       }
      }
@@ -168867,6 +169899,26 @@
    }
   },
   {
+   "id": "746910",
+   "name": "Mohamed Amoura",
+   "nat": "Algeria",
+   "natKey": "algeria",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 6,
+     "goals": 1,
+     "clubs": {
+      "417": {
+       "apps": 6,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "748382",
    "name": "Amin Sarr",
    "nat": "Sweden",
@@ -168881,6 +169933,66 @@
       "1041": {
        "apps": 16,
        "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "748445",
+   "name": "Yacine Titraoui",
+   "nat": "Algeria",
+   "natKey": "algeria",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "826": {
+       "apps": 5,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "748804",
+   "name": "Mika Godts",
+   "nat": "Belgium",
+   "natKey": "belgium",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "583": {
+       "apps": 6,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "748807",
+   "name": "Joseph Nonge",
+   "nat": "Belgium",
+   "natKey": "belgium",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 8,
+     "goals": 0,
+     "clubs": {
+      "3911": {
+       "apps": 8,
+       "goals": 0
       }
      }
     }
@@ -169940,14 +171052,14 @@
    "nat": "Haiti",
    "natKey": "haiti",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 88,
+     "apps": 90,
      "goals": 5,
      "clubs": {
       "290": {
-       "apps": 31,
+       "apps": 33,
        "goals": 1
       },
       "738": {
@@ -170292,15 +171404,35 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 85,
+     "apps": 90,
      "goals": 4,
      "clubs": {
       "1158": {
-       "apps": 85,
+       "apps": 90,
        "goals": 4
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "766839",
+   "name": "Usman Simbakoli",
+   "nat": "Central African Republic",
+   "natKey": "central african republic",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "1420": {
+       "apps": 5,
+       "goals": 0
       }
      }
     }
@@ -170392,14 +171524,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 34,
+     "apps": 41,
      "goals": 1,
      "clubs": {
       "738": {
-       "apps": 34,
+       "apps": 41,
        "goals": 1
       }
      }
@@ -170611,6 +171743,26 @@
    }
   },
   {
+   "id": "775981",
+   "name": "Arthur Piedfort",
+   "nat": "Belgium",
+   "natKey": "belgium",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "290": {
+       "apps": 7,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "776496",
    "name": "Denis Mathieu",
    "nat": "France",
@@ -170680,15 +171832,15 @@
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 82,
-     "goals": 14,
+     "apps": 87,
+     "goals": 15,
      "clubs": {
       "826": {
-       "apps": 21,
-       "goals": 2
+       "apps": 26,
+       "goals": 3
       },
       "1420": {
        "apps": 34,
@@ -171188,14 +172340,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 107,
+     "apps": 110,
      "goals": 2,
      "clubs": {
       "667": {
-       "apps": 107,
+       "apps": 110,
        "goals": 2
       }
      }
@@ -171288,14 +172440,14 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 111,
+     "apps": 118,
      "goals": 7,
      "clubs": {
       "162": {
-       "apps": 111,
+       "apps": 118,
        "goals": 7
       }
      }
@@ -171896,15 +173048,15 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 24,
-     "goals": 0,
+     "apps": 31,
+     "goals": 1,
      "clubs": {
       "290": {
-       "apps": 24,
-       "goals": 0
+       "apps": 31,
+       "goals": 1
       }
      }
     }
@@ -171956,14 +173108,18 @@
    "nat": "Ghana",
    "natKey": "ghana",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 106,
+     "apps": 109,
      "goals": 0,
      "clubs": {
       "273": {
        "apps": 43,
+       "goals": 0
+      },
+      "417": {
+       "apps": 3,
        "goals": 0
       },
       "3524": {
@@ -171980,14 +173136,14 @@
    "nat": "Mali",
    "natKey": "mali",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 36,
+     "apps": 38,
      "goals": 3,
      "clubs": {
       "738": {
-       "apps": 26,
+       "apps": 28,
        "goals": 3
       },
       "1421": {
@@ -172079,20 +173235,60 @@
    }
   },
   {
+   "id": "801762",
+   "name": "Théo Eyoum",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "1164": {
+       "apps": 2,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "801886",
+   "name": "Isak Jensen",
+   "nat": "Denmark",
+   "natKey": "denmark",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 1,
+     "clubs": {
+      "1158": {
+       "apps": 5,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "802515",
    "name": "Noah Nartey",
    "nat": "Denmark",
    "natKey": "denmark",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 11,
-     "goals": 2,
+     "apps": 17,
+     "goals": 3,
      "clubs": {
       "1041": {
-       "apps": 11,
-       "goals": 2
+       "apps": 17,
+       "goals": 3
       }
      }
     }
@@ -172113,6 +173309,26 @@
       "1158": {
        "apps": 23,
        "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "804386",
+   "name": "Erwan Colas",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "1164": {
+       "apps": 1,
+       "goals": 0
       }
      }
     }
@@ -172204,14 +173420,14 @@
    "nat": "Mali",
    "natKey": "mali",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 44,
+     "apps": 50,
      "goals": 1,
      "clubs": {
       "1420": {
-       "apps": 44,
+       "apps": 50,
        "goals": 1
       }
      }
@@ -172244,15 +173460,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2021,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 4,
-     "goals": 0,
+     "apps": 9,
+     "goals": 1,
      "clubs": {
       "826": {
        "apps": 4,
        "goals": 0
+      },
+      "1158": {
+       "apps": 5,
+       "goals": 1
       }
      }
     }
@@ -172408,10 +173628,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 102,
+     "apps": 110,
      "goals": 1,
      "clubs": {
       "1421": {
@@ -172419,7 +173639,7 @@
        "goals": 1
       },
       "3911": {
-       "apps": 63,
+       "apps": 71,
        "goals": 0
       }
      }
@@ -172512,14 +173732,14 @@
    "nat": "Cote d'Ivoire",
    "natKey": "ivory coast",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 57,
+     "apps": 64,
      "goals": 0,
      "clubs": {
       "290": {
-       "apps": 57,
+       "apps": 64,
        "goals": 0
       }
      }
@@ -172583,6 +173803,26 @@
    }
   },
   {
+   "id": "807386",
+   "name": "Conrad Harder",
+   "nat": "Denmark",
+   "natKey": "denmark",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 1,
+     "clubs": {
+      "667": {
+       "apps": 5,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "807648",
    "name": "Abdoulaye Sylla",
    "nat": "Guinea",
@@ -172603,19 +173843,39 @@
    }
   },
   {
+   "id": "807653",
+   "name": "Antoine Mille",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 1,
+     "clubs": {
+      "1095": {
+       "apps": 7,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "807688",
    "name": "Yassin Belkhdim",
    "nat": "Morocco",
    "natKey": "morocco",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 56,
+     "apps": 63,
      "goals": 3,
      "clubs": {
       "1420": {
-       "apps": 56,
+       "apps": 63,
        "goals": 3
       }
      }
@@ -172668,14 +173928,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 113,
+     "apps": 120,
      "goals": 8,
      "clubs": {
       "583": {
-       "apps": 113,
+       "apps": 120,
        "goals": 8
       }
      }
@@ -172748,15 +174008,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 31,
-     "goals": 10,
+     "apps": 38,
+     "goals": 11,
      "clubs": {
       "1158": {
        "apps": 31,
        "goals": 10
+      },
+      "10004": {
+       "apps": 7,
+       "goals": 1
       }
      }
     }
@@ -172952,14 +174216,14 @@
    "nat": "Greece",
    "natKey": "greece",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 31,
+     "apps": 36,
      "goals": 2,
      "clubs": {
       "1158": {
-       "apps": 31,
+       "apps": 36,
        "goals": 2
       }
      }
@@ -172972,15 +174236,15 @@
    "nat": "Portugal",
    "natKey": "portugal",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 51,
-     "goals": 1,
+     "apps": 57,
+     "goals": 3,
      "clubs": {
       "1082": {
-       "apps": 51,
-       "goals": 1
+       "apps": 57,
+       "goals": 3
       }
      }
     }
@@ -173012,15 +174276,35 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 23,
+     "apps": 27,
      "goals": 1,
      "clubs": {
       "10004": {
-       "apps": 23,
+       "apps": 27,
        "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "819215",
+   "name": "Julien Duranville",
+   "nat": "Belgium",
+   "natKey": "belgium",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "1041": {
+       "apps": 2,
+       "goals": 0
       }
      }
     }
@@ -173284,15 +174568,15 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 68,
-     "goals": 3,
+     "apps": 74,
+     "goals": 4,
      "clubs": {
       "1420": {
-       "apps": 68,
-       "goals": 3
+       "apps": 74,
+       "goals": 4
       }
      }
     }
@@ -175036,15 +176320,15 @@
    "nat": "Morocco",
    "natKey": "morocco",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 25,
-     "goals": 3,
+     "apps": 32,
+     "goals": 4,
      "clubs": {
       "1420": {
-       "apps": 25,
-       "goals": 3
+       "apps": 32,
+       "goals": 4
       }
      }
     }
@@ -175543,6 +176827,26 @@
    }
   },
   {
+   "id": "856068",
+   "name": "Jeyland Mitchell",
+   "nat": "Costa Rica",
+   "natKey": "costa rica",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "667": {
+       "apps": 6,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "857148",
    "name": "Mamadou Camara",
    "nat": "Mali",
@@ -175588,15 +176892,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2021,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 1,
-     "goals": 0,
+     "apps": 8,
+     "goals": 1,
      "clubs": {
       "618": {
        "apps": 1,
        "goals": 0
+      },
+      "1164": {
+       "apps": 7,
+       "goals": 1
       }
      }
     }
@@ -175795,6 +177103,26 @@
      "goals": 0,
      "clubs": {
       "667": {
+       "apps": 4,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "864112",
+   "name": "Başar Önal",
+   "nat": "Türkiye",
+   "natKey": "turkiye",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "1082": {
        "apps": 4,
        "goals": 0
       }
@@ -176308,15 +177636,15 @@
    "nat": "Brazil",
    "natKey": "brazil",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 58,
-     "goals": 4,
+     "apps": 63,
+     "goals": 5,
      "clubs": {
       "583": {
-       "apps": 58,
-       "goals": 4
+       "apps": 63,
+       "goals": 5
       }
      }
     }
@@ -176724,14 +178052,14 @@
    "nat": "Algeria",
    "natKey": "algeria",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 25,
+     "apps": 32,
      "goals": 0,
      "clubs": {
       "415": {
-       "apps": 25,
+       "apps": 32,
        "goals": 0
       }
      }
@@ -177084,14 +178412,14 @@
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 64,
+     "apps": 67,
      "goals": 1,
      "clubs": {
       "417": {
-       "apps": 64,
+       "apps": 67,
        "goals": 1
       }
      }
@@ -177204,12 +178532,16 @@
    "nat": "Morocco",
    "natKey": "morocco",
    "pos": "MID",
-   "last": 2023,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 28,
+     "apps": 35,
      "goals": 3,
      "clubs": {
+      "738": {
+       "apps": 7,
+       "goals": 0
+      },
       "1421": {
        "apps": 28,
        "goals": 3
@@ -177864,19 +179196,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 31,
-     "goals": 3,
+     "apps": 37,
+     "goals": 4,
      "clubs": {
       "583": {
        "apps": 3,
        "goals": 0
       },
       "1082": {
-       "apps": 28,
-       "goals": 3
+       "apps": 34,
+       "goals": 4
       }
      }
     }
@@ -177888,14 +179220,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 54,
+     "apps": 55,
      "goals": 6,
      "clubs": {
       "583": {
-       "apps": 54,
+       "apps": 55,
        "goals": 6
       }
      }
@@ -177908,10 +179240,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 56,
+     "apps": 59,
      "goals": 2,
      "clubs": {
       "618": {
@@ -177919,7 +179251,7 @@
        "goals": 0
       },
       "1420": {
-       "apps": 32,
+       "apps": 35,
        "goals": 2
       }
      }
@@ -178115,6 +179447,26 @@
    }
   },
   {
+   "id": "910541",
+   "name": "Fábio Baldé",
+   "nat": "Portugal",
+   "natKey": "portugal",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "667": {
+       "apps": 4,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "910905",
    "name": "Mamadou Sarr",
    "nat": "Senegal",
@@ -178184,14 +179536,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "GK",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 96,
+     "apps": 102,
      "goals": 0,
      "clubs": {
       "415": {
-       "apps": 96,
+       "apps": 102,
        "goals": 0
       }
      }
@@ -178224,19 +179576,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 111,
-     "goals": 20,
+     "apps": 118,
+     "goals": 21,
      "clubs": {
       "273": {
        "apps": 57,
        "goals": 7
       },
       "583": {
-       "apps": 54,
-       "goals": 13
+       "apps": 61,
+       "goals": 14
       }
      }
     }
@@ -178383,6 +179735,26 @@
    }
   },
   {
+   "id": "917147",
+   "name": "Mamadou Diop",
+   "nat": "Mauritania",
+   "natKey": "mauritania",
+   "pos": "GK",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "290": {
+       "apps": 6,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "917382",
    "name": "Jean Fidon",
    "nat": "France",
@@ -178408,12 +179780,16 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 51,
-     "goals": 7,
+     "apps": 56,
+     "goals": 8,
      "clubs": {
+      "290": {
+       "apps": 5,
+       "goals": 1
+      },
       "826": {
        "apps": 24,
        "goals": 2
@@ -178552,15 +179928,15 @@
    "nat": "Germany",
    "natKey": "germany",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 7,
-     "goals": 0,
+     "apps": 12,
+     "goals": 4,
      "clubs": {
       "162": {
-       "apps": 7,
-       "goals": 0
+       "apps": 12,
+       "goals": 4
       }
      }
     }
@@ -178572,14 +179948,14 @@
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 84,
+     "apps": 91,
      "goals": 6,
      "clubs": {
       "162": {
-       "apps": 53,
+       "apps": 60,
        "goals": 5
       },
       "347": {
@@ -178696,14 +180072,14 @@
    "nat": "Nigeria",
    "natKey": "nigeria",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 8,
+     "apps": 12,
      "goals": 0,
      "clubs": {
       "244": {
-       "apps": 8,
+       "apps": 12,
        "goals": 0
       }
      }
@@ -178788,6 +180164,26 @@
      "clubs": {
       "895": {
        "apps": 18,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "922685",
+   "name": "Giovani Versini",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 3,
+     "goals": 0,
+     "clubs": {
+      "3911": {
+       "apps": 3,
        "goals": 0
       }
      }
@@ -178932,14 +180328,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 17,
+     "apps": 18,
      "goals": 0,
      "clubs": {
       "3911": {
-       "apps": 17,
+       "apps": 18,
        "goals": 0
       }
      }
@@ -179012,14 +180408,14 @@
    "nat": "Denmark",
    "natKey": "denmark",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 24,
+     "apps": 28,
      "goals": 0,
      "clubs": {
       "667": {
-       "apps": 24,
+       "apps": 28,
        "goals": 0
       }
      }
@@ -179244,14 +180640,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 40,
+     "apps": 42,
      "goals": 1,
      "clubs": {
       "273": {
-       "apps": 40,
+       "apps": 42,
        "goals": 1
       }
      }
@@ -179272,6 +180668,26 @@
      "clubs": {
       "1095": {
        "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "933147",
+   "name": "Mouhamed Diop",
+   "nat": "Senegal",
+   "natKey": "senegal",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "1095": {
+       "apps": 7,
        "goals": 0
       }
      }
@@ -179324,15 +180740,15 @@
    "nat": "England",
    "natKey": "england",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 34,
-     "goals": 4,
+     "apps": 41,
+     "goals": 6,
      "clubs": {
       "667": {
-       "apps": 34,
-       "goals": 4
+       "apps": 41,
+       "goals": 6
       }
      }
     }
@@ -179487,6 +180903,26 @@
    }
   },
   {
+   "id": "937729",
+   "name": "Diogo Sousa",
+   "nat": "Portugal",
+   "natKey": "portugal",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 6,
+     "goals": 1,
+     "clubs": {
+      "667": {
+       "apps": 6,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "938009",
    "name": "Bassirou N'Diaye",
    "nat": "Senegal",
@@ -179520,6 +180956,26 @@
      "clubs": {
       "1420": {
        "apps": 10,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "941561",
+   "name": "Lucas Bretelle",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "1164": {
+       "apps": 6,
        "goals": 0
       }
      }
@@ -179629,6 +181085,26 @@
       "969": {
        "apps": 11,
        "goals": 4
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "944181",
+   "name": "Hugo Picard",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "1095": {
+       "apps": 6,
+       "goals": 0
       }
      }
     }
@@ -179820,15 +181296,19 @@
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 15,
+     "apps": 22,
      "goals": 1,
      "clubs": {
       "415": {
        "apps": 15,
        "goals": 1
+      },
+      "667": {
+       "apps": 7,
+       "goals": 0
       }
      }
     }
@@ -179915,20 +181395,40 @@
    }
   },
   {
+   "id": "953004",
+   "name": "Thomas Jørgensen",
+   "nat": "Denmark",
+   "natKey": "denmark",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 2,
+     "clubs": {
+      "415": {
+       "apps": 7,
+       "goals": 2
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "955070",
    "name": "Ernest Nuamah",
    "nat": "Ghana",
    "natKey": "ghana",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 55,
-     "goals": 6,
+     "apps": 60,
+     "goals": 9,
      "clubs": {
       "1041": {
-       "apps": 55,
-       "goals": 6
+       "apps": 60,
+       "goals": 9
       }
      }
     }
@@ -180667,17 +182167,41 @@
    }
   },
   {
+   "id": "967346",
+   "name": "Eliezer Mayenda",
+   "nat": "Spain",
+   "natKey": "spain",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "273": {
+       "apps": 5,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "969447",
    "name": "Dermane Karim",
    "nat": "Togo",
    "natKey": "togo",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 30,
+     "apps": 36,
      "goals": 1,
      "clubs": {
+      "1095": {
+       "apps": 6,
+       "goals": 0
+      },
       "1158": {
        "apps": 30,
        "goals": 1
@@ -180692,14 +182216,14 @@
    "nat": "Gabon",
    "natKey": "gabon",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 50,
+     "apps": 51,
      "goals": 0,
      "clubs": {
       "1420": {
-       "apps": 50,
+       "apps": 51,
        "goals": 0
       }
      }
@@ -180796,14 +182320,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 29,
+     "apps": 36,
      "goals": 1,
      "clubs": {
       "10004": {
-       "apps": 29,
+       "apps": 36,
        "goals": 1
       }
      }
@@ -180836,14 +182360,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 2,
+     "apps": 3,
      "goals": 0,
      "clubs": {
       "162": {
-       "apps": 2,
+       "apps": 3,
        "goals": 0
       }
      }
@@ -180891,6 +182415,26 @@
    }
   },
   {
+   "id": "976861",
+   "name": "Merwan Ifnaoui",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "1095": {
+       "apps": 4,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "977877",
    "name": "Ayanda Sishuba",
    "nat": "Belgium",
@@ -180920,15 +182464,35 @@
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 28,
-     "goals": 1,
+     "apps": 36,
+     "goals": 3,
      "clubs": {
       "3911": {
-       "apps": 28,
-       "goals": 1
+       "apps": 36,
+       "goals": 3
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "979760",
+   "name": "Rayan Bamba",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "1164": {
+       "apps": 6,
+       "goals": 0
       }
      }
     }
@@ -181179,6 +182743,46 @@
    }
   },
   {
+   "id": "983578",
+   "name": "Patrick Beach",
+   "nat": "Australia",
+   "natKey": "australia",
+   "pos": "GK",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "1095": {
+       "apps": 7,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "984529",
+   "name": "Mateo Del Blanco",
+   "nat": "Argentina",
+   "natKey": "argentina",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "667": {
+       "apps": 2,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "984697",
    "name": "Trévis Dago",
    "nat": "France",
@@ -181299,6 +182903,26 @@
    }
   },
   {
+   "id": "986286",
+   "name": "Ismaïl Bouneb",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "738": {
+       "apps": 2,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "986288",
    "name": "Sidiki Chérif",
    "nat": "Guinea",
@@ -181324,14 +182948,34 @@
    "nat": "Montenegro",
    "natKey": "montenegro",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 19,
+     "apps": 26,
      "goals": 0,
      "clubs": {
       "826": {
-       "apps": 19,
+       "apps": 26,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "986299",
+   "name": "Yvann Titi",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "1095": {
+       "apps": 1,
        "goals": 0
       }
      }
@@ -181344,14 +182988,18 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2023,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 1,
+     "apps": 3,
      "goals": 0,
      "clubs": {
       "417": {
        "apps": 1,
+       "goals": 0
+      },
+      "1164": {
+       "apps": 2,
        "goals": 0
       }
      }
@@ -181364,14 +183012,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 1,
+     "apps": 2,
      "goals": 0,
      "clubs": {
       "415": {
-       "apps": 1,
+       "apps": 2,
        "goals": 0
       }
      }
@@ -181424,14 +183072,14 @@
    "nat": "Argentina",
    "natKey": "argentina",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 28,
+     "apps": 34,
      "goals": 4,
      "clubs": {
       "415": {
-       "apps": 28,
+       "apps": 34,
        "goals": 4
       }
      }
@@ -181533,6 +183181,26 @@
       "750": {
        "apps": 6,
        "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "990637",
+   "name": "Zachary Athekame",
+   "nat": "Switzerland",
+   "natKey": "switzerland",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 2,
+     "clubs": {
+      "1041": {
+       "apps": 7,
+       "goals": 2
       }
      }
     }
@@ -181788,14 +183456,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 1,
+     "apps": 2,
      "goals": 0,
      "clubs": {
       "417": {
-       "apps": 1,
+       "apps": 2,
        "goals": 0
       }
      }
@@ -181808,14 +183476,14 @@
    "nat": "Portugal",
    "natKey": "portugal",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 11,
+     "apps": 12,
      "goals": 0,
      "clubs": {
       "1041": {
-       "apps": 11,
+       "apps": 12,
        "goals": 0
       }
      }
@@ -181928,14 +183596,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 59,
+     "apps": 61,
      "goals": 2,
      "clubs": {
       "162": {
-       "apps": 40,
+       "apps": 42,
        "goals": 0
       },
       "415": {
@@ -181992,12 +183660,16 @@
    "nat": "Cote d'Ivoire",
    "natKey": "ivory coast",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 20,
+     "apps": 27,
      "goals": 0,
      "clubs": {
+      "1095": {
+       "apps": 7,
+       "goals": 0
+      },
       "3911": {
        "apps": 20,
        "goals": 0
@@ -182104,10 +183776,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 62,
+     "apps": 68,
      "goals": 3,
      "clubs": {
       "40": {
@@ -182119,7 +183791,7 @@
        "goals": 1
       },
       "738": {
-       "apps": 11,
+       "apps": 17,
        "goals": 1
       },
       "995": {
@@ -182180,14 +183852,14 @@
    "nat": "DR Congo",
    "natKey": "dr congo",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 52,
+     "apps": 59,
      "goals": 1,
      "clubs": {
       "1082": {
-       "apps": 52,
+       "apps": 59,
        "goals": 1
       }
      }
@@ -182312,15 +183984,15 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 23,
-     "goals": 3,
+     "apps": 28,
+     "goals": 4,
      "clubs": {
       "826": {
-       "apps": 23,
-       "goals": 3
+       "apps": 28,
+       "goals": 4
       }
      }
     }
@@ -182611,20 +184283,60 @@
    }
   },
   {
+   "id": "1029482",
+   "name": "William Harhouz",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "1164": {
+       "apps": 2,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1030153",
    "name": "Justin Bourgault",
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 3,
+     "apps": 4,
      "goals": 1,
      "clubs": {
       "3911": {
-       "apps": 3,
+       "apps": 4,
        "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1032280",
+   "name": "Oso",
+   "nat": "Spain",
+   "natKey": "spain",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "667": {
+       "apps": 5,
+       "goals": 0
       }
      }
     }
@@ -186923,6 +188635,46 @@
    }
   },
   {
+   "id": "1045121",
+   "name": "Genesis Antwi",
+   "nat": "Sweden",
+   "natKey": "sweden",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "667": {
+       "apps": 7,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1045375",
+   "name": "Niko Sigur",
+   "nat": "Canada",
+   "natKey": "canada",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "415": {
+       "apps": 4,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1047097",
    "name": "Yoram Zague",
    "nat": "France",
@@ -187068,14 +188820,14 @@
    "nat": "Guinea",
    "natKey": "guinea",
    "pos": "DEF",
-   "last": 2023,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 1,
+     "apps": 8,
      "goals": 0,
      "clubs": {
       "1158": {
-       "apps": 1,
+       "apps": 8,
        "goals": 0
       }
      }
@@ -187904,14 +189656,14 @@
    "nat": "Spain",
    "natKey": "spain",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 12,
+     "apps": 17,
      "goals": 1,
      "clubs": {
       "583": {
-       "apps": 12,
+       "apps": 17,
        "goals": 1
       }
      }
@@ -187924,14 +189676,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 26,
+     "apps": 28,
      "goals": 1,
      "clubs": {
       "1420": {
-       "apps": 26,
+       "apps": 28,
        "goals": 1
       }
      }
@@ -188004,14 +189756,14 @@
    "nat": "Cameroon",
    "natKey": "cameroon",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 31,
+     "apps": 38,
      "goals": 2,
      "clubs": {
       "1158": {
-       "apps": 31,
+       "apps": 38,
        "goals": 2
       }
      }
@@ -188107,19 +189859,39 @@
    }
   },
   {
+   "id": "1075580",
+   "name": "Mathys Niflore",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "GK",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "415": {
+       "apps": 2,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1075583",
    "name": "Seny Koumbassa",
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 9,
+     "apps": 14,
      "goals": 1,
      "clubs": {
       "415": {
-       "apps": 9,
+       "apps": 14,
        "goals": 1
       }
      }
@@ -188132,14 +189904,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 4,
+     "apps": 5,
      "goals": 0,
      "clubs": {
       "162": {
-       "apps": 4,
+       "apps": 5,
        "goals": 0
       }
      }
@@ -188232,10 +190004,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 25,
+     "apps": 28,
      "goals": 2,
      "clubs": {
       "415": {
@@ -188243,6 +190015,10 @@
        "goals": 2
       },
       "1082": {
+       "apps": 3,
+       "goals": 0
+      },
+      "3911": {
        "apps": 3,
        "goals": 0
       }
@@ -189255,6 +191031,26 @@
    }
   },
   {
+   "id": "1084638",
+   "name": "Karim Coulibaly",
+   "nat": "Germany",
+   "natKey": "germany",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "667": {
+       "apps": 5,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1086399",
    "name": "Jean-Claude D'Arménia",
    "nat": "France",
@@ -189344,14 +191140,18 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 10,
+     "apps": 15,
      "goals": 0,
      "clubs": {
       "826": {
        "apps": 10,
+       "goals": 0
+      },
+      "1420": {
+       "apps": 5,
        "goals": 0
       }
      }
@@ -189364,14 +191164,14 @@
    "nat": "Burkina Faso",
    "natKey": "burkina faso",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 31,
+     "apps": 38,
      "goals": 2,
      "clubs": {
       "1158": {
-       "apps": 31,
+       "apps": 38,
        "goals": 2
       }
      }
@@ -191348,15 +193148,19 @@
    "nat": "Algeria",
    "natKey": "algeria",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 13,
+     "apps": 20,
      "goals": 1,
      "clubs": {
       "417": {
        "apps": 13,
        "goals": 1
+      },
+      "1041": {
+       "apps": 7,
+       "goals": 0
       }
      }
     }
@@ -192200,14 +194004,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 9,
+     "apps": 11,
      "goals": 0,
      "clubs": {
       "1420": {
-       "apps": 9,
+       "apps": 11,
        "goals": 0
       }
      }
@@ -192220,15 +194024,15 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 31,
-     "goals": 5,
+     "apps": 38,
+     "goals": 7,
      "clubs": {
       "1420": {
-       "apps": 31,
-       "goals": 5
+       "apps": 38,
+       "goals": 7
       }
      }
     }
@@ -192261,6 +194065,26 @@
    "natKey": "france",
    "pos": "FWD",
    "last": 2025,
+   "comps": {
+    "FR1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "1041": {
+       "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1107570",
+   "name": "Mohamed Ouédraogo",
+   "nat": "Burkina Faso",
+   "natKey": "burkina faso",
+   "pos": "DEF",
+   "last": 2026,
    "comps": {
     "FR1": {
      "apps": 1,
@@ -192884,12 +194708,16 @@
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 37,
+     "apps": 44,
      "goals": 2,
      "clubs": {
+      "162": {
+       "apps": 7,
+       "goals": 0
+      },
       "347": {
        "apps": 37,
        "goals": 2
@@ -192981,6 +194809,26 @@
       "417": {
        "apps": 29,
        "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1113528",
+   "name": "Christ Makosso",
+   "nat": "Congo",
+   "natKey": "congo",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "290": {
+       "apps": 5,
+       "goals": 0
       }
      }
     }
@@ -193899,6 +195747,26 @@
    }
   },
   {
+   "id": "1117092",
+   "name": "Joseph Kalulu",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "1420": {
+       "apps": 6,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1117771",
    "name": "Ange Lago",
    "nat": "Cote d'Ivoire",
@@ -193912,6 +195780,26 @@
      "clubs": {
       "244": {
        "apps": 2,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1119338",
+   "name": "Rayan Mandengue",
+   "nat": "Cameroon",
+   "natKey": "cameroon",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "290": {
+       "apps": 4,
        "goals": 0
       }
      }
@@ -194019,19 +195907,79 @@
    }
   },
   {
+   "id": "1119840",
+   "name": "Noah Donkor",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "1095": {
+       "apps": 5,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1119845",
+   "name": "Anis Ouzenadji",
+   "nat": "Algeria",
+   "natKey": "algeria",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "1095": {
+       "apps": 5,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1119877",
+   "name": "Guy-Noël Zohouri",
+   "nat": "Cote d'Ivoire",
+   "natKey": "ivory coast",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "738": {
+       "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1119880",
    "name": "Daren Mosengo",
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 7,
+     "apps": 8,
      "goals": 0,
      "clubs": {
       "738": {
-       "apps": 7,
+       "apps": 8,
        "goals": 0
       }
      }
@@ -194044,14 +195992,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 14,
+     "apps": 20,
      "goals": 0,
      "clubs": {
       "738": {
-       "apps": 14,
+       "apps": 20,
        "goals": 0
       }
      }
@@ -195632,14 +197580,14 @@
    "nat": "Morocco",
    "natKey": "morocco",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 33,
+     "apps": 38,
      "goals": 1,
      "clubs": {
       "667": {
-       "apps": 33,
+       "apps": 38,
        "goals": 1
       }
      }
@@ -195652,14 +197600,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 1,
+     "apps": 4,
      "goals": 0,
      "clubs": {
       "3911": {
-       "apps": 1,
+       "apps": 4,
        "goals": 0
       }
      }
@@ -196667,6 +198615,26 @@
    }
   },
   {
+   "id": "1132426",
+   "name": "Omar Sissoko",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 3,
+     "goals": 0,
+     "clubs": {
+      "10004": {
+       "apps": 3,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1132634",
    "name": "Martial Tia",
    "nat": "Mali",
@@ -196872,14 +198840,14 @@
    "nat": "Senegal",
    "natKey": "senegal",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 3,
+     "apps": 5,
      "goals": 0,
      "clubs": {
       "667": {
-       "apps": 3,
+       "apps": 5,
        "goals": 0
       }
      }
@@ -196992,15 +198960,15 @@
    "nat": "Cameroon",
    "natKey": "cameroon",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 15,
-     "goals": 2,
+     "apps": 21,
+     "goals": 3,
      "clubs": {
       "1420": {
-       "apps": 15,
-       "goals": 2
+       "apps": 21,
+       "goals": 3
       }
      }
     }
@@ -197032,14 +199000,14 @@
    "nat": "Morocco",
    "natKey": "morocco",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 1,
+     "apps": 4,
      "goals": 0,
      "clubs": {
       "417": {
-       "apps": 1,
+       "apps": 4,
        "goals": 0
       }
      }
@@ -197052,14 +199020,14 @@
    "nat": "Morocco",
    "natKey": "morocco",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 20,
+     "apps": 23,
      "goals": 2,
      "clubs": {
       "273": {
-       "apps": 20,
+       "apps": 23,
        "goals": 2
       }
      }
@@ -204096,14 +206064,14 @@
    "nat": "Cote d'Ivoire",
    "natKey": "ivory coast",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 23,
+     "apps": 24,
      "goals": 0,
      "clubs": {
       "3911": {
-       "apps": 23,
+       "apps": 24,
        "goals": 0
       }
      }
@@ -212708,15 +214676,15 @@
    "nat": "Morocco",
    "natKey": "morocco",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 12,
-     "goals": 0,
+     "apps": 19,
+     "goals": 2,
      "clubs": {
       "667": {
-       "apps": 12,
-       "goals": 0
+       "apps": 19,
+       "goals": 2
       }
      }
     }
@@ -215927,6 +217895,26 @@
    }
   },
   {
+   "id": "1160378",
+   "name": "Souleymane Sagnan",
+   "nat": "Mali",
+   "natKey": "mali",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 3,
+     "goals": 0,
+     "clubs": {
+      "826": {
+       "apps": 3,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1160638",
    "name": "Jean-Louis Pradel",
    "nat": "France",
@@ -215949,6 +217937,26 @@
       "37393": {
        "apps": 9,
        "goals": 3
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1160753",
+   "name": "Isaac Cossier",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "1082": {
+       "apps": 1,
+       "goals": 0
       }
      }
     }
@@ -216020,12 +218028,16 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 27,
-     "goals": 5,
+     "apps": 32,
+     "goals": 7,
      "clubs": {
+      "738": {
+       "apps": 5,
+       "goals": 2
+      },
       "826": {
        "apps": 27,
        "goals": 5
@@ -216208,15 +218220,15 @@
    "nat": "Mali",
    "natKey": "mali",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 3,
-     "goals": 0,
+     "apps": 5,
+     "goals": 1,
      "clubs": {
       "244": {
-       "apps": 3,
-       "goals": 0
+       "apps": 5,
+       "goals": 1
       }
      }
     }
@@ -216643,6 +218655,26 @@
    }
   },
   {
+   "id": "1166137",
+   "name": "Adil Bourabaa",
+   "nat": "Algeria",
+   "natKey": "algeria",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 3,
+     "clubs": {
+      "1164": {
+       "apps": 5,
+       "goals": 3
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1166203",
    "name": "Octave Sbroglia",
    "nat": "France",
@@ -216984,14 +219016,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 6,
+     "apps": 11,
      "goals": 0,
      "clubs": {
       "3911": {
-       "apps": 6,
+       "apps": 11,
        "goals": 0
       }
      }
@@ -217623,6 +219655,26 @@
    }
   },
   {
+   "id": "1169041",
+   "name": "Noa Boissé",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "1164": {
+       "apps": 6,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1169635",
    "name": "René Fayol",
    "nat": "France",
@@ -218180,14 +220232,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 1,
+     "apps": 2,
      "goals": 0,
      "clubs": {
       "273": {
-       "apps": 1,
+       "apps": 2,
        "goals": 0
       }
      }
@@ -218512,6 +220564,26 @@
      "clubs": {
       "750": {
        "apps": 3,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1171981",
+   "name": "Mathys Detourbet",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "162": {
+       "apps": 5,
        "goals": 0
       }
      }
@@ -219252,14 +221324,14 @@
    "nat": "Cameroon",
    "natKey": "cameroon",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 35,
+     "apps": 42,
      "goals": 2,
      "clubs": {
       "273": {
-       "apps": 35,
+       "apps": 42,
        "goals": 2
       }
      }
@@ -219620,6 +221692,26 @@
      "clubs": {
       "1147": {
        "apps": 2,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1177290",
+   "name": "Ismaïl Diallo",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "415": {
+       "apps": 5,
        "goals": 0
       }
      }
@@ -221543,12 +223635,12 @@
    }
   },
   {
-   "id": "1183719",
-   "name": "Keyliane Abdallah",
-   "nat": "France",
-   "natKey": "france",
-   "pos": "FWD",
-   "last": 2024,
+   "id": "1183715",
+   "name": "Kelyann Bezahaf",
+   "nat": "Algeria",
+   "natKey": "algeria",
+   "pos": "DEF",
+   "last": 2026,
    "comps": {
     "FR1": {
      "apps": 2,
@@ -221557,6 +223649,26 @@
       "244": {
        "apps": 2,
        "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1183719",
+   "name": "Keyliane Abdallah",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 9,
+     "goals": 1,
+     "clubs": {
+      "244": {
+       "apps": 9,
+       "goals": 1
       }
      }
     }
@@ -221816,14 +223928,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 10,
+     "apps": 11,
      "goals": 1,
      "clubs": {
       "1082": {
-       "apps": 10,
+       "apps": 11,
        "goals": 1
       }
      }
@@ -221951,19 +224063,79 @@
    }
   },
   {
+   "id": "1185941",
+   "name": "Emmanuel Mbemba",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "10004": {
+       "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1186029",
+   "name": "Safouane Benzahra",
+   "nat": "Morocco",
+   "natKey": "morocco",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "162": {
+       "apps": 2,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1186237",
+   "name": "Jacobo Ortega",
+   "nat": "Spain",
+   "natKey": "spain",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 1,
+     "clubs": {
+      "667": {
+       "apps": 7,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1186789",
    "name": "Kyllian Antonio",
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 7,
+     "apps": 12,
      "goals": 0,
      "clubs": {
       "826": {
-       "apps": 7,
+       "apps": 12,
        "goals": 0
       }
      }
@@ -222336,14 +224508,34 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 22,
-     "goals": 0,
+     "apps": 26,
+     "goals": 1,
      "clubs": {
       "1041": {
-       "apps": 22,
+       "apps": 26,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1188254",
+   "name": "Mathis Lainé",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "3911": {
+       "apps": 4,
        "goals": 0
       }
      }
@@ -223140,14 +225332,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 3,
+     "apps": 6,
      "goals": 0,
      "clubs": {
       "417": {
-       "apps": 3,
+       "apps": 6,
        "goals": 0
       }
      }
@@ -225180,14 +227372,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 3,
+     "apps": 8,
      "goals": 0,
      "clubs": {
       "415": {
-       "apps": 3,
+       "apps": 8,
        "goals": 0
       }
      }
@@ -225200,14 +227392,18 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 8,
+     "apps": 11,
      "goals": 0,
      "clubs": {
       "618": {
        "apps": 8,
+       "goals": 0
+      },
+      "3911": {
+       "apps": 3,
        "goals": 0
       }
      }
@@ -225220,14 +227416,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 6,
+     "apps": 7,
      "goals": 1,
      "clubs": {
       "1041": {
-       "apps": 6,
+       "apps": 7,
        "goals": 1
       }
      }
@@ -225240,14 +227436,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 23,
+     "apps": 29,
      "goals": 1,
      "clubs": {
       "415": {
-       "apps": 23,
+       "apps": 29,
        "goals": 1
       }
      }
@@ -226956,14 +229152,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 3,
+     "apps": 5,
      "goals": 0,
      "clubs": {
       "244": {
-       "apps": 3,
+       "apps": 5,
        "goals": 0
       }
      }
@@ -227104,6 +229300,26 @@
      "clubs": {
       "750": {
        "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1207432",
+   "name": "Lamine N'Diaye",
+   "nat": "Senegal",
+   "natKey": "senegal",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "738": {
+       "apps": 2,
        "goals": 0
       }
      }
@@ -227424,14 +229640,34 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 2,
+     "apps": 9,
      "goals": 0,
      "clubs": {
       "417": {
-       "apps": 2,
+       "apps": 9,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1208979",
+   "name": "Djelan Morana",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "417": {
+       "apps": 1,
        "goals": 0
       }
      }
@@ -232471,6 +234707,26 @@
    }
   },
   {
+   "id": "1228318",
+   "name": "Hakim Dongopandji",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "738": {
+       "apps": 2,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1228320",
    "name": "Pape Sissoko",
    "nat": "Mali",
@@ -233412,14 +235668,14 @@
    "nat": "Argentina",
    "natKey": "argentina",
    "pos": "FWD",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 13,
+     "apps": 17,
      "goals": 2,
      "clubs": {
       "415": {
-       "apps": 13,
+       "apps": 17,
        "goals": 2
       }
      }
@@ -234004,10 +236260,10 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 32,
+     "apps": 39,
      "goals": 2,
      "clubs": {
       "290": {
@@ -234015,7 +236271,7 @@
        "goals": 0
       },
       "10004": {
-       "apps": 11,
+       "apps": 18,
        "goals": 2
       }
      }
@@ -234143,6 +236399,26 @@
    }
   },
   {
+   "id": "1253657",
+   "name": "Youssef Khoudda",
+   "nat": "Morocco",
+   "natKey": "morocco",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "290": {
+       "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1254175",
    "name": "Giuseppe Mattioni",
    "nat": "France",
@@ -234188,15 +236464,19 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 4,
-     "goals": 0,
+     "apps": 11,
+     "goals": 1,
      "clubs": {
       "417": {
        "apps": 4,
        "goals": 0
+      },
+      "1158": {
+       "apps": 7,
+       "goals": 1
       }
      }
     }
@@ -234767,6 +237047,26 @@
    }
   },
   {
+   "id": "1268075",
+   "name": "Sota Nakamura",
+   "nat": "Japan",
+   "natKey": "japan",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "738": {
+       "apps": 7,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1268671",
    "name": "Jean Mioch",
    "nat": "France",
@@ -234841,6 +237141,46 @@
       "3520": {
        "apps": 19,
        "goals": 3
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1270789",
+   "name": "Oumar Konaté",
+   "nat": "Cote d'Ivoire",
+   "natKey": "ivory coast",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "162": {
+       "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1270796",
+   "name": "Christ Tapé",
+   "nat": "Cote d'Ivoire",
+   "natKey": "ivory coast",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 1,
+     "clubs": {
+      "415": {
+       "apps": 7,
+       "goals": 1
       }
      }
     }
@@ -235295,6 +237635,46 @@
    }
   },
   {
+   "id": "1291922",
+   "name": "Lamfia Dioubaté",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 3,
+     "goals": 0,
+     "clubs": {
+      "290": {
+       "apps": 3,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1291928",
+   "name": "Elikya Legros",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "290": {
+       "apps": 5,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1291929",
    "name": "Yvan Zaddy",
    "nat": "Cote d'Ivoire",
@@ -235308,6 +237688,46 @@
      "clubs": {
       "290": {
        "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1297628",
+   "name": "Maël Gernigon",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 2,
+     "goals": 0,
+     "clubs": {
+      "1420": {
+       "apps": 2,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1297638",
+   "name": "Xavier Mandza",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 0,
+     "clubs": {
+      "417": {
+       "apps": 7,
        "goals": 0
       }
      }
@@ -235340,14 +237760,14 @@
    "nat": "Portugal",
    "natKey": "portugal",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 1,
+     "apps": 5,
      "goals": 1,
      "clubs": {
       "826": {
-       "apps": 1,
+       "apps": 5,
        "goals": 1
       }
      }
@@ -235400,14 +237820,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "DEF",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 1,
+     "apps": 3,
      "goals": 0,
      "clubs": {
       "1082": {
-       "apps": 1,
+       "apps": 3,
        "goals": 0
       }
      }
@@ -235429,6 +237849,26 @@
       "347": {
        "apps": 4,
        "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1307000",
+   "name": "Anis Soubeir",
+   "nat": "Morocco",
+   "natKey": "morocco",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 4,
+     "goals": 0,
+     "clubs": {
+      "162": {
+       "apps": 4,
+       "goals": 0
       }
      }
     }
@@ -235480,14 +237920,14 @@
    "nat": "Cote d'Ivoire",
    "natKey": "ivory coast",
    "pos": "FWD",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 3,
+     "apps": 7,
      "goals": 0,
      "clubs": {
       "290": {
-       "apps": 3,
+       "apps": 7,
        "goals": 0
       }
      }
@@ -235848,6 +238288,46 @@
      "clubs": {
       "273": {
        "apps": 3,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1334469",
+   "name": "Aboulaye Camara",
+   "nat": "Mauritania",
+   "natKey": "mauritania",
+   "pos": "MID",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "417": {
+       "apps": 1,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1337539",
+   "name": "Christ Batola",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 1,
+     "goals": 0,
+     "clubs": {
+      "1095": {
+       "apps": 1,
        "goals": 0
       }
      }
@@ -236304,14 +238784,18 @@
    "nat": "Cote d'Ivoire",
    "natKey": "ivory coast",
    "pos": "MID",
-   "last": 2024,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 2,
+     "apps": 7,
      "goals": 0,
      "clubs": {
       "1421": {
        "apps": 2,
+       "goals": 0
+      },
+      "10004": {
+       "apps": 5,
        "goals": 0
       }
      }
@@ -236599,6 +239083,26 @@
    }
   },
   {
+   "id": "1368526",
+   "name": "Sion Oppong",
+   "nat": "Sweden",
+   "natKey": "sweden",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 1,
+     "clubs": {
+      "415": {
+       "apps": 5,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1370100",
    "name": "N.N. Busto",
    "nat": "N/A",
@@ -236704,14 +239208,14 @@
    "nat": "France",
    "natKey": "france",
    "pos": "MID",
-   "last": 2025,
+   "last": 2026,
    "comps": {
     "FR1": {
-     "apps": 1,
+     "apps": 6,
      "goals": 0,
      "clubs": {
       "1420": {
-       "apps": 1,
+       "apps": 6,
        "goals": 0
       }
      }
@@ -237503,6 +240007,26 @@
    }
   },
   {
+   "id": "1459673",
+   "name": "Mamadou Koné",
+   "nat": "Cote d'Ivoire",
+   "natKey": "ivory coast",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 7,
+     "goals": 1,
+     "clubs": {
+      "1158": {
+       "apps": 7,
+       "goals": 1
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1473752",
    "name": "Alex Ludwikowski",
    "nat": "France",
@@ -237943,6 +240467,46 @@
    }
   },
   {
+   "id": "1523861",
+   "name": "Yacouba Koné",
+   "nat": "Cote d'Ivoire",
+   "natKey": "ivory coast",
+   "pos": "FWD",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 5,
+     "goals": 0,
+     "clubs": {
+      "1095": {
+       "apps": 5,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "1524445",
+   "name": "Djibril Ouziad",
+   "nat": "France",
+   "natKey": "france",
+   "pos": "DEF",
+   "last": 2026,
+   "comps": {
+    "FR1": {
+     "apps": 6,
+     "goals": 0,
+     "clubs": {
+      "738": {
+       "apps": 6,
+       "goals": 0
+      }
+     }
+    }
+   }
+  },
+  {
    "id": "1538902",
    "name": "Georges Gordolon",
    "nat": "France",
@@ -238234,25 +240798,25 @@
    "name": "AS Monaco",
    "norm": "as monaco",
    "competitionId": "FR1",
-   "last": 2025
+   "last": 2026
   },
   "244": {
    "name": "Olympique Marseille",
    "norm": "olympique marseille",
    "competitionId": "FR1",
-   "last": 2025
+   "last": 2026
   },
   "273": {
    "name": "Stade Rennais FC",
    "norm": "stade rennais fc",
    "competitionId": "FR1",
-   "last": 2025
+   "last": 2026
   },
   "290": {
    "name": "AJ Auxerre",
    "norm": "aj auxerre",
    "competitionId": "FR1",
-   "last": 2025
+   "last": 2026
   },
   "347": {
    "name": "FC Metz",
@@ -238264,13 +240828,13 @@
    "name": "FC Toulouse",
    "norm": "fc toulouse",
    "competitionId": "FR1",
-   "last": 2025
+   "last": 2026
   },
   "417": {
    "name": "OGC Nice",
    "norm": "ogc nice",
    "competitionId": "FR1",
-   "last": 2025
+   "last": 2026
   },
   "494": {
    "name": "Sporting Club de Toulon",
@@ -238282,7 +240846,7 @@
    "name": "Paris Saint-Germain",
    "norm": "paris saint germain",
    "competitionId": "FR1",
-   "last": 2025
+   "last": 2026
   },
   "595": {
    "name": "Sporting Étoile Club Bastia",
@@ -238300,13 +240864,13 @@
    "name": "RC Strasbourg Alsace",
    "norm": "rc strasbourg alsace",
    "competitionId": "FR1",
-   "last": 2025
+   "last": 2026
   },
   "738": {
    "name": "Le Havre AC",
    "norm": "le havre ac",
    "competitionId": "FR1",
-   "last": 2025
+   "last": 2026
   },
   "750": {
    "name": "FC Sochaux-Montbéliard",
@@ -238318,7 +240882,7 @@
    "name": "RC Lens",
    "norm": "rc lens",
    "competitionId": "FR1",
-   "last": 2025
+   "last": 2026
   },
   "855": {
    "name": "EA Guingamp",
@@ -238348,7 +240912,7 @@
    "name": "Olympique Lyon",
    "norm": "olympique lyon",
    "competitionId": "FR1",
-   "last": 2025
+   "last": 2026
   },
   "1080": {
    "name": "Stade Lavallois",
@@ -238366,13 +240930,13 @@
    "name": "LOSC Lille",
    "norm": "losc lille",
    "competitionId": "FR1",
-   "last": 2025
+   "last": 2026
   },
   "1095": {
    "name": "ESTAC Troyes",
    "norm": "estac troyes",
    "competitionId": "FR1",
-   "last": 2022
+   "last": 2026
   },
   "1147": {
    "name": "AC Ajaccio",
@@ -238390,7 +240954,7 @@
    "name": "FC Lorient",
    "norm": "fc lorient",
    "competitionId": "FR1",
-   "last": 2025
+   "last": 2026
   },
   "1159": {
    "name": "AS Nancy-Lorraine",
@@ -238420,7 +240984,7 @@
    "name": "Le Mans FC",
    "norm": "le mans fc",
    "competitionId": "FR1",
-   "last": 2009
+   "last": 2026
   },
   "1165": {
    "name": "FC Martigues",
@@ -238456,7 +241020,7 @@
    "name": "Angers SCO",
    "norm": "angers sco",
    "competitionId": "FR1",
-   "last": 2025
+   "last": 2026
   },
   "1421": {
    "name": "Stade Reims",
@@ -238540,7 +241104,7 @@
    "name": "Stade Brestois 29",
    "norm": "stade brestois 29",
    "competitionId": "FR1",
-   "last": 2025
+   "last": 2026
   },
   "3915": {
    "name": "AS Angoulême",
@@ -238576,7 +241140,7 @@
    "name": "Paris FC",
    "norm": "paris fc",
    "competitionId": "FR1",
-   "last": 2025
+   "last": 2026
   },
   "11300": {
    "name": "AC Arles-Avignon",
