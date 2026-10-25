@@ -32,9 +32,19 @@ function clampView(v, aspect, minW = MIN_W) {
 // The whole world, filling the width — Europe-centred like every Geography map.
 const worldView = (aspect) => clampView({ x: 0, y: 0, w: WORLD_W }, aspect)
 
+// On a phone the whole world across ~360px leaves every country a speck, so a
+// narrow map opens filling its HEIGHT with the inhabited band (75°N–50°S), centred
+// on Europe and Africa: land about twice the size, the rest a drag away.
+const NARROW = 640
+const BAND = [project(75, 0)[1], project(-50, 0)[1]]
+function bandView(aspect) {
+  const w = Math.min(WORLD_W, (BAND[1] - BAND[0]) * aspect)
+  return clampView({ x: (WORLD_W - w) / 2, y: BAND[0], w }, aspect)
+}
+
 // An authored opening view — [lat, lon, zoom], zoom = world width ÷ view width.
-function homeOf(home, aspect, minW) {
-  if (!home) return worldView(aspect)
+function homeOf(home, aspect, minW, narrow = false) {
+  if (!home) return narrow ? bandView(aspect) : worldView(aspect)
   const [cx, cy] = project(home[0], home[1]), w = WORLD_W / home[2]
   return clampView({ x: cx - w / 2, y: cy - w / aspect / 2, w }, aspect, minW)
 }
@@ -79,11 +89,12 @@ export default function PinMap({ guess, answer, km, onPick, locked = false, anim
   const wrap = useRef(null)
   const size = useSize(wrap)
   const aspect = size.w / size.h
-  const [stored, setViewState] = useState(() => homeOf(home, aspect, minW))
+  const narrow = size.w < NARROW
+  const [stored, setViewState] = useState(() => homeOf(home, aspect, minW, narrow))
   const [touched, setTouched] = useState(false)
   // Until the player moves the map (or the answer is shown) it simply frames the
   // world for whatever size it is; after that it keeps their view, kept valid.
-  const view = touched || answer ? clampView(stored, aspect, minW) : homeOf(home, aspect, minW)
+  const view = touched || answer ? clampView(stored, aspect, minW) : homeOf(home, aspect, minW, narrow)
   const viewRef = useRef(view)
   useLayoutEffect(() => { viewRef.current = view })
   const anim = useRef(0)
@@ -123,7 +134,7 @@ export default function PinMap({ guess, answer, km, onPick, locked = false, anim
   useEffect(() => {
     if (lastReset.current === resetKey) return
     lastReset.current = resetKey
-    flyTo(homeOf(home, aspect, minW), 800)
+    flyTo(homeOf(home, aspect, minW, narrow), 800)
   }, [resetKey]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const px = view.w / size.w // map units per screen pixel
@@ -223,7 +234,7 @@ export default function PinMap({ guess, answer, km, onPick, locked = false, anim
       case 'ArrowDown': return pan(0, 1)
       case '+': case '=': e.preventDefault(); return zoomAt(size.w / 2, size.h / 2, 1.8, 220)
       case '-': case '_': e.preventDefault(); return zoomAt(size.w / 2, size.h / 2, 1 / 1.8, 220)
-      case '0': e.preventDefault(); return flyTo(homeOf(home, aspect, minW), 450)
+      case '0': e.preventDefault(); return flyTo(homeOf(home, aspect, minW, narrow), 450)
       case 'Enter': case ' ': e.preventDefault(); return pickAt(size.w / 2, size.h / 2)
       default:
     }
@@ -306,7 +317,7 @@ export default function PinMap({ guess, answer, km, onPick, locked = false, anim
       <div className="absolute right-2.5 bottom-2.5 flex flex-col rounded-xl border border-border-strong bg-canvas/80 backdrop-blur-sm overflow-hidden shadow-[0_8px_20px_-10px_rgb(0_0_0/0.8)]">
         <ZoomButton label={t('postcard.zoomIn')} onClick={() => zoomAt(size.w / 2, size.h / 2, 2, 260)}>+</ZoomButton>
         <ZoomButton label={t('postcard.zoomOut')} onClick={() => zoomAt(size.w / 2, size.h / 2, 0.5, 260)}>−</ZoomButton>
-        <ZoomButton label={home ? t('postcard.zoomHome') : t('postcard.zoomWorld')} onClick={() => flyTo(homeOf(home, aspect, minW), 450)} small>◎</ZoomButton>
+        <ZoomButton label={home || narrow ? t('postcard.zoomHome') : t('postcard.zoomWorld')} onClick={() => flyTo(homeOf(home, aspect, minW, narrow), 450)} small>◎</ZoomButton>
       </div>
     </div>
   )

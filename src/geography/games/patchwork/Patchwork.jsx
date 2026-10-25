@@ -117,7 +117,7 @@ export default function Patchwork() {
         {/* The map */}
         <section aria-label={t('patchwork.board', { n: MISSING - n })} className="pw-map relative w-full aspect-[1.3/1] sm:aspect-[1.62/1] rounded-2xl border border-border-strong overflow-hidden">
           <WorldBoard missing={missing} restored={restored} revealed={phase === 'lost'} fresh={fresh} focus={focus}
-            onSlot={(i) => setFocus(f => (f === missing[i] ? null : missing[i]))} />
+            onSlot={(i) => setFocus(f => (f === missing[i] ? null : missing[i]))} onTap={setFocus} />
           <div className="absolute top-3 left-3.5 text-[0.55rem] font-black tracking-[0.18em] text-accent-bright uppercase pointer-events-none">
             {mode === 'daily' ? `${t('daily')} · #${puzzleNumber()}` : t('unlimited')}
           </div>
@@ -131,6 +131,9 @@ export default function Patchwork() {
               {missing.map(c => <i key={c} className={`w-3 sm:w-4 h-1 rounded-full transition-colors ${restored.has(c) ? 'bg-success' : phase === 'lost' ? 'bg-warn/70' : 'bg-inert'}`} />)}
             </span>
           </div>
+          {!focus && !notice && phase === 'playing' && (
+            <span className="absolute bottom-2.5 left-3 text-[0.65rem] font-bold text-muted pointer-events-none">{t('patchwork.tapZoom')}</span>
+          )}
           {focus && (
             <button type="button" onClick={() => setFocus(null)}
               className="absolute bottom-2.5 left-2.5 h-8 px-3 rounded-lg bg-canvas/80 backdrop-blur-sm border border-border-strong text-[0.7rem] font-bold text-secondary hover:text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-bright">

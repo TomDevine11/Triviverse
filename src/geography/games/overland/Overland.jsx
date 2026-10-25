@@ -164,7 +164,7 @@ export default function Overland() {
         </section>
 
         {/* The map */}
-        <section aria-label={t('overland.board')} className="ov-map relative w-full mt-3 h-[clamp(13rem,36dvh,25rem)] rounded-2xl border border-border-strong overflow-hidden">
+        <section aria-label={t('overland.board')} className="ov-map relative w-full mt-3 h-[clamp(15rem,46dvh,25rem)] sm:h-[clamp(13rem,36dvh,25rem)] rounded-2xl border border-border-strong overflow-hidden">
           <RouteMap start={start} end={end} rows={game.rows} focus={focus} outlines={hints.includes('outlines') || phase !== 'playing'}
             nextHint={hintCodes} reveal={reveal} route={game.route} outcome={phase} freshCode={fresh} />
           <div className="absolute top-3 left-3.5 text-[0.55rem] font-black tracking-[0.18em] text-accent-bright uppercase pointer-events-none">
