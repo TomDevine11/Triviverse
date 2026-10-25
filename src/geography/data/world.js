@@ -11,12 +11,16 @@ export const shapeOf = (code) => BY_CODE.get(code) || null
 
 // A viewBox [x, y, w, h] framing the given countries, padded, never narrower than
 // `min`, and stretched to the container's aspect ratio (w / h) so nothing distorts.
-export function frame(codes, aspect, { pad = 0.16, min = 340 } = {}) {
+// `cap` (map units) frames a country wider than that by a box that size around its
+// label point instead: a route through Russia frames western Russia, not Siberia.
+export function frame(codes, aspect, { pad = 0.16, min = 340, cap = Infinity } = {}) {
   let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity
   for (const c of codes) {
     const s = shapeOf(c)
     if (!s) continue
-    x0 = Math.min(x0, s.bb[0]); y0 = Math.min(y0, s.bb[1]); x1 = Math.max(x1, s.bb[2]); y1 = Math.max(y1, s.bb[3])
+    const r = cap / 2
+    const bb = Math.max(s.bb[2] - s.bb[0], s.bb[3] - s.bb[1]) > cap ? [s.lp[0] - r, s.lp[1] - r, s.lp[0] + r, s.lp[1] + r] : s.bb
+    x0 = Math.min(x0, bb[0]); y0 = Math.min(y0, bb[1]); x1 = Math.max(x1, bb[2]); y1 = Math.max(y1, bb[3])
   }
   if (!isFinite(x0)) return [0, 0, WORLD_W, WORLD_H]
   let w = Math.max(min, (x1 - x0) * (1 + pad * 2)), h = Math.max(min / aspect, (y1 - y0) * (1 + pad * 2))

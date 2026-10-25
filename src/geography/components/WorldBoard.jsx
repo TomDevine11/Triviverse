@@ -16,11 +16,22 @@ function worldBox(aspect) {
   return [(WORLD_W - w) / 2, (WORLD_H - h) / 2, w, h]
 }
 
-export default function WorldBoard({ missing, restored, revealed, fresh, focus, onSlot }) {
+// A tapped point: a box a quarter of the world wide around it (inside the map).
+function pointBox([x, y], aspect) {
+  const w = WORLD_W / 4, h = w / aspect
+  return [Math.max(0, Math.min(WORLD_W - w, x - w / 2)), Math.max(0, Math.min(WORLD_H - h, y - h / 2)), w, h]
+}
+
+// `focus` is a missing country's code (zoom to that gap) or a tapped map point
+// ([x, y], zoom to that area); `onTap` reports a tap on the map in map units, so
+// on a phone, where the whole world is a strip, the board can be explored by tapping.
+export default function WorldBoard({ missing, restored, revealed, fresh, focus, onSlot, onTap }) {
   const wrap = useRef(null)
   const size = useSize(wrap)
   const aspect = size.w / size.h
-  const target = useMemo(() => (focus ? frame([focus], aspect, { pad: 1.4, min: 380 }) : worldBox(aspect)), [focus, aspect])
+  const target = useMemo(() => (
+    Array.isArray(focus) ? pointBox(focus, aspect) : focus ? frame([focus], aspect, { pad: 1.4, min: 380 }) : worldBox(aspect)
+  ), [focus, aspect])
   const box = useCamera(target)
   const px = box[2] / size.w // map units per screen pixel
 
@@ -55,7 +66,8 @@ export default function WorldBoard({ missing, restored, revealed, fresh, focus, 
 
   return (
     <div ref={wrap} className="absolute inset-0">
-      <svg viewBox={box.join(' ')} preserveAspectRatio="xMidYMid meet" className="w-full h-full block" role="img"
+      <svg viewBox={box.join(' ')} preserveAspectRatio="xMidYMid meet" className={`w-full h-full block ${onTap ? 'cursor-zoom-in' : ''}`} role="img"
+        onClick={onTap && ((e) => { const r = e.currentTarget.getBoundingClientRect(); onTap([box[0] + (e.clientX - r.left) * px, box[1] + (e.clientY - r.top) * px]) })}
         aria-label={t('patchwork.board', { n: missing.length - restored.size })}>
         {land}
         <g>
@@ -80,7 +92,7 @@ export default function WorldBoard({ missing, restored, revealed, fresh, focus, 
         })}
         {/* numbered pins on the open gaps */}
         {!revealed && pins.map(({ i, x, y, lead }) => (
-          <g key={missing[i]} className="pw-pin" onClick={() => onSlot?.(i)} aria-hidden="true">
+          <g key={missing[i]} className="pw-pin" onClick={(e) => { e.stopPropagation(); onSlot?.(i) }} aria-hidden="true">
             {lead && <line x1={lead[0]} y1={lead[1]} x2={x} y2={y} style={{ strokeWidth: 1.2 * px }} />}
             <circle cx={x} cy={y} r={8 * px} style={{ strokeWidth: 1.5 * px }} />
             <text x={x} y={y + 3.5 * px} textAnchor="middle" style={{ fontSize: 10 * px }}>{i + 1}</text>

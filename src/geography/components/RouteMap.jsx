@@ -13,7 +13,7 @@ export default function RouteMap({ start, end, rows, focus, outlines, nextHint, 
   const wrap = useRef(null)
   const size = useSize(wrap)
   const aspect = size.w / size.h
-  const target = useMemo(() => frame(focus, aspect), [focus, aspect])
+  const target = useMemo(() => frame(focus, aspect, { cap: 720 }), [focus, aspect])
   const box = useCamera(target)
   const view = useMemo(() => visibleIn(target), [target])
   const tierBy = useMemo(() => new Map(rows.map(r => [r.code, r.tier])), [rows])
