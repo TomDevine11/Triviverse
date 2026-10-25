@@ -682,6 +682,26 @@ function applyTmNationalities(registry, { nats }) {
   }
 }
 
+// The dropdown flag is nationalities[0]. Sorted alphabetically, a dual national
+// shows the wrong country (Thiago Motta 🇧🇷, Diego Costa 🇧🇷), so a player with
+// senior caps puts that national team first. Youth/B sides don't count.
+const INTL_SPELLING = { Turkiye: ['Turkey', 'Türkiye'], Czechia: ['Czech Republic', 'Czechia'] }
+function senioritySort(registry) {
+  const i = JSON.parse(readFileSync(path.join(ROOT, 'src/data/football501/intl.generated.json'), 'utf8'))
+  const team = new Map()
+  for (const [pid, tid] of i.intl) {
+    const name = i.teams[tid]
+    if (!name || / (U\d+|B)$/.test(name)) continue
+    team.set(String(pid), name)
+  }
+  for (const rec of registry) {
+    if (rec.nationalities.length < 2 || rec.refs.tm == null) continue
+    const t = team.get(String(rec.refs.tm))
+    const nat = t && [t, ...(INTL_SPELLING[t] || [])].find(n => rec.nationalities.includes(n))
+    if (nat) rec.nationalities = [nat, ...rec.nationalities.filter(n => n !== nat)]
+  }
+}
+
 // Namesakes in the searchable universe (same name once accents/punctuation are
 // folded: two Nico Gonzálezes, Pepe/Pepê) get a short hint, so the dropdown can
 // show them apart: their main club in our competitions and their last season.
@@ -713,6 +733,7 @@ async function main() {
   rekeyDeterministic(registry, crosswalk)
   const tmFacts = collectTmFacts()
   applyTmNationalities(registry, tmFacts)
+  senioritySort(registry)
   runIntegrityChecks(registry, crosswalk) // throws → non-zero exit on violation
 
   // Compact internal-id → position-badge map for the games' dropdowns.
