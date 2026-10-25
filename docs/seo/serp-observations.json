@@ -100,6 +100,16 @@
       "aiOverview": { "present": false },
       "exactMatchDomains": ["higherorlowergame.com", "playhigherlower.com"],
       "note": "Competitors play on market value (Transfermarkt data we do not hold); ours plays on goal leaderboards. Different game, and two exact-match domains rank."
+    },
+    {
+      "date": "2026-10-25", "engine": "google", "query": "football tenable", "geo": "uk",
+      "triviversePosition": null, "gscPosition": 20, "gscImpressions": 59, "gscCtr": null,
+      "triviverseUrl": "/tenable",
+      "above": ["playfootball.games/football-tenable", "footyquiz.co.uk/ten-a-ball-ultimate-mix", "lineup-builder.co.uk/quizzes/tenable", "futbol-11.com/futbol-top10", "playfootball.games", "footballminigames.com/tenable", "footyquiz.co.uk/ten-a-ball", "fr.sporcle.com", "futbol11.com/futbol11-top10"],
+      "features": ["people-also-search-for", "video-results", "instagram-results"],
+      "aiOverview": { "present": false },
+      "exactMatchDomains": [],
+      "note": "Not in the top 30. GSC daily position went ~9 → ~20 on 2026-10-16 (impressions ~200/day → ~8); a same-shape dip 09-28 → 10-04 (p9 → p15) recovered unaided. Page is healthy (indexed, crawled 10-19, still #4 for 'teneball'); the retired /tenable/answers archive (#94) never had Google impressions, so it is not the cause. Page 1 is crowded with doubles: playfootball.games ×2, footyquiz ×2, Futbol11 on two domains, and footballminigames.com now has a /tenable page. Google also rewrites 'triviverse tenable' to 'triviaverse'."
     }
   ]
 }
