@@ -27,7 +27,14 @@ describe('namesake identities', () => {
     expect(getPlayer(SPAIN).nationalities).toEqual(['Spain'])
     expect(getPlayer(ARGENTINA).nationalities).toEqual(['Argentina'])
     // Real dual nationals without a namesake are untouched.
-    expect(getPlayer('tm:44779').nationalities).toEqual(['Brazil', 'Spain']) // Diego Costa
+    expect(getPlayer('tm:44779').nationalities).toEqual(['Spain', 'Brazil']) // Diego Costa
+  })
+
+  it('a dual national leads with the country they were capped for (the dropdown flag)', () => {
+    expect(getPlayer('tm:7602').nationalities[0]).toBe('Italy')   // Thiago Motta
+    expect(getPlayer('tm:44779').nationalities[0]).toBe('Spain')  // Diego Costa
+    const motta = refineSuggestions(searchRegistry('thiago motta')).find(s => s.id === 'tm:7602')
+    expect(motta.nationality).toBe('Italy')
   })
 
   it('every searchable namesake carries a hint to tell them apart', () => {
