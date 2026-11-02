@@ -81,7 +81,14 @@ function mainParts(geom) {
   const totalKm2 = parts.reduce((s, p) => s + p.area, 0) * EARTH_KM ** 2
   const mainRadius = Math.sqrt(main.area * EARTH_KM ** 2 / Math.PI)
   const reach = Math.max(300, 1.6 * Math.sqrt(totalKm2))
-  return parts.filter(p => p === main || geoDistance(p.ctr, main.ctr) * EARTH_KM - mainRadius < reach).map(p => p.c)
+  // A part far from the main one is normally an overseas territory or a remote
+  // island group, and is dropped. But a large part is part of the country's real
+  // shape however far away it is: Peninsular Malaysia (the main part is Borneo)
+  // and Indonesia's half of New Guinea were both being dropped, which removed the
+  // peninsula from Malaysia's outline and its border with Thailand, and Indonesia's
+  // border with Papua New Guinea. French Guiana (15% of France) stays out.
+  const big = p => p.area >= main.area * 0.25 && p.area * EARTH_KM ** 2 >= 10_000
+  return parts.filter(p => p === main || big(p) || geoDistance(p.ctr, main.ctr) * EARTH_KM - mainRadius < reach).map(p => p.c)
 }
 
 // Douglas–Peucker on a closed ring of [x, y].
