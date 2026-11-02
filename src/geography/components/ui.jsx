@@ -147,7 +147,7 @@ export function ShareButton({ text, primary = false, onShared }) {
 }
 
 export function GeoFooter() {
-  const links = [['/about', 'About'], ['/contact', 'Contact'], ['/privacy', 'Privacy'], ['/terms', 'Terms']]
+  const links = [['/articles', 'Articles'], ['/about', 'About'], ['/contact', 'Contact'], ['/privacy', 'Privacy'], ['/terms', 'Terms']]
   return (
     <footer className="mt-12 border-t border-border pt-6 pb-10">
       <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
