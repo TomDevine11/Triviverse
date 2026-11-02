@@ -119,11 +119,33 @@ export const SHARE_TILE = { green: '🟩', yellow: '🟨', orange: '🟧', red: 
 // ── Daily puzzle ─────────────────────────────────────────────────────────────
 // Endpoints come from the recognisable answer pool; the shortest route has 2–6
 // countries in between. Seeded shuffle per cycle, so no pair repeats in a cycle.
-const ENDPOINTS = COUNTRIES.filter(c => c.answer && c.n?.length).map(c => c.code)
+//
+// The pair list is built on the border graph AS IT WAS when the dailies began.
+// Two borders were missing until 2026-11-02, Malaysia–Thailand and
+// Indonesia–Papua New Guinea, because the map builder had dropped Peninsular
+// Malaysia and Indonesian New Guinea. Building the list on the corrected graph
+// would add pairs and reshuffle every daily puzzle, past and present. So
+// selection ignores the borders in LATE_BORDERS, and play (routes, colours,
+// par) uses the full, correct graph. Neither border lies on a shortest route
+// between any pair in the frozen list, so no existing puzzle's par changes
+// (test/geography-overland.test.js).
+export const LATE_BORDERS = [['MY', 'TH'], ['ID', 'PG']]
+const late = new Set(LATE_BORDERS.flatMap(([a, b]) => [`${a}-${b}`, `${b}-${a}`]))
+function selectionHops(code) {
+  const dist = new Map([[code, 0]])
+  const queue = [code]
+  for (let i = 0; i < queue.length; i++) {
+    const c = queue[i]
+    for (const n of neighbours(c)) if (!late.has(`${c}-${n}`) && !dist.has(n)) { dist.set(n, dist.get(c) + 1); queue.push(n) }
+  }
+  return dist
+}
+const ENDPOINTS = COUNTRIES.filter(c => c.answer && c.n?.some(n => !late.has(`${c.code}-${n}`))).map(c => c.code)
 const PAIRS = []
 for (let i = 0; i < ENDPOINTS.length; i++) {
+  const sel = selectionHops(ENDPOINTS[i])
   for (let j = i + 1; j < ENDPOINTS.length; j++) {
-    const p = hopsFrom(ENDPOINTS[i]).get(ENDPOINTS[j])
+    const p = sel.get(ENDPOINTS[j])
     if (p != null && p - 1 >= 2 && p - 1 <= 6) PAIRS.push([ENDPOINTS[i], ENDPOINTS[j]])
   }
 }
