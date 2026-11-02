@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { geoRoute, metaTags, jsonLd, absolute, GEO_ROUTES } from '../seo'
 import { GeoFooter } from './ui'
+import FurtherReading from '../../articles/FurtherReading'
 import { geoTrack, gameIdFromPath, GEO_EVENTS } from '../analytics'
 
 // Head manager for Geography routes: title, meta, canonical and JSON-LD, all
@@ -54,6 +55,7 @@ export function GeoContent({ path }) {
           </dl>
         </section>
       )}
+      <FurtherReading path={path} className="mb-8" />
       <nav aria-label="More geography" className="text-sm flex flex-wrap gap-x-5 gap-y-1.5">
         {others.map(o => (
           <Link key={o.path} to={o.path} className="text-brand-bright hover:text-brand transition-colors"

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "server": "node server/index.js",
-    "build": "node scripts/seo/build-relations.mjs && vite build && node scripts/prerender.mjs && node scripts/geography/prerender.mjs",
+    "build": "node scripts/seo/build-relations.mjs && vite build && node scripts/prerender.mjs && node scripts/geography/prerender.mjs && node scripts/articles/build.mjs",
     "build:pages": "npm run build && node scripts/cloudflare-pages.mjs",
     "indexnow": "node scripts/indexnow.mjs",
     "seo-report": "node scripts/seo/report.mjs",

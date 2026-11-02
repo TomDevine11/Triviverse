@@ -11,6 +11,7 @@
 // fallback instead of the real page.
 export default function SiteFooter() {
   const links = [
+    ['/articles', 'Articles'],
     ['/about', 'About'],
     ['/contact', 'Contact'],
     ['/privacy', 'Privacy'],

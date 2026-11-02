@@ -193,6 +193,30 @@
       "baseline": "2026-10-18: Google URL Inspection \"Discovered - currently not indexed\"; 0 GSC impressions/clicks (28d); Bing 0; GA4 5 page_views and 1 organic landing session (7d). Pre-launch page had existed since 2026-10-16 only, so this measures indexing + first impressions, not a before/after on an established page.",
       "status": "open",
       "conclusion": null
+    },
+    {
+      "id": "EXP-008",
+      "hypothesis": "Standalone, data-led articles (16, dated, sourced) plus visible prerendered guide text fix the 'low-value content' AdSense rejection and pick up long-tail football/geography record queries the game pages cannot rank for.",
+      "change": "Launched /articles (16 articles from Transfermarkt, Natural Earth and World Bank data). Guide text in prerendered HTML is no longer clipped to 1px. Further-reading links appear under each game, and About and Contact are now in the sitemap.",
+      "prs": [],
+      "shippedAt": "2026-11-02",
+      "targets": {
+        "pages": [
+          "/articles"
+        ],
+        "queries": [
+          "most premier league clubs played for",
+          "players who played for both arsenal and tottenham",
+          "most premier league goals in a season",
+          "countries with the most neighbours",
+          "longest overland journey"
+        ]
+      },
+      "metric": "impressions",
+      "expected": "up",
+      "baseline": "New URLs: zero impressions before this date. AdSense status: rejected (low-value content) as of 2026-11-02.",
+      "status": "open",
+      "conclusion": null
     }
   ]
 }

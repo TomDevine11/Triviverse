@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { routeByPath, indexableRoutes } from './seoConfig'
 import { useI18n } from '../i18n'
+import FurtherReading from '../articles/FurtherReading'
 
 // Visible, crawlable on-page content for a game route (localized): the page's
 // single <h1>, a "How to play" section and an FAQ (which also powers the FAQ
@@ -53,6 +54,8 @@ export default function SeoContent({ path }) {
         </>
       )}
 
+      <FurtherReading path={path} />
+
       <nav aria-label={t('common.moreGames')}>
         <h2 className="text-primary font-semibold text-base mb-2">{t('common.moreGames')}</h2>
         <ul className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
@@ -66,3 +69,4 @@ export default function SeoContent({ path }) {
     </section>
   )
 }
+

@@ -23,6 +23,8 @@ import {
 import { llmsTxt, llmsFullTxt } from './seo/llms.mjs'
 import { strings } from '../src/i18n/strings.js'
 
+import { STATIC_PROSE, STATIC_CSS } from './lib/static-prose.mjs'
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.join(__dirname, '..', 'dist')
 const template = readFileSync(path.join(DIST, 'index.html'), 'utf8')
@@ -140,18 +142,27 @@ function fillStaticCounts() {
 // site, and a crawler reading the prerendered HTML must see them too, so they go in
 // here as well as in the React <SiteFooter>.
 const SITE_LINKS = '<nav style="margin-top:2rem;font-size:.85rem">'
-  + ['/about,About', '/contact,Contact', '/privacy,Privacy', '/terms,Terms']
+  + ['/articles,Articles', '/about,About', '/contact,Contact', '/privacy,Privacy', '/terms,Terms']
       .map((pair) => { const [href, label] = pair.split(','); return `<a href="${href}" style="color:#8c89a3;margin:0 .6rem">${label}</a>` })
       .join('')
   + '</nav>'
 
-const SR_ONLY = 'position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0'
+// The guide is rendered VISIBLY in the static HTML, below a full-height title
+// block. It used to sit in a 1px clipped box (sr-only) on the theory that the
+// app replaces #root on load anyway — but text that is invisible until
+// JavaScript runs is exactly what a "hidden content" check flags, and AdSense
+// rejected the site for low-value content twice (Oct/Nov 2026). The React app
+// (createRoot) still replaces all of this on load; visitors see the same guide
+// rendered by <SeoContent> under the game.
 function staticBody(route, lang) {
-  return `<div style="min-height:100vh;background:#0b0a14;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;font-family:system-ui,-apple-system,sans-serif">`
+  return `<div style="background:#0b0a14;padding:2rem 1rem;font-family:system-ui,-apple-system,sans-serif">`
+    + `<div style="min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">`
     + `<h1 style="color:#fff;font-size:1.75rem;font-weight:800;margin:0">${esc(route.h1)}</h1>`
     + `<p style="color:#9ca3af;margin:.5rem 0 0;max-width:34rem">${esc(route.tagline)}</p>`
-    + `<div style="${SR_ONLY}">${crawlable(route, lang)}</div>`
-    + SITE_LINKS
+    + `</div>`
+    + STATIC_CSS
+    + `<div class="static-prose" style="${STATIC_PROSE}">${crawlable(route, lang)}</div>`
+    + `<div style="text-align:center">${SITE_LINKS}</div>`
     + `</div>`
 }
 
