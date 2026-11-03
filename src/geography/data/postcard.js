@@ -76,6 +76,35 @@ export function postcardFor(n) {
 export const dailyPostcard = (day = geoDay()) => postcardFor(day - GEO_EPOCH)
 export const puzzleNumber = (day = geoDay()) => day - GEO_EPOCH + 1
 
+// ── Unlimited ─────────────────────────────────────────────────────────────────
+// Practice photos, one after another. Every postcard is some day's daily, so
+// Unlimited holds back today's and the next HOLD_DAYS days' photos: nothing you
+// practise on can turn up as a daily for at least a month. A session walks a
+// seeded shuffle of the rest; each new lap reshuffles, never repeating the last photo.
+export const HOLD_DAYS = 30
+export const heldBack = (day = geoDay()) =>
+  Array.from({ length: HOLD_DAYS + 1 }, (_, i) => dailyPostcard(day + i).id)
+
+function shuffled(list, seed) {
+  const rnd = mulberry32(seed)
+  const a = [...list]
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [a[i], a[j]] = [a[j], a[i]] }
+  return a
+}
+
+export function unlimitedAt(seed, index, exclude = []) {
+  const skip = new Set(exclude)
+  const pool = POSTCARDS.filter(p => !skip.has(p.id))
+  const list = pool.length ? pool : POSTCARDS
+  const lap = Math.floor(index / list.length)
+  const queue = shuffled(list, seed + lap * 104729)
+  if (lap > 0 && list.length > 1) {
+    const prevLast = shuffled(list, seed + (lap - 1) * 104729)[list.length - 1]
+    if (queue[0].id === prevLast.id) [queue[0], queue[1]] = [queue[1], queue[0]]
+  }
+  return queue[index % list.length]
+}
+
 // ── Presentation helpers ──────────────────────────────────────────────────────
 export function formatKm(km) {
   if (km < 1) return `${Math.max(10, Math.round(km * 100) * 10)} m`

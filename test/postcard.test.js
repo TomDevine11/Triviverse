@@ -83,3 +83,26 @@ describe('Triviverse Geography · Postcard', () => {
     expect(formatKm(0.42)).toBe('420 m'); expect(formatKm(3.25)).toBe('3.3 km'); expect(formatKm(12345.6)).toBe('12,346 km')
   })
 })
+
+describe('Triviverse Geography · Postcard Unlimited', async () => {
+  const { unlimitedAt, heldBack, HOLD_DAYS, POSTCARDS, dailyPostcard } = await import('../src/geography/data/postcard')
+  const day = GEO_EPOCH + 40
+  const ex = heldBack(day)
+
+  it('holds back today and the next HOLD_DAYS dailies', () => {
+    expect(ex).toHaveLength(HOLD_DAYS + 1)
+    for (let i = 0; i <= HOLD_DAYS; i++) expect(ex).toContain(dailyPostcard(day + i).id)
+  })
+
+  it('never serves a held-back photo, covers the rest once per lap, never repeats back to back', () => {
+    const pool = POSTCARDS.length - new Set(ex).size
+    const lap = new Set()
+    for (let i = 0; i < pool; i++) {
+      const p = unlimitedAt(7, i, ex)
+      expect(ex).not.toContain(p.id)
+      lap.add(p.id)
+    }
+    expect(lap.size).toBe(pool)
+    for (let i = 0; i < pool * 4; i++) expect(unlimitedAt(7, i, ex).id).not.toBe(unlimitedAt(7, i + 1, ex).id)
+  })
+})
