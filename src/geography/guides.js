@@ -29,7 +29,7 @@ export const GUIDES = {
         body: [
           'Every game has a daily puzzle that is the same for everyone and changes at midnight UK time. You get one attempt at it. Your progress is saved as you go, so closing the tab halfway through does not lose anything, but finishing locks the daily to your result. That way the score you share is the score you actually got, and a friend comparing results is comparing the same puzzle.',
           'Each daily has a clear line between winning and losing, and the game tells you what it is before you start: name the country within six guesses, score 3,500 of 5,000 points, get five in a row, restore the map before your sixth miss. Winning keeps your streak for that game going. Losing ends it, so a long streak means something.',
-          'Seven of the eight games also have an Unlimited mode for practice. Unlimited serves as many rounds as you like, never shows you that day’s daily, and never affects your streaks or league points. Postcard is the exception. It has no Unlimited mode, because every extra photo shown would be one less for a future daily.',
+          'Every game also has an Unlimited mode for practice. Unlimited serves as many rounds as you like, never shows you that day’s daily, and never affects your streaks or league points. Postcard’s Unlimited goes further and holds back the next month of daily photos as well, so practising can never spoil an upcoming day.',
         ],
       },
       {
@@ -106,7 +106,7 @@ export const GUIDES = {
       { q: 'What is Postcard?', a: 'A free daily geography game: you see a photo of a real place and drop a pin on the world map where you think it was taken.' },
       { q: 'How many guesses do I get?', a: 'One pin per day. You can move it as often as you like before you lock it in.' },
       { q: 'How do I win the daily?', a: 'Score at least 2,500 out of 5,000. That means a pin within roughly 1,000 km of the real spot.' },
-      { q: 'Is there an Unlimited mode?', a: 'No. Every photo shown in Unlimited would be one less for a future daily, so Postcard is a once-a-day game.' },
+      { q: 'Is there an Unlimited mode?', a: 'Yes. Unlimited serves one photo after another with a running score and average. It never shows today’s photo or any of the next month’s dailies, and it doesn’t affect your streak or league points.' },
       { q: 'Is it the same photo for everyone?', a: 'Yes. Everyone gets the same photo each day, refreshed at midnight UK time.' },
       { q: 'Where do the photos come from?', a: 'Wikimedia Commons, under free licences. Each photo credits its photographer and licence, with a link to the original.' },
     ],
