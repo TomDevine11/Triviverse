@@ -3,6 +3,11 @@
 // never carries article text. test/articles.test.js fails if a slug, title or
 // game link here drifts from the full content.
 export const ARTICLE_LINKS = [
+  { slug: "champions-league-all-time-top-scorers", title: "The Champions League’s all-time top scorers", games: ["/501","/tenable"] },
+  { slug: "premier-league-record-goalscorer-for-every-club", title: "The record Premier League goalscorer at every club", games: ["/teammates","/football-pointless"] },
+  { slug: "players-who-won-the-league-in-the-most-countries", title: "The players who won the league in the most countries", games: ["/career-path","/connections"] },
+  { slug: "most-capped-players-and-top-scorers-by-country", title: "The most-capped players and record scorers of football’s biggest nations", games: ["/tenable","/higher-or-lower"] },
+  { slug: "premier-league-club-record-signings", title: "Every Premier League club’s record signing and record sale", games: ["/higher-or-lower","/career-path"] },
   { slug: "premier-league-journeymen", title: "The Premier League’s great journeymen", games: ["/tictactoe","/career-path"] },
   { slug: "premier-league-one-club-men", title: "One-club men: the Premier League’s most loyal players", games: ["/teammates","/higher-or-lower"] },
   { slug: "most-premier-league-goals-in-a-season", title: "The 20 best goalscoring seasons in Premier League history", games: ["/higher-or-lower","/501"] },
@@ -13,6 +18,7 @@ export const ARTICLE_LINKS = [
   { slug: "history-of-the-world-transfer-record", title: "The biggest transfer of every year since 1990", games: ["/higher-or-lower","/career-path"] },
   { slug: "most-premier-league-appearances", title: "Most Premier League appearances of all time", games: ["/higher-or-lower","/football-pointless"] },
   { slug: "how-triviverse-football-puzzles-are-made", title: "How a daily football puzzle is made", games: ["/","/about"] },
+  { slug: "countries-with-no-land-borders", title: "The countries with no land borders", games: ["/geography/overland","/geography/outrank"] },
   { slug: "countries-with-the-most-neighbours", title: "The countries with the most land neighbours", games: ["/geography/overland","/geography/patchwork"] },
   { slug: "longest-overland-journey-most-borders", title: "The longest journey you can make by land, counted in borders", games: ["/geography/overland"] },
   { slug: "countries-with-only-one-neighbour", title: "The countries that border only one other country", games: ["/geography/overland","/geography/borderline"] },

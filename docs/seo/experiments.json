@@ -217,6 +217,35 @@
       "baseline": "New URLs: zero impressions before this date. AdSense status: rejected (low-value content) as of 2026-11-02.",
       "status": "open",
       "conclusion": null
+    },
+    {
+      "id": "EXP-009",
+      "hypothesis": "Six more data-led articles, published after the first 16 had already been indexed and were ranking (~p7 for two), show the site is still publishing original content and pick up record-list queries with clear search demand.",
+      "change": "Added 6 articles (Champions League top scorers, every PL club record scorer, players who won the league in most countries, most caps and goals by nation, every PL club record signing and sale, countries with no land borders). GA4 tag added to article, About, Contact, Privacy and Terms pages (previously untracked). Contact page expanded.",
+      "prs": [],
+      "shippedAt": "2026-11-14",
+      "targets": {
+        "pages": [
+          "/articles/champions-league-all-time-top-scorers",
+          "/articles/premier-league-record-goalscorer-for-every-club",
+          "/articles/players-who-won-the-league-in-the-most-countries",
+          "/articles/most-capped-players-and-top-scorers-by-country",
+          "/articles/premier-league-club-record-signings",
+          "/articles/countries-with-no-land-borders"
+        ],
+        "queries": [
+          "champions league top scorers",
+          "premier league record goalscorer for each club",
+          "most capped players by country",
+          "club record signings premier league",
+          "countries with no land borders"
+        ]
+      },
+      "metric": "impressions",
+      "expected": "up",
+      "baseline": "New URLs: zero impressions before this date. 16 earlier articles all had GSC impressions by 2026-11-13. AdSense resubmission planned ~2026-12-01.",
+      "status": "open",
+      "conclusion": null
     }
   ]
 }
