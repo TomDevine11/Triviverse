@@ -418,7 +418,7 @@ export const GEOGRAPHY_NOV = [
       { href: '/geography/outrank', label: 'Outrank: put countries in order' },
     ],
     body: [
-      { p: 'Most countries are defined partly by their neighbours. A few have none. Of the 193 member states of the United Nations, 38 share no land border with any other country. Every one of them is an island nation or an archipelago, and every one can only be reached by sea or air.' },
+      { p: 'Most countries are defined partly by their neighbours. A few have none. Of the 193 member states of the United Nations, 38 share no land border with any other country. Every one of them is an island nation or an archipelago, and none of them touches another country by land.' },
       { p: 'It is a group that includes some of the world’s most populous countries and some of its smallest. Japan and the Philippines each have more than 100 million people. Tuvalu and Nauru each have about 10,000.' },
       { h2: 'The largest countries with no neighbour' },
       { table: {
