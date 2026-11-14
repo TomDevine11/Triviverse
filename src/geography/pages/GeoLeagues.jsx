@@ -9,6 +9,7 @@ import { createLeague, joinLeague, leaveLeague, getLeague, peekLeague, rename, a
 import { useGeoLeagues, refreshLeagues, emitGeo, chaseLine } from '../social/leagues'
 import { SITE_URL } from '../seo'
 import { t } from '../strings'
+import { track } from '../../utils/analytics'
 import '../geography.css'
 
 // Triviverse Geography leagues: private weekly tables, the same format as
@@ -82,6 +83,7 @@ export function GeoLeaguesIndex() {
     setBusy(false)
     if (!res) return setErr(t('leagues.offline'))
     if (res.error) return setErr(errText(res.error))
+    track('league_create', { section: 'geography' })
     await refreshLeagues(true)
     emitGeo('leagues')
     nav(`/geography/leagues/${res.code}`)
@@ -267,6 +269,7 @@ export function GeoLeagueView() {
     const res = await joinLeague(code)
     if (!res) return setErr(t('leagues.offline'))
     if (res.error) return setErr(errText(res.error))
+    track('league_join', { section: 'geography' })
     await refreshLeagues(true)
     emitGeo('leagues')
     setState('loading')

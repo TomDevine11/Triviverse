@@ -75,6 +75,7 @@
     "test:visual": "playwright test --project=visual --project=visual-mobile",
     "dev:social": "node scripts/dev-social.mjs",
     "social-smoke": "node scripts/social-smoke.mjs",
+    "social-metrics": "node scripts/social-metrics.mjs",
     "build:postcards": "node scripts/geography/build-postcards.mjs",
     "build:geography-places": "node scripts/geography/build-places.mjs",
     "build:milestones": "node scripts/geography/build-milestones.mjs",
