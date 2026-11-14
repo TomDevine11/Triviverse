@@ -14,6 +14,7 @@
 // ─────────────────────────────────────────────────────────────────────────
 
 import { readFileSync, writeFileSync, mkdirSync } from 'fs'
+import { withAnalytics } from './lib/analyticsSnippet.mjs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import {
@@ -127,10 +128,11 @@ function fillStaticCounts() {
     const file = path.join(DIST, page, 'index.html')
     let html
     try { html = readFileSync(file, 'utf8') } catch { continue }
-    if (!html.includes('{{GAME_COUNT')) continue
-    writeFileSync(file, html
+    const out = withAnalytics(html
       .replaceAll('{{GAME_COUNT_WORD}}', numberWord(GAME_COUNT))
       .replaceAll('{{GAME_COUNT}}', String(GAME_COUNT)))
+    if (out === html) continue
+    writeFileSync(file, out)
     filled.push(page)
   }
   if (filled.length) console.log(`  \u2713 game count (${GAME_COUNT}) \u2192 ${filled.join(', ')}`)

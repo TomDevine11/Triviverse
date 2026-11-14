@@ -18,6 +18,7 @@ import { writeFileSync, readFileSync, mkdirSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { ARTICLES, AUTHOR, CATEGORIES } from '../../src/articles/content/index.js'
+import { analyticsSnippet } from '../lib/analyticsSnippet.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.join(__dirname, '..', '..', 'dist')
@@ -116,6 +117,7 @@ function page({ title, description, canonical, body, jsonLd, ogType = 'website' 
 <meta name="twitter:card" content="summary_large_image" />
 ${jsonLd.map(j => `<script type="application/ld+json">${JSON.stringify(j)}</script>`).join('\n')}
 <style>${CSS}</style>
+${analyticsSnippet()}
 </head>
 <body>
   <div class="wrap">
