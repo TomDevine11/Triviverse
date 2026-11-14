@@ -20,6 +20,7 @@ import { bump, checkBadges } from '../social/badges'
 import { scoreLabel } from '../social/scoring'
 import { GAMES, gameShortTitle } from '../social/games'
 import { todayIndex, DAILY_GAMES } from '../data/dailyStats'
+import { track } from '../utils/analytics'
 
 const TICK = ['identity', 'leagues', 'result']
 const input = 'flex-1 min-w-0 h-11 bg-board border border-border-strong rounded-lg px-3 text-body-lg sm:text-sm text-primary placeholder:text-faint focus:outline-none focus:border-brand'
@@ -56,6 +57,7 @@ export function LeaguesIndex() {
     setBusy(false)
     if (!res) return setErr(t('social.leagues.offline'))
     if (res.error) return setErr(errText(t, res.error))
+    track('league_create', { section: 'football' })
     bump('leaguesCreated'); checkBadges()
     await refreshLeagues(true)
     nav(lp(`/leagues/${res.code}`))
@@ -257,6 +259,7 @@ export function LeagueView() {
     const res = await joinLeague(code)
     if (!res) return setErr(t('social.leagues.offline'))
     if (res.error) return setErr(errText(t, res.error))
+    track('league_join', { section: 'football' })
     await refreshLeagues(true)
     load()
   }
